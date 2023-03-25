@@ -1,0 +1,18 @@
+import {css, styled} from '@mui/material';
+import {contentBoxPadding} from '@components/DrawerMenu';
+
+type ContentBoxProps = {
+	isColored?: boolean;
+	hasBorder?: boolean;
+};
+export const ContentBox = styled('div')<ContentBoxProps>(
+	({theme, isColored, hasBorder}) => css`
+		padding: ${contentBoxPadding};
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+
+		${isColored ? `background-color: ${theme.palette.grey[100]};` : ''}
+		${hasBorder ? `border-bottom: solid 1px ${theme.palette.grey[300]};` : ''}
+	`
+);

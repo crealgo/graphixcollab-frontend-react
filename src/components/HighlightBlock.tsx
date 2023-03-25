@@ -1,0 +1,37 @@
+import {css, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
+
+export interface HighlightBlockProps {
+	quote?: string;
+	quoter?: string;
+}
+
+const HighlightBlockWrapper = styled('div')(
+	({theme}) => css`
+		${theme.utils.styles.block};
+
+		background-color: ${theme.palette.secondary.main};
+		display: flex;
+		justify-content: center;
+
+		.HighlightBlock-content {
+			display: grid;
+			gap: 1rem;
+			width: 100%;
+			max-width: 900px;
+		}
+	`
+);
+
+export const HighlightBlock: FC<HighlightBlockProps> = (props) => (
+	<HighlightBlockWrapper>
+		<div className='HighlightBlock-content'>
+			<Typography variant='h4' className='HighlightBlock-quote'>
+				{props.quote}
+			</Typography>
+			<Typography variant='body1' className='HighlightBlock-quoter'>
+				{props.quoter}
+			</Typography>
+		</div>
+	</HighlightBlockWrapper>
+);

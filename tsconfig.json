@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "plugins": [
+      {
+        "name": "@styled/typescript-styled-plugin"
+      },
+      {
+        "name": "typescript-tslint-plugin"
+      },
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "rootDirs": [
+      "src",
+      "docs"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@*": [
+        "src/*"
+      ],
+      "@docs": [
+        "docs/*"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    ".storybook",
+    "**/*.ts",
+    "**/*.tsx"
+, "rollup.config.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
