@@ -1,20 +1,20 @@
-import { RadioCard } from "@components/Radio/RadioCard";
+import { BookingOption } from "../BookingOption";
 import { FC, useState } from "react";
-import { RadioCards } from "../../Radio/RadioCards";
+import { BookingOptionGroup } from "../BookingOptionGroup";
 import { serviceOptions } from "./data";
 
 export const SelectServiceStep: FC<unknown> = () => {
-	const [chosen, setChosen] = useState(0)
+	const [chosen, setChosen] = useState(0);
 
 	return (
 		<>
-			<RadioCards>
+			<BookingOptionGroup>
 				{serviceOptions.map((o, oIndex) => (
-					<RadioCard
+					<BookingOption
 						checked={chosen === oIndex}
 						value={oIndex}
 						onClick={() => {
-							setChosen(oIndex)
+							setChosen(oIndex);
 						}}
 						key={oIndex}
 						label={o.label}
@@ -22,7 +22,7 @@ export const SelectServiceStep: FC<unknown> = () => {
 						description={o.description}
 					/>
 				))}
-			</RadioCards>
+			</BookingOptionGroup>
 		</>
-	)
-}
+	);
+};
