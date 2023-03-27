@@ -2,16 +2,15 @@ import { ActionStack } from '@components/ActionStack';
 import { DrawerMenu } from '@components/DrawerMenu';
 import { FlexSpacer } from '@components/FlexSpacer';
 import { Flyout } from '@components/Flyout';
-import { IconButton } from '@components/IconButton';
 import { NavItemDropdown } from '@components/NavItemDropdown';
 import { NavItems } from '@components/NavItems';
 import { type Action, type NavItemOptions } from '@global/generalTypes';
+import { useAppState } from '@hooks/useAppState';
 import { useNavigationItems } from '@hooks/useNavigationItems';
 import useScrollPosition from '@hooks/useScrollPosition';
-import { ContactEmergency, Search } from '@mui/icons-material';
 import { css, styled } from '@mui/material';
 import { useRouter } from 'next/router';
-import { useMemo, type ComponentPropsWithoutRef, type FC } from 'react';
+import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from 'react';
 import { Button } from './Button';
 import { Container } from './Container';
 
@@ -110,15 +109,19 @@ export const Header: FC<HeaderProps> = ({
 }) => {
 	const items = useNavigationItems();
 	const scrollPosition = useScrollPosition();
+	const router = useRouter();
+	const { toggleBooking } = useAppState();
+
 	const isScrolled = useMemo(() => scrollPosition > 100, [scrollPosition]);
 
-	const router = useRouter();
 
 	const showBrandedHeader = router.pathname === '/';
 
+	const ref = useRef<HTMLElement>(null);
+
 	return (
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
-			<ContainerWrapper isContained>
+			<ContainerWrapper ref={ref} isContained>
 				<Logo className='Logo-root'>{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
 				<NavItems items={items}>
 					<NavItemDropdown FlyoutComponent={Flyout}>{'Mega Menu'}</NavItemDropdown>
@@ -128,10 +131,15 @@ export const Header: FC<HeaderProps> = ({
 					<Button color='text' size='small'>
 						{'Contact Us'}
 					</Button>
-					<Button color='primary' size='small'>
+					<Button
+						color='primary'
+						size='small'
+						onClick={() => {
+							toggleBooking()
+						}}
+					>
 						{'Book a Time'}
 					</Button>
-					{/* <IconButton size='small' Icon={Search} /> */}
 				</ActionStack>
 				<DrawerMenu items={navigationItems} />
 			</ContainerWrapper>

@@ -1,11 +1,12 @@
-import { Banner, BannerProps } from '@components/Banner';
+import { BannerProps } from '@components/Banner';
 import { FooterBlock, FooterBlockProps } from '@components/FooterBlock';
 import { Header, HeaderProps } from '@components/Header';
 import { PlaceholderBlock } from '@components/PlaceholderBlock';
+import { AppStateContextProvider } from '@contexts/AppStateContextProvider';
+import { useAppState } from '@hooks/useAppState';
 import { css, styled } from '@mui/material/styles';
 import { type NextPage } from 'next';
-import { useState, type ReactNode } from 'react';
-import { AppointmentBookingService } from '@components/AppointmentBookingService/index';
+import { useEffect, useLayoutEffect, type ReactNode } from 'react';
 
 type DefaultLayoutProps = NextPage<{
 	children: ReactNode;
@@ -42,54 +43,46 @@ const BackgroundImageWrapper = styled('div')<{ flipped?: boolean }>(
 );
 
 export const DefaultLayout: DefaultLayoutProps = ({
-	HeaderProps, BannerProps, FooterProps,
-	hideHeader, hideFooter, children
+	HeaderProps, FooterProps, children
 }) => {
-	const [bannerOpen, setBannerOpen] = useState(true);
+	const { setBannerProps } = useAppState();
+
+	useLayoutEffect(() => {
+		setBannerProps({
+			title: "⚡️⚡️ Flash Sash Sale!! Come and get yours quick!"
+		})
+	}, [])
 
 	return (
 		<>
-			{bannerOpen && (
-				<Banner
-					onCloseClick={() => {
-						setBannerOpen(false);
-					}}
-					{...BannerProps}
-				/>
-			)}
-			<AppointmentBookingService />
-			{!hideHeader && (
-				<Header
-					navigationItems={[
-						{
-							label: 'Home',
-							href: '/'
-						},
-						{
-							label: 'About',
-							href: '/about'
-						},
-						{
-							label: 'Graphix Collab',
-							href: '/graphix-collab'
-						},
-						{
-							label: 'Services',
-							href: '/services'
-						}
-					]}
-					{...HeaderProps}
-				/>
-			)}
+			<Header
+				navigationItems={[
+					{
+						label: 'Home',
+						href: '/'
+					},
+					{
+						label: 'About',
+						href: '/about'
+					},
+					{
+						label: 'Graphix Collab',
+						href: '/graphix-collab'
+					},
+					{
+						label: 'Services',
+						href: '/services'
+					}
+				]}
+				{...HeaderProps}
+			/>
 			<BackgroundImage className='Motif'>
 				<BackgroundImageWrapper>
 				</BackgroundImageWrapper>
 			</BackgroundImage>
 			{children}
 			<PlaceholderBlock name='Yelp Block' />
-			{!hideFooter && (
-				<FooterBlock {...FooterProps} />
-			)}
+			<FooterBlock {...FooterProps} />
 		</>
 	);
-};
+}

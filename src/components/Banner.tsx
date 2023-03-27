@@ -1,16 +1,16 @@
-import { type Action } from '@global/generalTypes';
-import { Close } from '@mui/icons-material';
-import Typography from '@mui/material/Typography';
-import { css, styled } from '@mui/material/styles';
-import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from 'react';
-import Marquee from 'react-fast-marquee';
 import { ActionStack } from '@components/ActionStack';
 import { Container } from '@components/Container';
 import { IconButton } from '@components/IconButton';
 import { type IconButtonBaseProps } from '@components/IconButtonBase';
 import { type ImageProps } from '@components/Image';
+import { type Action } from '@global/generalTypes';
+import { Close } from '@mui/icons-material';
+import { css, styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import { useMemo, useRef, type FC } from 'react';
+import Marquee from 'react-fast-marquee';
 
-export type BannerProps = Pick<ComponentPropsWithoutRef<'div'>, 'children' | 'className'> & {
+export type BannerProps = {
 	title?: string;
 	description?: string;
 	actions?: Action[];
@@ -19,7 +19,7 @@ export type BannerProps = Pick<ComponentPropsWithoutRef<'div'>, 'children' | 'cl
 };
 
 const BannerWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		position: relative;
 		background-color: ${theme.palette.error.light};
 		padding-block: 0.5rem;
@@ -27,7 +27,7 @@ const BannerWrapper = styled('div')(
 );
 
 const ContentContainer = styled(Container)(
-	({theme}) => css`
+	({ theme }) => css`
 		display: flex;
 		align-items: center;
 		white-space: nowrap;
@@ -54,7 +54,7 @@ const BannerClose = styled(IconButton)`
 	font-size: 1rem;
 `;
 
-export const Banner: FC<BannerProps> = ({title, description, actions, onCloseClick}) => {
+export const Banner: FC<BannerProps> = ({ title, description, actions, onCloseClick }) => {
 	const textRef = useRef<HTMLParagraphElement | null>(null);
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	const playMarquee = useMemo(() => {

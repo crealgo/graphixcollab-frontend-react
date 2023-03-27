@@ -21,9 +21,11 @@ const StyledButton = styled(
 		font-weight: bold;
 		background-color: ${backgroundColor};
 		color: ${getButtonTextColors({ theme, color })};
+		border-radius: 0;
+
 		${color !== 'text' ? `
 			// border: solid 1px ${darken(backgroundColor as string, 0.25)};
-			box-shadow: ${theme.shadows[2]};
+			// box-shadow: ${theme.shadows[2]};
 		` : ''};
 
 		${getButtonSizes({ theme, size })}

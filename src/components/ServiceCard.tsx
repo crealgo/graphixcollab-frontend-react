@@ -8,6 +8,7 @@ import { css, styled, useTheme } from '@mui/material/styles';
 import { chance } from '@utils/chance';
 import { forwardRef, type ComponentPropsWithRef } from 'react';
 import { colorIterator } from '@utils/colorIterator';
+import { useAppState } from '@hooks/useAppState';
 
 interface ServiceCardProps extends ServiceOptions, ComponentPropsWithRef<'a'> {
 	ImageProps?: ImageProps;
@@ -87,6 +88,7 @@ export const ServiceCard = forwardRef<HTMLAnchorElement, ServiceCardProps>(
 	({ title, subtitle, description, imageSrc, ImageProps, ...props }, ref) => {
 		const { breakpoints } = useTheme();
 		const isMobile = useMediaQuery(breakpoints.down('md'));
+		const { toggleBooking } = useAppState();
 
 		return (
 			<CardAnchor {...props} ref={ref}>
@@ -108,7 +110,14 @@ export const ServiceCard = forwardRef<HTMLAnchorElement, ServiceCardProps>(
 					<Typography variant='h5'>{title}</Typography>
 					<Typography variant='caption'>{description}</Typography>
 					<ActionStack align={isMobile ? 'start' : 'center'}>
-						<Button color={isMobile ? 'secondary' : 'text'} size='small' endIcon={<KeyboardArrowRight />}>
+						<Button
+							color={isMobile ? 'secondary' : 'text'}
+							size='small'
+							endIcon={<KeyboardArrowRight />}
+							onClick={() => {
+								toggleBooking();
+							}}
+						>
 							{'Book Appointment'}
 						</Button>
 					</ActionStack>

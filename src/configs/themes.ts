@@ -1,4 +1,5 @@
-import {createTheme, lighten} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
+import colors from 'tailwindcss/colors';
 
 const defaultFontStack =
 	'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -16,22 +17,19 @@ const bodyFontCss = {
 	fontWeight: 400
 };
 
-const brandColorPrimary = '#B20838';
-const brandColorSecondary = '#FFC423';
-
-const {breakpoints, palette, shadows} = createTheme({
+const { breakpoints, palette, shadows } = createTheme({
 	palette: {
 		primary: {
-			main: brandColorPrimary
+			main: colors.red[700]
 		},
 		secondary: {
-			main: brandColorSecondary,
-			light: lighten(brandColorSecondary, 0.375)
+			main: colors.amber[400],
+			light: colors.amber[200]
 		}
 	}
 });
 
-const {typography} = createTheme({
+const { typography } = createTheme({
 	typography: {
 		allVariants: bodyFontCss,
 		h1: {
@@ -39,50 +37,30 @@ const {typography} = createTheme({
 			fontWeight: 700,
 			lineHeight: '1.125',
 			letterSpacing: '-0.02em'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '4rem',
-			// 	lineHeight: '1.125'
-			// }
 		},
 		h2: {
 			fontSize: '2.5rem',
 			fontWeight: 700,
 			lineHeight: '1.125',
 			letterSpacing: '-0.02em'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '3.8125rem',
-			// 	lineHeight: '1.125'
-			// }
 		},
 		h3: {
 			fontSize: '2.0625rem',
 			fontWeight: 700,
 			lineHeight: '1.125',
 			letterSpacing: '-0.02em'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '2.9375rem',
-			// 	lineHeight: '1.125'
-			// }
 		},
 		h4: {
 			fontSize: '1.75rem',
 			fontWeight: '700',
 			lineHeight: '1.125',
 			letterSpacing: '-0.02em'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '2.25rem',
-			// 	lineHeight: '1.125'
-			// }
 		},
 		h5: {
 			fontSize: '1.4375rem',
 			fontWeight: '700',
 			lineHeight: '1.125',
 			letterSpacing: '-0.02em'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '1.6875rem',
-			// 	lineHeight: '1.125'
-			// }
 		},
 		h6: headingFontCss,
 		body1: {
@@ -92,10 +70,6 @@ const {typography} = createTheme({
 		body2: {
 			fontSize: '1.1rem',
 			lineHeight: '1.375'
-			// [breakpoints.up('md')]: {
-			// 	fontSize: '1.3125rem',
-			// 	lineHeight: '1.375'
-			// }
 		},
 		caption: {
 			fontSize: '0.875rem',

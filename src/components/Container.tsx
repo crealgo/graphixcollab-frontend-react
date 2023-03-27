@@ -1,12 +1,13 @@
 import {BaseComponentsProps} from '@global/baseTypes';
 import {Box, css, styled} from '@mui/material';
+import { _e } from '@utils/excludePropsFromForwarding';
 
 export type ContainerProps = BaseComponentsProps<{
 	isContained?: boolean;
 	size?: 'small' | 'medium' | 'large'
 }>;
 
-export const Container = styled(Box)<ContainerProps>(({
+export const Container = styled(Box, _e('isContained'))<ContainerProps>(({
 	theme, size = 'large', isContained
 }) => {
 

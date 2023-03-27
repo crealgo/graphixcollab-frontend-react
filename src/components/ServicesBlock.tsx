@@ -74,7 +74,6 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 	title,
 	subtitle,
 	description,
-	actions,
 	services
 }) => (
 	<Block>

@@ -22,50 +22,78 @@ const OuterWrapper = styled('section')(({ theme }) => css`
 	padding-top: 2rem;
 `);
 
-const InnerWrapper = styled('div')(
-	({ theme }) => css`
+const InnerWrapper = styled('div')(({ theme }) => css`
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+
+	.content {
 		display: grid;
+		align-content: center;
 		grid-template-columns: 1fr;
-		gap: 2rem;
+		gap: 1rem;
+		margin-block: 2rem;
 
-		.content {
-			display: grid;
-			align-content: center;
-			grid-template-columns: 1fr;
-			gap: 1rem;
-
-			.ActionStack-root {
-				margin-top: 0.5rem;
-			}
+		.ActionStack-root {
+			margin-top: 0.5rem;
 		}
+	}
+
+	.image {
+		display: none; // --> flex
+		position: relative;
+		width: 100%;
+
+		.Image-root {
+			position: absolute;
+			width: auto;
+			height: 108%;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0
+		}
+	}
+
+	${theme.breakpoints.up('sm')} {
+		grid-template-columns: 1fr 1.5fr;
 
 		.image {
 			display: flex;
 			position: relative;
-			/* background-color: blue; */
+			width: 100%;
 
 			.Image-root {
-				position: relative;
-				width: 100%;
-				height: auto;
-				right: auto;
-				left: auto;
+				position: absolute;
+				width: auto;
+				height: 108%;
+				left: 50%;
+				transform: translateX(-50%);
 				bottom: 0
 			}
 		}
+	}
 
-		${theme.breakpoints.up('md')} {
-			grid-template-columns: 1fr 1.5fr;
+	${theme.breakpoints.up('md')} {
+		grid-template-columns: 1fr 1.5fr;
 
-			.image .Image-root {
+		.image {
+			display: flex;
+			position: relative;
+			width: 100%;
+
+			.Image-root {
 				position: absolute;
-				width: 45rem;
+				width: auto;
+				height: 108%;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 0
 			}
 		}
-	`
-);
+	}
+`);
 
-export const IntroBlock: FC<IntroBlockProps> = ({ ImageProps, title, subtitle, description, actions }) => (
+export const IntroBlock: FC<IntroBlockProps> = ({ title, description }) => (
 	<OuterWrapper>
 		<Container isContained>
 			<InnerWrapper>
