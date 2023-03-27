@@ -53,6 +53,7 @@ const Wrapper = styled('div')(({theme}) => css`
 
 	${theme.breakpoints.up('sm')} {
 		.services {
+			row-gap: 3rem;
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}

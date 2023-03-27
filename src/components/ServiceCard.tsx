@@ -61,7 +61,7 @@ const CardAnchor = styled('a')(({ theme }) => {
 			z-index: 1;
 		}
 
-		${theme.breakpoints.up('md')} {
+		${theme.breakpoints.up('sm')} {
 			text-align: center;
 			grid-template-columns: 1fr;
 
@@ -87,7 +87,7 @@ const CardAnchor = styled('a')(({ theme }) => {
 export const ServiceCard = forwardRef<HTMLAnchorElement, ServiceCardProps>(
 	({ title, subtitle, description, imageSrc, ImageProps, ...props }, ref) => {
 		const { breakpoints } = useTheme();
-		const isMobile = useMediaQuery(breakpoints.down('md'));
+		const isMobile = useMediaQuery(breakpoints.down('sm'));
 		const { toggleBooking } = useAppState();
 
 		return (

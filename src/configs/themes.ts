@@ -188,6 +188,13 @@ export const defaultTheme = createTheme({
 					cursor: 'pointer'
 				}
 			}
+		},
+		MuiInputBase: {
+			styleOverrides: {
+				root: {
+					backgroundColor: 'white'
+				}
+			}
 		}
 	}
 });

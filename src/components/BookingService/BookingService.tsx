@@ -92,7 +92,7 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 	};
 
 	return (
-		<Dialog open={true} fullWidth onClose={onCloseClick}>
+		<Dialog open={open} fullWidth onClose={onCloseClick}>
 			<DialogTitle>{"Book an Appointment"}</DialogTitle>
 			<StyledDialogContent>
 				<div className="stepper">
