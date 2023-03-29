@@ -107,6 +107,15 @@ const InnerWrapper = styled("div")(
 	`
 );
 
+const TidBit: FC<unknown> = (props) => {
+	return (
+		<div>
+			{props.icon}
+			<props className="icon"></props>
+		</div>
+	);
+};
+
 export const IntroBlock: FC<IntroBlockProps> = ({ title, description, color }) => (
 	<OuterWrapper color={color}>
 		<Container isContained>
@@ -121,17 +130,7 @@ export const IntroBlock: FC<IntroBlockProps> = ({ title, description, color }) =
 						</Button>
 					</ActionStack>
 					<br />
-					<div>
-						<Chip
-							color="primary"
-							icon={<SiYelp />}
-							label={
-								<>
-									Trust by <b>150+ People</b> on <b>Yelp</b>
-								</>
-							}
-						/>
-					</div>
+					<TidBit />
 				</Block>
 				<div className="image">
 					<NextImage className="Image-root" src={imageSrc || ""} alt="thing" quality={100} />

@@ -3,6 +3,7 @@ import { AppStateContextProvider } from '@contexts/AppStateContextProvider';
 import '@fontsource/inter';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
+import '../styles/global.css'
 
 const App = ({ Component, pageProps }: AppProps) => (
 	<>
