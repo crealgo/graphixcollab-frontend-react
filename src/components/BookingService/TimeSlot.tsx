@@ -8,15 +8,14 @@ const BaseElement: FC<BookingOptionProps> = ({
 	label,
 	description,
 	icon: Icon,
-	// meta,
 	checked,
 	className,
 	name,
 	...props
 }) => (
-	<label {...props} htmlFor={name} tabIndex={0} className={className} aria-checked={checked}>
+	<label htmlFor={name} tabIndex={0} className={className} aria-checked={checked}>
 		{label}
-		<input hidden type="radio" id={name} />
+		<input hidden type="radio" id={name} {...props} />
 	</label>
 );
 

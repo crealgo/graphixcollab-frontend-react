@@ -2,37 +2,45 @@ import { BookingService } from "@components/BookingService";
 import { BannerService } from "@components/BannerService";
 import { FC, PropsWithChildren, useLayoutEffect, useState } from "react";
 import { AppStateContext, AppStateContextOptions as Context } from "./AppStateContext";
+import { ContactService } from "@components/ContactService";
 
-type AppStateContextProviderProps = PropsWithChildren<unknown>
+type AppStateContextProviderProps = PropsWithChildren<unknown>;
 
-export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
-	children
-}) => {
-	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
-	const [bookingOpen, setBookingOpen] = useState<Context['bookingOpen']>(false);
-	const [BannerProps, setBannerProps] = useState<Context['BannerProps']>({});
+export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ children }) => {
+	const [bannerOpen, setBannerOpen] = useState<Context["bannerOpen"]>(false);
+	const [bookingOpen, setBookingOpen] = useState<Context["bookingOpen"]>(false);
+	const [contactOpen, setContactOpen] = useState<Context["contactOpen"]>(false);
+	const [BannerProps, setBannerProps] = useState<Context["BannerProps"]>({});
 
 	const toggleBanner = (state?: boolean) => {
-		if (typeof state === 'boolean') {
-			setBannerOpen(() => state);
+		if (typeof state === "boolean") {
+			setBannerOpen(state);
 		}
 
-		setBannerOpen((curr) => !curr)
-	}
+		setBannerOpen((curr) => !curr);
+	};
 
 	const toggleBooking = (state?: boolean) => {
-		if (typeof state === 'boolean') {
-			setBookingOpen(() => state);
+		if (typeof state === "boolean") {
+			setBookingOpen(state);
 		}
 
-		setBookingOpen((curr) => !curr)
-	}
+		setBookingOpen((curr) => !curr);
+	};
+
+	const toggleContact = (state?: boolean) => {
+		if (typeof state === "boolean") {
+			setContactOpen(state);
+		}
+
+		setContactOpen((curr) => !curr);
+	};
 
 	useLayoutEffect(() => {
 		if (BannerProps.title) {
-			setBannerOpen(true)
+			setBannerOpen(true);
 		}
-	}, [BannerProps.title])
+	}, [BannerProps.title]);
 
 	return (
 		<AppStateContext.Provider
@@ -40,10 +48,11 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
 				BannerProps,
 				bannerOpen,
 				bookingOpen,
+				contactOpen,
 				setBannerProps,
 				toggleBanner,
-				// toggleContact,
-				toggleBooking
+				toggleContact,
+				toggleBooking,
 			}}
 		>
 			<BannerService
@@ -54,10 +63,16 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
 					toggleBanner();
 				}}
 			/>
+			<ContactService
+				open={contactOpen}
+				onCloseClick={(event) => {
+					toggleContact();
+				}}
+			/>
 			<BookingService
 				open={bookingOpen}
 				onCloseClick={() => {
-					toggleBooking()
+					toggleBooking();
 				}}
 			/>
 			{children}

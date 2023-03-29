@@ -4,7 +4,8 @@ import { Block } from "@components/Block";
 import { type ImageProps } from "@components/Image";
 import { Text } from "@components/Text";
 import { type SharedBlockProps } from "@global/generalTypes";
-import { css, styled } from "@mui/material";
+import { SiYelp } from "@icons-pack/react-simple-icons";
+import { Chip, css, styled } from "@mui/material";
 import NextImage from "next/image";
 import { type FC } from "react";
 import { Button } from "./Button";
@@ -13,13 +14,16 @@ import { Heading } from "./Heading";
 
 export interface IntroBlockProps extends SharedBlockProps {
 	title?: string;
+	color?: string;
 	description?: string;
 	ImageProps?: ImageProps;
 }
 
-const OuterWrapper = styled("section")(
-	({ theme }) => css`
-		background-color: ${theme.palette.secondary.light};
+const OuterWrapper = styled("section")<{
+	color?: string;
+}>(
+	({ theme, color }) => css`
+		background-color: ${color ? color : theme.palette.secondary.light};
 		padding-top: 2rem;
 	`
 );
@@ -103,8 +107,8 @@ const InnerWrapper = styled("div")(
 	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({ title, description }) => (
-	<OuterWrapper>
+export const IntroBlock: FC<IntroBlockProps> = ({ title, description, color }) => (
+	<OuterWrapper color={color}>
 		<Container isContained>
 			<InnerWrapper>
 				<Block className="content" component="div">
@@ -116,6 +120,18 @@ export const IntroBlock: FC<IntroBlockProps> = ({ title, description }) => (
 							{"Book an appointment"}
 						</Button>
 					</ActionStack>
+					<br />
+					<div>
+						<Chip
+							color="primary"
+							icon={<SiYelp />}
+							label={
+								<>
+									Trust by <b>150+ People</b> on <b>Yelp</b>
+								</>
+							}
+						/>
+					</div>
 				</Block>
 				<div className="image">
 					<NextImage className="Image-root" src={imageSrc || ""} alt="thing" quality={100} />

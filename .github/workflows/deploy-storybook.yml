@@ -22,16 +22,16 @@ jobs:
       - name: Verify
         run: npm run verify
 
-      - name: Install and Build
-        run: npm run build-storybook
+      # - name: Install and Build
+      #   run: npm run build-storybook
 
-      - name: Deploy Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.CREALGO_ACCESS_TOKEN }}
-          external_repository: crealgo/crealgo-static
-          publish_dir: ./storybook-static
-          destination_dir: ./projects/component-library
+      # - name: Deploy Github Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.CREALGO_ACCESS_TOKEN }}
+      #     external_repository: crealgo/crealgo-static
+      #     publish_dir: ./storybook-static
+      #     destination_dir: ./projects/component-library
 
       - name: Deploy Fashion Greek USC Static Site
         uses: peaceiris/actions-gh-pages@v3

@@ -1,7 +1,11 @@
 import { css, styled } from "@mui/material";
 import { ComponentPropsWithoutRef, FC } from "react";
 
-const BaseElement: FC<ComponentPropsWithoutRef<"fieldset">> = ({ name, children, ...props }) => (
+const BaseElement: FC<
+	ComponentPropsWithoutRef<"div"> & {
+		name?: string;
+	}
+> = ({ name, children, ...props }) => (
 	<div {...props} role="radiogroup" aria-labelledby={name}>
 		<span hidden id={name}>
 			{"Some Title"}

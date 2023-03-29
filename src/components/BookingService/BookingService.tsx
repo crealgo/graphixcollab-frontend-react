@@ -1,11 +1,11 @@
 import { ActionStack } from "@components/ActionStack";
-import { ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle } from "@mui/icons-material";
+import { DialogTitle } from "@components/DialogTitle";
+import { ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone } from "@mui/icons-material";
 import {
 	css,
 	Dialog,
 	DialogActions,
 	DialogContent,
-	DialogTitle,
 	Step,
 	StepContent,
 	StepLabel,
@@ -30,11 +30,6 @@ const steps = [
 		label: "Select a service",
 		StepContent: SelectServiceStep,
 	},
-	// {
-	// 	completed: false,
-	// 	label: "Select Time",
-	// 	StepContent: SelectDurationStep,
-	// },
 	{
 		completed: false,
 		label: "Select Date and time",
@@ -64,16 +59,12 @@ const StyledDialogContent = styled(DialogContent)(
 	`
 );
 
-const StepContentWrapper = styled('div')`
+const StepContentWrapper = styled("div")`
 	padding-block: 1rem;
-`
+`;
 
 export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseClick }) => {
 	const [activeStep, setActiveStep] = useState<number>(0);
-
-	const handleStepClick = (stepIndex: number) => {
-		setActiveStep(stepIndex);
-	};
 
 	const handlePrevStep = () => {
 		if (activeStep <= 0) {
@@ -93,7 +84,10 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 
 	return (
 		<Dialog open={open} fullWidth onClose={onCloseClick}>
-			<DialogTitle>{"Book an Appointment"}</DialogTitle>
+			<DialogTitle>
+				<span>{"Book an Appointment"}</span>
+				<BookTwoTone color="primary" />
+			</DialogTitle>
 			<StyledDialogContent>
 				<div className="stepper">
 					<Stepper nonLinear orientation="vertical" activeStep={activeStep}>
@@ -107,7 +101,7 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 										<ActionStack>
 											<Button
 												color="text"
-												startIcon={<ArrowCircleLeft color='warning' />}
+												startIcon={<ArrowCircleLeft color="warning" />}
 												onClick={handlePrevStep}
 											>
 												Previous
@@ -115,7 +109,7 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 											{stepIndex === steps.length - 1 ? (
 												<Button
 													color="tertiary"
-													endIcon={<CheckCircle color='success' />}
+													endIcon={<CheckCircle color="success" />}
 													onClick={handleNextStep}
 												>
 													Submit
@@ -123,7 +117,7 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 											) : (
 												<Button
 													color="text"
-													endIcon={<ArrowCircleRight color='success' />}
+													endIcon={<ArrowCircleRight color="success" />}
 													onClick={handleNextStep}
 												>
 													Next

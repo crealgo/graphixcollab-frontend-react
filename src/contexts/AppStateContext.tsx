@@ -4,6 +4,7 @@ import { createContext, Dispatch, SetStateAction } from "react";
 export type AppStateContextOptions = {
 	bannerOpen: boolean;
 	bookingOpen: boolean;
+	contactOpen: boolean;
 
 	BannerProps: BannerProps;
 	setBannerProps: Dispatch<SetStateAction<BannerProps>>;

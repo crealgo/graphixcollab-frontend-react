@@ -1,33 +1,31 @@
-import { ActionStack } from '@components/ActionStack';
-import { DrawerMenu } from '@components/DrawerMenu';
-import { FlexSpacer } from '@components/FlexSpacer';
-import { Flyout } from '@components/Flyout';
-import { NavItemDropdown } from '@components/NavItemDropdown';
-import { NavItems } from '@components/NavItems';
-import { type Action, type NavItemOptions } from '@global/generalTypes';
-import { useAppState } from '@hooks/useAppState';
-import { useNavigationItems } from '@hooks/useNavigationItems';
-import useScrollPosition from '@hooks/useScrollPosition';
-import { css, styled } from '@mui/material';
-import { useRouter } from 'next/router';
-import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from 'react';
-import { Button } from './Button';
-import { Container } from './Container';
+import { ActionStack } from "@components/ActionStack";
+import { DrawerMenu } from "@components/DrawerMenu";
+import { FlexSpacer } from "@components/FlexSpacer";
+import { Flyout } from "@components/Flyout";
+import { NavItemDropdown } from "@components/NavItemDropdown";
+import { NavItems } from "@components/NavItems";
+import { type Action, type NavItemOptions } from "@global/generalTypes";
+import { useAppState } from "@hooks/useAppState";
+import { useNavigationItems } from "@hooks/useNavigationItems";
+import useScrollPosition from "@hooks/useScrollPosition";
+import { css, styled } from "@mui/material";
+import { useRouter } from "next/router";
+import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
+import { Button } from "./Button";
+import { Container } from "./Container";
 
-export interface HeaderProps extends ComponentPropsWithoutRef<'header'> {
+export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	logo?: string;
 	navigationItems?: NavItemOptions[];
 	actions?: Action[];
-	backgroundColor?: 'primary' | 'secondary' | 'white';
+	backgroundColor?: "primary" | "secondary" | "white";
 	withHero?: boolean;
 }
 
-const HeaderWrapper = styled('header')<{
+const HeaderWrapper = styled("header")<{
 	isScrolled?: boolean;
 	isBranded?: boolean;
-}>(({
-	theme, isScrolled, isBranded,
-}) => {
+}>(({ theme, isScrolled, isBranded }) => {
 	return css`
 		position: sticky;
 		top: 0;
@@ -35,12 +33,14 @@ const HeaderWrapper = styled('header')<{
 		border-bottom-style: solid;
 		border-bottom-width: 1px;
 		background-color: white;
-		border-bottom-color: ${isScrolled ? `${theme.palette.grey[200]}` : 'transparent'};
+		border-bottom-color: ${isScrolled ? `${theme.palette.grey[200]}` : "transparent"};
 		z-index: 999;
 
-		${isBranded ? css`
-			background-color: ${isScrolled ? 'white' : theme.palette.secondary.light};
-		` : ''}
+		${isBranded
+			? css`
+					background-color: ${isScrolled ? "white" : theme.palette.secondary.light};
+			  `
+			: ""}
 	`;
 });
 
@@ -65,7 +65,7 @@ const ContainerWrapper = styled(Container)(
 			display: inline-flex;
 		}
 
-		${theme.breakpoints.up('sm')} {
+		${theme.breakpoints.up("sm")} {
 			border-bottom-color: transparent;
 
 			.ActionStack-root {
@@ -73,7 +73,7 @@ const ContainerWrapper = styled(Container)(
 			}
 		}
 
-		${theme.breakpoints.up('md')} {
+		${theme.breakpoints.up("md")} {
 			.NavItems-root {
 				display: flex;
 			}
@@ -85,7 +85,7 @@ const ContainerWrapper = styled(Container)(
 	`
 );
 
-const Logo = styled('div')(
+const Logo = styled("div")(
 	({ theme }) => css`
 		grid-area: logo;
 		display: flex;
@@ -104,41 +104,44 @@ const Logo = styled('div')(
 	`
 );
 
-export const Header: FC<HeaderProps> = ({
-	navigationItems, actions, className
-}) => {
+export const Header: FC<HeaderProps> = ({ navigationItems, actions, className }) => {
 	const items = useNavigationItems();
 	const scrollPosition = useScrollPosition();
 	const router = useRouter();
-	const { toggleBooking } = useAppState();
+	const { toggleBooking, toggleContact } = useAppState();
 
 	const isScrolled = useMemo(() => scrollPosition > 100, [scrollPosition]);
 
-
-	const showBrandedHeader = router.pathname === '/';
+	const showBrandedHeader = router.pathname === "/";
 
 	const ref = useRef<HTMLElement>(null);
 
 	return (
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
 			<ContainerWrapper ref={ref} isContained>
-				<Logo className='Logo-root'>{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
+				<Logo className="Logo-root">{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
 				<NavItems items={items}>
-					<NavItemDropdown FlyoutComponent={Flyout}>{'Mega Menu'}</NavItemDropdown>
+					<NavItemDropdown FlyoutComponent={Flyout}>{"Mega Menu"}</NavItemDropdown>
 				</NavItems>
 				<FlexSpacer />
-				<ActionStack size='small' actions={actions} color='secondary'>
-					<Button color='text' size='small'>
-						{'Contact Us'}
-					</Button>
+				<ActionStack size="small" actions={actions} color="secondary">
 					<Button
-						color='primary'
-						size='small'
+						color="text"
+						size="small"
 						onClick={() => {
-							toggleBooking()
+							toggleContact();
 						}}
 					>
-						{'Book a Time'}
+						{"Contact Us"}
+					</Button>
+					<Button
+						color="primary"
+						size="small"
+						onClick={() => {
+							toggleBooking();
+						}}
+					>
+						{"Book a Time"}
 					</Button>
 				</ActionStack>
 				<DrawerMenu items={navigationItems} />

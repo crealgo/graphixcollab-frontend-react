@@ -4,7 +4,7 @@ import { css, styled } from "@mui/material";
 import { colorIterator } from "@utils/colorIterator";
 import { ComponentPropsWithoutRef, FC } from "react";
 
-export interface BookingOptionProps extends ServiceInformation, ComponentPropsWithoutRef<"button"> {}
+export interface BookingOptionProps extends ServiceInformation, ComponentPropsWithoutRef<"input"> {}
 
 const BaseElement: FC<BookingOptionProps> = ({
 	label,
@@ -18,7 +18,6 @@ const BaseElement: FC<BookingOptionProps> = ({
 }) => (
 	<div
 		{...props}
-		type="button"
 		role="radio"
 		aria-checked={checked ? "true" : "false"}
 		tabIndex={0}
