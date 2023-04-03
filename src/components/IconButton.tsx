@@ -3,13 +3,11 @@ import clsx from 'clsx';
 import {forwardRef} from 'react';
 import {_e} from '@utils/excludePropsFromForwarding';
 import {getButtonColors, getButtonHoverColors, getButtonSizes} from '@utils/getButtonStyles';
-import {type ButtonColors} from '@components/Button';
+import { type ColorVariants } from "../styles/ColorVariants";
 import {IconButtonBase, type IconButtonBaseProps} from '@components/IconButtonBase';
 
-type IconButtonColors = ButtonColors;
-
 export interface IconButtonProps extends IconButtonBaseProps {
-	color?: IconButtonColors;
+	color?: ColorVariants;
 }
 
 const StyledIconButton = styled(

@@ -1,12 +1,12 @@
 import { css, styled } from "@mui/material";
 import MuiButtonBase from "@mui/material/ButtonBase";
-import { type ComponentPropsWithRef, forwardRef, type ReactElement } from "react";
+import { type ComponentPropsWithoutRef, forwardRef, type ReactElement, FC } from "react";
 import { type Size } from "@global/generalTypes";
 import { _e } from "@utils/excludePropsFromForwarding";
 
 export type ButtonBaseSizes = Size;
 
-export interface ButtonBaseProps extends ComponentPropsWithRef<"button"> {
+export interface ButtonBaseProps extends ComponentPropsWithoutRef<"button"> {
 	endIcon?: ReactElement;
 	startIcon?: ReactElement;
 	href?: string;
@@ -47,32 +47,27 @@ const ButtonIcon = styled(
 `
 );
 
-export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
-	({ children, startIcon, endIcon, onClick, ...props }, ref) => (
-		<StyledButton
-			{...props}
-			role="button"
-			ref={ref}
-			onClick={(event) => {
-				if (onClick) {
-					event.preventDefault();
-					onClick(event);
-				}
-			}}
-		>
-			{startIcon && (
-				<ButtonIcon start className="Button-icon Button-startIcon">
-					{startIcon}
-				</ButtonIcon>
-			)}
-			{children}
-			{endIcon && (
-				<ButtonIcon end className="Button-icon Button-endIcon">
-					{endIcon}
-				</ButtonIcon>
-			)}
-		</StyledButton>
-	)
+export const ButtonBase: FC<ButtonBaseProps> = ({ children, startIcon, endIcon, onClick, ...props }) => (
+	<StyledButton
+		{...props}
+		role="button"
+		onClick={(event) => {
+			if (onClick) {
+				event.preventDefault();
+				onClick(event);
+			}
+		}}
+	>
+		{startIcon && (
+			<ButtonIcon start className="Button-icon Button-startIcon">
+				{startIcon}
+			</ButtonIcon>
+		)}
+		{children}
+		{endIcon && (
+			<ButtonIcon end className="Button-icon Button-endIcon">
+				{endIcon}
+			</ButtonIcon>
+		)}
+	</StyledButton>
 );
-
-ButtonBase.displayName = "ButtonBase";
