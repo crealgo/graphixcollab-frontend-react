@@ -190,7 +190,7 @@ const EventBlock = styled(EventBaseElement)<EventBlockProps>`
 export const TimelineBlock: FC<{ events?: EventBlockProps[] }> = ({ events = defaultEvents }) => (
 	<Block className="EventBlock-root">
 		<Container className="text-center">
-			<Heading level={2} className="mb-4">See how we works!</Heading>
+			<Heading level={2} className="mb-4">See how we work!</Heading>
 			<div className="flex gap-2 items-center justify-center">
 				<span className="mr-2 font-semibold">Pick a process:</span>
 				<Select />
