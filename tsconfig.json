@@ -49,6 +49,7 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
     "docs",
+    "docs-test",
     "src"
   ],
   "exclude": [

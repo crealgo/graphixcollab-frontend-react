@@ -5,7 +5,7 @@ import { type IconButtonBaseProps } from "@components/IconButtonBase";
 import { type ImageProps } from "@components/Image";
 import { type Action } from "@global/generalTypes";
 import { Close } from "@mui/icons-material";
-import { css, styled } from "@mui/material/styles";
+import { css, styled } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useMemo, useRef, type FC } from "react";
 import Marquee from "react-fast-marquee";
@@ -70,7 +70,7 @@ export const Banner: FC<BannerProps> = ({ title, description, actions, onCloseCl
 
 	return (
 		<StyledBlock title={`${title ? `${title} | ` : ""}${description ?? ""}`}>
-			<ContentContainer ref={containerRef}>
+			<ContentContainer>
 				{/* <BannerImage {...ImageProps} /> */}
 				<Marquee play={playMarquee} gradient={false} pauseOnHover>
 					<Typography color="white" variant="caption" ref={textRef}>

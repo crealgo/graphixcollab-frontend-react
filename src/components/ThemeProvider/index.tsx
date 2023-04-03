@@ -1,14 +1,12 @@
-import {CssBaseline, ThemeProvider as DefaultThemeProvider} from '@mui/material';
-import {ThemeProvider as EmotionThemeProvider} from '@emotion/react';
-import {type ThemeProviderProps} from '@mui/material/styles/ThemeProvider';
-import {type FC} from 'react';
-import {defaultTheme} from '@configs/themes';
+import { defaultTheme } from "@configs/themes";
+import { CssBaseline, ThemeProvider as DefaultThemeProvider } from "@mui/material";
+import { PropsWithChildren, type FC } from "react";
+
+export type ThemeProviderProps = PropsWithChildren<typeof DefaultThemeProvider>;
 
 export const ThemeProvider: FC<Partial<ThemeProviderProps>> = (props) => (
 	<DefaultThemeProvider theme={defaultTheme}>
-		<EmotionThemeProvider theme={defaultTheme}>
-			<CssBaseline />
-			{props.children}
-		</EmotionThemeProvider>
+		<CssBaseline />
+		{props.children}
 	</DefaultThemeProvider>
 );
