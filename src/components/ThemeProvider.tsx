@@ -1,17 +1,13 @@
 import { defaultTheme } from "@configs/themes";
-import { css, CssBaseline, GlobalStyles, ThemeProvider as DefaultThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider as DefaultThemeProvider } from "@mui/material";
 import { PropsWithChildren, type FC } from "react";
-import "@fontsource/inter";
-
-const fontStyles = css`
-	font-family: "Inter";
-`;
+import { GlobalStyles } from "./GlobalStyles";
 
 export type ThemeProviderProps = PropsWithChildren<typeof DefaultThemeProvider>;
 
 export const ThemeProvider: FC<Partial<ThemeProviderProps>> = (props) => (
 	<>
-		<GlobalStyles styles={fontStyles} />
+		<GlobalStyles />
 		<DefaultThemeProvider theme={defaultTheme}>
 			<CssBaseline />
 			{props.children}
