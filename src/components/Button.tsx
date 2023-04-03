@@ -1,9 +1,11 @@
 import { ButtonBase, type ButtonBaseProps } from "@components/ButtonBase";
-import { css, darken, styled } from "@mui/material";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { _e } from "@utils/excludePropsFromForwarding";
-import { getButtonColors, getButtonHoverColors, getButtonSizes, getButtonTextColors } from "@utils/getButtonStyles";
 import clsx from "clsx";
+import { colord } from "colord";
 import { forwardRef } from "react";
+import colors from "tailwindcss/colors";
 
 export type ButtonColors = "primary" | "secondary" | "tertiary" | "text";
 
@@ -14,58 +16,43 @@ export interface ButtonProps extends ButtonBaseProps {
 const StyledButton = styled(
 	ButtonBase,
 	_e("color")
-)<ButtonProps>(({ theme, color = "text", size = "medium" }) => {
-	const backgroundColor = getButtonColors({ theme, color });
+)<ButtonProps>((props) => {
+	const backgroundColor = {
+		primary: "#B20838",
+		secondary: "#FDE047",
+		tertiary: "#FFFFFF",
+		text: "transparent",
+	}[props.color ?? "primary"];
+
+	const textColor = colord(backgroundColor).isLight() ? colors.slate[900] : colors.slate[50];
+
+	const shadow = props.color === "text" ? "" : "0px 1px 2px rgba(0, 0, 0, 0.05)";
 
 	return css`
-		/* Variant=Primary, Size=Small */
-
-		box-sizing: border-box;
-
 		/* Auto layout */
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+
 		padding: 4px 8px;
 		gap: 4px;
 
-		position: absolute;
-		width: 93px;
 		height: 28px;
-		left: 20px;
-		top: 20px;
+		line-height: 28px;
 
-		/* brand/primary/main */
-		background: #b20838;
-		border: 1px solid rgba(30, 41, 59, 0.2);
-		/* Button Shadow */
-		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+		background-color: ${backgroundColor};
+		box-shadow: inset 0px 0px 0px 1px rgba(30, 41, 59, 0.25), ${shadow};
 		border-radius: 4px;
 
-		/* Inside auto layout */
-		flex: none;
-		order: 0;
-		flex-grow: 0;
-
-		/* globals / white */
-		background: #ffffff;
-
-		/* Text */
-
-		width: 77px;
-		height: 17px;
-
-		font-family: "Inter";
-		font-style: normal;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 17px;
-		/* identical to box height */
+		font-weight: 500;
+		font-size: 14px
 		letter-spacing: -0.01em;
+		color: ${textColor};
 
-		/* globals / white */
-		color: #ffffff;
+		&:hover {
+			box-shadow: inset 0px 0px 0px 1px rgba(30, 41, 59, 0.5), ${shadow};
+		}
 	`;
 });
 
