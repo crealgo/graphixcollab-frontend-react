@@ -1,14 +1,14 @@
-import {type Meta, type Story} from '@storybook/react';
-import {generateMilestones} from '@utils/chance';
-import {Timeline, type TimelineProps} from '@components/Timeline';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { generateMilestones } from '@utils/chance';
+import { Timeline, type TimelineProps } from '@components/Timeline';
 
 export default {
-	component: Timeline
+  component: Timeline,
 } as Meta;
 
-export const Default: Story<TimelineProps> = (args) => <Timeline {...args} />;
-
-Default.args = {
-	milestones: generateMilestones(),
-	selectedIndex: 2
+export const Default: StoryObj<TimelineProps> = {
+  args: {
+    milestones: generateMilestones(),
+    selectedIndex: 2,
+  },
 };

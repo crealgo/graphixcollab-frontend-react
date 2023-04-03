@@ -1,11 +1,11 @@
 import { Header, type HeaderProps } from '@components/Header';
-import { type Meta, type Story } from '@storybook/react';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
 import { generateHeader } from '@utils/chance';
 
 export default {
-	component: Header
+  component: Header,
 } as Meta;
 
-export const Default: Story<HeaderProps> = (args) => <Header {...args} />;
-
-Default.args = generateHeader();
+export const Default: StoryObj<HeaderProps> = {
+  args: generateHeader(),
+};

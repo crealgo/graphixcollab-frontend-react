@@ -1,14 +1,14 @@
-import {type Meta, type Story} from '@storybook/react';
-import {generateOptions} from '@utils/chance';
-import {SelectField, type SelectFieldProps} from '@components/SelectField';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { generateOptions } from '@utils/chance';
+import { SelectField, type SelectFieldProps } from '@components/SelectField';
 
 export default {
-	component: SelectField
+  component: SelectField,
 } as Meta;
 
-export const Default: Story<SelectFieldProps> = (args) => <SelectField {...args} />;
-
-Default.args = {
-	label: 'Select Field Label',
-	options: generateOptions()
+export const Default: StoryObj<SelectFieldProps> = {
+  args: {
+    label: 'Select Field Label',
+    options: generateOptions(),
+  },
 };

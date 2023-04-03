@@ -1,13 +1,13 @@
-import {type Story} from '@storybook/react';
-import {chance} from '@utils/chance';
-import {Quote, type QuoteProps} from '@components/Quote';
+import { StoryObj, type StoryFn } from '@storybook/react';
+import { chance } from '@utils/chance';
+import { Quote, type QuoteProps } from '@components/Quote';
 
 export default {
-	component: Quote
+  component: Quote,
 };
 
-export const Default: Story<QuoteProps> = (args) => <Quote {...args} />;
-
-Default.args = {
-	text: chance.sentence()
+export const Default: StoryObj<QuoteProps> = {
+  args: {
+    text: chance.sentence(),
+  },
 };

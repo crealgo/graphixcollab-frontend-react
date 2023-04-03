@@ -1,13 +1,13 @@
-import {type Meta, type Story} from '@storybook/react';
-import {Heading, type HeadingProps} from '@components/Heading';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { Heading, type HeadingProps } from '@components/Heading';
 
 export default {
-	component: Heading
+  component: Heading,
 } as Meta;
 
-export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
-
-Default.args = {
-	children: 'This is a title',
-	level: 1
+export const Default: StoryObj<HeadingProps> = {
+  args: {
+    children: 'This is a title',
+    level: 1,
+  },
 };

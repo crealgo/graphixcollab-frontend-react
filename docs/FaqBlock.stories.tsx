@@ -1,11 +1,11 @@
-import {FaqBlock, type FaqBlockProps} from '@components/FaqBlock';
-import {type Meta, type Story} from '@storybook/react';
-import {generateFaqBlock} from '@utils/chance';
+import { FaqBlock, type FaqBlockProps } from '@components/FaqBlock';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { generateFaqBlock } from '@utils/chance';
 
 export default {
-	component: FaqBlock
+  component: FaqBlock,
 } as Meta;
 
-export const Default: Story<FaqBlockProps> = (args) => <FaqBlock {...args} />;
-
-Default.args = generateFaqBlock();
+export const Default: StoryObj<FaqBlockProps> = {
+  args: generateFaqBlock(),
+};

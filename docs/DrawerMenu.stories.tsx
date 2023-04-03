@@ -1,8 +1,8 @@
-import {type Meta, type Story} from '@storybook/react';
-import {DrawerMenu, type DrawerMenuProps} from '@components/DrawerMenu';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { DrawerMenu, type DrawerMenuProps } from '@components/DrawerMenu';
 
 export default {
-	component: DrawerMenu
+  component: DrawerMenu,
 } as Meta;
 
-export const Default: Story<DrawerMenuProps> = (args) => <DrawerMenu {...args} />;
+export const Default: StoryObj<DrawerMenuProps> = {};

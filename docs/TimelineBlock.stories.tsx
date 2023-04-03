@@ -1,11 +1,11 @@
-import {type Meta, type Story} from '@storybook/react';
-import {generateTimelineBlock} from '@utils/chance';
-import {TimelineBlock, type TimelineBlockProps} from '@components/TimelineBlock';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { generateTimelineBlock } from '@utils/chance';
+import { TimelineBlock, type TimelineBlockProps } from '@components/TimelineBlock';
 
 export default {
-	component: TimelineBlock
+  component: TimelineBlock,
 } as Meta;
 
-export const Default: Story<TimelineBlockProps> = (args) => <TimelineBlock {...args} />;
-
-Default.args = generateTimelineBlock();
+export const Default: StoryObj<TimelineBlockProps> = {
+  args: generateTimelineBlock(),
+};

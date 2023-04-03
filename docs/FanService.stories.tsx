@@ -1,11 +1,11 @@
-import {type Story} from '@storybook/react';
-import {generateFanServiceBlock} from '@utils/chance';
-import {FanServiceBlock, type FanServiceBlockProps} from '@components/FanServiceBlock';
+import { StoryObj, type StoryFn } from '@storybook/react';
+import { generateFanServiceBlock } from '@utils/chance';
+import { FanServiceBlock, type FanServiceBlockProps } from '@components/FanServiceBlock';
 
 export default {
-	component: FanServiceBlock
+  component: FanServiceBlock,
 };
 
-export const Default: Story<FanServiceBlockProps> = (args) => <FanServiceBlock {...args} />;
-
-Default.args = generateFanServiceBlock();
+export const Default: StoryObj<FanServiceBlockProps> = {
+  args: generateFanServiceBlock(),
+};

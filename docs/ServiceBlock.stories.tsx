@@ -1,11 +1,11 @@
 import { ServicesBlock, type ServicesBlockProps } from '@components/ServicesBlock';
-import { type Meta, type Story } from '@storybook/react';
+import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
 import { generateServicesBlock } from '@utils/chance';
 
 export default {
-	component: ServicesBlock
+  component: ServicesBlock,
 } as Meta;
 
-export const Default: Story<ServicesBlockProps> = (args) => <ServicesBlock {...args} />;
-
-Default.args = generateServicesBlock();
+export const Default: StoryObj<ServicesBlockProps> = {
+  args: generateServicesBlock(),
+};

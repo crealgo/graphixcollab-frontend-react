@@ -1,11 +1,11 @@
-import {type Story} from '@storybook/react';
-import {generateIntroBlock} from '@utils/chance';
-import {IntroBlock, type IntroBlockProps} from '@components/IntroBlock';
+import { StoryObj, type StoryFn } from '@storybook/react';
+import { generateIntroBlock } from '@utils/chance';
+import { IntroBlock, type IntroBlockProps } from '@components/IntroBlock';
 
 export default {
-	component: IntroBlock
+  component: IntroBlock,
 };
 
-export const Default: Story<IntroBlockProps> = (args) => <IntroBlock {...args} />;
-
-Default.args = generateIntroBlock();
+export const Default: StoryObj<IntroBlockProps> = {
+  args: generateIntroBlock(),
+};
