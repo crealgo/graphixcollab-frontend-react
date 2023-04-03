@@ -46,10 +46,11 @@
     "incremental": true
   },
   "include": [
-    ".storybook",
-    "**/*.ts",
-    "**/*.tsx"
-, "rollup.config.js"  ],
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "docs",
+    "src"
+  ],
   "exclude": [
     "node_modules"
   ]
