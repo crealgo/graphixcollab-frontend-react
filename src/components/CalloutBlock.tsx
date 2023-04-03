@@ -1,9 +1,10 @@
-import { ActionStack } from '@components/ActionStack';
-import { Container } from '@components/Container';
-import { DualPhoneDisplay } from '@components/DualPhoneDisplay';
-import { type Action } from '@global/generalTypes';
-import { css, styled, Typography } from '@mui/material';
-import { type FC } from 'react';
+import { ActionStack } from "@components/ActionStack";
+import { Container } from "@components/Container";
+import { DualPhoneDisplay } from "@components/DualPhoneDisplay";
+import { type Action } from "@global/generalTypes";
+import { css, styled, Typography } from "@mui/material";
+import { type FC } from "react";
+import { Block } from "./Block";
 
 export interface CalloutBlockProps {
 	title?: string;
@@ -12,25 +13,26 @@ export interface CalloutBlockProps {
 	actions?: Action[];
 }
 
-const OuterWrapper = styled('div')(
-	({theme}) => `
-    ${theme.breakpoints.up('md')} {
+const OuterWrapper = styled("div")(
+	({ theme }) => `
+    ${theme.breakpoints.up("md")} {
 		margin: 1rem;
     }
 `
 );
 
-const InnerWrapper = styled('div')(
-	({theme}) => css`
+const InnerWrapper = styled("div")(
+	({ theme }) => css`
+		padding: 1rem;
 		position: relative;
 		background-color: ${theme.palette.secondary.light};
-		display: grid;
-		grid-template-columns: 1fr;
-
 		border-radius: 0.5rem;
 		overflow: hidden;
 
-		${theme.breakpoints.up('sm')} {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		${theme.breakpoints.up("sm")} {
 			padding-bottom: 0;
 			grid-template-columns: 1fr 1fr;
 			align-items: center;
@@ -38,55 +40,24 @@ const InnerWrapper = styled('div')(
 	`
 );
 
-const Content = styled('div')(
-	({theme}) => css`
-		${theme.utils.styles.block};
-		background-color: transparent;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-
-		z-index: 1;
-
-		.CalloutBlock-title,
-		.CalloutBlock-description {
-			color: ${theme.palette.primary.main};
-		}
-	`
-);
-
-const BackgroundImage = styled('div')(
-	({theme}) => css`
-		position: absolute;
-		opacity: 25%;
-
-		top: 45%;
-		left: 40%;
-		transform: translateX(-50%);
-		width: 200%;
-
-		z-index: 0;
-	`
-);
-
-export const CalloutBlock: FC<CalloutBlockProps> = ({title, description, meta, actions}) => (
+export const CalloutBlock: FC<CalloutBlockProps> = ({ title, description, meta, actions }) => (
 	<OuterWrapper>
-		<InnerWrapper>
-			<Container>
-				<Content>
-					<Typography variant='overline' className='CalloutBlock-title'>
+		<Container>
+			<InnerWrapper>
+				<Block>
+					<Typography variant="overline" className="CalloutBlock-title">
 						{meta}
 					</Typography>
-					<Typography variant='h2' className='CalloutBlock-title'>
+					<Typography variant="h2" className="CalloutBlock-title">
 						{title}
 					</Typography>
-					<Typography variant='body2' className='CalloutBlock-description' sx={{mb: 2}}>
+					<Typography variant="body2" className="CalloutBlock-description" sx={{ mb: 2 }}>
 						{description}
 					</Typography>
-					<ActionStack size='large' actions={actions} />
-				</Content>
+					<ActionStack size="large" actions={actions} />
+				</Block>
 				<DualPhoneDisplay />
-			</Container>
-		</InnerWrapper>
+			</InnerWrapper>
+		</Container>
 	</OuterWrapper>
 );

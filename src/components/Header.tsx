@@ -73,7 +73,7 @@ const ContainerWrapper = styled(Container)(
 			}
 		}
 
-		${theme.breakpoints.up("md")} {
+		${theme.breakpoints.up("lg")} {
 			.NavItems-root {
 				display: flex;
 			}

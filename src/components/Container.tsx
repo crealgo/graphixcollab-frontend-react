@@ -1,51 +1,50 @@
-import { BaseComponentsProps } from "@global/baseTypes";
-import { Box, css, styled } from "@mui/material";
+import { css, styled } from "@mui/material";
 import { _e } from "@utils/excludePropsFromForwarding";
+import { ComponentPropsWithoutRef, FC } from "react";
 
-export type ContainerProps = BaseComponentsProps<{
-	isContained?: boolean;
+type BaseElementProps = ComponentPropsWithoutRef<"div">;
+
+type ContainerProps = {
 	size?: "small" | "medium" | "large";
-}>;
+};
+
+const BaseElement: FC<BaseElementProps> = ({ className, children, ...props }) => (
+	<div className={`Container-root ${className}`} {...props}>
+		{children}
+	</div>
+);
 
 export const Container = styled(
-	Box,
-	_e("isContained")
-)<ContainerProps>(({ theme, size, isContained }) => {
+	BaseElement,
+	_e("size")
+)<ContainerProps>(({ theme, size }) => {
 	const containerSize = {
 		small: theme.breakpoints.values.md,
 		medium: theme.breakpoints.values.lg,
 		large: theme.breakpoints.values.xl,
 	}[size ?? "medium"];
 
-	return css`
-		${theme.utils.styles.blockContainer}
-		width: 100%;
-		margin-inline: auto;
-
-		.Container-root {
-			padding: 0 !important;
-		}
-
-		${size
-			? `
+	const containerMaxWidth = size
+		? `
 			max-width: ${containerSize}px;
 		`
-			: `
-			${theme.breakpoints.up("md")} {
-				max-width: ${theme.breakpoints.values.md}px;
-			}
+		: `
+		${theme.breakpoints.up("md")} {
+			max-width: ${theme.breakpoints.values.md}px;
+		}
 
-			${theme.breakpoints.up("lg")} {
-				max-width: ${theme.breakpoints.values.lg}px;
-			}
+		${theme.breakpoints.up("lg")} {
+			max-width: ${theme.breakpoints.values.lg}px;
+		}
 
-			${theme.breakpoints.up("xl")} {
-				max-width: ${theme.breakpoints.values.xl}px;
-			}
-		`}
+		${theme.breakpoints.up("xl")} {
+			max-width: ${theme.breakpoints.values.xl}px;
+		}
+	`;
+
+	return css`
+		width: 100%;
+		margin-inline: auto;
+		${containerMaxWidth}
 	`;
 });
-
-Container.defaultProps = {
-	className: "Container-root",
-};

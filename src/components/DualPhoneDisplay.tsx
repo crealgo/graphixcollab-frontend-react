@@ -12,7 +12,7 @@ const Wrapper = styled('div')(
 		${theme.utils.styles.block};
 		background-color: transparent;
 		aspect-ratio: 1.3/1;
-		overflow: hidden;
+		/* overflow: hidden; */
 		z-index: 1;
 		position: relative;
 

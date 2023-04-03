@@ -1,22 +1,22 @@
-import { Block, type BlockProps } from '@components/Block';
-import { ServiceCard } from '@components/ServiceCard';
-import { type ServiceOptions, type SharedBlockProps } from '@global/generalTypes';
-import { Message, Send } from '@mui/icons-material';
-import { Box, Typography } from '@mui/material';
-import { css, styled } from '@mui/material/styles';
-import { type FC } from 'react';
-import { ActionStack } from './ActionStack';
-import { Button } from './Button';
-import { Container } from './Container';
-import { Heading } from './Heading';
+import { Block, type BlockProps } from "@components/Block";
+import { HorizontalCard } from "@components/HorizontalCard";
+import { type ServiceOptions, type SharedBlockProps } from "@global/generalTypes";
+import { Message, Send } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
+import { css, styled } from "@mui/material/styles";
+import { type FC } from "react";
+import { ActionStack } from "./ActionStack";
+import { Button } from "./Button";
+import { Container } from "./Container";
+import { Heading } from "./Heading";
 
 export interface ServicesBlockProps extends SharedBlockProps {
 	services?: ServiceOptions[];
 	BlockProps?: BlockProps;
 }
 
-export const Content = styled('div')(
-	({theme}) => css`
+export const Content = styled("div")(
+	({ theme }) => css`
 		max-width: ${theme.breakpoints.values.sm}px;
 
 		.ActionStack-root {
@@ -29,71 +29,66 @@ export const Content = styled('div')(
 	`
 );
 
-const Wrapper = styled('div')(({theme}) => css`
-	display	: grid;
-	grid-template-columns: 1fr;
-	gap: 3rem;
-
-	.Container-root {
-		text-align: center;
+const Wrapper = styled("div")(
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 1rem;
+		gap: 3rem;
 
-		.ActionStack-root {
-			justify-content: center !important;
+		.Container-root {
+			text-align: center;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+
+			.ActionStack-root {
+				justify-content: center !important;
+			}
 		}
-	}
 
-	.services {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-	}
-
-	${theme.breakpoints.up('sm')} {
 		.services {
-			row-gap: 3rem;
-			grid-template-columns: repeat(2, 1fr);
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
 		}
-	}
 
-	${theme.breakpoints.up('md')} {
-		.services {
-			grid-template-columns: repeat(3, 1fr);
+		${theme.breakpoints.up("sm")} {
+			.services {
+				row-gap: 3rem;
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
-	}
 
-	${theme.breakpoints.up('lg')} {
-		.services {
-			grid-template-columns: repeat(5, 1fr);
+		${theme.breakpoints.up("md")} {
+			.services {
+				grid-template-columns: repeat(3, 1fr);
+			}
 		}
-	}
-`)
+	`
+);
 
-export const ServicesBlock: FC<ServicesBlockProps> = ({
-	title,
-	subtitle,
-	description,
-	services
-}) => (
+export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
 	<Block>
-		<Container isContained>
+		<Container>
 			<Wrapper>
-				<Container isContained size='small'>
-					<Typography variant='overline'>{subtitle}</Typography>
+				<Container size="small">
+					<Typography variant="overline">{subtitle}</Typography>
 					<Heading level={1}>{title}</Heading>
-					<Typography variant='body2'>{description}</Typography>
+					<Typography variant="body2">{description}</Typography>
 				</Container>
-				<div className='services'>
+				<div className="services">
 					{services?.map((service, serviceIndex) => (
-						<ServiceCard {...service} key={serviceIndex} />
+						<HorizontalCard {...service} key={serviceIndex} />
 					))}
 				</div>
-				<Container isContained size='small'>
-					<ActionStack align='center' color='secondary' >
-						<Box mr={-2} zIndex={1}>Looking for something else?</Box>
-						<Button color='text' endIcon={<Message />}>{'Contact Us'}</Button>
+				<Container size="small">
+					<ActionStack align="center" color="secondary">
+						<Box mr={-2} zIndex={1}>
+							Looking for something else?
+						</Box>
+						<Button color="text" endIcon={<Message />}>
+							{"Contact Us"}
+						</Button>
 					</ActionStack>
 				</Container>
 			</Wrapper>
@@ -101,4 +96,4 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 	</Block>
 );
 
-ServicesBlock.displayName = 'ServicesBlock';
+ServicesBlock.displayName = "ServicesBlock";

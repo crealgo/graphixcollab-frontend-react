@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 					},
 				},
 				{ type: "services", props: generateServicesBlock() },
-				{ type: "timeline", props: generateTimelineBlock() },
+				// { type: "timeline", props: generateTimelineBlock() },
 				// {type: 'fanService', props: generateFanServiceBlock()},
 				{ type: "gallery", props: generateGalleryBlock() },
 			],

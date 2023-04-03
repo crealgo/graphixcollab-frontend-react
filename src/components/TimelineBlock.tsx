@@ -2,7 +2,11 @@ import { Block } from "@components/Block";
 import { BaseComponentsProps } from "@global/baseTypes";
 import { styled } from "@mui/material/styles";
 import { type FC } from "react";
+import { Button } from "./Button";
+import { Container } from "./Container";
 import { defaultEvents } from "./defaultEvents";
+import { Heading } from "./Heading";
+import { Select } from "./Select";
 
 export interface EventBlockProps extends BaseComponentsProps {
 	stepNumber?: number;
@@ -14,7 +18,7 @@ export interface EventBlockProps extends BaseComponentsProps {
 
 const connectorThickness = "0.25rem";
 const markerSize = "3.5rem";
-const blockSpacing = "4rem"
+const blockSpacing = "4rem";
 
 const Timeline = styled("ol")`
 	max-width: 63.75rem;
@@ -185,6 +189,14 @@ const EventBlock = styled(EventBaseElement)<EventBlockProps>`
 
 export const TimelineBlock: FC<{ events?: EventBlockProps[] }> = ({ events = defaultEvents }) => (
 	<Block className="EventBlock-root">
+		<Container className="text-center">
+			<Heading level={2} className="mb-4">See how we works!</Heading>
+			<div className="flex gap-2 items-center justify-center">
+				<span className="mr-2 font-semibold">Pick a process:</span>
+				<Select />
+				<Button color="secondary">{"Update"}</Button>
+			</div>
+		</Container>
 		<Timeline>
 			{events.map((eventDetails, index) => (
 				<EventBlock key={index} stepNumber={index + 1} {...eventDetails} />
