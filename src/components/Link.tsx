@@ -1,6 +1,6 @@
-import {css, styled} from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
-export const Link = styled('a')`
+export const Link = styled("a")`
 	font-size: inherit;
 	cursor: pointer;
 

@@ -1,13 +1,12 @@
-import {css, styled} from '@mui/material';
-import MuiButtonBase from '@mui/material/ButtonBase';
-import {type ComponentPropsWithRef, forwardRef, type ReactElement} from 'react';
-import {type Size} from '@global/generalTypes';
-import {_e} from '@utils/excludePropsFromForwarding';
-import NextLink from 'next/link';
+import { css, styled } from "@mui/material";
+import MuiButtonBase from "@mui/material/ButtonBase";
+import { type ComponentPropsWithRef, forwardRef, type ReactElement } from "react";
+import { type Size } from "@global/generalTypes";
+import { _e } from "@utils/excludePropsFromForwarding";
 
 export type ButtonBaseSizes = Size;
 
-export interface ButtonBaseProps extends ComponentPropsWithRef<'button'> {
+export interface ButtonBaseProps extends ComponentPropsWithRef<"button"> {
 	endIcon?: ReactElement;
 	startIcon?: ReactElement;
 	href?: string;
@@ -16,9 +15,9 @@ export interface ButtonBaseProps extends ComponentPropsWithRef<'button'> {
 
 const StyledButton = styled(
 	MuiButtonBase,
-	_e('endIcon', 'startIcon', 'size')
+	_e("endIcon", "startIcon", "size")
 )<ButtonBaseProps>(
-	({theme}) => css`
+	({ theme }) => css`
 		${theme.utils.inheritFont};
 		cursor: pointer;
 		display: inline-flex;
@@ -38,22 +37,21 @@ type ButtonIconProps = {
 };
 
 const ButtonIcon = styled(
-	'span',
-	_e('end', 'start')
+	"span",
+	_e("end", "start")
 )<ButtonIconProps>(
-	({start, end}) => `
+	({ start, end }) => `
 	display: inline-flex;
-	${start ? 'margin-left: -0.25rem;' : ''}
-	${end ? 'margin-right: -0.25rem;' : ''}
+	${start ? "margin-left: -0.25rem;" : ""}
+	${end ? "margin-right: -0.25rem;" : ""}
 `
 );
 
 export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
-	({children, startIcon, endIcon, onClick, ...props}, ref) => (
+	({ children, startIcon, endIcon, onClick, ...props }, ref) => (
 		<StyledButton
 			{...props}
-			role='button'
-			as={props.href ? NextLink : undefined}
+			role="button"
 			ref={ref}
 			onClick={(event) => {
 				if (onClick) {
@@ -63,13 +61,13 @@ export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
 			}}
 		>
 			{startIcon && (
-				<ButtonIcon start className='Button-icon Button-startIcon'>
+				<ButtonIcon start className="Button-icon Button-startIcon">
 					{startIcon}
 				</ButtonIcon>
 			)}
 			{children}
 			{endIcon && (
-				<ButtonIcon end className='Button-icon Button-endIcon'>
+				<ButtonIcon end className="Button-icon Button-endIcon">
 					{endIcon}
 				</ButtonIcon>
 			)}
@@ -77,4 +75,4 @@ export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
 	)
 );
 
-ButtonBase.displayName = 'ButtonBase';
+ButtonBase.displayName = "ButtonBase";

@@ -1,11 +1,10 @@
-import {type ButtonBaseSizes} from '@components/ButtonBase';
-import {css, styled} from '@mui/material';
-import MuiButtonBase from '@mui/material/ButtonBase';
-import {_e} from '@utils/excludePropsFromForwarding';
-import {forwardRef, type ComponentPropsWithRef, type ElementType} from 'react';
-import NextLink from 'next/link';
+import { type ButtonBaseSizes } from "@components/ButtonBase";
+import { css, styled } from "@mui/material";
+import MuiButtonBase from "@mui/material/ButtonBase";
+import { _e } from "@utils/excludePropsFromForwarding";
+import { forwardRef, type ComponentPropsWithRef, type ElementType } from "react";
 
-export interface IconButtonBaseProps extends ComponentPropsWithRef<'button'> {
+export interface IconButtonBaseProps extends ComponentPropsWithRef<"button"> {
 	href?: string;
 	Icon?: ElementType;
 	size?: ButtonBaseSizes;
@@ -13,9 +12,9 @@ export interface IconButtonBaseProps extends ComponentPropsWithRef<'button'> {
 
 const StyledButton = styled(
 	MuiButtonBase,
-	_e('endIcon', 'startIcon', 'size')
+	_e("endIcon", "startIcon", "size")
 )<IconButtonBaseProps>(
-	({theme, size = 'medium'}) => css`
+	({ theme, size = "medium" }) => css`
 		${theme.utils.inheritFont};
 		cursor: pointer;
 		display: inline-flex;
@@ -28,10 +27,12 @@ const StyledButton = styled(
 	`
 );
 
-export const IconButtonBase = forwardRef<HTMLButtonElement, IconButtonBaseProps>(({children, Icon, ...props}, ref) => (
-	<StyledButton {...props} as={props.href ? NextLink : undefined} role='button' ref={ref}>
-		{children ? children : Icon ? <Icon /> : null}
-	</StyledButton>
-));
+export const IconButtonBase = forwardRef<HTMLButtonElement, IconButtonBaseProps>(
+	({ children, Icon, ...props }, ref) => (
+		<StyledButton {...props} role="button" ref={ref}>
+			{children ? children : Icon ? <Icon /> : null}
+		</StyledButton>
+	)
+);
 
-IconButtonBase.displayName = 'IconButtonBase';
+IconButtonBase.displayName = "IconButtonBase";
