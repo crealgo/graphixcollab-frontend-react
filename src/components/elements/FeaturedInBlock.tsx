@@ -9,6 +9,7 @@ import { Block } from "../molecules/Block";
 import { Container } from "../molecules/Container";
 import { ContentGrid } from "../molecules/ContentGrid";
 import { Heading } from "../molecules/Heading";
+import { generateFeaturedItems } from "../../utils/chance";
 
 export interface FeaturedInBlock extends ComponentPropsWithoutRef<"div"> {
 	title?: string;

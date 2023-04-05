@@ -1,19 +1,18 @@
+import { css, styled } from "@mui/material";
+import { useRouter } from "next/router";
+import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
+import { useAppState } from "../../hooks/useAppState";
+import { useNavigationItems } from "../../hooks/useNavigationItems";
+import useScrollPosition from "../../hooks/useScrollPosition";
+import { type Action, type NavItemOptions } from "../../types/general";
 import { ActionStack } from "./ActionStack";
+import { Block } from "./Block";
+import { Container } from "./Container";
 import { DrawerMenu } from "./DrawerMenu";
 import { FlexSpacer } from "./FlexSpacer";
 import { Flyout } from "./Flyout";
 import { NavItemDropdown } from "./NavItemDropdown";
 import { NavItems } from "./NavItems";
-import { type Action, type NavItemOptions } from "../../types/general";
-import { useAppState } from "../../hooks/useAppState";
-import { useNavigationItems } from "../../hooks/useNavigationItems";
-import useScrollPosition from "../../hooks/useScrollPosition";
-import { css, styled } from "@mui/material";
-import { useRouter } from "next/router";
-import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
-import { Button } from "./Button";
-import { Container } from "./Container";
-import { Block } from "./Block";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	logo?: string;
@@ -106,13 +105,10 @@ export const Header: FC<HeaderProps> = ({ navigationItems, actions, className })
 	const items = useNavigationItems();
 	const scrollPosition = useScrollPosition();
 	const router = useRouter();
-	const { toggleBooking, toggleContact } = useAppState();
 
 	const isScrolled = useMemo(() => scrollPosition > 100, [scrollPosition]);
 
 	const showBrandedHeader = router.pathname === "/";
-
-	const ref = useRef<HTMLElement>(null);
 
 	return (
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
@@ -123,26 +119,7 @@ export const Header: FC<HeaderProps> = ({ navigationItems, actions, className })
 						<NavItemDropdown FlyoutComponent={Flyout}>{"Mega Menu"}</NavItemDropdown>
 					</NavItems>
 					<FlexSpacer />
-					<ActionStack size="small" actions={actions} color="secondary">
-						<Button
-							color="text"
-							size="small"
-							onClick={() => {
-								toggleContact();
-							}}
-						>
-							{"Contact Us"}
-						</Button>
-						<Button
-							color="primary"
-							size="small"
-							onClick={() => {
-								toggleBooking();
-							}}
-						>
-							{"Book a Time"}
-						</Button>
-					</ActionStack>
+					<ActionStack size="small" actions={actions} />
 					<DrawerMenu items={navigationItems} />
 				</Content>
 			</Container>

@@ -10,6 +10,7 @@ import { ComponentPropsWithoutRef, type FC } from "react";
 import { Button } from "../molecules/Button";
 import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
+import { TidBit } from "../molecules/TidBit";
 
 export interface IntroBlockProps extends SharedBlockProps, ComponentPropsWithoutRef<"div"> {
 	title?: string;
@@ -68,15 +69,9 @@ export const IntroBlock: FC<IntroBlockProps> = ({ title, description, className 
 				</ActionStack>
 				<br />
 				<div>
-					<Chip
-						color="primary"
-						icon={<SiYelp />}
-						label={
-							<>
-								Trust by <b>150+ People</b> on <b>Yelp</b>
-							</>
-						}
-					/>
+					<TidBit href={"#yelp-test"} icon={<SiYelp />}>
+						Trusted by <strong>150+ People</strong> on <strong>Yelp</strong>
+					</TidBit>
 				</div>
 			</div>
 			<figure className="image">

@@ -15,7 +15,7 @@ export type Action<T = HTMLElement> = {
 	href?: string;
 	label?: string;
 	onClick?: MouseEventHandler<T>;
-} & Pick<ButtonProps, "startIcon" | "endIcon">;
+} & Pick<ButtonProps, "startIcon" | "endIcon" | "color" | "size">;
 
 export type Person = {
 	avatar: string;

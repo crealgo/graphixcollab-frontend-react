@@ -25,8 +25,8 @@ export const ActionStack: FC<ActionStackProps> = ({
 }) => (
 	<div className={`ActionStack-root ${className}`}>
 		<Stack gap={"0.5rem"} direction="row" alignItems={"center"} justifyContent={align}>
-			{actions?.slice(0, max).map(({ label, ...actionItems }, actionIndex) => (
-				<Button {...actionItems} size={size} color={color} key={actionIndex}>
+			{actions?.slice(0, max).map(({ label, ...actionItemsProps }, actionIndex) => (
+				<Button size={size} color={color} key={actionIndex} {...actionItemsProps}>
 					{label}
 				</Button>
 			))}

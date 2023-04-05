@@ -10,13 +10,14 @@ import { PageProps } from "../types/general";
 import {
 	generateCalloutBlock,
 	generateFaqBlock,
+	generateFooter,
 	generatePageHeaderBlock,
 	generateServicesBlock,
 } from "../utils/chance";
 import Head from "next/head";
 
-const ServicesPage: NextPage<PageProps> = (props) => (
-	<DefaultLayout>
+const ServicesPage: NextPage<any> = (props) => (
+	<DefaultLayout FooterProps={props.FooterProps}>
 		<PageHeaderBlock {...props.PageHeaderBlockProps} title="Services" />
 		<ServicesBlock {...props.ServicesBlockProps} />
 		<TimelineBlock />
@@ -29,12 +30,11 @@ const ServicesPage: NextPage<PageProps> = (props) => (
 export const getStaticProps: GetStaticProps = () => {
 	return {
 		props: {
-			blocks: {
-				PageHeaderBlockProps: generatePageHeaderBlock(),
-				ServicesBlockProps: generateServicesBlock(),
-				CalloutBlockProps: generateCalloutBlock(),
-				FaqBlockProps: generateFaqBlock(),
-			},
+			FooterProps: generateFooter(),
+			PageHeaderBlockProps: generatePageHeaderBlock(),
+			ServicesBlockProps: generateServicesBlock(),
+			CalloutBlockProps: generateCalloutBlock(),
+			FaqBlockProps: generateFaqBlock(),
 		},
 	};
 };

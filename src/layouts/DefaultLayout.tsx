@@ -1,11 +1,11 @@
-import { useAppState } from "../hooks/useAppState";
 import { css, styled } from "@mui/material/styles";
 import { type NextPage } from "next";
-import { useLayoutEffect, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { FooterBlock, FooterBlockProps } from "../components/elements/FooterBlock";
 import { PlaceholderBlock } from "../components/elements/PlaceholderBlock";
 import { BannerProps } from "../components/molecules/Banner";
 import { Header, HeaderProps } from "../components/molecules/Header";
+import { useAppState } from "../hooks/useAppState";
 
 type DefaultLayoutProps = NextPage<{
 	children: ReactNode;
@@ -41,23 +41,26 @@ const BackgroundImageWrapper = styled("div")<{ flipped?: boolean }>(
 	`
 );
 
-const Main = styled('main')`
+// FIXME: figure out how to use grid
+const Main = styled("main")`
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 1rem;
-`
+`;
 
 export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, children }) => {
-	const { setBannerProps } = useAppState();
+	const { setBannerProps, toggleContact, toggleBooking } = useAppState();
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		setBannerProps({
-			title: "⚡️⚡️ Flash Sash Sale!! Come and get yours quick!",
+			text: "⚡️⚡️ Flash Sash Sale!! Come and get yours quick!",
 		});
 	}, []);
 
 	return (
 		<>
 			<Header
+				{...HeaderProps}
 				navigationItems={[
 					{
 						label: "Home",
@@ -76,13 +79,30 @@ export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, ch
 						href: "/services",
 					},
 				]}
-				{...HeaderProps}
+				actions={[
+					{
+						color: "text",
+						onClick() {
+							toggleContact();
+						},
+						label: "Contact Us",
+					},
+					{
+						color: "primary",
+						onClick() {
+							toggleContact();
+						},
+						label: "Book a time",
+					},
+				]}
 			/>
 			<BackgroundImage className="Motif">
 				<BackgroundImageWrapper></BackgroundImageWrapper>
 			</BackgroundImage>
-			<Main id="main-content">{children}</Main>
-			<PlaceholderBlock name="Yelp Block" />
+			<Main id="main-content">
+				{children}
+				<PlaceholderBlock name="Yelp Block" />
+			</Main>
 			<FooterBlock {...FooterProps} />
 		</>
 	);

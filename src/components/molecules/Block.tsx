@@ -30,14 +30,14 @@ export const Block = styled(
 		background-color: ${blockColor};
 		position: relative;
 
-		border-radius: ${props.rounded ? "0.5rem" : "0rem"};
-
 		padding-block: 4rem;
 		padding-inline: 1.5rem;
 
 		${props.theme.breakpoints.up("md")} {
 			padding-block: 7rem;
 			padding-inline: 2rem;
+
+			border-radius: ${props.rounded ? "0.5rem" : "0rem"};
 		}
 
 		${props.theme.breakpoints.up("xl")} {

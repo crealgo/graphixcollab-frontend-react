@@ -75,9 +75,9 @@ const Wrapper = styled("div")(
 
 export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
 	<Block>
-		<Container isContained>
+		<Container>
 			<Wrapper>
-				<Container isContained size="small">
+				<Container size="small">
 					<Typography variant="overline">{subtitle}</Typography>
 					<Heading level={1}>{title}</Heading>
 					<Typography variant="body2">{description}</Typography>
@@ -87,7 +87,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, descrip
 						<ServiceCard {...service} key={serviceIndex} />
 					))}
 				</div>
-				<Container isContained size="small">
+				<Container size="small">
 					<ActionStack align="center" color="secondary">
 						<Box mr={-2} zIndex={1}>
 							Looking for something else?

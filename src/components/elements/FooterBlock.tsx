@@ -3,6 +3,7 @@ import {css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
 import {type Term} from '../../types/general';
 import {Container} from '../molecules/Container';
+import { Block } from '../molecules/Block';
 
 export interface FooterBlockProps {
 	title?: string;
@@ -24,13 +25,13 @@ const Column = styled('div')(
 	`
 );
 
-const FooterBlockWrapper = styled('footer')(
+const FooterBlockWrapper = styled(Block)(
 	({theme}) => css`
 		${theme.utils.styles.block};
 
 		border-bottom: solid 1px ${theme.palette.grey[300]};
 	`
-);
+).withComponent('footer');
 
 const Content = styled('div')(
 	({theme}) => css`
@@ -44,9 +45,9 @@ const Content = styled('div')(
 	`
 );
 
-const CopyrightBlockWrapper = styled('div')(
+const CopyrightBlockWrapper = styled(Block)(
 	({theme}) => css`
-		padding-block: 2rem;
+		padding-block: 2rem !important;
 
 		display: flex;
 		flex-direction: column;
@@ -107,14 +108,16 @@ export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []
 			</Container>
 		</FooterBlockWrapper>
 		<CopyrightBlockWrapper>
-			<Typography variant='caption'>
-				<Link>Privacy & Cookie Policy</Link>
-			</Typography>
-			<Typography variant='caption'>
-				<Link>Terms of Service</Link>
-			</Typography>
-			<Typography variant='caption'>©Copyright 2015-2020, FashionGreek, USC.</Typography>
-			<Typography variant='caption'>Made with ❤️ by Crealgo, LLC. All rights reserved.</Typography>
+			<Container>
+				<Typography variant='caption'>
+					<Link>Privacy & Cookie Policy</Link>
+				</Typography>
+				<Typography variant='caption'>
+					<Link>Terms of Service</Link>
+				</Typography>
+				<Typography variant='caption'>©Copyright 2015-2020, FashionGreek, USC.</Typography>
+				<Typography variant='caption'>Made with ❤️ by Crealgo, LLC. All rights reserved.</Typography>
+			</Container>
 		</CopyrightBlockWrapper>
 	</>
 );

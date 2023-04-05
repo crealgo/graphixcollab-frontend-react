@@ -1,8 +1,8 @@
-import { BookingService } from "../components/services/BookingService";
+import { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
 import { BannerService } from "../components/services/BannerService";
-import { FC, PropsWithChildren, useLayoutEffect, useState } from "react";
-import { AppStateContext, AppStateContextOptions as Context } from "../contexts/AppStateContext";
 import { ContactService } from "../components/services/ContactService";
+import { SquareBookingService } from "../components/services/SquareBookingService";
+import { AppStateContext, AppStateContextOptions as Context } from "../contexts/AppStateContext";
 
 type AppStateContextProviderProps = PropsWithChildren<unknown>;
 
@@ -36,11 +36,11 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ chil
 		setContactOpen((curr) => !curr);
 	};
 
-	useLayoutEffect(() => {
-		if (BannerProps.title) {
+	useEffect(() => {
+		if (BannerProps.text) {
 			setBannerOpen(true);
 		}
-	}, [BannerProps.title]);
+	}, [BannerProps.text]);
 
 	return (
 		<AppStateContext.Provider
@@ -58,9 +58,11 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ chil
 			<BannerService
 				{...BannerProps}
 				open={bannerOpen}
-				onCloseClick={(event) => {
-					BannerProps?.onCloseClick?.(event);
-					toggleBanner();
+				BannerProps={{
+					onCloseClick(event) {
+						BannerProps?.onCloseClick?.(event);
+						toggleBanner();
+					},
 				}}
 			/>
 			<ContactService
@@ -69,7 +71,7 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ chil
 					toggleContact();
 				}}
 			/>
-			<BookingService
+			<SquareBookingService
 				open={bookingOpen}
 				onCloseClick={() => {
 					toggleBooking();

@@ -1,16 +1,24 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren, ReactNode } from "react";
 import { ColorVariants } from "../../types/color";
-import { ButtonBase } from "./ButtonBase";
+import { ButtonBase, ButtonBaseProps } from "./ButtonBase";
+import clsx from "clsx";
 
 export type TidBitProps = PropsWithChildren<{
 	color?: ColorVariants;
 	className?: string;
-	icon?: ReactNode;
-}>;
+	icon?: ButtonBaseProps["startIcon"];
+}> &
+	Pick<ButtonBaseProps, "href" | "onClick">;
 
-export const TidBit = styled(ButtonBase)<TidBitProps>((props) => {
+const BaseElement: FC<TidBitProps> = ({ className, icon, children, ...props }) => (
+	<ButtonBase type="button" className={clsx("TidBit-root", className)} startIcon={icon} {...props}>
+		{children}
+	</ButtonBase>
+);
+
+export const TidBit = styled(BaseElement)<TidBitProps>((props) => {
 	const resolvedColor = {
 		primary: "#B20838",
 		secondary: "#FDE047",
@@ -36,12 +44,12 @@ export const TidBit = styled(ButtonBase)<TidBitProps>((props) => {
 		background-color: var(--background-color);
 		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
 
-		.TidBit-icon,
+		.Button-icon,
 		strong {
 			color: ${resolvedColor};
 		}
 
-		.TidBit-icon {
+		.Button-icon {
 			display: inline-flex;
 			font-size: 24px;
 		}

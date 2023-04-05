@@ -11,6 +11,7 @@ import { type IconButtonBaseProps } from "./IconButtonBase";
 import { type ImageProps } from "./Image";
 
 export type BannerProps = PropsWithChildren<{
+	text?: string;
 	actions?: Action[];
 	onCloseClick?: IconButtonBaseProps["onClick"];
 	ImageProps?: ImageProps;
@@ -66,7 +67,7 @@ const BannerClose = styled(IconButton)`
 	font-size: 1rem;
 `;
 
-export const Banner: FC<BannerProps> = ({ actions, onCloseClick, children }) => {
+export const Banner: FC<BannerProps> = ({ actions, onCloseClick, text, children }) => {
 	const textRef = useRef<HTMLParagraphElement | null>(null);
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -90,7 +91,7 @@ export const Banner: FC<BannerProps> = ({ actions, onCloseClick, children }) => 
 			<Container className="Banner-container" ref={containerRef}>
 				<div className="Banner-content">
 					<span ref={textRef} className="Banner-textContent">
-						{children}
+						{children ?? text}
 					</span>
 					{actions?.length && (
 						<ActionStack className="Banner-actionStack" size="small" color="text" actions={actions} />
