@@ -5,7 +5,6 @@ import { type BannerProps } from "../components/molecules/Banner";
 import { type FeaturedItemProps } from "../components/molecules/DrawerMenu/FeaturedItem";
 import { type GalleryBlockProps } from "../components/elements/GalleryBlock";
 import { HeaderProps } from "../components/molecules/Header";
-import { type ImageContentBlockProps } from "../components/elements/ImageContentBlock";
 import { IntroBlockProps } from "../components/elements/IntroBlock";
 import { type PageHeaderBlockProps } from "../components/elements/PageHeaderBlock";
 import { type ProfilesBlockProps } from "../components/elements/ProfilesBlock";
@@ -98,6 +97,7 @@ export const generateFeaturedItem = (): FeaturedItemProps => ({
 
 export const generateFeaturedItems = (n = 4): FeaturedItemProps[] => chance.n(() => generateFeaturedItem(), n);
 
+/* eslint-disable */
 export const generateOptions = (n = 5): OptionValue[] =>
 	chance.n(() => {
 		const word = generateWord();
@@ -107,6 +107,7 @@ export const generateOptions = (n = 5): OptionValue[] =>
 			value: word,
 		};
 	}, n);
+/* eslint-enable */
 
 // export const generateMilestones = (n = 5): MileStoneValue[] => [
 // 	{
@@ -209,7 +210,6 @@ export const generateTimelineBlock = () => ({
 	description:
 		"We specialize in creating bold, eye-catching designs that are perfect for t-shirts, posters, stickers, and more. Whether you need a small run of custom t-shirts for your business or a large order of promotional materials for an event, we can help. Here's a glimpse of our process below",
 	TimelineProps: {
-		milestones: generateMilestones(),
 		selectedIndex: 1,
 	},
 });
@@ -321,17 +321,6 @@ export const generatePageHeaderBlock = (): PageHeaderBlockProps => ({
 	),
 	navigationItems: generateNavItems(),
 	navigationType: "anchor-link",
-});
-
-export const generateImageContentBlock = (n = 1): ImageContentBlockProps => ({
-	title: `Service Detail Block ${n}`,
-	subtitle: "A Small Caption",
-	description: chance.sentence({ words: 20 }),
-	actions: generateActions(),
-	imagePosition: "start",
-	ImageProps: {
-		src: generateImage(400),
-	},
 });
 
 export const generateFaqs = () => [

@@ -47,10 +47,10 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 							'Carousel-selected': index === imageIndex
 						})}
 						key={imageIndex}
-						ImageElementProps={{
-							src: imageSrc,
-							alt: `Carousel Image ${imageIndex}`
-						}}
+						// ImageElementProps={{
+						// 	src: imageSrc,
+						// 	alt: `Carousel Image ${imageIndex}`
+						// }}
 					/>
 				))
 				: null}

@@ -9,10 +9,7 @@ export interface DualPhoneDisplayProps extends ComponentPropsWithoutRef<'div'> {
 
 const Wrapper = styled('div')(
 	({theme}) => css`
-		${theme.utils.styles.block};
 		background-color: transparent;
-		aspect-ratio: 1.3/1;
-		/* overflow: hidden; */
 		z-index: 1;
 		position: relative;
 
@@ -43,7 +40,7 @@ const InnerWrapper = styled('div')`
 `;
 
 export const DualPhoneDisplay: FC<DualPhoneDisplayProps> = ({phone1Props, phone2Props, ...props}) => (
-	<Wrapper role='img' aria-label='Phone app display' {...props}>
+	<Wrapper className='DualPhoneDisplay-root' role='img' aria-label='Phone app display' {...props}>
 		<InnerWrapper>
 			<Phone elevation={10} {...phone1Props} />
 			<Phone hasBorder elevation={20} {...phone2Props} />

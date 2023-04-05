@@ -1,8 +1,9 @@
 import { MailTwoTone, Cancel, CheckCircle } from "@mui/icons-material";
-import { Dialog, DialogTitle, DialogActions, DialogContent } from "@mui/material";
+import { Dialog, DialogTitle, DialogActions, DialogContent, Paper } from "@mui/material";
 import { Button } from "../molecules/Button";
 import { css, styled } from "@mui/material/styles";
 import { FC, MouseEvent } from "react";
+import Script from "next/script";
 
 type DialogServiceProps = {
 	open?: boolean;
@@ -27,16 +28,18 @@ const StyledDialogContent = styled(DialogContent)(
 	`
 );
 
+const Modal = styled(Paper)`
+	position: absolute;
+	z-index: 99999;
+`;
+
 export const SquareBookingService: FC<DialogServiceProps> = (props) => (
-	<Dialog open={true} fullWidth maxWidth="lg" onClose={props.onCloseClick}>
+	<Modal>
 		<DialogTitle>
 			<span>{"Contact Us"}</span>
 			<MailTwoTone color="primary" />
 		</DialogTitle>
 		<StyledDialogContent>
-			{/* <!-- Start Square Appointments Embed Code --> */}
-			<script src="https://square.site/appointments/buyer/widget/pgkiyyqcz8g07b/LAR1DB5CED0WQ.js"></script>
-			{/* <!-- End Square Appointments Embed Code --> */}
 		</StyledDialogContent>
 		<DialogActions>
 			<Button color="text" endIcon={<Cancel color="error" />} onClick={props.onCloseClick}>
@@ -46,5 +49,5 @@ export const SquareBookingService: FC<DialogServiceProps> = (props) => (
 				Submit
 			</Button>
 		</DialogActions>
-	</Dialog>
+	</Modal>
 );

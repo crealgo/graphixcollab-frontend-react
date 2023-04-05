@@ -81,9 +81,6 @@ export const Banner: FC<BannerProps> = ({ actions, onCloseClick, text, children 
 		return false;
 	}, [textRef, containerRef]);
 
-	const TextWrapper = playMarquee ? Marquee : "span";
-	const TextWrapperProps = playMarquee ? Marquee : "span";
-
 	const resolvedTitle = typeof children === "string" ? children : "";
 
 	return (

@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import Script from "next/script";
 import { CalloutBlock } from "../components/elements/CalloutBlock";
 import { FaqBlock } from "../components/elements/FaqBlock";
 import { InteractiveEstimator } from "../components/elements/InteractiveEstimator";
@@ -6,7 +7,6 @@ import { PageHeaderBlock } from "../components/elements/PageHeaderBlock";
 import { ServicesBlock } from "../components/elements/ServicesBlock";
 import { TimelineBlock } from "../components/elements/TimelineBlock";
 import { DefaultLayout } from "../layouts/DefaultLayout";
-import { PageProps } from "../types/general";
 import {
 	generateCalloutBlock,
 	generateFaqBlock,
@@ -14,7 +14,6 @@ import {
 	generatePageHeaderBlock,
 	generateServicesBlock,
 } from "../utils/chance";
-import Head from "next/head";
 
 const ServicesPage: NextPage<any> = (props) => (
 	<DefaultLayout FooterProps={props.FooterProps}>

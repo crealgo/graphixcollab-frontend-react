@@ -24,7 +24,7 @@ export const Select: FC<SelectProps> = ({ label, helperText, ...props }) => (
 		</select>
 		{helperText && (
 			<p className="mt-2 text-sm text-gray-500" id="email-description">
-				We'll only use this for spam.
+				{"We'll only use this for spam."}
 			</p>
 		)}
 	</div>

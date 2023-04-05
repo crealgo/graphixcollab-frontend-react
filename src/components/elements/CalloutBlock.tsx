@@ -23,28 +23,46 @@ const OuterWrapper = styled("div")(
 
 const InnerWrapper = styled("div")(
 	({ theme }) => css`
-		padding: 1rem;
-		position: relative;
-		background-color: ${theme.palette.secondary.light};
-		border-radius: 0.5rem;
-		overflow: hidden;
+		.content {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
 
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		.image {
+			display: none;
+		}
 
-		${theme.breakpoints.up("sm")} {
-			padding-bottom: 0;
+		${theme.breakpoints.up("md")} {
+			display: grid;
 			grid-template-columns: 1fr 1fr;
-			align-items: center;
+			gap: 3rem;
+
+			.image {
+				display: block;
+				position: absolute;
+				margin: unset;
+				width: 50%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				background: blue;
+
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
 		}
 	`
 );
 
 export const CalloutBlock: FC<CalloutBlockProps> = ({ title, description, meta, actions }) => (
-	<OuterWrapper>
-		<Container>
+	<Container>
+		<Block color="secondary" rounded>
 			<InnerWrapper>
-				<Block>
+				<div className="content">
 					<Typography variant="overline" className="CalloutBlock-title">
 						{meta}
 					</Typography>
@@ -55,9 +73,11 @@ export const CalloutBlock: FC<CalloutBlockProps> = ({ title, description, meta, 
 						{description}
 					</Typography>
 					<ActionStack size="large" actions={actions} />
-				</Block>
-				<DualPhoneDisplay />
+				</div>
+				<div className="image">
+					<DualPhoneDisplay />
+				</div>
 			</InnerWrapper>
-		</Container>
-	</OuterWrapper>
+		</Block>
+	</Container>
 );

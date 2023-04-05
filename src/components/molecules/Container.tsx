@@ -16,7 +16,7 @@ const BaseElement: FC<BaseElementProps> = ({ className, children, ref, ...props 
 
 export const Container = styled(
 	BaseElement,
-	_e("size")
+	_e("ref", "size")
 )<ContainerProps>(({ theme, size }) => {
 	const containerSize = {
 		small: theme.breakpoints.values.md,

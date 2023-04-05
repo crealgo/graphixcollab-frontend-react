@@ -42,11 +42,14 @@ const BackgroundImageWrapper = styled("div")<{ flipped?: boolean }>(
 );
 
 // FIXME: figure out how to use grid
-const Main = styled("main")`
+const Main = styled("main")(({theme}) => `
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	gap: 1rem;
-`;
+
+	${theme.breakpoints.up('md')} {
+		gap: 1rem;
+	}
+`);
 
 export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, children }) => {
 	const { setBannerProps, toggleContact, toggleBooking } = useAppState();

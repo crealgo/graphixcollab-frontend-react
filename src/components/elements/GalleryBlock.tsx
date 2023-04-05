@@ -8,8 +8,7 @@ import { type Action } from "../../types/general";
 import { Block } from "../molecules/Block";
 import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
-import { Image } from "../molecules/Image";
-import { type ImageElementProps } from "../molecules/Image/ImageElement";
+import { Image, ImageProps } from "../molecules/Image";
 import { StatusMessage } from "../molecules/StatusMessage";
 import { SocialMediaBlock, type SocialMediaBlockProps } from "./SocialMediaBlock";
 
@@ -17,7 +16,7 @@ export interface GalleryBlockProps extends ComponentPropsWithoutRef<"div"> {
 	title?: string;
 	description?: string;
 	SocialMediaBlockProps?: SocialMediaBlockProps;
-	images?: ImageElementProps[];
+	images?: ImageProps[];
 	actions?: Action[];
 }
 
@@ -41,15 +40,8 @@ const Wrapper = styled(Block)(
 			overflow: hidden;
 			margin-top: 2.5rem;
 
-			.Image-root {
-				margin-right: 0.25rem;
-				width: 250px;
-
-				cursor: pointer;
-
-				&:hover {
-					opacity: 0.875;
-				}
+			.GalleryBlock-image {
+				margin-inline: 0.25rem;
 
 				${theme.breakpoints.up("md")} {
 					width: 300px;
@@ -61,10 +53,10 @@ const Wrapper = styled(Block)(
 
 export const GalleryBlock: FC<GalleryBlockProps> = ({ className, ...props }) => (
 	<Wrapper className={clsx(className, "GalleryBlock-root")}>
-		<Container isContained>
+		<Container>
 			<div className="content">
 				<Heading level={2}>{props.title}</Heading>
-				<Container isContained size="small">
+				<Container size="small">
 					<Typography variant="body2">{props.description}</Typography>
 				</Container>
 				<SocialMediaBlock {...props.SocialMediaBlockProps} />
@@ -73,7 +65,7 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({ className, ...props }) => 
 				{props.images?.length ? (
 					<Marquee pauseOnHover>
 						{props.images.map((imageProps, imageIndex) => (
-							<Image ImageElementProps={imageProps} className="GalleryBlock-image" key={imageIndex} />
+							<Image className="GalleryBlock-image" key={imageIndex} {...imageProps} />
 						))}
 					</Marquee>
 				) : (

@@ -71,12 +71,12 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ chil
 					toggleContact();
 				}}
 			/>
-			<SquareBookingService
+			{/* <SquareBookingService
 				open={bookingOpen}
 				onCloseClick={() => {
 					toggleBooking();
 				}}
-			/>
+			/> */}
 			{children}
 		</AppStateContext.Provider>
 	);

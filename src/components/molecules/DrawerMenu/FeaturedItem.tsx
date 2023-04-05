@@ -51,7 +51,7 @@ const Title = styled('span')(
 
 export const FeaturedItem: FC<FeaturedItemProps> = ({ImageProps, label}) => (
 	<FeaturedItemWrapper>
-		<FeaturedItemImage frame='circular' {...ImageProps} />
+		<FeaturedItemImage {...ImageProps} />
 		<Title className='Title-root'>{label}</Title>
 	</FeaturedItemWrapper>
 );

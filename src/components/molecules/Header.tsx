@@ -13,6 +13,7 @@ import { FlexSpacer } from "./FlexSpacer";
 import { Flyout } from "./Flyout";
 import { NavItemDropdown } from "./NavItemDropdown";
 import { NavItems } from "./NavItems";
+import { _e } from "../../utils/excludePropsFromForwarding";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	logo?: string;
@@ -22,7 +23,7 @@ export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	withHero?: boolean;
 }
 
-const HeaderWrapper = styled(Block)<{
+const HeaderWrapper = styled(Block, _e('isBranded', 'isScrolled'))<{
 	isScrolled?: boolean;
 	isBranded?: boolean;
 }>(({ theme, isScrolled, isBranded }) => {

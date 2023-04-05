@@ -28,9 +28,9 @@ const ProfileCardWrapper = styled('div')`
 export const ProfileCard: FC<ProfileCardProps> = ({profile}) => profile ? (
 	<ProfileCardWrapper className='ProfileCard-root'>
 		<Image
-			ImageElementProps={{
-				src: profile.photo ?? 'https://picsum.photos/300'
-			}}
+			// ImageElementProps={{
+			// 	src: profile.photo ?? 'https://picsum.photos/300'
+			// }}
 		/>
 		<div className='ProfileCard-info'>
 			<Typography variant='h5' noWrap>

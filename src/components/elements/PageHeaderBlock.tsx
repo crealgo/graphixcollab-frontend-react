@@ -22,7 +22,7 @@ const Wrapper = styled(Block)<{
 	color?: string;
 }>(
 	({ theme, color }) => css`
-		padding-block: 2rem;
+		padding-block: 2rem !important;
 		background-color: ${color ? color : "transparent"};
 	`
 );

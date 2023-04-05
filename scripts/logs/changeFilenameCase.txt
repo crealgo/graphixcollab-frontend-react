@@ -3,7 +3,7 @@ src/global/helperTypes.ts--
 src/global/generalTypes.ts
 src/global/generalTypes.ts--
 src/global/base-types.ts
-src/global/baseTypes.ts--
+src/global/base.ts--
 src/hooks/use-navigation-items.ts
 src/hooks/useNavigationItems.ts--
 src/utils/get-button-styles.tsx
