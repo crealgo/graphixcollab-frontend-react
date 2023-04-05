@@ -1,15 +1,12 @@
 import { Banner, BannerProps } from "@components/Banner";
 import Collapse from "@mui/material/Collapse";
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 
-export interface BannerServiceProps extends BannerProps {
+type BannerServiceProps = PropsWithChildren<{
 	open?: boolean;
-}
+	BannerProps?: BannerProps;
+}>;
 
-export const BannerService: FC<BannerServiceProps> = ({
-	open, ...BannerProps
-}) => (
-	<Collapse in={open}>
-		<Banner {...BannerProps} />
-	</Collapse>
+export const BannerService: FC<BannerServiceProps> = ({ open, children, BannerProps }) => (
+	<Collapse in={open}>{children ?? <Banner {...BannerProps} />}</Collapse>
 );

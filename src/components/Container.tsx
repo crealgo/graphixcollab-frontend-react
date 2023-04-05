@@ -1,15 +1,15 @@
 import { css, styled } from "@mui/material";
 import { _e } from "@utils/excludePropsFromForwarding";
-import { ComponentPropsWithoutRef, FC } from "react";
+import { ComponentPropsWithRef, FC } from "react";
 
-type BaseElementProps = ComponentPropsWithoutRef<"div">;
+type BaseElementProps = ComponentPropsWithRef<"div">;
 
 type ContainerProps = {
 	size?: "small" | "medium" | "large";
 };
 
-const BaseElement: FC<BaseElementProps> = ({ className, children, ...props }) => (
-	<div className={`Container-root ${className}`} {...props}>
+const BaseElement: FC<BaseElementProps> = ({ className, children, ref, ...props }) => (
+	<div ref={ref} className={`Container-root ${className}`} {...props}>
 		{children}
 	</div>
 );

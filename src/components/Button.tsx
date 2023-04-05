@@ -41,26 +41,11 @@ const StyledButton = styled(
 
 	const textColor = colord(resolvedColor.value).isLight() ? colors.slate[900] : colors.slate[50];
 
-	const shadow = props.color === "text" ? "" : "0px 1px 2px rgba(0, 0, 0, 0.05)";
-
-	const size = {
-		small: css`
-			padding: 4px 8px;
-			height: 28px;
-		`,
-		medium: css`
-			padding: 8px 12px;
-			height: 32px;
-		`,
-		large: css`
-			padding: 10px 14px;
-			height: 36px;
-		`,
-	}[props.size ?? "medium"];
+	const size = props.size ?? "medium";
 
 	return css`
 		background-color: ${backgroundColor};
-		box-shadow: inset 0px 0px 0px 1px rgba(30, 41, 59, 0.25), ${shadow};
+		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
 		border-radius: 4px;
 
 		font-weight: 500;
@@ -68,12 +53,15 @@ const StyledButton = styled(
 		letter-spacing: -0.01em;
 		color: ${textColor};
 
-		${size};
+		padding-inline: var(--padding-x-${size}-input);
+		height: var(--height-${size}-input);
+		line-height: var(--height-${size}-input);
 
 		${props.color === "text"
 			? css`
+					box-shadow: unset;
 					text-decoration: underline;
-					text-underline-offset: 2px;
+					text-underline-offset: 3px;
 					text-decoration-thickness: 1.5px;
 			  `
 			: css``}

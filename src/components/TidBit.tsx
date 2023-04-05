@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { ButtonBase } from "./ButtonBase";
 import { ColorVariants } from "@styles/ColorVariants";
 import { FC, PropsWithChildren, ReactNode } from "react";
 
@@ -8,13 +9,8 @@ export type TidBitProps = PropsWithChildren<{
 	className?: string;
 	icon?: ReactNode;
 }>;
-const BaseElement: FC<TidBitProps> = ({ children, icon, className, ...props }) => (
-	<div className={`TidBit-root ${className}`} {...props}>
-		<span className="TidBit-icon">{icon}</span>
-		{children}
-	</div>
-);
-export const TidBit = styled(BaseElement)((props) => {
+
+export const TidBit = styled(ButtonBase)((props) => {
 	const resolvedColor = {
 		primary: "#B20838",
 		secondary: "#FDE047",
@@ -25,7 +21,6 @@ export const TidBit = styled(BaseElement)((props) => {
 	return css`
 		--background-color: #ffffff;
 		--border-color: #cbd5e1;
-		--border: 0px 0px 0px 1px var(--border-color);
 
 		display: inline-flex;
 		flex-direction: row;
@@ -39,7 +34,7 @@ export const TidBit = styled(BaseElement)((props) => {
 
 		border-radius: 9999px;
 		background-color: var(--background-color);
-		box-shadow: var(--border);
+		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
 
 		.TidBit-icon,
 		strong {

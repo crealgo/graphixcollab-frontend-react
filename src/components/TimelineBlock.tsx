@@ -2,7 +2,7 @@ import { Block } from "@components/Block";
 import { type FC } from "react";
 import { Button } from "./Button";
 import { Container } from "./Container";
-import { defaultEvents } from "./defaultEvents";
+import { defaultEvents } from "../assets/data/defaultEvents";
 import { Heading } from "./Heading";
 import { Select } from "./Select";
 import { MobileTimelineEvent } from "./MobileTimelineEvent";

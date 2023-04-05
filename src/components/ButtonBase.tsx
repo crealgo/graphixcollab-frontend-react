@@ -1,12 +1,12 @@
+import { type Size } from "@global/generalTypes";
 import { css, styled } from "@mui/material";
 import MuiButtonBase from "@mui/material/ButtonBase";
-import { type ComponentPropsWithoutRef, forwardRef, type ReactElement, FC } from "react";
-import { type Size } from "@global/generalTypes";
 import { _e } from "@utils/excludePropsFromForwarding";
+import { FC, type ComponentPropsWithoutRef, type ReactElement } from "react";
 
 export type ButtonBaseSizes = Size;
 
-export interface ButtonBaseProps extends ComponentPropsWithoutRef<"button"> {
+export interface ButtonBaseProps extends Omit<ComponentPropsWithoutRef<"button">, "color"> {
 	endIcon?: ReactElement;
 	startIcon?: ReactElement;
 	href?: string;
@@ -41,6 +41,11 @@ const ButtonIcon = styled(
 	_e("end", "start")
 )<ButtonIconProps>(
 	({ start, end }) => `
+	svg {
+		height: 0.75em;
+		width: 0.75em;
+	}
+
 	display: inline-flex;
 	${start ? "margin-left: -0.25rem;" : ""}
 	${end ? "margin-right: -0.25rem;" : ""}

@@ -1,11 +1,14 @@
+import { Size } from "@global/generalTypes";
+import { css, styled } from "@mui/material/styles";
 import { ComponentPropsWithoutRef, FC } from "react";
 
-export interface InputProps extends ComponentPropsWithoutRef<"input"> {
+export interface InputProps extends Omit<ComponentPropsWithoutRef<"input">, "size"> {
 	label?: string;
 	helperText?: string;
+	size?: Size;
 }
 
-export const Input: FC<InputProps> = ({ label, helperText, ...props }) => (
+const BaseElement: FC<InputProps> = ({ label, helperText, ...props }) => (
 	<div>
 		{label && (
 			<label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -29,3 +32,12 @@ export const Input: FC<InputProps> = ({ label, helperText, ...props }) => (
 		)}
 	</div>
 );
+
+export const Input = styled(BaseElement)<InputProps>((props) => {
+	const size = props.size ?? "medium";
+
+	return css`
+		padding: var(--padding-${size}-input);
+		height: var(--height-${size}-input);
+	`;
+});

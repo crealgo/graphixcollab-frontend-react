@@ -6,46 +6,57 @@ import { type ImageProps } from "@components/Image";
 import { type Action } from "@global/generalTypes";
 import { Close } from "@mui/icons-material";
 import { css, styled } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import { useMemo, useRef, type FC } from "react";
-import Marquee from "react-fast-marquee";
+import { useMemo, useRef, type FC, PropsWithChildren, useCallback, useEffect, useLayoutEffect } from "react";
 import { Block } from "./Block";
+import Marquee from "react-fast-marquee";
 
-export type BannerProps = {
-	title?: string;
-	description?: string;
+export type BannerProps = PropsWithChildren<{
 	actions?: Action[];
 	onCloseClick?: IconButtonBaseProps["onClick"];
 	ImageProps?: ImageProps;
-};
+}>;
 
 const StyledBlock = styled(Block)(
 	({ theme }) => css`
+		display: block;
 		position: relative;
 		background-color: ${theme.palette.error.light};
 		padding-block: 0.5rem !important;
-	`
-);
+		color: white;
 
-const ContentContainer = styled(Container)(
-	({ theme }) => css`
-		display: flex;
-		align-items: center;
-		white-space: nowrap;
-		gap: 1rem;
-
-		.marquee {
-			flex-grow: 1;
+		.Banner-container {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			align-items: center;
+			gap: 1rem;
 		}
 
-		.ActionStack-root {
-			display: none;
+		.Banner-content {
+			display: grid;
+			grid-template-columns: auto auto;
+			justify-content: center;
+
+			width: 100%;
 		}
 
-		${theme.breakpoints.up("md")} {
-			.ActionStack-root {
-				display: flex;
-			}
+		.Banner-textContent {
+			font-size: 14px;
+			font-weight: 500;
+			line-height: var(--height-small-input);
+
+			display: inline-block;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.Banner-actionStack .Button-root,
+		.Banner-closeButton {
+			color: white;
+		}
+
+		.Banner-closeButton {
+			flex: none;
 		}
 	`
 );
@@ -55,9 +66,10 @@ const BannerClose = styled(IconButton)`
 	font-size: 1rem;
 `;
 
-export const Banner: FC<BannerProps> = ({ title, description, actions, onCloseClick }) => {
+export const Banner: FC<BannerProps> = ({ actions, onCloseClick, children }) => {
 	const textRef = useRef<HTMLParagraphElement | null>(null);
 	const containerRef = useRef<HTMLDivElement | null>(null);
+
 	const playMarquee = useMemo(() => {
 		if (textRef.current && containerRef.current) {
 			console.log(textRef.current, containerRef.current);
@@ -68,18 +80,30 @@ export const Banner: FC<BannerProps> = ({ title, description, actions, onCloseCl
 		return false;
 	}, [textRef, containerRef]);
 
+	const TextWrapper = playMarquee ? Marquee : "span";
+	const TextWrapperProps = playMarquee ? Marquee : "span";
+
+	const resolvedTitle = typeof children === "string" ? children : "";
+
 	return (
-		<StyledBlock title={`${title ? `${title} | ` : ""}${description ?? ""}`}>
-			<ContentContainer>
-				{/* <BannerImage {...ImageProps} /> */}
-				<Marquee play={playMarquee} gradient={false} pauseOnHover>
-					<Typography color="white" variant="caption" ref={textRef}>
-						<b>{title}</b> {description}
-					</Typography>
-				</Marquee>
-				<ActionStack size="small" actions={actions}></ActionStack>
-				<BannerClose Icon={Close} onClick={onCloseClick} />
-			</ContentContainer>
+		<StyledBlock className="Banner-root" title={resolvedTitle}>
+			<Container className="Banner-container" ref={containerRef}>
+				<div className="Banner-content">
+					<span ref={textRef} className="Banner-textContent">
+						{children}
+					</span>
+					{actions?.length && (
+						<ActionStack className="Banner-actionStack" size="small" color="text" actions={actions} />
+					)}
+				</div>
+				<BannerClose
+					className="Banner-closeButton"
+					aria-label="Close Banner"
+					color="text"
+					Icon={Close}
+					onClick={onCloseClick}
+				/>
+			</Container>
 		</StyledBlock>
 	);
 };
