@@ -1,5 +1,5 @@
 import { PageProps } from "@global/generalTypes";
-import { DefaultLayout } from "@layouts/DefaultLayout";
+import { DefaultLayout } from "@components/templates/DefaultLayout";
 import {
 	generateActions,
 	generateBanner,

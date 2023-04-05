@@ -1,5 +1,5 @@
-import { FeaturedInBlock } from "@components/FeaturedInBlock";
-import { DefaultLayout } from "@layouts/DefaultLayout";
+import { FeaturedInBlock } from "@components/blocks/FeaturedInBlock";
+import { DefaultLayout } from "@components/templates/DefaultLayout";
 import { useState } from "react";
 
 const navigation = [

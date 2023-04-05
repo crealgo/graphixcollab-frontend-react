@@ -3,9 +3,9 @@ import { FaqBlock } from "@components/FaqBlock";
 import { InteractiveEstimator } from "@components/InteractiveEstimator";
 import { PageHeaderBlock } from "@components/PageHeaderBlock";
 import { ServicesBlock } from "@components/ServicesBlock";
-import { TimelineBlock } from "@components/TimelineBlock";
+import { TimelineBlock } from "@components/blocks/TimelineBlock";
 import { PageProps } from "@global/generalTypes";
-import { DefaultLayout } from "@layouts/DefaultLayout";
+import { DefaultLayout } from "@components/templates/DefaultLayout";
 import { generateCalloutBlock, generateFaqBlock, generatePageHeaderBlock, generateServicesBlock, generateTimelineBlock } from "@utils/chance";
 import { NextPage } from "next";
 

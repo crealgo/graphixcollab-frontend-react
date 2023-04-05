@@ -1,4 +1,4 @@
-export const defaultEvents = [
+export default [
 	{
 		title: "Design Creation",
 		description:

@@ -3,11 +3,11 @@ import { type Action } from "@global/generalTypes";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { type FC } from "react";
-import { ActionStack } from "./ActionStack";
+import { ActionStack } from "../molecules/ActionStack";
 import { Block } from "./Block";
-import { Container } from "./Container";
-import { ContentGrid } from "./ContentGrid";
-import { Heading } from "./Heading";
+import { Container } from "../molecules/Container";
+import { ContentGrid } from "../molecules/ContentGrid";
+import { Heading } from "../molecules/Heading";
 
 export type InteractiveEstimatorProps = {
 	actions?: Action[];

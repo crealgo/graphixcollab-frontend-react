@@ -1,5 +1,5 @@
-import { ActionStack } from "@components/ActionStack";
-import { DialogTitle } from "@components/DialogTitle";
+import { ActionStack } from "@components/elements/ActionStack";
+import { DialogTitle } from "@components/elements/DialogTitle";
 import { ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone } from "@mui/icons-material";
 import {
 	css,
@@ -13,7 +13,7 @@ import {
 	styled,
 } from "@mui/material";
 import { FC, MouseEvent, useState } from "react";
-import { Button } from "../Button";
+import { Button } from "../../Button";
 import { CustomerInfoStep } from "./steps/CustomerInfoStep";
 import { ReserveTimeSlotStep } from "./steps/ReserveTimeSlotStep";
 import { SelectServiceStep } from "./steps/SelectServiceStep";

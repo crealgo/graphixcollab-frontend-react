@@ -39,8 +39,8 @@
       "@*": [
         "src/*"
       ],
-      "@docs": [
-        "docs/*"
+      "@pages": [
+        "pages/*"
       ]
     },
     "incremental": true
