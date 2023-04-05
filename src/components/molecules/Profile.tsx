@@ -1,4 +1,4 @@
-import { type Person } from '@global/generalTypes';
+import { type Person } from '../../types/general';
 import { Avatar, Link, styled, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { type ComponentPropsWithoutRef, type FC } from 'react';

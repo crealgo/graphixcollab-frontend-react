@@ -1,5 +1,5 @@
 import {colors, styled} from '@mui/material';
-import {_e} from '@utils/excludePropsFromForwarding';
+import {_e} from '../../../utils/excludePropsFromForwarding';
 import {type SharedCarouseProps} from '.';
 
 interface CarouseWrapperProps extends SharedCarouseProps {

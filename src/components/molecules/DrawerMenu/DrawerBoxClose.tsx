@@ -1,5 +1,5 @@
 import {css, styled} from '@mui/material';
-import {IconButtonBase} from '@components/IconButtonBase';
+import {IconButtonBase} from '../IconButtonBase';
 
 export const DrawerBoxClose = styled(IconButtonBase)(
 	({theme}) => css`

@@ -1,6 +1,6 @@
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { generateEmployee } from '@utils/chance';
-import { ProfileCard, type ProfileCardProps } from '@components/ProfileCard';
+import { StoryObj, type Meta,  } from '@storybook/react';
+import { generateEmployee } from '../../utils/chance';
+import { ProfileCard, type ProfileCardProps } from './ProfileCard';
 
 export default {
   component: ProfileCard,

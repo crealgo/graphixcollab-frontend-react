@@ -1,5 +1,5 @@
-import { TextField, type TextFieldProps } from '@components/TextField';
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
+import { TextField, type TextFieldProps } from './TextField';
+import { StoryObj, type Meta,  } from '@storybook/react';
 
 export default {
   component: TextField,

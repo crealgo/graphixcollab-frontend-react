@@ -1,5 +1,5 @@
 import { css, styled } from "@mui/material";
-import { _e } from "@utils/excludePropsFromForwarding";
+import { _e } from "../../utils/excludePropsFromForwarding";
 import { ComponentPropsWithRef, FC } from "react";
 
 type BaseElementProps = ComponentPropsWithRef<"div">;

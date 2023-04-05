@@ -1,5 +1,5 @@
 import {css, styled} from '@mui/material/styles';
-import {type Size} from '@global/generalTypes';
+import {type Size} from '../../types/general';
 
 type TextProps = {
 	size?: Size;

@@ -1,10 +1,10 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {forwardRef} from 'react';
-import {_e} from '@utils/excludePropsFromForwarding';
-import {getButtonColors, getButtonHoverColors, getButtonSizes} from '@utils/getButtonStyles';
-import { type ColorVariants } from "../styles/ColorVariants";
-import {IconButtonBase, type IconButtonBaseProps} from '@components/IconButtonBase';
+import {_e} from '../../utils/excludePropsFromForwarding';
+import {getButtonColors, getButtonHoverColors, getButtonSizes} from '../../utils/getButtonStyles';
+import { type ColorVariants } from "../../types/color";
+import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
 
 export interface IconButtonProps extends IconButtonBaseProps {
 	color?: ColorVariants;

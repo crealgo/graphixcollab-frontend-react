@@ -1,5 +1,5 @@
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { Phone, type PhoneProps } from '@components/Phone';
+import { StoryObj, type Meta,  } from '@storybook/react';
+import { Phone, type PhoneProps } from './Phone';
 
 export default {
   component: Phone,

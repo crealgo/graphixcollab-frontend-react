@@ -1,6 +1,6 @@
 import { Close } from '@mui/icons-material';
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { IconButton, type IconButtonProps } from '@components/IconButton';
+import { StoryObj, type Meta } from '@storybook/react';
+import { IconButton, type IconButtonProps } from './IconButton';
 
 export default {
   component: IconButton,

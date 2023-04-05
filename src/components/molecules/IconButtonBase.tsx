@@ -1,7 +1,7 @@
-import { type ButtonBaseSizes } from "@components/ButtonBase";
+import { type ButtonBaseSizes } from "./ButtonBase";
 import { css, styled } from "@mui/material";
 import MuiButtonBase from "@mui/material/ButtonBase";
-import { _e } from "@utils/excludePropsFromForwarding";
+import { _e } from "../../utils/excludePropsFromForwarding";
 import { forwardRef, type ComponentPropsWithRef, type ElementType } from "react";
 
 export interface IconButtonBaseProps extends ComponentPropsWithRef<"button"> {

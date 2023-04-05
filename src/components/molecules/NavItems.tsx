@@ -1,6 +1,6 @@
-import { NavItem } from '@components/NavItem';
-import { NavItemDropdown } from '@components/NavItemDropdown';
-import { type NavItemOptions } from '@global/generalTypes';
+import { NavItem } from './NavItem';
+import { NavItemDropdown } from './NavItemDropdown';
+import { type NavItemOptions } from '../../types/general';
 import { css, styled } from '@mui/material';
 import { type FC, type PropsWithChildren } from 'react';
 

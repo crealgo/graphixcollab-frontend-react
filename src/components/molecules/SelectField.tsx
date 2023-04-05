@@ -1,6 +1,6 @@
 import {MenuItem, TextField, type OutlinedTextFieldProps} from '@mui/material';
 import {type FC} from 'react';
-import {type OptionValue} from '@global/generalTypes';
+import {type OptionValue} from '../../types/general';
 
 export interface SelectFieldProps extends OutlinedTextFieldProps {
 	options: OptionValue[];

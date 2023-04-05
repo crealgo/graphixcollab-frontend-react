@@ -1,6 +1,6 @@
-import {DrawerContent} from '@components/DrawerMenu/DrawerContent';
-import {MenuTrigger} from '@components/DrawerMenu/MenuTrigger';
-import {type NavItemOptions} from '@global/generalTypes';
+import {DrawerContent} from './DrawerContent';
+import {MenuTrigger} from './MenuTrigger';
+import {type NavItemOptions} from '../../../types/general';
 import {Close, Menu} from '@mui/icons-material';
 import {Drawer, useControlled, type DrawerProps} from '@mui/material';
 import {type FC, type MouseEventHandler} from 'react';

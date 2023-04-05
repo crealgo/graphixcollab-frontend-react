@@ -1,8 +1,8 @@
 import { type FC } from 'react';
-import { type NavItemOptions } from '@global/generalTypes';
-import { Button, type ButtonProps } from '@components/Button';
+import { type NavItemOptions } from '../../types/general';
+import { Button, type ButtonProps } from './Button';
 import { css, styled } from '@mui/material/styles';
-import { colorIterator } from '@utils/colorIterator';
+import { colorIterator } from '../../utils/colorIterator';
 
 export interface NavItemProps extends ButtonProps, NavItemOptions { }
 

@@ -1,5 +1,5 @@
 import {styled} from '@mui/material';
-import {contentBoxPadding} from '@components/DrawerMenu';
+import {contentBoxPadding} from '.';
 
 export const TitleBox = styled('div')<{hasBorder?: boolean}>(
 	({theme, hasBorder}) => `

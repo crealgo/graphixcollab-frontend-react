@@ -1,9 +1,9 @@
 import {KeyboardArrowDown} from '@mui/icons-material';
 import {Menu, MenuItem, Popover} from '@mui/material';
 import {useState, type ComponentType, type FC, type MouseEventHandler} from 'react';
-import {type NavItemOptions} from '@global/generalTypes';
-import {type ButtonProps} from '@components/Button';
-import {NavItem} from '@components/NavItem';
+import {type NavItemOptions} from '../../types/general';
+import {type ButtonProps} from './Button';
+import {NavItem} from './NavItem';
 
 export interface NavItemDropdownProps extends ButtonProps {
 	items?: NavItemOptions[];

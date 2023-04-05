@@ -1,13 +1,13 @@
-import { ContentBox } from '@components/DrawerMenu/ContentBox';
-import { DrawerBoxClose } from '@components/DrawerMenu/DrawerBoxClose';
-import { FeaturedItems } from '@components/DrawerMenu/FeaturedItems';
-import { TitleBox } from '@components/DrawerMenu/TitleBox';
-import { Wrapper } from '@components/DrawerMenu/Wrapper';
-import { LinkList } from '@components/LinkList';
-import { Heading } from '@components/Heading';
-import { type NavItemOptions } from '@global/generalTypes';
+import { ContentBox } from './ContentBox';
+import { DrawerBoxClose } from './DrawerBoxClose';
+import { FeaturedItems } from './FeaturedItems';
+import { TitleBox } from './TitleBox';
+import { Wrapper } from './Wrapper';
+import { LinkList } from '../LinkList';
+import { Heading } from '../Heading';
+import { type NavItemOptions } from '../../../types/general';
 import { Close } from '@mui/icons-material';
-import { generateFeaturedItems } from '@utils/chance';
+import { generateFeaturedItems } from '../../../utils/chance';
 import { type FC, type MouseEventHandler, type PropsWithChildren } from 'react';
 
 type DrawerContentProps = PropsWithChildren<{

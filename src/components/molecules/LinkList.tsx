@@ -1,8 +1,8 @@
 import {css, styled} from '@mui/material/styles';
 import {type PropsWithChildren, type FC} from 'react';
-import {type NavItemOptions} from '@global/generalTypes';
-import {Link} from '@components/Link';
-import {LinkListItem} from '@components/LinkListItem';
+import {type NavItemOptions} from '../../types/general';
+import {Link} from './Link';
+import {LinkListItem} from './LinkListItem';
 
 export type LinkListProps = PropsWithChildren<{
 	hasDivider?: boolean;

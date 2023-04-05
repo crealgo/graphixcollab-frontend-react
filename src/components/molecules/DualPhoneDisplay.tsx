@@ -1,6 +1,6 @@
 import {css, styled} from '@mui/material';
 import {type FC, type ComponentPropsWithoutRef} from 'react';
-import {Phone, type PhoneProps} from '@components/Phone';
+import {Phone, type PhoneProps} from './Phone';
 
 export interface DualPhoneDisplayProps extends ComponentPropsWithoutRef<'div'> {
 	phone1Props?: PhoneProps;

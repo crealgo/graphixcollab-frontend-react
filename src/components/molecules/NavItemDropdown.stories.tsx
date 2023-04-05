@@ -1,7 +1,7 @@
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { chance } from '@utils/chance';
-import { Flyout } from '@components/Flyout';
-import { NavItemDropdown, type NavItemDropdownProps } from '@components/NavItemDropdown';
+import { StoryObj, type Meta,  } from '@storybook/react';
+import { chance } from '../../utils/chance';
+import { Flyout } from './Flyout';
+import { NavItemDropdown, type NavItemDropdownProps } from './NavItemDropdown';
 
 export default {
   component: NavItemDropdown,

@@ -1,12 +1,12 @@
-import { ButtonBase, type ButtonBaseProps } from "@components/ButtonBase";
+import { ButtonBase, type ButtonBaseProps } from "./ButtonBase";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { _e } from "@utils/excludePropsFromForwarding";
+import { _e } from "../../utils/excludePropsFromForwarding";
 import clsx from "clsx";
 import { colord } from "colord";
 import { FC } from "react";
 import colors from "tailwindcss/colors";
-import { ColorVariants } from "../styles/ColorVariants";
+import { ColorVariants } from "../../types/color";
 
 export interface ButtonProps extends ButtonBaseProps {
 	color?: ColorVariants;

@@ -1,7 +1,7 @@
 import {css, styled} from '@mui/material/styles';
 import {forwardRef, type ComponentPropsWithRef} from 'react';
-import {type NavItemOptions} from '@global/generalTypes';
-import {NavItem} from '@components/NavItem';
+import {type NavItemOptions} from '../../types/general';
+import {NavItem} from './NavItem';
 
 interface TopNavProps extends ComponentPropsWithRef<'nav'> {
 	items?: NavItemOptions[];

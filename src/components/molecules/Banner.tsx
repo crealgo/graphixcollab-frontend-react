@@ -1,14 +1,14 @@
-import { ActionStack } from "@components/ActionStack";
-import { Container } from "@components/Container";
-import { IconButton } from "@components/IconButton";
-import { type IconButtonBaseProps } from "@components/IconButtonBase";
-import { type ImageProps } from "@components/Image";
-import { type Action } from "@global/generalTypes";
 import { Close } from "@mui/icons-material";
 import { css, styled } from "@mui/material";
-import { useMemo, useRef, type FC, PropsWithChildren, useCallback, useEffect, useLayoutEffect } from "react";
-import { Block } from "./Block";
+import { PropsWithChildren, useMemo, useRef, type FC } from "react";
 import Marquee from "react-fast-marquee";
+import { type Action } from "../../types/general";
+import { ActionStack } from "./ActionStack";
+import { Block } from "./Block";
+import { Container } from "./Container";
+import { IconButton } from "./IconButton";
+import { type IconButtonBaseProps } from "./IconButtonBase";
+import { type ImageProps } from "./Image";
 
 export type BannerProps = PropsWithChildren<{
 	actions?: Action[];

@@ -1,5 +1,5 @@
 import {css, styled} from '@mui/material';
-import {contentBoxPadding} from '@components/DrawerMenu';
+import {contentBoxPadding} from '.';
 
 type ContentBoxProps = {
 	isColored?: boolean;

@@ -1,4 +1,4 @@
-import { Size } from "@global/generalTypes";
+import { Size } from "../../types/general";
 import { css, styled } from "@mui/material/styles";
 import { ComponentPropsWithoutRef, FC } from "react";
 
@@ -27,7 +27,7 @@ const BaseElement: FC<InputProps> = ({ label, helperText, ...props }) => (
 		</div>
 		{helperText && (
 			<p className="mt-2 text-sm text-gray-500" id="email-description">
-				We'll only use this for spam.
+				{"We'll only use this for spam."}
 			</p>
 		)}
 	</div>

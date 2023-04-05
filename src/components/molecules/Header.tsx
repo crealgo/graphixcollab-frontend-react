@@ -1,13 +1,13 @@
-import { ActionStack } from "@components/ActionStack";
-import { DrawerMenu } from "@components/DrawerMenu";
-import { FlexSpacer } from "@components/FlexSpacer";
-import { Flyout } from "@components/Flyout";
-import { NavItemDropdown } from "@components/NavItemDropdown";
-import { NavItems } from "@components/NavItems";
-import { type Action, type NavItemOptions } from "@global/generalTypes";
-import { useAppState } from "@hooks/useAppState";
-import { useNavigationItems } from "@hooks/useNavigationItems";
-import useScrollPosition from "@hooks/useScrollPosition";
+import { ActionStack } from "./ActionStack";
+import { DrawerMenu } from "./DrawerMenu";
+import { FlexSpacer } from "./FlexSpacer";
+import { Flyout } from "./Flyout";
+import { NavItemDropdown } from "./NavItemDropdown";
+import { NavItems } from "./NavItems";
+import { type Action, type NavItemOptions } from "../../types/general";
+import { useAppState } from "../../hooks/useAppState";
+import { useNavigationItems } from "../../hooks/useNavigationItems";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import { css, styled } from "@mui/material";
 import { useRouter } from "next/router";
 import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
@@ -118,7 +118,7 @@ export const Header: FC<HeaderProps> = ({ navigationItems, actions, className })
 
 	return (
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
-			<ContainerWrapper ref={ref} isContained>
+			<ContainerWrapper>
 				<Logo className="Logo-root">{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
 				<NavItems items={items}>
 					<NavItemDropdown FlyoutComponent={Flyout}>{"Mega Menu"}</NavItemDropdown>

@@ -1,4 +1,4 @@
-import { Image, type ImageProps } from '@components/Image';
+import { Image, type ImageProps } from '../Image';
 import { css, styled } from '@mui/material';
 import { type FC } from 'react';
 

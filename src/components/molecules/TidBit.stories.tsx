@@ -1,4 +1,4 @@
-import { TidBit, TidBitProps } from "@components/TidBit";
+import { TidBit, TidBitProps } from "./TidBit";
 import { SiYelp } from "@icons-pack/react-simple-icons";
 import { Meta, StoryObj } from "@storybook/react";
 

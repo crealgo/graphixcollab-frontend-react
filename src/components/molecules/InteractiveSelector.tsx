@@ -1,7 +1,7 @@
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { css, alpha, Menu, MenuItem, styled, type OutlinedTextFieldProps } from '@mui/material';
 import { useState, type FC, type MouseEventHandler } from 'react';
-import { type OptionValue } from '@global/generalTypes';
+import { type OptionValue } from '../../types/general';
 
 export interface InteractiveSelectorProps extends Omit<OutlinedTextFieldProps, 'variant' | 'size'> {
 	options?: OptionValue[];

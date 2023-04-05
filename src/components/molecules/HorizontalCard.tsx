@@ -1,12 +1,12 @@
-import { ActionStack } from "@components/ActionStack";
-import { Button } from "@components/Button";
-import { type ImageProps } from "@components/Image";
-import { useAppState } from "@hooks/useAppState";
 import { KeyboardArrowRight } from "@mui/icons-material";
-import { Typography, useMediaQuery } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
-import { colorIterator } from "@utils/colorIterator";
+import { Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { FC, type ComponentPropsWithRef } from "react";
+import { useAppState } from "../../hooks/useAppState";
+import { colorIterator } from "../../utils/colorIterator";
+import { ActionStack } from "./ActionStack";
+import { Button } from "./Button";
+import { type ImageProps } from "./Image";
 
 interface CardProps extends ComponentPropsWithRef<"a"> {
 	title?: string;

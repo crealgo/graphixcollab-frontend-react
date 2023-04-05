@@ -2,9 +2,9 @@ import {Business} from '@mui/icons-material';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import {type FC} from 'react';
-import {type Employee} from '@global/generalTypes';
-import {Image} from '@components/Image';
-import {StatusMessage} from '@components/StatusMessage';
+import {type Employee} from '../../types/general';
+import {Image} from './Image';
+import {StatusMessage} from './StatusMessage';
 
 export interface ProfileCardProps {
 	profile?: Employee;

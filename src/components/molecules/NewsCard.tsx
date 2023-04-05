@@ -2,8 +2,8 @@ import {ArrowForward} from '@mui/icons-material';
 import {Button, css, Divider, Stack, styled, Typography} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Article} from '@global/generalTypes';
-import {Profile} from '@components/Profile';
+import {type Article} from '../../types/general';
+import {Profile} from './Profile';
 
 export interface NewsCardsProps extends ComponentPropsWithoutRef<'div'> {
 	article: Article;

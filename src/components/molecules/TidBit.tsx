@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { PropsWithChildren, ReactNode } from "react";
+import { ColorVariants } from "../../types/color";
 import { ButtonBase } from "./ButtonBase";
-import { ColorVariants } from "@styles/ColorVariants";
-import { FC, PropsWithChildren, ReactNode } from "react";
 
 export type TidBitProps = PropsWithChildren<{
 	color?: ColorVariants;

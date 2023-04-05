@@ -1,16 +1,13 @@
-import { StoryObj, type StoryFn } from '@storybook/react';
-import { generateOptions } from '@utils/chance';
-import {
-  InteractiveSelector,
-  type InteractiveSelectorProps,
-} from '@components/InteractiveSelector';
+import { StoryObj } from "@storybook/react";
+import { generateOptions } from "../../utils/chance";
+import { InteractiveSelector, type InteractiveSelectorProps } from "./InteractiveSelector";
 
 export default {
-  component: InteractiveSelector,
+	component: InteractiveSelector,
 };
 
 export const Default: StoryObj<InteractiveSelectorProps> = {
-  args: {
-    options: generateOptions(),
-  },
+	args: {
+		options: generateOptions(),
+	},
 };

@@ -1,6 +1,6 @@
-import { NewsCard, type NewsCardsProps } from '@components/NewsCard';
-import { StoryObj, type StoryFn } from '@storybook/react';
-import { generateArticle } from '@utils/chance';
+import { NewsCard, type NewsCardsProps } from './NewsCard';
+import { StoryObj,  } from '@storybook/react';
+import { generateArticle } from '../../utils/chance';
 
 export default {
   component: NewsCard,

@@ -1,7 +1,7 @@
 import {useControlled} from '@mui/material';
 import clsx from 'clsx';
 import {type FC} from 'react';
-import {Image} from '@components/Image';
+import {Image} from '../Image';
 import {DotsInput} from './DotsInput';
 import {ImageCarouselWrapper} from './ImageCarouselWrapper';
 

@@ -1,6 +1,6 @@
-import { iconMap, iconNameArray } from "@assets/data/iconMap";
-import { StoryObj, type Meta, type StoryFn } from "@storybook/react";
-import { Button, type ButtonProps } from "@components/Button";
+import { iconMap, iconNameArray } from "../../assets/content/icon-map";
+import { StoryObj, type Meta } from "@storybook/react";
+import { Button, type ButtonProps } from "./Button";
 
 export default {
 	component: Button,

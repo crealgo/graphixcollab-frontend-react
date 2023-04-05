@@ -1,4 +1,4 @@
-import { FeaturedItem, type FeaturedItemProps } from '@components/DrawerMenu/FeaturedItem';
+import { FeaturedItem, type FeaturedItemProps } from './FeaturedItem';
 import { styled } from '@mui/material';
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 

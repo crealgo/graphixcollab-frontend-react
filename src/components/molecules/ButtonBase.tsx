@@ -1,8 +1,9 @@
-import { type Size } from "@global/generalTypes";
+import { type Size } from "../../types/general";
 import { css, styled } from "@mui/material";
 import MuiButtonBase from "@mui/material/ButtonBase";
-import { _e } from "@utils/excludePropsFromForwarding";
+import { _e } from "../../utils/excludePropsFromForwarding";
 import { FC, type ComponentPropsWithoutRef, type ReactElement } from "react";
+import { ColorVariants } from "../../types/color";
 
 export type ButtonBaseSizes = Size;
 
@@ -11,6 +12,7 @@ export interface ButtonBaseProps extends Omit<ComponentPropsWithoutRef<"button">
 	startIcon?: ReactElement;
 	href?: string;
 	size?: ButtonBaseSizes;
+	color?: ColorVariants;
 }
 
 const StyledButton = styled(

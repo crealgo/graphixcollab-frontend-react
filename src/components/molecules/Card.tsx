@@ -1,14 +1,14 @@
-import { ActionStack } from '@components/ActionStack';
-import { Button } from '@components/Button';
-import { type ImageProps } from '@components/Image';
-import { type ServiceOptions } from '@global/generalTypes';
+import { ActionStack } from './ActionStack';
+import { Button } from './Button';
+import { type ImageProps } from './Image';
+import { type ServiceOptions } from '../../types/general';
 import { KeyboardArrowRight } from '@mui/icons-material';
 import { Typography, useMediaQuery } from '@mui/material';
 import { css, styled, useTheme } from '@mui/material/styles';
-import { chance } from '@utils/chance';
+import { chance } from '../../utils/chance';
 import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { colorIterator } from '@utils/colorIterator';
-import { useAppState } from '@hooks/useAppState';
+import { colorIterator } from '../../utils/colorIterator';
+import { useAppState } from '../../hooks/useAppState';
 
 interface ServiceCardProps extends ServiceOptions, ComponentPropsWithRef<'a'> {
 	ImageProps?: ImageProps;

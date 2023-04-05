@@ -1,8 +1,8 @@
 import {AddCircleOutline} from '@mui/icons-material';
 import {Accordion, AccordionDetails, AccordionSummary, css, styled} from '@mui/material';
 import {type FC} from 'react';
-import {ActionStack} from '@components/ActionStack';
-import {type FaqOptions} from '@components/FaqBlock';
+import {ActionStack} from './ActionStack';
+import {type FaqOptions} from './FaqBlock';
 
 type FaqAccordionProps = FaqOptions;
 

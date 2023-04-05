@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import { type FC, type PropsWithChildren } from "react";
-import { type Action } from "@global/generalTypes";
-import { Button, type ButtonProps } from "@components/Button";
+import { type Action } from "../../types/general";
+import { Button, type ButtonProps } from "./Button";
 
 export type ActionStackProps = PropsWithChildren<{
 	actions?: Action[];
