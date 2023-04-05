@@ -1,16 +1,13 @@
-import { StoryObj, type StoryFn } from '@storybook/react';
-import { generateActions } from '@utils/chance';
-import {
-  InteractiveEstimator,
-  type InteractiveEstimatorProps,
-} from '@components/InteractiveEstimator';
+import { StoryObj } from "@storybook/react";
+import { generateActions } from "../../utils/chance";
+import { InteractiveEstimator, type InteractiveEstimatorProps } from "./InteractiveEstimator";
 
 export default {
-  component: InteractiveEstimator,
+	component: InteractiveEstimator,
 };
 
 export const Default: StoryObj<InteractiveEstimatorProps> = {
-  args: {
-    actions: generateActions(),
-  },
+	args: {
+		actions: generateActions(),
+	},
 };

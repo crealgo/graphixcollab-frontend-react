@@ -1,11 +1,11 @@
-import { StoryObj, type StoryFn } from '@storybook/react';
-import { generateImageContentBlock } from '@utils/chance';
-import { ImageContentBlock, type ImageContentBlockProps } from '@components/ImageContentBlock';
+import { StoryObj } from "@storybook/react";
+import { generateImageContentBlock } from "../../utils/chance";
+import { ImageContentBlock, type ImageContentBlockProps } from "../molecules/ImageContentBlock";
 
 export default {
-  component: ImageContentBlock,
+	component: ImageContentBlock,
 };
 
 export const Default: StoryObj<ImageContentBlockProps> = {
-  args: generateImageContentBlock(),
+	args: generateImageContentBlock(),
 };

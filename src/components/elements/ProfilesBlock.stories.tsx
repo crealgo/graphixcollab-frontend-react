@@ -1,6 +1,6 @@
-import { ProfilesBlock, type ProfilesBlockProps } from '@components/ProfilesBlock';
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { chance, generateEmployeeGroups } from '@utils/chance';
+import { StoryObj, type Meta } from '@storybook/react';
+import { chance, generateEmployeeGroups } from '../../utils/chance';
+import { ProfilesBlock, type ProfilesBlockProps } from './ProfilesBlock';
 
 export default {
   component: ProfilesBlock,

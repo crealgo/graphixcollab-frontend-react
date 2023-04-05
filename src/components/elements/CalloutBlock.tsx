@@ -1,10 +1,10 @@
-import { ActionStack } from "@components/ActionStack";
-import { Container } from "@components/Container";
-import { DualPhoneDisplay } from "@components/DualPhoneDisplay";
-import { type Action } from "@global/generalTypes";
+import { ActionStack } from "../molecules/ActionStack";
+import { Container } from "../molecules/Container";
+import { DualPhoneDisplay } from "../molecules/DualPhoneDisplay";
+import { type Action } from "../../types/general";
 import { css, styled, Typography } from "@mui/material";
 import { type FC } from "react";
-import { Block } from "./Block";
+import { Block } from "../molecules/Block";
 
 export interface CalloutBlockProps {
 	title?: string;

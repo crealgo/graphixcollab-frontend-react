@@ -1,10 +1,10 @@
-import { InteractiveSelector } from "@components/InteractiveSelector";
-import { type Action } from "@global/generalTypes";
+import { InteractiveSelector } from "../molecules/InteractiveSelector";
+import { type Action } from "../../types/general";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { type FC } from "react";
 import { ActionStack } from "../molecules/ActionStack";
-import { Block } from "./Block";
+import { Block } from "../molecules/Block";
 import { Container } from "../molecules/Container";
 import { ContentGrid } from "../molecules/ContentGrid";
 import { Heading } from "../molecules/Heading";

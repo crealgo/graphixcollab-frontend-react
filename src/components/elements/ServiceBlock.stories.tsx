@@ -1,6 +1,6 @@
-import { ServicesBlock, type ServicesBlockProps } from '@components/ServicesBlock';
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { generateServicesBlock } from '@utils/chance';
+import { StoryObj, type Meta } from '@storybook/react';
+import { generateServicesBlock } from '../../utils/chance';
+import { ServicesBlock, type ServicesBlockProps } from './ServicesBlock';
 
 export default {
   component: ServicesBlock,

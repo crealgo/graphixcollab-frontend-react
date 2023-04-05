@@ -1,11 +1,11 @@
-import { PageHeaderBlock, type PageHeaderBlockProps } from '@components/PageHeaderBlock';
-import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { generatePageHeaderBlock } from '@utils/chance';
+import { StoryObj, type Meta } from "@storybook/react";
+import { generatePageHeaderBlock } from "../../utils/chance";
+import { PageHeaderBlock, type PageHeaderBlockProps } from "./PageHeaderBlock";
 
 export default {
-  component: PageHeaderBlock,
+	component: PageHeaderBlock,
 } as Meta;
 
 export const Default: StoryObj<PageHeaderBlockProps> = {
-  args: generatePageHeaderBlock(),
+	args: generatePageHeaderBlock(),
 };

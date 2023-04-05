@@ -1,14 +1,14 @@
-import { Block, type BlockProps } from "@components/Block";
-import { ServiceCard } from "@components/Card";
-import { type ServiceOptions, type SharedBlockProps } from "@global/generalTypes";
+import { Block, type BlockProps } from "../molecules/Block";
+import { ServiceCard } from "../molecules/Card";
+import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
 import { Message } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { type FC } from "react";
-import { ActionStack } from "./ActionStack";
-import { Button } from "./Button";
-import { Container } from "./Container";
-import { Heading } from "./Heading";
+import { ActionStack } from "../molecules/ActionStack";
+import { Button } from "../molecules/Button";
+import { Container } from "../molecules/Container";
+import { Heading } from "../molecules/Heading";
 
 export interface ServicesBlockProps extends SharedBlockProps {
 	services?: ServiceOptions[];

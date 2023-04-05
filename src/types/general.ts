@@ -1,5 +1,5 @@
 import { ButtonProps } from "@components/Button";
-import { type ActionStackProps } from "@components/blocks/ActionStack";
+import { type ActionStackProps } from "@components/molecules/ActionStack";
 import { BannerProps } from "@components/Banner";
 import { FooterBlockProps } from "@components/FooterBlock";
 import { HeaderProps } from "@components/Header";

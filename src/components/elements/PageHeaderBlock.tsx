@@ -1,13 +1,12 @@
-import { type BlockProps } from "@components/Block";
-import { Breadcrumbs, type BreadcrumbOptions } from "@components/Breadcrumbs";
-import { Image, type ImageProps } from "@components/Image";
-import { TopNav } from "@components/TopNav";
-import { type NavItemOptions } from "@global/generalTypes";
 import { Typography } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { forwardRef } from "react";
-import colors from "tailwindcss/colors";
-import { Container } from "./Container";
+import { type NavItemOptions } from "../../types/general";
+import { type BlockProps } from "../molecules/Block";
+import { Breadcrumbs, type BreadcrumbOptions } from "../molecules/Breadcrumbs";
+import { Container } from "../molecules/Container";
+import { Image, type ImageProps } from "../molecules/Image";
+import { TopNav } from "../molecules/TopNav";
 
 export interface PageHeaderBlockProps {
 	title?: string;

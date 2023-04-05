@@ -1,8 +1,8 @@
 import {Facebook, Instagram, Twitter} from '@mui/icons-material';
 import {css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type Term} from '@global/generalTypes';
-import {Container} from '@components/Container';
+import {type Term} from '../../types/general';
+import {Container} from '../molecules/Container';
 
 export interface FooterBlockProps {
 	title?: string;

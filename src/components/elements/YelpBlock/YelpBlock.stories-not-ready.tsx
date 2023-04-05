@@ -1,11 +1,11 @@
-import Avatar from '@mui/material/Avatar';
-import {css, styled} from '@mui/material/styles';
-import {type Story} from '@storybook/react';
-import {type FC} from 'react';
-import {avatarSpecs, minHeight, minWidth} from '@components/YelpBlock/constants';
+import Avatar from "@mui/material/Avatar";
+import { css, styled } from "@mui/material/styles";
+import { type FC } from "react";
+import { avatarSpecs, minHeight, minWidth } from "./constants";
+import { StoryObj } from "@storybook/react";
 
-const YelpBlockWrapper = styled('div')<{avatarCount?: number}>(({theme, avatarCount = 0}) => {
-	const avatarCss = avatarSpecs.reduce((previousValue, {size, left, bottom}, currentIndex) => {
+const YelpBlockWrapper = styled("div")<{ avatarCount?: number }>(({ theme, avatarCount = 0 }) => {
+	const avatarCss = avatarSpecs.reduce((previousValue, { size, left, bottom }, currentIndex) => {
 		const returnValue = `
 			${previousValue}
 
@@ -18,7 +18,7 @@ const YelpBlockWrapper = styled('div')<{avatarCount?: number}>(({theme, avatarCo
 		`;
 
 		return returnValue;
-	}, '');
+	}, "");
 
 	return css`
 		position: relative;
@@ -60,10 +60,10 @@ const YelpBlock: FC<unknown> = (props) => {
 	const avatarCount = 20;
 
 	return (
-		<YelpBlockWrapper className='YelpBlock-root' avatarCount={avatarCount}>
-			<div className='YelpBlock-avatars'>
-				{Array.from({length: avatarCount}, (_, index) => (
-					<Avatar key={index} className='YelpBlock-avatar' />
+		<YelpBlockWrapper className="YelpBlock-root" avatarCount={avatarCount}>
+			<div className="YelpBlock-avatars">
+				{Array.from({ length: avatarCount }, (_, index) => (
+					<Avatar key={index} className="YelpBlock-avatar" />
 				))}
 				;
 			</div>
@@ -72,9 +72,11 @@ const YelpBlock: FC<unknown> = (props) => {
 	);
 };
 
-// BEGIN: STORY
 export default {
-	title: 'Blocks / Yelp Block'
+	title: "Blocks / Yelp Block",
+	component: YelpBlock,
 };
 
-export const Default: Story<unknown> = (args) => <YelpBlock />;
+export const Default: StoryObj = {
+	args: {}
+};

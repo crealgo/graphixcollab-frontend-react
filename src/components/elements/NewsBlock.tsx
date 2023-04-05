@@ -1,8 +1,8 @@
 import {css, styled, Typography} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type Article} from '@global/generalTypes';
-import {ActionStack} from '@components/ActionStack';
-import {NewsCard} from '@components/NewsCard';
+import {type Action, type Article} from '../../types/general';
+import {ActionStack} from '../molecules/ActionStack';
+import {NewsCard} from '../molecules/NewsCard';
 
 /** START PLAYGROUND */
 

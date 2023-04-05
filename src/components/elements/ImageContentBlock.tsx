@@ -1,12 +1,12 @@
-import { ActionStack } from '@components/ActionStack';
-import { Block } from '@components/Block';
-import { Image, type ImageProps } from '@components/Image';
-import { Text } from '@components/Text';
-import { type SharedBlockProps } from '@global/generalTypes';
+import { ActionStack } from '../molecules/ActionStack';
+import { Block } from '../molecules/Block';
+import { Image, type ImageProps } from '../molecules/Image';
+import { Text } from '../molecules/Text';
+import { type SharedBlockProps } from '../../types/general';
 import { css, styled, Typography } from '@mui/material';
 import { type FC } from 'react';
-import { Container } from './Container';
-import { ContentGrid } from './ContentGrid';
+import { Container } from '../molecules/Container';
+import { ContentGrid } from '../molecules/ContentGrid';
 
 export interface ImageContentBlockProps extends SharedBlockProps {
 	imagePosition?: 'start' | 'end';

@@ -1,6 +1,6 @@
-import { StoryObj, type StoryFn } from '@storybook/react';
-import { chance, generateActions, generateArticles } from '@utils/chance';
-import { type NewsBlockWrapperProps, NewsBlock } from '@components/NewsBlock';
+import { StoryObj } from '@storybook/react';
+import { chance, generateActions, generateArticles } from '../../utils/chance';
+import { NewsBlock, type NewsBlockWrapperProps } from './NewsBlock';
 
 export default {
   component: NewsBlock,

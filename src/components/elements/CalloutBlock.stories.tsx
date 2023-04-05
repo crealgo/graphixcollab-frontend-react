@@ -1,6 +1,6 @@
 import { StoryObj, type Meta, type StoryFn } from '@storybook/react';
-import { CalloutBlock, type CalloutBlockProps } from '@components/CalloutBlock';
-import { generateCalloutBlock } from '@utils/chance';
+import { CalloutBlock, type CalloutBlockProps } from './CalloutBlock';
+import { generateCalloutBlock } from '../../utils/chance';
 
 export default {
   component: CalloutBlock,
@@ -9,3 +9,4 @@ export default {
 export const Default: StoryObj<CalloutBlockProps> = {
   args: generateCalloutBlock(),
 };
+∏
