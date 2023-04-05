@@ -42,8 +42,8 @@ const ButtonIcon = styled(
 )<ButtonIconProps>(
 	({ start, end }) => `
 	svg {
-		height: 0.75em;
-		width: 0.75em;
+		height: 0.875em;
+		width: 0.875em;
 	}
 
 	display: inline-flex;
