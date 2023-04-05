@@ -1,7 +1,7 @@
-import { ServiceInformation } from "@components/BookingService/steps/data";
-import { Heading } from "@components/Heading";
+import { ServiceInformation } from "./steps/data";
+import { Heading } from "../../molecules/Heading";
 import { css, styled } from "@mui/material";
-import { colorIterator } from "@utils/colorIterator";
+import { colorIterator } from "../../../utils/colorIterator";
 import { ComponentPropsWithoutRef, FC } from "react";
 
 export interface BookingOptionProps extends ServiceInformation, ComponentPropsWithoutRef<"input"> {}

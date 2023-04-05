@@ -1,6 +1,6 @@
 import React from "react";
 import { Preview } from "@storybook/react";
-import { ThemeProvider } from "@components/ThemeProvider";
+import { ThemeProvider } from "../src/providers/ThemeProvider";
 import colors from "tailwindcss/colors";
 
 export default {

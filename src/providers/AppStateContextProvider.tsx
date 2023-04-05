@@ -1,8 +1,8 @@
-import { BookingService } from "@components/BookingService";
-import { BannerService } from "@components/BannerService";
+import { BookingService } from "../components/services/BookingService";
+import { BannerService } from "../components/services/BannerService";
 import { FC, PropsWithChildren, useLayoutEffect, useState } from "react";
-import { AppStateContext, AppStateContextOptions as Context } from "./AppStateContext";
-import { ContactService } from "@components/ContactService";
+import { AppStateContext, AppStateContextOptions as Context } from "../contexts/AppStateContext";
+import { ContactService } from "../components/services/ContactService";
 
 type AppStateContextProviderProps = PropsWithChildren<unknown>;
 

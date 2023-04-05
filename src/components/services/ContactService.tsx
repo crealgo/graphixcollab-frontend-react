@@ -1,8 +1,8 @@
 import { Cancel, CheckCircle, MailTwoTone } from "@mui/icons-material";
 import { css, Dialog, DialogActions, DialogContent, Grid, styled, TextField } from "@mui/material";
 import { FC, MouseEvent } from "react";
-import { Button } from "./Button";
-import { DialogTitle } from "./DialogTitle";
+import { Button } from "../molecules/Button";
+import { DialogTitle } from "../molecules/DialogTitle";
 
 type ContactServiceProps = {
 	open?: boolean;

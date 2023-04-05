@@ -1,9 +1,9 @@
-import { ButtonProps } from "@components/Button";
-import { type ActionStackProps } from "@components/molecules/ActionStack";
-import { BannerProps } from "@components/Banner";
-import { FooterBlockProps } from "@components/FooterBlock";
-import { HeaderProps } from "@components/Header";
-import { BlockOptions } from "@utils/generateBlocks";
+import { ButtonProps } from "../components/molecules/Button";
+import { type ActionStackProps } from "../components/molecules/ActionStack";
+import { BannerProps } from "../components/molecules/Banner";
+import { FooterBlockProps } from "../components/elements/FooterBlock";
+import { HeaderProps } from "../components/molecules/Header";
+import { BlockOptions } from "../utils/generateBlocks";
 import { type MouseEventHandler } from "react";
 import { StaticImageData } from "next/image";
 

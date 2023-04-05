@@ -1,16 +1,15 @@
-import { CalloutBlock } from '@components/CalloutBlock';
-import { FanServiceBlock } from '@components/FanServiceBlock';
-import { FaqBlock } from '@components/FaqBlock';
-import { FeaturedInBlock } from '@components/FeaturedInBlock';
-import { GalleryBlock } from '@components/GalleryBlock';
-import { ImageContentBlock } from '@components/ImageContentBlock';
-import { InteractiveEstimator } from '@components/InteractiveEstimator';
-import { IntroBlock } from '@components/IntroBlock';
-import { PageHeaderBlock } from '@components/PageHeaderBlock';
-import { PlaceholderBlock } from '@components/PlaceholderBlock';
-import { ProfilesBlock } from '@components/ProfilesBlock';
-import { ServicesBlock } from '@components/ServicesBlock';
-import { TimelineBlock } from '@components/TimelineBlock';
+import { CalloutBlock } from '../components/elements/CalloutBlock';
+import { FanServiceBlock } from '../components/elements/FanServiceBlock';
+import { FaqBlock } from '../components/elements/FaqBlock';
+import { FeaturedInBlock } from '../components/elements/FeaturedInBlock';
+import { GalleryBlock } from '../components/elements/GalleryBlock';
+import { InteractiveEstimator } from '../components/elements/InteractiveEstimator';
+import { IntroBlock } from '../components/elements/IntroBlock';
+import { PageHeaderBlock } from '../components/elements/PageHeaderBlock';
+import { PlaceholderBlock } from '../components/elements/PlaceholderBlock';
+import { ProfilesBlock } from '../components/elements/ProfilesBlock';
+import { ServicesBlock } from '../components/elements/ServicesBlock';
+import { TimelineBlock } from '../components/elements/TimelineBlock';
 import { ReactNode, useId } from 'react';
 
 const blockMap = {
@@ -19,7 +18,7 @@ const blockMap = {
 	faq: FaqBlock,
 	featured: FeaturedInBlock,
 	gallery: GalleryBlock,
-	imageContent: ImageContentBlock,
+	// imageContent: ImageContentBlock,
 	interactiveEstimator: InteractiveEstimator,
 	intro: IntroBlock,
 	pageHeader: PageHeaderBlock,

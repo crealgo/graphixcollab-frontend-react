@@ -1,5 +1,6 @@
 import { css, styled } from "@mui/material";
 import { ComponentPropsWithoutRef, FC } from "react";
+import { _e } from "../../utils/excludePropsFromForwarding";
 
 type BaseElementProps = ComponentPropsWithoutRef<"div">;
 
@@ -14,7 +15,10 @@ const BaseElement: FC<BaseElementProps> = (props) => (
 	</div>
 );
 
-export const Block = styled(BaseElement)<BlockProps>((props) => {
+export const Block = styled(
+	BaseElement,
+	_e("rounded", "color")
+)<BlockProps>((props) => {
 	const blockColor = {
 		default: "transparent",
 		primary: props.theme.palette.primary.light,

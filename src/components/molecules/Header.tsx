@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
 import { Button } from "./Button";
 import { Container } from "./Container";
+import { Block } from "./Block";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	logo?: string;
@@ -22,7 +23,7 @@ export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	withHero?: boolean;
 }
 
-const HeaderWrapper = styled("header")<{
+const HeaderWrapper = styled(Block)<{
 	isScrolled?: boolean;
 	isBranded?: boolean;
 }>(({ theme, isScrolled, isBranded }) => {
@@ -36,22 +37,19 @@ const HeaderWrapper = styled("header")<{
 		border-bottom-color: ${isScrolled ? `${theme.palette.grey[200]}` : "transparent"};
 		z-index: 999;
 
-		${isBranded
-			? css`
-					background-color: ${isScrolled ? "white" : theme.palette.secondary.light};
-			  `
-			: ""}
-	`;
-});
+		padding-block: 1rem !important;
 
-const ContainerWrapper = styled(Container)(
+		${isBranded ? `background-color: ${isScrolled ? "white" : theme.palette.secondary.light};` : ""}
+	`;
+}).withComponent("header");
+
+const Content = styled("div")(
 	({ theme }) => css`
 		display: flex;
 		align-items: center;
 		gap: 1rem;
 
 		font-size: 1rem;
-		padding-block: 1rem;
 
 		.NavItems-root {
 			display: none;
@@ -118,34 +116,36 @@ export const Header: FC<HeaderProps> = ({ navigationItems, actions, className })
 
 	return (
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
-			<ContainerWrapper>
-				<Logo className="Logo-root">{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
-				<NavItems items={items}>
-					<NavItemDropdown FlyoutComponent={Flyout}>{"Mega Menu"}</NavItemDropdown>
-				</NavItems>
-				<FlexSpacer />
-				<ActionStack size="small" actions={actions} color="secondary">
-					<Button
-						color="text"
-						size="small"
-						onClick={() => {
-							toggleContact();
-						}}
-					>
-						{"Contact Us"}
-					</Button>
-					<Button
-						color="primary"
-						size="small"
-						onClick={() => {
-							toggleBooking();
-						}}
-					>
-						{"Book a Time"}
-					</Button>
-				</ActionStack>
-				<DrawerMenu items={navigationItems} />
-			</ContainerWrapper>
+			<Container>
+				<Content>
+					<Logo className="Logo-root">{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
+					<NavItems items={items}>
+						<NavItemDropdown FlyoutComponent={Flyout}>{"Mega Menu"}</NavItemDropdown>
+					</NavItems>
+					<FlexSpacer />
+					<ActionStack size="small" actions={actions} color="secondary">
+						<Button
+							color="text"
+							size="small"
+							onClick={() => {
+								toggleContact();
+							}}
+						>
+							{"Contact Us"}
+						</Button>
+						<Button
+							color="primary"
+							size="small"
+							onClick={() => {
+								toggleBooking();
+							}}
+						>
+							{"Book a Time"}
+						</Button>
+					</ActionStack>
+					<DrawerMenu items={navigationItems} />
+				</Content>
+			</Container>
 		</HeaderWrapper>
 	);
 };

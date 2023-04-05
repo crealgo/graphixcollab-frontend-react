@@ -1,15 +1,15 @@
-import posterImage from "@assets/screen-printing/poster.jpg";
-import silkScreenImage from "@assets/screen-printing/silk-screen.jpg";
-import toteImage from "@assets/screen-printing/tote.jpg";
-import { type BannerProps } from "@components/Banner";
-import { type FeaturedItemProps } from "@components/DrawerMenu/FeaturedItem";
-import { type GalleryBlockProps } from "@components/GalleryBlock";
-import { HeaderProps } from "@components/Header";
-import { type ImageContentBlockProps } from "@components/ImageContentBlock";
-import { IntroBlockProps } from "@components/IntroBlock";
-import { type PageHeaderBlockProps } from "@components/PageHeaderBlock";
-import { type ProfilesBlockProps } from "@components/ProfilesBlock";
-import { type MileStoneValue } from "@components/Timeline/Milestone";
+import posterImage from "../assets/screen-printing/poster.jpg";
+import silkScreenImage from "../assets/screen-printing/silk-screen.jpg";
+import toteImage from "../assets/screen-printing/tote.jpg";
+import { type BannerProps } from "../components/molecules/Banner";
+import { type FeaturedItemProps } from "../components/molecules/DrawerMenu/FeaturedItem";
+import { type GalleryBlockProps } from "../components/elements/GalleryBlock";
+import { HeaderProps } from "../components/molecules/Header";
+import { type ImageContentBlockProps } from "../components/elements/ImageContentBlock";
+import { IntroBlockProps } from "../components/elements/IntroBlock";
+import { type PageHeaderBlockProps } from "../components/elements/PageHeaderBlock";
+import { type ProfilesBlockProps } from "../components/elements/ProfilesBlock";
+// import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import {
 	type Action,
 	type Article,
@@ -20,7 +20,7 @@ import {
 	type Person,
 	type PersonGroup,
 	type ServiceOptions,
-} from "@global/generalTypes";
+} from "../types/general";
 import Chance from "chance";
 
 export const chance = new Chance();
@@ -108,52 +108,50 @@ export const generateOptions = (n = 5): OptionValue[] =>
 		};
 	}, n);
 
-export const generateMilestones = (n = 5): MileStoneValue[] => [
-	{
-		label: "Design Creation",
-		description:
-			"The first step in screen printing is to create the design that will be printed. This design is typically created using graphic design software and is saved as a high-resolution file.",
-	},
-	{
-		label: "Screen Preparation",
-		description:
-			"Once the design is created, a mesh screen is prepared by coating it with a light-sensitive emulsion. The emulsion is then allowed to dry, and the design is printed onto a transparent film.",
-	},
-	{
-		label: "Exposure",
-		description:
-			"The printed film is placed on the prepared screen and exposed to a bright light. The light hardens the emulsion on the screen, except for the areas where the design has been printed. These areas remain soft and can be washed away later.",
-	},
-	{
-		label: "Washing",
-		description:
-			"After exposure, the screen is washed with water, which removes the soft emulsion, leaving the design on the screen.",
-	},
-	{
-		label: "Ink Preparation",
-		description: "The ink is mixed and prepared according to the color and type of substrate being printed on.",
-	},
-	{
-		label: "Printing",
-		description:
-			"The substrate is placed on the printing press, and the screen is placed on top of it. Ink is then poured onto the screen and spread across it using a squeegee. The ink is forced through the mesh and onto the substrate, creating the printed design.",
-	},
-	{
-		label: "Drying and Curing",
-		description:
-			"After printing, the substrate is dried and cured to ensure that the ink is fully set and will not smudge or wash away.",
-	},
-];
+// export const generateMilestones = (n = 5): MileStoneValue[] => [
+// 	{
+// 		label: "Design Creation",
+// 		description:
+// 			"The first step in screen printing is to create the design that will be printed. This design is typically created using graphic design software and is saved as a high-resolution file.",
+// 	},
+// 	{
+// 		label: "Screen Preparation",
+// 		description:
+// 			"Once the design is created, a mesh screen is prepared by coating it with a light-sensitive emulsion. The emulsion is then allowed to dry, and the design is printed onto a transparent film.",
+// 	},
+// 	{
+// 		label: "Exposure",
+// 		description:
+// 			"The printed film is placed on the prepared screen and exposed to a bright light. The light hardens the emulsion on the screen, except for the areas where the design has been printed. These areas remain soft and can be washed away later.",
+// 	},
+// 	{
+// 		label: "Washing",
+// 		description:
+// 			"After exposure, the screen is washed with water, which removes the soft emulsion, leaving the design on the screen.",
+// 	},
+// 	{
+// 		label: "Ink Preparation",
+// 		description: "The ink is mixed and prepared according to the color and type of substrate being printed on.",
+// 	},
+// 	{
+// 		label: "Printing",
+// 		description:
+// 			"The substrate is placed on the printing press, and the screen is placed on top of it. Ink is then poured onto the screen and spread across it using a squeegee. The ink is forced through the mesh and onto the substrate, creating the printed design.",
+// 	},
+// 	{
+// 		label: "Drying and Curing",
+// 		description:
+// 			"After printing, the substrate is dried and cured to ensure that the ink is fully set and will not smudge or wash away.",
+// 	},
+// ];
 
 export const generateBanner = (): BannerProps => ({
-	children:
-		// "⚡️⚡️ It's sash season!! Come into the shop today to get your custom sash or schedule a consult online! Don't wait too long, spots are filling up.",
-		"⚡️⚡️ It's sash season!! Don't wait too long, spots are filling up.",
-	actions: [
-		{
-			label: "Book a Time",
-		},
-	],
+	children: "⚡️⚡️ It's sash season!! Don't wait too long, spots are filling up.",
+	// actions: [
+	// 	{
+	// 		label: "Book a Time",
+	// 	},
+	// ],
 	ImageProps: {
 		src: generateImage(),
 	},

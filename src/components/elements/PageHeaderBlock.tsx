@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
-import { forwardRef } from "react";
+import { FC, forwardRef } from "react";
 import { type NavItemOptions } from "../../types/general";
-import { type BlockProps } from "../molecules/Block";
+import { Block, type BlockProps } from "../molecules/Block";
 import { Breadcrumbs, type BreadcrumbOptions } from "../molecules/Breadcrumbs";
 import { Container } from "../molecules/Container";
 import { Image, type ImageProps } from "../molecules/Image";
@@ -18,7 +18,7 @@ export interface PageHeaderBlockProps {
 	ImageProps?: ImageProps;
 }
 
-const Wrapper = styled("div")<{
+const Wrapper = styled(Block)<{
 	color?: string;
 }>(
 	({ theme, color }) => css`
@@ -27,7 +27,7 @@ const Wrapper = styled("div")<{
 	`
 );
 
-const Content = styled(Container)(
+const Content = styled("div")(
 	({ theme }) => css`
 		display: grid;
 		grid-template-columns: 1fr auto;
@@ -49,10 +49,16 @@ const TextContent = styled("div")`
 	gap: 0.25rem;
 `;
 
-export const PageHeaderBlock = forwardRef<HTMLDivElement, PageHeaderBlockProps>(
-	({ title, color, breadcrumbs, navigationItems, ImageProps }, ref) => (
-		<>
-			<Wrapper color={color} ref={ref}>
+export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
+	title,
+	color,
+	breadcrumbs,
+	navigationItems,
+	ImageProps,
+}) => (
+	<>
+		<Wrapper>
+			<Container>
 				<Content>
 					<TextContent className="PageHeader-textContent">
 						<Breadcrumbs items={breadcrumbs} />
@@ -62,10 +68,10 @@ export const PageHeaderBlock = forwardRef<HTMLDivElement, PageHeaderBlockProps>(
 					</TextContent>
 					<TopNav align="end" items={navigationItems} />
 				</Content>
-			</Wrapper>
-			{ImageProps && <Image {...ImageProps} height="10rem" width="cover" />}
-		</>
-	)
+			</Container>
+		</Wrapper>
+		{ImageProps && <Image {...ImageProps} height="10rem" width="cover" />}
+	</>
 );
 
 PageHeaderBlock.displayName = "PageHeaderBlock";

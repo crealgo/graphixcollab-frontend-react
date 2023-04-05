@@ -1,5 +1,5 @@
-import { ThemeProvider } from '@components/utility/ThemeProvider';
-import { AppStateContextProvider } from '@contexts/AppStateContextProvider';
+import { ThemeProvider } from '../providers/ThemeProvider';
+import { AppStateContextProvider } from '../providers/AppStateContextProvider';
 import '@fontsource/inter';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';

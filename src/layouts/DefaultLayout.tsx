@@ -1,12 +1,11 @@
-import { BannerProps } from "@components/Banner";
-import { FooterBlock, FooterBlockProps } from "@components/FooterBlock";
-import { Header, HeaderProps } from "@components/Header";
-import { PlaceholderBlock } from "@components/PlaceholderBlock";
-import { AppStateContextProvider } from "@contexts/AppStateContextProvider";
-import { useAppState } from "@hooks/useAppState";
+import { useAppState } from "../hooks/useAppState";
 import { css, styled } from "@mui/material/styles";
 import { type NextPage } from "next";
-import { useEffect, useLayoutEffect, type ReactNode } from "react";
+import { useLayoutEffect, type ReactNode } from "react";
+import { FooterBlock, FooterBlockProps } from "../components/elements/FooterBlock";
+import { PlaceholderBlock } from "../components/elements/PlaceholderBlock";
+import { BannerProps } from "../components/molecules/Banner";
+import { Header, HeaderProps } from "../components/molecules/Header";
 
 type DefaultLayoutProps = NextPage<{
 	children: ReactNode;
@@ -41,6 +40,11 @@ const BackgroundImageWrapper = styled("div")<{ flipped?: boolean }>(
 		}
 	`
 );
+
+const Main = styled('main')`
+	display: grid;
+	gap: 1rem;
+`
 
 export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, children }) => {
 	const { setBannerProps } = useAppState();
@@ -77,7 +81,7 @@ export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, ch
 			<BackgroundImage className="Motif">
 				<BackgroundImageWrapper></BackgroundImageWrapper>
 			</BackgroundImage>
-			<main id="main-content">{children}</main>
+			<Main id="main-content">{children}</Main>
 			<PlaceholderBlock name="Yelp Block" />
 			<FooterBlock {...FooterProps} />
 		</>

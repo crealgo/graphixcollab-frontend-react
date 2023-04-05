@@ -1,5 +1,5 @@
-import { PageProps } from "@global/generalTypes";
-import { DefaultLayout } from "@components/templates/DefaultLayout";
+import { PageProps } from "../types/general";
+import { DefaultLayout } from "../layouts/DefaultLayout";
 import {
 	generateActions,
 	generateBanner,
@@ -7,14 +7,16 @@ import {
 	generateGalleryBlock,
 	generateHeader,
 	generateIntroBlock,
+	generatePageHeaderBlock,
 	generateServicesBlock,
 	generateTimelineBlock,
-} from "@utils/chance";
-import { generateBlocks } from "@utils/generateBlocks";
+} from "../utils/chance";
+import { generateBlocks } from "../utils/generateBlocks";
 import { GetStaticProps, NextPage } from "next";
+import colors from "tailwindcss/colors";
 
-const HomePage: NextPage<PageProps> = ({ layout, blocks }) => (
-	<DefaultLayout BannerProps={layout.banner} FooterProps={layout.footer}>
+const GraphixCollab: NextPage<PageProps> = ({ layout, blocks }) => (
+	<DefaultLayout HeaderProps={layout.header} BannerProps={layout.banner} FooterProps={layout.footer}>
 		{generateBlocks(blocks)}
 	</DefaultLayout>
 );
@@ -28,7 +30,21 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 				footer: generateFooter(),
 			},
 			blocks: [
-				{ type: "intro", props: generateIntroBlock() },
+				{
+					type: "pageHeader",
+					props: {
+						...generatePageHeaderBlock(),
+						color: colors.cyan[300],
+						title: "Graphix Collab",
+					},
+				},
+				{
+					type: "intro",
+					props: {
+						...generateIntroBlock(),
+						color: colors.cyan[300],
+					},
+				},
 				{
 					type: "featured",
 					props: {
@@ -44,14 +60,14 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 						],
 					},
 				},
+				{ type: "services", props: generateServicesBlock() },
 				{
 					type: "interactiveEstimator",
 					props: {
 						actions: generateActions(),
 					},
 				},
-				{ type: "services", props: generateServicesBlock() },
-				// { type: "timeline", props: generateTimelineBlock() },
+				{ type: "timeline", props: generateTimelineBlock() },
 				// {type: 'fanService', props: generateFanServiceBlock()},
 				{ type: "gallery", props: generateGalleryBlock() },
 			],
@@ -59,4 +75,4 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 	};
 };
 
-export default HomePage;
+export default GraphixCollab;

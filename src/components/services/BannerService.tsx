@@ -1,4 +1,4 @@
-import { Banner, BannerProps } from "@components/Banner";
+import { Banner, BannerProps } from "../molecules/Banner";
 import Collapse from "@mui/material/Collapse";
 import { FC, PropsWithChildren } from "react";
 

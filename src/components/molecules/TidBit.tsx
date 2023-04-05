@@ -10,7 +10,7 @@ export type TidBitProps = PropsWithChildren<{
 	icon?: ReactNode;
 }>;
 
-export const TidBit = styled(ButtonBase)((props) => {
+export const TidBit = styled(ButtonBase)<TidBitProps>((props) => {
 	const resolvedColor = {
 		primary: "#B20838",
 		secondary: "#FDE047",

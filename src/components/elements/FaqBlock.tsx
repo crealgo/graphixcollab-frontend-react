@@ -35,7 +35,7 @@ export const FaqBlock: FC<FaqBlockProps> = ({ title, subtitle, description, acti
 						<Heading level={2}>{title}</Heading>
 					</StyledBlockHeaderWrapper>
 				</Container>
-				<Container maxWidth={"65rem !important"}>
+				<Container>
 					{faqs?.map((faq, faqIndex) => (
 						<FaqAccordion key={faqIndex} {...faq} />
 					))}

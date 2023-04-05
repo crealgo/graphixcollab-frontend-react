@@ -1,4 +1,4 @@
-import { ServiceInformation } from "@components/BookingService/steps/data";
+import { ServiceInformation } from "./steps/data";
 import { css, styled } from "@mui/material";
 import { ComponentPropsWithoutRef, FC } from "react";
 

@@ -1,4 +1,4 @@
-import imageSrc from "@assets/sitting-and-laughing-intro.webp";
+import imageSrc from "../../assets/sitting-and-laughing-intro.webp";
 import { ActionStack } from "../molecules/ActionStack";
 import { Block } from "../molecules/Block";
 import { type ImageProps } from "../molecules/Image";

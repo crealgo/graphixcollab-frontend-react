@@ -1,4 +1,4 @@
-import {NavItemOptions} from '@global/generalTypes';
+import {NavItemOptions} from '../types/general';
 import {useRouter} from 'next/router';
 
 export const useNavigationItems = (): NavItemOptions[] => {
