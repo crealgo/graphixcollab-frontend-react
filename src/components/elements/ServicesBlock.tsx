@@ -7,7 +7,7 @@ import { Block, type BlockProps } from "../molecules/Block";
 import { Button } from "../molecules/Button";
 import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
-import { HorizontalCard } from "../molecules/HorizontalCard";
+import { Card } from "../molecules/Card";
 import { ActionStack } from "../molecules/ActionStack";
 
 export interface ServicesBlockProps extends SharedBlockProps {
@@ -55,13 +55,13 @@ const Wrapper = styled("div")(
 		${theme.breakpoints.up("sm")} {
 			.services {
 				row-gap: 3rem;
-				grid-template-columns: repeat(2, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 
 		${theme.breakpoints.up("md")} {
 			.services {
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(5, 1fr);
 			}
 		}
 	`
@@ -78,7 +78,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, descrip
 				</Container>
 				<div className="services">
 					{services?.map((service, serviceIndex) => (
-						<HorizontalCard {...service} key={serviceIndex} />
+						<Card {...service} key={serviceIndex} />
 					))}
 				</div>
 				<Container size="small">

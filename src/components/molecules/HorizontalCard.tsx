@@ -4,15 +4,16 @@ import { styled } from "@mui/material/styles";
 import { FC, type ComponentPropsWithRef } from "react";
 import { useAppState } from "../../hooks/useAppState";
 import { colorIterator } from "../../utils/colorIterator";
-import { ActionStack } from "./ActionStack";
+import { ActionStack, ActionStackProps } from "./ActionStack";
 import { Button } from "./Button";
-import { type ImageProps } from "./Image";
+import { Image, type ImageProps } from "./Image";
 
 interface CardProps extends ComponentPropsWithRef<"a"> {
 	title?: string;
 	subtitle?: string;
 	description?: string;
 	ImageProps?: ImageProps;
+	actions?: ActionStackProps["actions"];
 }
 
 const CardAnchor = styled("a")`
@@ -55,17 +56,17 @@ const CardAnchor = styled("a")`
 	${colorIterator("background", ".image")}
 `;
 
-export const HorizontalCard: FC<CardProps> = ({ title, subtitle, description, ...props }) => {
+export const HorizontalCard: FC<CardProps> = ({ title, subtitle, description, ImageProps, actions, ...props }) => {
 	const { toggleBooking } = useAppState();
 
 	return (
 		<CardAnchor {...props}>
-			<div className="image" />
+			<Image />
 			<div className="content">
 				<Typography variant="caption">{subtitle}</Typography>
 				<Typography variant="h5">{title}</Typography>
 				<Typography variant="caption">{description}</Typography>
-				<ActionStack>
+				<ActionStack actions={actions}>
 					<Button
 						color="secondary"
 						size="small"

@@ -1,12 +1,12 @@
-import { Block, type BlockProps } from "../molecules/Block";
-import { ServiceCard } from "../molecules/Card";
-import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
 import { Message } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { type FC } from "react";
+import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
 import { ActionStack } from "../molecules/ActionStack";
+import { Block, type BlockProps } from "../molecules/Block";
 import { Button } from "../molecules/Button";
+import { ServiceCard } from "../molecules/Card";
 import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
 
@@ -73,7 +73,7 @@ const Wrapper = styled("div")(
 	`
 );
 
-export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
+export const ServicesPreviewBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
 	<Block>
 		<Container>
 			<Wrapper>
@@ -101,5 +101,3 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, descrip
 		</Container>
 	</Block>
 );
-
-ServicesBlock.displayName = "ServicesBlock";

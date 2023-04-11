@@ -1,22 +1,21 @@
-import { ActionStack } from './ActionStack';
-import { Button } from './Button';
-import { type ImageProps } from './Image';
-import { type ServiceOptions } from '../../types/general';
-import { KeyboardArrowRight } from '@mui/icons-material';
-import { Typography, useMediaQuery } from '@mui/material';
-import { css, styled, useTheme } from '@mui/material/styles';
-import { chance } from '../../utils/chance';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { colorIterator } from '../../utils/colorIterator';
-import { useAppState } from '../../hooks/useAppState';
+import { KeyboardArrowRight } from "@mui/icons-material";
+import { Typography, useMediaQuery } from "@mui/material";
+import { css, styled, useTheme } from "@mui/material/styles";
+import { FC, type ComponentPropsWithRef } from "react";
+import { useAppState } from "../../hooks/useAppState";
+import { type ServiceOptions } from "../../types/general";
+import { chance } from "../../utils/chance";
+import { colorIterator } from "../../utils/colorIterator";
+import { ActionStack } from "./ActionStack";
+import { Button } from "./Button";
+import { Image, type ImageProps } from "./Image";
 
-interface ServiceCardProps extends ServiceOptions, ComponentPropsWithRef<'a'> {
+interface ServiceCardProps extends ServiceOptions, ComponentPropsWithRef<"a"> {
 	ImageProps?: ImageProps;
 }
 
-const CardAnchor = styled('a')(({ theme }) => {
-
-	const randomRotation = `${chance.bool() ? '' : '-'}${chance.natural({ min: 2, max: 7 })}`;
+const CardAnchor = styled("a")(({ theme }) => {
+	const randomRotation = `${chance.bool() ? "" : "-"}${chance.natural({ min: 2, max: 7 })}`;
 
 	return css`
 		cursor: pointer;
@@ -55,13 +54,9 @@ const CardAnchor = styled('a')(({ theme }) => {
 			}
 		}
 
-		${colorIterator('background', '.image')}
+		${colorIterator("background", ".image")}
 
-		& > * {
-			z-index: 1;
-		}
-
-		${theme.breakpoints.up('sm')} {
+		${theme.breakpoints.up("sm")} {
 			text-align: center;
 			grid-template-columns: 1fr;
 
@@ -81,50 +76,34 @@ const CardAnchor = styled('a')(({ theme }) => {
 				}
 			}
 		}
-	`
+	`;
 });
 
-export const ServiceCard = forwardRef<HTMLAnchorElement, ServiceCardProps>(
-	({ title, subtitle, description, imageSrc, ImageProps, ...props }, ref) => {
-		const { breakpoints } = useTheme();
-		const isMobile = useMediaQuery(breakpoints.down('sm'));
-		const { toggleBooking } = useAppState();
+export const Card: FC<ServiceCardProps> = ({ title, subtitle, description, imageSrc, ImageProps, ...props }) => {
+	const { breakpoints } = useTheme();
+	const isMobile = useMediaQuery(breakpoints.down("sm"));
+	const { toggleBooking } = useAppState();
 
-		return (
-			<CardAnchor {...props} ref={ref}>
-				<div className='image' />
-				{/* <NextImage
-					className='Image-root'
-					src={imageSrc || ''}
-					alt='thing'
-					quality={100}
-					fill
-					style={{
-						width: '100%',
-						height: '100%',
-						objectFit: 'cover'
-					}}
-				/> */}
-				<div className="content">
-					<Typography variant='caption'>{subtitle}</Typography>
-					<Typography variant='h5'>{title}</Typography>
-					<Typography variant='caption'>{description}</Typography>
-					<ActionStack align={isMobile ? 'start' : 'center'}>
-						<Button
-							color={isMobile ? 'secondary' : 'text'}
-							size='small'
-							endIcon={<KeyboardArrowRight />}
-							onClick={() => {
-								toggleBooking();
-							}}
-						>
-							{'Book Appointment'}
-						</Button>
-					</ActionStack>
-				</div>
-			</CardAnchor>
-		);
-	}
-);
-
-ServiceCard.displayName = 'ServiceCard';
+	return (
+		<CardAnchor {...props}>
+			<Image className="image" />
+			<div className="content">
+				<Typography variant="caption">{subtitle}</Typography>
+				<Typography variant="h5">{title}</Typography>
+				<Typography variant="caption">{description}</Typography>
+				<ActionStack align={isMobile ? "start" : "center"}>
+					<Button
+						color={isMobile ? "secondary" : "text"}
+						size="small"
+						endIcon={<KeyboardArrowRight />}
+						onClick={() => {
+							toggleBooking();
+						}}
+					>
+						{"Book Appointment"}
+					</Button>
+				</ActionStack>
+			</div>
+		</CardAnchor>
+	);
+};

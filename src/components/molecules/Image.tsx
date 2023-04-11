@@ -4,6 +4,7 @@ import { ComponentPropsWithRef, FC, ReactNode } from "react";
 
 export type ImageProps = ComponentPropsWithRef<"img"> & {
 	caption?: ReactNode;
+	shape?: "square" | "portrait" | "landscape";
 };
 
 const BaseElement: FC<ImageProps> = ({ className, onLoad: userOnLoad, onError: userOnError, caption, ...props }) => {
@@ -21,16 +22,22 @@ const BaseElement: FC<ImageProps> = ({ className, onLoad: userOnLoad, onError: u
 
 	return (
 		<figure className={clsx("Image-root", className)}>
-			<div>
-				<img className="Image-element" onLoad={onLoad} onError={onError} {...props} />
-			</div>
+			<img className="Image-element" onLoad={onLoad} onError={onError} {...props} />
 			<figcaption className="Image-caption">{caption}</figcaption>
 		</figure>
 	);
 };
 
-export const Image = styled(BaseElement)(
-	({ theme }) => css`
+export const Image = styled(BaseElement)(({ theme, shape }) => {
+	const shapeCss = {
+		square: css`
+			aspect-ratio: 1;
+		`,
+		portrait: css``,
+		landscape: css``,
+	}[shape ?? "square"];
+
+	return css`
 		margin: unset;
 		padding: unset;
 		border: unset;
@@ -41,8 +48,10 @@ export const Image = styled(BaseElement)(
 		grid-template-columns: 1fr;
 		gap: 0.5rem;
 
+		background-color: ${theme.palette.grey[200]};
 
 		/* FIXME: doesn't work well with caption, needs wrapper around image */
+		${shapeCss}
 
 		.Image-element {
 			outline: unset;
@@ -51,10 +60,9 @@ export const Image = styled(BaseElement)(
 			height: 100%;
 			border-radius: 0.25rem;
 			aspect-ratio: 1;
-			background-color: ${theme.palette.grey[200]};
 		}
 
 		&[loaded] {
 		}
-	`
-);
+	`;
+});
