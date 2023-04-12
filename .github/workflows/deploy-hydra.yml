@@ -21,7 +21,8 @@ jobs:
       - name: Checkout 2
         uses: actions/checkout@v3
         with:
-          repository: crealgo/crealgo-static
+          repository: crealgo/portfolio-frontend
+          token: ${{ secrets.DEPLOYMENT_TOKEN }}
           path: app
 
       # - name: Setup Repository
@@ -34,7 +35,7 @@ jobs:
       #   run: |
       #     npx gh-pages \
       #       -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" \
-      #       --repo https://git:${{ github.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static.git \
+      #       --repo https://git:${{ secrets.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static \
       #       --dest ./test-deploy
 
       # - name: Deploy Fashion Greek USC Static Site
