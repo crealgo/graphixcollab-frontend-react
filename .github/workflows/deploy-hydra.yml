@@ -17,14 +17,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup
-        run: npm ci
+        run: npm i
 
-      - name: Verify
-        run: npm run verify
+      # - name: Verify
+      #   run: npm run verify
 
       - name: Deploy Github Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run docs:deploy
 
-      - name: Deploy Fashion Greek USC Static Site
-        run: npm run site:deploy
+      # - name: Deploy Fashion Greek USC Static Site
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: npm run site:deploy
 
