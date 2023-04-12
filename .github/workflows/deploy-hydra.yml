@@ -11,8 +11,6 @@ permissions:
 
 jobs:
   build-and-deploy:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,7 +26,7 @@ jobs:
         run: |
           npx gh-pages \
             -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" \
-            --repo https://git:${GITHUB_TOKEN}@github.com/crealgo/crealgo-static.git \
+            --repo https://git:${{ github.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static.git \
             --dest ./test-deploy
 
       # - name: Deploy Fashion Greek USC Static Site
