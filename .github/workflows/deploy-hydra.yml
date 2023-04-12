@@ -2,7 +2,7 @@ name: Deploy Hydra React
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "ci-test"]
 
   workflow_dispatch:
 
@@ -16,7 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup
+      # - name: Setup Git Config
+      #   run: |
+      #     git config user.name ${{ workflow_dispatch.action.login }}
+      #     git config user.email ${{ workflow_dispatch.action.login }}
+
+      - name: Setup Repository
         run: npm i
 
       # - name: Verify
@@ -25,7 +30,7 @@ jobs:
       - name: Deploy Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run docs:deploy
+        run: npm run test:deploy
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:

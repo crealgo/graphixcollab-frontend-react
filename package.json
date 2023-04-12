@@ -42,6 +42,7 @@
   "scripts": {
     "dev": "npm run site:dev",
     "build": "rollup -c",
+    "test:deploy": "npm run docs:build && gh-pages -d test-out --repo https://github.com/crealgo/crealgo-static --dest ./test-deploy",
     "verify": "npm run lint:ts && npm run lint:es",
     "lint:ts": "tsc --noEmit",
     "lint:es": "eslint --fix --ext .ts,.tsx src/",
