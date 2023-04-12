@@ -21,7 +21,7 @@ jobs:
       - name: Checkout 2
         uses: actions/checkout@v3
         with:
-          repository: crealgo/portfolio-frontend
+          repository: crealgo/crealgo-portfolio-frontend
           token: ${{ secrets.DEPLOYMENT_TOKEN }}
           path: app
 
