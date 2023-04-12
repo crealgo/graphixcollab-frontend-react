@@ -33,6 +33,7 @@ jobs:
         run: |
           npx gh-pages
             -d test-out
+            -u "Crealgo Bot <hello.crealgo@gmail.com>"
             --repo https://git:${GITHUB_TOKEN}github.com/crealgo/crealgo-static
             --dest ./test-deploy
 
