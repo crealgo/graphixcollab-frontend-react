@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
-import { BannerService } from "../components/services/BannerService";
-import { ContactService } from "../components/services/ContactService";
-import { SquareBookingService } from "../components/services/SquareBookingService";
+import { BannerService } from "../components/service/BannerService";
+import { ContactService } from "../components/service/ContactService";
+import { SquareBookingService } from "../components/service/SquareBookingService";
 import { AppStateContext, AppStateContextOptions as Context } from "../contexts/AppStateContext";
 
 type AppStateContextProviderProps = PropsWithChildren<unknown>;

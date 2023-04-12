@@ -3,11 +3,11 @@ import silkScreenImage from "../assets/screen-printing/silk-screen.jpg";
 import toteImage from "../assets/screen-printing/tote.jpg";
 import { type BannerProps } from "../components/base/Banner";
 import { type FeaturedItemProps } from "../components/base/DrawerMenu/FeaturedItem";
-import { type GalleryBlockProps } from "../components/blocks/GalleryBlock";
+import { type GalleryBlockProps } from "../components/block/GalleryBlock";
 import { HeaderProps } from "../components/base/Header";
-import { IntroBlockProps } from "../components/blocks/IntroBlock";
-import { type PageHeaderBlockProps } from "../components/blocks/PageHeaderBlock";
-import { type ProfilesBlockProps } from "../components/blocks/ProfilesBlock";
+import { IntroBlockProps } from "../components/block/IntroBlock";
+import { type PageHeaderBlockProps } from "../components/block/PageHeaderBlock";
+import { type ProfilesBlockProps } from "../components/block/ProfilesBlock";
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import {
 	type Action,

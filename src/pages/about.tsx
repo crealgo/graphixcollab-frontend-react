@@ -1,4 +1,4 @@
-import { FeaturedInBlock } from "../components/blocks/FeaturedInBlock";
+import { FeaturedInBlock } from "../components/block/FeaturedInBlock";
 import { DefaultLayout } from "../layouts/DefaultLayout";
 import { useState } from "react";
 

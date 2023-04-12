@@ -1,7 +1,7 @@
 import { ButtonProps } from "../components/base/Button";
 import { type ActionStackProps } from "../components/base/ActionStack";
 import { BannerProps } from "../components/base/Banner";
-import { FooterBlockProps } from "../components/blocks/FooterBlock";
+import { FooterBlockProps } from "../components/block/FooterBlock";
 import { HeaderProps } from "../components/base/Header";
 import { BlockOptions } from "../utils/generateBlocks";
 import { type MouseEventHandler } from "react";
