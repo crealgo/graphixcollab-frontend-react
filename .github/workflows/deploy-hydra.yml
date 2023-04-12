@@ -16,18 +16,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Repository
-        run: npm i
+      - name: Checkout 2
+        uses: actions/checkout@v3
+        with:
+        repository: my-org/my-tools
+        path: my-tools
+
+      # - name: Setup Repository
+      #   run: npm i
 
       # - name: Verify
       #   run: npm run verify
 
-      - name: Deploy Github Pages
-        run: |
-          npx gh-pages \
-            -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" \
-            --repo https://git:${{ github.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static.git \
-            --dest ./test-deploy
+      # - name: Deploy Github Pages
+      #   run: |
+      #     npx gh-pages \
+      #       -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" \
+      #       --repo https://git:${{ github.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static.git \
+      #       --dest ./test-deploy
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:
