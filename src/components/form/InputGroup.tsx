@@ -12,12 +12,14 @@ export interface InputGroupProps extends BaseElementProps, ExposedInputProps {
 }
 
 const InputElementWrapper = styled.div`
+	display: inline-flex;
 	position: relative;
+	gap: 0.25rem;
 `;
 
 const BaseContentElement = styled.span`
 	width: clamp(2rem);
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	bottom: 0;
 `;
@@ -30,10 +32,10 @@ const EndContent = styled(BaseContentElement)`
 	right: 0;
 `;
 
-export const InputGroup: FC<InputGroupProps> = ({ startContent, endContent, InputProps, ref, ...props }) => (
+export const InputGroup: FC<InputGroupProps> = ({ startContent, endContent, InputProps, ref, children, ...props }) => (
 	<InputElementWrapper {...props}>
 		{startContent && <StartContent>{startContent}</StartContent>}
-		<Input ref={ref} {...InputProps} />
+		{children}
 		{endContent && <EndContent>{endContent}</EndContent>}
 	</InputElementWrapper>
 );

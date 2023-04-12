@@ -3,7 +3,7 @@ import { ComponentPropsWithRef, ComponentPropsWithoutRef, FC, useId } from "reac
 // import { Size } from "../../../types/general";
 import styled from "@emotion/styled";
 import { InputProps } from "./Input";
-import { SelectProps } from "./Select";
+import { SelectProps } from "./Autocomplete";
 
 // type ExposedInputProps = Pick<InputProps, "id" | "placeholder" | "ref">;
 type BaseElementProps = ComponentPropsWithoutRef<"div">;

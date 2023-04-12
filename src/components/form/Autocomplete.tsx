@@ -1,6 +1,4 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { ComponentPropsWithRef, FC, PropsWithChildren, useId } from "react";
+import { FC, PropsWithChildren, useId } from "react";
 import { Size } from "../../types/general";
 import { Input, InputProps } from "./Input";
 
@@ -9,13 +7,13 @@ type OptionValue = {
 	value: string;
 };
 
-export interface SelectProps extends InputProps, PropsWithChildren {
+export interface AutocompleteProps extends InputProps, PropsWithChildren {
 	inputSize?: Size;
 	options?: OptionValue[];
 }
 
 // TODO: add dropdown icon 'button'
-export const Select: FC<SelectProps> = ({ children, options, ...props }) => {
+export const Autocomplete: FC<AutocompleteProps> = ({ children, options, ...props }) => {
 	const generatedId = useId();
 	const listId = `list-${generatedId}`;
 

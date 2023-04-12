@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Select, SelectProps } from "./Select";
+import { Autocomplete, AutocompleteProps } from "./Autocomplete";
 
 export default {
-	component: Select,
+	component: Autocomplete,
 } as Meta;
 
-export const Default: StoryObj<SelectProps> = {
+export const Default: StoryObj<AutocompleteProps> = {
 	args: {
 		placeholder: "Start Typing...",
 		inputSize: "medium",
