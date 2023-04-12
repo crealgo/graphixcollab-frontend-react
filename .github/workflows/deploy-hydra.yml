@@ -18,11 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Git Config
-        run: |
-          git config user.name 'Crealgo Bot'
-          git config user.email 'hello.crealgo@gmail.com'
-
       - name: Setup Repository
         run: npm i
 
@@ -31,7 +26,7 @@ jobs:
 
       - name: Deploy Github Pages
         run: |
-          npx gh-pages -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" --repo https://git:${GITHUB_TOKEN}github.com/crealgo/crealgo-static --dest ./test-deploy
+          npx gh-pages -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" --repo https://git:${GITHUB_TOKEN}@github.com/crealgo/crealgo-static --dest ./test-deploy
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:
