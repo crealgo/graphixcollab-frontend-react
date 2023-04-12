@@ -28,7 +28,7 @@ jobs:
       - name: Checkout Test
         uses: actions/checkout@v3
         with:
-          repository: "https://github.com/$STATIC_REPO"
+          repository: https://github.com/${{ env.STATIC_REPO }}
           token: $GITHUB_TOKEN
 
       # - name: Setup Node
