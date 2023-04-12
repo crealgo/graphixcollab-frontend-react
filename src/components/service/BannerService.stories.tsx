@@ -32,6 +32,5 @@ export const Default: StoryObj<BannerProps> = {
 			</>
 		);
 	},
-
 	args: generateBanner(),
 };

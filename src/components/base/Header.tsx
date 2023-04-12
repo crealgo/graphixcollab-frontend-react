@@ -1,10 +1,10 @@
 import { css, styled } from "@mui/material";
 import { useRouter } from "next/router";
-import { useMemo, useRef, type ComponentPropsWithoutRef, type FC } from "react";
-import { useAppState } from "../../hooks/useAppState";
+import { useMemo, type ComponentPropsWithoutRef, type FC } from "react";
 import { useNavigationItems } from "../../hooks/useNavigationItems";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import { type Action, type NavItemOptions } from "../../types/general";
+import { _e } from "../../utils/excludePropsFromForwarding";
 import { ActionStack } from "./ActionStack";
 import { Block } from "./Block";
 import { Container } from "./Container";
@@ -13,7 +13,6 @@ import { FlexSpacer } from "./FlexSpacer";
 import { Flyout } from "./Flyout";
 import { NavItemDropdown } from "./NavItemDropdown";
 import { NavItems } from "./NavItems";
-import { _e } from "../../utils/excludePropsFromForwarding";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	logo?: string;
@@ -23,7 +22,10 @@ export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {
 	withHero?: boolean;
 }
 
-const HeaderWrapper = styled(Block, _e('isBranded', 'isScrolled'))<{
+const HeaderWrapper = styled(
+	Block,
+	_e("isBranded", "isScrolled")
+)<{
 	isScrolled?: boolean;
 	isBranded?: boolean;
 }>(({ theme, isScrolled, isBranded }) => {
