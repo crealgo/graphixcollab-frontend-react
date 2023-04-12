@@ -11,15 +11,17 @@ permissions:
 
 jobs:
   build-and-deploy:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: Setup Git Config
-      #   run: |
-      #     git config user.name ${{ workflow_dispatch.action.login }}
-      #     git config user.email ${{ workflow_dispatch.action.login }}
+      - name: Setup Git Config
+        run: |
+          git config user.name 'Crealgo Bot'
+          git config user.email 'hello.crealgo@gmail.com'
 
       - name: Setup Repository
         run: npm i
@@ -28,8 +30,6 @@ jobs:
       #   run: npm run verify
 
       - name: Deploy Github Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run test:deploy
 
       # - name: Deploy Fashion Greek USC Static Site
