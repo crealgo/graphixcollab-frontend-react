@@ -9,6 +9,15 @@ on:
 permissions:
   contents: write
 
+env:
+  USER: Crealgo Bot <hello.crealgo@gmail.com>
+  GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
+
+  STATIC_REPO: crealgo/crealgo-static
+
+  DIR_COMPONENTS: ./projects/component-library
+  DIR_SITE_FASHIONGREEK: ./projects/component-library
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,15 +28,15 @@ jobs:
       - name: Setup Repository
         run: npm i
 
-      # - name: Verify
-      #   run: npm run verify
+      - name: Verify
+        run: npm run verify
 
       - name: Deploy Github Pages
         run: |
           npx gh-pages \
-            -d test-out -u "Crealgo Bot <hello.crealgo@gmail.com>" \
-            --repo https://git:${{ secrets.DEPLOYMENT_TOKEN }}@github.com/crealgo/crealgo-static \
-            --dest ./test-deploy
+            -d test-out -u "$USER" \
+            --repo https://git:$GITHUB_TOKEN@github.com/$STATIC_REPO \
+            --dest $DIR_COMPONENTS
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:
