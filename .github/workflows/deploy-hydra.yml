@@ -24,8 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          token: $GITHUB_TOKEN
 
       # - name: Setup Node
       #   uses: actions/setup-node@latest
@@ -46,7 +44,7 @@ jobs:
         run: npx gh-pages \
             -d storybook-static \
             -u "$USER" \
-            --repo https://github.com/$STATIC_REPO \
+            --repo https://git:$GITHUB_TOKEN@github.com/$STATIC_REPO \
             --dest $DIR_COMPONENTS
 
       # - name: Deploy Fashion Greek USC Static Site
