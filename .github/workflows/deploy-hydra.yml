@@ -1,0 +1,30 @@
+name: Deploy Hydra React
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        run: npm ci
+
+      - name: Verify
+        run: npm run verify
+
+      - name: Deploy Github Pages
+        run: npm run docs:deploy
+
+      - name: Deploy Fashion Greek USC Static Site
+        run: npm run site:deploy
+
