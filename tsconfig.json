@@ -19,7 +19,6 @@
     ],
     "rootDirs": [
       "src",
-      "docs"
     ],
     "allowJs": true,
     "skipLibCheck": true,

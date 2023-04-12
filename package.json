@@ -43,7 +43,7 @@
     "docs:dev": "storybook dev -p 6006 -s public",
     "docs:build": "storybook build -s public",
     "docs:deploy": "npm run docs:build && gh-pages -d storybook-static --repo https://github.com/crealgo/crealgo-static --dest ./projects/component-library",
-    "eslint": "eslint --fix --ext .ts,.tsx src/ docs/",
+    "eslint": "eslint --fix --ext .ts,.tsx src/",
     "tslint": "tsc --noEmit",
     "verify": "npm run eslint && npm run tslint",
     "dev": "next dev",
