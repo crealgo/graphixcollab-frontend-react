@@ -7,6 +7,7 @@ import { colorIterator } from "../../utils/colorIterator";
 import { ActionStack, ActionStackProps } from "./ActionStack";
 import { Button } from "./Button";
 import { Image, type ImageProps } from "./Image";
+import clsx from "clsx";
 
 interface CardProps extends ComponentPropsWithRef<"a"> {
 	title?: string;
@@ -56,12 +57,12 @@ const CardAnchor = styled("a")`
 	${colorIterator("background", ".image")}
 `;
 
-export const HorizontalCard: FC<CardProps> = ({ title, subtitle, description, ImageProps, actions, ...props }) => {
+export const HorizontalCard: FC<CardProps> = ({ title, subtitle, description, className, ImageProps, actions, ...props }) => {
 	const { toggleBooking } = useAppState();
 
 	return (
-		<CardAnchor {...props}>
-			<Image />
+		<CardAnchor className={clsx('HorizontalCard-root', className)} {...props}>
+			<Image className="image" />
 			<div className="content">
 				<Typography variant="caption">{subtitle}</Typography>
 				<Typography variant="h5">{title}</Typography>

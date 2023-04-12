@@ -1,14 +1,16 @@
 import { Message } from "@mui/icons-material";
-import { Box, Typography } from "@mui/material";
+import { Box, Theme, Typography, useMediaQuery } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { type FC } from "react";
 import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
 import { ActionStack } from "../molecules/ActionStack";
 import { Block, type BlockProps } from "../molecules/Block";
 import { Button } from "../molecules/Button";
-import { ServiceCard } from "../molecules/Card";
+import { Card } from "../molecules/Card";
+import { HorizontalCard } from "../molecules/HorizontalCard";
 import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
+import { colorIterator } from "../../utils/colorIterator";
 
 export interface ServicesBlockProps extends SharedBlockProps {
 	services?: ServiceOptions[];
@@ -50,6 +52,10 @@ const Wrapper = styled("div")(
 			display: grid;
 			grid-template-columns: 1fr;
 			gap: 1rem;
+
+			.service {
+				${colorIterator("background", ".image")}
+			}
 		}
 
 		${theme.breakpoints.up("sm")} {
@@ -73,31 +79,37 @@ const Wrapper = styled("div")(
 	`
 );
 
-export const ServicesPreviewBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
-	<Block>
-		<Container>
-			<Wrapper>
-				<Container size="small">
-					<Typography variant="overline">{subtitle}</Typography>
-					<Heading level={1}>{title}</Heading>
-					<Typography variant="body2">{description}</Typography>
-				</Container>
-				<div className="services">
-					{services?.map((service, serviceIndex) => (
-						<ServiceCard {...service} key={serviceIndex} />
-					))}
-				</div>
-				<Container size="small">
-					<ActionStack align="center" color="secondary">
-						<Box mr={-2} zIndex={1}>
-							Looking for something else?
-						</Box>
-						<Button color="text" endIcon={<Message />}>
-							{"Contact Us"}
-						</Button>
-					</ActionStack>
-				</Container>
-			</Wrapper>
-		</Container>
-	</Block>
-);
+export const ServicesPreviewBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => {
+	const isDesktop = useMediaQuery<Theme>((theme) => theme.breakpoints.up("md"));
+
+	const CardComponent = isDesktop ? Card : HorizontalCard;
+
+	return (
+		<Block>
+			<Container>
+				<Wrapper>
+					<Container size="small">
+						<Typography variant="overline">{subtitle}</Typography>
+						<Heading level={1}>{title}</Heading>
+						<Typography variant="body2">{description}</Typography>
+					</Container>
+					<div className="services">
+						{services?.map((service, serviceIndex) => (
+							<CardComponent className="service" {...service} key={serviceIndex} />
+						))}
+					</div>
+					<Container size="small">
+						<ActionStack align="center" color="secondary">
+							<Box mr={-2} zIndex={1}>
+								Looking for something else?
+							</Box>
+							<Button color="text" endIcon={<Message />}>
+								{"Contact Us"}
+							</Button>
+						</ActionStack>
+					</Container>
+				</Wrapper>
+			</Container>
+		</Block>
+	);
+};

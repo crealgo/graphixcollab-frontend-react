@@ -9,6 +9,7 @@ import { Container } from "../molecules/Container";
 import { Heading } from "../molecules/Heading";
 import { Card } from "../molecules/Card";
 import { ActionStack } from "../molecules/ActionStack";
+import { HorizontalCard } from "../molecules/HorizontalCard";
 
 export interface ServicesBlockProps extends SharedBlockProps {
 	services?: ServiceOptions[];
@@ -35,7 +36,7 @@ const Wrapper = styled("div")(
 		grid-template-columns: 1fr;
 		gap: 3rem;
 
-		.Container-root {
+		.container {
 			text-align: center;
 			display: grid;
 			grid-template-columns: 1fr;
@@ -55,13 +56,13 @@ const Wrapper = styled("div")(
 		${theme.breakpoints.up("sm")} {
 			.services {
 				row-gap: 3rem;
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
 		${theme.breakpoints.up("md")} {
 			.services {
-				grid-template-columns: repeat(5, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 	`
@@ -71,14 +72,14 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, descrip
 	<Block>
 		<Container>
 			<Wrapper>
-				<Container size="small">
+				<Container className="container" size="small">
 					<Typography variant="overline">{subtitle}</Typography>
 					<Heading level={1}>{title}</Heading>
 					<Typography variant="body2">{description}</Typography>
 				</Container>
 				<div className="services">
 					{services?.map((service, serviceIndex) => (
-						<Card {...service} key={serviceIndex} />
+						<HorizontalCard {...service} key={serviceIndex} />
 					))}
 				</div>
 				<Container size="small">

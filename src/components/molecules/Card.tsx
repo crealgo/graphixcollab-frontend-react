@@ -5,29 +5,31 @@ import { FC, type ComponentPropsWithRef } from "react";
 import { useAppState } from "../../hooks/useAppState";
 import { type ServiceOptions } from "../../types/general";
 import { chance } from "../../utils/chance";
-import { colorIterator } from "../../utils/colorIterator";
 import { ActionStack } from "./ActionStack";
 import { Button } from "./Button";
 import { Image, type ImageProps } from "./Image";
+import clsx from "clsx";
 
-interface ServiceCardProps extends ServiceOptions, ComponentPropsWithRef<"a"> {
+interface CardProps extends ServiceOptions, ComponentPropsWithRef<"a"> {
 	ImageProps?: ImageProps;
 }
 
-const CardAnchor = styled("a")(({ theme }) => {
+const CardAnchor = styled("a")(() => {
 	const randomRotation = `${chance.bool() ? "" : "-"}${chance.natural({ min: 2, max: 7 })}`;
 
 	return css`
 		cursor: pointer;
 		display: grid;
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 1rem;
+		text-align: center;
 
 		.image {
 			aspect-ratio: 1;
 			position: relative;
 			border-radius: 0.5rem;
 			overflow: hidden;
+			transition: all 200ms;
 
 			.Image-root {
 				z-index: 0;
@@ -49,43 +51,27 @@ const CardAnchor = styled("a")(({ theme }) => {
 			gap: 0.5rem;
 
 			.ActionStack {
+				justify-content: center;
 				margin-top: 0.5rem;
 				justify-content: start;
 			}
 		}
 
-		${colorIterator("background", ".image")}
-
-		${theme.breakpoints.up("sm")} {
-			text-align: center;
-			grid-template-columns: 1fr;
-
-			.content {
-				.ActionStack {
-					justify-content: center;
-				}
-			}
-
+		&:hover {
 			.image {
-				transition: all 200ms;
-			}
-
-			&:hover {
-				.image {
-					transform: translateY(-5px) rotate(${randomRotation}deg);
-				}
+				transform: translateY(-5px) rotate(${randomRotation}deg);
 			}
 		}
 	`;
 });
 
-export const Card: FC<ServiceCardProps> = ({ title, subtitle, description, imageSrc, ImageProps, ...props }) => {
+export const Card: FC<CardProps> = ({ title, subtitle, description, className, imageSrc, ImageProps, ...props }) => {
 	const { breakpoints } = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down("sm"));
 	const { toggleBooking } = useAppState();
 
 	return (
-		<CardAnchor {...props}>
+		<CardAnchor className={clsx('Card-root', className)} {...props}>
 			<Image className="image" />
 			<div className="content">
 				<Typography variant="caption">{subtitle}</Typography>

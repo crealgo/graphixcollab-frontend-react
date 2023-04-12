@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 						actions: generateActions(),
 					},
 				},
-				{ type: "services", props: generateServicesBlock() },
+				{ type: "servicesPreview", props: generateServicesBlock() },
 				// { type: "timeline", props: generateTimelineBlock() },
 				// {type: 'fanService', props: generateFanServiceBlock()},
 				{ type: "gallery", props: generateGalleryBlock() },

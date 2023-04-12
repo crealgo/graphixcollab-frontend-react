@@ -15,6 +15,9 @@ export const GlobalStyles: FC<GlobalStylesProps> = (props) => (
 				--color-primary: #b20838;
 				--color-secondary: #fde047;
 
+				--color-text-primary: #111827;
+				--color-text-secondary: #9ca3af;
+
 				--shadow-border-color: rgba(30, 41, 59, 0.25);
 				--shadow-border: inset 0rem 0rem 0rem 0.0625rem var(--shadow-border-color);
 
@@ -24,17 +27,17 @@ export const GlobalStyles: FC<GlobalStylesProps> = (props) => (
 				--shadow-input: 0rem 0.0625rem 0.125rem var(--shadow-input-color);
 
 				// input shape
-				--rounding-small-input: 0.5rem;
+				--bezel-small-input: 0.25rem;
 				--padding-x-small-input: 0.5rem;
 				--padding-y-small-input: 0.25rem;
 				--height-small-input: 1.75rem;
 
-				--rounding-medium-input: 0.5rem;
+				--bezel-medium-input: 0.25rem;
 				--padding-x-medium-input: 0.75rem;
 				--padding-y-medium-input: 0.5rem;
 				--height-medium-input: 2rem;
 
-				--rounding-large-input: 0.5rem;
+				--bezel-large-input: 0.375rem;
 				--padding-x-large-input: 0.875rem;
 				--padding-y-large-input: 0.625rem;
 				--height-large-input: 2.25rem;
