@@ -47,11 +47,7 @@ jobs:
         run: npx storybook build -s public
 
       - name: Deploy Storybook
-        run: npx gh-pages \
-            -d storybook-static \
-            -u "${{ env.USER }}" \
-            --repo https://git:${{ env.GITHUB_TOKEN }}@github.com/${{ env.STATIC_REPO }} \
-            --dest ${{ env.DIR_COMPONENTS }}
+        run: npx gh-pages -d storybook-static -u "${{ env.USER }}" --repo https://git:${{ env.GITHUB_TOKEN }}@github.com/${{ env.STATIC_REPO }} --dest ${{ env.DIR_COMPONENTS }}
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:
