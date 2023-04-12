@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { InputGroup, InputGroupProps } from "./InputGroup";
 import { Autocomplete } from "./Autocomplete";
 import { Input } from "./Input";
-import { Button } from "../molecules/Button";
+import { Button } from "../base/Button";
 
 export default {
 	component: InputGroup,

@@ -1,4 +1,4 @@
-import { BannerProps } from "../components/molecules/Banner";
+import { BannerProps } from "../components/base/Banner";
 import { createContext, Dispatch, SetStateAction } from "react";
 
 export type AppStateContextOptions = {

@@ -1,10 +1,10 @@
-import {ActionStack} from '../molecules/ActionStack';
+import {ActionStack} from '../base/ActionStack';
 import {type Action} from '../../types/general';
 import {Link} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {Text} from '../molecules/Text';
+import {Text} from '../base/Text';
 
 export interface SocialMediaBlockProps extends ComponentPropsWithoutRef<'div'> {
 	text?: string;

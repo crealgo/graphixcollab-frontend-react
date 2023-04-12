@@ -5,11 +5,11 @@ import clsx from "clsx";
 import { type ComponentPropsWithoutRef, type FC } from "react";
 import Marquee from "react-fast-marquee";
 import { type Action } from "../../types/general";
-import { Block } from "../molecules/Block";
-import { Container } from "../molecules/Container";
-import { Heading } from "../molecules/Heading";
-import { Image, ImageProps } from "../molecules/Image";
-import { StatusMessage } from "../molecules/StatusMessage";
+import { Block } from "../base/Block";
+import { Container } from "../base/Container";
+import { Heading } from "../base/Heading";
+import { Image, ImageProps } from "../base/Image";
+import { StatusMessage } from "../base/StatusMessage";
 import { SocialMediaBlock, type SocialMediaBlockProps } from "./SocialMediaBlock";
 
 export interface GalleryBlockProps extends ComponentPropsWithoutRef<"div"> {

@@ -1,14 +1,14 @@
-import { StatusMessage } from "../molecules/StatusMessage";
+import { StatusMessage } from "../base/StatusMessage";
 import { type Action } from "../../types/general";
 import { Warning } from "@mui/icons-material";
 import { styled, Typography } from "@mui/material";
 import clsx from "clsx";
 import { type ComponentPropsWithoutRef, type FC } from "react";
 import Marquee from "react-fast-marquee";
-import { Block } from "../molecules/Block";
-import { Container } from "../molecules/Container";
-import { ContentGrid } from "../molecules/ContentGrid";
-import { Heading } from "../molecules/Heading";
+import { Block } from "../base/Block";
+import { Container } from "../base/Container";
+import { ContentGrid } from "../base/ContentGrid";
+import { Heading } from "../base/Heading";
 import { generateFeaturedItems } from "../../utils/chance";
 
 export interface FeaturedInBlock extends ComponentPropsWithoutRef<"div"> {

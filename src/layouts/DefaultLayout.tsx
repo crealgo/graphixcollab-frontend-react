@@ -1,10 +1,10 @@
 import { css, styled } from "@mui/material/styles";
 import { type NextPage } from "next";
 import { useEffect, type ReactNode } from "react";
-import { FooterBlock, FooterBlockProps } from "../components/elements/FooterBlock";
-import { PlaceholderBlock } from "../components/elements/PlaceholderBlock";
-import { BannerProps } from "../components/molecules/Banner";
-import { Header, HeaderProps } from "../components/molecules/Header";
+import { FooterBlock, FooterBlockProps } from "../components/blocks/FooterBlock";
+import { PlaceholderBlock } from "../components/blocks/PlaceholderBlock";
+import { BannerProps } from "../components/base/Banner";
+import { Header, HeaderProps } from "../components/base/Header";
 import { useAppState } from "../hooks/useAppState";
 
 type DefaultLayoutProps = NextPage<{

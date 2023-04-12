@@ -3,7 +3,8 @@ import { ComponentPropsWithRef, ComponentPropsWithoutRef, FC, useId } from "reac
 // import { Size } from "../../../types/general";
 import styled from "@emotion/styled";
 import { InputProps } from "./Input";
-import { SelectProps } from "./Autocomplete";
+import { AutocompleteProps } from "./Autocomplete";
+import { Size } from "../../types/general";
 
 // type ExposedInputProps = Pick<InputProps, "id" | "placeholder" | "ref">;
 type BaseElementProps = ComponentPropsWithoutRef<"div">;
@@ -11,9 +12,9 @@ type BaseElementProps = ComponentPropsWithoutRef<"div">;
 export interface FormGroupProps extends BaseElementProps {
 	label?: string;
 	helperText?: string;
-	// size?: Size;
+	size?: Size;
 
-	InputProps?: InputProps | SelectProps;
+	InputProps?: InputProps | AutocompleteProps;
 	LabelProps?: ComponentPropsWithRef<"label">;
 	HelperTextProps?: ComponentPropsWithRef<"span">;
 }
@@ -46,7 +47,7 @@ export const FormGroup: FC<FormGroupProps> = ({
 	// ref,
 	className,
 	LabelProps,
-	// size,
+	size,
 	HelperTextProps,
 	children,
 	...props

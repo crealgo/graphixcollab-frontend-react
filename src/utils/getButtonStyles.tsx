@@ -1,6 +1,6 @@
 import { type CSSObject } from '@emotion/react';
 import { alpha, type Theme } from '@mui/material';
-import { type ButtonProps } from '../components/molecules/Button';
+import { type ButtonProps } from '../components/base/Button';
 
 export type ButtonStyledFuncProps = ButtonProps & { theme: Theme };
 

@@ -1,17 +1,17 @@
 import { ReactNode, useId } from "react";
-import { CalloutBlock } from "../components/elements/CalloutBlock";
-import { FanServiceBlock } from "../components/elements/FanServiceBlock";
-import { FaqBlock } from "../components/elements/FaqBlock";
-import { FeaturedInBlock } from "../components/elements/FeaturedInBlock";
-import { GalleryBlock } from "../components/elements/GalleryBlock";
-import { InteractiveEstimator } from "../components/elements/InteractiveEstimator";
-import { IntroBlock } from "../components/elements/IntroBlock";
-import { PageHeaderBlock } from "../components/elements/PageHeaderBlock";
-import { PlaceholderBlock } from "../components/elements/PlaceholderBlock";
-import { ProfilesBlock } from "../components/elements/ProfilesBlock";
-import { ServicesBlock } from "../components/elements/ServicesBlock";
-import { ServicesPreviewBlock } from "../components/elements/ServicesPreviewBlock";
-import { TimelineBlock } from "../components/elements/TimelineBlock";
+import { CalloutBlock } from "../components/blocks/CalloutBlock";
+import { FanServiceBlock } from "../components/blocks/FanServiceBlock";
+import { FaqBlock } from "../components/blocks/FaqBlock";
+import { FeaturedInBlock } from "../components/blocks/FeaturedInBlock";
+import { GalleryBlock } from "../components/blocks/GalleryBlock";
+import { InteractiveEstimator } from "../components/blocks/InteractiveEstimator";
+import { IntroBlock } from "../components/blocks/IntroBlock";
+import { PageHeaderBlock } from "../components/blocks/PageHeaderBlock";
+import { PlaceholderBlock } from "../components/blocks/PlaceholderBlock";
+import { ProfilesBlock } from "../components/blocks/ProfilesBlock";
+import { ServicesBlock } from "../components/blocks/ServicesBlock";
+import { ServicesPreviewBlock } from "../components/blocks/ServicesPreviewBlock";
+import { TimelineBlock } from "../components/blocks/TimelineBlock";
 
 const blockMap = {
 	callout: CalloutBlock,

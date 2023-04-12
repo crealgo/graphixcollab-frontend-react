@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
-import { PageHeaderBlock } from "../components/elements/PageHeaderBlock";
+import { PageHeaderBlock } from "../components/blocks/PageHeaderBlock";
 import { DefaultLayout } from "../layouts/DefaultLayout";
 import { generateFooter, generatePageHeaderBlock } from "../utils/chance";
 import Script from "next/script";

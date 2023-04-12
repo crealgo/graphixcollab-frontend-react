@@ -1,5 +1,5 @@
-import { ActionStack } from "../../molecules/ActionStack";
-import { DialogTitle } from "../../molecules/DialogTitle";
+import { ActionStack } from "../../base/ActionStack";
+import { DialogTitle } from "../../base/DialogTitle";
 import { ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone } from "@mui/icons-material";
 import {
 	css,
@@ -13,7 +13,7 @@ import {
 	styled,
 } from "@mui/material";
 import { FC, MouseEvent, useState } from "react";
-import { Button } from "../../molecules/Button";
+import { Button } from "../../base/Button";
 import { CustomerInfoStep } from "./steps/CustomerInfoStep";
 import { ReserveTimeSlotStep } from "./steps/ReserveTimeSlotStep";
 import { SelectServiceStep } from "./steps/SelectServiceStep";

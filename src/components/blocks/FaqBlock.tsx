@@ -1,11 +1,11 @@
 import { css, styled } from "@mui/material";
 import { type ComponentPropsWithoutRef, type FC } from "react";
 import { type Action, type SharedBlockProps, type SimpleLink } from "../../types/general";
-import { Block } from "../molecules/Block";
-import { Container } from "../molecules/Container";
-import { ContentGrid } from "../molecules/ContentGrid";
-import { FaqAccordion } from "../molecules/FaqAccordion";
-import { Heading } from "../molecules/Heading";
+import { Block } from "../base/Block";
+import { Container } from "../base/Container";
+import { ContentGrid } from "../base/ContentGrid";
+import { FaqAccordion } from "../base/FaqAccordion";
+import { Heading } from "../base/Heading";
 
 export type FaqOptions = {
 	question: string;

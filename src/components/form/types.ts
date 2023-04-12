@@ -1,0 +1,5 @@
+import { Size } from "../../types/general";
+
+export type SharedFormProps = {
+	size?: Size;
+};

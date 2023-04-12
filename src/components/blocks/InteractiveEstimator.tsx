@@ -1,13 +1,13 @@
-import { InteractiveSelector } from "../molecules/InteractiveSelector";
+import { InteractiveSelector } from "../base/InteractiveSelector";
 import { type Action } from "../../types/general";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { type FC } from "react";
-import { ActionStack } from "../molecules/ActionStack";
-import { Block } from "../molecules/Block";
-import { Container } from "../molecules/Container";
-import { ContentGrid } from "../molecules/ContentGrid";
-import { Heading } from "../molecules/Heading";
+import { ActionStack } from "../base/ActionStack";
+import { Block } from "../base/Block";
+import { Container } from "../base/Container";
+import { ContentGrid } from "../base/ContentGrid";
+import { Heading } from "../base/Heading";
 
 export type InteractiveEstimatorProps = {
 	actions?: Action[];

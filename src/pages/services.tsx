@@ -1,11 +1,11 @@
 import { GetStaticProps, NextPage } from "next";
 import Script from "next/script";
-import { CalloutBlock } from "../components/elements/CalloutBlock";
-import { FaqBlock } from "../components/elements/FaqBlock";
-import { InteractiveEstimator } from "../components/elements/InteractiveEstimator";
-import { PageHeaderBlock } from "../components/elements/PageHeaderBlock";
-import { ServicesBlock } from "../components/elements/ServicesBlock";
-import { TimelineBlock } from "../components/elements/TimelineBlock";
+import { CalloutBlock } from "../components/blocks/CalloutBlock";
+import { FaqBlock } from "../components/blocks/FaqBlock";
+import { InteractiveEstimator } from "../components/blocks/InteractiveEstimator";
+import { PageHeaderBlock } from "../components/blocks/PageHeaderBlock";
+import { ServicesBlock } from "../components/blocks/ServicesBlock";
+import { TimelineBlock } from "../components/blocks/TimelineBlock";
 import { DefaultLayout } from "../layouts/DefaultLayout";
 import {
 	generateCalloutBlock,

@@ -1,5 +1,5 @@
 import { ServiceInformation } from "./steps/data";
-import { Heading } from "../../molecules/Heading";
+import { Heading } from "../../base/Heading";
 import { css, styled } from "@mui/material";
 import { colorIterator } from "../../../utils/colorIterator";
 import { ComponentPropsWithoutRef, FC } from "react";

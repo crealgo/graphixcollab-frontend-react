@@ -1,8 +1,8 @@
 import { css, styled, Typography } from "@mui/material";
 import { type FC } from "react";
 import { type SharedBlockProps } from "../../types/general";
-import { ActionStack } from "../molecules/ActionStack";
-import { ImageCarousel } from "../molecules/ImageCarousel";
+import { ActionStack } from "../base/ActionStack";
+import { ImageCarousel } from "../base/ImageCarousel";
 
 export interface FanServiceBlockProps extends SharedBlockProps {
 	images?: string[];

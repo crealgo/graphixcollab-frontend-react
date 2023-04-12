@@ -2,11 +2,11 @@ import { Typography } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { FC, forwardRef } from "react";
 import { type NavItemOptions } from "../../types/general";
-import { Block, type BlockProps } from "../molecules/Block";
-import { Breadcrumbs, type BreadcrumbOptions } from "../molecules/Breadcrumbs";
-import { Container } from "../molecules/Container";
-import { Image, type ImageProps } from "../molecules/Image";
-import { TopNav } from "../molecules/TopNav";
+import { Block, type BlockProps } from "../base/Block";
+import { Breadcrumbs, type BreadcrumbOptions } from "../base/Breadcrumbs";
+import { Container } from "../base/Container";
+import { Image, type ImageProps } from "../base/Image";
+import { TopNav } from "../base/TopNav";
 
 export interface PageHeaderBlockProps {
 	title?: string;

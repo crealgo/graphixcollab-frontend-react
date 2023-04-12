@@ -3,13 +3,13 @@ import { Box, Theme, Typography, useMediaQuery } from "@mui/material";
 import { css, styled } from "@mui/material/styles";
 import { type FC } from "react";
 import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
-import { ActionStack } from "../molecules/ActionStack";
-import { Block, type BlockProps } from "../molecules/Block";
-import { Button } from "../molecules/Button";
-import { Card } from "../molecules/Card";
-import { HorizontalCard } from "../molecules/HorizontalCard";
-import { Container } from "../molecules/Container";
-import { Heading } from "../molecules/Heading";
+import { ActionStack } from "../base/ActionStack";
+import { Block, type BlockProps } from "../base/Block";
+import { Button } from "../base/Button";
+import { Card } from "../base/Card";
+import { HorizontalCard } from "../base/HorizontalCard";
+import { Container } from "../base/Container";
+import { Heading } from "../base/Heading";
 import { colorIterator } from "../../utils/colorIterator";
 
 export interface ServicesBlockProps extends SharedBlockProps {

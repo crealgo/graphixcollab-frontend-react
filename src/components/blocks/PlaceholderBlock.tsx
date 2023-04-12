@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { type FC } from "react";
-import { Block } from "../molecules/Block";
-import { Container } from "../molecules/Container";
+import { Block } from "../base/Block";
+import { Container } from "../base/Container";
 
 export interface PlaceholderBlockProps {
 	name?: string;

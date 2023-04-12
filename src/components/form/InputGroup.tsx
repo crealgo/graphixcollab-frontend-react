@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { ComponentPropsWithoutRef, FC, ReactNode } from "react";
 import { InputProps } from "./Input";
+import { Size } from "../../types/general";
 
 type ExposedInputProps = Pick<InputProps, "ref">;
 type BaseElementProps = ComponentPropsWithoutRef<"div">;
@@ -9,6 +10,7 @@ export interface InputGroupProps extends BaseElementProps, ExposedInputProps {
 	startContent?: ReactNode;
 	endContent?: ReactNode;
 	InputProps?: InputProps;
+	size?: Size;
 }
 
 const InputElementWrapper = styled.div`

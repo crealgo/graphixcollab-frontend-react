@@ -1,13 +1,13 @@
-import { Block } from "../molecules/Block";
+import { Block } from "../base/Block";
 import { type FC } from "react";
-import { Button } from "../molecules/Button";
-import { Container } from "../molecules/Container";
+import { Button } from "../base/Button";
+import { Container } from "../base/Container";
 import defaultEvents from "../../assets/content/timeline-screen-printing";
-import { Heading } from "../molecules/Heading";
-import { Select } from "../molecules/Select";
-import { MobileTimelineEvent } from "../molecules/MobileTimelineEvent";
-import { EventBlockProps, TimelineEvent } from "../molecules/TimelineEvent";
-import { Timeline } from "../molecules/Timeline";
+import { Heading } from "../base/Heading";
+import { Select } from "../base/Select";
+import { MobileTimelineEvent } from "../base/MobileTimelineEvent";
+import { EventBlockProps, TimelineEvent } from "../base/TimelineEvent";
+import { Timeline } from "../base/Timeline";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 export const TimelineBlock: FC<{ events?: EventBlockProps[] }> = ({ events = defaultEvents }) => {

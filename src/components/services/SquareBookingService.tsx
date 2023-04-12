@@ -1,6 +1,6 @@
 import { MailTwoTone, Cancel, CheckCircle } from "@mui/icons-material";
 import { Dialog, DialogTitle, DialogActions, DialogContent, Paper } from "@mui/material";
-import { Button } from "../molecules/Button";
+import { Button } from "../base/Button";
 import { css, styled } from "@mui/material/styles";
 import { FC, MouseEvent } from "react";
 import Script from "next/script";

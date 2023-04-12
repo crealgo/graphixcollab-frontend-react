@@ -2,8 +2,8 @@ import { StoryObj, type Meta } from "@storybook/react";
 import { useState } from "react";
 import { generateBanner } from "../../utils/chance";
 import { BannerService } from "./BannerService";
-import { Banner, type BannerProps } from "../molecules/Banner";
-import { Button } from "../molecules/Button";
+import { Banner, type BannerProps } from "../base/Banner";
+import { Button } from "../base/Button";
 
 export default {
 	component: BannerService,

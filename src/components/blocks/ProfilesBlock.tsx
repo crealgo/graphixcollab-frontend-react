@@ -1,13 +1,13 @@
-import { Block } from '../molecules/Block';
-import { ProfileCard } from '../molecules/ProfileCard';
+import { Block } from '../base/Block';
+import { ProfileCard } from '../base/ProfileCard';
 import { type EmployeeGroup } from '../../types/general';
 import { css, styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { Container } from '../molecules/Container';
-import { ContentGrid } from '../molecules/ContentGrid';
-import { Heading } from '../molecules/Heading';
-import { Text } from '../molecules/Text';
+import { Container } from '../base/Container';
+import { ContentGrid } from '../base/ContentGrid';
+import { Heading } from '../base/Heading';
+import { Text } from '../base/Text';
 
 export interface ProfilesBlockProps extends ComponentPropsWithoutRef<'div'> {
 	title?: string;

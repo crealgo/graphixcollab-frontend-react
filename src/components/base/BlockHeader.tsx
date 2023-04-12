@@ -1,9 +1,9 @@
-import { ActionStack } from "../molecules/ActionStack";
-import { Heading } from "../molecules/Heading";
+import { ActionStack } from "./ActionStack";
+import { Heading } from "./Heading";
 import { type SharedBlockProps } from "../../types/general";
 import Typography from "@mui/material/Typography";
 import { type FC } from "react";
-import { Container } from "../molecules/Container";
+import { Container } from "./Container";
 
 interface BlockHeaderProps extends SharedBlockProps {
 	disablePadding?: boolean;
@@ -11,7 +11,7 @@ interface BlockHeaderProps extends SharedBlockProps {
 }
 
 export const BlockHeader: FC<BlockHeaderProps> = ({ title, subtitle, description, actions }) => (
-	<>
+	<hgroup>
 		{subtitle && <Typography variant="overline">{subtitle}</Typography>}
 		{title && <Heading level={1}>{title}</Heading>}
 		{description && (
@@ -20,5 +20,5 @@ export const BlockHeader: FC<BlockHeaderProps> = ({ title, subtitle, description
 			</Container>
 		)}
 		{actions && <ActionStack color="secondary" actions={actions} />}
-	</>
+	</hgroup>
 );

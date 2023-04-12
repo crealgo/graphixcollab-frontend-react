@@ -1,13 +1,13 @@
 import posterImage from "../assets/screen-printing/poster.jpg";
 import silkScreenImage from "../assets/screen-printing/silk-screen.jpg";
 import toteImage from "../assets/screen-printing/tote.jpg";
-import { type BannerProps } from "../components/molecules/Banner";
-import { type FeaturedItemProps } from "../components/molecules/DrawerMenu/FeaturedItem";
-import { type GalleryBlockProps } from "../components/elements/GalleryBlock";
-import { HeaderProps } from "../components/molecules/Header";
-import { IntroBlockProps } from "../components/elements/IntroBlock";
-import { type PageHeaderBlockProps } from "../components/elements/PageHeaderBlock";
-import { type ProfilesBlockProps } from "../components/elements/ProfilesBlock";
+import { type BannerProps } from "../components/base/Banner";
+import { type FeaturedItemProps } from "../components/base/DrawerMenu/FeaturedItem";
+import { type GalleryBlockProps } from "../components/blocks/GalleryBlock";
+import { HeaderProps } from "../components/base/Header";
+import { IntroBlockProps } from "../components/blocks/IntroBlock";
+import { type PageHeaderBlockProps } from "../components/blocks/PageHeaderBlock";
+import { type ProfilesBlockProps } from "../components/blocks/ProfilesBlock";
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import {
 	type Action,

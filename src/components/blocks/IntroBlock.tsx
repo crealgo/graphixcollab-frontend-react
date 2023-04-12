@@ -3,14 +3,14 @@ import { css, styled } from "@mui/material";
 import { ComponentPropsWithoutRef, type FC } from "react";
 import imageSrc from "../../assets/sitting-and-laughing-intro.webp";
 import { type SharedBlockProps } from "../../types/general";
-import { ActionStack } from "../molecules/ActionStack";
-import { Block } from "../molecules/Block";
-import { Button } from "../molecules/Button";
-import { Container } from "../molecules/Container";
-import { Heading } from "../molecules/Heading";
-import { type ImageProps } from "../molecules/Image";
-import { Text } from "../molecules/Text";
-import { TidBit } from "../molecules/TidBit";
+import { ActionStack } from "../base/ActionStack";
+import { Block } from "../base/Block";
+import { Button } from "../base/Button";
+import { Container } from "../base/Container";
+import { Heading } from "../base/Heading";
+import { type ImageProps } from "../base/Image";
+import { Text } from "../base/Text";
+import { TidBit } from "../base/TidBit";
 
 export interface IntroBlockProps extends SharedBlockProps, ComponentPropsWithoutRef<"div"> {
 	title?: string;

@@ -2,7 +2,7 @@ import {AddCircleOutline} from '@mui/icons-material';
 import {Accordion, AccordionDetails, AccordionSummary, css, styled} from '@mui/material';
 import {type FC} from 'react';
 import {ActionStack} from './ActionStack';
-import {type FaqOptions} from '../elements/FaqBlock';
+import {type FaqOptions} from '../blocks/FaqBlock';
 
 type FaqAccordionProps = FaqOptions;
 
