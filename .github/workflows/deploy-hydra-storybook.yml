@@ -2,7 +2,10 @@ name: Deploy Hydra React Storybook
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
+    paths-ignore:
+      -  "pages/**"
 
   workflow_dispatch:
 

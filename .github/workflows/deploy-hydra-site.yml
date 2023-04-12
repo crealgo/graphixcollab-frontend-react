@@ -1,8 +1,9 @@
-name: Deploy Hydra React Storybook
+name: Deploy Hydra Static Site
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
 
   workflow_dispatch:
 
