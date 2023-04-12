@@ -25,27 +25,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+    steps:
+      - name: Checkout Test
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/$STATIC_REPO
+          token: $GITHUB_TOKEN
+
       # - name: Setup Node
       #   uses: actions/setup-node@latest
       #   with:
       #     node-version: latest
       #     cache: npm
 
-      - name: Setup Repository
-        run: npm i
+      # - name: Setup Repository
+      #   run: npm i
 
-      - name: Verify
-        run: npm run verify
+      # - name: Verify
+      #   run: npm run verify
 
-      - name: Build Storybook
-        run: npx storybook build -s public
+      # - name: Build Storybook
+      #   run: npx storybook build -s public
 
-      - name: Deploy Storybook
-        run: npx gh-pages \
-            -d storybook-static \
-            -u "$USER" \
-            --repo https://git:$GITHUB_TOKEN@github.com/$STATIC_REPO \
-            --dest $DIR_COMPONENTS
+      # - name: Deploy Storybook
+      #   run: npx gh-pages \
+      #       -d storybook-static \
+      #       -u "$USER" \
+      #       --repo https://git:$GITHUB_TOKEN@github.com/$STATIC_REPO \
+      #       --dest $DIR_COMPONENTS
 
       # - name: Deploy Fashion Greek USC Static Site
       #   env:
