@@ -14,11 +14,20 @@ export const Input = styled.input<InputProps>(
 		outline: unset;
 		font-size: 1rem;
 
-		height: var(--height-${inputSize}-input);
-		padding-inline: var(--padding-x-${inputSize}-input);
+		height: var(--input-height-${inputSize});
+		padding-inline: var(--input-padding-x-${inputSize});
 
-		color: var(--color-text-primary);
-		border-radius: var(--bezel-${inputSize}-input);
-		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
+		color: var(--input-color-text-primary);
+		box-shadow: var(--input-shadow-elevation-0);
+		border: var(--input-border);
+		border-radius: var(--input-bezel-${inputSize});
+
+		/* &:valid {
+			box-shadow: var(),  var(--shadow-elevation-0);
+		}
+
+		&:invalid {
+			box-shadow:
+		} */
 	`
 );

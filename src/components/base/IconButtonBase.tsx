@@ -1,4 +1,4 @@
-import { type ButtonBaseSizes } from "./ButtonBase";
+import { type ButtonBaseSizes } from "../atoms/ButtonBase";
 import { css, styled } from "@mui/material";
 import MuiButtonBase from "@mui/material/ButtonBase";
 import { _e } from "../../utils/excludePropsFromForwarding";

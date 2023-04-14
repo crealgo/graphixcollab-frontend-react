@@ -2,45 +2,90 @@ import "@fontsource/inter";
 import MuiGlobalStyles from "@mui/material/GlobalStyles";
 import { css } from "@mui/material/styles";
 import { FC } from "react";
+import colors from "tailwindcss/colors";
+import { colord } from "colord";
 
-type GlobalStylesProps = Partial<typeof MuiGlobalStyles>;
+const grayTokens = Object.entries(colors.slate).reduce((aggregate, [scaleIndex, hexValue]) => {
+	return `
+		${aggregate}
+		--base-color-gray-${scaleIndex}: ${hexValue};
+	`;
+}, "");
 
-export const GlobalStyles: FC<GlobalStylesProps> = (props) => (
+const feedbackTokens = (() => {
+	const variants = {
+		success: colors.green[600],
+		error: colors.red[600],
+		warning: colors.amber[600],
+		info: colors.blue[600],
+	};
+
+	let tokenString = `
+		/* FEEDBACK TOKENS */
+	`;
+
+	for (const [feedbackType, hexValue] of Object.entries(variants)) {
+		tokenString += `
+			--feedback-color-${feedbackType}-light: ${colord(hexValue).lighten(0.375).toHex()};
+			--feedback-color-${feedbackType}-main: ${hexValue};
+			--feedback-color-${feedbackType}-dark: ${colord(hexValue).darken(0.25).toHex()};
+		`;
+	}
+
+	return tokenString;
+})();
+
+export const GlobalStyles: FC = () => (
 	<MuiGlobalStyles
-		{...props}
 		styles={css`
 			:root {
 				font-family: Inter;
 
-				--color-primary: #b20838;
-				--color-secondary: #fde047;
+				/*
+					namespace-object-base-modifier
 
-				--color-text-primary: #111827;
-				--color-text-secondary: #9ca3af;
+					namespace: system-theme-domain
+					object: group-component-element
+					base: category-concept-property
+					modifier: variant-state-scale-mode
+				*/
 
-				--shadow-border-color: rgba(30, 41, 59, 0.25);
-				--shadow-border: inset 0rem 0rem 0rem 0.0625rem var(--shadow-border-color);
+				/* PRIMARY COLORS */
+				--brand-color-primary: ${colors.rose[700]};
+				--brand-color-secondary: ${colors.yellow[300]};
 
-				--shadow-elevation-0: 0px 1px 2px rgba(0, 0, 0, 0.05);
+				--text-color-primary: ${colors.slate[900]};
+				--text-color-secondary: ${colors.slate[400]};
 
-				--shadow-input-color: rgba(0, 0, 0, 0.05);
-				--shadow-input: 0rem 0.0625rem 0.125rem var(--shadow-input-color);
+				${grayTokens}
+				${feedbackTokens}
 
-				// input shape
-				--bezel-small-input: 0.25rem;
-				--padding-x-small-input: 0.5rem;
-				--padding-y-small-input: 0.25rem;
-				--height-small-input: 1.75rem;
+				/* SHADOWS COLORS */
+				--shadow-elevation-0: 0px 1px 2px ${colord(colors.slate[900]).alpha(0.05).toHex()};
 
-				--bezel-medium-input: 0.25rem;
-				--padding-x-medium-input: 0.75rem;
-				--padding-y-medium-input: 0.5rem;
-				--height-medium-input: 2rem;
+				--input-shadow-color: ${colord(colors.slate[800]).alpha(0.5).toHex()};
+				--input-shadow: 0rem 0.0625rem 0.125rem var(--shadow-input-color);
 
-				--bezel-large-input: 0.375rem;
-				--padding-x-large-input: 0.875rem;
-				--padding-y-large-input: 0.625rem;
-				--height-large-input: 2.25rem;
+				/* INPUT STYLES */
+				--input-border-style: solid;
+				--input-border-width: 1px;
+				--input-border-color: ${colord(colors.slate[900]).alpha(0.25).toHex()};
+				--input-border: var(--input-border-style) var(--input-border-width) var(--input-border-color);
+
+				--input-bezel-small: 0.25rem;
+				--input-padding-x-small: 0.5rem;
+				--input-padding-y-small: 0.25rem;
+				--input-height-small: 1.75rem;
+
+				--input-bezel-medium: 0.25rem;
+				--input-padding-x-medium: 0.75rem;
+				--input-padding-y-medium: 0.5rem;
+				--input-height-medium: 2rem;
+
+				--input-bezel-large: 0.375rem;
+				--input-padding-x-large: 0.875rem;
+				--input-padding-y-large: 0.625rem;
+				--input-height-large: 2.25rem;
 			}
 		`}
 	/>

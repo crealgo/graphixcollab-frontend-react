@@ -1,4 +1,4 @@
-import { ButtonBase, type ButtonBaseProps } from "./ButtonBase";
+import { ButtonBase, type ButtonBaseProps } from "../atoms/ButtonBase";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { _e } from "../../utils/excludePropsFromForwarding";
@@ -45,7 +45,7 @@ const StyledButton = styled(
 
 	return css`
 		background-color: ${backgroundColor};
-		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
+		box-shadow: var(--input-shadow), var(--shadow-elevation-0);
 		border-radius: 4px;
 
 		font-weight: 500;
@@ -53,9 +53,10 @@ const StyledButton = styled(
 		letter-spacing: -0.01em;
 		color: ${textColor};
 
-		padding-inline: var(--padding-x-${size}-input);
-		height: var(--height-${size}-input);
-		line-height: var(--height-${size}-input);
+		padding-inline: var(--input-padding-x-${size});
+		height: var(--input-height-${size});
+		line-height: var(--input-height-${size});
+		border: var(--input-border);
 
 		${props.color === "text"
 			? css`
