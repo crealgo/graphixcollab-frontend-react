@@ -1,0 +1,51 @@
+/**
+ * Do not edit directly
+ * Generated on Sat, 15 Apr 2023 16:04:26 GMT
+ */
+
+:root {
+  --base-color-brand-primary-light: #f06083;
+  --base-color-brand-primary-main: #be123c;
+  --base-color-brand-primary-dark: #8f0e2d;
+  --base-color-brand-secondary-light: #fef5c5;
+  --base-color-brand-secondary-main: #fde047;
+  --base-color-brand-secondary-dark: #fcd815;
+  --base-color-feedback-success-light: #51e889;
+  --base-color-feedback-success-main: #16a34a;
+  --base-color-feedback-success-dark: #107636;
+  --base-color-feedback-error-light: #ee9494;
+  --base-color-feedback-error-main: #dc2626;
+  --base-color-feedback-error-dark: #b21d1d;
+  --base-color-feedback-warning-light: #fbb564;
+  --base-color-feedback-warning-main: #d97706;
+  --base-color-feedback-warning-dark: #a75c05;
+  --base-color-feedback-info-light: #9ab7f6;
+  --base-color-feedback-info-main: #2563eb;
+  --base-color-feedback-info-dark: #134cca;
+  --base-color-gray-50: #f8fafc;
+  --base-color-gray-100: #f1f5f9;
+  --base-color-gray-200: #e2e8f0;
+  --base-color-gray-300: #cbd5e1;
+  --base-color-gray-400: #94a3b8;
+  --base-color-gray-500: #64748b;
+  --base-color-gray-600: #475569;
+  --base-color-gray-700: #334155;
+  --base-color-gray-800: #1e293b;
+  --base-color-gray-900: #0f172a;
+  --base-color-gray-950: #020617;
+  --semantic-input-border-style: solid;
+  --semantic-input-border-width: 0.0625;
+  --semantic-input-border-color: #0f172a;
+  --semantic-input-padding-x-small: 0.5;
+  --semantic-input-padding-x-medium: 0.75;
+  --semantic-input-padding-x-large: 0.875;
+  --semantic-input-padding-y-small: 0.25;
+  --semantic-input-padding-y-medium: 0.5;
+  --semantic-input-padding-y-large: 0.625;
+  --semantic-input-height-small: 1.75;
+  --semantic-input-height-medium: 2;
+  --semantic-input-height-large: 2.25;
+  --semantic-input-bezel-small: 0.25;
+  --semantic-input-bezel-medium: 0.25;
+  --semantic-input-bezel-large: 0.375;
+}

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import { ColorVariants } from "../../types/color";
 import { ButtonBase, ButtonBaseProps } from "../atoms/ButtonBase";
 import clsx from "clsx";

@@ -14,7 +14,7 @@ const StyledButton = styled(
 	MuiButtonBase,
 	_e("endIcon", "startIcon", "size")
 )<IconButtonBaseProps>(
-	({ theme, size = "medium" }) => css`
+	({ theme }) => css`
 		${theme.utils.inheritFont};
 		cursor: pointer;
 		display: inline-flex;

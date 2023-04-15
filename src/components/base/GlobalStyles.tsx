@@ -72,20 +72,20 @@ export const GlobalStyles: FC = () => (
 				--input-border-color: ${colord(colors.slate[900]).alpha(0.25).toHex()};
 				--input-border: var(--input-border-style) var(--input-border-width) var(--input-border-color);
 
-				--input-bezel-small: 0.25rem;
-				--input-padding-x-small: 0.5rem;
-				--input-padding-y-small: 0.25rem;
-				--input-height-small: 1.75rem;
+				/* --input-bezel-small: 0.25rem; */
+				/* --input-padding-x-small: 0.5rem; */
+				/* --input-padding-y-small: 0.25rem; */
+				/* --input-height-small: 1.75rem; */
 
-				--input-bezel-medium: 0.25rem;
-				--input-padding-x-medium: 0.75rem;
-				--input-padding-y-medium: 0.5rem;
-				--input-height-medium: 2rem;
+				/* --input-bezel-medium: 0.25rem; */
+				/* --input-padding-x-medium: 0.75rem; */
+				/* --input-padding-y-medium: 0.5rem; */
+				/* --input-height-medium: 2rem; */
 
-				--input-bezel-large: 0.375rem;
-				--input-padding-x-large: 0.875rem;
-				--input-padding-y-large: 0.625rem;
-				--input-height-large: 2.25rem;
+				/* --input-bezel-large: 0.375rem; */
+				/* --input-padding-x-large: 0.875rem; */
+				/* --input-padding-y-large: 0.625rem; */
+				/* --input-height-large: 2.25rem; */
 			}
 		`}
 	/>
