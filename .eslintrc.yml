@@ -4,6 +4,8 @@ root: true
 settings:
   react:
     version: detect
+plugins:
+  - sonarjs
 extends:
   - eslint:recommended
   - plugin:react/recommended
@@ -20,7 +22,11 @@ rules:
     - beside
 overrides:
   - files:
-      - "**/*.ts"
+      - "tokens/**/*.js"
+    env:
+      node: true
+  - files:
+      - "(src|scripts)/**/*.(ts|tsx)"
       - "**/*.tsx"
     parser: "@typescript-eslint/parser"
     plugins:
