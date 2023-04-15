@@ -1,19 +1,16 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "trunk.io"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "trunk.io"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "trunk.io"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "trunk.io"
   },
-  "cSpell.words": [
-    "colord",
-    "tailwindcss"
-  ]
+  "cSpell.words": ["colord", "tailwindcss"]
 }

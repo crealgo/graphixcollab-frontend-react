@@ -1,11 +1,9 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "allowJs": true,
-        "noEmit": true
-    },
-    "include": [
-        "./**/*.js"
-    ]
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["./**/*.js"]
 }

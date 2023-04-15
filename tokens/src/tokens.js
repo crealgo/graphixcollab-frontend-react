@@ -13,6 +13,11 @@ base: category-concept-property
 modifier: variant-state-scale-mode
 */
 
+const grayScale = Object.entries(colors.slate).reduce((aggregate, [colorScale, colorValue]) => {
+	aggregate[colorScale] = { value: colorValue };
+	return aggregate;
+}, {});
+
 module.exports = {
 	color: {
 		brand: {
@@ -25,10 +30,7 @@ module.exports = {
 			warning: generateColorVariants(colors.amber[600]),
 			info: generateColorVariants(colors.blue[600]),
 		},
-		gray: Object.entries(colors.slate).reduce((aggregate, [colorScale, colorValue]) => {
-			aggregate[colorScale] = { value: colorValue };
-			return aggregate;
-		}, {}),
+		gray: grayScale,
 		text: {
 			primary: colors.slate[900],
 			secondary: colors.slate[400],

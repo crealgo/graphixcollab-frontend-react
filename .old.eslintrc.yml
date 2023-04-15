@@ -22,11 +22,11 @@ rules:
     - beside
 overrides:
   - files:
-      - "tokens/**/*.js"
+      - tokens/**/*.js
     env:
       node: true
   - files:
-      - "(src|scripts)/**/*.(ts|tsx)"
+      - (src|scripts)/**/*.(ts|tsx)
       - "**/*.tsx"
     parser: "@typescript-eslint/parser"
     plugins:
