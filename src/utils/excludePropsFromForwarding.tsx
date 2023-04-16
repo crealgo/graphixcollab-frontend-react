@@ -5,7 +5,7 @@ type ExcludePropsFromForwardingProps = (...propNames: string[]) => StyledOptions
 export const excludePropsFromForwarding: ExcludePropsFromForwardingProps = (...propNames) => ({
 	shouldForwardProp(propName) {
 		return !propNames.includes(propName);
-	}
+	},
 });
 
 /**

@@ -5,9 +5,9 @@ import {type ComponentPropsWithoutRef, type FC} from 'react';
 import {type Article} from '../../types/general';
 import {Profile} from './Profile';
 
-export interface NewsCardsProps extends ComponentPropsWithoutRef<'div'> {
+export type NewsCardsProps = {
 	article: Article;
-}
+} & ComponentPropsWithoutRef<'div'>;
 
 const NewsCardWrapper = styled('div')(
 	({theme}) => css`
@@ -22,17 +22,17 @@ const NewsCardWrapper = styled('div')(
 		.NewsCard-actions {
 			display: flex;
 		}
-	`
+	`,
 );
 
 export const NewsCard: FC<NewsCardsProps> = ({className, article}) => (
 	<NewsCardWrapper className={clsx(className, 'NewsCard-root')}>
-		<Profile profile={article.author} />
+		<Profile profile={article.author}/>
 		{Array.isArray(article.tags) && (
 			<Stack
-				direction={'row'}
+				direction='row'
 				spacing={1}
-				divider={<Divider orientation='vertical' flexItem />}
+				divider={<Divider flexItem orientation='vertical'/>}
 				className='NewsCard-meta'
 			>
 				{article.tags.map((tag, tagIndex) => (
@@ -47,8 +47,8 @@ export const NewsCard: FC<NewsCardsProps> = ({className, article}) => (
 		</Typography>
 		<div className='NewsCard-actions'>
 			{article.url && (
-				<Button href={article.url} endIcon={<ArrowForward />}>
-					{'Read More'}
+				<Button href={article.url} endIcon={<ArrowForward/>}>
+					Read More
 				</Button>
 			)}
 		</div>

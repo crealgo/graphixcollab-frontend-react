@@ -1,13 +1,13 @@
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { css, alpha, Menu, MenuItem, styled, type OutlinedTextFieldProps } from '@mui/material';
-import { useState, type FC, type MouseEventHandler } from 'react';
-import { type OptionValue } from '../../types/general';
+import {KeyboardArrowDown} from '@mui/icons-material';
+import {css, alpha, Menu, MenuItem, styled, type OutlinedTextFieldProps} from '@mui/material';
+import {useState, type FC, type MouseEventHandler} from 'react';
+import {type OptionValue} from '../../types/general';
 
-export interface InteractiveSelectorProps extends Omit<OutlinedTextFieldProps, 'variant' | 'size'> {
+export type InteractiveSelectorProps = {
 	options?: OptionValue[];
-}
+} & Omit<OutlinedTextFieldProps, 'variant' | 'size'>;
 
-const StyledButton = styled('button')(({ theme }) => css`
+const StyledButton = styled('button')(({theme}) => css`
 	border-radius: unset;
 	border: unset;
 	outline: unset;
@@ -49,12 +49,12 @@ const StyledButton = styled('button')(({ theme }) => css`
 	}
 `);
 
-export const InteractiveSelector: FC<InteractiveSelectorProps> = ({ options, ...props }) => {
+export const InteractiveSelector: FC<InteractiveSelectorProps> = ({options, ...props}) => {
 	const [value, setValue] = useState<string>(options ? options[0].label : '');
 	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | undefined>(undefined);
 	const open = Boolean(anchorEl);
 
-	const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+	const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
 		setAnchorEl(event.currentTarget);
 	};
 
@@ -65,27 +65,27 @@ export const InteractiveSelector: FC<InteractiveSelectorProps> = ({ options, ...
 	const sharedProps = {
 		open,
 		anchorEl,
-		onClose: handleClose
+		onClose: handleClose,
 	};
 
 	return (
 		<>
 			<StyledButton
-				onClick={handleClick}
 				aria-controls={open ? 'basic-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
+				onClick={handleClick}
 			>
 				{value}
-				<KeyboardArrowDown className='endIcon' />
+				<KeyboardArrowDown className='endIcon'/>
 			</StyledButton>
 			<Menu
 				{...sharedProps}
 				MenuListProps={{
 					'aria-labelledby': 'basic-button',
 					sx: {
-						minWidth: '10rem'
-					}
+						minWidth: '10rem',
+					},
 				}}
 			>
 				<MenuItem disabled>Choose one:</MenuItem>

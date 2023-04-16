@@ -1,18 +1,18 @@
-import { BaseComponentsProps } from "../../types/base";
-import { styled } from "@mui/material/styles";
-import { type FC } from "react";
+import {type BaseComponentsProps} from '../../types/base';
+import {styled} from '@mui/material/styles';
+import {type FC} from 'react';
 
-export interface EventBlockProps extends BaseComponentsProps {
+export type EventBlockProps = {
 	stepNumber?: number;
 	title?: string;
 	description?: string;
 	imgUrl?: string;
 	imgAlt?: string;
-}
-const connectorThickness = "0.25rem";
-const markerSize = "2rem";
+} & BaseComponentsProps;
+const connectorThickness = '0.25rem';
+const markerSize = '2rem';
 
-const Marker = styled("div")`
+const Marker = styled('div')`
 	height: ${markerSize};
 	width: ${markerSize};
 
@@ -38,7 +38,7 @@ const Marker = styled("div")`
 	color: #111827;
 `;
 
-const EventConnector = styled("div")`
+const EventConnector = styled('div')`
 	z-index: -1;
 	box-sizing: border-box;
 	position: absolute;
@@ -51,17 +51,17 @@ const EventConnector = styled("div")`
 	border-left: dotted ${connectorThickness} #cbd5e1;
 `;
 
-const BaseElement: FC<EventBlockProps> = (props) => (
+const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
-		<figure className="image">
-			<Marker className="marker">{props.stepNumber ?? 1}</Marker>
+		<figure className='image'>
+			<Marker className='marker'>{props.stepNumber ?? 1}</Marker>
 		</figure>
-		<div className="content">
-			<div className="title">{props.title}</div>
-			<div className="description">{props.description}</div>
+		<div className='content'>
+			<div className='title'>{props.title}</div>
+			<div className='description'>{props.description}</div>
 			{props.children}
 		</div>
-		<EventConnector className="connector" />
+		<EventConnector className='connector'/>
 	</li>
 );
 

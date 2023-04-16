@@ -4,16 +4,16 @@ import {styled} from '@mui/material/styles';
 import {type ComponentPropsWithoutRef} from 'react';
 import {type ComponentType, type FC} from 'react';
 
-interface StatusMessageProps extends ComponentPropsWithoutRef<'div'> {
+type StatusMessageProps = {
 	IconComponent?: ComponentType<SvgIconProps>;
 	text?: string;
 	contained?: boolean;
 	actionable?: boolean;
-}
+} & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 	({theme, contained, actionable}) => css`
-		${contained &&
-		`
+		${contained
+		&& `
 		padding-inline: 1rem;
 		padding-block: 0.75rem;
 
@@ -39,12 +39,12 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 			}
 		`
 		: null}
-	`
+	`,
 );
 
 export const StatusMessage: FC<StatusMessageProps> = ({IconComponent = Warning, text, ...props}) => (
 	<StatusMessageWrapper className='StatusMessage-root' {...props}>
-		<IconComponent fontSize='small' />
+		<IconComponent fontSize='small'/>
 		<Typography className='StatusMessage-text' variant='body1' component='span'>
 			{text}
 		</Typography>

@@ -1,16 +1,16 @@
-import { Avatar, Rating, Typography, css, styled, type RatingProps as MuiRatingProps } from '@mui/material';
+import {Avatar, Rating, Typography, css, styled, type RatingProps as MuiRatingProps} from '@mui/material';
 import clsx from 'clsx';
-import { type FC, type HTMLAttributes } from 'react';
+import {type FC, type HTMLAttributes} from 'react';
 
-interface QuoteWrapperProps extends HTMLAttributes<HTMLDivElement> {
+type QuoteWrapperProps = {
 	height?: number;
 	width?: number;
-}
+} & HTMLAttributes<HTMLDivElement>;
 
-export interface QuoteProps extends QuoteWrapperProps {
+export type QuoteProps = {
 	text?: string;
 	RatingProps?: MuiRatingProps;
-}
+} & QuoteWrapperProps;
 
 const QuoteWrapper = styled('div')<QuoteWrapperProps>(
 	({theme}) => css`
@@ -54,18 +54,18 @@ const QuoteWrapper = styled('div')<QuoteWrapperProps>(
 
 			transform: translateY(-50%) translateX(100%);
 		} */
-	`
+	`,
 );
 
 export const Quote: FC<QuoteProps> = ({text, className, RatingProps, ...props}) => (
 	<QuoteWrapper {...props} className={clsx(className, 'Quote-root')}>
-		<Avatar className='Quote-avatar' />
+		<Avatar className='Quote-avatar'/>
 		<div className='Quote-content'>
 			<Typography className='Quote-text' variant='body1'>
 				{text}
 			</Typography>
 			<div className='Quote-ratingBox'>
-				<Rating className='Quote-rating' />
+				<Rating className='Quote-rating'/>
 			</div>
 		</div>
 	</QuoteWrapper>

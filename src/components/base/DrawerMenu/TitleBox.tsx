@@ -11,5 +11,5 @@ export const TitleBox = styled('div')<{hasBorder?: boolean}>(
 	align-items: center;
 
 	${hasBorder ? `border-bottom: solid 1px ${theme.palette.grey[300]};` : ''}
-`
+`,
 );

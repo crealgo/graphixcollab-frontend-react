@@ -1,25 +1,25 @@
-import { SiYelp } from "@icons-pack/react-simple-icons";
-import { css, styled } from "@mui/material";
-import { ComponentPropsWithoutRef, type FC } from "react";
-import imageSrc from "../../assets/sitting-and-laughing-intro.webp";
-import { type SharedBlockProps } from "../../types/general";
-import { ActionStack } from "../base/ActionStack";
-import { Block } from "../base/Block";
-import { Button } from "../base/Button";
-import { Container } from "../base/Container";
-import { Heading } from "../base/Heading";
-import { type ImageProps } from "../base/Image";
-import { Text } from "../base/Text";
-import { TidBit } from "../base/TidBit";
+import {SiYelp} from '@icons-pack/react-simple-icons';
+import {css, styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import imageSrc from '../../assets/sitting-and-laughing-intro.webp';
+import {type SharedBlockProps} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Button} from '../base/Button';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {type ImageProps} from '../base/Image';
+import {Text} from '../base/Text';
+import {TidBit} from '../base/TidBit';
 
-export interface IntroBlockProps extends SharedBlockProps, ComponentPropsWithoutRef<"div"> {
+export type IntroBlockProps = {
 	title?: string;
 	description?: string;
 	ImageProps?: ImageProps;
-}
+} & SharedBlockProps & ComponentPropsWithoutRef<'div'>;
 
 const Content = styled(Container)(
-	(props) => css`
+	props => css`
 		.content {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -30,7 +30,7 @@ const Content = styled(Container)(
 			display: none;
 		}
 
-		${props.theme.breakpoints.up("md")} {
+		${props.theme.breakpoints.up('md')} {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 2rem;
@@ -52,31 +52,31 @@ const Content = styled(Container)(
 				}
 			}
 		}
-	`
+	`,
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({ title, description, className }) => (
-	<Block className={className} color="secondary">
+export const IntroBlock: FC<IntroBlockProps> = ({title, description, className}) => (
+	<Block className={className} color='secondary'>
 		<Container>
 			<Content>
-				<div className="content">
+				<div className='content'>
 					<Heading level={1}>{title}</Heading>
 					<Text>{description}</Text>
 					<ActionStack>
-						<Button size="large">{"Get Started"}</Button>
-						<Button size="large" color="text">
-							{"Book an appointment"}
+						<Button size='large'>Get Started</Button>
+						<Button size='large' color='text'>
+							Book an appointment
 						</Button>
 					</ActionStack>
-					<br />
+					<br/>
 					<div>
-						<TidBit href={"#yelp-test"} icon={<SiYelp />}>
+						<TidBit href='#yelp-test' icon={<SiYelp/>}>
 							Trusted by <strong>150+ People</strong> on <strong>Yelp</strong>
 						</TidBit>
 					</div>
 				</div>
-				<figure className="image">
-					<img className="Image-root" src={imageSrc.src} alt="thing" />
+				<figure className='image'>
+					<img className='Image-root' src={imageSrc.src} alt='thing'/>
 				</figure>
 			</Content>
 		</Container>

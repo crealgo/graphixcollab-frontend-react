@@ -5,19 +5,19 @@ import {Image} from '../Image';
 import {DotsInput} from './DotsInput';
 import {ImageCarouselWrapper} from './ImageCarouselWrapper';
 
-export interface SharedCarouseProps {
+export type SharedCarouseProps = {
 	height?: number;
 	width?: number;
-}
+};
 
-export interface CarouselCardProps extends SharedCarouseProps {
+export type CarouselCardProps = {
 	tilt?: 'left' | 'right';
 	interactive?: boolean;
 	images: string[];
 	autoplay?: boolean;
 	currentIndex?: number;
 	className?: string;
-}
+} & SharedCarouseProps;
 
 export const ImageCarousel: FC<CarouselCardProps> = ({
 	images,
@@ -30,14 +30,14 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 	const [index, setIndex] = useControlled({
 		default: 0,
 		controlled: currentIndex,
-		name: 'Dots Input Index'
+		name: 'Dots Input Index',
 	});
 
 	return (
 		<ImageCarouselWrapper
 			imageCount={images.length}
 			currentIndex={index}
-			className={'ImageCarousel-root'}
+			className='ImageCarousel-root'
 			{...props}
 		>
 			{images.length
@@ -57,7 +57,7 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 			<DotsInput
 				currentIndex={index}
 				count={images.length}
-				onIndexChange={(index) => {
+				onIndexChange={index => {
 					setIndex(index);
 				}}
 			/>

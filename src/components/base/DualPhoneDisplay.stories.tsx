@@ -1,16 +1,16 @@
-import { StoryObj, type Meta,  } from "@storybook/react";
-import { DualPhoneDisplay, type DualPhoneDisplayProps } from "./DualPhoneDisplay";
+import {type StoryObj, type Meta} from '@storybook/react';
+import {DualPhoneDisplay, type DualPhoneDisplayProps} from './DualPhoneDisplay';
 
 export default {
 	component: DualPhoneDisplay,
 	decorators: [
-		(Story) => (
+		Story => (
 			<div
 				style={{
-					maxWidth: "40rem",
+					maxWidth: '40rem',
 				}}
 			>
-				<Story />
+				<Story/>
 			</div>
 		),
 	],

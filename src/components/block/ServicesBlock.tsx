@@ -1,23 +1,23 @@
-import { Message } from "@mui/icons-material";
-import { Box, Typography } from "@mui/material";
-import { css, styled } from "@mui/material/styles";
-import { type FC } from "react";
-import { type ServiceOptions, type SharedBlockProps } from "../../types/general";
-import { Block, type BlockProps } from "../base/Block";
-import { Button } from "../base/Button";
-import { Container } from "../base/Container";
-import { Heading } from "../base/Heading";
-import { Card } from "../base/Card";
-import { ActionStack } from "../base/ActionStack";
-import { HorizontalCard } from "../base/HorizontalCard";
+import {Message} from '@mui/icons-material';
+import {Box, Typography} from '@mui/material';
+import {css, styled} from '@mui/material/styles';
+import {type FC} from 'react';
+import {type ServiceOptions, type SharedBlockProps} from '../../types/general';
+import {Block, type BlockProps} from '../base/Block';
+import {Button} from '../base/Button';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {Card} from '../base/Card';
+import {ActionStack} from '../base/ActionStack';
+import {HorizontalCard} from '../base/HorizontalCard';
 
-export interface ServicesBlockProps extends SharedBlockProps {
+export type ServicesBlockProps = {
 	services?: ServiceOptions[];
 	BlockProps?: BlockProps;
-}
+} & SharedBlockProps;
 
-export const Content = styled("div")(
-	({ theme }) => css`
+export const Content = styled('div')(
+	({theme}) => css`
 		max-width: ${theme.breakpoints.values.sm}px;
 
 		.ActionStack-root {
@@ -27,11 +27,11 @@ export const Content = styled("div")(
 		.Heading-root {
 			margin-bottom: 0.5rem;
 		}
-	`
+	`,
 );
 
-const Wrapper = styled("div")(
-	({ theme }) => css`
+const Wrapper = styled('div')(
+	({theme}) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;
@@ -53,42 +53,42 @@ const Wrapper = styled("div")(
 			gap: 1rem;
 		}
 
-		${theme.breakpoints.up("sm")} {
+		${theme.breakpoints.up('sm')} {
 			.services {
 				row-gap: 3rem;
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
-		${theme.breakpoints.up("md")} {
+		${theme.breakpoints.up('md')} {
 			.services {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
-	`
+	`,
 );
 
-export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, description, services }) => (
+export const ServicesBlock: FC<ServicesBlockProps> = ({title, subtitle, description, services}) => (
 	<Block>
 		<Container>
 			<Wrapper>
-				<Container className="container" size="small">
-					<Typography variant="overline">{subtitle}</Typography>
+				<Container className='container' size='small'>
+					<Typography variant='overline'>{subtitle}</Typography>
 					<Heading level={1}>{title}</Heading>
-					<Typography variant="body2">{description}</Typography>
+					<Typography variant='body2'>{description}</Typography>
 				</Container>
-				<div className="services">
+				<div className='services'>
 					{services?.map((service, serviceIndex) => (
-						<HorizontalCard {...service} key={serviceIndex} />
+						<HorizontalCard {...service} key={serviceIndex}/>
 					))}
 				</div>
-				<Container size="small">
-					<ActionStack align="center" color="secondary">
+				<Container size='small'>
+					<ActionStack align='center' color='secondary'>
 						<Box mr={-2} zIndex={1}>
 							Looking for something else?
 						</Box>
-						<Button color="text" endIcon={<Message />}>
-							{"Contact Us"}
+						<Button color='text' endIcon={<Message/>}>
+							Contact Us
 						</Button>
 					</ActionStack>
 				</Container>
@@ -97,4 +97,4 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({ title, subtitle, descrip
 	</Block>
 );
 
-ServicesBlock.displayName = "ServicesBlock";
+ServicesBlock.displayName = 'ServicesBlock';

@@ -1,11 +1,11 @@
-import { css, styled } from "@mui/material/styles";
-import { type NextPage } from "next";
-import { useEffect, type ReactNode } from "react";
-import { FooterBlock, FooterBlockProps } from "../components/block/FooterBlock";
-import { PlaceholderBlock } from "../components/block/PlaceholderBlock";
-import { BannerProps } from "../components/base/Banner";
-import { Header, HeaderProps } from "../components/base/Header";
-import { useAppState } from "../hooks/useAppState";
+import {css, styled} from '@mui/material/styles';
+import {type NextPage} from 'next';
+import {useEffect, type ReactNode} from 'react';
+import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
+import {PlaceholderBlock} from '../components/block/PlaceholderBlock';
+import {type BannerProps} from '../components/base/Banner';
+import {Header, type HeaderProps} from '../components/base/Header';
+import {useAppState} from '../hooks/useAppState';
 
 type DefaultLayoutProps = NextPage<{
 	children: ReactNode;
@@ -16,7 +16,7 @@ type DefaultLayoutProps = NextPage<{
 	FooterProps?: FooterBlockProps;
 }>;
 
-const BackgroundImage = styled("div")`
+const BackgroundImage = styled('div')`
 	z-index: -1;
 	position: absolute;
 	opacity: 0.125;
@@ -26,23 +26,23 @@ const BackgroundImage = styled("div")`
 	height: inherit;
 `;
 
-const BackgroundImageWrapper = styled("div")<{ flipped?: boolean }>(
-	({ theme, flipped }) => css`
+const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
+	({theme, flipped}) => css`
 		width: 3322px;
 		height: auto;
 
 		top: 60%;
-		transform: rotate(15deg) ${flipped ? "scaleX(-1)" : ""};
+		transform: rotate(15deg) ${flipped ? 'scaleX(-1)' : ''};
 
-		${theme.breakpoints.up("md")} {
+		${theme.breakpoints.up('md')} {
 			top: 25%;
-			transform: rotate(30deg) ${flipped ? "scaleX(-1)" : ""};
+			transform: rotate(30deg) ${flipped ? 'scaleX(-1)' : ''};
 		}
-	`
+	`,
 );
 
 // FIXME: figure out how to use grid
-const Main = styled("main")(({theme}) => `
+const Main = styled('main')(({theme}) => `
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 
@@ -51,12 +51,12 @@ const Main = styled("main")(({theme}) => `
 	}
 `);
 
-export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, children }) => {
-	const { setBannerProps, toggleContact, toggleBooking } = useAppState();
+export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, children}) => {
+	const {setBannerProps, toggleContact, toggleBooking} = useAppState();
 
 	useEffect(() => {
 		setBannerProps({
-			text: "⚡️⚡️ Flash Sash Sale!! Come and get yours quick!",
+			text: '⚡️⚡️ Flash Sash Sale!! Come and get yours quick!',
 		});
 	}, []);
 
@@ -66,47 +66,47 @@ export const DefaultLayout: DefaultLayoutProps = ({ HeaderProps, FooterProps, ch
 				{...HeaderProps}
 				navigationItems={[
 					{
-						label: "Home",
-						href: "/",
+						label: 'Home',
+						href: '/',
 					},
 					{
-						label: "About",
-						href: "/about",
+						label: 'About',
+						href: '/about',
 					},
 					{
-						label: "Graphix Collab",
-						href: "/graphix-collab",
+						label: 'Graphix Collab',
+						href: '/graphix-collab',
 					},
 					{
-						label: "Services",
-						href: "/services",
+						label: 'Services',
+						href: '/services',
 					},
 				]}
 				actions={[
 					{
-						color: "text",
+						color: 'text',
 						onClick() {
 							toggleContact();
 						},
-						label: "Contact Us",
+						label: 'Contact Us',
 					},
 					{
-						color: "primary",
+						color: 'primary',
 						onClick() {
 							toggleContact();
 						},
-						label: "Book a time",
+						label: 'Book a time',
 					},
 				]}
 			/>
-			<BackgroundImage className="Motif">
-				<BackgroundImageWrapper></BackgroundImageWrapper>
+			<BackgroundImage className='Motif'>
+				<BackgroundImageWrapper/>
 			</BackgroundImage>
-			<Main id="main-content">
+			<Main id='main-content'>
 				{children}
-				<PlaceholderBlock name="Yelp Block" />
+				<PlaceholderBlock name='Yelp Block'/>
 			</Main>
-			<FooterBlock {...FooterProps} />
+			<FooterBlock {...FooterProps}/>
 		</>
 	);
 };

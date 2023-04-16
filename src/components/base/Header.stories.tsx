@@ -1,6 +1,6 @@
-import { StoryObj, type Meta } from "@storybook/react";
-import { generateHeader } from "../../utils/chance";
-import { Header, type HeaderProps } from "./Header";
+import {type StoryObj, type Meta} from '@storybook/react';
+import {generateHeader} from '../../utils/chance';
+import {Header, type HeaderProps} from './Header';
 
 export default {
 	component: Header,

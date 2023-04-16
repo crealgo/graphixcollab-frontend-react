@@ -1,6 +1,6 @@
-import { StoryObj } from "@storybook/react";
-import { chance, generateActions } from "../../utils/chance";
-import { SocialMediaBlock, type SocialMediaBlockProps } from "./SocialMediaBlock";
+import {type StoryObj} from '@storybook/react';
+import {chance, generateActions} from '../../utils/chance';
+import {SocialMediaBlock, type SocialMediaBlockProps} from './SocialMediaBlock';
 
 export default {
 	component: SocialMediaBlock,

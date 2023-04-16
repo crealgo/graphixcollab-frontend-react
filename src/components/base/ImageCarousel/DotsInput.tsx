@@ -2,12 +2,12 @@ import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material';
 import {alpha, IconButton, styled, useControlled} from '@mui/material';
 import {useId, type FC} from 'react';
 
-interface DotsInputProps {
+type DotsInputProps = {
 	currentIndex?: number;
 	onIndexChange?: (index: number) => void;
 	count: number;
 	className?: string;
-}
+};
 
 const dotWidth = '0.5rem';
 const dotWidthExpanded = '1.5rem';
@@ -38,29 +38,29 @@ const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(({theme, c
 
 				transition: 'width 300ms',
 				transitionTimingFunction: theme.utils.transitions.easeInOut,
-				cursor: 'pointer'
+				cursor: 'pointer',
 			},
 			'&:hover::before': {
-				opacity: 1
+				opacity: 1,
 			},
 			'&[data-checked=true]::before': {
 				backgroundColor: alpha(theme.palette.primary.main, 1),
 				width: dotWidthExpanded,
-				cursor: 'default'
+				cursor: 'default',
 			},
 			'input[type=radio]': {
 				display: 'none',
-				margin: 0
-			}
-		}
-	}
+				margin: 0,
+			},
+		},
+	},
 }));
 
 export const DotsInput: FC<DotsInputProps> = ({currentIndex, onIndexChange, count = 0, className}) => {
 	const [index, setIndex] = useControlled({
 		default: 0,
 		controlled: currentIndex,
-		name: 'Dots Input Index'
+		name: 'Dots Input Index',
 	});
 
 	const goPrevious = () => {
@@ -91,9 +91,9 @@ export const DotsInput: FC<DotsInputProps> = ({currentIndex, onIndexChange, coun
 	const radioGroupId = `${generatedId}-dot-input`;
 
 	return (
-		<DotsInputWrapper className={'DotsInput-root'} count={count}>
-			<IconButton size='small' onClick={goPrevious} color='primary'>
-				<KeyboardArrowLeft />
+		<DotsInputWrapper className='DotsInput-root' count={count}>
+			<IconButton size='small' color='primary' onClick={goPrevious}>
+				<KeyboardArrowLeft/>
 			</IconButton>
 			<div className='DotInput-dots'>
 				{Array.from({length: count}, (_, radioIndex) => {
@@ -107,9 +107,9 @@ export const DotsInput: FC<DotsInputProps> = ({currentIndex, onIndexChange, coun
 							title={`image-${radioIndex}`}
 						>
 							<input
+								key={radioIndex}
 								type='radio'
 								className='DotsInput-input'
-								key={radioIndex}
 								id={inputId}
 								value={radioIndex}
 								name={radioGroupId}
@@ -123,8 +123,8 @@ export const DotsInput: FC<DotsInputProps> = ({currentIndex, onIndexChange, coun
 					);
 				})}
 			</div>
-			<IconButton size='small' onClick={goNext} color='primary'>
-				<KeyboardArrowRight />
+			<IconButton size='small' color='primary' onClick={goNext}>
+				<KeyboardArrowRight/>
 			</IconButton>
 		</DotsInputWrapper>
 	);

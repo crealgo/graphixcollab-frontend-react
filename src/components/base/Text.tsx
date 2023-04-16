@@ -24,7 +24,7 @@ export const Text = styled('p')<TextProps>(({theme, variant, size}) => {
 				font-size: 21px;
 				line-height: 32px;
 			}
-		`
+		`,
 	}[size ?? 'medium'];
 
 	const variantStyles = {
@@ -33,7 +33,7 @@ export const Text = styled('p')<TextProps>(({theme, variant, size}) => {
 		`,
 		caption: css`
 			color: #6b7280;
-		`
+		`,
 	}[variant ?? 'body'];
 
 	return css`
@@ -46,5 +46,5 @@ export const Text = styled('p')<TextProps>(({theme, variant, size}) => {
 });
 
 Text.defaultProps = {
-	className: 'Text-root'
+	className: 'Text-root',
 };

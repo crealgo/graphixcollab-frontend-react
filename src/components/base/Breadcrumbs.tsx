@@ -7,9 +7,9 @@ export type BreadcrumbOptions = {
 	href?: string;
 };
 
-interface BreadcrumbsProps extends MuiBreadcrumbsProps {
+type BreadcrumbsProps = {
 	items?: BreadcrumbOptions[];
-}
+} & MuiBreadcrumbsProps;
 
 export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(({children, items, ...props}, ref) => (
 	<MuiBreadcrumbs {...props} ref={ref}>

@@ -1,11 +1,11 @@
-import { type Person } from '../../types/general';
-import { Avatar, Link, styled, Typography } from '@mui/material';
+import {type Person} from '../../types/general';
+import {Avatar, Link, styled, Typography} from '@mui/material';
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
 
-export interface ProfileProps extends ComponentPropsWithoutRef<'div'> {
+export type ProfileProps = {
 	profile?: Person;
-}
+} & ComponentPropsWithoutRef<'div'>;
 
 const ProfileWrapper = styled('div')`
 	display: grid;
@@ -31,7 +31,7 @@ const ProfileWrapper = styled('div')`
 
 export const Profile: FC<ProfileProps> = ({className, profile}) => (
 	<ProfileWrapper className={clsx(className, 'Profile-root')}>
-		<Avatar src={profile?.avatar} alt={profile?.name} />
+		<Avatar src={profile?.avatar} alt={profile?.name}/>
 		<div className='Profile-content'>
 			<Typography className='Profile-name' variant='body2' fontWeight='bold'>
 				{profile?.name}

@@ -3,10 +3,10 @@ import {forwardRef, type ComponentPropsWithRef} from 'react';
 import {type NavItemOptions} from '../../types/general';
 import {NavItem} from './NavItem';
 
-interface TopNavProps extends ComponentPropsWithRef<'nav'> {
+type TopNavProps = {
 	items?: NavItemOptions[];
 	align?: 'start' | 'end';
-}
+} & ComponentPropsWithRef<'nav'>;
 
 const defaultAlignment = 'start';
 
@@ -16,14 +16,14 @@ const TopNavWrapper = styled('nav')<TopNavProps>(
 		gap: 0.25rem;
 		align-items: center;
 		justify-content: ${align};
-	`
+	`,
 );
 
 export const TopNav = forwardRef<HTMLDivElement, TopNavProps>(
 	({children, items, align = defaultAlignment, ...props}, ref) => (
-		<TopNavWrapper {...props} className={'TopNav-root'} align={align} ref={ref}>
-			{children ?? items?.map((item, itemIndex) => <NavItem size='small' key={itemIndex} {...item} />)}
+		<TopNavWrapper {...props} ref={ref} className='TopNav-root' align={align}>
+			{children ?? items?.map((item, itemIndex) => <NavItem key={itemIndex} size='small' {...item}/>)}
 		</TopNavWrapper>
-	)
+	),
 );
 TopNav.displayName = 'TopNav';

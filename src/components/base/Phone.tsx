@@ -1,10 +1,10 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithRef} from 'react';
 
-export interface PhoneProps extends ComponentPropsWithRef<'img'> {
+export type PhoneProps = {
 	hasBorder?: boolean;
 	elevation?: number;
-}
+} & ComponentPropsWithRef<'img'>;
 
 const iphoneCornerRadius = '10%';
 
@@ -16,14 +16,14 @@ export const Phone = styled('img')<PhoneProps>(
 		aspect-ratio: 9/19.5;
 		background-color: ${theme.palette.grey[300]};
 
-		${hasBorder &&
-		css`
+		${hasBorder
+		&& css`
 			border: solid 0.5rem ${theme.palette.grey[100]};
 		`}
 		box-shadow: ${theme.shadows[elevation]};
-	`
+	`,
 );
 
 Phone.defaultProps = {
-	className: 'Phone-root'
+	className: 'Phone-root',
 };

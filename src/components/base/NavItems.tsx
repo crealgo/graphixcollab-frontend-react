@@ -1,8 +1,8 @@
-import { NavItem } from './NavItem';
-import { NavItemDropdown } from './NavItemDropdown';
-import { type NavItemOptions } from '../../types/general';
-import { css, styled } from '@mui/material';
-import { type FC, type PropsWithChildren } from 'react';
+import {NavItem} from './NavItem';
+import {NavItemDropdown} from './NavItemDropdown';
+import {type NavItemOptions} from '../../types/general';
+import {css, styled} from '@mui/material';
+import {type FC, type PropsWithChildren} from 'react';
 
 const NavItemsWrapper = styled('nav')(
 	({theme}) => css`
@@ -12,7 +12,7 @@ const NavItemsWrapper = styled('nav')(
 		${theme.breakpoints.up('md')} {
 			display: flex;
 		}
-	`
+	`,
 );
 
 type NavItemsProps = PropsWithChildren<{
@@ -29,7 +29,7 @@ export const NavItems: FC<NavItemsProps> = ({items, children}) => (
 			<NavItem {...itemProps} key={itemIndex}>
 				{label}
 			</NavItem>
-		)
+		),
 		)}
 		{children}
 	</NavItemsWrapper>

@@ -1,6 +1,6 @@
-import { StoryObj } from "@storybook/react";
-import { generateOptions } from "../../utils/chance";
-import { InteractiveSelector, type InteractiveSelectorProps } from "./InteractiveSelector";
+import {type StoryObj} from '@storybook/react';
+import {generateOptions} from '../../utils/chance';
+import {InteractiveSelector, type InteractiveSelectorProps} from './InteractiveSelector';
 
 export default {
 	component: InteractiveSelector,

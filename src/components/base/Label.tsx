@@ -2,9 +2,9 @@ import {type CSSObject, styled, type Theme} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
-export interface LabelProps extends ComponentPropsWithoutRef<'span'> {
+export type LabelProps = {
 	variant?: 'primary' | 'secondary' | 'grey';
-}
+} & ComponentPropsWithoutRef<'span'>;
 
 type LabelFuncParams = {
 	theme: Theme;
@@ -16,12 +16,12 @@ export const getLabelStyles: LabelFunc = ({theme, variant = 'primary'}) => {
 	const colorHex = {
 		primary: theme.palette.primary.main,
 		secondary: theme.palette.secondary.main,
-		grey: theme.palette.grey[300]
+		grey: theme.palette.grey[300],
 	}[variant];
 
 	return {
 		backgroundColor: colorHex,
-		color: theme.palette.getContrastText(colorHex)
+		color: theme.palette.getContrastText(colorHex),
 	};
 };
 
@@ -34,7 +34,7 @@ const LabelWrapper = styled('span')<LabelProps>(({theme, variant = 'primary'}) =
 	textOverflow: 'ellipsis',
 	fontSize: theme.typography.body2.fontSize,
 	fontWeight: 500,
-	letterSpacing: '-0.0125rem'
+	letterSpacing: '-0.0125rem',
 }));
 
 export const Label: FC<LabelProps> = ({className, children, ...props}) => (

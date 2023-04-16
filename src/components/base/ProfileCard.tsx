@@ -6,9 +6,9 @@ import {type Employee} from '../../types/general';
 import {Image} from './Image';
 import {StatusMessage} from './StatusMessage';
 
-export interface ProfileCardProps {
+export type ProfileCardProps = {
 	profile?: Employee;
-}
+};
 
 const ProfileCardWrapper = styled('div')`
 	.Image-root {
@@ -27,17 +27,13 @@ const ProfileCardWrapper = styled('div')`
 
 export const ProfileCard: FC<ProfileCardProps> = ({profile}) => profile ? (
 	<ProfileCardWrapper className='ProfileCard-root'>
-		<Image
-			// ImageElementProps={{
-			// 	src: profile.photo ?? 'https://picsum.photos/300'
-			// }}
-		/>
+		<Image/>
 		<div className='ProfileCard-info'>
-			<Typography variant='h5' noWrap>
+			<Typography noWrap variant='h5'>
 				{profile.name}
 			</Typography>
-			<StatusMessage IconComponent={Business} text={profile.jobTitle} />
-			<Typography color={'primary'}>Interests</Typography>
+			<StatusMessage IconComponent={Business} text={profile.jobTitle}/>
+			<Typography color='primary'>Interests</Typography>
 		</div>
 	</ProfileCardWrapper>
 ) : null;

@@ -1,23 +1,23 @@
-import clsx from "clsx";
-import { ComponentPropsWithRef, ComponentPropsWithoutRef, FC, useId } from "react";
-// import { Size } from "../../../types/general";
-import styled from "@emotion/styled";
-import { InputProps } from "./Input";
-import { AutocompleteProps } from "./Autocomplete";
-import { Size } from "../../types/general";
+import clsx from 'clsx';
+import {type ComponentPropsWithRef, type ComponentPropsWithoutRef, type FC, useId} from 'react';
+// Import { Size } from "../../../types/general";
+import styled from '@emotion/styled';
+import {type InputProps} from './Input';
+import {type AutocompleteProps} from './Autocomplete';
+import {type Size} from '../../types/general';
 
-// type ExposedInputProps = Pick<InputProps, "id" | "placeholder" | "ref">;
-type BaseElementProps = ComponentPropsWithoutRef<"div">;
+// Type ExposedInputProps = Pick<InputProps, "id" | "placeholder" | "ref">;
+type BaseElementProps = ComponentPropsWithoutRef<'div'>;
 
-export interface FormGroupProps extends BaseElementProps {
+export type FormGroupProps = {
 	label?: string;
 	helperText?: string;
 	size?: Size;
 
 	InputProps?: InputProps | AutocompleteProps;
-	LabelProps?: ComponentPropsWithRef<"label">;
-	HelperTextProps?: ComponentPropsWithRef<"span">;
-}
+	LabelProps?: ComponentPropsWithRef<'label'>;
+	HelperTextProps?: ComponentPropsWithRef<'span'>;
+} & BaseElementProps;
 
 export const Wrapper = styled.div`
 	display: inline-grid;
@@ -44,7 +44,7 @@ export const FormGroup: FC<FormGroupProps> = ({
 	label,
 	id,
 	helperText,
-	// ref,
+	// Ref,
 	className,
 	LabelProps,
 	size,
@@ -55,16 +55,16 @@ export const FormGroup: FC<FormGroupProps> = ({
 	const resolvedId = id ?? useId();
 
 	return (
-		<Wrapper className={clsx(className, "FormGroup-root")}>
+		<Wrapper className={clsx(className, 'FormGroup-root')}>
 			{label && (
-				<InputLabel className="FormGroup-label" htmlFor={`input-${resolvedId}`} {...LabelProps}>
+				<InputLabel className='FormGroup-label' htmlFor={`input-${resolvedId}`} {...LabelProps}>
 					{label}
 				</InputLabel>
 			)}
 			{/* TODO: pass props correctly to child type input/select/button/input-group, or return a function with input props */}
 			{children}
 			{helperText && (
-				<InputHelperText id={`helperText-${resolvedId}`} className="FormGroup-helperText" {...HelperTextProps}>
+				<InputHelperText id={`helperText-${resolvedId}`} className='FormGroup-helperText' {...HelperTextProps}>
 					{helperText}
 				</InputHelperText>
 			)}

@@ -1,14 +1,14 @@
-import { css, styled } from "@mui/material";
-import { _e } from "../../utils/excludePropsFromForwarding";
-import { ComponentPropsWithRef, FC } from "react";
+import {css, styled} from '@mui/material';
+import {_e} from '../../utils/excludePropsFromForwarding';
+import {type ComponentPropsWithRef, type FC} from 'react';
 
-type BaseElementProps = ComponentPropsWithRef<"div">;
+type BaseElementProps = ComponentPropsWithRef<'div'>;
 
 type ContainerProps = {
-	size?: "small" | "medium" | "large";
+	size?: 'small' | 'medium' | 'large';
 };
 
-const BaseElement: FC<BaseElementProps> = ({ className, children, ref, ...props }) => (
+const BaseElement: FC<BaseElementProps> = ({className, children, ref, ...props}) => (
 	<div ref={ref} className={`Container-root ${className}`} {...props}>
 		{children}
 	</div>
@@ -16,28 +16,28 @@ const BaseElement: FC<BaseElementProps> = ({ className, children, ref, ...props 
 
 export const Container = styled(
 	BaseElement,
-	_e("ref", "size")
-)<ContainerProps>(({ theme, size }) => {
+	_e('ref', 'size'),
+)<ContainerProps>(({theme, size}) => {
 	const containerSize = {
 		small: theme.breakpoints.values.md,
 		medium: theme.breakpoints.values.lg,
 		large: theme.breakpoints.values.xl,
-	}[size ?? "medium"];
+	}[size ?? 'medium'];
 
 	const containerMaxWidth = size
 		? `
 			max-width: ${containerSize}px;
 		`
 		: `
-		${theme.breakpoints.up("md")} {
+		${theme.breakpoints.up('md')} {
 			max-width: ${theme.breakpoints.values.md}px;
 		}
 
-		${theme.breakpoints.up("lg")} {
+		${theme.breakpoints.up('lg')} {
 			max-width: ${theme.breakpoints.values.lg}px;
 		}
 
-		${theme.breakpoints.up("xl")} {
+		${theme.breakpoints.up('xl')} {
 			max-width: ${theme.breakpoints.values.xl}px;
 		}
 	`;

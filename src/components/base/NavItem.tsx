@@ -1,16 +1,14 @@
-import { type FC } from 'react';
-import { type NavItemOptions } from '../../types/general';
-import { Button, type ButtonProps } from './Button';
-import { css, styled } from '@mui/material/styles';
-import { colorIterator } from '../../utils/colorIterator';
+import {type FC} from 'react';
+import {type NavItemOptions} from '../../types/general';
+import {Button, type ButtonProps} from './Button';
+import {css, styled} from '@mui/material/styles';
+import {colorIterator} from '../../utils/colorIterator';
 
-export interface NavItemProps extends ButtonProps, NavItemOptions { }
+export type NavItemProps = Record<string, unknown> & ButtonProps & NavItemOptions;
 
 const StyledButton = styled(Button)<{
 	selected?: boolean;
-}>(({ theme, selected }) => {
-
-	return css`
+}>(({theme, selected}) => css`
 		border: unset;
 		box-shadow: unset;
 		text-decoration: ${selected ? 'underline' : 'unset'};
@@ -18,10 +16,9 @@ const StyledButton = styled(Button)<{
 		text-decoration-thickness: 2px;
 
 		${colorIterator('text-decoration-color')};
-	`
-});
+	`);
 
-export const NavItem: FC<NavItemProps> = ({ label, children, selected, ...props }) => (
+export const NavItem: FC<NavItemProps> = ({label, children, selected, ...props}) => (
 	<StyledButton selected={selected} size='small' color={selected ? 'tertiary' : 'text'} {...props}>
 		{children ?? label}
 	</StyledButton>

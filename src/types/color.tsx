@@ -1,1 +1,1 @@
-export type ColorVariants = "primary" | "secondary" | "tertiary" | "text";
+export type ColorVariants = 'primary' | 'secondary' | 'tertiary' | 'text';

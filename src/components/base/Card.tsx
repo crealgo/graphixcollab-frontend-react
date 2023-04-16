@@ -1,21 +1,21 @@
-import { KeyboardArrowRight } from "@mui/icons-material";
-import { Typography, useMediaQuery } from "@mui/material";
-import { css, styled, useTheme } from "@mui/material/styles";
-import { FC, type ComponentPropsWithRef } from "react";
-import { useAppState } from "../../hooks/useAppState";
-import { type ServiceOptions } from "../../types/general";
-import { chance } from "../../utils/chance";
-import { ActionStack } from "./ActionStack";
-import { Button } from "./Button";
-import { Image, type ImageProps } from "./Image";
-import clsx from "clsx";
+import {KeyboardArrowRight} from '@mui/icons-material';
+import {Typography, useMediaQuery} from '@mui/material';
+import {css, styled, useTheme} from '@mui/material/styles';
+import {type FC, type ComponentPropsWithRef} from 'react';
+import {useAppState} from '../../hooks/useAppState';
+import {type ServiceOptions} from '../../types/general';
+import {chance} from '../../utils/chance';
+import {ActionStack} from './ActionStack';
+import {Button} from './Button';
+import {Image, type ImageProps} from './Image';
+import clsx from 'clsx';
 
-interface CardProps extends ServiceOptions, ComponentPropsWithRef<"a"> {
+type CardProps = {
 	ImageProps?: ImageProps;
-}
+} & ServiceOptions & ComponentPropsWithRef<'a'>;
 
-const CardAnchor = styled("a")(() => {
-	const randomRotation = `${chance.bool() ? "" : "-"}${chance.natural({ min: 2, max: 7 })}`;
+const CardAnchor = styled('a')(() => {
+	const randomRotation = `${chance.bool() ? '' : '-'}${chance.natural({min: 2, max: 7})}`;
 
 	return css`
 		cursor: pointer;
@@ -65,28 +65,28 @@ const CardAnchor = styled("a")(() => {
 	`;
 });
 
-export const Card: FC<CardProps> = ({ title, subtitle, description, className, imageSrc, ImageProps, ...props }) => {
-	const { breakpoints } = useTheme();
-	const isMobile = useMediaQuery(breakpoints.down("sm"));
-	const { toggleBooking } = useAppState();
+export const Card: FC<CardProps> = ({title, subtitle, description, className, imageSrc, ImageProps, ...props}) => {
+	const {breakpoints} = useTheme();
+	const isMobile = useMediaQuery(breakpoints.down('sm'));
+	const {toggleBooking} = useAppState();
 
 	return (
 		<CardAnchor className={clsx('Card-root', className)} {...props}>
-			<Image className="image" />
-			<div className="content">
-				<Typography variant="caption">{subtitle}</Typography>
-				<Typography variant="h5">{title}</Typography>
-				<Typography variant="caption">{description}</Typography>
-				<ActionStack align={isMobile ? "start" : "center"}>
+			<Image className='image'/>
+			<div className='content'>
+				<Typography variant='caption'>{subtitle}</Typography>
+				<Typography variant='h5'>{title}</Typography>
+				<Typography variant='caption'>{description}</Typography>
+				<ActionStack align={isMobile ? 'start' : 'center'}>
 					<Button
-						color={isMobile ? "secondary" : "text"}
-						size="small"
-						endIcon={<KeyboardArrowRight />}
+						color={isMobile ? 'secondary' : 'text'}
+						size='small'
+						endIcon={<KeyboardArrowRight/>}
 						onClick={() => {
 							toggleBooking();
 						}}
 					>
-						{"Book Appointment"}
+						Book Appointment
 					</Button>
 				</ActionStack>
 			</div>

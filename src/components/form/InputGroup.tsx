@@ -1,17 +1,17 @@
-import styled from "@emotion/styled";
-import { ComponentPropsWithoutRef, FC, ReactNode } from "react";
-import { InputProps } from "./Input";
-import { Size } from "../../types/general";
+import styled from '@emotion/styled';
+import {type ComponentPropsWithoutRef, type FC, type ReactNode} from 'react';
+import {type InputProps} from './Input';
+import {type Size} from '../../types/general';
 
-type ExposedInputProps = Pick<InputProps, "ref">;
-type BaseElementProps = ComponentPropsWithoutRef<"div">;
+type ExposedInputProps = Pick<InputProps, 'ref'>;
+type BaseElementProps = ComponentPropsWithoutRef<'div'>;
 
-export interface InputGroupProps extends BaseElementProps, ExposedInputProps {
+export type InputGroupProps = {
 	startContent?: ReactNode;
 	endContent?: ReactNode;
 	InputProps?: InputProps;
 	size?: Size;
-}
+} & BaseElementProps & ExposedInputProps;
 
 const InputElementWrapper = styled.div`
 	display: inline-flex;
@@ -34,7 +34,7 @@ const EndContent = styled(BaseContentElement)`
 	right: 0;
 `;
 
-export const InputGroup: FC<InputGroupProps> = ({ startContent, endContent, InputProps, ref, children, ...props }) => (
+export const InputGroup: FC<InputGroupProps> = ({startContent, endContent, InputProps, ref, children, ...props}) => (
 	<InputElementWrapper {...props}>
 		{startContent && <StartContent>{startContent}</StartContent>}
 		{children}

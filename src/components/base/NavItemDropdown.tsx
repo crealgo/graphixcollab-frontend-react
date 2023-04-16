@@ -5,16 +5,16 @@ import {type NavItemOptions} from '../../types/general';
 import {type ButtonProps} from './Button';
 import {NavItem} from './NavItem';
 
-export interface NavItemDropdownProps extends ButtonProps {
+export type NavItemDropdownProps = {
 	items?: NavItemOptions[];
 	FlyoutComponent?: ComponentType<unknown>;
-}
+} & ButtonProps;
 
 export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, children, items}) => {
 	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | undefined>(undefined);
 	const open = Boolean(anchorEl);
 
-	const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+	const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
 		setAnchorEl(event.currentTarget);
 	};
 
@@ -25,17 +25,17 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 	const sharedProps = {
 		open,
 		anchorEl,
-		onClose: handleClose
+		onClose: handleClose,
 	};
 
 	return (
 		<>
 			<NavItem
-				endIcon={<KeyboardArrowDown />}
-				onClick={handleClick}
+				endIcon={<KeyboardArrowDown/>}
 				aria-controls={open ? 'basic-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
+				onClick={handleClick}
 			>
 				{children}
 			</NavItem>
@@ -44,10 +44,10 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 					{...sharedProps}
 					anchorOrigin={{
 						vertical: 'bottom',
-						horizontal: 'left'
+						horizontal: 'left',
 					}}
 				>
-					<FlyoutComponent />
+					<FlyoutComponent/>
 				</Popover>
 			) : (
 				<Menu
@@ -55,8 +55,8 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 					MenuListProps={{
 						'aria-labelledby': 'basic-button',
 						sx: {
-							minWidth: '10rem'
-						}
+							minWidth: '10rem',
+						},
 					}}
 				>
 					{items?.map((item, itemIndex) => (

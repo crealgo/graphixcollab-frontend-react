@@ -5,9 +5,9 @@ import {Close, Menu} from '@mui/icons-material';
 import {Drawer, useControlled, type DrawerProps} from '@mui/material';
 import {type FC, type MouseEventHandler} from 'react';
 
-export interface DrawerMenuProps extends Pick<DrawerProps, 'open' | 'onClose'> {
+export type DrawerMenuProps = {
 	items?: NavItemOptions[];
-}
+} & Pick<DrawerProps, 'open' | 'onClose'>;
 
 export const contentBoxPadding = '1rem';
 
@@ -15,7 +15,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen, on
 	const [open, setOpen] = useControlled({
 		controlled: controlledOpen,
 		default: false,
-		name: 'DrawerMenu Open State'
+		name: 'DrawerMenu Open State',
 	});
 
 	const handleOpen: MouseEventHandler<HTMLButtonElement> = () => {
@@ -29,10 +29,10 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen, on
 	return (
 		<>
 			<MenuTrigger size='small' className='MenuTrigger-root' onClick={handleOpen}>
-				{open ? <Close /> : <Menu />}
+				{open ? <Close/> : <Menu/>}
 			</MenuTrigger>
 			<Drawer anchor='left' open={open} onClose={handleClose}>
-				<DrawerContent navigationItems={items} onCloseButtonClick={handleClose} />
+				<DrawerContent navigationItems={items} onCloseButtonClick={handleClose}/>
 			</Drawer>
 		</>
 	);

@@ -1,5 +1,5 @@
-import { BannerProps } from "../components/base/Banner";
-import { createContext, Dispatch, SetStateAction } from "react";
+import {type BannerProps} from '../components/base/Banner';
+import {createContext, type Dispatch, type SetStateAction} from 'react';
 
 export type AppStateContextOptions = {
 	bannerOpen: boolean;
@@ -12,6 +12,6 @@ export type AppStateContextOptions = {
 	toggleBanner: (state?: boolean) => void;
 	toggleContact: (state?: boolean) => void;
 	toggleBooking: (state?: boolean) => void;
-}
+};
 
-export const AppStateContext = createContext<AppStateContextOptions | undefined>(undefined)
+export const AppStateContext = createContext<AppStateContextOptions | undefined>(undefined);

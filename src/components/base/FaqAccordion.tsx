@@ -55,26 +55,26 @@ const Wrapper = styled(Accordion)(
 		.MuiAccordionDetails-root {
 			padding-left: calc(0.25rem + ${fontHeight});
 		}
-	`
+	`,
 );
 
 const AccordionHead = styled(AccordionSummary)(({theme}) => ({
-	...theme.typography.body2
+	...theme.typography.body2,
 }));
 
 export const FaqAccordion: FC<FaqAccordionProps> = ({question, answer, actions, resources}) => (
 	<Wrapper variant='outlined'>
 		<AccordionHead>
-			<AddCircleOutline />
+			<AddCircleOutline/>
 			{question}
 		</AccordionHead>
 		<AccordionDetails>
 			{answer}
 			{actions && (
 				<>
-					<br />
-					<br />
-					<ActionStack size='small' actions={actions} />
+					<br/>
+					<br/>
+					<ActionStack size='small' actions={actions}/>
 				</>
 			)}
 		</AccordionDetails>

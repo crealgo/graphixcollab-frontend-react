@@ -1,6 +1,6 @@
-import { ActionStack } from "../../base/ActionStack";
-import { DialogTitle } from "../../base/DialogTitle";
-import { ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone } from "@mui/icons-material";
+import {ActionStack} from '../../base/ActionStack';
+import {DialogTitle} from '../../base/DialogTitle';
+import {ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone} from '@mui/icons-material';
 import {
 	css,
 	Dialog,
@@ -11,12 +11,12 @@ import {
 	StepLabel,
 	Stepper,
 	styled,
-} from "@mui/material";
-import { FC, MouseEvent, useState } from "react";
-import { Button } from "../../base/Button";
-import { CustomerInfoStep } from "./steps/CustomerInfoStep";
-import { ReserveTimeSlotStep } from "./steps/ReserveTimeSlotStep";
-import { SelectServiceStep } from "./steps/SelectServiceStep";
+} from '@mui/material';
+import {type FC, type MouseEvent, useState} from 'react';
+import {Button} from '../../base/Button';
+import {CustomerInfoStep} from './steps/CustomerInfoStep';
+import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
+import {SelectServiceStep} from './steps/SelectServiceStep';
 
 type BookingServiceProps = {
 	open?: boolean;
@@ -27,23 +27,23 @@ type BookingServiceProps = {
 const steps = [
 	{
 		completed: false,
-		label: "Select a service",
+		label: 'Select a service',
 		StepContent: SelectServiceStep,
 	},
 	{
 		completed: false,
-		label: "Select Date and time",
+		label: 'Select Date and time',
 		StepContent: ReserveTimeSlotStep,
 	},
 	{
 		completed: false,
-		label: "Enter your details",
+		label: 'Enter your details',
 		StepContent: CustomerInfoStep,
 	},
 ];
 
 const StyledDialogContent = styled(DialogContent)(
-	({ theme }) => css`
+	({theme}) => css`
 		background-color: ${theme.palette.grey[100]};
 		border-top: solid 1px ${theme.palette.grey[300]};
 		border-bottom: solid 1px ${theme.palette.grey[300]};
@@ -56,14 +56,14 @@ const StyledDialogContent = styled(DialogContent)(
 			padding-inline: 0.5rem;
 			padding-block: 2rem;
 		}
-	`
+	`,
 );
 
-const StepContentWrapper = styled("div")`
+const StepContentWrapper = styled('div')`
 	padding-block: 1rem;
 `;
 
-export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseClick }) => {
+export const BookingService: FC<BookingServiceProps> = ({open = false, onCloseClick}) => {
 	const [activeStep, setActiveStep] = useState<number>(0);
 
 	const handlePrevStep = () => {
@@ -83,41 +83,41 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 	};
 
 	return (
-		<Dialog open={open} fullWidth onClose={onCloseClick}>
+		<Dialog fullWidth open={open} onClose={onCloseClick}>
 			<DialogTitle>
-				<span>{"Book an Appointment"}</span>
-				<BookTwoTone color="primary" />
+				<span>Book an Appointment</span>
+				<BookTwoTone color='primary'/>
 			</DialogTitle>
 			<StyledDialogContent>
-				<div className="stepper">
-					<Stepper nonLinear orientation="vertical" activeStep={activeStep}>
-						{steps.map(({ label, StepContent: ResolvedStepContent }, stepIndex) => (
+				<div className='stepper'>
+					<Stepper nonLinear orientation='vertical' activeStep={activeStep}>
+						{steps.map(({label, StepContent: ResolvedStepContent}, stepIndex) => (
 							<Step key={stepIndex}>
 								<StepLabel>{label}</StepLabel>
 								<StepContent>
 									<StepContentWrapper>
-										<ResolvedStepContent />
-										<br />
+										<ResolvedStepContent/>
+										<br/>
 										<ActionStack>
 											<Button
-												color="text"
-												startIcon={<ArrowCircleLeft color="warning" />}
+												color='text'
+												startIcon={<ArrowCircleLeft color='warning'/>}
 												onClick={handlePrevStep}
 											>
 												Previous
 											</Button>
 											{stepIndex === steps.length - 1 ? (
 												<Button
-													color="tertiary"
-													endIcon={<CheckCircle color="success" />}
+													color='tertiary'
+													endIcon={<CheckCircle color='success'/>}
 													onClick={handleNextStep}
 												>
 													Submit
 												</Button>
 											) : (
 												<Button
-													color="text"
-													endIcon={<ArrowCircleRight color="success" />}
+													color='text'
+													endIcon={<ArrowCircleRight color='success'/>}
 													onClick={handleNextStep}
 												>
 													Next
@@ -132,7 +132,7 @@ export const BookingService: FC<BookingServiceProps> = ({ open = false, onCloseC
 				</div>
 			</StyledDialogContent>
 			<DialogActions>
-				<Button color="text" endIcon={<Cancel color="error" />} onClick={onCloseClick}>
+				<Button color='text' endIcon={<Cancel color='error'/>} onClick={onCloseClick}>
 					Cancel
 				</Button>
 			</DialogActions>

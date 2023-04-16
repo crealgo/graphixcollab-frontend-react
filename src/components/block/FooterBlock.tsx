@@ -3,15 +3,15 @@ import {css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
 import {type Term} from '../../types/general';
 import {Container} from '../base/Container';
-import { Block } from '../base/Block';
+import {Block} from '../base/Block';
 
-export interface FooterBlockProps {
+export type FooterBlockProps = {
 	title?: string;
 	description?: string;
 	meta?: Term[];
 	copyrightText?: string;
 	extraText?: string;
-}
+};
 
 const Column = styled('div')(
 	({theme}) => css`
@@ -22,7 +22,7 @@ const Column = styled('div')(
 		${theme.breakpoints.up('md')} {
 			gap: 0.75rem;
 		}
-	`
+	`,
 );
 
 const FooterBlockWrapper = styled(Block)(
@@ -30,7 +30,7 @@ const FooterBlockWrapper = styled(Block)(
 		${theme.utils.styles.block};
 
 		border-bottom: solid 1px ${theme.palette.grey[300]};
-	`
+	`,
 ).withComponent('footer');
 
 const Content = styled('div')(
@@ -42,7 +42,7 @@ const Content = styled('div')(
 		${theme.breakpoints.up('md')} {
 			grid-template-columns: repeat(3, 1fr);
 		}
-	`
+	`,
 );
 
 const CopyrightBlockWrapper = styled(Block)(
@@ -58,7 +58,7 @@ const CopyrightBlockWrapper = styled(Block)(
 			flex-direction: row;
 			gap: 1.5rem;
 		}
-	`
+	`,
 );
 
 export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []}) => (
@@ -70,18 +70,18 @@ export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []
 						<Typography variant='h3'>{title}</Typography>
 						<Typography variant='body1'>{description}</Typography>
 						<div>
-							<Typography variant='subtitle1' color={'grey.700'}>
-								{'Social Media'}
+							<Typography variant='subtitle1' color='grey.700'>
+								Social Media
 							</Typography>
-							<Stack gap={'0.25rem'} direction={'row'}>
+							<Stack gap='0.25rem' direction='row'>
 								<IconButton size='small'>
-									<Facebook fontSize='small' />
+									<Facebook fontSize='small'/>
 								</IconButton>
 								<IconButton size='small'>
-									<Twitter fontSize='small' />
+									<Twitter fontSize='small'/>
 								</IconButton>
 								<IconButton size='small'>
-									<Instagram fontSize='small' />
+									<Instagram fontSize='small'/>
 								</IconButton>
 							</Stack>
 						</div>
@@ -89,7 +89,7 @@ export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []
 					<Column>
 						{meta?.map((term, termIndex) => (
 							<div key={termIndex}>
-								<Typography variant='subtitle1' color={'grey.700'}>
+								<Typography variant='subtitle1' color='grey.700'>
 									{term.term}
 								</Typography>
 								<Typography>{term.description}</Typography>
@@ -98,10 +98,10 @@ export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []
 					</Column>
 					<Column>
 						<div>
-							<Typography variant='subtitle1' color={'grey.700'}>
-								{'Newsletter'}
+							<Typography variant='subtitle1' color='grey.700'>
+								Newsletter
 							</Typography>
-							<Typography>{'Input goes here'}</Typography>
+							<Typography>Input goes here</Typography>
 						</div>
 					</Column>
 				</Content>

@@ -1,12 +1,11 @@
-import Avatar from "@mui/material/Avatar";
-import { css, styled } from "@mui/material/styles";
-import { type FC } from "react";
-import { avatarSpecs, minHeight, minWidth } from "./constants";
-import { StoryObj } from "@storybook/react";
+import Avatar from '@mui/material/Avatar';
+import {css, styled} from '@mui/material/styles';
+import {type FC} from 'react';
+import {avatarSpecs, minHeight, minWidth} from './constants';
+import {type StoryObj} from '@storybook/react';
 
-const YelpBlockWrapper = styled("div")<{ avatarCount?: number }>(({ theme, avatarCount = 0 }) => {
-	const avatarCss = avatarSpecs.reduce((previousValue, { size, left, bottom }, currentIndex) => {
-		const returnValue = `
+const YelpBlockWrapper = styled('div')<{avatarCount?: number}>(({theme, avatarCount = 0}) => {
+	const avatarCss = avatarSpecs.reduce((previousValue, {size, left, bottom}, currentIndex) => `
 			${previousValue}
 
 			&:nth-of-type(n + ${currentIndex + 1}) {
@@ -15,10 +14,7 @@ const YelpBlockWrapper = styled("div")<{ avatarCount?: number }>(({ theme, avata
 				left: calc(100% - ${left});
 				bottom: ${bottom}px;
 			}
-		`;
-
-		return returnValue;
-	}, "");
+		`, '');
 
 	return css`
 		position: relative;
@@ -56,14 +52,14 @@ const YelpBlockWrapper = styled("div")<{ avatarCount?: number }>(({ theme, avata
 	`;
 });
 
-const YelpBlock: FC<unknown> = (props) => {
+const YelpBlock: FC<unknown> = props => {
 	const avatarCount = 20;
 
 	return (
-		<YelpBlockWrapper className="YelpBlock-root" avatarCount={avatarCount}>
-			<div className="YelpBlock-avatars">
-				{Array.from({ length: avatarCount }, (_, index) => (
-					<Avatar key={index} className="YelpBlock-avatar" />
+		<YelpBlockWrapper className='YelpBlock-root' avatarCount={avatarCount}>
+			<div className='YelpBlock-avatars'>
+				{Array.from({length: avatarCount}, (_, index) => (
+					<Avatar key={index} className='YelpBlock-avatar'/>
 				))}
 				;
 			</div>
@@ -73,10 +69,10 @@ const YelpBlock: FC<unknown> = (props) => {
 };
 
 export default {
-	title: "Blocks / Yelp Block",
+	title: 'Blocks / Yelp Block',
 	component: YelpBlock,
 };
 
 export const Default: StoryObj = {
-	args: {}
+	args: {},
 };

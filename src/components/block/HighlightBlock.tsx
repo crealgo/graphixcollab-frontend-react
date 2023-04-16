@@ -1,13 +1,13 @@
-import { css, styled, Typography } from "@mui/material";
-import { type FC } from "react";
+import {css, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
 
-export interface HighlightBlockProps {
+export type HighlightBlockProps = {
 	quote?: string;
 	quoter?: string;
-}
+};
 
-const HighlightBlockWrapper = styled("div")(
-	({ theme }) => css`
+const HighlightBlockWrapper = styled('div')(
+	({theme}) => css`
 		${theme.utils.styles.block};
 
 		background-color: ${theme.palette.secondary.main};
@@ -20,16 +20,16 @@ const HighlightBlockWrapper = styled("div")(
 			width: 100%;
 			max-width: 900px;
 		}
-	`
+	`,
 );
 
-export const HighlightBlock: FC<HighlightBlockProps> = (props) => (
+export const HighlightBlock: FC<HighlightBlockProps> = props => (
 	<HighlightBlockWrapper>
-		<div className="HighlightBlock-content">
-			<Typography variant="h4" className="HighlightBlock-quote">
+		<div className='HighlightBlock-content'>
+			<Typography variant='h4' className='HighlightBlock-quote'>
 				{props.quote}
 			</Typography>
-			<Typography variant="body1" className="HighlightBlock-quoter">
+			<Typography variant='body1' className='HighlightBlock-quoter'>
 				{props.quoter}
 			</Typography>
 		</div>

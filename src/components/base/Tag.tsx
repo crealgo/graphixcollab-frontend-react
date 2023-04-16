@@ -7,12 +7,12 @@ const StyledChip = styled(Chip)`
 `;
 
 export const Tag = forwardRef<HTMLDivElement, ChipProps>(({children, ...props}, ref) => (
-	<StyledChip {...props} ref={ref} />
+	<StyledChip {...props} ref={ref}/>
 ));
 
 Tag.defaultProps = {
 	size: 'small',
-	color: 'primary'
+	color: 'primary',
 };
 
 Tag.displayName = 'Tag';

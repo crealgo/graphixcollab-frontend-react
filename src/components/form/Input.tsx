@@ -1,14 +1,14 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { ComponentPropsWithRef } from "react";
-import { Size } from "../../types/general";
+import {css} from '@emotion/react';
+import styled from '@emotion/styled';
+import {type ComponentPropsWithRef} from 'react';
+import {type Size} from '../../types/general';
 
-export interface InputProps extends ComponentPropsWithRef<"input"> {
+export type InputProps = {
 	inputSize?: Size;
-}
+} & ComponentPropsWithRef<'input'>;
 
 export const Input = styled.input<InputProps>(
-	({ inputSize = "medium" }) => css`
+	({inputSize = 'medium'}) => css`
 		border: unset;
 		padding: unset;
 		outline: unset;
@@ -29,5 +29,5 @@ export const Input = styled.input<InputProps>(
 		&:invalid {
 			box-shadow:
 		} */
-	`
+	`,
 );

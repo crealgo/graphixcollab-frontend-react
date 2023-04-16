@@ -1,39 +1,39 @@
-import { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
-import { BannerService } from "../components/service/BannerService";
-import { ContactService } from "../components/service/ContactService";
-import { SquareBookingService } from "../components/service/SquareBookingService";
-import { AppStateContext, AppStateContextOptions as Context } from "../contexts/AppStateContext";
+import {type FC, type PropsWithChildren, useEffect, useLayoutEffect, useState} from 'react';
+import {BannerService} from '../components/service/BannerService';
+import {ContactService} from '../components/service/ContactService';
+import {SquareBookingService} from '../components/service/SquareBookingService';
+import {AppStateContext, type AppStateContextOptions as Context} from '../contexts/AppStateContext';
 
-type AppStateContextProviderProps = PropsWithChildren<unknown>;
+type AppStateContextProviderProps = PropsWithChildren;
 
-export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ children }) => {
-	const [bannerOpen, setBannerOpen] = useState<Context["bannerOpen"]>(false);
-	const [bookingOpen, setBookingOpen] = useState<Context["bookingOpen"]>(false);
-	const [contactOpen, setContactOpen] = useState<Context["contactOpen"]>(false);
-	const [BannerProps, setBannerProps] = useState<Context["BannerProps"]>({});
+export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({children}) => {
+	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
+	const [bookingOpen, setBookingOpen] = useState<Context['bookingOpen']>(false);
+	const [contactOpen, setContactOpen] = useState<Context['contactOpen']>(false);
+	const [BannerProps, setBannerProps] = useState<Context['BannerProps']>({});
 
 	const toggleBanner = (state?: boolean) => {
-		if (typeof state === "boolean") {
+		if (typeof state === 'boolean') {
 			setBannerOpen(state);
 		}
 
-		setBannerOpen((curr) => !curr);
+		setBannerOpen(curr => !curr);
 	};
 
 	const toggleBooking = (state?: boolean) => {
-		if (typeof state === "boolean") {
+		if (typeof state === 'boolean') {
 			setBookingOpen(state);
 		}
 
-		setBookingOpen((curr) => !curr);
+		setBookingOpen(curr => !curr);
 	};
 
 	const toggleContact = (state?: boolean) => {
-		if (typeof state === "boolean") {
+		if (typeof state === 'boolean') {
 			setContactOpen(state);
 		}
 
-		setContactOpen((curr) => !curr);
+		setContactOpen(curr => !curr);
 	};
 
 	useEffect(() => {
@@ -67,7 +67,7 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({ chil
 			/>
 			<ContactService
 				open={contactOpen}
-				onCloseClick={(event) => {
+				onCloseClick={event => {
 					toggleContact();
 				}}
 			/>

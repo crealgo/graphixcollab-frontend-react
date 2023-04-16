@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Input, InputProps } from "./Input";
+import {type Meta, type StoryObj} from '@storybook/react';
+import {Input, type InputProps} from './Input';
 
 export default {
 	component: Input,
@@ -7,7 +7,7 @@ export default {
 
 export const Default: StoryObj<InputProps> = {
 	args: {
-		placeholder: "Start Typing...",
-		inputSize: "medium",
+		placeholder: 'Start Typing...',
+		inputSize: 'medium',
 	},
 };

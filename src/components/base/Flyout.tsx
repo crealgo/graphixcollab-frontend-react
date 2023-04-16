@@ -33,7 +33,7 @@ export const Flyout = () => (
 					totam rem aperiam,
 				</Text>
 			</HeadingContent>
-			<FeaturedItems items={generateFeaturedItems()} />
+			<FeaturedItems items={generateFeaturedItems()}/>
 		</FlyoutFeaturedItems>
 	</FlyoutContent>
 );

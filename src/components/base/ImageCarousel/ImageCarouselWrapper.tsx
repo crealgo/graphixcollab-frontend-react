@@ -2,14 +2,14 @@ import {colors, styled} from '@mui/material';
 import {_e} from '../../../utils/excludePropsFromForwarding';
 import {type SharedCarouseProps} from '.';
 
-interface CarouseWrapperProps extends SharedCarouseProps {
+type CarouseWrapperProps = {
 	imageCount?: number;
 	currentIndex?: number;
-}
+} & SharedCarouseProps;
 
 export const ImageCarouselWrapper = styled(
 	'div',
-	_e('height', 'width', 'imageCount', 'currentIndex')
+	_e('height', 'width', 'imageCount', 'currentIndex'),
 )<CarouseWrapperProps>(({theme, imageCount = 0, currentIndex = 0, height = '100%', width = '100%'}) => {
 	const imageCss: Record<string, unknown> = {};
 
@@ -18,7 +18,7 @@ export const ImageCarouselWrapper = styled(
 
 		imageCss[`&:nth-of-type(${i + 1})`] = {
 			backgroundColor: colors.amber[colorIndex] || 'white',
-			transform: `translateX(calc(100% * ${i - currentIndex}))`
+			transform: `translateX(calc(100% * ${i - currentIndex}))`,
 		};
 	}
 
@@ -35,13 +35,13 @@ export const ImageCarouselWrapper = styled(
 			height: '100%',
 			transition: 'transform 500ms',
 			transitionTimingFunction: theme.utils.transitions.easeInOut,
-			...imageCss
+			...imageCss,
 		},
 		'.DotsInput-root': {
 			position: 'absolute',
 			bottom: '0.5rem',
 			left: '50%',
-			transform: 'translateX(-50%)'
-		}
+			transform: 'translateX(-50%)',
+		},
 	};
 });

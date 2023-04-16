@@ -1,24 +1,22 @@
-import { Close } from "@mui/icons-material";
-import { css, styled } from "@mui/material";
-import { PropsWithChildren, useMemo, useRef, type FC } from "react";
-import Marquee from "react-fast-marquee";
-import { type Action } from "../../types/general";
-import { ActionStack } from "./ActionStack";
-import { Block } from "./Block";
-import { Container } from "./Container";
-import { IconButton } from "./IconButton";
-import { type IconButtonBaseProps } from "./IconButtonBase";
-import { type ImageProps } from "./Image";
+import {Close} from '@mui/icons-material';
+import {css, styled} from '@mui/material';
+import {useMemo, useRef, type FC, type PropsWithChildren} from 'react';
+import {type Action} from '../../types/general';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Container} from './Container';
+import {IconButton} from './IconButton';
+import {type IconButtonBaseProps} from './IconButtonBase';
 
 export type BannerProps = PropsWithChildren<{
 	text?: string;
 	actions?: Action[];
-	onCloseClick?: IconButtonBaseProps["onClick"];
-	ImageProps?: ImageProps;
+	onCloseClick?: IconButtonBaseProps['onClick'];
+	// ImageProps?: ImageProps;
 }>;
 
 const StyledBlock = styled(Block)(
-	({ theme }) => css`
+	({theme}) => css`
 		display: block;
 		position: relative;
 		background-color: ${theme.palette.error.light};
@@ -59,7 +57,7 @@ const StyledBlock = styled(Block)(
 		.Banner-closeButton {
 			flex: none;
 		}
-	`
+	`,
 );
 
 const BannerClose = styled(IconButton)`
@@ -67,9 +65,9 @@ const BannerClose = styled(IconButton)`
 	font-size: 1rem;
 `;
 
-export const Banner: FC<BannerProps> = ({ actions, onCloseClick, text, children }) => {
-	const textRef = useRef<HTMLParagraphElement | null>(null);
-	const containerRef = useRef<HTMLDivElement | null>(null);
+export const Banner: FC<BannerProps> = ({actions, onCloseClick, text, children}) => {
+	const textRef = useRef<HTMLParagraphElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
 
 	const playMarquee = useMemo(() => {
 		if (textRef.current && containerRef.current) {
@@ -81,23 +79,23 @@ export const Banner: FC<BannerProps> = ({ actions, onCloseClick, text, children 
 		return false;
 	}, [textRef, containerRef]);
 
-	const resolvedTitle = typeof children === "string" ? children : "";
+	const resolvedTitle = typeof children === 'string' ? children : '';
 
 	return (
-		<StyledBlock className="Banner-root" title={resolvedTitle}>
-			<Container className="Banner-container" ref={containerRef}>
-				<div className="Banner-content">
-					<span ref={textRef} className="Banner-textContent">
+		<StyledBlock className='Banner-root' title={resolvedTitle}>
+			<Container ref={containerRef} className='Banner-container'>
+				<div className='Banner-content'>
+					<span ref={textRef} className='Banner-textContent'>
 						{children ?? text}
 					</span>
 					{actions?.length && (
-						<ActionStack className="Banner-actionStack" size="small" color="text" actions={actions} />
+						<ActionStack className='Banner-actionStack' size='small' color='text' actions={actions}/>
 					)}
 				</div>
 				<BannerClose
-					className="Banner-closeButton"
-					aria-label="Close Banner"
-					color="text"
+					className='Banner-closeButton'
+					aria-label='Close Banner'
+					color='text'
 					Icon={Close}
 					onClick={onCloseClick}
 				/>

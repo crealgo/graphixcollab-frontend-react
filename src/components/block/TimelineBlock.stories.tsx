@@ -1,6 +1,6 @@
-import { StoryObj, type Meta } from "@storybook/react";
-import { generateTimelineBlock } from "../../utils/chance";
-import { TimelineBlock } from "./TimelineBlock";
+import {type StoryObj, type Meta} from '@storybook/react';
+import {generateTimelineBlock} from '../../utils/chance';
+import {TimelineBlock} from './TimelineBlock';
 
 export default {
 	component: TimelineBlock,

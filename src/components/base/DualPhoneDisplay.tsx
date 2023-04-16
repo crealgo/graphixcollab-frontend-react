@@ -2,10 +2,10 @@ import {css, styled} from '@mui/material';
 import {type FC, type ComponentPropsWithoutRef} from 'react';
 import {Phone, type PhoneProps} from './Phone';
 
-export interface DualPhoneDisplayProps extends ComponentPropsWithoutRef<'div'> {
+export type DualPhoneDisplayProps = {
 	phone1Props?: PhoneProps;
 	phone2Props?: PhoneProps;
-}
+} & ComponentPropsWithoutRef<'div'>;
 
 const Wrapper = styled('div')(
 	({theme}) => css`
@@ -30,7 +30,7 @@ const Wrapper = styled('div')(
 			right: 0;
 			top: 15%;
 		}
-	`
+	`,
 );
 
 const InnerWrapper = styled('div')`
@@ -42,8 +42,8 @@ const InnerWrapper = styled('div')`
 export const DualPhoneDisplay: FC<DualPhoneDisplayProps> = ({phone1Props, phone2Props, ...props}) => (
 	<Wrapper className='DualPhoneDisplay-root' role='img' aria-label='Phone app display' {...props}>
 		<InnerWrapper>
-			<Phone elevation={10} {...phone1Props} />
-			<Phone hasBorder elevation={20} {...phone2Props} />
+			<Phone elevation={10} {...phone1Props}/>
+			<Phone hasBorder elevation={20} {...phone2Props}/>
 		</InnerWrapper>
 	</Wrapper>
 );

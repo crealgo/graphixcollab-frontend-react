@@ -1,15 +1,15 @@
-import { css, styled, Typography } from "@mui/material";
-import { type FC } from "react";
-import { type SharedBlockProps } from "../../types/general";
-import { ActionStack } from "../base/ActionStack";
-import { ImageCarousel } from "../base/ImageCarousel";
+import {css, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
+import {type SharedBlockProps} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {ImageCarousel} from '../base/ImageCarousel';
 
-export interface FanServiceBlockProps extends SharedBlockProps {
+export type FanServiceBlockProps = {
 	images?: string[];
-}
+} & SharedBlockProps;
 
-const FanServiceBlockWrapper = styled("div")(
-	({ theme }) => css`
+const FanServiceBlockWrapper = styled('div')(
+	({theme}) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 
@@ -33,7 +33,7 @@ const FanServiceBlockWrapper = styled("div")(
 			}
 		}
 
-		${theme.breakpoints.up("md")} {
+		${theme.breakpoints.up('md')} {
 			grid-template-columns: 1fr 1fr;
 
 			.ImageCarousel-root {
@@ -47,23 +47,23 @@ const FanServiceBlockWrapper = styled("div")(
 				}
 			}
 		}
-	`
+	`,
 );
 
-export const FanServiceBlock: FC<FanServiceBlockProps> = (props) => (
+export const FanServiceBlock: FC<FanServiceBlockProps> = props => (
 	<FanServiceBlockWrapper>
-		{props.images?.length ? <ImageCarousel images={props.images} /> : null}
-		<div className="FanServiceBlock-content">
-			<div className="FanServiceBlock-intro">
-				<Typography gutterBottom variant="h3">
+		{props.images?.length ? <ImageCarousel images={props.images}/> : null}
+		<div className='FanServiceBlock-content'>
+			<div className='FanServiceBlock-intro'>
+				<Typography gutterBottom variant='h3'>
 					{props.title}
 				</Typography>
-				<Typography variant="body1" marginTop="0.25rem">
+				<Typography variant='body1' marginTop='0.25rem'>
 					{props.description}
 				</Typography>
 			</div>
-			<div className="FanServiceBlock-cta">
-				<ActionStack color="secondary" {...props.ActionStackProps} actions={props.actions} />
+			<div className='FanServiceBlock-cta'>
+				<ActionStack color='secondary' {...props.ActionStackProps} actions={props.actions}/>
 			</div>
 		</div>
 	</FanServiceBlockWrapper>

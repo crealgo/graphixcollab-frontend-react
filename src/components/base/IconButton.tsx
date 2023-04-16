@@ -3,16 +3,16 @@ import clsx from 'clsx';
 import {forwardRef} from 'react';
 import {_e} from '../../utils/excludePropsFromForwarding';
 import {getButtonColors, getButtonHoverColors, getButtonSizes} from '../../utils/getButtonStyles';
-import { type ColorVariants } from "../../types/color";
+import {type ColorVariants} from '../../types/color';
 import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
 
-export interface IconButtonProps extends IconButtonBaseProps {
+export type IconButtonProps = {
 	color?: ColorVariants;
-}
+} & IconButtonBaseProps;
 
 const StyledIconButton = styled(
 	IconButtonBase,
-	_e('color')
+	_e('color'),
 )<IconButtonProps>(
 	({theme, color = 'text', size = 'medium'}) => css`
 		font-weight: bold;
@@ -25,21 +25,21 @@ const StyledIconButton = styled(
 		&:focus-visible {
 			background-color: ${getButtonHoverColors({theme, color})};
 		}
-	`
+	`,
 );
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 	({children, className, color = 'tertiary', ...props}, ref) => (
 		<StyledIconButton
 			{...props}
+			ref={ref}
 			color={color}
 			role='button'
-			ref={ref}
 			className={clsx(className, 'IconButton-root')}
 		>
 			{children}
 		</StyledIconButton>
-	)
+	),
 );
 
 IconButton.displayName = 'IconButton';
