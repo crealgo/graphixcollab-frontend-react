@@ -14,8 +14,6 @@ export type QuoteProps = {
 
 const QuoteWrapper = styled('div')<QuoteWrapperProps>(
 	({theme}) => css`
-		${theme.utils.styles.card.outlined}
-
 		position: relative;
 		aspect-ratio: auto;
 		display: flex;
@@ -39,21 +37,6 @@ const QuoteWrapper = styled('div')<QuoteWrapperProps>(
 			flex-direction: column;
 			gap: 0.75rem;
 		}
-
-		/* &:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			height: 1rem;
-			width: 1rem;
-
-			background-color: black;
-
-			transform: translateY(-50%) translateX(100%);
-		} */
 	`,
 );
 

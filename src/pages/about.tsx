@@ -35,7 +35,9 @@ const values = [
 	},
 ];
 
-export default function Example() {
+const exampleUrl = 'https://google.com';
+
+export const Example = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
@@ -252,13 +254,13 @@ export default function Example() {
 				className='my-16'
 				title='Featured In'
 				companies={[
-					{name: 'Dazed', url: 'https://google.com'},
-					{name: 'i-D', url: 'https://google.com'},
-					{name: 'Buffalo Zine', url: 'https://google.com'},
-					{name: 'Gal-dem', url: 'https://google.com'},
-					{name: 'Polyester', url: 'https://google.com'},
-					{name: 'Another Magazine', url: 'https://google.com'},
-					{name: 'i-D', url: 'https://google.com'},
+					{name: 'Dazed', url: exampleUrl},
+					{name: 'i-D', url: exampleUrl},
+					{name: 'Buffalo Zine', url: exampleUrl},
+					{name: 'Gal-dem', url: exampleUrl},
+					{name: 'Polyester', url: exampleUrl},
+					{name: 'Another Magazine', url: exampleUrl},
+					{name: 'i-D', url: exampleUrl},
 				]}
 			/>
 
@@ -363,7 +365,9 @@ export default function Example() {
 			</footer> */}
 		</DefaultLayout>
 	);
-}
+};
+
+export default Example;
 
 /**
  Services

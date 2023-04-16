@@ -11,8 +11,6 @@ export type NewsCardsProps = {
 
 const NewsCardWrapper = styled('div')(
 	({theme}) => css`
-		${theme.utils.styles.card.outlined}
-
 		max-width: 20rem;
 		display: grid;
 		grid-template-columns: 1fr;

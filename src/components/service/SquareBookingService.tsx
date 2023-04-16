@@ -1,14 +1,13 @@
-import {MailTwoTone, Cancel, CheckCircle} from '@mui/icons-material';
-import {Dialog, DialogTitle, DialogActions, DialogContent, Paper} from '@mui/material';
-import {Button} from '../base/Button';
+import {Cancel, CheckCircle, MailTwoTone} from '@mui/icons-material';
+import {DialogActions, DialogContent, DialogTitle, Paper} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC, type MouseEvent} from 'react';
-import Script from 'next/script';
+import {Button} from '../base/Button';
 
 type DialogServiceProps = {
-	open?: boolean;
+	// FIXME: open?: boolean;
 	onCloseClick?: (event: MouseEvent<unknown>) => void;
-	activeStep?: number;
+	// FIXME: activeStep?: number;
 };
 
 const StyledDialogContent = styled(DialogContent)(

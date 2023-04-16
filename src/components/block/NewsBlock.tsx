@@ -15,8 +15,6 @@ export type NewsBlockWrapperProps = {
 
 export const NewsBlockWrapper = styled('div')(
 	({theme}) => css`
-		${theme.utils.styles.block}
-
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;

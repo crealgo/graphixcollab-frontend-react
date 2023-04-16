@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default: StoryObj = {
-	render() {
+	render: () => {
 		const [open, setOpen] = useState(false);
 
 		const handleClick = (): void => {
@@ -24,7 +24,7 @@ export const Default: StoryObj = {
 				<Button color='primary' onClick={handleClick}>
 					Open Booking Service
 				</Button>
-				<SquareBookingService open={open} onCloseClick={handleClose}/>
+				<SquareBookingService onCloseClick={handleClose}/>
 			</>
 		);
 	},

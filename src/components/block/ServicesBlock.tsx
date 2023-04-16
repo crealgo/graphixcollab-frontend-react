@@ -3,12 +3,11 @@ import {Box, Typography} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC} from 'react';
 import {type ServiceOptions, type SharedBlockProps} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
 import {Block, type BlockProps} from '../base/Block';
 import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
-import {Card} from '../base/Card';
-import {ActionStack} from '../base/ActionStack';
 import {HorizontalCard} from '../base/HorizontalCard';
 
 export type ServicesBlockProps = {

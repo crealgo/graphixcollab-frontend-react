@@ -13,14 +13,6 @@ export type CalloutBlockProps = {
 	actions?: Action[];
 };
 
-const OuterWrapper = styled('div')(
-	({theme}) => `
-    ${theme.breakpoints.up('md')} {
-		margin: 1rem;
-    }
-`,
-);
-
 const InnerWrapper = styled('div')(
 	({theme}) => css`
 		.content {

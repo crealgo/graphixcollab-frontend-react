@@ -12,18 +12,18 @@ export type SharedCarouseProps = {
 
 export type CarouselCardProps = {
 	tilt?: 'left' | 'right';
-	interactive?: boolean;
+	// interactive?: boolean;
 	images: string[];
-	autoplay?: boolean;
+	// autoplay?: boolean;
 	currentIndex?: number;
 	className?: string;
 } & SharedCarouseProps;
 
 export const ImageCarousel: FC<CarouselCardProps> = ({
 	images,
-	autoplay,
+	// autoplay,
 	currentIndex,
-	interactive,
+	// interactive,
 	className,
 	...props
 }) => {
@@ -37,16 +37,16 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 		<ImageCarouselWrapper
 			imageCount={images.length}
 			currentIndex={index}
-			className='ImageCarousel-root'
+			className={clsx('ImageCarousel-root', className)}
 			{...props}
 		>
 			{images.length
 				? images.map((imageSrc, imageIndex) => (
 					<Image
+						key={imageIndex}
 						className={clsx('Carousel-image', {
 							'Carousel-selected': index === imageIndex
 						})}
-						key={imageIndex}
 						// ImageElementProps={{
 						// 	src: imageSrc,
 						// 	alt: `Carousel Image ${imageIndex}`

@@ -21,8 +21,6 @@ const StyledButton = styled('button')(({theme}) => css`
 
 	z-index: 0;
 
-	${theme.utils.inheritFont};
-
 	&::before {
 		content: '';
 		display: block;

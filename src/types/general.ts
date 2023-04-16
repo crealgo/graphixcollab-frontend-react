@@ -1,21 +1,21 @@
-import { ButtonProps } from "../components/base/Button";
-import { type ActionStackProps } from "../components/base/ActionStack";
-import { BannerProps } from "../components/base/Banner";
-import { FooterBlockProps } from "../components/block/FooterBlock";
-import { HeaderProps } from "../components/base/Header";
-import { BlockOptions } from "../utils/generateBlocks";
-import { type MouseEventHandler } from "react";
-import { StaticImageData } from "next/image";
+import {type ButtonProps} from '../components/base/Button';
+import {type ActionStackProps} from '../components/base/ActionStack';
+import {type BannerProps} from '../components/base/Banner';
+import {type FooterBlockProps} from '../components/block/FooterBlock';
+import {type HeaderProps} from '../components/base/Header';
+import {type BlockOptions} from '../utils/generateBlocks';
+import {type MouseEventHandler} from 'react';
+import {type StaticImageData} from 'next/image';
 
-export type LoadingStatus = "loading" | "loaded" | "error";
+export type LoadingStatus = 'loading' | 'loaded' | 'error';
 
-export type Size = "small" | "medium" | "large";
+export type Size = 'small' | 'medium' | 'large';
 
 export type Action<T = HTMLElement> = {
 	href?: string;
 	label?: string;
 	onClick?: MouseEventHandler<T>;
-} & Pick<ButtonProps, "startIcon" | "endIcon" | "color" | "size">;
+} & Pick<ButtonProps, 'startIcon' | 'endIcon' | 'color' | 'size'>;
 
 export type Person = {
 	avatar: string;
@@ -74,7 +74,7 @@ export type NavItemOptions = {
 	subItems?: NavItemOptions[];
 };
 
-export type NavItemOptionsWithoutSubItems = Omit<NavItemOptions, "subItems">;
+export type NavItemOptionsWithoutSubItems = Omit<NavItemOptions, 'subItems'>;
 
 export type ServiceOptions = {
 	title?: string;

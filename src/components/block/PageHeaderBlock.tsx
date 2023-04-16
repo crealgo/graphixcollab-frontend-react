@@ -1,6 +1,6 @@
 import {Typography} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
-import {type FC, forwardRef} from 'react';
+import {type FC} from 'react';
 import {type NavItemOptions} from '../../types/general';
 import {Block, type BlockProps} from '../base/Block';
 import {Breadcrumbs, type BreadcrumbOptions} from '../base/Breadcrumbs';

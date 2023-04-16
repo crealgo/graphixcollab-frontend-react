@@ -1,6 +1,5 @@
-import { alpha } from "@mui/material/styles";
+import {alpha} from '@mui/material/styles';
 import colors from 'tailwindcss/colors';
-
 
 export const colorIterator = (property = 'background', subSelectorString = '', opacity = 1): string => {
 	const colorOrder = [
@@ -16,5 +15,5 @@ export const colorIterator = (property = 'background', subSelectorString = '', o
 		&:nth-of-type(${index + 1}n) ${subSelectorString} {
 			${property}: ${current};
 		}
-	`, '')
-}
+	`, '');
+};

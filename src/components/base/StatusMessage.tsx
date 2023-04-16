@@ -7,12 +7,12 @@ import {type ComponentType, type FC} from 'react';
 type StatusMessageProps = {
 	IconComponent?: ComponentType<SvgIconProps>;
 	text?: string;
-	contained?: boolean;
-	actionable?: boolean;
+	isContained?: boolean;
+	isActionable?: boolean;
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
-	({theme, contained, actionable}) => css`
-		${contained
+	({theme, isContained, isActionable}) => css`
+		${isContained
 		&& `
 		padding-inline: 1rem;
 		padding-block: 0.75rem;
@@ -30,7 +30,7 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		align-items: center;
 		color: ${theme.palette.grey[700]};
 
-		${actionable
+		${isActionable
 		? css`
 			cursor: pointer;
 

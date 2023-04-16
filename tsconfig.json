@@ -1,17 +1,6 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "plugins": [
-      {
-        "name": "@styled/typescript-styled-plugin"
-      },
-      {
-        "name": "typescript-tslint-plugin"
-      },
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ],
     "lib": [
       "DOM",
       "DOM.Iterable",

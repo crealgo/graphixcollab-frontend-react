@@ -1,5 +1,4 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import Script from 'next/script';
 import {CalloutBlock} from '../components/block/CalloutBlock';
 import {FaqBlock} from '../components/block/FaqBlock';
 import {InteractiveEstimator} from '../components/block/InteractiveEstimator';

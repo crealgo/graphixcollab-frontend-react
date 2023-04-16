@@ -8,14 +8,13 @@ import {Block} from '../base/Block';
 import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
-import {type ImageProps} from '../base/Image';
 import {Text} from '../base/Text';
 import {TidBit} from '../base/TidBit';
 
 export type IntroBlockProps = {
 	title?: string;
 	description?: string;
-	ImageProps?: ImageProps;
+	// ImageProps?: ImageProps;
 } & SharedBlockProps & ComponentPropsWithoutRef<'div'>;
 
 const Content = styled(Container)(
@@ -76,7 +75,11 @@ export const IntroBlock: FC<IntroBlockProps> = ({title, description, className})
 					</div>
 				</div>
 				<figure className='image'>
-					<img className='Image-root' src={imageSrc.src} alt='thing'/>
+					<img
+						className='Image-root'
+						// src={imageSrc.src}
+						alt='thing'
+					/>
 				</figure>
 			</Content>
 		</Container>

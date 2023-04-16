@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import {type ComponentPropsWithRef, type ComponentPropsWithoutRef, type FC, useId} from 'react';
-// Import { Size } from "../../../types/general";
 import styled from '@emotion/styled';
 import {type InputProps} from './Input';
 import {type AutocompleteProps} from './Autocomplete';

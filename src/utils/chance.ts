@@ -153,9 +153,9 @@ export const generateBanner = (): BannerProps => ({
 	// 		label: "Book a Time",
 	// 	},
 	// ],
-	ImageProps: {
-		src: generateImage(),
-	},
+	// ImageProps: {
+	// 	src: generateImage(),
+	// },
 });
 
 export const generateNavItem = (sub?: boolean): NavItemOptions => {

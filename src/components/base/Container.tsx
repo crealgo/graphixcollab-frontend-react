@@ -8,7 +8,7 @@ type ContainerProps = {
 	size?: 'small' | 'medium' | 'large';
 };
 
-const BaseElement: FC<BaseElementProps> = ({className, children, ref, ...props}) => (
+const BaseElement: FC<BaseElementProps> = ({className = '', children, ref, ...props}) => (
 	<div ref={ref} className={`Container-root ${className}`} {...props}>
 		{children}
 	</div>

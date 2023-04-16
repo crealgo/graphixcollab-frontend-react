@@ -8,8 +8,6 @@ export type HighlightBlockProps = {
 
 const HighlightBlockWrapper = styled('div')(
 	({theme}) => css`
-		${theme.utils.styles.block};
-
 		background-color: ${theme.palette.secondary.main};
 		display: flex;
 		justify-content: center;

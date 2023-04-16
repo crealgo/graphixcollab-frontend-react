@@ -21,6 +21,8 @@ const GraphixCollab: NextPage<PageProps> = ({layout, blocks}) => (
 	</DefaultLayout>
 );
 
+const exampleUrl = 'https://google.com';
+
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		layout: {
@@ -49,13 +51,13 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 				props: {
 					title: 'Featured In',
 					companies: [
-						{name: 'Dazed', url: 'https://google.com'},
-						{name: 'i-D', url: 'https://google.com'},
-						{name: 'Buffalo Zine', url: 'https://google.com'},
-						{name: 'Gal-dem', url: 'https://google.com'},
-						{name: 'Polyester', url: 'https://google.com'},
-						{name: 'Another Magazine', url: 'https://google.com'},
-						{name: 'i-D', url: 'https://google.com'},
+						{name: 'Dazed', url: exampleUrl},
+						{name: 'i-D', url: exampleUrl},
+						{name: 'Buffalo Zine', url: exampleUrl},
+						{name: 'Gal-dem', url: exampleUrl},
+						{name: 'Polyester', url: exampleUrl},
+						{name: 'Another Magazine', url: exampleUrl},
+						{name: 'i-D', url: exampleUrl},
 					],
 				},
 			},

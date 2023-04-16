@@ -9,9 +9,13 @@ export type HeadingProps = BaseComponentsProps<{
 	level?: HeadingLevel;
 }>;
 
-export const Heading: FC<HeadingProps> = ({children, className, level, ...props}) => (
+export const Heading: FC<HeadingProps> = ({children, className, level = 5, ...props}) => (
 	<Typography
-		className={clsx(className, 'Heading-root', `Heading-${level ? `h${level}` : 'span'}`)}
+		className={clsx(
+			className,
+			'Heading-root',
+			`Heading-h${level}`,
+		)}
 		variant={level && `h${level}`}
 		component={level ? `h${level}` : 'span'}
 	>

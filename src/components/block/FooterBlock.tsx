@@ -9,8 +9,8 @@ export type FooterBlockProps = {
 	title?: string;
 	description?: string;
 	meta?: Term[];
-	copyrightText?: string;
-	extraText?: string;
+	// copyrightText?: string;
+	// extraText?: string;
 };
 
 const Column = styled('div')(
@@ -27,8 +27,6 @@ const Column = styled('div')(
 
 const FooterBlockWrapper = styled(Block)(
 	({theme}) => css`
-		${theme.utils.styles.block};
-
 		border-bottom: solid 1px ${theme.palette.grey[300]};
 	`,
 ).withComponent('footer');

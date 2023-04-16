@@ -1,17 +1,16 @@
-import {StatusMessage} from '../base/StatusMessage';
-import {type Action} from '../../types/general';
 import {Warning} from '@mui/icons-material';
 import {styled, Typography} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 import Marquee from 'react-fast-marquee';
+import {type Action} from '../../types/general';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {ContentGrid} from '../base/ContentGrid';
 import {Heading} from '../base/Heading';
-import {generateFeaturedItems} from '../../utils/chance';
+import {StatusMessage} from '../base/StatusMessage';
 
-export type FeaturedInBlock = {
+export type FeaturedInBlockProps = {
 	title?: string;
 	description?: string;
 	companies?: Array<{
@@ -21,16 +20,16 @@ export type FeaturedInBlock = {
 	actions?: Action[];
 } & ComponentPropsWithoutRef<'div'>;
 
-const CustomBlock = styled(Block)(({theme}) => ({
-	paddingTop: '2.5rem !important',
-	paddingBottom: '2.5rem !important',
+const CustomBlock = styled(Block)`
+	padding-top: 2.5rem !important;
+	padding-bottom: 2.5rem !important;
 
-	'& .Container-root': {
-		marginBottom: '3rem',
-	},
-}));
+	& .Container-root {
+		margin-bottom: 3rem;
+	}
+`;
 
-export const FeaturedInBlock: FC<FeaturedInBlock> = ({className, companies, ...props}) => (
+export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies, ...props}) => (
 	<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
 		<Container>
 			<ContentGrid size='small' textAlign='center' marginX='auto' maxWidth='50rem'>

@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 export const Default: StoryObj<BannerProps> = {
-	render(args) {
+	render: args => {
 		const [open, setOpen] = useState(true);
 
 		const handleOpen = () => {

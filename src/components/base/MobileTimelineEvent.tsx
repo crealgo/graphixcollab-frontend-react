@@ -6,8 +6,8 @@ export type EventBlockProps = {
 	stepNumber?: number;
 	title?: string;
 	description?: string;
-	imgUrl?: string;
-	imgAlt?: string;
+	// imgUrl?: string;
+	// imgAlt?: string;
 } & BaseComponentsProps;
 const connectorThickness = '0.25rem';
 const markerSize = '2rem';

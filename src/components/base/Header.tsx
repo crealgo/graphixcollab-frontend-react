@@ -15,11 +15,11 @@ import {NavItemDropdown} from './NavItemDropdown';
 import {NavItems} from './NavItems';
 
 export type HeaderProps = {
-	logo?: string;
+	// logo?: string;
 	navigationItems?: NavItemOptions[];
 	actions?: Action[];
-	backgroundColor?: 'primary' | 'secondary' | 'white';
-	withHero?: boolean;
+	// backgroundColor?: 'primary' | 'secondary' | 'white';
+	// withHero?: boolean;
 } & ComponentPropsWithoutRef<'header'>;
 
 const HeaderWrapper = styled(

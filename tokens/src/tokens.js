@@ -1,10 +1,10 @@
-const colors = require("tailwindcss/colors");
-const generateColorVariants = require("./utils/generateColorVariants");
-const generateSizeValues = require("./utils/generateSizeValues");
-const formatTokenValue = require("./utils/formatTokenValue");
+const colors = require('tailwindcss/colors');
+const generateColorVariants = require('./utils/generateColorVariants');
+const generateSizeValues = require('./utils/generateSizeValues');
+const formatTokenValue = require('./utils/formatTokenValue');
 
 /*
-namespace-object-base-modifier
+Namespace-object-base-modifier
 
 namespace: system-theme-domain
 
@@ -14,7 +14,7 @@ modifier: variant-state-scale-mode
 */
 
 const grayScale = Object.entries(colors.slate).reduce((aggregate, [colorScale, colorValue]) => {
-	aggregate[colorScale] = { value: colorValue };
+	aggregate[colorScale] = {value: colorValue};
 	return aggregate;
 }, {});
 
@@ -40,9 +40,9 @@ module.exports = {
 	semantic: {
 		input: {
 			border: {
-				style: formatTokenValue("solid"),
+				style: formatTokenValue('solid'),
 				width: formatTokenValue(0.0625),
-				color: formatTokenValue("{color.gray.900}"),
+				color: formatTokenValue('{color.gray.900}'),
 			},
 			padding: {
 				x: generateSizeValues(0.5, 0.75, 0.875),
