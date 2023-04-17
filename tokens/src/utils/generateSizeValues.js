@@ -4,13 +4,23 @@
  * @param {TokenLiteral} large
  *
  * @returns {{
- * 	small: TokenValue,
- * 	medium: TokenValue,
- * 	large: TokenValue
+ * 	small: TokenLiteral,
+ * 	medium: TokenLiteral,
+ * 	large: TokenLiteral
  * }}
  **/
-module.exports = (small, medium, large) => ({
-	small: { value: small },
-	medium: { value: medium },
-	large: { value: large },
-});
+module.exports = (...sizes) => {
+	if (sizes.length === 3) {
+		return {
+			small: sizes[0],
+			medium: sizes[1],
+			large: sizes[2],
+		};
+	}
+
+	return {
+		small: sizes[0],
+		medium: sizes[0],
+		large: sizes[0],
+	};
+};

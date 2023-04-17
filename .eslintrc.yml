@@ -26,6 +26,7 @@ rules:
   implicit-arrow-linebreak:
     - error
     - beside
+  guard-for-in: off
 
 overrides:
   - files:

@@ -1,8 +1,6 @@
-const tokens = require('./src/tokens');
-
 /** @type {import('style-dictionary').Config} */
 module.exports = {
-	tokens,
+	source: ['tokens/src/tokens/**/*.js'],
 	platforms: {
 		css: {
 			transformGroup: 'css',
