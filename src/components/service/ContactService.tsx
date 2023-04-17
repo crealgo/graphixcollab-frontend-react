@@ -5,9 +5,9 @@ import {Button} from '../base/Button';
 import {DialogTitle} from '../base/DialogTitle';
 
 type ContactServiceProps = {
-	open?: boolean;
+	isOpen?: boolean;
 	onCloseClick?: (event: MouseEvent<unknown>) => void;
-	activeStep?: number;
+	// activeStep?: number;
 };
 
 const StyledDialogContent = styled(DialogContent)(
@@ -31,8 +31,8 @@ const StepContentWrapper = styled('div')`
 	padding-block: 1rem;
 `;
 
-export const ContactService: FC<ContactServiceProps> = ({open = false, onCloseClick}) => (
-	<Dialog fullWidth open={open} onClose={onCloseClick}>
+export const ContactService: FC<ContactServiceProps> = ({isOpen = false, onCloseClick}) => (
+	<Dialog fullWidth open={isOpen} onClose={onCloseClick}>
 		<DialogTitle>
 			<span>Contact Us</span>
 			<MailTwoTone color='primary'/>

@@ -61,7 +61,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies,
 					))}
 				</Marquee>
 			) : (
-				<StatusMessage contained IconComponent={Warning} text='No Images Available'/>
+				<StatusMessage isContained IconComponent={Warning} text='No Images Available'/>
 			)}
 		</Container>
 	</CustomBlock>

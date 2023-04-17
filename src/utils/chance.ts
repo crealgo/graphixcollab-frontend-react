@@ -1,13 +1,13 @@
-import posterImage from "../assets/screen-printing/poster.jpg";
-import silkScreenImage from "../assets/screen-printing/silk-screen.jpg";
-import toteImage from "../assets/screen-printing/tote.jpg";
-import { type BannerProps } from "../components/base/Banner";
-import { type FeaturedItemProps } from "../components/base/DrawerMenu/FeaturedItem";
-import { type GalleryBlockProps } from "../components/block/GalleryBlock";
-import { HeaderProps } from "../components/base/Header";
-import { IntroBlockProps } from "../components/block/IntroBlock";
-import { type PageHeaderBlockProps } from "../components/block/PageHeaderBlock";
-import { type ProfilesBlockProps } from "../components/block/ProfilesBlock";
+import posterImage from '../assets/screen-printing/poster.jpg';
+import silkScreenImage from '../assets/screen-printing/silk-screen.jpg';
+import toteImage from '../assets/screen-printing/tote.jpg';
+import {type BannerProps} from '../components/base/Banner';
+import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
+import {type GalleryBlockProps} from '../components/block/GalleryBlock';
+import {type HeaderProps} from '../components/base/Header';
+import {type IntroBlockProps} from '../components/block/IntroBlock';
+import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
+import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import {
 	type Action,
@@ -19,12 +19,13 @@ import {
 	type Person,
 	type PersonGroup,
 	type ServiceOptions,
-} from "../types/general";
-import Chance from "chance";
+} from '../types/general';
+import Chance from 'chance';
+import {type StaticImageData} from 'next/image';
 
 export const chance = new Chance();
 
-export const generateWord = (): string => chance.word({ capitalize: true, syllables: 3 });
+export const generateWord = (): string => chance.word({capitalize: true, syllables: 3});
 
 export const generatePerson = (): Person => ({
 	avatar: chance.avatar(),
@@ -45,7 +46,7 @@ export const generatePersons = (n = 3): Person[] => chance.n(generatePerson, n);
 export const generateEmployees = (n = 3): Employee[] => chance.n(generateEmployee, n);
 
 export const generatePersonGroup = (): PersonGroup => ({
-	title: chance.sentence({ words: 4 }),
+	title: chance.sentence({words: 4}),
 	description: chance.sentence(),
 	profiles: generatePersons(10),
 });
@@ -53,7 +54,7 @@ export const generatePersonGroup = (): PersonGroup => ({
 export const generatePersonGroups = (n = 2): PersonGroup[] => chance.n(generatePersonGroup, n);
 
 export const generateEmployeeGroup = (): EmployeeGroup => ({
-	title: "Employee Group",
+	title: 'Employee Group',
 	description: chance.sentence(),
 	profiles: generateEmployees(chance.d10()),
 });
@@ -65,7 +66,7 @@ export const generateArticle = (): Article => ({
 	postDate: chance.date().toString(),
 	summary: chance.paragraph(),
 	tags: chance.n(chance.word, 3),
-	title: chance.sentence({ words: 3 }),
+	title: chance.sentence({words: 3}),
 	url: chance.url(),
 });
 
@@ -147,7 +148,7 @@ export const generateOptions = (n = 5): OptionValue[] =>
 // ];
 
 export const generateBanner = (): BannerProps => ({
-	children: "⚡️⚡️ It's sash season!! Don't wait too long, spots are filling up.",
+	children: '⚡️⚡️ It\'s sash season!! Don\'t wait too long, spots are filling up.',
 	// actions: [
 	// 	{
 	// 		label: "Book a Time",
@@ -163,10 +164,10 @@ export const generateNavItem = (sub?: boolean): NavItemOptions => {
 
 	return {
 		label: generateWord(),
-		...(sub &&
-			hasSub && {
-				subItems: chance.n(() => generateNavItem(false), 5),
-			}),
+		...(sub
+			&& hasSub && {
+			subItems: chance.n(() => generateNavItem(false), 5),
+		}),
 	};
 };
 
@@ -187,46 +188,46 @@ export const generateHeader = (): HeaderProps => ({
 });
 
 export const generateFooter = () => ({
-	title: "Fashion Greek, USC",
-	description: chance.sentence({ words: 15 }),
+	title: 'Fashion Greek, USC',
+	description: chance.sentence({words: 15}),
 	meta: chance.n(
 		() => ({
-			term: chance.sentence({ words: 3 }),
+			term: chance.sentence({words: 3}),
 			description: chance.sentence(),
 		}),
-		3
+		3,
 	),
 });
 
 export const generateCalloutBlock = () => ({
-	title: chance.sentence({ words: 5 }),
-	meta: chance.sentence({ words: 3 }),
+	title: chance.sentence({words: 5}),
+	meta: chance.sentence({words: 3}),
 	description: chance.sentence(),
 	actions: generateActions(2),
 });
 
 export const generateTimelineBlock = () => ({
-	title: "Our process",
+	title: 'Our process',
 	description:
-		"We specialize in creating bold, eye-catching designs that are perfect for t-shirts, posters, stickers, and more. Whether you need a small run of custom t-shirts for your business or a large order of promotional materials for an event, we can help. Here's a glimpse of our process below",
+		'We specialize in creating bold, eye-catching designs that are perfect for t-shirts, posters, stickers, and more. Whether you need a small run of custom t-shirts for your business or a large order of promotional materials for an event, we can help. Here\'s a glimpse of our process below',
 	TimelineProps: {
 		selectedIndex: 1,
 	},
 });
 
 export const generateGalleryBlock = (): GalleryBlockProps => ({
-	title: "See what we're up to",
+	title: 'See what we\'re up to',
 	description:
-		"With years of experience in the industry, we have the expertise and equipment necessary to produce stunning prints on a wide range of materials, including fabric, paper, metal, glass, and plastic. Follow us for an inside scoop of what's going on behind the scenes.",
+		'With years of experience in the industry, we have the expertise and equipment necessary to produce stunning prints on a wide range of materials, including fabric, paper, metal, glass, and plastic. Follow us for an inside scoop of what\'s going on behind the scenes.',
 	SocialMediaBlockProps: {
-		text: "@fashiongreekusc",
+		text: '@fashiongreekusc',
 		url: chance.url(),
 		actions: [
 			{
-				label: "Follow",
+				label: 'Follow',
 			},
 			{
-				label: "Share",
+				label: 'Share',
 			},
 		],
 	},
@@ -235,133 +236,133 @@ export const generateGalleryBlock = (): GalleryBlockProps => ({
 			length: 10,
 		},
 		(_, imageIndex) => ({
-			alt: "Dog Picture",
+			alt: 'Dog Picture',
 			src: `https://picsum.photos/200?random=${imageIndex}`,
-		})
+		}),
 	),
 	actions: generateActions(),
 });
 
 export const generateProfilesBlock = (): ProfilesBlockProps => ({
-	title: "Profiles Page",
-	description: chance.sentence(),
+	title: 'Profiles Page',
+	// description: chance.sentence(),
 	profileGroups: generateEmployeeGroups(),
 });
 
 export const generateService = (): ServiceOptions => ({
 	title: generateWord(),
 	subtitle: generateWord(),
-	description: chance.sentence({ words: 20 }),
+	description: chance.sentence({words: 20}),
 	imageSrc: generateImage(500),
 });
 
 export const generateServices = (): ServiceOptions[] => [
 	{
-		title: "T-Shirts",
-		imageSrc: silkScreenImage,
-		description: "Add screen printing, embroidery, or tags to create something unique.",
+		title: 'T-Shirts',
+		imageSrc: silkScreenImage as StaticImageData,
+		description: 'Add screen printing, embroidery, or tags to create something unique.',
 	},
 	{
-		title: "Merch",
-		imageSrc: posterImage,
-		description: "It's the little things that keep a brand sticking around in your customers' minds.",
+		title: 'Merch',
+		imageSrc: posterImage as StaticImageData,
+		description: 'It\'s the little things that keep a brand sticking around in your customers\' minds.',
 	},
 	{
-		title: "Apparel",
-		imageSrc: toteImage,
-		description: "Make your brand stand out with high-quality blank garments and a stunning print.",
+		title: 'Apparel',
+		imageSrc: toteImage as StaticImageData,
+		description: 'Make your brand stand out with high-quality blank garments and a stunning print.',
 	},
 	{
-		title: "Embroidery",
-		imageSrc: toteImage,
-		description: "Create eye-catching products with your designs embroidered or on a patch.",
+		title: 'Embroidery',
+		imageSrc: toteImage as StaticImageData,
+		description: 'Create eye-catching products with your designs embroidered or on a patch.',
 	},
 	{
-		title: "Paper",
-		imageSrc: toteImage,
-		description: "From postcards to business cards and even screen-printed posters.",
+		title: 'Paper',
+		imageSrc: toteImage as StaticImageData,
+		description: 'From postcards to business cards and even screen-printed posters.',
 	},
 ];
 
 export const generateServicesBlock = () => ({
-	title: "Customize It!",
-	subtitle: "Our Services",
+	title: 'Customize It!',
+	subtitle: 'Our Services',
 	description:
-		"We offer a wide range of screen printing services to meet your needs. Whether you're looking for custom t-shirts, posters, stickers, or other promotional materials, we have you covered. Here are some of our most popular services:",
+		'We offer a wide range of screen printing services to meet your needs. Whether you\'re looking for custom t-shirts, posters, stickers, or other promotional materials, we have you covered. Here are some of our most popular services:',
 	actions: generateActions(),
 	services: generateServices(),
 });
 
 export const generateIntroBlock = (): IntroBlockProps => ({
-	title: "Clean, High Quality.",
-	subtitle: "A Small Caption",
+	title: 'Clean, High Quality.',
+	subtitle: 'A Small Caption',
 	description:
-		"Our team of skilled designers and technicians is dedicated to delivering exceptional customer service and top-notch results. We work closely with our clients to ensure that their vision is brought to life, and we are always happy to provide guidance and advice on design and printing options.",
+		'Our team of skilled designers and technicians is dedicated to delivering exceptional customer service and top-notch results. We work closely with our clients to ensure that their vision is brought to life, and we are always happy to provide guidance and advice on design and printing options.',
 	actions: [
 		{
-			label: "Get Started",
+			label: 'Get Started',
 		},
 		{
-			label: "Book an Appointment",
+			label: 'Book an Appointment',
 		},
 	],
-	ImageProps: {
-		src: generateImage(400),
-	},
+	// ImageProps: {
+	// 	src: generateImage(400),
+	// },
 });
 
 export const generatePageHeaderBlock = (): PageHeaderBlockProps => ({
-	title: "Page Title",
+	title: 'Page Title',
 	breadcrumbs: chance.n(
 		() => ({
 			href: chance.url(),
 			label: generateWord(),
 		}),
-		3
+		3,
 	),
 	navigationItems: generateNavItems(),
-	navigationType: "anchor-link",
+	navigationType: 'anchor-link',
 });
 
 export const generateFaqs = () => [
 	{
-		question: "What is screen printing?",
+		question: 'What is screen printing?',
 		answer: 'Screen printing is a printing technique that involves using a mesh stencil (or "screen") to transfer ink onto a substrate, such as a t-shirt, poster, or sticker.',
 	},
 	{
-		question: "What types of materials can be screen printed?",
-		answer: "Screen printing can be done on a wide variety of materials, including fabric, paper, metal, glass, and plastic.",
+		question: 'What types of materials can be screen printed?',
+		answer: 'Screen printing can be done on a wide variety of materials, including fabric, paper, metal, glass, and plastic.',
 	},
 	{
-		question: "What are the advantages of screen printing?",
-		answer: "Screen printing is a versatile and cost-effective printing method that can produce high-quality, long-lasting prints. It can also be used to print on a wide range of materials and is suitable for both large and small production runs.",
+		question: 'What are the advantages of screen printing?',
+		answer: 'Screen printing is a versatile and cost-effective printing method that can produce high-quality, long-lasting prints. It can also be used to print on a wide range of materials and is suitable for both large and small production runs.',
 	},
 	{
-		question: "What is the process of screen printing?",
+		question: 'What is the process of screen printing?',
 		answer: 'The process of screen printing involves creating a stencil, or "screen" of the design to be printed, which is then placed over the substrate. Ink is then applied to the screen and forced through the mesh onto the substrate using a squeegee. This process can be repeated for multiple colors or layers.',
 	},
 	{
-		question: "What types of designs are suitable for screen printing?",
-		answer: "Screen printing is best suited for designs with bold, solid colors or simple, graphic shapes. It is less suitable for designs with fine details or complex gradients.",
+		question: 'What types of designs are suitable for screen printing?',
+		answer: 'Screen printing is best suited for designs with bold, solid colors or simple, graphic shapes. It is less suitable for designs with fine details or complex gradients.',
 	},
 	{
-		question: "What is the turnaround time for a screen printing order?",
-		answer: "Turnaround times for screen printing orders can vary depending on the size of the order and the complexity of the design. Generally, orders can be completed within a few days to a few weeks.",
+		question: 'What is the turnaround time for a screen printing order?',
+		answer: 'Turnaround times for screen printing orders can vary depending on the size of the order and the complexity of the design. Generally, orders can be completed within a few days to a few weeks.',
 	},
 	{
-		question: "Can I provide my own artwork for screen printing?",
-		answer: "Yes, most screen printing companies will accept customer-provided artwork. However, it is important to ensure that the artwork meets certain technical specifications to ensure the best possible print quality.",
+		question: 'Can I provide my own artwork for screen printing?',
+		answer: 'Yes, most screen printing companies will accept customer-provided artwork. However, it is important to ensure that the artwork meets certain technical specifications to ensure the best possible print quality.',
 	},
 ];
 
 export const generateFaqBlock = () => ({
-	title: "Frequently Asked Questions",
+	title: 'Frequently Asked Questions',
 	faqs: generateFaqs(),
 });
 
 export const generateFanServiceBlock = () => ({
-	title: chance.sentence({ words: 3 }),
-	description: chance.paragraph({ sentences: 3 }),
+	title: chance.sentence({words: 3}),
+	description: chance.paragraph({sentences: 3}),
 	images: generateImages(),
 	actions: generateActions(2),
 	ActionStackProps: {

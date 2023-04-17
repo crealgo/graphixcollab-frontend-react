@@ -1,9 +1,10 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {CalloutBlock} from '../components/block/CalloutBlock';
-import {FaqBlock} from '../components/block/FaqBlock';
+import {CalloutBlock, type CalloutBlockProps} from '../components/block/CalloutBlock';
+import {FaqBlock, type FaqBlockProps} from '../components/block/FaqBlock';
+import {type FooterBlockProps} from '../components/block/FooterBlock';
 import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
-import {ServicesBlock} from '../components/block/ServicesBlock';
+import {PageHeaderBlock, type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
+import {ServicesBlock, type ServicesBlockProps} from '../components/block/ServicesBlock';
 import {TimelineBlock} from '../components/block/TimelineBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {
@@ -14,7 +15,15 @@ import {
 	generateServicesBlock,
 } from '../utils/chance';
 
-const ServicesPage: NextPage<any> = props => (
+type PageProps = {
+	PageHeaderBlockProps: PageHeaderBlockProps;
+	FooterProps: FooterBlockProps;
+	ServicesBlockProps: ServicesBlockProps;
+	CalloutBlockProps: CalloutBlockProps;
+	FaqBlockProps: FaqBlockProps;
+};
+
+const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
 		<PageHeaderBlock {...props.PageHeaderBlockProps} title='Services'/>
 		<ServicesBlock {...props.ServicesBlockProps}/>
@@ -25,7 +34,7 @@ const ServicesPage: NextPage<any> = props => (
 	</DefaultLayout>
 );
 
-export const getStaticProps: GetStaticProps = () => ({
+export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		FooterProps: generateFooter(),
 		PageHeaderBlockProps: generatePageHeaderBlock(),

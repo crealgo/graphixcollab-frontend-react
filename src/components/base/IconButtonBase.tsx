@@ -15,7 +15,6 @@ const StyledButton = styled(
 	_e('endIcon', 'startIcon', 'size'),
 )<IconButtonBaseProps>(
 	({theme}) => css`
-		${theme.utils.inheritFont};
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;

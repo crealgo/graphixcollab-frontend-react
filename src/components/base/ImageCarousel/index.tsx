@@ -45,7 +45,7 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 					<Image
 						key={imageIndex}
 						className={clsx('Carousel-image', {
-							'Carousel-selected': index === imageIndex
+							'Carousel-selected': index === imageIndex,
 						})}
 						// ImageElementProps={{
 						// 	src: imageSrc,

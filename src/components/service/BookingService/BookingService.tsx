@@ -19,9 +19,9 @@ import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
 import {SelectServiceStep} from './steps/SelectServiceStep';
 
 type BookingServiceProps = {
-	open?: boolean;
+	isOpen?: boolean;
 	onCloseClick?: (event: MouseEvent<unknown>) => void;
-	activeStep?: number;
+	// activeStep?: number;
 };
 
 const steps = [
@@ -63,7 +63,7 @@ const StepContentWrapper = styled('div')`
 	padding-block: 1rem;
 `;
 
-export const BookingService: FC<BookingServiceProps> = ({open = false, onCloseClick}) => {
+export const BookingService: FC<BookingServiceProps> = ({isOpen = false, onCloseClick}) => {
 	const [activeStep, setActiveStep] = useState<number>(0);
 
 	const handlePrevStep = () => {
@@ -83,7 +83,7 @@ export const BookingService: FC<BookingServiceProps> = ({open = false, onCloseCl
 	};
 
 	return (
-		<Dialog fullWidth open={open} onClose={onCloseClick}>
+		<Dialog fullWidth open={isOpen} onClose={onCloseClick}>
 			<DialogTitle>
 				<span>Book an Appointment</span>
 				<BookTwoTone color='primary'/>

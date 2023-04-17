@@ -1,4 +1,4 @@
-import {useEffect, useState, type FC, type PropsWithChildren} from 'react';
+import {useEffect, useMemo, useState, type FC, type PropsWithChildren} from 'react';
 import {BannerService} from '../components/service/BannerService';
 import {ContactService} from '../components/service/ContactService';
 import {AppStateContext, type AppStateContextOptions as Context} from '../contexts/AppStateContext';
@@ -9,7 +9,7 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({child
 	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
 	const [bookingOpen, setBookingOpen] = useState<Context['bookingOpen']>(false);
 	const [contactOpen, setContactOpen] = useState<Context['contactOpen']>(false);
-	const [BannerProps, setBannerProps] = useState<Context['BannerProps']>({});
+	const [bannerProps, setBannerProps] = useState<Context['BannerProps']>({});
 
 	const toggleBanner = (state?: boolean) => {
 		if (typeof state === 'boolean') {
@@ -35,38 +35,38 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({child
 		setContactOpen(curr => !curr);
 	};
 
+	const defaultContext = useMemo<Context>(() => ({
+		BannerProps: bannerProps,
+		bannerOpen,
+		bookingOpen,
+		contactOpen,
+		setBannerProps,
+		toggleBanner,
+		toggleContact,
+		toggleBooking,
+	}), []);
+
 	useEffect(() => {
-		if (BannerProps.text) {
+		if (bannerProps.text) {
 			setBannerOpen(true);
 		}
-	}, [BannerProps.text]);
+	}, [bannerProps.text]);
 
 	return (
-		<AppStateContext.Provider
-			value={{
-				BannerProps,
-				bannerOpen,
-				bookingOpen,
-				contactOpen,
-				setBannerProps,
-				toggleBanner,
-				toggleContact,
-				toggleBooking,
-			}}
-		>
+		<AppStateContext.Provider value={defaultContext}>
 			<BannerService
-				{...BannerProps}
+				{...bannerProps}
 				open={bannerOpen}
 				BannerProps={{
 					onCloseClick(event) {
-						BannerProps?.onCloseClick?.(event);
+						bannerProps?.onCloseClick?.(event);
 						toggleBanner();
 					},
 				}}
 			/>
 			<ContactService
-				open={contactOpen}
-				onCloseClick={event => {
+				isOpen={contactOpen}
+				onCloseClick={() => {
 					toggleContact();
 				}}
 			/>

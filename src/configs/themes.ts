@@ -162,7 +162,6 @@ export const defaultTheme = createTheme({
 	breakpoints,
 	palette,
 	typography,
-	utils,
 	components: {
 		MuiButton: {
 			defaultProps: {

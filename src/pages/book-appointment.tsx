@@ -1,9 +1,15 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
+import {PageHeaderBlock, type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
+import {type FooterBlockProps} from '../components/block/FooterBlock';
 
-const ServicesPage: NextPage<any> = props => (
+type PageProps = {
+	PageHeaderBlockProps: PageHeaderBlockProps;
+	FooterProps: FooterBlockProps;
+};
+
+const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
 		<PageHeaderBlock navigationType='anchor-link' title='Book Appointment'/>
 		{/* Start Square Appointments Embed Code */}
@@ -12,7 +18,7 @@ const ServicesPage: NextPage<any> = props => (
 	</DefaultLayout>
 );
 
-export const getStaticProps: GetStaticProps = () => ({
+export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		PageHeaderBlockProps: generatePageHeaderBlock(),
 		FooterProps: generateFooter(),

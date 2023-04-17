@@ -37,7 +37,6 @@ const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(({theme, c
 				border: 'solid 1px white',
 
 				transition: 'width 300ms',
-				transitionTimingFunction: theme.utils.transitions.easeInOut,
 				cursor: 'pointer',
 			},
 			'&:hover::before': {

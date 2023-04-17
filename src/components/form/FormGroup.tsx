@@ -51,7 +51,8 @@ export const FormGroup: FC<FormGroupProps> = ({
 	children,
 	...props
 }) => {
-	const resolvedId = id ?? useId();
+	const generatedId = useId();
+	const resolvedId = id ?? generatedId;
 
 	return (
 		<Wrapper className={clsx(className, 'FormGroup-root')}>

@@ -20,7 +20,6 @@ const StyledButton = styled(
 	_e('endIcon', 'startIcon', 'size'),
 )<ButtonBaseProps>(
 	({theme}) => css`
-		${theme.utils.inheritFont};
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;

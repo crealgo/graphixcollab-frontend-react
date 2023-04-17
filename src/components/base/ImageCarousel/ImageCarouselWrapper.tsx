@@ -34,7 +34,6 @@ export const ImageCarouselWrapper = styled(
 			width: '100%',
 			height: '100%',
 			transition: 'transform 500ms',
-			transitionTimingFunction: theme.utils.transitions.easeInOut,
 			...imageCss,
 		},
 		'.DotsInput-root': {

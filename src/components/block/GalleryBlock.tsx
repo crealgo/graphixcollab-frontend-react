@@ -69,7 +69,7 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({className, ...props}) => (
 						))}
 					</Marquee>
 				) : (
-					<StatusMessage contained IconComponent={Warning} text='No Images Available'/>
+					<StatusMessage isContained IconComponent={Warning} text='No Images Available'/>
 				)}
 			</div>
 		</Container>

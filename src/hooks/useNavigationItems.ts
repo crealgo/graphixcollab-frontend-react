@@ -1,4 +1,4 @@
-import {NavItemOptions} from '../types/general';
+import {type NavItemOptions} from '../types/general';
 import {useRouter} from 'next/router';
 
 export const useNavigationItems = (): NavItemOptions[] => {
@@ -8,12 +8,12 @@ export const useNavigationItems = (): NavItemOptions[] => {
 		Home: '/',
 		'About Us': '/about',
 		'Graphix Collab': '/graphix-collab',
-		Services: '/services'
+		Services: '/services',
 	};
 
-	return Object.keys(routes).map((title) => ({
+	return Object.keys(routes).map(title => ({
 		label: title,
 		href: routes[title],
-		selected: router.pathname === routes[title]
+		selected: router.pathname === routes[title],
 	}));
 };
