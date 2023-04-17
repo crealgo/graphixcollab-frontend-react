@@ -21,6 +21,8 @@ const StyledButton = styled('button')(({theme}) => css`
 
 	z-index: 0;
 
+	font: inherit;
+
 	&::before {
 		content: '';
 		display: block;
@@ -72,6 +74,8 @@ export const InteractiveSelector: FC<InteractiveSelectorProps> = ({options, ...p
 				aria-controls={open ? 'basic-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
+				type='button'
+				value={value}
 				onClick={handleClick}
 			>
 				{value}

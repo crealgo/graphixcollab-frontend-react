@@ -8,8 +8,11 @@ export const GlobalStyles: FC = () => (
 	<MuiGlobalStyles
 		styles={css`
 			:root {
-				font-family: Inter;
 				${tokens}
+			}
+
+			* {
+				font-family: Inter;
 			}
 		`}
 	/>

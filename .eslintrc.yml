@@ -40,6 +40,8 @@ overrides:
       - tokens/**/*.js
     env:
       node: true
+    rules:
+      sonarjs/no-duplicate-string: off
 
   - files:
       - "*.@(yml|yaml)"

@@ -1,16 +1,13 @@
 import {type FC, type PropsWithChildren, useId} from 'react';
 import {type Size} from '../../types/general';
 import {Input, type InputProps} from './Input';
-
-type OptionValue = {
-	label: string;
-	value: string;
-};
+import {type OptionValue} from '../../types/OptionValue';
+import {type BaseInputProps} from '../../types/base';
 
 export type AutocompleteProps = {
 	inputSize?: Size;
 	options?: OptionValue[];
-} & InputProps & PropsWithChildren;
+} & BaseInputProps & PropsWithChildren;
 
 // TODO: add dropdown icon 'button'
 export const Autocomplete: FC<AutocompleteProps> = ({children, options, ...props}) => {

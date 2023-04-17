@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 17 Apr 2023 03:10:13 GMT
+ * Generated on Mon, 17 Apr 2023 04:20:24 GMT
  */
 
 :root {
@@ -34,17 +34,17 @@
   --color-feedback-info-main: #2563eb;
   --color-feedback-info-dark: #0c3284;
   --color-feedback-info-contrast: #ffffff;
-  --color-gray-50: #000000;
-  --color-gray-100: #000000;
-  --color-gray-200: #000000;
-  --color-gray-300: #000000;
-  --color-gray-400: #000000;
-  --color-gray-500: #000000;
-  --color-gray-600: #000000;
-  --color-gray-700: #000000;
-  --color-gray-800: #000000;
-  --color-gray-900: #000000;
-  --color-gray-950: #000000;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-gray-950: #020617;
   --color-text-primary: #0f172a;
   --color-text-secondary: #94a3b8;
   --elevation-0: none;
@@ -57,11 +57,11 @@
   --elevation-7: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --input-font-size-small: 0.875rem;
   --input-font-size-medium: 0.875rem;
-  --input-font-size-large: 0.875rem;
+  --input-font-size-large: 1rem;
   --input-border-style: solid;
-  --input-border-width: 0.0625;
+  --input-border-width: 0.0625rem;
   --input-border-color: #11182740;
-  --input-border-composite: solid 0.0625 #11182740;
+  --input-border-composite: solid 0.0625rem #11182740;
   --input-padding-x-small: 0.5rem;
   --input-padding-x-medium: 0.75rem;
   --input-padding-x-large: 0.875rem;
@@ -74,16 +74,24 @@
   --input-bezel-small: 0.25rem;
   --input-bezel-medium: 0.25rem;
   --input-bezel-large: 0.375rem;
-  --action-primary-text-color: #ffffff;
-  --action-primary-background-color: #be123c;
-  --action-primary-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --action-secondary-text-color: #000000;
-  --action-secondary-background-color: #fde047;
-  --action-secondary-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --action-tertiary-text-color: #0f172a;
-  --action-tertiary-background-color: #ffffff;
-  --action-tertiary-shadow: none;
-  --action-text-text-color: #0f172a;
-  --action-text-background-color: transparent;
-  --action-text-shadow: none;
+  --action-text-color-primary: #ffffff;
+  --action-text-color-secondary: #000000;
+  --action-text-color-tertiary: #0f172a;
+  --action-text-color-text: #0f172a;
+  --action-border-primary: solid 0.0625rem #11182740;
+  --action-border-secondary: solid 0.0625rem #11182740;
+  --action-border-tertiary: solid 0.0625rem #11182740;
+  --action-border-text: none;
+  --action-background-color-primary: #be123c;
+  --action-background-color-secondary: #fde047;
+  --action-background-color-tertiary: #ffffff;
+  --action-background-color-text: transparent;
+  --action-shadow-primary: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --action-shadow-secondary: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --action-shadow-tertiary: none;
+  --action-shadow-text: none;
+  --action-text-decoration-primary: none;
+  --action-text-decoration-secondary: none;
+  --action-text-decoration-tertiary: none;
+  --action-text-decoration-text: underline;
 }

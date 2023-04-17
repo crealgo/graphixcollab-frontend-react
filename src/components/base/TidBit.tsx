@@ -18,15 +18,7 @@ const BaseElement: FC<TidBitProps> = ({className, icon, children, ...props}) => 
 	</ButtonBase>
 );
 
-export const TidBit = styled(BaseElement)<TidBitProps>(props => {
-	const resolvedColor = {
-		primary: '#B20838',
-		secondary: '#FDE047',
-		tertiary: '#FFFFFF',
-		text: '#FFFFFF',
-	}[props.color ?? 'primary'];
-
-	return css`
+export const TidBit = styled(BaseElement)<TidBitProps>(({icon, color = 'primary'}) => css`
 		--background-color: #ffffff;
 		--border-color: #cbd5e1;
 
@@ -34,7 +26,7 @@ export const TidBit = styled(BaseElement)<TidBitProps>(props => {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		padding: 10px 20px 10px ${props.icon ? '14px' : '20px'};
+		padding: 10px 20px 10px ${icon ? '14px' : '20px'};
 		gap: 4px;
 
 		font-weight: 600;
@@ -42,16 +34,15 @@ export const TidBit = styled(BaseElement)<TidBitProps>(props => {
 
 		border-radius: 9999px;
 		background-color: var(--background-color);
-		box-shadow: var(--shadow-border), var(--shadow-elevation-0);
+		border: var(--action-border-primary);
+		box-shadow: var(--action-shadow-primary);
 
-		.Button-icon,
-		strong {
-			color: ${resolvedColor};
+		.Button-icon, strong {
+			color: var(--action-background-color-${color});
 		}
 
 		.Button-icon {
 			display: inline-flex;
 			font-size: 24px;
 		}
-	`;
-});
+	`);

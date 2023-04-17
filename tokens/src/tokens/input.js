@@ -1,6 +1,8 @@
+// @ts-check
+
 const colors = require('tailwindcss/colors');
 const generateSizeValues = require('../utils/generateSizeValues');
-const formatTokens = require('../utils/formatTokens');
+const _f = require('../utils/formatToken');
 const {colord} = require('colord');
 
 /*
@@ -12,16 +14,14 @@ const {colord} = require('colord');
 	modifier: variant-state-scale-mode
 */
 
-module.exports = formatTokens({
+module.exports = {
 	input: {
-		font: {
-			size: generateSizeValues('0.875rem'),
-		},
+		fontSize: generateSizeValues('0.875rem', '0.875rem', '1rem'),
 		border: {
-			style: 'solid',
-			width: 0.0625,
-			color: colord(colors.gray[900]).alpha(0.25).toHex(),
-			composite: '{input.border.style} {input.border.width} {input.border.color}',
+			style: _f('solid'),
+			width: _f('0.0625rem'),
+			color: _f(colord(colors.gray[900]).alpha(0.25).toHex()),
+			composite: _f('{input.border.style} {input.border.width} {input.border.color}'),
 		},
 		padding: {
 			x: generateSizeValues('0.5rem', '0.75rem', '0.875rem'),
@@ -31,25 +31,35 @@ module.exports = formatTokens({
 		bezel: generateSizeValues('0.25rem', '0.25rem', '0.375rem'),
 	},
 	action: {
-		primary: {
-			textColor: '{color.brand.primary.contrast}',
-			backgroundColor: '{color.brand.primary.main}',
-			shadow: '{elevation.1}',
+		textColor: {
+			primary: _f('{color.brand.primary.contrast}'),
+			secondary: _f('{color.brand.secondary.contrast}'),
+			tertiary: _f('{color.text.primary}'),
+			text: _f('{color.text.primary}'),
 		},
-		secondary: {
-			textColor: '{color.brand.secondary.contrast}',
-			backgroundColor: '{color.brand.secondary.main}',
-			shadow: '{elevation.1}',
+		border: {
+			primary: _f('{input.border.composite}'),
+			secondary: _f('{input.border.composite}'),
+			tertiary: _f('{input.border.composite}'),
+			text: _f('none'),
 		},
-		tertiary: {
-			textColor: '{color.text.primary}',
-			backgroundColor: '{color.white}',
-			shadow: '{elevation.0}',
+		backgroundColor: {
+			primary: _f('{color.brand.primary.main}'),
+			secondary: _f('{color.brand.secondary.main}'),
+			tertiary: _f('{color.white}'),
+			text: _f('transparent'),
 		},
-		text: {
-			textColor: '{color.text.primary}',
-			backgroundColor: 'transparent',
-			shadow: '{elevation.0}',
+		shadow: {
+			primary: _f('{elevation.2}'),
+			secondary: _f('{elevation.2}'),
+			tertiary: _f('{elevation.0}'),
+			text: _f('{elevation.0}'),
+		},
+		textDecoration: {
+			primary: _f('none'),
+			secondary: _f('none'),
+			tertiary: _f('none'),
+			text: _f('underline'),
 		},
 	},
-});
+};

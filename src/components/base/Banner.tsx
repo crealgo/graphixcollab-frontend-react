@@ -66,26 +66,26 @@ const BannerClose = styled(IconButton)`
 `;
 
 export const Banner: FC<BannerProps> = ({actions, onCloseClick, text, children}) => {
-	const textRef = useRef<HTMLParagraphElement>(null);
-	const containerRef = useRef<HTMLDivElement>(null);
+	// const textRef = useRef<HTMLParagraphElement>(null);
+	// const containerRef = useRef<HTMLDivElement>(null);
 
-	const playMarquee = useMemo(() => {
-		if (textRef.current && containerRef.current) {
-			console.log(textRef.current, containerRef.current);
+	// const playMarquee = useMemo(() => {
+	// 	if (textRef.current && containerRef.current) {
+	// 		console.log(textRef.current, containerRef.current);
 
-			return textRef.current.offsetWidth > containerRef.current.offsetWidth;
-		}
+	// 		return textRef.current.offsetWidth > containerRef.current.offsetWidth;
+	// 	}
 
-		return false;
-	}, [textRef, containerRef]);
+	// 	return false;
+	// }, [textRef, containerRef]);
 
 	const resolvedTitle = typeof children === 'string' ? children : '';
 
 	return (
 		<StyledBlock className='Banner-root' title={resolvedTitle}>
-			<Container ref={containerRef} className='Banner-container'>
+			<Container className='Banner-container'>
 				<div className='Banner-content'>
-					<span ref={textRef} className='Banner-textContent'>
+					<span className='Banner-textContent'>
 						{children ?? text}
 					</span>
 					{actions?.length && (

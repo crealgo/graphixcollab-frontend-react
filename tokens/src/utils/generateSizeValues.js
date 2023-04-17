@@ -1,26 +1,27 @@
+// @ts-check
+
+const _f = require('./formatToken');
 /**
- * @param {TokenLiteral} small
- * @param {TokenLiteral} medium
- * @param {TokenLiteral} large
+ * @param {TokenLiteral[]} sizes
  *
  * @returns {{
- * 	small: TokenLiteral,
- * 	medium: TokenLiteral,
- * 	large: TokenLiteral
+ * 	small: TokenValue,
+ * 	medium: TokenValue,
+ * 	large: TokenValue
  * }}
  **/
 module.exports = (...sizes) => {
 	if (sizes.length === 3) {
 		return {
-			small: sizes[0],
-			medium: sizes[1],
-			large: sizes[2],
+			small: _f(sizes[0]),
+			medium: _f(sizes[1]),
+			large: _f(sizes[2]),
 		};
 	}
 
 	return {
-		small: sizes[0],
-		medium: sizes[0],
-		large: sizes[0],
+		small: _f(sizes[0]),
+		medium: _f(sizes[0]),
+		large: _f(sizes[0]),
 	};
 };
