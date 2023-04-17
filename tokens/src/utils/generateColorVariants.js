@@ -1,7 +1,7 @@
 // @ts-check
 
 const {colord} = require('colord');
-const _f = require('./formatToken');
+const f = require('./formatToken');
 
 /**
  * @param {string} baseHex
@@ -14,8 +14,8 @@ const _f = require('./formatToken');
  * }}
  **/
 module.exports = baseHex => ({
-	light: _f(colord(baseHex).lighten(0.25).toHex()),
-	main: _f(baseHex),
-	dark: _f(colord(baseHex).darken(0.25).toHex()),
-	contrast: _f(colord(baseHex).isDark() ? '#ffffff' : '#000000'),
+	light: f(colord(baseHex).lighten(0.25).toHex()),
+	main: f(baseHex),
+	dark: f(colord(baseHex).darken(0.25).toHex()),
+	contrast: f(colord(baseHex).isDark() ? '#ffffff' : '#000000'),
 });

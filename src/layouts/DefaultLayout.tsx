@@ -6,6 +6,7 @@ import {PlaceholderBlock} from '../components/block/PlaceholderBlock';
 import {type BannerProps} from '../components/base/Banner';
 import {Header, type HeaderProps} from '../components/base/Header';
 import {useAppState} from '../hooks/useAppState';
+import {YelpBlock} from '../components/block/YelpBlock';
 
 type DefaultLayoutProps = NextPage<{
 	children: ReactNode;
@@ -104,7 +105,7 @@ export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, chi
 			</BackgroundImage>
 			<Main id='main-content'>
 				{children}
-				<PlaceholderBlock name='Yelp Block'/>
+				<YelpBlock/>
 			</Main>
 			<FooterBlock {...FooterProps}/>
 		</>

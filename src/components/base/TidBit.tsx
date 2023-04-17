@@ -34,11 +34,11 @@ export const TidBit = styled(BaseElement)<TidBitProps>(({icon, color = 'primary'
 
 		border-radius: 9999px;
 		background-color: var(--background-color);
-		border: var(--action-border-primary);
-		box-shadow: var(--action-shadow-primary);
+		border: var(--button-border-primary);
+		box-shadow: var(--button-shadow-primary);
 
 		.Button-icon, strong {
-			color: var(--action-background-color-${color});
+			color: var(--button-background-color-${color});
 		}
 
 		.Button-icon {

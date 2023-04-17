@@ -1,5 +1,5 @@
 import {KeyboardArrowDown} from '@mui/icons-material';
-import {Menu, MenuItem, Popover} from '@mui/material';
+import {Menu, MenuItem, Popover, type PopoverOrigin} from '@mui/material';
 import {useState, type ComponentType, type FC, type MouseEventHandler} from 'react';
 import {type NavItemOptions} from '../../types/general';
 import {type ButtonProps} from './Button';
@@ -26,12 +26,20 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 		open,
 		anchorEl,
 		onClose: handleClose,
+		anchorOrigin: {
+			vertical: 'bottom',
+			horizontal: 'left',
+		} as PopoverOrigin,
+		disableScrollLock: true,
+		disablePortal: true,
+		transitionDuration: 200,
 	};
 
 	return (
 		<>
 			<NavItem
-				endIcon={<KeyboardArrowDown/>}
+				hasSubmenu
+				selected={open}
 				aria-controls={open ? 'basic-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
@@ -40,13 +48,7 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 				{children}
 			</NavItem>
 			{FlyoutComponent ? (
-				<Popover
-					{...sharedProps}
-					anchorOrigin={{
-						vertical: 'bottom',
-						horizontal: 'left',
-					}}
-				>
+				<Popover {...sharedProps}>
 					<FlyoutComponent/>
 				</Popover>
 			) : (

@@ -120,7 +120,7 @@ export const Header: FC<HeaderProps> = ({navigationItems, actions, className}) =
 						<NavItemDropdown FlyoutComponent={Flyout}>Mega Menu</NavItemDropdown>
 					</NavItems>
 					<FlexSpacer/>
-					<ActionStack size='small' actions={actions}/>
+					<ActionStack actions={actions}/>
 					<DrawerMenu items={navigationItems}/>
 				</Content>
 			</Container>

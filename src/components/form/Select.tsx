@@ -1,7 +1,7 @@
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
-import {ExpandCircleDown} from '@mui/icons-material';
-import {type ComponentPropsWithRef, type FC} from 'react';
+import {KeyboardArrowDownRounded} from '@mui/icons-material';
+import {useRef, type ComponentPropsWithRef, type FC} from 'react';
 import {type BaseInputProps} from '../../types/base';
 import {type OptionValue} from '../../types/general';
 import {getInputStyles} from '../../utils/getInputStyles';
@@ -10,37 +10,47 @@ export type SelectProps = {
 	options?: OptionValue[];
 } & BaseInputProps & ComponentPropsWithRef<'select'>;
 
-const SelectWrapper = styled('div')<SelectProps>(({
-	inputSize = 'medium',
-}) => css`
+const SelectWrapper = styled('div')<SelectProps>(({inputSize}) => css`
 	position: relative;
 
 	& svg {
+		pointer-events: none;
 		position: absolute;
 		top: 50%;
-		right: 0.25rem;
+		height: var(--input-group-action-size-${inputSize});
+		width: var(--input-group-action-size-${inputSize});
+		right: var(--input-spacing-gap-${inputSize});
 		transform: translateY(-50%);
-		font-size: 1.125rem;
-		opacity: 0.25;
+		/* font-size: var(--input-group-action-size-${inputSize}); */
+		opacity: 0.5;
 	}
 `);
 
-const StyledInput = styled('select')<SelectProps>`
-	${getInputStyles}
+const StyledInput = styled('select')<SelectProps>(({inputSize}) => css`
+	${getInputStyles({inputSize})}
+
+	padding-inline: var(--select-spacing-padding-inline-${inputSize});
 	appearance: none;
+	cursor: pointer;
+`);
 
-	padding-right: calc(1.125rem + 0.5rem);
-`;
+export const Select: FC<SelectProps> = ({options, inputSize = 'medium', ...props}) => {
+	const selectRef = useRef<HTMLSelectElement>(null);
 
-export const Select: FC<SelectProps> = ({options, inputSize, ...props}) => (
-	<SelectWrapper inputSize={inputSize}>
-		<StyledInput inputSize={inputSize} {...props}>
-			{options?.map(({label, value}, optionIndex) => (
-				<option key={optionIndex} value={label}>
-					{value}
-				</option>
-			))}
-		</StyledInput>
-		<ExpandCircleDown/>
-	</SelectWrapper>
-);
+	const handleWrapperClick = () => {
+		selectRef.current?.focus();
+	};
+
+	return (
+		<SelectWrapper inputSize={inputSize} onClick={handleWrapperClick}>
+			<StyledInput ref={selectRef} inputSize={inputSize} {...props}>
+				{options?.map(({label, value}, optionIndex) => (
+					<option key={optionIndex} value={label}>
+						{value}
+					</option>
+				))}
+			</StyledInput>
+			<KeyboardArrowDownRounded/>
+		</SelectWrapper>
+	);
+};

@@ -20,8 +20,8 @@ const Marker = styled('div')`
 	position: absolute;
 	top: ${blockSpacing};
 
-	background-color: #cbd5e1;
-	border-radius: 99999px;
+	background-color: var(--image-background-color);
+	border-radius: var(--shape-rounding-full);
 
 	display: flex;
 	align-items: center;
@@ -47,7 +47,7 @@ const EventConnector = styled('div')`
 	height: calc(100% + ${connectorThickness});
 	width: calc(25% + ${connectorThickness});
 
-	border: dotted ${connectorThickness} #cbd5e1;
+	border: dotted ${connectorThickness} var(--image-background-color);
 `;
 
 const BaseElement: FC<EventBlockProps> = props => (
@@ -83,7 +83,7 @@ export const TimelineEvent = styled(BaseElement)<EventBlockProps>`
 	}
 
 	.image {
-		background-color: #cbd5e1;
+		background-color: var(--image-background-color);
 		border-radius: 1rem;
 
 		min-height: 160px;

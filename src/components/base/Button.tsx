@@ -16,20 +16,20 @@ const StyledButton = styled(
 )<ButtonProps>(({color: variant = 'primary', size = 'medium'}) => css`
 		border-radius: 4px;
 
-		font-weight: 500;
+		font-weight: var(--button-font-weight);
 		font-size: var(--input-font-size-${size});
-		letter-spacing: -0.01em;
+		letter-spacing: var(--button-letter-spacing);
 
-		background-color: var(--action-background-color-${variant});
-		box-shadow: var(--action-shadow-${variant});
-		color: var(--action-text-color-${variant});
-		border: var(--action-border-${variant});
+		background-color: var(--button-background-color-${variant});
+		box-shadow: var(--button-shadow-${variant});
+		color: var(--button-text-color-${variant});
+		border: var(--button-border-${variant});
 
-		text-decoration: var(--action-text-decoration-${variant});
-		text-underline-offset: 2px;
-		text-decoration-thickness: 2px;
+		text-decoration: var(--button-text-decoration-${variant});
+		text-underline-offset:  var(--button-text-offset-${variant});
+		text-decoration-thickness:  var(--button-text-thickness-${variant});
 
-		padding-inline: var(--input-padding-x-${size});
+		padding-inline: var(--input-spacing-padding-inline-${size});
 		line-height: var(--input-height-${size});
 		height: var(--input-height-${size});
 	`);

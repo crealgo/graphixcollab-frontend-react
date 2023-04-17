@@ -12,7 +12,7 @@ extends:
   - xo
   - xo-react
   - plugin:editorconfig/all
-  - plugin:sonarjs/recommended
+  # - plugin:sonarjs/recommended
 rules:
   react/react-in-jsx-scope: off
   react/prop-types: off
@@ -62,6 +62,7 @@ overrides:
       - plugin:@typescript-eslint/recommended
       - xo-typescript
     rules:
+      "@typescript-eslint/ban-types": off
       "@typescript-eslint/consistent-type-assertions": off
       "@typescript-eslint/naming-convention": off
 

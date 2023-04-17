@@ -6,6 +6,6 @@
  */
 const formatToken = tokenValue => ({value: tokenValue});
 
-const _f = formatToken;
+const f = formatToken;
 
-module.exports = _f;
+module.exports = f;
