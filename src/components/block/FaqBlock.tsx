@@ -27,18 +27,20 @@ const StyledBlockHeaderWrapper = styled('div')(
 );
 
 export const FaqBlock: FC<FaqBlockProps> = ({title, subtitle, description, actions, faqs, children}) => (
-	<Block color='grey'>
-		<ContentGrid>
-			<Container>
-				<StyledBlockHeaderWrapper>
-					<Heading level={2}>{title}</Heading>
-				</StyledBlockHeaderWrapper>
-			</Container>
-			<Container>
-				{faqs?.map((faq, faqIndex) => (
-					<FaqAccordion key={faqIndex} {...faq}/>
-				))}
-			</Container>
-		</ContentGrid>
-	</Block>
+	<Container>
+		<Block rounded color='grey'>
+			<ContentGrid>
+				<Container size='small'>
+					<StyledBlockHeaderWrapper>
+						<Heading level={2}>{title}</Heading>
+					</StyledBlockHeaderWrapper>
+				</Container>
+				<Container size='small'>
+					{faqs?.map((faq, faqIndex) => (
+						<FaqAccordion key={faqIndex} {...faq}/>
+					))}
+				</Container>
+			</ContentGrid>
+		</Block>
+	</Container>
 );

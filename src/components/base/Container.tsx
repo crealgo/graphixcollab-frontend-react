@@ -1,6 +1,7 @@
 import {css, styled} from '@mui/material';
 import {_e} from '../../utils/excludePropsFromForwarding';
 import {type ComponentPropsWithRef, type FC} from 'react';
+import clsx from 'clsx';
 
 type BaseElementProps = ComponentPropsWithRef<'div'>;
 
@@ -9,7 +10,7 @@ type ContainerProps = {
 };
 
 const BaseElement: FC<BaseElementProps> = ({className = '', children, ref, ...props}) => (
-	<div ref={ref} className={`Container-root ${className}`} {...props}>
+	<div ref={ref} className={clsx('Container-root', className)} {...props}>
 		{children}
 	</div>
 );
@@ -25,22 +26,20 @@ export const Container = styled(
 	}[size ?? 'medium'];
 
 	const containerMaxWidth = size
-		? `
-			max-width: ${containerSize}px;
-		`
+		? `max-width: ${containerSize}px;`
 		: `
-		${theme.breakpoints.up('md')} {
-			max-width: ${theme.breakpoints.values.md}px;
-		}
+			${theme.breakpoints.up('md')} {
+				max-width: ${theme.breakpoints.values.md}px;
+			}
 
-		${theme.breakpoints.up('lg')} {
-			max-width: ${theme.breakpoints.values.lg}px;
-		}
+			${theme.breakpoints.up('lg')} {
+				max-width: ${theme.breakpoints.values.lg}px;
+			}
 
-		${theme.breakpoints.up('xl')} {
-			max-width: ${theme.breakpoints.values.xl}px;
-		}
-	`;
+			${theme.breakpoints.up('xl')} {
+				max-width: ${theme.breakpoints.values.xl}px;
+			}
+		`;
 
 	return css`
 		width: 100%;

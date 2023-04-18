@@ -10,6 +10,7 @@ export const getInputStyles = ({inputSize = 'medium'}: BaseInputProps): Serializ
 		height: var(--input-height-${inputSize});
 		padding-inline: var(--input-spacing-padding-inline-${inputSize});
 		font-size: var(--input-font-size-${inputSize});
+		background-color: white;
 
 		color: var(--input-text-color-primary);
 		box-shadow: var(--input-shadow);

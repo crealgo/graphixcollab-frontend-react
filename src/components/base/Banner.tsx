@@ -1,6 +1,6 @@
 import {Close} from '@mui/icons-material';
 import {css, styled} from '@mui/material';
-import {useMemo, useRef, type FC, type PropsWithChildren} from 'react';
+import {type FC, type PropsWithChildren} from 'react';
 import {type Action} from '../../types/general';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';

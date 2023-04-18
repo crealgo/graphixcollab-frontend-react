@@ -11,7 +11,7 @@ export type DrawerMenuProps = {
 
 export const contentBoxPadding = '1rem';
 
-export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen, onClose}) => {
+export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen}) => {
 	const [open, setOpen] = useControlled({
 		controlled: controlledOpen,
 		default: false,

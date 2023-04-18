@@ -9,7 +9,7 @@ export default {
 export const Default: StoryObj<FormGroupProps> = {
 	render: args => (
 		<FormGroup {...args}>
-			<Autocomplete placeholder='Start Typing'>
+			<Autocomplete>
 				<option value='test-things'>Test Things</option>
 				<option value='test-things-1'>Test Things 1</option>
 				<option value='test-things-2'>Test Things 2</option>

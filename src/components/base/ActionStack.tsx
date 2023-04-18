@@ -18,13 +18,13 @@ export const ActionStack: FC<ActionStackProps> = ({
 	children, size = 'medium', color = 'tertiary',
 }) => (
 	<div className={`ActionStack-root ${className}`}>
-		<Stack gap='0.5rem' direction='row' alignItems='center' justifyContent={align}>
+		<Stack flexWrap='wrap' gap='0.5rem' direction='row' alignItems='center' justifyContent={align}>
+			{children}
 			{actions?.slice(0, max).map(({label, ...actionItemsProps}, actionIndex) => (
 				<Button key={actionIndex} size={size} color={color} {...actionItemsProps}>
 					{label}
 				</Button>
 			))}
-			{children}
 		</Stack>
 		{text && (
 			<Typography className='ActionStack-text' variant='body2' marginTop='1rem' maxWidth='30rem'>

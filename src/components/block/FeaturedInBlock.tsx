@@ -1,4 +1,4 @@
-import {Warning} from '@mui/icons-material';
+import {MessageOutlined, Warning} from '@mui/icons-material';
 import {styled, Typography} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
@@ -9,6 +9,9 @@ import {Container} from '../base/Container';
 import {ContentGrid} from '../base/ContentGrid';
 import {Heading} from '../base/Heading';
 import {StatusMessage} from '../base/StatusMessage';
+import {SiYelp} from '@icons-pack/react-simple-icons';
+import {TidBit} from '../base/TidBit';
+import {ActionStack} from '../base/ActionStack';
 
 export type FeaturedInBlockProps = {
 	title?: string;
@@ -20,20 +23,25 @@ export type FeaturedInBlockProps = {
 	actions?: Action[];
 } & ComponentPropsWithoutRef<'div'>;
 
-const CustomBlock = styled(Block)`
-	padding-top: 2.5rem !important;
-	padding-bottom: 2.5rem !important;
+const StyledContainer = styled(Container)`
+	display: grid;
+	gap: 1rem;
 
-	& .Container-root {
-		margin-bottom: 3rem;
+	.ActionStack-root {
+		margin-top: 2.5rem;
 	}
+`;
+
+const CustomBlock = styled(Block)`
+	padding-top: 4rem !important;
+	padding-bottom: 4rem !important;
 `;
 
 export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies, ...props}) => (
 	<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
-		<Container>
+		<StyledContainer>
 			<ContentGrid size='small' textAlign='center' marginX='auto' maxWidth='50rem'>
-				<Heading level={3}>{props.title}</Heading>
+				<Heading level={4}>We work with <mark>creatives</mark> like you.</Heading>
 				<Typography variant='body2'>{props.description}</Typography>
 			</ContentGrid>
 			{companies?.length ? (
@@ -63,6 +71,19 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies,
 			) : (
 				<StatusMessage isContained IconComponent={Warning} text='No Images Available'/>
 			)}
-		</Container>
+			<ActionStack
+				align='center' size='large' actions={[
+					{
+						label: 'Leave a Review',
+						color: 'text',
+						endIcon: <MessageOutlined/>,
+					},
+				]}
+			>
+				<TidBit href='#yelp-test' icon={<SiYelp/>}>
+					Trusted by <mark>150+ People</mark> on <mark>Yelp</mark>
+				</TidBit>
+			</ActionStack>
+		</StyledContainer>
 	</CustomBlock>
 );

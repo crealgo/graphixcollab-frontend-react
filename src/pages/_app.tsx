@@ -12,7 +12,7 @@ const App = ({Component, pageProps}: AppProps) => (
 		</Head>
 		<ThemeProvider>
 			<AppStateContextProvider>
-				<Component {...pageProps}/>;
+				<Component {...pageProps}/>
 			</AppStateContextProvider>
 		</ThemeProvider>
 	</>

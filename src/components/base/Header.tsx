@@ -13,6 +13,7 @@ import {FlexSpacer} from './FlexSpacer';
 import {Flyout} from './Flyout';
 import {NavItemDropdown} from './NavItemDropdown';
 import {NavItems} from './NavItems';
+import FGUSCLogo from '../../assets/fashiongreek-usc-logo.png';
 
 export type HeaderProps = {
 	// logo?: string;
@@ -38,7 +39,7 @@ const HeaderWrapper = styled(
 		border-bottom-color: ${isScrolled ? `${theme.palette.grey[200]}` : 'transparent'};
 		z-index: 999;
 
-		padding-block: 1rem !important;
+		padding-block: 0.25rem !important;
 
 		${isBranded ? `background-color: ${isScrolled ? 'white' : theme.palette.secondary.light};` : ''}
 	`).withComponent('header');
@@ -83,18 +84,17 @@ const Content = styled('div')(
 	`,
 );
 
-const Logo = styled('div')(
+const Logo = styled('img')(
 	({theme}) => css`
 		grid-area: logo;
 		display: flex;
 		gap: 1rem;
 
-		height: 2rem;
-		aspect-ratio: 5/1;
+		height: 4.25rem;
+		width: auto;
 
 		align-items: center;
 		justify-content: center;
-		background-color: ${theme.palette.grey[200]};
 
 		.MuiTypography-root {
 			opacity: 0.5;
@@ -115,7 +115,11 @@ export const Header: FC<HeaderProps> = ({navigationItems, actions, className}) =
 		<HeaderWrapper isBranded={showBrandedHeader} className={className} isScrolled={isScrolled}>
 			<Container>
 				<Content>
-					<Logo className='Logo-root'>{/* <Typography variant='h4'>{'Logo'}</Typography> */}</Logo>
+					<Logo
+						className='Logo-root'
+						// src='https://fashiongreekusc.square.site/uploads/b/ed0dc040-de8b-11ea-adbe-f1c93472ece4/89a929c7885b56db4508a726fae7f212.png?width=500&optimize=small'
+						src={FGUSCLogo.src as string}
+					/>
 					<NavItems items={items}>
 						<NavItemDropdown FlyoutComponent={Flyout}>Mega Menu</NavItemDropdown>
 					</NavItems>

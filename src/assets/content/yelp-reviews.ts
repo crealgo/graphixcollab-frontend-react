@@ -1,5 +1,65 @@
 // eslint-disable @typescript-eslint/ban-types
 
+type Business = {
+	id: string;
+	alias: string;
+	name: string;
+	photoSrc: string;
+};
+
+type BusinessOwnerReply = {
+	id: string;
+	comment: string;
+	owner: Owner;
+	localizedDate: string;
+};
+
+type Owner = {
+	id: string;
+	avatarSrc: string;
+	avatarSrcSet: string;
+	displayName: string;
+	role: string;
+};
+
+type Comment = {
+	text: string;
+	language: 'en';
+};
+
+type Feedback = {
+	counts: Counts;
+	userFeedback: UserFeedback;
+	voterText: null;
+};
+
+type Counts = {
+	useful: number;
+	funny: number;
+	cool: number;
+};
+
+type UserFeedback = {
+	useful: boolean;
+	funny: boolean;
+	cool: boolean;
+};
+
+type User = {
+	link: string;
+	src: string;
+	srcSet: null | string;
+	markupDisplayName: string;
+	displayLocation: string;
+	altText: string;
+	userUrl: string;
+	partnerAlias: null | string;
+	friendCount: number;
+	photoCount: number | null;
+	reviewCount: number;
+	eliteYear: number | null;
+};
+
 export type YelpReview = {
 	id: string;
 	userId: string;
@@ -19,66 +79,6 @@ export type YelpReview = {
 	appreciatedBy: null;
 	previousReviews: null;
 	tags: string[];
-};
-
-export type Business = {
-	id: string;
-	alias: string;
-	name: string;
-	photoSrc: string;
-};
-
-export type BusinessOwnerReply = {
-	id: string;
-	comment: string;
-	owner: Owner;
-	localizedDate: string;
-};
-
-export type Owner = {
-	id: string;
-	avatarSrc: string;
-	avatarSrcSet: string;
-	displayName: string;
-	role: string;
-};
-
-export type Comment = {
-	text: string;
-	language: 'en';
-};
-
-export type Feedback = {
-	counts: Counts;
-	userFeedback: UserFeedback;
-	voterText: null;
-};
-
-export type Counts = {
-	useful: number;
-	funny: number;
-	cool: number;
-};
-
-export type UserFeedback = {
-	useful: boolean;
-	funny: boolean;
-	cool: boolean;
-};
-
-export type User = {
-	link: string;
-	src: string;
-	srcSet: null | string;
-	markupDisplayName: string;
-	displayLocation: string;
-	altText: string;
-	userUrl: string;
-	partnerAlias: null | string;
-	friendCount: number;
-	photoCount: number | null;
-	reviewCount: number;
-	eliteYear: number | null;
 };
 
 const businessName = 'All Printing Services';
@@ -709,5 +709,7 @@ const yelpReviews: YelpReview[] = [
 		tags: [],
 	},
 ];
+
+export const sampleReview = yelpReviews[0];
 
 export default yelpReviews;

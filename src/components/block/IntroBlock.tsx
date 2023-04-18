@@ -1,21 +1,19 @@
-import {SiYelp} from '@icons-pack/react-simple-icons';
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import imageSrc from '../../assets/sitting-and-laughing-intro.webp';
 import {type SharedBlockProps} from '../../types/general';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
-import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Text} from '../base/Text';
-import {TidBit} from '../base/TidBit';
+import IntroImage from '../../assets/sitting-and-laughing-intro.webp';
 
 export type IntroBlockProps = {
 	title?: string;
 	description?: string;
+	color?: 'primary' | 'secondary' | 'grey';
 	// ImageProps?: ImageProps;
-} & SharedBlockProps & ComponentPropsWithoutRef<'div'>;
+} & ComponentPropsWithoutRef<'div'> & SharedBlockProps;
 
 const Content = styled(Container)(
 	props => css`
@@ -42,7 +40,7 @@ const Content = styled(Container)(
 				height: 100%;
 				right: 0;
 				bottom: 0;
-				background: blue;
+				/* background: blue; */
 
 				img {
 					height: 100%;
@@ -54,30 +52,30 @@ const Content = styled(Container)(
 	`,
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({title, description, className}) => (
-	<Block className={className} color='secondary'>
+export const IntroBlock: FC<IntroBlockProps> = ({title, description, className, color = 'secondary'}) => (
+	<Block className={className} color={color}>
 		<Container>
 			<Content>
 				<div className='content'>
 					<Heading level={1}>{title}</Heading>
 					<Text>{description}</Text>
-					<ActionStack>
-						<Button size='large'>Get Started</Button>
-						<Button size='large' color='text'>
-							Book an appointment
-						</Button>
-					</ActionStack>
-					<br/>
-					<div>
-						<TidBit href='#yelp-test' icon={<SiYelp/>}>
-							Trusted by <strong>150+ People</strong> on <strong>Yelp</strong>
-						</TidBit>
-					</div>
+					<ActionStack
+						size='large' actions={[
+							{
+								label: 'Get Started',
+								color: 'primary',
+							},
+							{
+								label: 'Book an appointment',
+								color: 'text',
+							},
+						]}
+					/>
 				</div>
 				<figure className='image'>
 					<img
 						className='Image-root'
-						// src={imageSrc.src}
+						src={IntroImage.src as string}
 						alt='thing'
 					/>
 				</figure>

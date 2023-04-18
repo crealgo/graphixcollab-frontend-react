@@ -54,6 +54,13 @@ module.exports = {
 			primary: generateColorVariants(colors.rose[700]),
 			secondary: generateColorVariants(colors.yellow[300]),
 			text: generateColorVariants('{color.white}'),
+
+			// other brands
+			yelp: generateColorVariants('#af0606'),
+			facebook: generateColorVariants('#1877f2'),
+			twitter: generateColorVariants('#1da1f2'),
+			instagram: generateColorVariants('#c13584'),
+			square: generateColorVariants('#28c101'),
 		},
 		feedback: {
 			success: generateColorVariants(colors.green[600]),
@@ -71,9 +78,9 @@ module.exports = {
 	shape: {
 		rounding: {
 			none: f('0'),
-			small: f('0.125rem'),
-			medium: f('0.25rem'),
-			large: f('0.5rem'),
+			small: f('0.25rem'),
+			medium: f('0.5rem'),
+			large: f('0.75rem'),
 			xLarge: f('1rem'),
 			full: f('9999px'),
 		},

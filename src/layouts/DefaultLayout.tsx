@@ -1,14 +1,19 @@
 import {css, styled} from '@mui/material/styles';
 import {type NextPage} from 'next';
+import Head from 'next/head';
+import {useRouter} from 'next/router';
 import {useEffect, type ReactNode} from 'react';
-import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
-import {PlaceholderBlock} from '../components/block/PlaceholderBlock';
 import {type BannerProps} from '../components/base/Banner';
+import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
 import {Header, type HeaderProps} from '../components/base/Header';
-import {useAppState} from '../hooks/useAppState';
+import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
+import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 import {YelpBlock} from '../components/block/YelpBlock';
+import {useAppState} from '../hooks/useAppState';
 
 type DefaultLayoutProps = NextPage<{
+	pageTitle?: string;
+	breadcrumbs?: BreadcrumbOptions[];
 	children: ReactNode;
 	hideHeader?: boolean;
 	hideFooter?: boolean;
@@ -52,8 +57,12 @@ const Main = styled('main')(({theme}) => `
 	}
 `);
 
-export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, children}) => {
+export const DefaultLayout: DefaultLayoutProps = ({
+	pageTitle, HeaderProps, FooterProps, children,
+}) => {
 	const {setBannerProps, toggleContact, toggleBooking} = useAppState();
+
+	const router = useRouter();
 
 	useEffect(() => {
 		setBannerProps({
@@ -61,26 +70,31 @@ export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, chi
 		});
 	}, []);
 
+	const hasPageHeader = router.pathname !== '/';
+
 	return (
 		<>
+			<Head>
+				<title>{pageTitle ?? 'Fashion Greek, USC'}</title>
+			</Head>
 			<Header
 				{...HeaderProps}
 				navigationItems={[
 					{
 						label: 'Home',
-						href: '/',
+						href: `${router.basePath}/`,
 					},
 					{
 						label: 'About',
-						href: '/about',
+						href: `${router.basePath}/about`,
 					},
 					{
 						label: 'Graphix Collab',
-						href: '/graphix-collab',
+						href: `${router.basePath}/graphix-collab`,
 					},
 					{
 						label: 'Services',
-						href: '/services',
+						href: `${router.basePath}/services`,
 					},
 				]}
 				actions={[
@@ -93,9 +107,7 @@ export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, chi
 					},
 					{
 						color: 'primary',
-						onClick() {
-							toggleContact();
-						},
+						href: `${router.basePath}/book-appointment`,
 						label: 'Book a time',
 					},
 				]}
@@ -103,11 +115,22 @@ export const DefaultLayout: DefaultLayoutProps = ({HeaderProps, FooterProps, chi
 			<BackgroundImage className='Motif'>
 				<BackgroundImageWrapper/>
 			</BackgroundImage>
+			{hasPageHeader && (
+				<PageHeaderBlock
+					breadcrumbs={[{
+						label: 'Home',
+						href: `${router.basePath}/`,
+					}, {
+						label: 'Services',
+					}]}
+					title={pageTitle ?? 'Page Title'}
+				/>
+			)}
 			<Main id='main-content'>
 				{children}
 				<YelpBlock/>
 			</Main>
-			<FooterBlock {...FooterProps}/>
+			<FooterBlock/>
 		</>
 	);
 };

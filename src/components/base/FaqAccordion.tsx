@@ -10,7 +10,7 @@ const fontSize = '18px';
 const fontHeight = '28px';
 
 const Wrapper = styled(Accordion)(
-	({theme, expanded}) => css`
+	({theme}) => css`
 		padding: 1rem 1rem;
 		border-left: none;
 		border-right: none;

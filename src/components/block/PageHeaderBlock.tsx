@@ -13,7 +13,7 @@ export type PageHeaderBlockProps = {
 	color?: string;
 	breadcrumbs?: BreadcrumbOptions[];
 	navigationItems?: NavItemOptions[];
-	navigationType: 'scroll' | 'anchor-link';
+	navigationType?: 'scroll' | 'anchor-link';
 	BlockProps?: BlockProps;
 	ImageProps?: ImageProps;
 };

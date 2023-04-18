@@ -19,11 +19,11 @@ const StyledButton = styled(
 	MuiButtonBase,
 	_e('endIcon', 'startIcon', 'size'),
 )<ButtonBaseProps>(
-	({theme}) => css`
+	({size = 'medium'}) => css`
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.25rem;
+		gap: var(--button-spacing-gap-${size});
 
 		letter-spacing: -0.0156rem;
 		white-space: nowrap;

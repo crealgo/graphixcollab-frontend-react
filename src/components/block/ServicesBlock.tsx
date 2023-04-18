@@ -83,7 +83,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({title, subtitle, descript
 				</div>
 				<Container size='small'>
 					<ActionStack align='center' color='secondary'>
-						<Box mr={-2} zIndex={1}>
+						<Box mr={-1} zIndex={1}>
 							Looking for something else?
 						</Box>
 						<Button color='text' endIcon={<Message/>}>

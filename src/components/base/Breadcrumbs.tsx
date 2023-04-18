@@ -1,5 +1,6 @@
 import MuiBreadcrumbs, {type BreadcrumbsProps as MuiBreadcrumbsProps} from '@mui/material/Breadcrumbs';
 import {forwardRef} from 'react';
+import {Link} from './Link';
 
 export type BreadcrumbOptions = {
 	type?: 'link';
@@ -13,7 +14,7 @@ type BreadcrumbsProps = {
 
 export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(({children, items, ...props}, ref) => (
 	<MuiBreadcrumbs {...props} ref={ref}>
-		{children ?? items?.map(({href, label}, itemIndex) => <span key={itemIndex}>{label}</span>)}
+		{children ?? items?.map(({label, ...props}, itemIndex) => <Link key={itemIndex} {...props}>{label}</Link>)}
 	</MuiBreadcrumbs>
 ));
 

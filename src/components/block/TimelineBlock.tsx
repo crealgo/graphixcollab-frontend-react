@@ -18,6 +18,15 @@ const Switcher = styled('div')`
 	justify-content: center;
 `;
 
+const Content = styled(Container)`
+	display: grid;
+	gap: 1rem;
+
+	.Heading-root {
+		text-align: center;
+	}
+`;
+
 export const TimelineBlock: FC<{events?: EventBlockProps[]}> = ({events = defaultEvents}) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
@@ -26,7 +35,7 @@ export const TimelineBlock: FC<{events?: EventBlockProps[]}> = ({events = defaul
 
 	return (
 		<Block className='EventBlock-root'>
-			<Container className='text-center'>
+			<Content>
 				<Heading level={2} className='mb-4'>
 					See how we work!
 				</Heading>
@@ -42,7 +51,7 @@ export const TimelineBlock: FC<{events?: EventBlockProps[]}> = ({events = defaul
 					/>
 					<Button color='secondary'>Update</Button>
 				</Switcher>
-			</Container>
+			</Content>
 			<Timeline>
 				{events.map((eventDetails, index) => (
 					<ResolvedEventComponent key={index} stepNumber={index + 1} {...eventDetails}/>

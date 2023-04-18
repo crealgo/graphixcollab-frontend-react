@@ -1,4 +1,4 @@
-export default `/**
+module.exports = `/**
 * Do not edit directly
 * Generated on Tue, 18 Apr 2023 00:58:47 GMT
 */

@@ -1,9 +1,12 @@
 import {Facebook, Instagram, Twitter} from '@mui/icons-material';
-import {css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
+import {Box, css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
 import {type Term} from '../../types/general';
 import {Container} from '../base/Container';
 import {Block} from '../base/Block';
+import {Input} from '../form/Input';
+import {Button} from '../base/Button';
+import {MapEmbed} from './MapEmbed';
 
 export type FooterBlockProps = {
 	title?: string;
@@ -17,56 +20,87 @@ const Column = styled('div')(
 	({theme}) => css`
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		row-gap: 2rem;
 
 		${theme.breakpoints.up('md')} {
-			gap: 0.75rem;
+			row-gap: 2rem;
 		}
 	`,
 );
-
-const FooterBlockWrapper = styled(Block)(
-	({theme}) => css`
-		border-bottom: solid 1px ${theme.palette.grey[300]};
-	`,
-).withComponent('footer');
 
 const Content = styled('div')(
 	({theme}) => css`
 		display: grid;
-		gap: 1.5rem;
+		row-gap: 3rem;
+		column-gap: 1.5rem;
 		grid-template-columns: 1fr;
 
 		${theme.breakpoints.up('md')} {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: 1.5fr 1fr 1fr;
 		}
 	`,
 );
+
+const FooterBlockWrapper = styled(Block)(({theme}) => css`
+	background-color: var(--color-gray-100);
+	border-bottom: var(--input-border-composite);
+	margin-top: 1rem;
+`).withComponent('footer');
 
 const CopyrightBlockWrapper = styled(Block)(
 	({theme}) => css`
+		background-color: var(--color-gray-100);
 		padding-block: 2rem !important;
 
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		justify-content: center;
+		.Container-root {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			justify-content: center;
 
-		${theme.breakpoints.up('md')} {
-			flex-direction: row;
-			gap: 1.5rem;
+			${theme.breakpoints.up('md')} {
+				flex-direction: row;
+				gap: 1.5rem;
+			}
 		}
 	`,
 );
 
-export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []}) => (
+const defaultContent = {
+	title: 'Fashion Greek, USC',
+	description: 'Your premier custom apparel store! We make customer apparel fast and easy. Designers on-site to help you out with your order. No minimum quantity.',
+	meta: [
+		{
+			term: 'Location',
+			description: '2626 S Figueroa St #A, Los Angeles, California 90007',
+		},
+		{
+			term: 'Phone',
+			description: '(323) 379-3728',
+		},
+		{
+			term: 'Email',
+			description: 'info@fashiongreekusc.com',
+		},
+	],
+};
+
+export const FooterBlock: FC<FooterBlockProps> = ({
+	title = defaultContent.title,
+	description = defaultContent.description,
+	meta = defaultContent.meta,
+}) => (
 	<>
 		<FooterBlockWrapper>
 			<Container>
 				<Content>
 					<Column>
-						<Typography variant='h3'>{title}</Typography>
-						<Typography variant='body1'>{description}</Typography>
+						<div>
+							<Typography gutterBottom variant='h3'>
+								{title}
+							</Typography>
+							<Typography variant='body1'>{description}</Typography>
+						</div>
 						<div>
 							<Typography variant='subtitle1' color='grey.700'>
 								Social Media
@@ -83,24 +117,28 @@ export const FooterBlock: FC<FooterBlockProps> = ({title, description, meta = []
 								</IconButton>
 							</Stack>
 						</div>
+						<div>
+							<Typography variant='subtitle1' color='grey.700'>
+								Newsletter
+							</Typography>
+							<Box display='flex' gap='0.25rem'>
+								<Input type='text' inputSize='large' placeholder='your@email.com'/>
+								<Button size='large' color='secondary'>Sign Up</Button>
+							</Box>
+						</div>
+					</Column>
+					<Column>
+						<MapEmbed/>
 					</Column>
 					<Column>
 						{meta?.map((term, termIndex) => (
 							<div key={termIndex}>
-								<Typography variant='subtitle1' color='grey.700'>
+								<Typography variant='subtitle1' fontWeight={500} letterSpacing='-0.0125em' color='grey.700'>
 									{term.term}
 								</Typography>
 								<Typography>{term.description}</Typography>
 							</div>
 						))}
-					</Column>
-					<Column>
-						<div>
-							<Typography variant='subtitle1' color='grey.700'>
-								Newsletter
-							</Typography>
-							<Typography>Input goes here</Typography>
-						</div>
 					</Column>
 				</Content>
 			</Container>

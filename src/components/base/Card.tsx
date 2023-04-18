@@ -65,7 +65,7 @@ const CardAnchor = styled('a')(() => {
 	`;
 });
 
-export const Card: FC<CardProps> = ({title, subtitle, description, className, imageSrc, ImageProps, ...props}) => {
+export const Card: FC<CardProps> = ({title, subtitle, description, className, ...props}) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
 	const {toggleBooking} = useAppState();

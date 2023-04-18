@@ -5,6 +5,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.15",
@@ -37,6 +38,7 @@
     "storybook": "^7.0.2",
     "style-to-object": "^0.4.1",
     "ts-dedent": "^2.2.0",
+    "twin.macro": "^3.3.1",
     "web-vitals": "^2.1.4",
     "yaml": "^2.2.1"
   },

@@ -103,6 +103,8 @@ const button = {
 			text: f('2px'),
 		},
 	},
+	spacing: input.spacing,
+	bezel: input.bezel,
 };
 
 module.exports = {

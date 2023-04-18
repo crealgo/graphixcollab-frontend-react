@@ -7,9 +7,7 @@ import tokens from '../../../tokens/build/css/variablesString';
 export const GlobalStyles: FC = () => (
 	<MuiGlobalStyles
 		styles={css`
-			:root {
-				${tokens}
-			}
+			${tokens}
 
 			* {
 				font-family: Inter;

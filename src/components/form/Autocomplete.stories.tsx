@@ -1,5 +1,7 @@
 import {type Meta, type StoryObj} from '@storybook/react';
 import {Autocomplete, type AutocompleteProps} from './Autocomplete';
+import {Grid, Autocomplete as MuiAutocomplete, type AutocompleteProps as MuiAutocompleteProps, TextField} from '@mui/material';
+import {chance} from '../../utils/chance';
 
 export default {
 	component: Autocomplete,
@@ -7,7 +9,7 @@ export default {
 
 export const Default: StoryObj<AutocompleteProps> = {
 	args: {
-		placeholder: 'Start Typing...',
+		// placeholder: 'Start Typing...',
 		inputSize: 'medium',
 		children: (
 			<>

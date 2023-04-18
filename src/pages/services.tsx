@@ -24,8 +24,7 @@ type PageProps = {
 };
 
 const ServicesPage: NextPage<PageProps> = props => (
-	<DefaultLayout FooterProps={props.FooterProps}>
-		<PageHeaderBlock {...props.PageHeaderBlockProps} title='Services'/>
+	<DefaultLayout pageTitle='Services' FooterProps={props.FooterProps}>
 		<ServicesBlock {...props.ServicesBlockProps}/>
 		<TimelineBlock/>
 		<InteractiveEstimator/>

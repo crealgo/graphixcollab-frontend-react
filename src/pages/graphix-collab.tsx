@@ -1,5 +1,7 @@
-import {type PageProps} from '../types/general';
+import {type GetStaticProps, type NextPage} from 'next';
+import colors from 'tailwindcss/colors';
 import {DefaultLayout} from '../layouts/DefaultLayout';
+import {type PageProps} from '../types/general';
 import {
 	generateActions,
 	generateBanner,
@@ -7,16 +9,13 @@ import {
 	generateGalleryBlock,
 	generateHeader,
 	generateIntroBlock,
-	generatePageHeaderBlock,
 	generateServicesBlock,
 	generateTimelineBlock,
 } from '../utils/chance';
 import {generateBlocks} from '../utils/generateBlocks';
-import {type GetStaticProps, type NextPage} from 'next';
-import colors from 'tailwindcss/colors';
 
 const GraphixCollab: NextPage<PageProps> = ({layout, blocks}) => (
-	<DefaultLayout HeaderProps={layout.header} BannerProps={layout.banner} FooterProps={layout.footer}>
+	<DefaultLayout pageTitle='Graphix Collab' HeaderProps={layout.header} BannerProps={layout.banner} FooterProps={layout.footer}>
 		{generateBlocks(blocks)}
 	</DefaultLayout>
 );
@@ -31,14 +30,6 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			footer: generateFooter(),
 		},
 		blocks: [
-			{
-				type: 'pageHeader',
-				props: {
-					...generatePageHeaderBlock(),
-					color: colors.cyan[300],
-					title: 'Graphix Collab',
-				},
-			},
 			{
 				type: 'intro',
 				props: {
