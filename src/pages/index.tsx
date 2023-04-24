@@ -1,20 +1,25 @@
 import {type GetStaticProps, type NextPage} from 'next';
+import {IntroBlock} from '../components/block/IntroBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
 import {
 	generateActions,
-	generateBanner,
-	generateFooter,
 	generateGalleryBlock,
-	generateHeader,
 	generateIntroBlock,
 	generateServicesBlock,
 } from '../utils/chance';
-import {generateBlocks} from '../utils/generateBlocks';
+import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
+import {GalleryBlock} from '../components/block/GalleryBlock';
+import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
+import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
 
-const HomePage: NextPage<PageProps> = ({layout, blocks}) => (
-	<DefaultLayout BannerProps={layout.banner} FooterProps={layout.footer}>
-		{generateBlocks(blocks)}
+const HomePage: NextPage<PageProps> = props => (
+	<DefaultLayout>
+		<IntroBlock {...props.IntroBlockProps}/>
+		<FeaturedInBlock {...props.FeaturedInBlockProps}/>
+		<InteractiveEstimator {...props.InteractiveEstimatorProps}/>
+		<ServicesPreviewBlock {...props.ServicesPreviewBlockProps}/>
+		<GalleryBlock {...props.GalleryBlockProps}/>
 	</DefaultLayout>
 );
 
@@ -22,39 +27,24 @@ const exampleLink = 'https://google.com';
 
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
-		layout: {
-			header: generateHeader(),
-			banner: generateBanner(),
-			footer: generateFooter(),
+		IntroBlockProps: generateIntroBlock(),
+		FeaturedInBlockProps: {
+			title: 'Featured In',
+			companies: [
+				{name: 'Dazed', url: exampleLink},
+				{name: 'i-D', url: exampleLink},
+				{name: 'Buffalo Zine', url: exampleLink},
+				{name: 'Gal-dem', url: exampleLink},
+				{name: 'Polyester', url: exampleLink},
+				{name: 'Another Magazine', url: exampleLink},
+				{name: 'i-D', url: exampleLink},
+			],
 		},
-		blocks: [
-			{type: 'intro', props: generateIntroBlock()},
-			{
-				type: 'featured',
-				props: {
-					title: 'Featured In',
-					companies: [
-						{name: 'Dazed', url: exampleLink},
-						{name: 'i-D', url: exampleLink},
-						{name: 'Buffalo Zine', url: exampleLink},
-						{name: 'Gal-dem', url: exampleLink},
-						{name: 'Polyester', url: exampleLink},
-						{name: 'Another Magazine', url: exampleLink},
-						{name: 'i-D', url: exampleLink},
-					],
-				},
-			},
-			{
-				type: 'interactiveEstimator',
-				props: {
-					actions: generateActions(),
-				},
-			},
-			{type: 'servicesPreview', props: generateServicesBlock()},
-			// { type: "timeline", props: generateTimelineBlock() },
-			// {type: 'fanService', props: generateFanServiceBlock()},
-			{type: 'gallery', props: generateGalleryBlock()},
-		],
+		InteractiveEstimatorProps: {
+			actions: generateActions(),
+		},
+		ServicesPreviewBlockProps: generateServicesBlock(),
+		GalleryBlockProps: generateGalleryBlock(),
 	},
 });
 

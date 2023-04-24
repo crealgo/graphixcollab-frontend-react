@@ -1,6 +1,6 @@
 
 import styled from '@emotion/styled';
-import {type YelpReview} from '../../assets/content/yelp-reviews';
+import {type YelpReview} from '../../content/yelp-reviews';
 import {Rating} from './Rating';
 import {type FC} from 'react';
 

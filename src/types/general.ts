@@ -1,11 +1,25 @@
-import {type ButtonProps} from '../components/base/Button';
-import {type ActionStackProps} from '../components/base/ActionStack';
-import {type BannerProps} from '../components/base/Banner';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {type HeaderProps} from '../components/base/Header';
-import {type BlockOptions} from '../utils/generateBlocks';
-import {type MouseEventHandler} from 'react';
 import {type StaticImageData} from 'next/image';
+import {type MouseEventHandler} from 'react';
+import {type ActionStackProps} from '../components/base/ActionStack';
+import {type ButtonProps} from '../components/base/Button';
+import {type CalloutBlockProps} from '../components/block/CalloutBlock';
+import {type FanServiceBlockProps} from '../components/block/FanServiceBlock';
+import {type FaqBlockProps} from '../components/block/FaqBlock';
+import {type FeaturedInBlockProps} from '../components/block/FeaturedInBlock';
+import {type FooterBlockProps} from '../components/block/FooterBlock';
+import {type GalleryBlockProps} from '../components/block/GalleryBlock';
+import {type HighlightBlockProps} from '../components/block/HighlightBlock';
+import {type InteractiveEstimatorProps} from '../components/block/InteractiveEstimator';
+import {type IntroBlockProps} from '../components/block/IntroBlock';
+import {type NewsBlockProps} from '../components/block/NewsBlock';
+import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
+import {type PlaceholderBlockProps} from '../components/block/PlaceholderBlock';
+import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';
+import {type ServicesBlockProps} from '../components/block/ServicesBlock';
+import {type ServicesPreviewBlockProps} from '../components/block/ServicesPreviewBlock';
+import {type SocialMediaBlockProps} from '../components/block/SocialMediaBlock';
+import {type TimelineBlockProps} from '../components/block/TimelineBlock';
+import {type YelpBlockProps} from '../components/block/YelpBlock';
 
 export type LoadingStatus = 'loading' | 'loaded' | 'error';
 
@@ -91,11 +105,24 @@ export type SharedBlockProps = {
 	ActionStackProps?: ActionStackProps;
 };
 
-export type PageProps = {
-	layout: {
-		header: HeaderProps;
-		banner: BannerProps;
-		footer: FooterBlockProps;
-	};
-	blocks: BlockOptions[];
-};
+export type PageProps = Partial<{
+	[other: string]: any;
+	CalloutBlockProps: CalloutBlockProps;
+	FanServiceBlockProps: FanServiceBlockProps;
+	FaqBlockProps: FaqBlockProps;
+	FeaturedInBlockProps: FeaturedInBlockProps;
+	FooterBlockProps: FooterBlockProps;
+	GalleryBlockProps: GalleryBlockProps;
+	HighlightBlockProps: HighlightBlockProps;
+	InteractiveEstimatorProps: InteractiveEstimatorProps;
+	IntroBlockProps: IntroBlockProps;
+	NewsBlockProps: NewsBlockProps;
+	PageHeaderBlockProps: PageHeaderBlockProps;
+	PlaceholderBlockProps: PlaceholderBlockProps;
+	ProfilesBlockProps: ProfilesBlockProps;
+	ServicesBlockProps: ServicesBlockProps;
+	ServicesPreviewBlockProps: ServicesPreviewBlockProps;
+	SocialMediaBlockProps: SocialMediaBlockProps;
+	TimelineBlockProps: TimelineBlockProps;
+	YelpBlockProps: YelpBlockProps;
+}>;

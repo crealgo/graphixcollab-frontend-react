@@ -1,16 +1,15 @@
-import {styled} from '@mui/material';
+import {css} from '@emotion/react';
 import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
+import {styled} from '@mui/material';
 import {type FC} from 'react';
-import {sampleReview, type YelpReview} from '../../assets/content/yelp-reviews';
+import reviews, {sampleReview, type YelpReview} from '../../content/yelp-reviews';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Testimonial} from '../base/Testimonial';
-import {css} from '@emotion/react';
-import reviews from '../../assets/content/yelp-reviews';
 
-export type PlaceholderBlockProps = {
+export type YelpBlockProps = {
 	quote?: YelpReview;
 };
 
@@ -92,7 +91,7 @@ const ReviewAvatar = styled('div')`
 	`, css``)}
 `;
 
-export const YelpBlock: FC<PlaceholderBlockProps> = ({quote = {
+export const YelpBlock: FC<YelpBlockProps> = ({quote = {
 	user: sampleReview.user,
 	comment: sampleReview.comment,
 	rating: sampleReview.rating,

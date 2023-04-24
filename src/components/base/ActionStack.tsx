@@ -1,17 +1,18 @@
 import {Stack, Typography} from '@mui/material';
-import {type FC, type PropsWithChildren} from 'react';
+import {type PropsWithChildren, type FC} from 'react';
 import {type Action} from '../../types/general';
 import {Button, type ButtonProps} from './Button';
 
 export type ActionStackProps = PropsWithChildren<{
-	actions?: Action[];
 	prefix?: string;
 	text?: string;
 	className?: string;
 	align?: 'start' | 'center' | 'end';
 	max?: number;
-}> &
-Pick<ButtonProps, 'size' | 'color'>;
+	color?: ButtonProps['color'];
+	size?: ButtonProps['size'];
+	actions?: Action[];
+}>;
 
 export const ActionStack: FC<ActionStackProps> = ({
 	align, actions, text, max = 2, className = '',

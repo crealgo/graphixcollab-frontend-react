@@ -2,7 +2,7 @@ import {Block} from '../base/Block';
 import {type FC} from 'react';
 import {Button} from '../base/Button';
 import {Container} from '../base/Container';
-import defaultEvents from '../../assets/content/timeline-screen-printing';
+import defaultEvents from '../../content/timeline-screen-printing';
 import {Heading} from '../base/Heading';
 import {Select} from '../form/Select';
 import {MobileTimelineEvent} from '../base/MobileTimelineEvent';
@@ -10,6 +10,10 @@ import {type EventBlockProps, TimelineEvent} from '../base/TimelineEvent';
 import {Timeline} from '../base/Timeline';
 import {useMediaQuery, useTheme} from '@mui/material';
 import styled from '@emotion/styled';
+
+export type TimelineBlockProps = {
+	events?: EventBlockProps[];
+};
 
 const Switcher = styled('div')`
 	display: flex;
@@ -27,7 +31,7 @@ const Content = styled(Container)`
 	}
 `;
 
-export const TimelineBlock: FC<{events?: EventBlockProps[]}> = ({events = defaultEvents}) => {
+export const TimelineBlock: FC<TimelineBlockProps> = ({events = defaultEvents}) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
 

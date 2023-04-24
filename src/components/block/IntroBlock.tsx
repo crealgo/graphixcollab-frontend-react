@@ -1,17 +1,33 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type SharedBlockProps} from '../../types/general';
+import IntroImage from '../../assets/sitting-and-laughing-intro.webp';
+import {type Action, type SharedBlockProps} from '../../types/general';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Text} from '../base/Text';
-import IntroImage from '../../assets/sitting-and-laughing-intro.webp';
+
+type Slide = {
+	title: string;
+	description: string;
+	actions: Action[];
+	image: string;
+};
+
+const defaultContent = {
+	slides: [
+		{
+
+		}
+	]
+}
 
 export type IntroBlockProps = {
 	title?: string;
 	description?: string;
 	color?: 'primary' | 'secondary' | 'grey';
+	slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> & SharedBlockProps;
 
@@ -52,7 +68,7 @@ const Content = styled(Container)(
 	`,
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({title, description, className, color = 'secondary'}) => (
+export const IntroBlock: FC<IntroBlockProps> = ({title, description, className, slides = [], color = 'secondary'}) => (
 	<Block className={className} color={color}>
 		<Container>
 			<Content>

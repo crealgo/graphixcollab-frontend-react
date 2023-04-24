@@ -12,7 +12,7 @@ import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {colorIterator} from '../../utils/colorIterator';
 
-export type ServicesBlockProps = {
+export type ServicesPreviewBlockProps = {
 	services?: ServiceOptions[];
 	BlockProps?: BlockProps;
 } & SharedBlockProps;

@@ -1,4 +1,4 @@
-import {iconMap, iconNameArray} from '../../assets/content/icon-map';
+import {iconMap, iconNameArray} from '../../content/icon-map';
 import {type StoryObj, type Meta} from '@storybook/react';
 import {Button, type ButtonProps} from './Button';
 

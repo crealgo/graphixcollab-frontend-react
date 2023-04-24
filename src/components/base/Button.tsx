@@ -10,10 +10,7 @@ export type ButtonProps = {
 	color?: ColorVariants;
 } & ButtonBaseProps;
 
-const StyledButton = styled(
-	ButtonBase,
-	_e('color'),
-)<ButtonProps>(({color: variant = 'primary', size = 'medium'}) => css`
+const StyledButton = styled(ButtonBase)<ButtonProps>(({color: variant = 'primary', size = 'medium'}) => css`
 		border-radius: var(--button-bezel-${size});
 
 		font-weight: var(--button-font-weight);

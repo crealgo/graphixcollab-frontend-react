@@ -6,7 +6,7 @@ import {NewsCard} from '../base/NewsCard';
 
 /** START PLAYGROUND */
 
-export type NewsBlockWrapperProps = {
+export type NewsBlockProps = {
 	meta?: string;
 	title?: string;
 	actions: Action[];
@@ -14,7 +14,7 @@ export type NewsBlockWrapperProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 export const NewsBlockWrapper = styled('div')(
-	({theme}) => css`
+	({theme}) => /* scss */`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
@@ -34,7 +34,7 @@ export const NewsBlockWrapper = styled('div')(
 );
 
 const NewsBlockContent = styled('div')(
-	({theme}) => css`
+	({theme}) => /* scss */`
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
@@ -42,7 +42,7 @@ const NewsBlockContent = styled('div')(
 	`,
 );
 
-export const NewsBlock: FC<NewsBlockWrapperProps> = ({articles, meta, title, actions}) => (
+export const NewsBlock: FC<NewsBlockProps> = ({articles, meta, title, actions}) => (
 	<NewsBlockWrapper className='NewsBlock-root'>
 		<NewsBlockContent>
 			<Typography variant='h2' className='NewsBlock-contentMeta'>
