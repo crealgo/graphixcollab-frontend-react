@@ -76,11 +76,7 @@ export const Header: FC<HeaderProps> = ({
 	const showBrandedHeader = router.pathname === '/';
 
 	return (
-		<HeaderBar
-			isBranded={showBrandedHeader}
-			className={className}
-			isScrolled={isScrolled}
-		>
+		<HeaderBar className={className} isScrolled={isScrolled}>
 			<Content>
 				<HeaderLogo
 					className="Logo-root"

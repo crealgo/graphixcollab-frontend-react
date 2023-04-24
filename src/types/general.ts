@@ -10,7 +10,7 @@ import {type FooterBlockProps} from '../components/block/FooterBlock';
 import {type GalleryBlockProps} from '../components/block/GalleryBlock';
 import {type HighlightBlockProps} from '../components/block/HighlightBlock';
 import {type InteractiveEstimatorProps} from '../components/block/InteractiveEstimator';
-import {type IntroBlockProps} from '../components/block/IntroBlock';
+import {type IntroBlockProps} from '../components/block/IntroBlock/IntroBlock';
 import {type NewsBlockProps} from '../components/block/NewsBlock';
 import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
 import {type PlaceholderBlockProps} from '../components/block/PlaceholderBlock';

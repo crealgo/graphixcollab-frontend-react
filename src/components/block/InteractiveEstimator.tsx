@@ -25,7 +25,6 @@ const ContentGrid = styled('div')`
 
 	padding-block-end: 15rem;
 
-
 	.ActionStack-root {
 		margin-top: 1rem;
 	}
@@ -54,7 +53,7 @@ const AdornmentImage = styled('img')`
 	transform: translateX(-45%) translateY(50%);
 
 	${({theme}) => theme.breakpoints.up('md')} {
-		width: 30rem;
+		width: 50rem;
 		left: auto;
 		right: 0;
 		transform: translateX(20%) translateY(35%);
@@ -68,31 +67,33 @@ const AdornmentImage = styled('img')`
 	}
 `;
 
-export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({actions}) => (
+export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({
+	actions
+}) => (
 	<Container>
-		<StyledBlock rounded color='grey' className='InteractiveEstimator-root'>
+		<StyledBlock rounded color="grey" className="InteractiveEstimator-root">
 			<ContentGrid>
 				<Heading level={4}>Get an estimate!</Heading>
-				<Heading level={1}>
+				<Heading level={2}>
 					{'I would like a custom '}
 					<InteractiveSelector
 						options={[
 							{
 								label: 'Sash',
-								value: 'sash',
+								value: 'sash'
 							},
 							{
 								label: 'T-Shirt',
-								value: 't-shirt',
+								value: 't-shirt'
 							},
 							{
 								label: 'Poster',
-								value: 'poster',
+								value: 'poster'
 							},
 							{
 								label: 'Sticker',
-								value: 'sticker',
-							},
+								value: 'sticker'
+							}
 						]}
 					/>
 					{' that is '}
@@ -100,12 +101,12 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({actions}) =
 						options={[
 							{
 								label: 'embroidered',
-								value: 'embroidered',
+								value: 'embroidered'
 							},
 							{
 								label: 'printed',
-								value: 'printed',
-							},
+								value: 'printed'
+							}
 						]}
 					/>
 					{' with '}
@@ -113,16 +114,16 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({actions}) =
 						options={[
 							{
 								label: 'my name',
-								value: 'name',
+								value: 'name'
 							},
 							{
 								label: 'my initials',
-								value: 'initials',
+								value: 'initials'
 							},
 							{
 								label: 'a quote',
-								value: 'initials',
-							},
+								value: 'initials'
+							}
 						]}
 					/>
 				</Heading>
@@ -133,17 +134,17 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({actions}) =
 							label: 'Get an Estimate',
 							size: 'large',
 							color: 'secondary',
-							endIcon: <CheckCircleOutline/>,
+							endIcon: <CheckCircleOutline />
 						},
 						{
 							label: 'Talk to a Designer',
 							size: 'large',
 							color: 'text',
-							endIcon: <PaletteOutlined/>,
-						},
+							endIcon: <PaletteOutlined />
+						}
 					]}
 				/>
-				<AdornmentImage src={Illustration.src as string} alt=''/>
+				<AdornmentImage src={Illustration.src as string} alt="" />
 			</ContentGrid>
 		</StyledBlock>
 	</Container>

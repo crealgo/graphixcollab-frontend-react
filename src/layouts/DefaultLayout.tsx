@@ -6,7 +6,10 @@ import {useEffect, type ReactNode} from 'react';
 import {type BannerProps} from '../components/base/Banner';
 import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
 import {Header, type HeaderProps} from '../components/base/Header/Header';
-import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
+import {
+	FooterBlock,
+	type FooterBlockProps
+} from '../components/block/FooterBlock';
 import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 import {YelpBlock} from '../components/block/YelpBlock';
 import {useAppState} from '../hooks/useAppState';
@@ -44,21 +47,26 @@ const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
 			top: 25%;
 			transform: rotate(30deg) ${flipped ? 'scaleX(-1)' : ''};
 		}
-	`,
+	`
 );
 
-// FIXME: figure out how to use grid
-const Main = styled('main')(({theme}) => `
-	display: grid;
-	grid-template-columns: minmax(0, 1fr);
+const Main = styled('main')(
+	({theme}) => css`
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 
-	${theme.breakpoints.up('md')} {
-		gap: 1rem;
-	}
-`);
+		${theme.breakpoints.up('md')} {
+			padding-block: 1rem;
+			gap: 1rem;
+		}
+	`
+);
 
 export const DefaultLayout: DefaultLayoutProps = ({
-	pageTitle, HeaderProps, FooterProps, children,
+	pageTitle,
+	HeaderProps,
+	FooterProps,
+	children
 }) => {
 	const {setBannerProps, toggleContact, toggleBooking} = useAppState();
 
@@ -66,7 +74,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 
 	useEffect(() => {
 		setBannerProps({
-			text: '⚡️⚡️ Flash Sash Sale!! Come and get yours quick!',
+			text: '⚡️⚡️ Flash Sash Sale!! Come and get yours quick!'
 		});
 	}, []);
 
@@ -82,20 +90,20 @@ export const DefaultLayout: DefaultLayoutProps = ({
 				navigationItems={[
 					{
 						label: 'Home',
-						href: `${router.basePath}/`,
+						href: `${router.basePath}/`
 					},
 					{
 						label: 'About',
-						href: `${router.basePath}/about`,
+						href: `${router.basePath}/about`
 					},
 					{
 						label: 'Graphix Collab',
-						href: `${router.basePath}/graphix-collab`,
+						href: `${router.basePath}/graphix-collab`
 					},
 					{
 						label: 'Services',
-						href: `${router.basePath}/services`,
-					},
+						href: `${router.basePath}/services`
+					}
 				]}
 				actions={[
 					{
@@ -103,34 +111,37 @@ export const DefaultLayout: DefaultLayoutProps = ({
 						onClick() {
 							toggleContact();
 						},
-						label: 'Contact Us',
+						label: 'Contact Us'
 					},
 					{
 						color: 'primary',
 						href: `${router.basePath}/book-appointment`,
-						label: 'Book a time',
-					},
+						label: 'Book a time'
+					}
 				]}
 			/>
-			<BackgroundImage className='Motif'>
-				<BackgroundImageWrapper/>
+			<BackgroundImage className="Motif">
+				<BackgroundImageWrapper />
 			</BackgroundImage>
 			{hasPageHeader && (
 				<PageHeaderBlock
-					breadcrumbs={[{
-						label: 'Home',
-						href: `${router.basePath}/`,
-					}, {
-						label: 'Services',
-					}]}
+					breadcrumbs={[
+						{
+							label: 'Home',
+							href: `${router.basePath}/`
+						},
+						{
+							label: 'Services'
+						}
+					]}
 					title={pageTitle ?? 'Page Title'}
 				/>
 			)}
-			<Main id='main-content'>
+			<Main id="main-content">
 				{children}
-				<YelpBlock/>
+				<YelpBlock />
 			</Main>
-			<FooterBlock/>
+			<FooterBlock />
 		</>
 	);
 };

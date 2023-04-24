@@ -18,13 +18,13 @@ const BaseElement: FC<BaseElementProps> = ({className, ...props}) => (
 
 export const Block = styled(
 	BaseElement,
-	_e('rounded', 'color'),
+	_e('rounded', 'color')
 )<BlockProps>(props => {
 	const blockColor = {
 		default: 'transparent',
 		primary: props.theme.palette.primary.light,
 		secondary: props.theme.palette.secondary.light,
-		grey: props.theme.palette.grey[100],
+		grey: props.theme.palette.grey[100]
 	}[props.color ?? 'default'];
 
 	return css`

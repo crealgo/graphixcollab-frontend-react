@@ -1,11 +1,7 @@
-import {styled} from '@mui/material';
+import {css, styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
 import {_e} from '../../../utils/excludePropsFromForwarding';
 import {Container} from '../Container';
-import {
-	type PropsWithChildren,
-	type FC,
-	type ComponentPropsWithoutRef
-} from 'react';
 
 type HeaderBarProps = ComponentPropsWithoutRef<'header'> & {
 	isScrolled?: boolean;
@@ -17,16 +13,9 @@ export const StyledHeaderBar = styled(
 	_e('isBranded', 'isScrolled')
 )<HeaderBarProps>(({theme, isScrolled, isBranded}) => {
 	const borderBottomColor = isScrolled
-		? `${theme.palette.grey[200]}`
+		? theme.palette.grey[200]
 		: 'transparent';
-
-	const backgroundColor = isScrolled
-		? 'white'
-		: isBranded
-		? theme.palette.secondary.light
-		: '';
-
-	return /* scss */ `
+	return css`
 		position: sticky;
 		top: 0;
 		transition: all 200ms;
@@ -36,8 +25,18 @@ export const StyledHeaderBar = styled(
 		border-bottom-color: ${borderBottomColor};
 		z-index: 999;
 
-		padding-block: 0.25rem !important;
-		backgroundColor: ${backgroundColor};
+		display: flex;
+		align-items: center;
+		padding-inline: 1.5rem;
+
+		${theme.breakpoints.up('md')} {
+			padding-inline: 2rem;
+			height: 5rem;
+		}
+
+		${theme.breakpoints.up('xl')} {
+			padding-inline: 4rem;
+		}
 	`;
 });
 

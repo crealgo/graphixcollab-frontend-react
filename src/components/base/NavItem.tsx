@@ -7,10 +7,11 @@ import {KeyboardArrowDown} from '@mui/icons-material';
 export type NavItemProps = {
 	icon?: ReactNode;
 	hasSubmenu?: boolean;
-} & ComponentPropsWithoutRef<'nav'> & NavItemOptions;
+} & ComponentPropsWithoutRef<'nav'> &
+	NavItemOptions;
 
 const variant = 'text';
-const size = 'medium';
+const size = 'large';
 
 const StyledAnchor = styled('a')`
 	text-decoration: unset;
@@ -37,18 +38,26 @@ const StyledAnchor = styled('a')`
 		width: var(--input-group-action-size-${size});
 	}
 
-	&:hover, &[aria-current=true] {
+	&:hover,
+	&[aria-current='true'] {
 		${colorIterator('text-decoration-color')}
 		text-decoration: var(--button-text-decoration-${variant});
-		text-underline-offset:  var(--button-text-offset-${variant});
-		text-decoration-thickness:  var(--button-text-thickness-${variant});
+		text-underline-offset: var(--button-text-offset-${variant});
+		text-decoration-thickness: var(--button-text-thickness-${variant});
 	}
 `;
 
-export const NavItem: FC<NavItemProps> = ({label, children, selected, icon, hasSubmenu, ...props}) => (
+export const NavItem: FC<NavItemProps> = ({
+	label,
+	children,
+	selected,
+	icon,
+	hasSubmenu,
+	...props
+}) => (
 	<StyledAnchor aria-current={selected} {...props}>
 		{icon}
 		{children ?? label}
-		{hasSubmenu && <KeyboardArrowDown/>}
+		{hasSubmenu && <KeyboardArrowDown />}
 	</StyledAnchor>
 );

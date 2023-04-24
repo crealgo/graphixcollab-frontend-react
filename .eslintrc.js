@@ -40,8 +40,9 @@ module.exports = {
 		],
 		'react/no-array-index-key': 'off',
 		'react/require-default-props': 'off',
-		'no-useless-rename': 'error',
 		'implicit-arrow-linebreak': ['error', 'beside'],
+		'no-useless-rename': 'error',
+		'no-useless-return': 'error',
 		...sharedEsRules
 	},
 	overrides: [

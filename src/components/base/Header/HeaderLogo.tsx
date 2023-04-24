@@ -5,7 +5,7 @@ export const HeaderLogo = styled('img')`
 	display: flex;
 	gap: 1rem;
 
-	height: 4.25rem;
+	height: 4.5rem;
 	width: auto;
 
 	align-items: center;

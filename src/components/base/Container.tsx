@@ -40,10 +40,6 @@ export const Container = styled(
 			${theme.breakpoints.up('lg')} {
 				max-width: ${theme.breakpoints.values.lg}px;
 			}
-
-			${theme.breakpoints.up('xl')} {
-				max-width: ${theme.breakpoints.values.xl}px;
-			}
 		`;
 
 	return css`
