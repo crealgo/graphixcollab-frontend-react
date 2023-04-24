@@ -28,7 +28,7 @@ export const Content = styled('div')(
 		.Heading-root {
 			margin-bottom: 0.5rem;
 		}
-	`,
+	`
 );
 
 const Wrapper = styled('div')(
@@ -76,10 +76,10 @@ const Wrapper = styled('div')(
 				grid-template-columns: repeat(5, 1fr);
 			}
 		}
-	`,
+	`
 );
 
-export const ServicesPreviewBlock: FC<ServicesBlockProps> = ({title, subtitle, description, services}) => {
+export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({title, subtitle, description, services}) => {
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 
 	const CardComponent = isDesktop ? Card : HorizontalCard;
@@ -88,22 +88,22 @@ export const ServicesPreviewBlock: FC<ServicesBlockProps> = ({title, subtitle, d
 		<Block>
 			<Container>
 				<Wrapper>
-					<Container size='small'>
-						<Typography variant='overline'>{subtitle}</Typography>
+					<Container size="small">
+						<Typography variant="overline">{subtitle}</Typography>
 						<Heading level={1}>{title}</Heading>
-						<Typography variant='body2'>{description}</Typography>
+						<Typography variant="body2">{description}</Typography>
 					</Container>
-					<div className='services'>
+					<div className="services">
 						{services?.map((service, serviceIndex) => (
-							<CardComponent className='service' {...service} key={serviceIndex}/>
+							<CardComponent className="service" {...service} key={serviceIndex} />
 						))}
 					</div>
-					<Container size='small'>
-						<ActionStack align='center' color='secondary'>
+					<Container size="small">
+						<ActionStack align="center" color="secondary">
 							<Box mr={-2} zIndex={1}>
 								Looking for something else?
 							</Box>
-							<Button color='text' endIcon={<Message/>}>
+							<Button color="text" endIcon={<Message />}>
 								Contact Us
 							</Button>
 						</ActionStack>

@@ -9,7 +9,12 @@ type ContainerProps = {
 	size?: 'small' | 'medium' | 'large';
 };
 
-const BaseElement: FC<BaseElementProps> = ({className = '', children, ref, ...props}) => (
+const BaseElement: FC<BaseElementProps> = ({
+	className = '',
+	children,
+	ref,
+	...props
+}) => (
 	<div ref={ref} className={clsx('Container-root', className)} {...props}>
 		{children}
 	</div>
@@ -17,12 +22,12 @@ const BaseElement: FC<BaseElementProps> = ({className = '', children, ref, ...pr
 
 export const Container = styled(
 	BaseElement,
-	_e('ref', 'size'),
+	_e('ref', 'size')
 )<ContainerProps>(({theme, size}) => {
 	const containerSize = {
 		small: theme.breakpoints.values.md,
 		medium: theme.breakpoints.values.lg,
-		large: theme.breakpoints.values.xl,
+		large: theme.breakpoints.values.xl
 	}[size ?? 'medium'];
 
 	const containerMaxWidth = size

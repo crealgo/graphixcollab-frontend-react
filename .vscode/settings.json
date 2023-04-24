@@ -1,19 +1,7 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[react][typescript][typescriptreact][javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "cSpell.words": ["colord", "tailwindcss"]
+  }
 }

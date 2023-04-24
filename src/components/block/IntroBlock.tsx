@@ -7,6 +7,7 @@ import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Text} from '../base/Text';
+import {chance} from '../../utils/chance';
 
 type Slide = {
 	title: string;
@@ -15,21 +16,33 @@ type Slide = {
 	image: string;
 };
 
-const defaultContent = {
-	slides: [
-		{
-
-		}
-	]
-}
-
 export type IntroBlockProps = {
-	title?: string;
-	description?: string;
 	color?: 'primary' | 'secondary' | 'grey';
 	slides?: Slide[];
 	// ImageProps?: ImageProps;
-} & ComponentPropsWithoutRef<'div'> & SharedBlockProps;
+} & ComponentPropsWithoutRef<'div'> &
+	SharedBlockProps;
+
+const defaultContent = {
+	slides: [
+		{
+			title: 'Welcome to Fashion Greek',
+			description:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
+			actions: [],
+			image: 'https://picsum.photos/200/300'
+		},
+		...chance.n(
+			() => ({
+				title: chance.sentence({words: 3}),
+				description: chance.paragraph(),
+				actions: [],
+				image: 'https://picsum.photos/200/300'
+			}),
+			3
+		)
+	]
+} satisfies IntroBlockProps;
 
 const Content = styled(Container)(
 	props => css`
@@ -65,37 +78,44 @@ const Content = styled(Container)(
 				}
 			}
 		}
-	`,
+	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({title, description, className, slides = [], color = 'secondary'}) => (
-	<Block className={className} color={color}>
-		<Container>
-			<Content>
-				<div className='content'>
-					<Heading level={1}>{title}</Heading>
-					<Text>{description}</Text>
-					<ActionStack
-						size='large' actions={[
-							{
-								label: 'Get Started',
-								color: 'primary',
-							},
-							{
-								label: 'Book an appointment',
-								color: 'text',
-							},
-						]}
-					/>
-				</div>
-				<figure className='image'>
-					<img
-						className='Image-root'
-						src={IntroImage.src as string}
-						alt='thing'
-					/>
-				</figure>
-			</Content>
-		</Container>
-	</Block>
-);
+export const IntroBlock: FC<IntroBlockProps> = ({
+	className,
+	slides = [],
+	color = 'secondary'
+}) => {
+	return (
+		<Block className={className} color={color}>
+			<Container>
+				<Content>
+					<div className="content">
+						<Heading level={1}>{title}</Heading>
+						<Text>{description}</Text>
+						<ActionStack
+							size="large"
+							actions={[
+								{
+									label: 'Get Started',
+									color: 'primary'
+								},
+								{
+									label: 'Book an appointment',
+									color: 'text'
+								}
+							]}
+						/>
+					</div>
+					<figure className="image">
+						<img
+							className="Image-root"
+							src={IntroImage.src as string}
+							alt="thing"
+						/>
+					</figure>
+				</Content>
+			</Container>
+		</Block>
+	);
+};

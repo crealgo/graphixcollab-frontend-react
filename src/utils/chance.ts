@@ -4,7 +4,7 @@ import toteImage from '../assets/screen-printing/tote.jpg';
 import {type BannerProps} from '../components/base/Banner';
 import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
 import {type GalleryBlockProps} from '../components/block/GalleryBlock';
-import {type HeaderProps} from '../components/base/Header';
+import {type HeaderProps} from '../components/base/Header/Header';
 import {type IntroBlockProps} from '../components/block/IntroBlock';
 import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
 import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';

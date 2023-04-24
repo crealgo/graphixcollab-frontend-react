@@ -40,28 +40,30 @@ const CustomBlock = styled(Block)`
 export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies, ...props}) => (
 	<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
 		<StyledContainer>
-			<ContentGrid size='small' textAlign='center' marginX='auto' maxWidth='50rem'>
-				<Heading level={4}>We work with <mark>creatives</mark> like you.</Heading>
-				<Typography variant='body2'>{props.description}</Typography>
+			<ContentGrid size="small" textAlign="center" marginX="auto" maxWidth="50rem">
+				<Heading level={4}>
+					We work with <mark>creatives</mark> like you.
+				</Heading>
+				<Typography variant="body2">{props.description}</Typography>
 			</ContentGrid>
 			{companies?.length ? (
 				<Marquee
 					pauseOnHover
 					style={{
-						overflow: 'hidden',
+						overflow: 'hidden'
 					}}
 				>
 					{companies.map((company, companyIndex) => (
 						<Typography
 							key={companyIndex}
-							marginX='2rem'
-							variant='h1'
-							color='grey.500'
+							marginX="2rem"
+							variant="h1"
+							color="grey.500"
 							sx={{
-								cursor: 'pointer',
+								'cursor': 'pointer',
 								'&:hover': {
-									color: 'grey.700',
-								},
+									color: 'grey.700'
+								}
 							}}
 						>
 							{company.name}
@@ -69,19 +71,21 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies,
 					))}
 				</Marquee>
 			) : (
-				<StatusMessage isContained IconComponent={Warning} text='No Images Available'/>
+				<StatusMessage isContained IconComponent={Warning} text="No Images Available" />
 			)}
 			<ActionStack
-				align='center' size='large' actions={[
+				align="center"
+				size="large"
+				actions={[
 					{
 						label: 'Leave a Review',
 						color: 'text',
-						endIcon: <MessageOutlined/>,
-					},
+						endIcon: <MessageOutlined />
+					}
 				]}
 			>
-				<TidBit href='#yelp-test' icon={<SiYelp/>}>
-					Trusted by <mark>150+ People</mark> on <mark>Yelp</mark>
+				<TidBit href="#yelp-test" icon={<SiYelp />}>
+					Trusted by <mark>150+</mark> on <mark>Yelp</mark>
 				</TidBit>
 			</ActionStack>
 		</StyledContainer>

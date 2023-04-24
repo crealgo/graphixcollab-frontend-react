@@ -5,7 +5,7 @@ import {useRouter} from 'next/router';
 import {useEffect, type ReactNode} from 'react';
 import {type BannerProps} from '../components/base/Banner';
 import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
-import {Header, type HeaderProps} from '../components/base/Header';
+import {Header, type HeaderProps} from '../components/base/Header/Header';
 import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
 import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 import {YelpBlock} from '../components/block/YelpBlock';
