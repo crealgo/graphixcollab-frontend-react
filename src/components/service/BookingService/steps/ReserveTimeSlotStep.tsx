@@ -7,26 +7,26 @@ import {TimeSlotGroup} from '../TimeSlotGroup';
 export const ReserveTimeSlotStep: FC<unknown> = () => (
 	<Grid container gap={3}>
 		<Grid item xs={12}>
-			<Typography variant='subtitle1'>Available Days</Typography>
+			<Typography variant="subtitle1">Available Days</Typography>
 			<TextField
 				fullWidth
-				type='date'
+				type="date"
 				FormHelperTextProps={{
 					sx: {
-						marginLeft: 0,
-					},
+						marginLeft: 0
+					}
 				}}
-				helperText='Choose a day to show available times'
+				helperText="Choose a day to show available times"
 			/>
 		</Grid>
 		<Grid item xs={12}>
-			<Typography variant='subtitle1'>Available Times</Typography>
+			<Typography variant="subtitle1">Available Times</Typography>
 			<TimeSlotGroup>
-				<TimeSlot label='9:00 AM'/>
-				<TimeSlot label='10:00 AM'/>
-				<TimeSlot label='11:00 AM'/>
-				<TimeSlot label='12:00 AM'/>
-				<TimeSlot label='1:00 PM'/>
+				<TimeSlot label="9:00 AM" />
+				<TimeSlot label="10:00 AM" />
+				<TimeSlot label="11:00 AM" />
+				<TimeSlot label="12:00 AM" />
+				<TimeSlot label="1:00 PM" />
 			</TimeSlotGroup>
 		</Grid>
 	</Grid>

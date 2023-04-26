@@ -12,7 +12,7 @@ const NavItemsWrapper = styled('nav')(
 		${theme.breakpoints.up('md')} {
 			display: flex;
 		}
-	`,
+	`
 );
 
 type NavItemsProps = PropsWithChildren<{
@@ -20,16 +20,21 @@ type NavItemsProps = PropsWithChildren<{
 }>;
 
 export const NavItems: FC<NavItemsProps> = ({items, children}) => (
-	<NavItemsWrapper className='NavItems-root'>
-		{items?.map(({label, subItems, ...itemProps}, itemIndex) => subItems ? (
-			<NavItemDropdown {...itemProps} key={itemIndex} items={subItems}>
-				{label}
-			</NavItemDropdown>
-		) : (
-			<NavItem {...itemProps} key={itemIndex}>
-				{label}
-			</NavItem>
-		),
+	<NavItemsWrapper className="NavItems-root">
+		{items?.map(({label, subItems, ...itemProps}, itemIndex) =>
+			subItems ? (
+				<NavItemDropdown
+					{...itemProps}
+					key={itemIndex}
+					items={subItems}
+				>
+					{label}
+				</NavItemDropdown>
+			) : (
+				<NavItem {...itemProps} key={itemIndex}>
+					{label}
+				</NavItem>
+			)
 		)}
 		{children}
 	</NavItemsWrapper>

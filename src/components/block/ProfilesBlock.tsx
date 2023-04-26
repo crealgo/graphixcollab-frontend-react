@@ -37,32 +37,38 @@ const Content = styled('div')(
 				}
 			}
 		}
-	`,
+	`
 );
 
 export const ProfilesBlock: FC<ProfilesBlockProps> = props => (
 	<Content className={clsx(props.className, 'ProfilesBlock-root')}>
 		{Array.isArray(props.profileGroups)
 			? props.profileGroups.map((group, groupIndex) => (
-				<Block
-					key={groupIndex}
-					color={2 % groupIndex === 0 ? 'grey' : undefined}
-					className='ProfilesBlock-profileGroup'
-				>
-					<Container>
-						<ContentGrid size='small'>
-							<Heading level={3}>{group.title}</Heading>
-							<Text variant='body'>{group.description}</Text>
-							{Array.isArray(group.profiles) ? (
-								<div className='ProfilesBlock-profiles'>
-									{group.profiles.map((profile, profileIndex) => (
-										<ProfileCard key={profileIndex} profile={profile}/>
-									))}
-								</div>
-							) : null}
-						</ContentGrid>
-					</Container>
-				</Block>
-			)) : null}
+					<Block
+						key={groupIndex}
+						color={2 % groupIndex === 0 ? 'grey' : undefined}
+						className="ProfilesBlock-profileGroup"
+					>
+						<Container>
+							<ContentGrid size="small">
+								<Heading level={3}>{group.title}</Heading>
+								<Text variant="body">{group.description}</Text>
+								{Array.isArray(group.profiles) ? (
+									<div className="ProfilesBlock-profiles">
+										{group.profiles.map(
+											(profile, profileIndex) => (
+												<ProfileCard
+													key={profileIndex}
+													profile={profile}
+												/>
+											)
+										)}
+									</div>
+								) : null}
+							</ContentGrid>
+						</Container>
+					</Block>
+			  ))
+			: null}
 	</Content>
 );

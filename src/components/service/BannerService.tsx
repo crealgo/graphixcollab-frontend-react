@@ -7,6 +7,8 @@ type BannerServiceProps = PropsWithChildren<{
 	BannerProps?: BannerProps;
 }>;
 
-export const BannerService: FC<BannerServiceProps> = ({open, children, BannerProps}) => (
-	<Collapse in={open}>{children ?? <Banner {...BannerProps}/>}</Collapse>
-);
+export const BannerService: FC<BannerServiceProps> = ({
+	open,
+	children,
+	BannerProps
+}) => <Collapse in={open}>{children ?? <Banner {...BannerProps} />}</Collapse>;

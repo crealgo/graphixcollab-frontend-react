@@ -3,7 +3,7 @@ import {chance, generateActions, generateArticles} from '../../utils/chance';
 import {NewsBlock, type NewsBlockWrapperProps} from './NewsBlock';
 
 export default {
-	component: NewsBlock,
+	component: NewsBlock
 };
 
 export const Default: StoryObj<NewsBlockWrapperProps> = {
@@ -11,6 +11,6 @@ export const Default: StoryObj<NewsBlockWrapperProps> = {
 		title: chance.sentence(),
 		meta: chance.sentence({words: 3}),
 		actions: generateActions(),
-		articles: generateArticles(),
-	},
+		articles: generateArticles()
+	}
 };

@@ -20,32 +20,36 @@ const NewsCardWrapper = styled('div')(
 		.NewsCard-actions {
 			display: flex;
 		}
-	`,
+	`
 );
 
 export const NewsCard: FC<NewsCardsProps> = ({className, article}) => (
 	<NewsCardWrapper className={clsx(className, 'NewsCard-root')}>
-		<Profile profile={article.author}/>
+		<Profile profile={article.author} />
 		{Array.isArray(article.tags) && (
 			<Stack
-				direction='row'
+				direction="row"
 				spacing={1}
-				divider={<Divider flexItem orientation='vertical'/>}
-				className='NewsCard-meta'
+				divider={<Divider flexItem orientation="vertical" />}
+				className="NewsCard-meta"
 			>
 				{article.tags.map((tag, tagIndex) => (
-					<Typography key={tagIndex} variant='body2' className='NewsCard-metaItem'>
+					<Typography
+						key={tagIndex}
+						variant="body2"
+						className="NewsCard-metaItem"
+					>
 						{tag}
 					</Typography>
 				))}
 			</Stack>
 		)}
-		<Typography variant='h4' color='text.secondary'>
+		<Typography variant="h4" color="text.secondary">
 			{article.title}
 		</Typography>
-		<div className='NewsCard-actions'>
+		<div className="NewsCard-actions">
 			{article.url && (
-				<Button href={article.url} endIcon={<ArrowForward/>}>
+				<Button href={article.url} endIcon={<ArrowForward />}>
 					Read More
 				</Button>
 			)}

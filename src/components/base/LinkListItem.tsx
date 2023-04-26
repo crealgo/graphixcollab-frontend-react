@@ -9,5 +9,5 @@ export const LinkListItem = styled('li')(
 		&:nth-of-type(1) {
 			border-top: solid 1px ${theme.palette.grey[300]};
 		}
-	`,
+	`
 );

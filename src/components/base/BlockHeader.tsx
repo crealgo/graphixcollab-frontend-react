@@ -7,15 +7,20 @@ import {Container} from './Container';
 
 type BlockHeaderProps = SharedBlockProps;
 
-export const BlockHeader: FC<BlockHeaderProps> = ({title, subtitle, description, actions}) => (
+export const BlockHeader: FC<BlockHeaderProps> = ({
+	title,
+	subtitle,
+	description,
+	actions
+}) => (
 	<hgroup>
-		{subtitle && <Typography variant='overline'>{subtitle}</Typography>}
+		{subtitle && <Typography variant="overline">{subtitle}</Typography>}
 		{title && <Heading level={1}>{title}</Heading>}
 		{description && (
-			<Container size='small'>
-				<Typography variant='body2'>{description}</Typography>
+			<Container size="small">
+				<Typography variant="body2">{description}</Typography>
 			</Container>
 		)}
-		{actions && <ActionStack color='secondary' actions={actions}/>}
+		{actions && <ActionStack color="secondary" actions={actions} />}
 	</hgroup>
 );

@@ -10,5 +10,5 @@ export const DrawerBoxClose = styled(IconButtonBase)(
 		&:hover {
 			background-color: ${theme.palette.grey[300]};
 		}
-	`,
+	`
 );

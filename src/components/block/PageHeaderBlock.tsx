@@ -24,7 +24,7 @@ const Wrapper = styled(Block)<{
 	({theme, color}) => css`
 		padding-block: 2rem !important;
 		background-color: ${color ? color : 'transparent'};
-	`,
+	`
 );
 
 const Content = styled('div')(
@@ -40,7 +40,7 @@ const Content = styled('div')(
 				display: flex;
 			}
 		}
-	`,
+	`
 );
 
 const TextContent = styled('div')`
@@ -54,23 +54,23 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	color,
 	breadcrumbs,
 	navigationItems,
-	ImageProps,
+	ImageProps
 }) => (
 	<>
 		<Wrapper>
 			<Container>
 				<Content>
-					<TextContent className='PageHeader-textContent'>
-						<Breadcrumbs items={breadcrumbs}/>
-						<Typography variant='h2' component='h1'>
+					<TextContent className="PageHeader-textContent">
+						<Breadcrumbs items={breadcrumbs} />
+						<Typography variant="h2" component="h1">
 							{title}
 						</Typography>
 					</TextContent>
-					<TopNav align='end' items={navigationItems}/>
+					<TopNav align="end" items={navigationItems} />
 				</Content>
 			</Container>
 		</Wrapper>
-		{ImageProps && <Image {...ImageProps} height='10rem' width='cover'/>}
+		{ImageProps && <Image {...ImageProps} height="10rem" width="cover" />}
 	</>
 );
 

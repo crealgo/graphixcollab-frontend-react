@@ -16,14 +16,22 @@ const TopNavWrapper = styled('nav')<TopNavProps>(
 		gap: 0.25rem;
 		align-items: center;
 		justify-content: ${align};
-	`,
+	`
 );
 
 export const TopNav = forwardRef<HTMLDivElement, TopNavProps>(
 	({children, items, align = defaultAlignment, ...props}, ref) => (
-		<TopNavWrapper {...props} ref={ref} className='TopNav-root' align={align}>
-			{children ?? items?.map((item, itemIndex) => <NavItem key={itemIndex} {...item}/>)}
+		<TopNavWrapper
+			{...props}
+			ref={ref}
+			className="TopNav-root"
+			align={align}
+		>
+			{children ??
+				items?.map((item, itemIndex) => (
+					<NavItem key={itemIndex} {...item} />
+				))}
 		</TopNavWrapper>
-	),
+	)
 );
 TopNav.displayName = 'TopNav';

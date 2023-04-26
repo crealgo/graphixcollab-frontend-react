@@ -16,16 +16,28 @@ const SocialMediaBlockWrapper = styled('div')({
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-	gap: '0.75rem',
+	gap: '0.75rem'
 });
 
-export const SocialMediaBlock: FC<SocialMediaBlockProps> = ({className, url, text, actions, ...props}) => (
-	<SocialMediaBlockWrapper className={clsx(className, 'SocialMediaBlock-root')}>
+export const SocialMediaBlock: FC<SocialMediaBlockProps> = ({
+	className,
+	url,
+	text,
+	actions,
+	...props
+}) => (
+	<SocialMediaBlockWrapper
+		className={clsx(className, 'SocialMediaBlock-root')}
+	>
 		<Text>
-			<Link variant='body2' className={clsx(className, 'SocialMediaBlock-link')} href={url}>
+			<Link
+				variant="body2"
+				className={clsx(className, 'SocialMediaBlock-link')}
+				href={url}
+			>
 				{text}
 			</Link>
 		</Text>
-		<ActionStack color='secondary' actions={actions}/>
+		<ActionStack color="secondary" actions={actions} />
 	</SocialMediaBlockWrapper>
 );

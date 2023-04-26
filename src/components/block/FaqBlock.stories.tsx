@@ -3,9 +3,9 @@ import {generateFaqBlock} from '../../utils/chance';
 import {FaqBlock, type FaqBlockProps} from './FaqBlock';
 
 export default {
-	component: FaqBlock,
+	component: FaqBlock
 } as Meta;
 
 export const Default: StoryObj<FaqBlockProps> = {
-	args: generateFaqBlock(),
+	args: generateFaqBlock()
 };

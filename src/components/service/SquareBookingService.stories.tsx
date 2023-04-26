@@ -4,7 +4,7 @@ import {Button} from '../base/Button';
 import {SquareBookingService} from './SquareBookingService';
 
 export default {
-	component: SquareBookingService,
+	component: SquareBookingService
 };
 
 export const Default: StoryObj = {
@@ -21,11 +21,11 @@ export const Default: StoryObj = {
 
 		return (
 			<>
-				<Button color='primary' onClick={handleClick}>
+				<Button color="primary" onClick={handleClick}>
 					Open Booking Service
 				</Button>
-				<SquareBookingService onCloseClick={handleClose}/>
+				<SquareBookingService onCloseClick={handleClose} />
 			</>
 		);
-	},
+	}
 };

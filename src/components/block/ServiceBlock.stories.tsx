@@ -3,9 +3,9 @@ import {generateServicesBlock} from '../../utils/chance';
 import {ServicesBlock, type ServicesBlockProps} from './ServicesBlock';
 
 export default {
-	component: ServicesBlock,
+	component: ServicesBlock
 } as Meta;
 
 export const Default: StoryObj<ServicesBlockProps> = {
-	args: generateServicesBlock(),
+	args: generateServicesBlock()
 };

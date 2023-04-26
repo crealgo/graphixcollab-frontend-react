@@ -7,7 +7,7 @@ import {Button} from '../base/Button';
 
 export default {
 	component: BannerService,
-	subcomponents: {Banner},
+	subcomponents: {Banner}
 } as Meta;
 
 export const Default: StoryObj<BannerProps> = {
@@ -25,12 +25,12 @@ export const Default: StoryObj<BannerProps> = {
 		return (
 			<>
 				<BannerService open={open}>
-					<Banner {...args} onCloseClick={handleClose}/>
+					<Banner {...args} onCloseClick={handleClose} />
 				</BannerService>
-				<br/>
+				<br />
 				<Button onClick={handleOpen}>Open Banner</Button>
 			</>
 		);
 	},
-	args: generateBanner(),
+	args: generateBanner()
 };

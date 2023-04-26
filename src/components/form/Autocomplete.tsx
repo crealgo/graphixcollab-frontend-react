@@ -7,19 +7,24 @@ import {type BaseInputProps} from '../../types/base';
 export type AutocompleteProps = {
 	inputSize?: Size;
 	options?: OptionValue[];
-} & BaseInputProps & PropsWithChildren;
+} & BaseInputProps &
+	PropsWithChildren;
 
 // TODO: add dropdown icon 'button'
-export const Autocomplete: FC<AutocompleteProps> = ({children, options, ...props}) => {
+export const Autocomplete: FC<AutocompleteProps> = ({
+	children,
+	options,
+	...props
+}) => {
 	const generatedId = useId();
 	const listId = `list-${generatedId}`;
 
 	return (
 		<>
-			<Input list={listId} {...props}/>
+			<Input list={listId} {...props} />
 			<datalist id={listId}>
-				{children
-					?? options?.map(({label, value}, optionIndex) => (
+				{children ??
+					options?.map(({label, value}, optionIndex) => (
 						<option key={optionIndex} value={label}>
 							{value}
 						</option>

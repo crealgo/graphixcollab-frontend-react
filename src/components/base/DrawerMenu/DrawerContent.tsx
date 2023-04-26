@@ -14,21 +14,24 @@ type DrawerContentProps = PropsWithChildren<{
 	onCloseButtonClick?: MouseEventHandler<HTMLButtonElement>;
 	navigationItems?: NavItemOptions[];
 }>;
-export const DrawerContent: FC<DrawerContentProps> = ({navigationItems, onCloseButtonClick}) => (
+export const DrawerContent: FC<DrawerContentProps> = ({
+	navigationItems,
+	onCloseButtonClick
+}) => (
 	<Wrapper>
 		<TitleBox hasBorder>
 			<Heading level={2}>Menu</Heading>
 			<DrawerBoxClose onClick={onCloseButtonClick}>
-				<Close fontSize='small'/>
+				<Close fontSize="small" />
 			</DrawerBoxClose>
 		</TitleBox>
 		<ContentBox isColored hasBorder>
 			<Heading level={3}>Quick Links</Heading>
-			<FeaturedItems items={generateFeaturedItems()}/>
+			<FeaturedItems items={generateFeaturedItems()} />
 		</ContentBox>
 		<ContentBox>
 			<Heading level={3}>SubMenu</Heading>
-			<LinkList items={navigationItems}/>
+			<LinkList items={navigationItems} />
 		</ContentBox>
 	</Wrapper>
 );

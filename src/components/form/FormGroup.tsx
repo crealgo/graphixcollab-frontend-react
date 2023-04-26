@@ -1,5 +1,10 @@
 import clsx from 'clsx';
-import {type ComponentPropsWithRef, type ComponentPropsWithoutRef, type FC, useId} from 'react';
+import {
+	type ComponentPropsWithRef,
+	type ComponentPropsWithoutRef,
+	type FC,
+	useId
+} from 'react';
 import styled from '@emotion/styled';
 import {type InputProps} from './Input';
 import {type AutocompleteProps} from './Autocomplete';
@@ -57,14 +62,22 @@ export const FormGroup: FC<FormGroupProps> = ({
 	return (
 		<Wrapper className={clsx(className, 'FormGroup-root')}>
 			{label && (
-				<InputLabel className='FormGroup-label' htmlFor={`input-${resolvedId}`} {...LabelProps}>
+				<InputLabel
+					className="FormGroup-label"
+					htmlFor={`input-${resolvedId}`}
+					{...LabelProps}
+				>
 					{label}
 				</InputLabel>
 			)}
 			{/* TODO: pass props correctly to child type input/select/button/input-group, or return a function with input props */}
 			{children}
 			{helperText && (
-				<InputHelperText id={`helperText-${resolvedId}`} className='FormGroup-helperText' {...HelperTextProps}>
+				<InputHelperText
+					id={`helperText-${resolvedId}`}
+					className="FormGroup-helperText"
+					{...HelperTextProps}
+				>
 					{helperText}
 				</InputHelperText>
 			)}

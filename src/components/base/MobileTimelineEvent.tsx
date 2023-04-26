@@ -28,7 +28,7 @@ const Marker = styled('div')`
 	align-items: center;
 	justify-content: center;
 
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 1rem;
@@ -53,15 +53,15 @@ const EventConnector = styled('div')`
 
 const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
-		<figure className='image'>
-			<Marker className='marker'>{props.stepNumber ?? 1}</Marker>
+		<figure className="image">
+			<Marker className="marker">{props.stepNumber ?? 1}</Marker>
 		</figure>
-		<div className='content'>
-			<div className='title'>{props.title}</div>
-			<div className='description'>{props.description}</div>
+		<div className="content">
+			<div className="title">{props.title}</div>
+			<div className="description">{props.description}</div>
 			{props.children}
 		</div>
-		<EventConnector className='connector'/>
+		<EventConnector className="connector" />
 	</li>
 );
 
@@ -88,7 +88,8 @@ export const MobileTimelineEvent = styled(BaseElement)<EventBlockProps>`
 		display: block;
 		width: 100%;
 		background-color: #cbd5e1;
-		border-radius: 0 var(--image-border-radius) var(--image-border-radius) var(--image-border-radius);
+		border-radius: 0 var(--image-border-radius) var(--image-border-radius)
+			var(--image-border-radius);
 
 		min-height: 160px;
 	}

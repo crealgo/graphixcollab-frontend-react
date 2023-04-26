@@ -3,9 +3,9 @@ import {generatePageHeaderBlock} from '../../utils/chance';
 import {PageHeaderBlock, type PageHeaderBlockProps} from './PageHeaderBlock';
 
 export default {
-	component: PageHeaderBlock,
+	component: PageHeaderBlock
 } as Meta;
 
 export const Default: StoryObj<PageHeaderBlockProps> = {
-	args: generatePageHeaderBlock(),
+	args: generatePageHeaderBlock()
 };

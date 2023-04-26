@@ -1,4 +1,11 @@
-import {Avatar, Rating, Typography, css, styled, type RatingProps as MuiRatingProps} from '@mui/material';
+import {
+	Avatar,
+	Rating,
+	Typography,
+	css,
+	styled,
+	type RatingProps as MuiRatingProps
+} from '@mui/material';
 import clsx from 'clsx';
 import {type FC, type HTMLAttributes} from 'react';
 
@@ -37,18 +44,23 @@ const QuoteWrapper = styled('div')<QuoteWrapperProps>(
 			flex-direction: column;
 			gap: 0.75rem;
 		}
-	`,
+	`
 );
 
-export const Quote: FC<QuoteProps> = ({text, className, RatingProps, ...props}) => (
+export const Quote: FC<QuoteProps> = ({
+	text,
+	className,
+	RatingProps,
+	...props
+}) => (
 	<QuoteWrapper {...props} className={clsx(className, 'Quote-root')}>
-		<Avatar className='Quote-avatar'/>
-		<div className='Quote-content'>
-			<Typography className='Quote-text' variant='body1'>
+		<Avatar className="Quote-avatar" />
+		<div className="Quote-content">
+			<Typography className="Quote-text" variant="body1">
 				{text}
 			</Typography>
-			<div className='Quote-ratingBox'>
-				<Rating className='Quote-rating'/>
+			<div className="Quote-ratingBox">
+				<Rating className="Quote-rating" />
 			</div>
 		</div>
 	</QuoteWrapper>

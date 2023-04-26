@@ -12,10 +12,14 @@ import clsx from 'clsx';
 
 type CardProps = {
 	ImageProps?: ImageProps;
-} & ServiceOptions & ComponentPropsWithRef<'a'>;
+} & ServiceOptions &
+	ComponentPropsWithRef<'a'>;
 
 const CardAnchor = styled('a')(() => {
-	const randomRotation = `${chance.bool() ? '' : '-'}${chance.natural({min: 2, max: 7})}`;
+	const randomRotation = `${chance.bool() ? '' : '-'}${chance.natural({
+		min: 2,
+		max: 7
+	})}`;
 
 	return css`
 		cursor: pointer;
@@ -65,23 +69,29 @@ const CardAnchor = styled('a')(() => {
 	`;
 });
 
-export const Card: FC<CardProps> = ({title, subtitle, description, className, ...props}) => {
+export const Card: FC<CardProps> = ({
+	title,
+	subtitle,
+	description,
+	className,
+	...props
+}) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
 	const {toggleBooking} = useAppState();
 
 	return (
 		<CardAnchor className={clsx('Card-root', className)} {...props}>
-			<Image className='image'/>
-			<div className='content'>
-				<Typography variant='caption'>{subtitle}</Typography>
-				<Typography variant='h5'>{title}</Typography>
-				<Typography variant='caption'>{description}</Typography>
+			<Image className="image" />
+			<div className="content">
+				<Typography variant="caption">{subtitle}</Typography>
+				<Typography variant="h5">{title}</Typography>
+				<Typography variant="caption">{description}</Typography>
 				<ActionStack align={isMobile ? 'start' : 'center'}>
 					<Button
 						color={isMobile ? 'secondary' : 'text'}
-						size='small'
-						endIcon={<KeyboardArrowRight/>}
+						size="small"
+						endIcon={<KeyboardArrowRight />}
 						onClick={() => {
 							toggleBooking();
 						}}

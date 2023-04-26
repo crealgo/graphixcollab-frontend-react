@@ -4,7 +4,9 @@ import {css, styled} from '@mui/material';
 import {colorIterator} from '../../../utils/colorIterator';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
-export type BookingOptionProps = Record<string, unknown> & ServiceInformation & ComponentPropsWithoutRef<'input'>;
+export type BookingOptionProps = Record<string, unknown> &
+	ServiceInformation &
+	ComponentPropsWithoutRef<'input'>;
 
 const BaseElement: FC<BookingOptionProps> = ({
 	label,
@@ -18,17 +20,17 @@ const BaseElement: FC<BookingOptionProps> = ({
 }) => (
 	<div
 		{...props}
-		role='radio'
+		role="radio"
 		aria-checked={checked ? 'true' : 'false'}
 		tabIndex={0}
 		aria-labelledby={name}
 		className={className}
 	>
-		{Icon && <Icon className='icon'/>}
-		<Heading id={name} className='label' level={5}>
+		{Icon && <Icon className="icon" />}
+		<Heading id={name} className="label" level={5}>
 			{label}
 		</Heading>
-		<small className='meta'>{description}</small>
+		<small className="meta">{description}</small>
 	</div>
 );
 
@@ -69,7 +71,7 @@ export const BookingOption = styled(BaseElement)<BookingOptionProps>(
 			transform: translateY(-0.25rem);
 		}
 
-		&[aria-checked="true"] {
+		&[aria-checked='true'] {
 			pointer-events: none;
 			${colorIterator('border-left-color')};
 			background-color: white;
@@ -80,5 +82,5 @@ export const BookingOption = styled(BaseElement)<BookingOptionProps>(
 			outline: solid 2px ${theme.palette.grey[800]};
 			outline-offset: 3px;
 		}
-	`,
+	`
 );

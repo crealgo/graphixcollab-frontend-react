@@ -25,15 +25,19 @@ const ProfileCardWrapper = styled('div')`
 	}
 `;
 
-export const ProfileCard: FC<ProfileCardProps> = ({profile}) => profile ? (
-	<ProfileCardWrapper className='ProfileCard-root'>
-		<Image/>
-		<div className='ProfileCard-info'>
-			<Typography noWrap variant='h5'>
-				{profile.name}
-			</Typography>
-			<StatusMessage IconComponent={Business} text={profile.jobTitle}/>
-			<Typography color='primary'>Interests</Typography>
-		</div>
-	</ProfileCardWrapper>
-) : null;
+export const ProfileCard: FC<ProfileCardProps> = ({profile}) =>
+	profile ? (
+		<ProfileCardWrapper className="ProfileCard-root">
+			<Image />
+			<div className="ProfileCard-info">
+				<Typography noWrap variant="h5">
+					{profile.name}
+				</Typography>
+				<StatusMessage
+					IconComponent={Business}
+					text={profile.jobTitle}
+				/>
+				<Typography color="primary">Interests</Typography>
+			</div>
+		</ProfileCardWrapper>
+	) : null;

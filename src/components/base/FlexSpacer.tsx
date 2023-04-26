@@ -6,4 +6,4 @@ const StyledDiv = styled.div`
 `;
 
 // Cleaning Props by re-exporting
-export const FlexSpacer: FC = () => <StyledDiv/>;
+export const FlexSpacer: FC = () => <StyledDiv />;

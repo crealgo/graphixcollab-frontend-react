@@ -11,11 +11,14 @@ export type DrawerMenuProps = {
 
 export const contentBoxPadding = '1rem';
 
-export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen}) => {
+export const DrawerMenu: FC<DrawerMenuProps> = ({
+	items,
+	open: controlledOpen
+}) => {
 	const [open, setOpen] = useControlled({
 		controlled: controlledOpen,
 		default: false,
-		name: 'DrawerMenu Open State',
+		name: 'DrawerMenu Open State'
 	});
 
 	const handleOpen: MouseEventHandler<HTMLButtonElement> = () => {
@@ -28,11 +31,18 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({items, open: controlledOpen}) =
 
 	return (
 		<>
-			<MenuTrigger size='small' className='MenuTrigger-root' onClick={handleOpen}>
-				{open ? <Close/> : <Menu/>}
+			<MenuTrigger
+				size="small"
+				className="MenuTrigger-root"
+				onClick={handleOpen}
+			>
+				{open ? <Close /> : <Menu />}
 			</MenuTrigger>
-			<Drawer anchor='left' open={open} onClose={handleClose}>
-				<DrawerContent navigationItems={items} onCloseButtonClick={handleClose}/>
+			<Drawer anchor="left" open={open} onClose={handleClose}>
+				<DrawerContent
+					navigationItems={items}
+					onCloseButtonClick={handleClose}
+				/>
 			</Drawer>
 		</>
 	);

@@ -11,7 +11,8 @@ export type InputGroupProps = {
 	endContent?: ReactNode;
 	InputProps?: InputProps;
 	size?: Size;
-} & BaseElementProps & ExposedInputProps;
+} & BaseElementProps &
+	ExposedInputProps;
 
 const InputElementWrapper = styled.div`
 	display: inline-flex;
@@ -34,7 +35,14 @@ const EndContent = styled(BaseContentElement)`
 	right: 0;
 `;
 
-export const InputGroup: FC<InputGroupProps> = ({startContent, endContent, InputProps, ref, children, ...props}) => (
+export const InputGroup: FC<InputGroupProps> = ({
+	startContent,
+	endContent,
+	InputProps,
+	ref,
+	children,
+	...props
+}) => (
 	<InputElementWrapper {...props}>
 		{startContent && <StartContent>{startContent}</StartContent>}
 		{children}

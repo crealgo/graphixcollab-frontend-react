@@ -12,10 +12,15 @@ const WrapperNav = styled('nav')`
 	gap: 1rem;
 `;
 
-export const FeaturedItems = forwardRef<HTMLElement, FeaturedItemsProps>(({className, children, items}, ref) => (
-	<WrapperNav ref={ref} className={className}>
-		{children ?? items?.map((item, itemIndex) => <FeaturedItem key={itemIndex} {...item}/>)}
-	</WrapperNav>
-));
+export const FeaturedItems = forwardRef<HTMLElement, FeaturedItemsProps>(
+	({className, children, items}, ref) => (
+		<WrapperNav ref={ref} className={className}>
+			{children ??
+				items?.map((item, itemIndex) => (
+					<FeaturedItem key={itemIndex} {...item} />
+				))}
+		</WrapperNav>
+	)
+);
 
 FeaturedItems.displayName = 'FeaturedItems';

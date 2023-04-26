@@ -7,15 +7,15 @@ export default {
 		Story => (
 			<div
 				style={{
-					maxWidth: '40rem',
+					maxWidth: '40rem'
 				}}
 			>
-				<Story/>
+				<Story />
 			</div>
-		),
-	],
+		)
+	]
 } as Meta;
 
 export const Default: StoryObj<DualPhoneDisplayProps> = {
-	args: {},
+	args: {}
 };

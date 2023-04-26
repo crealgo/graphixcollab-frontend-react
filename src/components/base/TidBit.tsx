@@ -10,15 +10,26 @@ export type TidBitProps = PropsWithChildren<{
 	className?: string;
 	icon?: ButtonBaseProps['startIcon'];
 }> &
-Pick<ButtonBaseProps, 'href' | 'onClick'>;
+	Pick<ButtonBaseProps, 'href' | 'onClick'>;
 
-const BaseElement: FC<TidBitProps> = ({className, icon, children, ...props}) => (
-	<ButtonBase type='button' className={clsx('TidBit-root', className)} startIcon={icon} {...props}>
+const BaseElement: FC<TidBitProps> = ({
+	className,
+	icon,
+	children,
+	...props
+}) => (
+	<ButtonBase
+		type="button"
+		className={clsx('TidBit-root', className)}
+		startIcon={icon}
+		{...props}
+	>
 		{children}
 	</ButtonBase>
 );
 
-export const TidBit = styled(BaseElement)<TidBitProps>(({icon, color = 'primary'}) => css`
+export const TidBit = styled(BaseElement)<TidBitProps>(
+	({icon, color = 'primary'}) => css`
 		--background-color: #ffffff;
 		--border-color: #cbd5e1;
 
@@ -41,7 +52,8 @@ export const TidBit = styled(BaseElement)<TidBitProps>(({icon, color = 'primary'
 			background-color: unset;
 		}
 
-		.Button-icon, mark {
+		.Button-icon,
+		mark {
 			color: var(--button-background-color-${color});
 		}
 
@@ -49,4 +61,5 @@ export const TidBit = styled(BaseElement)<TidBitProps>(({icon, color = 'primary'
 			display: inline-flex;
 			font-size: 24px;
 		}
-	`);
+	`
+);

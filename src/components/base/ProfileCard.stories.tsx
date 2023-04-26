@@ -7,14 +7,14 @@ export default {
 	decorators: [
 		Story => (
 			<div style={{maxWidth: 300}}>
-				<Story/>
+				<Story />
 			</div>
-		),
-	],
+		)
+	]
 } as Meta;
 
 export const Default: StoryObj<ProfileCardProps> = {
 	args: {
-		profile: generateEmployee(),
-	},
+		profile: generateEmployee()
+	}
 };

@@ -14,7 +14,7 @@ export type NewsBlockProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 export const NewsBlockWrapper = styled('div')(
-	({theme}) => /* scss */`
+	({theme}) => /* scss */ `
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
@@ -30,31 +30,36 @@ export const NewsBlockWrapper = styled('div')(
 		${theme.breakpoints.up('md')} {
 			grid-template-columns: repeat(4, 1fr);
 		}
-	`,
+	`
 );
 
 const NewsBlockContent = styled('div')(
-	({theme}) => /* scss */`
+	({theme}) => /* scss */ `
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		padding: ${theme.spacing(2)};
-	`,
+	`
 );
 
-export const NewsBlock: FC<NewsBlockProps> = ({articles, meta, title, actions}) => (
-	<NewsBlockWrapper className='NewsBlock-root'>
+export const NewsBlock: FC<NewsBlockProps> = ({
+	articles,
+	meta,
+	title,
+	actions
+}) => (
+	<NewsBlockWrapper className="NewsBlock-root">
 		<NewsBlockContent>
-			<Typography variant='h2' className='NewsBlock-contentMeta'>
+			<Typography variant="h2" className="NewsBlock-contentMeta">
 				{meta}
 			</Typography>
-			<Typography variant='body1' className='NewsBlock-contentTitle'>
+			<Typography variant="body1" className="NewsBlock-contentTitle">
 				{title}
 			</Typography>
-			<ActionStack actions={actions}/>
+			<ActionStack actions={actions} />
 		</NewsBlockContent>
 		{articles?.map((article, articleIndex) => (
-			<NewsCard key={articleIndex} article={article}/>
+			<NewsCard key={articleIndex} article={article} />
 		))}
 	</NewsBlockWrapper>
 );

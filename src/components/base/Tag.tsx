@@ -6,13 +6,13 @@ const StyledChip = styled(Chip)`
 	border-radius: 0.25rem;
 `;
 
-export const Tag = forwardRef<HTMLDivElement, ChipProps>(({children, ...props}, ref) => (
-	<StyledChip {...props} ref={ref}/>
-));
+export const Tag = forwardRef<HTMLDivElement, ChipProps>(
+	({children, ...props}, ref) => <StyledChip {...props} ref={ref} />
+);
 
 Tag.defaultProps = {
 	size: 'small',
-	color: 'primary',
+	color: 'primary'
 };
 
 Tag.displayName = 'Tag';

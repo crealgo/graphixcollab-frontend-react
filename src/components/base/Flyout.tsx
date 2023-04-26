@@ -29,11 +29,12 @@ export const Flyout = () => (
 			<HeadingContent>
 				<Heading level={3}>Sed ut perspiciatis unde omnis.</Heading>
 				<Text>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-					totam rem aperiam,
+					Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem
+					aperiam,
 				</Text>
 			</HeadingContent>
-			<FeaturedItems items={generateFeaturedItems()}/>
+			<FeaturedItems items={generateFeaturedItems()} />
 		</FlyoutFeaturedItems>
 	</FlyoutContent>
 );

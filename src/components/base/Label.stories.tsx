@@ -3,7 +3,7 @@ import {chance} from '../../utils/chance';
 import {Label, type LabelProps} from './Label';
 
 export default {
-	component: Label,
+	component: Label
 } as Meta;
 
 export const Default: StoryObj<LabelProps> = {
@@ -11,11 +11,11 @@ export const Default: StoryObj<LabelProps> = {
 		variant: {
 			control: {type: 'select'},
 			options: ['primary', 'secondary', 'grey'],
-			defaultValue: 'primary',
+			defaultValue: 'primary'
 		},
 		children: {
 			control: {type: 'text'},
-			defaultValue: chance.word(),
-		},
-	},
+			defaultValue: chance.word()
+		}
+	}
 };

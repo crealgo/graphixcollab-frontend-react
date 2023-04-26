@@ -3,40 +3,42 @@ import {chance} from '../../utils/chance';
 import {ImageCarousel} from './ImageCarousel';
 
 export default {
-	component: ImageCarousel,
+	component: ImageCarousel
 } as Meta;
 
-const imageList = Array.from({length: 5}, () => chance.url({extensions: ['png', 'jpeg']}));
+const imageList = Array.from({length: 5}, () =>
+	chance.url({extensions: ['png', 'jpeg']})
+);
 
 export const Default = {
 	argTypes: {
 		height: {
 			control: {type: 'number'},
-			defaultValue: 300,
+			defaultValue: 300
 		},
 		width: {
 			control: {type: 'number'},
-			defaultValue: 300,
+			defaultValue: 300
 		},
 		autoplay: {
 			control: {type: 'boolean'},
-			defaultValue: false,
+			defaultValue: false
 		},
 		images: {
 			control: {type: 'object'},
-			defaultValue: imageList,
+			defaultValue: imageList
 		},
 		tilt: {
-			defaultValue: undefined,
+			defaultValue: undefined
 		},
 		currentIndex: {
 			control: {type: 'number'},
 			min: 0,
-			max: imageList.length - 1,
+			max: imageList.length - 1
 		},
 		interactive: {
 			control: {type: 'boolean'},
-			defaultValue: false,
-		},
-	},
+			defaultValue: false
+		}
+	}
 };

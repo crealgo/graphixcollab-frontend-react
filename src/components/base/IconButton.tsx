@@ -2,7 +2,11 @@ import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {forwardRef} from 'react';
 import {_e} from '../../utils/excludePropsFromForwarding';
-import {getButtonColors, getButtonHoverColors, getButtonSizes} from '../../utils/getButtonStyles';
+import {
+	getButtonColors,
+	getButtonHoverColors,
+	getButtonSizes
+} from '../../utils/getButtonStyles';
 import {type ColorVariants} from '../../types/color';
 import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
 
@@ -12,7 +16,7 @@ export type IconButtonProps = {
 
 const StyledIconButton = styled(
 	IconButtonBase,
-	_e('color'),
+	_e('color')
 )<IconButtonProps>(
 	({theme, color = 'text', size = 'medium'}) => css`
 		font-weight: bold;
@@ -25,7 +29,7 @@ const StyledIconButton = styled(
 		&:focus-visible {
 			background-color: ${getButtonHoverColors({theme, color})};
 		}
-	`,
+	`
 );
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
@@ -34,12 +38,12 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 			{...props}
 			ref={ref}
 			color={color}
-			role='button'
+			role="button"
 			className={clsx(className, 'IconButton-root')}
 		>
 			{children}
 		</StyledIconButton>
-	),
+	)
 );
 
 IconButton.displayName = 'IconButton';

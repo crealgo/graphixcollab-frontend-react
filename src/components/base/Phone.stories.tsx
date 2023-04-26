@@ -6,17 +6,17 @@ export default {
 	decorators: [
 		Story => (
 			<div style={{maxWidth: 400}}>
-				<Story/>
+				<Story />
 			</div>
-		),
-	],
+		)
+	]
 } as Meta;
 
 export const Default: StoryObj<PhoneProps> = {
 	argTypes: {
 		elevation: {
 			control: {type: 'number'},
-			defaultValue: 20,
-		},
-	},
+			defaultValue: 20
+		}
+	}
 };

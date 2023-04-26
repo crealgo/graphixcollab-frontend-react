@@ -1,10 +1,9 @@
-
 import styled from '@emotion/styled';
-import {type YelpReview} from '../../content/yelp-reviews';
 import {Rating} from './Rating';
 import {type FC} from 'react';
+import type reviews from '../../content/yelp-reviews.json';
 
-export type TestimonialProps = Pick<YelpReview, 'user' | 'comment' | 'rating'>;
+export type TestimonialProps = (typeof reviews)[0];
 
 const BaseElement = styled('article')`
 	display: flex;
@@ -31,8 +30,8 @@ const BaseElement = styled('article')`
 	}
 
 	.quote {
-		text-overflow:ellipsis;
-		overflow:hidden;
+		text-overflow: ellipsis;
+		overflow: hidden;
 
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
@@ -41,22 +40,27 @@ const BaseElement = styled('article')`
 	}
 `;
 
-export const Testimonial: FC<TestimonialProps> = ({
-	user, comment, rating,
-}) => (
+export const Testimonial: FC<TestimonialProps> = ({user, comment, rating}) => (
 	<BaseElement>
-		<img className='image' src={user.src} srcSet={user.srcSet ?? ''} alt={user.altText}/>
-		<div className='content'>
+		<img
+			className="image"
+			src={user.src}
+			srcSet={user.srcSet ?? ''}
+			alt={user.altText}
+		/>
+		<div className="content">
 			<q
 				/* eslint-disable react/no-danger */
 				dangerouslySetInnerHTML={{
-					__html: comment.text,
+					__html: comment.text
 				}}
 				/* eslint-enable react/no-danger */
-				className='quote'
+				className="quote"
 			/>
-			<b><small>{user.markupDisplayName}</small></b>
-			<Rating readOnly className='rating' value={rating}/>
+			<b>
+				<small>{user.markupDisplayName}</small>
+			</b>
+			<Rating readOnly className="rating" value={rating} />
 		</div>
 	</BaseElement>
 );

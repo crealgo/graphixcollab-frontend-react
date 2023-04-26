@@ -12,7 +12,7 @@ export type IconButtonBaseProps = {
 
 const StyledButton = styled(
 	MuiButtonBase,
-	_e('endIcon', 'startIcon', 'size'),
+	_e('endIcon', 'startIcon', 'size')
 )<IconButtonBaseProps>(
 	({theme}) => css`
 		cursor: pointer;
@@ -23,15 +23,16 @@ const StyledButton = styled(
 		border-radius: 0.25rem;
 		height: 2.5rem;
 		aspect-ratio: 1;
-	`,
+	`
 );
 
-export const IconButtonBase = forwardRef<HTMLButtonElement, IconButtonBaseProps>(
-	({children, Icon, ...props}, ref) => (
-		<StyledButton {...props} ref={ref} role='button'>
-			{children ? children : Icon ? <Icon/> : null}
-		</StyledButton>
-	),
-);
+export const IconButtonBase = forwardRef<
+	HTMLButtonElement,
+	IconButtonBaseProps
+>(({children, Icon, ...props}, ref) => (
+	<StyledButton {...props} ref={ref} role="button">
+		{children ? children : Icon ? <Icon /> : null}
+	</StyledButton>
+));
 
 IconButtonBase.displayName = 'IconButtonBase';

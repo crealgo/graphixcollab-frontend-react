@@ -2,11 +2,11 @@ import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 const BaseElement: FC<
-ComponentPropsWithoutRef<'div'> & {
-	name?: string;
-}
+	ComponentPropsWithoutRef<'div'> & {
+		name?: string;
+	}
 > = ({name, children, ...props}) => (
-	<div {...props} role='radiogroup' aria-labelledby={name}>
+	<div {...props} role="radiogroup" aria-labelledby={name}>
 		<span hidden id={name}>
 			Some Title
 		</span>
@@ -26,5 +26,5 @@ export const BookingOptionGroup = styled(BaseElement)(
 	${theme.breakpoints.up('md')} {
 		grid-template-columns: repeat(2, 1fr);
 	} */
-	`,
+	`
 );

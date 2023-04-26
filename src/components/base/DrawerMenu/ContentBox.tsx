@@ -13,6 +13,8 @@ export const ContentBox = styled('div')<ContentBoxProps>(
 		gap: 1rem;
 
 		${isColored ? `background-color: ${theme.palette.grey[100]};` : ''}
-		${hasBorder ? `border-bottom: solid 1px ${theme.palette.grey[300]};` : ''}
-	`,
+		${hasBorder
+			? `border-bottom: solid 1px ${theme.palette.grey[300]};`
+			: ''}
+	`
 );

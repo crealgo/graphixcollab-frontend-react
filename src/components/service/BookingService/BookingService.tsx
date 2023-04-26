@@ -1,6 +1,12 @@
 import {ActionStack} from '../../base/ActionStack';
 import {DialogTitle} from '../../base/DialogTitle';
-import {ArrowCircleLeft, ArrowCircleRight, Cancel, CheckCircle, BookTwoTone} from '@mui/icons-material';
+import {
+	ArrowCircleLeft,
+	ArrowCircleRight,
+	Cancel,
+	CheckCircle,
+	BookTwoTone
+} from '@mui/icons-material';
 import {
 	css,
 	Dialog,
@@ -10,7 +16,7 @@ import {
 	StepContent,
 	StepLabel,
 	Stepper,
-	styled,
+	styled
 } from '@mui/material';
 import {type FC, type MouseEvent, useState} from 'react';
 import {Button} from '../../base/Button';
@@ -28,18 +34,18 @@ const steps = [
 	{
 		completed: false,
 		label: 'Select a service',
-		StepContent: SelectServiceStep,
+		StepContent: SelectServiceStep
 	},
 	{
 		completed: false,
 		label: 'Select Date and time',
-		StepContent: ReserveTimeSlotStep,
+		StepContent: ReserveTimeSlotStep
 	},
 	{
 		completed: false,
 		label: 'Enter your details',
-		StepContent: CustomerInfoStep,
-	},
+		StepContent: CustomerInfoStep
+	}
 ];
 
 const StyledDialogContent = styled(DialogContent)(
@@ -56,14 +62,17 @@ const StyledDialogContent = styled(DialogContent)(
 			padding-inline: 0.5rem;
 			padding-block: 2rem;
 		}
-	`,
+	`
 );
 
 const StepContentWrapper = styled('div')`
 	padding-block: 1rem;
 `;
 
-export const BookingService: FC<BookingServiceProps> = ({isOpen = false, onCloseClick}) => {
+export const BookingService: FC<BookingServiceProps> = ({
+	isOpen = false,
+	onCloseClick
+}) => {
 	const [activeStep, setActiveStep] = useState<number>(0);
 
 	const handlePrevStep = () => {
@@ -86,53 +95,73 @@ export const BookingService: FC<BookingServiceProps> = ({isOpen = false, onClose
 		<Dialog fullWidth open={isOpen} onClose={onCloseClick}>
 			<DialogTitle>
 				<span>Book an Appointment</span>
-				<BookTwoTone color='primary'/>
+				<BookTwoTone color="primary" />
 			</DialogTitle>
 			<StyledDialogContent>
-				<div className='stepper'>
-					<Stepper nonLinear orientation='vertical' activeStep={activeStep}>
-						{steps.map(({label, StepContent: ResolvedStepContent}, stepIndex) => (
-							<Step key={stepIndex}>
-								<StepLabel>{label}</StepLabel>
-								<StepContent>
-									<StepContentWrapper>
-										<ResolvedStepContent/>
-										<br/>
-										<ActionStack>
-											<Button
-												color='text'
-												startIcon={<ArrowCircleLeft color='warning'/>}
-												onClick={handlePrevStep}
-											>
-												Previous
-											</Button>
-											{stepIndex === steps.length - 1 ? (
+				<div className="stepper">
+					<Stepper
+						nonLinear
+						orientation="vertical"
+						activeStep={activeStep}
+					>
+						{steps.map(
+							(
+								{label, StepContent: ResolvedStepContent},
+								stepIndex
+							) => (
+								<Step key={stepIndex}>
+									<StepLabel>{label}</StepLabel>
+									<StepContent>
+										<StepContentWrapper>
+											<ResolvedStepContent />
+											<br />
+											<ActionStack>
 												<Button
-													color='tertiary'
-													endIcon={<CheckCircle color='success'/>}
-													onClick={handleNextStep}
+													color="text"
+													startIcon={
+														<ArrowCircleLeft color="warning" />
+													}
+													onClick={handlePrevStep}
 												>
-													Submit
+													Previous
 												</Button>
-											) : (
-												<Button
-													color='text'
-													endIcon={<ArrowCircleRight color='success'/>}
-													onClick={handleNextStep}
-												>
-													Next
-												</Button>
-											)}
-										</ActionStack>
-									</StepContentWrapper>
-								</StepContent>
-							</Step>
-						))}
+												{stepIndex ===
+												steps.length - 1 ? (
+													<Button
+														color="tertiary"
+														endIcon={
+															<CheckCircle color="success" />
+														}
+														onClick={handleNextStep}
+													>
+														Submit
+													</Button>
+												) : (
+													<Button
+														color="text"
+														endIcon={
+															<ArrowCircleRight color="success" />
+														}
+														onClick={handleNextStep}
+													>
+														Next
+													</Button>
+												)}
+											</ActionStack>
+										</StepContentWrapper>
+									</StepContent>
+								</Step>
+							)
+						)}
 					</Stepper>
 				</div>
 			</StyledDialogContent>
 			<DialogActions>
-				<Button color='text' endIcon={<Cancel color='error'/>} onClick={onCloseClick}>
+				<Button
+					color="text"
+					endIcon={<Cancel color="error" />}
+					onClick={onCloseClick}
+				>
 					Cancel
 				</Button>
 			</DialogActions>

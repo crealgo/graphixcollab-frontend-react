@@ -8,5 +8,5 @@ export const MenuTrigger = styled(IconButtonBase)(
 		&:hover {
 			background-color: ${theme.palette.grey[300]};
 		}
-	`,
+	`
 );

@@ -1,5 +1,11 @@
 import {AddCircleOutline} from '@mui/icons-material';
-import {Accordion, AccordionDetails, AccordionSummary, css, styled} from '@mui/material';
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	css,
+	styled
+} from '@mui/material';
 import {type FC} from 'react';
 import {ActionStack} from './ActionStack';
 import {type FaqOptions} from '../block/FaqBlock';
@@ -55,26 +61,31 @@ const Wrapper = styled(Accordion)(
 		.MuiAccordionDetails-root {
 			padding-left: calc(0.25rem + ${fontHeight});
 		}
-	`,
+	`
 );
 
 const AccordionHead = styled(AccordionSummary)(({theme}) => ({
-	...theme.typography.body2,
+	...theme.typography.body2
 }));
 
-export const FaqAccordion: FC<FaqAccordionProps> = ({question, answer, actions, resources}) => (
-	<Wrapper variant='outlined'>
+export const FaqAccordion: FC<FaqAccordionProps> = ({
+	question,
+	answer,
+	actions,
+	resources
+}) => (
+	<Wrapper variant="outlined">
 		<AccordionHead>
-			<AddCircleOutline/>
+			<AddCircleOutline />
 			{question}
 		</AccordionHead>
 		<AccordionDetails>
 			{answer}
 			{actions && (
 				<>
-					<br/>
-					<br/>
-					<ActionStack size='small' actions={actions}/>
+					<br />
+					<br />
+					<ActionStack size="small" actions={actions} />
 				</>
 			)}
 		</AccordionDetails>

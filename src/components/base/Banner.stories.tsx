@@ -5,9 +5,9 @@ import {Banner, type BannerProps} from './Banner';
 
 export default {
 	component: Banner,
-	subcomponents: {BannerService},
+	subcomponents: {BannerService}
 } as Meta;
 
 export const Default: StoryObj<BannerProps> = {
-	args: generateBanner(),
+	args: generateBanner()
 };

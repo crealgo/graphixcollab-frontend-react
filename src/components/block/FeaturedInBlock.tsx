@@ -37,10 +37,19 @@ const CustomBlock = styled(Block)`
 	padding-bottom: 4rem !important;
 `;
 
-export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies, ...props}) => (
+export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
+	className,
+	companies,
+	...props
+}) => (
 	<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
 		<StyledContainer>
-			<ContentGrid size="small" textAlign="center" marginX="auto" maxWidth="50rem">
+			<ContentGrid
+				size="small"
+				textAlign="center"
+				marginX="auto"
+				maxWidth="50rem"
+			>
 				<Heading level={4}>
 					We work with <mark>creatives</mark> like you.
 				</Heading>
@@ -71,7 +80,11 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({className, companies,
 					))}
 				</Marquee>
 			) : (
-				<StatusMessage isContained IconComponent={Warning} text="No Images Available" />
+				<StatusMessage
+					isContained
+					IconComponent={Warning}
+					text="No Images Available"
+				/>
 			)}
 			<ActionStack
 				align="center"

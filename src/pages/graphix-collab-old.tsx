@@ -10,12 +10,17 @@ import {
 	generateHeader,
 	generateIntroBlock,
 	generateServicesBlock,
-	generateTimelineBlock,
+	generateTimelineBlock
 } from '../utils/chance';
 import {generateBlocks} from '../utils/generateBlocks';
 
 const GraphixCollab: NextPage<PageProps> = ({layout, blocks}) => (
-	<DefaultLayout pageTitle='Graphix Collab' HeaderProps={layout.header} BannerProps={layout.banner} FooterProps={layout.footer}>
+	<DefaultLayout
+		pageTitle="Graphix Collab"
+		HeaderProps={layout.header}
+		BannerProps={layout.banner}
+		FooterProps={layout.footer}
+	>
 		{generateBlocks(blocks)}
 	</DefaultLayout>
 );
@@ -27,15 +32,15 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 		layout: {
 			header: generateHeader(),
 			banner: generateBanner(),
-			footer: generateFooter(),
+			footer: generateFooter()
 		},
 		blocks: [
 			{
 				type: 'intro',
 				props: {
 					...generateIntroBlock(),
-					color: colors.cyan[300],
-				},
+					color: colors.cyan[300]
+				}
 			},
 			{
 				type: 'featured',
@@ -48,22 +53,22 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 						{name: 'Gal-dem', url: exampleUrl},
 						{name: 'Polyester', url: exampleUrl},
 						{name: 'Another Magazine', url: exampleUrl},
-						{name: 'i-D', url: exampleUrl},
-					],
-				},
+						{name: 'i-D', url: exampleUrl}
+					]
+				}
 			},
 			{type: 'services', props: generateServicesBlock()},
 			{
 				type: 'interactiveEstimator',
 				props: {
-					actions: generateActions(),
-				},
+					actions: generateActions()
+				}
 			},
 			{type: 'timeline', props: generateTimelineBlock()},
 			// {type: 'fanService', props: generateFanServiceBlock()},
-			{type: 'gallery', props: generateGalleryBlock()},
-		],
-	},
+			{type: 'gallery', props: generateGalleryBlock()}
+		]
+	}
 });
 
 export default GraphixCollab;

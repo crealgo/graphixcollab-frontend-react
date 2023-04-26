@@ -27,7 +27,7 @@ const Marker = styled('div')`
 	align-items: center;
 	justify-content: center;
 
-	font-family: "Inter";
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 1.5rem;
@@ -52,14 +52,14 @@ const EventConnector = styled('div')`
 
 const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
-		<Marker className='marker'>{props.stepNumber ?? 1}</Marker>
-		<div className='image'/>
-		<div className='content'>
-			<div className='title'>{props.title}</div>
-			<div className='description'>{props.description}</div>
+		<Marker className="marker">{props.stepNumber ?? 1}</Marker>
+		<div className="image" />
+		<div className="content">
+			<div className="title">{props.title}</div>
+			<div className="description">{props.description}</div>
 			{props.children}
 		</div>
-		<EventConnector className='connector'/>
+		<EventConnector className="connector" />
 	</li>
 );
 

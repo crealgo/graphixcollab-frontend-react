@@ -24,7 +24,7 @@ const StyledDialogContent = styled(DialogContent)(
 			padding-inline: 0.5rem;
 			padding-block: 2rem;
 		}
-	`,
+	`
 );
 
 const Modal = styled(Paper)`
@@ -36,14 +36,18 @@ export const SquareBookingService: FC<DialogServiceProps> = props => (
 	<Modal>
 		<DialogTitle>
 			<span>Contact Us</span>
-			<MailTwoTone color='primary'/>
+			<MailTwoTone color="primary" />
 		</DialogTitle>
-		<StyledDialogContent/>
+		<StyledDialogContent />
 		<DialogActions>
-			<Button color='text' endIcon={<Cancel color='error'/>} onClick={props.onCloseClick}>
+			<Button
+				color="text"
+				endIcon={<Cancel color="error" />}
+				onClick={props.onCloseClick}
+			>
 				Cancel
 			</Button>
-			<Button color='tertiary' endIcon={<CheckCircle color='success'/>}>
+			<Button color="tertiary" endIcon={<CheckCircle color="success" />}>
 				Submit
 			</Button>
 		</DialogActions>

@@ -2,11 +2,11 @@ import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 const BaseElement: FC<
-ComponentPropsWithoutRef<'div'> & {
-	name?: string;
-}
+	ComponentPropsWithoutRef<'div'> & {
+		name?: string;
+	}
 > = ({name, children, ...props}) => (
-	<div {...props} role='radiogroup' aria-labelledby={name}>
+	<div {...props} role="radiogroup" aria-labelledby={name}>
 		<span hidden id={name}>
 			Some Title
 		</span>
@@ -22,5 +22,5 @@ export const TimeSlotGroup = styled(BaseElement)(
 
 		display: flex;
 		gap: 0.5rem;
-	`,
+	`
 );

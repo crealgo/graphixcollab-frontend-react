@@ -31,12 +31,16 @@ const ProfileWrapper = styled('div')`
 
 export const Profile: FC<ProfileProps> = ({className, profile}) => (
 	<ProfileWrapper className={clsx(className, 'Profile-root')}>
-		<Avatar src={profile?.avatar} alt={profile?.name}/>
-		<div className='Profile-content'>
-			<Typography className='Profile-name' variant='body2' fontWeight='bold'>
+		<Avatar src={profile?.avatar} alt={profile?.name} />
+		<div className="Profile-content">
+			<Typography
+				className="Profile-name"
+				variant="body2"
+				fontWeight="bold"
+			>
 				{profile?.name}
 			</Typography>
-			<Link className='Profile-username' variant='body2'>
+			<Link className="Profile-username" variant="body2">
 				{profile?.username}
 			</Link>
 		</div>

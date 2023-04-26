@@ -12,8 +12,8 @@ type StatusMessageProps = {
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 	({theme, isContained, isActionable}) => css`
-		${isContained
-		&& `
+		${isContained &&
+		`
 		padding-inline: 1rem;
 		padding-block: 0.75rem;
 
@@ -31,21 +31,29 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		color: ${theme.palette.grey[700]};
 
 		${isActionable
-		? css`
-			cursor: pointer;
+			? css`
+					cursor: pointer;
 
-			&:hover {
-				color: ${theme.palette.primary.main};
-			}
-		`
-		: null}
-	`,
+					&:hover {
+						color: ${theme.palette.primary.main};
+					}
+			  `
+			: null}
+	`
 );
 
-export const StatusMessage: FC<StatusMessageProps> = ({IconComponent = Warning, text, ...props}) => (
-	<StatusMessageWrapper className='StatusMessage-root' {...props}>
-		<IconComponent fontSize='small'/>
-		<Typography className='StatusMessage-text' variant='body1' component='span'>
+export const StatusMessage: FC<StatusMessageProps> = ({
+	IconComponent = Warning,
+	text,
+	...props
+}) => (
+	<StatusMessageWrapper className="StatusMessage-root" {...props}>
+		<IconComponent fontSize="small" />
+		<Typography
+			className="StatusMessage-text"
+			variant="body1"
+			component="span"
+		>
 			{text}
 		</Typography>
 	</StatusMessageWrapper>

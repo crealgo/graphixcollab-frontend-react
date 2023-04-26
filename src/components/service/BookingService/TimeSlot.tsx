@@ -2,7 +2,9 @@ import {type ServiceInformation} from './steps/data';
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
-export type BookingOptionProps = Record<string, unknown> & ServiceInformation & ComponentPropsWithoutRef<'input'>;
+export type BookingOptionProps = Record<string, unknown> &
+	ServiceInformation &
+	ComponentPropsWithoutRef<'input'>;
 
 const BaseElement: FC<BookingOptionProps> = ({
 	label,
@@ -13,9 +15,14 @@ const BaseElement: FC<BookingOptionProps> = ({
 	name,
 	...props
 }) => (
-	<label htmlFor={name} tabIndex={0} className={className} aria-checked={checked}>
+	<label
+		htmlFor={name}
+		tabIndex={0}
+		className={className}
+		aria-checked={checked}
+	>
 		{label}
-		<input hidden type='radio' id={name} {...props}/>
+		<input hidden type="radio" id={name} {...props} />
 	</label>
 );
 
@@ -48,7 +55,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 			box-shadow: ${theme.shadows[3]};
 		}
 
-		&[aria-checked="true"] {
+		&[aria-checked='true'] {
 			pointer-events: none;
 			background-color: blue;
 		}
@@ -57,5 +64,5 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 			outline: solid 2px ${theme.palette.grey[800]};
 			outline-offset: 3px;
 		}
-	`,
+	`
 );

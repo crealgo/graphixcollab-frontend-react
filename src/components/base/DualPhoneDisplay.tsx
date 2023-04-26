@@ -30,7 +30,7 @@ const Wrapper = styled('div')(
 			right: 0;
 			top: 15%;
 		}
-	`,
+	`
 );
 
 const InnerWrapper = styled('div')`
@@ -39,11 +39,20 @@ const InnerWrapper = styled('div')`
 	width: 100%;
 `;
 
-export const DualPhoneDisplay: FC<DualPhoneDisplayProps> = ({phone1Props, phone2Props, ...props}) => (
-	<Wrapper className='DualPhoneDisplay-root' role='img' aria-label='Phone app display' {...props}>
+export const DualPhoneDisplay: FC<DualPhoneDisplayProps> = ({
+	phone1Props,
+	phone2Props,
+	...props
+}) => (
+	<Wrapper
+		className="DualPhoneDisplay-root"
+		role="img"
+		aria-label="Phone app display"
+		{...props}
+	>
 		<InnerWrapper>
-			<Phone elevation={10} {...phone1Props}/>
-			<Phone hasBorder elevation={20} {...phone2Props}/>
+			<Phone elevation={10} {...phone1Props} />
+			<Phone hasBorder elevation={20} {...phone2Props} />
 		</InnerWrapper>
 	</Wrapper>
 );

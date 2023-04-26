@@ -10,17 +10,17 @@ export const ContentGrid = styled(Box)<ContentGridProps>(({size}) => {
 	const gapValue = {
 		small: '1rem',
 		medium: '2rem',
-		large: '3rem',
+		large: '3rem'
 	}[size ?? 'medium'];
 
 	return {
 		display: 'grid',
 		gridTemplateColumns: '1fr',
 		alignContent: 'start',
-		gap: gapValue,
+		gap: gapValue
 	};
 });
 
 ContentGrid.defaultProps = {
-	className: 'ContentGrid-root',
+	className: 'ContentGrid-root'
 };

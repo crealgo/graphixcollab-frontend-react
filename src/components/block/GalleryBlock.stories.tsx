@@ -3,9 +3,9 @@ import {generateGalleryBlock} from '../../utils/chance';
 import {GalleryBlock, type GalleryBlockProps} from './GalleryBlock';
 
 export default {
-	component: GalleryBlock,
+	component: GalleryBlock
 };
 
 export const Default: StoryObj<GalleryBlockProps> = {
-	args: generateGalleryBlock(),
+	args: generateGalleryBlock()
 };

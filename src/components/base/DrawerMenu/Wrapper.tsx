@@ -7,5 +7,5 @@ export const Wrapper = styled('div')(
 	${theme.breakpoints.up('sm')} {
 		max-width: 25rem;
 	}
-`,
+`
 );

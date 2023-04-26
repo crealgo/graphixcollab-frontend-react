@@ -26,7 +26,7 @@ const FeaturedItemWrapper = styled('div')(
 				outline-offset: 2px;
 			}
 		}
-	`,
+	`
 );
 
 const FeaturedItemImage = styled(Image)(
@@ -34,7 +34,7 @@ const FeaturedItemImage = styled(Image)(
 		background-color: ${theme.palette.grey[300]};
 		width: 100%;
 		aspect-ratio: 1;
-	`,
+	`
 );
 
 const Title = styled('span')(
@@ -46,12 +46,12 @@ const Title = styled('span')(
 		overflow: hidden;
 
 		color: ${theme.palette.grey[600]};
-	`,
+	`
 );
 
 export const FeaturedItem: FC<FeaturedItemProps> = ({ImageProps, label}) => (
 	<FeaturedItemWrapper>
-		<FeaturedItemImage {...ImageProps}/>
-		<Title className='Title-root'>{label}</Title>
+		<FeaturedItemImage {...ImageProps} />
+		<Title className="Title-root">{label}</Title>
 	</FeaturedItemWrapper>
 );

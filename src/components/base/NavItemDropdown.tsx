@@ -1,6 +1,11 @@
 import {KeyboardArrowDown} from '@mui/icons-material';
 import {Menu, MenuItem, Popover, type PopoverOrigin} from '@mui/material';
-import {useState, type ComponentType, type FC, type MouseEventHandler} from 'react';
+import {
+	useState,
+	type ComponentType,
+	type FC,
+	type MouseEventHandler
+} from 'react';
 import {type NavItemOptions} from '../../types/general';
 import {type ButtonProps} from './Button';
 import {NavItem} from './NavItem';
@@ -10,8 +15,14 @@ export type NavItemDropdownProps = {
 	FlyoutComponent?: ComponentType<unknown>;
 } & ButtonProps;
 
-export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, children, items}) => {
-	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | undefined>(undefined);
+export const NavItemDropdown: FC<NavItemDropdownProps> = ({
+	FlyoutComponent,
+	children,
+	items
+}) => {
+	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | undefined>(
+		undefined
+	);
 	const open = Boolean(anchorEl);
 
 	const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
@@ -28,11 +39,11 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 		onClose: handleClose,
 		anchorOrigin: {
 			vertical: 'bottom',
-			horizontal: 'left',
+			horizontal: 'left'
 		} as PopoverOrigin,
 		disableScrollLock: true,
 		disablePortal: true,
-		transitionDuration: 200,
+		transitionDuration: 200
 	};
 
 	return (
@@ -41,7 +52,7 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 				hasSubmenu
 				selected={open}
 				aria-controls={open ? 'basic-menu' : undefined}
-				aria-haspopup='true'
+				aria-haspopup="true"
 				aria-expanded={open ? 'true' : undefined}
 				onClick={handleClick}
 			>
@@ -49,16 +60,16 @@ export const NavItemDropdown: FC<NavItemDropdownProps> = ({FlyoutComponent, chil
 			</NavItem>
 			{FlyoutComponent ? (
 				<Popover {...sharedProps}>
-					<FlyoutComponent/>
+					<FlyoutComponent />
 				</Popover>
 			) : (
 				<Menu
 					{...sharedProps}
 					MenuListProps={{
 						'aria-labelledby': 'basic-button',
-						sx: {
-							minWidth: '10rem',
-						},
+						'sx': {
+							minWidth: '10rem'
+						}
 					}}
 				>
 					{items?.map((item, itemIndex) => (

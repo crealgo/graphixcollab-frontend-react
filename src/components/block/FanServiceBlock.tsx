@@ -47,23 +47,27 @@ const FanServiceBlockWrapper = styled('div')(
 				}
 			}
 		}
-	`,
+	`
 );
 
 export const FanServiceBlock: FC<FanServiceBlockProps> = props => (
 	<FanServiceBlockWrapper>
-		{props.images?.length ? <ImageCarousel images={props.images}/> : null}
-		<div className='FanServiceBlock-content'>
-			<div className='FanServiceBlock-intro'>
-				<Typography gutterBottom variant='h3'>
+		{props.images?.length ? <ImageCarousel images={props.images} /> : null}
+		<div className="FanServiceBlock-content">
+			<div className="FanServiceBlock-intro">
+				<Typography gutterBottom variant="h3">
 					{props.title}
 				</Typography>
-				<Typography variant='body1' marginTop='0.25rem'>
+				<Typography variant="body1" marginTop="0.25rem">
 					{props.description}
 				</Typography>
 			</div>
-			<div className='FanServiceBlock-cta'>
-				<ActionStack color='secondary' {...props.ActionStackProps} actions={props.actions}/>
+			<div className="FanServiceBlock-cta">
+				<ActionStack
+					color="secondary"
+					{...props.ActionStackProps}
+					actions={props.actions}
+				/>
 			</div>
 		</div>
 	</FanServiceBlockWrapper>
