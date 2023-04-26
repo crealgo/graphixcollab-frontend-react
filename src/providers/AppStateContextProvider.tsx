@@ -1,14 +1,27 @@
-import {useEffect, useMemo, useState, type FC, type PropsWithChildren} from 'react';
+import {
+	useEffect,
+	useMemo,
+	useState,
+	type FC,
+	type PropsWithChildren
+} from 'react';
 import {BannerService} from '../components/service/BannerService';
 import {ContactService} from '../components/service/ContactService';
-import {AppStateContext, type AppStateContextOptions as Context} from '../contexts/AppStateContext';
+import {
+	AppStateContext,
+	type AppStateContextOptions as Context
+} from '../contexts/AppStateContext';
 
 type AppStateContextProviderProps = PropsWithChildren;
 
-export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({children}) => {
+export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
+	children
+}) => {
 	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
-	const [bookingOpen, setBookingOpen] = useState<Context['bookingOpen']>(false);
-	const [contactOpen, setContactOpen] = useState<Context['contactOpen']>(false);
+	const [bookingOpen, setBookingOpen] =
+		useState<Context['bookingOpen']>(false);
+	const [contactOpen, setContactOpen] =
+		useState<Context['contactOpen']>(false);
 	const [bannerProps, setBannerProps] = useState<Context['BannerProps']>({});
 
 	const toggleBanner = (state?: boolean) => {
@@ -35,16 +48,19 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({child
 		setContactOpen(curr => !curr);
 	};
 
-	const defaultContext = useMemo<Context>(() => ({
-		BannerProps: bannerProps,
-		bannerOpen,
-		bookingOpen,
-		contactOpen,
-		setBannerProps,
-		toggleBanner,
-		toggleContact,
-		toggleBooking,
-	}), []);
+	const defaultContext = useMemo<Context>(
+		() => ({
+			BannerProps: bannerProps,
+			bannerOpen,
+			bookingOpen,
+			contactOpen,
+			setBannerProps,
+			toggleBanner,
+			toggleContact,
+			toggleBooking
+		}),
+		[]
+	);
 
 	useEffect(() => {
 		if (bannerProps.text) {
@@ -54,16 +70,16 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({child
 
 	return (
 		<AppStateContext.Provider value={defaultContext}>
-			<BannerService
+			{/* <BannerService
 				{...bannerProps}
 				open={bannerOpen}
 				BannerProps={{
 					onCloseClick(event) {
 						bannerProps?.onCloseClick?.(event);
 						toggleBanner();
-					},
+					}
 				}}
-			/>
+			/> */}
 			<ContactService
 				isOpen={contactOpen}
 				onCloseClick={() => {

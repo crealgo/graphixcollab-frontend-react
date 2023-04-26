@@ -123,7 +123,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 			<BackgroundImage className="Motif">
 				<BackgroundImageWrapper />
 			</BackgroundImage>
-			{hasPageHeader && (
+			{/* {hasPageHeader && (
 				<PageHeaderBlock
 					breadcrumbs={[
 						{
@@ -136,7 +136,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 					]}
 					title={pageTitle ?? 'Page Title'}
 				/>
-			)}
+			)} */}
 			<Main id="main-content">
 				{children}
 				<YelpBlock />

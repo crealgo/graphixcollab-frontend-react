@@ -1,16 +1,16 @@
 import {Message} from '@mui/icons-material';
-import {Box, type Theme, Typography, useMediaQuery} from '@mui/material';
+import {Box, Typography, useMediaQuery, type Theme} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC} from 'react';
 import {type ServiceOptions, type SharedBlockProps} from '../../types/general';
+import {colorIterator} from '../../utils/colorIterator';
 import {ActionStack} from '../base/ActionStack';
 import {Block, type BlockProps} from '../base/Block';
 import {Button} from '../base/Button';
 import {Card} from '../base/Card';
-import {HorizontalCard} from '../base/HorizontalCard';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
-import {colorIterator} from '../../utils/colorIterator';
+import {HorizontalCard} from '../base/HorizontalCard';
 
 export type ServicesPreviewBlockProps = {
 	services?: ServiceOptions[];
@@ -79,7 +79,12 @@ const Wrapper = styled('div')(
 	`
 );
 
-export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({title, subtitle, description, services}) => {
+export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
+	title,
+	subtitle,
+	description,
+	services
+}) => {
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 
 	const CardComponent = isDesktop ? Card : HorizontalCard;
@@ -95,7 +100,11 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({title, subt
 					</Container>
 					<div className="services">
 						{services?.map((service, serviceIndex) => (
-							<CardComponent className="service" {...service} key={serviceIndex} />
+							<CardComponent
+								className="service"
+								{...service}
+								key={serviceIndex}
+							/>
 						))}
 					</div>
 					<Container size="small">

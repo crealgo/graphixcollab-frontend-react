@@ -12,7 +12,7 @@ import clsx from 'clsx';
 type CardProps = {
 	title?: string;
 	subtitle?: string;
-	description?: string;
+	summary?: string;
 	ImageProps?: ImageProps;
 	actions?: ActionStackProps['actions'];
 } & ComponentPropsWithRef<'a'>;
@@ -20,7 +20,7 @@ type CardProps = {
 const CardAnchor = styled('a')`
 	cursor: pointer;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 100px 1fr;
 	gap: 1rem;
 
 	.image {
@@ -46,10 +46,11 @@ const CardAnchor = styled('a')`
 		display: grid;
 		align-content: start;
 		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr auto;
 		gap: 0.5rem;
 
-		.ActionStack {
-			margin-top: 0.5rem;
+		.ActionStack-root {
+			margin-top: 0.25rem;
 			justify-content: start;
 		}
 	}
@@ -57,21 +58,36 @@ const CardAnchor = styled('a')`
 	${colorIterator('background', '.image')}
 `;
 
-export const HorizontalCard: FC<CardProps> = ({title, subtitle, description, className, ImageProps, actions, ...props}) => {
+export const HorizontalCard: FC<CardProps> = ({
+	title,
+	subtitle,
+	summary,
+	className,
+	ImageProps,
+	actions,
+	...props
+}) => {
 	const {toggleBooking} = useAppState();
 
 	return (
-		<CardAnchor className={clsx('HorizontalCard-root', className)} {...props}>
-			<Image className='image'/>
-			<div className='content'>
-				<Typography variant='caption'>{subtitle}</Typography>
-				<Typography variant='h5'>{title}</Typography>
-				<Typography variant='caption'>{description}</Typography>
+		<CardAnchor
+			className={clsx('HorizontalCard-root', className)}
+			{...props}
+		>
+			<Image className="image" />
+			<div className="content">
+				{/* <Typography variant="caption">{subtitle}</Typography> */}
+				<Typography className="title" variant="h5">
+					{title}
+				</Typography>
+				<Typography className="summary" color="var(--color-gray-700)">
+					{summary}
+				</Typography>
 				<ActionStack actions={actions}>
 					<Button
-						color='secondary'
-						size='small'
-						endIcon={<KeyboardArrowRight/>}
+						color="text"
+						size="small"
+						endIcon={<KeyboardArrowRight />}
 						onClick={() => {
 							toggleBooking();
 						}}

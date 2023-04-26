@@ -3,35 +3,32 @@
     "id": "d8a86e0c-daaf-4ae0-9358-6cf1a9650b2d",
     "name": "Embroidery",
     "slug": "embroidery",
-    "description": "",
+    "summary": "Personalize your apparel with our high-quality embroidery.",
+    "description": "Elevate your style with our exquisite embroidery services! Personalize your garments, accessories, and more with our high-quality stitching that adds a touch of elegance and uniqueness to any item. Contact us now to add a custom touch to your wardrobe!",
     "image": {
       "src": "",
       "alt": "Some Icon"
     },
-    "tags": [
-      "promotion",
-      "branding"
-    ]
+    "tags": ["promotion", "branding"]
   },
   {
     "id": "f859b176-6f4b-45cd-bdd8-f7477aed590a",
     "name": "Direct to Garment",
     "slug": "direct-to-garment",
-    "description": "",
+    "summary": "Unlock limitless design possibilities with our DTG printing service",
+    "description": "Revolutionize your custom apparel with our cutting-edge DTG (Direct-to-Garment) printing! Say goodbye to traditional screen printing limitations and unlock limitless design possibilities with our high-quality, soft-to-the-touch prints that last. Contact us now to bring your vision to life with our premium DTG printing!",
     "image": {
       "src": "",
       "alt": "Some icon"
     },
-    "tags": [
-      "promotion",
-      "branding"
-    ]
+    "tags": ["promotion", "branding"]
   },
   {
     "id": "395cf064-694c-4cc1-8193-f678e083a12d",
-    "name": "Graphic Design",
+    "name": "Screen Printing",
     "slug": "graphic-design",
-    "description": "",
+    "summary": "Our team of designers can help you create the perfect design for your project.",
+    "description": "Make a statement with our professional screen printing services! Our expert team uses top-quality materials and techniques to create vibrant and durable custom prints for a wide range of applications, from t-shirts and apparel to promotional items and more. Contact us now to create eye-catching designs that capture attention and leave a lasting impression!",
     "image": {
       "src": "",
       "alt": ""
@@ -42,7 +39,8 @@
     "id": "cb569511-a5f6-4b99-8926-4f00ae7dee7a",
     "name": "Brand Strategy",
     "slug": "brand-strategy",
-    "description": "",
+    "summary": "Unleash the power of your brand with our strategic brand strategy services.",
+    "description": "Unlock the power of your brand with our strategic brand strategy services! Our experienced team will work closely with you to develop a comprehensive brand strategy that aligns with your business goals, resonates with your target audience, and sets you apart from the competition. Contact us now to elevate your brand's impact and drive success!",
     "image": {
       "src": "",
       "alt": ""
@@ -53,7 +51,8 @@
     "id": "eb17369b-793a-4650-8433-506b4d9e8033",
     "name": "Photography",
     "slug": "photography",
-    "description": "",
+    "summary": "Capture life's moments with our exceptional photography services.",
+    "description": "Capture life's moments with our exceptional photography services! Our skilled photographers are passionate about creating stunning visuals that tell your unique story. From breathtaking landscapes to candid moments, we have the expertise and artistic vision to capture your most precious memories. Contact us now to book your session and let us bring your vision to life through the lens!",
     "image": {
       "src": "",
       "alt": ""
@@ -64,7 +63,8 @@
     "id": "98b138e2-0cd0-43f7-83b7-6fa0618df73c",
     "name": "Vinyl Cutting",
     "slug": "vinyl-cutting",
-    "description": "",
+    "summary": "Bring your designs to life with our precise vinyl cutting services.",
+    "description": "Transform your creative ideas into reality with our precise vinyl cutting services! Our state-of-the-art equipment and skilled team can produce intricate and high-quality vinyl cuts for a wide range of applications, from custom decals and stickers to signage and branding. Contact us now to bring your designs to life with our professional vinyl cutting services!",
     "image": {
       "src": "",
       "alt": ""
@@ -75,7 +75,8 @@
     "id": "8057fd21-480f-56ae-a4c6-2457993cec94",
     "name": "T-Shirt Printing",
     "slug": "t-shirt-printing",
-    "description": "",
+    "summary": "Make a statement with our top-quality t-shirt printing services!",
+    "description": "Make a statement with our top-quality t-shirt printing services! Our expert team uses the latest printing techniques and high-quality materials to create vibrant, durable, and comfortable custom t-shirts for any occasion. From event merch to promotional giveaways, our t-shirt printing service is perfect for individuals, businesses, and organizations alike. Contact us now to create your custom t-shirts and showcase your unique style!",
     "image": {
       "src": "",
       "alt": ""
@@ -86,7 +87,8 @@
     "id": "d5fff302-974c-58c7-a426-71d3eb7f0ecf",
     "name": "Poster Printing",
     "slug": "poster-printing",
-    "description": "",
+    "summary": "Print vibrant, durable, and eye-catching posters with our state-of-the-art printing technology.",
+    "description": "Elevate your message with our professional poster printing services! Whether you're promoting an event, advertising a product, or showcasing your artwork, our high-quality posters are sure to make a lasting impression. With our state-of-the-art printing technology and premium materials, your posters will be vibrant, durable, and eye-catching. Contact us now to bring your designs to life and create impactful posters that capture attention!",
     "image": {
       "src": "",
       "alt": ""
@@ -97,35 +99,32 @@
     "id": "ab28bec9-7063-57ab-9f9b-a3761ceeed13",
     "name": "Business Cards",
     "slug": "business-cards",
-    "description": "",
+    "summary": "Make a lasting impression with our premium business card printing services!",
+    "description": "Make a lasting impression with our premium business card printing services! Our high-quality cards are custom-designed to represent your brand and leave a memorable impression on potential clients and partners. With a wide range of finishes and options, our business cards are perfect for networking, promotions, and professional use. Contact us now to create your customized business cards and elevate your brand!",
     "image": {
       "src": "",
       "alt": ""
     },
-    "tags": [
-      "promotion",
-      "small-business"
-    ]
+    "tags": ["promotion", "small-business"]
   },
   {
     "id": "ddcfc814-9823-5182-b543-9259f79278f8",
     "name": "Flyers",
     "slug": "flyers",
-    "description": "",
+    "summary": "Spread the word about your business, event or sale with our premium-quality flyers",
+    "description": "Get your message across with our eye-catching flyer printing services! Whether you're promoting an event, advertising a sale, or spreading the word about your business, our high-quality flyers are designed to capture attention and generate buzz. With customizable designs and finishes, our flyers are perfect for marketing campaigns, promotions, and more. Contact us now to create your customized flyers and make a splash with your marketing efforts!",
     "image": {
       "src": "",
       "alt": ""
     },
-    "tags": [
-      "promotion",
-      "small-business"
-    ]
+    "tags": ["promotion", "small-business"]
   },
   {
     "id": "bdec14a5-df33-5575-8d57-5aef85b1a997",
     "name": "UPS Drop-Off",
     "slug": "ups-drop-off",
-    "description": "",
+    "summary": "Conveniently drop off your packages at our hub.",
+    "description": "Conveniently drop off your packages with our UPS Drop-Off services! Our location is an authorized UPS drop-off point, making it easy for you to send and receive packages with the",
     "image": {
       "src": "",
       "alt": ""

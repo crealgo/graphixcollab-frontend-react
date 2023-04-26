@@ -13,6 +13,10 @@ export type CalloutBlockProps = {
 	actions?: Action[];
 };
 
+const CalloutContentWrapper = styled(Block)`
+	overflow: hidden;
+`;
+
 const InnerWrapper = styled('div')(
 	({theme}) => css`
 		.content {
@@ -38,7 +42,7 @@ const InnerWrapper = styled('div')(
 				height: 100%;
 				right: 0;
 				bottom: 0;
-				background: blue;
+				background: var(--color-gray-300);
 
 				img {
 					height: 100%;
@@ -57,7 +61,7 @@ export const CalloutBlock: FC<CalloutBlockProps> = ({
 	actions
 }) => (
 	<Container>
-		<Block isRounded color="secondary">
+		<CalloutContentWrapper isRounded color="secondary">
 			<InnerWrapper>
 				<div className="content">
 					<Typography
@@ -78,10 +82,8 @@ export const CalloutBlock: FC<CalloutBlockProps> = ({
 					</Typography>
 					<ActionStack size="large" actions={actions} />
 				</div>
-				<div className="image">
-					<DualPhoneDisplay />
-				</div>
+				<div className="image">{/* <DualPhoneDisplay /> */}</div>
 			</InnerWrapper>
-		</Block>
+		</CalloutContentWrapper>
 	</Container>
 );

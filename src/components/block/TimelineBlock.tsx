@@ -1,8 +1,8 @@
 import {Block} from '../base/Block';
-import {type FC} from 'react';
+import {useRef, type FC, useMemo, useState} from 'react';
 import {Button} from '../base/Button';
 import {Container} from '../base/Container';
-import defaultEvents from '../../content/timeline-screen-printing';
+import timelines from '../../content/timelines.json';
 import {Heading} from '../base/Heading';
 import {Select} from '../form/Select';
 import {MobileTimelineEvent} from '../base/MobileTimelineEvent';
@@ -31,34 +31,46 @@ const Content = styled(Container)`
 	}
 `;
 
-export const TimelineBlock: FC<TimelineBlockProps> = ({events = defaultEvents}) => {
+export const TimelineBlock: FC<TimelineBlockProps> = ({events}) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
+	const [currentTimeline, setCurrentTimeline] = useState(0);
 
-	const ResolvedEventComponent = isMobile ? MobileTimelineEvent : TimelineEvent;
+	const ResolvedEventComponent = isMobile
+		? MobileTimelineEvent
+		: TimelineEvent;
 
 	return (
-		<Block className='EventBlock-root'>
+		<Block className="EventBlock-root">
 			<Content>
-				<Heading level={2} className='mb-4'>
+				<Heading level={2} className="mb-4">
 					See how we work!
 				</Heading>
 				<Switcher>
-					<span className='mr-2 font-semibold'>Pick a process:</span>
+					<span className="mr-2 font-semibold">Pick a process:</span>
 					<Select
-						defaultValue='T-Shirt Printing'
-						options={[
-							{label: 'T-Shirt Printing', value: 'T-Shirt Printing'},
-							{label: 'Logo Design', value: 'Logo Design'},
-							{label: 'Poster Printing', value: 'Poster Printing'},
-						]}
+						defaultValue="T-Shirt Printing"
+						options={timelines.map(t => ({
+							label: t.title,
+							value: t.slug
+						}))}
+						onChange={event => {
+							const index = timelines.findIndex(
+								({slug}) => slug === event.target.value
+							);
+
+							setCurrentTimeline(index);
+						}}
 					/>
-					<Button color='secondary'>Update</Button>
 				</Switcher>
 			</Content>
 			<Timeline>
-				{events.map((eventDetails, index) => (
-					<ResolvedEventComponent key={index} stepNumber={index + 1} {...eventDetails}/>
+				{timelines[currentTimeline].steps.map((eventDetails, index) => (
+					<ResolvedEventComponent
+						key={index}
+						stepNumber={index + 1}
+						{...eventDetails}
+					/>
 				))}
 			</Timeline>
 		</Block>

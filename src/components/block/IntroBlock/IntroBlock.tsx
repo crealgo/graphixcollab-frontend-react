@@ -1,5 +1,11 @@
 import {css, styled} from '@mui/material';
-import {useState, type ComponentPropsWithoutRef, type FC} from 'react';
+import {
+	useState,
+	type ComponentPropsWithoutRef,
+	type FC,
+	useRef,
+	useMemo
+} from 'react';
 import {type Action, type SharedBlockProps} from '../../../types/general';
 import {ActionStack} from '../../base/ActionStack';
 import {Block} from '../../base/Block';
@@ -9,6 +15,8 @@ import {Text} from '../../base/Text';
 import {MultipleSlidesContainer} from './MultipleSlidesContainer';
 import {Image} from '../../base/Image';
 import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
+import {Carousel} from '../../base/Carousel';
+import {CarouselSlide} from '../../base/Carousel/CarouselSlide';
 
 export type Slide = {
 	title: string;
@@ -25,12 +33,11 @@ export type IntroBlockProps = {
 	SharedBlockProps;
 
 export const SlideBackground = styled('div')`
-	position: absolute;
+	/* position: absolute;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	height: 100%;
-	width: 100%;
+	bottom: 0; */
+	display: block;
 
 	border-radius: 0.5rem;
 
@@ -114,17 +121,31 @@ const Content = styled('div')(
 
 export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const ResolvedContainer =
-		slides.length > 1 ? MultipleSlidesContainer : Container;
+	const blockRef = useRef<HTMLDivElement>(null);
+
+	const backgroundHeight = useMemo(() => {
+		return blockRef.current?.clientHeight;
+	}, [blockRef]);
+
+	const backgroundWidth = useMemo(() => {
+		return blockRef.current?.clientWidth;
+	}, [blockRef]);
 
 	return (
-		<Container className={className}>
-			<IntroBlockWrapper isRounded>
-				<SlideBackground />
-				<SlideBackground />
-				<SlideBackground />
-				<SlideBackground />
-				<SlideBackground />
+		<Container className="IntroBlock-root">
+			<Carousel>
+				{slides?.map(({description}, index) => (
+					<CarouselSlide key={index}>
+						<SlideBackground
+							sx={{
+								height: backgroundHeight,
+								width: backgroundWidth
+							}}
+						/>
+					</CarouselSlide>
+				))}
+			</Carousel>
+			<IntroBlockWrapper ref={blockRef} isRounded>
 				<Content>
 					<div className="content">
 						<Heading level={1}>

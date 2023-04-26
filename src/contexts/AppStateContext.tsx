@@ -14,4 +14,6 @@ export type AppStateContextOptions = {
 	toggleBooking: (state?: boolean) => void;
 };
 
-export const AppStateContext = createContext<AppStateContextOptions | undefined>(undefined);
+export const AppStateContext = createContext<
+	AppStateContextOptions | undefined
+>(undefined);

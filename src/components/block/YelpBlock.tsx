@@ -2,18 +2,18 @@ import {css} from '@emotion/react';
 import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
 import {styled} from '@mui/material';
 import {type FC} from 'react';
-import reviews, {
-	sampleReview,
-	type YelpReview
-} from '../../content/yelp-reviews';
+import reviews from '../../content/yelp-reviews.json';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Testimonial} from '../base/Testimonial';
+import {Carousel, CarouselSlide} from '../base/Carousel';
+import {Parallax, ParallaxProvider} from 'react-scroll-parallax';
+import {chance} from '../../utils/chance';
 
 export type YelpBlockProps = {
-	quote?: YelpReview;
+	quote?: (typeof reviews)[number];
 };
 
 const Content = styled('div')`
@@ -95,27 +95,31 @@ const ReviewAvatar = styled('div')`
 	)}
 `;
 
-export const YelpBlock: FC<YelpBlockProps> = ({
-	quote = {
-		user: sampleReview.user,
-		comment: sampleReview.comment,
-		rating: sampleReview.rating
-	}
-}) => (
+const StyledCarousel = styled(Carousel)`
+	max-width: 35rem;
+`;
+
+const StyledCarouselSlide = styled(CarouselSlide)`
+	padding: 1rem;
+`;
+
+export const YelpBlock: FC<YelpBlockProps> = () => (
 	<Container>
 		<ContentWrapper isRounded color="grey">
 			<ReviewAvatars>
 				{Array.from({length: avatarCount}, (_, i) => {
 					const {user} = reviews[i % reviews.length];
-
+					const randomSpeed = chance.d10();
 					return (
-						<ReviewAvatar key={i}>
-							<img
-								src={user.src}
-								srcSet={user.srcSet ?? ''}
-								alt={user.altText}
-							/>
-						</ReviewAvatar>
+						<Parallax key={i} speed={-randomSpeed}>
+							<ReviewAvatar>
+								<img
+									src={user.src}
+									srcSet={user.srcSet ?? ''}
+									alt={user.altText}
+								/>
+							</ReviewAvatar>
+						</Parallax>
 					);
 				})}
 			</ReviewAvatars>
@@ -125,7 +129,13 @@ export const YelpBlock: FC<YelpBlockProps> = ({
 					<mark>148</mark>
 					{' happy customers!'}
 				</Heading>
-				<Testimonial {...quote} />
+				<StyledCarousel>
+					{reviews.slice(0, 10).map(quote => (
+						<StyledCarouselSlide key={quote.id}>
+							<Testimonial {...quote} />
+						</StyledCarouselSlide>
+					))}
+				</StyledCarousel>
 			</Content>
 			<ActionStack
 				actions={[

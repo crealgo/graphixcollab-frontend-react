@@ -6,12 +6,8 @@ import {IntroBlock} from '../components/block/IntroBlock/IntroBlock';
 import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
-import {
-	chance,
-	generateActions,
-	generateGalleryBlock,
-	generateServicesBlock
-} from '../utils/chance';
+import {chance, generateActions, generateServicesBlock} from '../utils/chance';
+import galleryImages from '../content/galleryImages.json';
 
 const HomePage: NextPage<PageProps> = props => (
 	<DefaultLayout>
@@ -73,7 +69,25 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			actions: generateActions()
 		},
 		ServicesPreviewBlockProps: generateServicesBlock(),
-		GalleryBlockProps: generateGalleryBlock()
+		GalleryBlockProps: {
+			title: "See what we're up to",
+			description:
+				"With years of experience in the industry, we have the expertise and equipment necessary to produce stunning prints on a wide range of materials, including fabric, paper, metal, glass, and plastic. Follow us for an inside scoop of what's going on behind the scenes.",
+			SocialMediaBlockProps: {
+				text: '@fashiongreekusc',
+				url: chance.url(),
+				actions: [
+					{
+						label: 'Follow'
+					},
+					{
+						label: 'Share'
+					}
+				]
+			},
+			images: [...galleryImages],
+			actions: generateActions()
+		}
 	}
 });
 

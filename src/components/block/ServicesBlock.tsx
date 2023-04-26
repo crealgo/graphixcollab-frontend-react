@@ -8,10 +8,13 @@ import {Block, type BlockProps} from '../base/Block';
 import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
+import type services from '../../content/services.json';
 import {HorizontalCard} from '../base/HorizontalCard';
 
+type Service = (typeof services)[number];
+
 export type ServicesBlockProps = {
-	services?: ServiceOptions[];
+	services?: Service[];
 	BlockProps?: BlockProps;
 } & SharedBlockProps;
 
@@ -26,7 +29,7 @@ export const Content = styled('div')(
 		.Heading-root {
 			margin-bottom: 0.5rem;
 		}
-	`,
+	`
 );
 
 const Wrapper = styled('div')(
@@ -49,44 +52,55 @@ const Wrapper = styled('div')(
 		.services {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 1rem;
+			column-gap: 1rem;
+			row-gap: 1rem;
 		}
 
 		${theme.breakpoints.up('sm')} {
 			.services {
-				row-gap: 3rem;
+				column-gap: 3rem;
+				row-gap: 4rem;
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
-		${theme.breakpoints.up('md')} {
+		${theme.breakpoints.up('lg')} {
 			.services {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
-	`,
+	`
 );
 
-export const ServicesBlock: FC<ServicesBlockProps> = ({title, subtitle, description, services}) => (
+export const ServicesBlock: FC<ServicesBlockProps> = ({
+	title,
+	subtitle,
+	description,
+	services
+}) => (
 	<Block>
 		<Container>
 			<Wrapper>
-				<Container className='container' size='small'>
-					<Typography variant='overline'>{subtitle}</Typography>
+				<Container className="container" size="small">
+					<Typography variant="overline">{subtitle}</Typography>
 					<Heading level={1}>{title}</Heading>
-					<Typography variant='body2'>{description}</Typography>
+					<Typography variant="body2">{description}</Typography>
 				</Container>
-				<div className='services'>
+				<div className="services">
 					{services?.map((service, serviceIndex) => (
-						<HorizontalCard {...service} key={serviceIndex}/>
+						<HorizontalCard
+							key={serviceIndex}
+							title={service.name}
+							summary={service.summary}
+						/>
 					))}
 				</div>
-				<Container size='small'>
-					<ActionStack align='center' color='secondary'>
+				<Container size="small">
+					<ActionStack align="center" color="secondary">
 						<Box mr={-1} zIndex={1}>
 							Looking for something else?
 						</Box>
-						<Button color='text' endIcon={<Message/>}>
+						<Button color="text" endIcon={<Message />}>
 							Contact Us
 						</Button>
 					</ActionStack>

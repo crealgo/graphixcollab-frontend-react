@@ -1,8 +1,8 @@
 import {Warning} from '@mui/icons-material';
-import {Typography} from '@mui/material';
+import {type Theme, Typography, useMediaQuery} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {type FC} from 'react';
 import Marquee from 'react-fast-marquee';
 import {type Action} from '../../types/general';
 import {Block} from '../base/Block';
@@ -18,10 +18,13 @@ export type GalleryBlockProps = {
 	SocialMediaBlockProps?: SocialMediaBlockProps;
 	images?: ImageProps[];
 	actions?: Action[];
-} & ComponentPropsWithoutRef<'div'>;
+	className?: string;
+};
 
 const Wrapper = styled(Block)(
 	({theme}) => css`
+		/* padding-inline: 0rem; */
+
 		.Container-root {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -36,50 +39,76 @@ const Wrapper = styled(Block)(
 		}
 
 		.gallery {
-			width: 100%;
 			overflow: hidden;
 			margin-top: 2.5rem;
+			margin-inline: -1.5rem;
+			display: grid;
+			gap: 0.5rem;
 
 			.GalleryBlock-image {
 				margin-inline: 0.25rem;
+				width: 10rem;
+			}
+			${theme.breakpoints.up('md')} {
+				margin-inline: 0;
 
-				${theme.breakpoints.up('md')} {
-					width: 300px;
+				.GalleryBlock-image {
+					width: 13rem;
 				}
 			}
 		}
 	`
 );
 
-export const GalleryBlock: FC<GalleryBlockProps> = ({className, ...props}) => (
-	<Wrapper className={clsx(className, 'GalleryBlock-root')}>
-		<Container>
-			<div className="content">
-				<Heading level={2}>{props.title}</Heading>
-				<Container size="small">
-					<Typography variant="body2">{props.description}</Typography>
-				</Container>
-				<SocialMediaBlock {...props.SocialMediaBlockProps} />
-			</div>
-			<div className="gallery">
-				{props.images?.length ? (
-					<Marquee pauseOnHover>
-						{props.images.map((imageProps, imageIndex) => (
-							<Image
-								key={imageIndex}
-								className="GalleryBlock-image"
-								{...imageProps}
-							/>
-						))}
-					</Marquee>
-				) : (
-					<StatusMessage
-						isContained
-						IconComponent={Warning}
-						text="No Images Available"
-					/>
-				)}
-			</div>
-		</Container>
-	</Wrapper>
-);
+export const GalleryBlock: FC<GalleryBlockProps> = ({
+	className,
+	title,
+	description,
+	SocialMediaBlockProps,
+	images = []
+}) => {
+	const count = 7;
+
+	const firstStack = images.slice(0, count);
+	const secondStack = images.slice(count, count * 2);
+
+	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
+
+	return (
+		<Wrapper className={clsx(className, 'GalleryBlock-root')}>
+			<Container className="GalleryBlock-container">
+				<div className="content">
+					<Heading level={2}>{title}</Heading>
+					<Container size="small">
+						<Typography variant="body2">{description}</Typography>
+					</Container>
+					<SocialMediaBlock {...SocialMediaBlockProps} />
+				</div>
+				<div className="gallery">
+					{firstStack?.length && (
+						<Marquee gradient={isDesktop}>
+							{firstStack.map((imageProps, imageIndex) => (
+								<Image
+									key={imageIndex}
+									className="GalleryBlock-image"
+									{...imageProps}
+								/>
+							))}
+						</Marquee>
+					)}
+					{secondStack?.length && (
+						<Marquee gradient={isDesktop} direction="right">
+							{secondStack.map((imageProps, imageIndex) => (
+								<Image
+									key={imageIndex}
+									className="GalleryBlock-image"
+									{...imageProps}
+								/>
+							))}
+						</Marquee>
+					)}
+				</div>
+			</Container>
+		</Wrapper>
+	);
+};
