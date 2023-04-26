@@ -1,7 +1,8 @@
 const sharedEsRules = {
 	'object-shorthand': 'off',
 	'capitalized-comments': 'off',
-	'guard-for-in': 'off'
+	'guard-for-in': 'off',
+	'implicit-arrow-linebreak': 'off'
 };
 
 const sharedTsRules = Object.entries(sharedEsRules).reduce(

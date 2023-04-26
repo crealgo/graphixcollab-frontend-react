@@ -71,7 +71,11 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({
 	actions
 }) => (
 	<Container>
-		<StyledBlock rounded color="grey" className="InteractiveEstimator-root">
+		<StyledBlock
+			isRounded
+			color="grey"
+			className="InteractiveEstimator-root"
+		>
 			<ContentGrid>
 				<Heading level={4}>Get an estimate!</Heading>
 				<Heading level={2}>

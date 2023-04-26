@@ -47,27 +47,39 @@ const InnerWrapper = styled('div')(
 				}
 			}
 		}
-	`,
+	`
 );
 
-export const CalloutBlock: FC<CalloutBlockProps> = ({title, description, meta, actions}) => (
+export const CalloutBlock: FC<CalloutBlockProps> = ({
+	title,
+	description,
+	meta,
+	actions
+}) => (
 	<Container>
-		<Block rounded color='secondary'>
+		<Block isRounded color="secondary">
 			<InnerWrapper>
-				<div className='content'>
-					<Typography variant='overline' className='CalloutBlock-title'>
+				<div className="content">
+					<Typography
+						variant="overline"
+						className="CalloutBlock-title"
+					>
 						{meta}
 					</Typography>
-					<Typography variant='h2' className='CalloutBlock-title'>
+					<Typography variant="h2" className="CalloutBlock-title">
 						{title}
 					</Typography>
-					<Typography variant='body2' className='CalloutBlock-description' sx={{mb: 2}}>
+					<Typography
+						variant="body2"
+						className="CalloutBlock-description"
+						sx={{mb: 2}}
+					>
 						{description}
 					</Typography>
-					<ActionStack size='large' actions={actions}/>
+					<ActionStack size="large" actions={actions} />
 				</div>
-				<div className='image'>
-					<DualPhoneDisplay/>
+				<div className="image">
+					<DualPhoneDisplay />
 				</div>
 			</InnerWrapper>
 		</Block>

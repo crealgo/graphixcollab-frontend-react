@@ -1,24 +1,16 @@
 import {css, styled} from '@mui/material';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {_e} from '../../utils/excludePropsFromForwarding';
 import clsx from 'clsx';
-
-type BaseElementProps = ComponentPropsWithoutRef<'div'>;
+import {type ComponentPropsWithRef, type FC} from 'react';
+import {_e} from '../../utils/excludePropsFromForwarding';
 
 export type BlockProps = {
 	color?: 'primary' | 'secondary' | 'grey';
-	rounded?: boolean;
-};
+	isRounded?: boolean;
+} & ComponentPropsWithRef<'div'>;
 
-const BaseElement: FC<BaseElementProps> = ({className, ...props}) => (
-	<div {...props} className={clsx('Block-root', className)}>
-		{props.children}
-	</div>
-);
-
-export const Block = styled(
-	BaseElement,
-	_e('rounded', 'color')
+const StyledDiv = styled(
+	'div',
+	_e('isRounded', 'color')
 )<BlockProps>(props => {
 	const blockColor = {
 		default: 'transparent',
@@ -38,7 +30,7 @@ export const Block = styled(
 			padding-block: 7rem;
 			padding-inline: 2rem;
 
-			border-radius: ${props.rounded ? '0.5rem' : '0rem'};
+			border-radius: ${props.isRounded ? '0.5rem' : '0rem'};
 		}
 
 		${props.theme.breakpoints.up('xl')} {
@@ -46,3 +38,9 @@ export const Block = styled(
 		}
 	`;
 });
+
+export const Block: FC<BlockProps> = ({className, children, ...props}) => (
+	<StyledDiv {...props} className={clsx('Block-root', className)}>
+		{children}
+	</StyledDiv>
+);

@@ -1,6 +1,10 @@
-import {css, styled} from '@mui/material';
+import {styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type SharedBlockProps, type SimpleLink} from '../../types/general';
+import {
+	type Action,
+	type SharedBlockProps,
+	type SimpleLink
+} from '../../types/general';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {ContentGrid} from '../base/ContentGrid';
@@ -16,28 +20,34 @@ export type FaqOptions = {
 
 export type FaqBlockProps = {
 	faqs: FaqOptions[];
-} & SharedBlockProps & ComponentPropsWithoutRef<'div'>;
+} & SharedBlockProps &
+	ComponentPropsWithoutRef<'div'>;
 
-const StyledBlockHeaderWrapper = styled('div')(
-	({theme}) => css`
-		margin-bottom: 2rem;
-		justify-content: center;
-		text-align: center;
-	`,
-);
+const StyledBlockHeaderWrapper = styled('div')`
+	margin-bottom: 2rem;
+	justify-content: center;
+	text-align: center;
+`;
 
-export const FaqBlock: FC<FaqBlockProps> = ({title, subtitle, description, actions, faqs, children}) => (
+export const FaqBlock: FC<FaqBlockProps> = ({
+	title,
+	subtitle,
+	description,
+	actions,
+	faqs,
+	children
+}) => (
 	<Container>
-		<Block rounded color='grey'>
+		<Block isRounded color="grey">
 			<ContentGrid>
-				<Container size='small'>
+				<Container size="small">
 					<StyledBlockHeaderWrapper>
 						<Heading level={2}>{title}</Heading>
 					</StyledBlockHeaderWrapper>
 				</Container>
-				<Container size='small'>
+				<Container size="small">
 					{faqs?.map((faq, faqIndex) => (
-						<FaqAccordion key={faqIndex} {...faq}/>
+						<FaqAccordion key={faqIndex} {...faq} />
 					))}
 				</Container>
 			</ContentGrid>

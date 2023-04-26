@@ -9,7 +9,7 @@ export type PlaceholderBlockProps = {
 
 export const PlaceholderBlock: FC<PlaceholderBlockProps> = ({name}) => (
 	<Container>
-		<Block rounded color='grey'>
+		<Block isRounded color='grey'>
 			<Typography variant='h2' textAlign='center'>
 				{name && `${name} Placeholder`}
 			</Typography>

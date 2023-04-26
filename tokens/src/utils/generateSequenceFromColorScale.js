@@ -13,9 +13,13 @@ modifier: variant-state-scale-mode
  * @param {Record<string, string>} colorScale
  * @returns
  */
-const generateSequenceFromColorScale = colorScale => Object.entries(colorScale).reduce((aggregate, [colorScale, colorValue]) => ({
-	...aggregate,
-	[colorScale]: f(colorValue),
-}), {});
+const generateSequenceFromColorScale = colorScale =>
+	Object.entries(colorScale).reduce(
+		(aggregate, [colorScale, colorValue]) => ({
+			...aggregate,
+			[colorScale]: f(colorValue)
+		}),
+		{}
+	);
 
 module.exports = generateSequenceFromColorScale;

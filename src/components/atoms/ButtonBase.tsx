@@ -1,9 +1,9 @@
-import {type Size} from '../../types/general';
-import {css, styled} from '@mui/material';
+import {styled} from '@mui/material';
 import MuiButtonBase from '@mui/material/ButtonBase';
-import {_e} from '../../utils/excludePropsFromForwarding';
-import {type FC, type ComponentPropsWithoutRef, type ReactElement} from 'react';
+import {type ComponentPropsWithoutRef, type FC, type ReactElement} from 'react';
 import {type ColorVariants} from '../../types/color';
+import {type Size} from '../../types/general';
+import {_e} from '../../utils/excludePropsFromForwarding';
 
 export type ButtonBaseSizes = Size;
 
@@ -17,9 +17,9 @@ export type ButtonBaseProps = {
 
 const StyledButton = styled(
 	MuiButtonBase,
-	_e('endIcon', 'startIcon', 'size'),
+	_e('endIcon', 'startIcon', 'size')
 )<ButtonBaseProps>(
-	({size = 'medium'}) => css`
+	({size = 'medium'}) => /* scss */ `
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -29,7 +29,7 @@ const StyledButton = styled(
 		white-space: nowrap;
 
 		border-radius: 0.25rem;
-	`,
+	`
 );
 
 type ButtonIconProps = {
@@ -39,9 +39,9 @@ type ButtonIconProps = {
 
 const ButtonIcon = styled(
 	'span',
-	_e('end', 'start'),
+	_e('end', 'start')
 )<ButtonIconProps>(
-	({start, end}) => `
+	({start, end}) => /* scss */ `
 	svg {
 		height: 0.875em;
 		width: 0.875em;
@@ -50,13 +50,19 @@ const ButtonIcon = styled(
 	display: inline-flex;
 	${start ? 'margin-left: -0.25rem;' : ''}
 	${end ? 'margin-right: -0.25rem;' : ''}
-`,
+`
 );
 
-export const ButtonBase: FC<ButtonBaseProps> = ({children, startIcon, endIcon, onClick, ...props}) => (
+export const ButtonBase: FC<ButtonBaseProps> = ({
+	children,
+	startIcon,
+	endIcon,
+	onClick,
+	...props
+}) => (
 	<StyledButton
 		{...props}
-		role='button'
+		role="button"
 		onClick={event => {
 			if (onClick) {
 				event.preventDefault();
@@ -65,13 +71,13 @@ export const ButtonBase: FC<ButtonBaseProps> = ({children, startIcon, endIcon, o
 		}}
 	>
 		{startIcon && (
-			<ButtonIcon start className='Button-icon Button-startIcon'>
+			<ButtonIcon start className="Button-icon Button-startIcon">
 				{startIcon}
 			</ButtonIcon>
 		)}
 		{children}
 		{endIcon && (
-			<ButtonIcon end className='Button-icon Button-endIcon'>
+			<ButtonIcon end className="Button-icon Button-endIcon">
 				{endIcon}
 			</ButtonIcon>
 		)}

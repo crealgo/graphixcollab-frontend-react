@@ -15,13 +15,20 @@ const HeadingText = styled('span')`
 
 export type HeadingProps = BaseComponentsProps<{
 	level?: HeadingLevel;
+	contrast?: boolean;
 }>;
 
-export const Heading: FC<HeadingProps> = ({children, className, level = 5}) => (
+export const Heading: FC<HeadingProps> = ({
+	children,
+	contrast,
+	className,
+	level = 5
+}) => (
 	<Typography
 		className={clsx(className, 'Heading-root', `Heading-h${level}`)}
 		variant={level && `h${level}`}
 		component={level ? `h${level}` : 'span'}
+		color={contrast ? 'white' : undefined}
 	>
 		<HeadingText>{children}</HeadingText>
 	</Typography>

@@ -32,6 +32,7 @@ const StyledAnchor = styled('a')`
 	padding-inline: var(--input-spacing-padding-inline-${size});
 	line-height: var(--input-height-${size});
 	height: var(--input-height-${size});
+	white-space: nowrap;
 
 	& svg {
 		height: var(--input-group-action-size-${size});
