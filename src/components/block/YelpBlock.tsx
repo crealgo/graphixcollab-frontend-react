@@ -1,7 +1,7 @@
 import {css} from '@emotion/react';
 import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
 import {styled} from '@mui/material';
-import {type FC} from 'react';
+import {useRef, type FC} from 'react';
 import reviews from '../../content/yelp-reviews.json';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
@@ -103,58 +103,61 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 	padding: 1rem;
 `;
 
-export const YelpBlock: FC<YelpBlockProps> = () => (
-	<Container>
-		<ContentWrapper isRounded color="grey">
-			<ReviewAvatars>
-				{Array.from({length: avatarCount}, (_, i) => {
-					const {user} = reviews[i % reviews.length];
-					const randomSpeed = chance.d10();
-					return (
-						<Parallax key={i} speed={-randomSpeed}>
-							<ReviewAvatar>
+export const YelpBlock: FC<YelpBlockProps> = () => {
+	const ref = useRef<HTMLDivElement>(null);
+
+	// TODO: parallax
+
+	return (
+		<Container ref={ref}>
+			<ContentWrapper isRounded color="grey">
+				<ReviewAvatars>
+					{Array.from({length: avatarCount}, (_, i) => {
+						const {user} = reviews[i % reviews.length];
+						return (
+							<ReviewAvatar key={i}>
 								<img
 									src={user.src}
 									srcSet={user.srcSet ?? ''}
 									alt={user.altText}
 								/>
 							</ReviewAvatar>
-						</Parallax>
-					);
-				})}
-			</ReviewAvatars>
-			<Content>
-				<Heading level={2}>
-					{"We've helped "}
-					<mark>148</mark>
-					{' happy customers!'}
-				</Heading>
-				<StyledCarousel>
-					{reviews.slice(0, 10).map(quote => (
-						<StyledCarouselSlide key={quote.id}>
-							<Testimonial {...quote} />
-						</StyledCarouselSlide>
-					))}
-				</StyledCarousel>
-			</Content>
-			<ActionStack
-				actions={[
-					{
-						label: 'Read more reviews',
-						href: 'https://www.yelp.com/biz/fashion-greek-usc-los-angeles',
-						size: 'large',
-						color: 'secondary',
-						endIcon: <SearchOutlined />
-					},
-					{
-						label: 'Leave a review',
-						href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
-						size: 'large',
-						color: 'text',
-						endIcon: <MessageOutlined />
-					}
-				]}
-			/>
-		</ContentWrapper>
-	</Container>
-);
+						);
+					})}
+				</ReviewAvatars>
+				<Content>
+					<Heading level={2}>
+						{"We've helped "}
+						<mark>148</mark>
+						{' happy customers!'}
+					</Heading>
+					<StyledCarousel>
+						{reviews.slice(0, 10).map(quote => (
+							<StyledCarouselSlide key={quote.id}>
+								<Testimonial {...quote} />
+							</StyledCarouselSlide>
+						))}
+					</StyledCarousel>
+				</Content>
+				<ActionStack
+					actions={[
+						{
+							label: 'Read more reviews',
+							href: 'https://www.yelp.com/biz/fashion-greek-usc-los-angeles',
+							size: 'large',
+							color: 'secondary',
+							endIcon: <SearchOutlined />
+						},
+						{
+							label: 'Leave a review',
+							href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
+							size: 'large',
+							color: 'text',
+							endIcon: <MessageOutlined />
+						}
+					]}
+				/>
+			</ContentWrapper>
+		</Container>
+	);
+};

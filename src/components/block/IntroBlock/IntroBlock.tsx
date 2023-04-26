@@ -56,8 +56,23 @@ export const SlideBackground = styled('div')`
 	}
 `;
 
-const IntroBlockWrapper = styled(Block)`
-	&::before {
+const StyledCarousel = styled(Carousel)`
+	overflow: visible;
+`;
+
+const StyledCarouselSlide = styled(CarouselSlide)`
+	padding: 0 2rem;
+
+	&:nth-of-type(1n) .Block-root {
+		background-color: var(--color-sequence-0-light);
+	}
+
+	&:nth-of-type(2n) .Block-root {
+		background-color: var(--color-sequence-1-light);
+	}
+
+	&:nth-of-type(3n) .Block-root {
+		background-color: var(--color-sequence-2-light);
 	}
 `;
 
@@ -123,72 +138,67 @@ export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const blockRef = useRef<HTMLDivElement>(null);
 
-	const backgroundHeight = useMemo(() => {
-		return blockRef.current?.clientHeight;
-	}, [blockRef]);
-
-	const backgroundWidth = useMemo(() => {
-		return blockRef.current?.clientWidth;
-	}, [blockRef]);
-
 	return (
 		<Container className="IntroBlock-root">
-			<Carousel>
+			<StyledCarousel>
 				{slides?.map(({description}, index) => (
-					<CarouselSlide key={index}>
-						<SlideBackground
-							sx={{
-								height: backgroundHeight,
-								width: backgroundWidth
-							}}
-						/>
-					</CarouselSlide>
+					<StyledCarouselSlide key={index}>
+						<Block ref={blockRef} isRounded>
+							<Content>
+								<div className="content">
+									<Heading level={1}>
+										{slides[currentIndex].title}
+									</Heading>
+									<Text>
+										{slides[currentIndex].description}
+									</Text>{' '}
+									<ActionStack
+										size="large"
+										actions={slides[currentIndex].actions}
+									/>
+									<div>
+										<button
+											type="button"
+											onClick={() => {
+												if (currentIndex > 0) {
+													setCurrentIndex(
+														currentIndex - 1
+													);
+												}
+											}}
+										>
+											Previous
+										</button>
+										<button
+											type="button"
+											onClick={() => {
+												if (
+													currentIndex <
+													slides.length - 1
+												) {
+													setCurrentIndex(
+														currentIndex + 1
+													);
+												}
+											}}
+										>
+											Next
+										</button>
+									</div>
+								</div>
+							</Content>
+							<div className="image">
+								<Image
+									src={
+										slides[currentIndex].image ??
+										(IntroImage.src as string)
+									}
+								/>
+							</div>
+						</Block>
+					</StyledCarouselSlide>
 				))}
-			</Carousel>
-			<IntroBlockWrapper ref={blockRef} isRounded>
-				<Content>
-					<div className="content">
-						<Heading level={1}>
-							{slides[currentIndex].title}
-						</Heading>
-						<Text>{slides[currentIndex].description}</Text>{' '}
-						<ActionStack
-							size="large"
-							actions={slides[currentIndex].actions}
-						/>
-						<div>
-							<button
-								type="button"
-								onClick={() => {
-									if (currentIndex > 0) {
-										setCurrentIndex(currentIndex - 1);
-									}
-								}}
-							>
-								Previous
-							</button>
-							<button
-								type="button"
-								onClick={() => {
-									if (currentIndex < slides.length - 1) {
-										setCurrentIndex(currentIndex + 1);
-									}
-								}}
-							>
-								Next
-							</button>
-						</div>
-					</div>
-				</Content>
-				<div className="image">
-					<Image
-						src={
-							slides[currentIndex].image ??
-							(IntroImage.src as string)
-						}
-					/>
-				</div>
-			</IntroBlockWrapper>
+			</StyledCarousel>
 		</Container>
 	);
 };
