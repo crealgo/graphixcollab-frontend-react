@@ -1,19 +1,12 @@
-import {Slide as SlideAnimation, css, styled} from '@mui/material';
-import {
-	useState,
-	type ComponentPropsWithoutRef,
-	type FC,
-	type ReactElement,
-	type RefObject
-} from 'react';
-import {TransitionGroup} from 'react-transition-group';
-import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
+import {css, styled} from '@mui/material';
+import {useState, type ComponentPropsWithoutRef, type FC} from 'react';
 import {type Action, type SharedBlockProps} from '../../../types/general';
 import {ActionStack} from '../../base/ActionStack';
 import {Block} from '../../base/Block';
 import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
+import {MultipleSlidesContainer} from './MultipleSlidesContainer';
 
 export type Slide = {
 	title: string;
@@ -23,15 +16,36 @@ export type Slide = {
 };
 
 export type IntroBlockProps = {
-	color?: 'primary' | 'secondary' | 'grey' | 'none';
+	// color?: 'primary' | 'secondary' | 'grey' | 'none';
 	slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> &
 	SharedBlockProps;
 
-const IntroBlockWrapper = styled(Block)`
-	background-color: var(--color-sequence-0);
+export const SlideBackground = styled('div')`
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+
 	border-radius: 0.5rem;
+
+	&:nth-of-type(1n) {
+		background-color: var(--color-sequence-0-light);
+	}
+
+	&:nth-of-type(2n) {
+		background-color: var(--color-sequence-1-light);
+		transform: translateX(calc(-100% - 1rem));
+	}
+
+	&:nth-of-type(3n) {
+		background-color: var(--color-sequence-2-light);
+		transform: translateX(calc(100% + 1rem));
+	}
 `;
 
 const Content = styled('div')(
@@ -44,17 +58,26 @@ const Content = styled('div')(
 			grid-template-columns: 1fr;
 			gap: 1rem;
 			align-content: center;
+			justify-items: center;
 			border-radius: 0.5rem;
+			text-align: center;
 
-			color: white !important;
+			.Text-root {
+				max-width: ${theme.breakpoints.values.sm}px;
+			}
 		}
 
 		+ .image {
 			display: none;
 		}
 
-		${theme.breakpoints.up('md')} {
+		${theme.breakpoints.up('lg')} {
 			grid-template-columns: repeat(2, 1fr);
+
+			.content {
+				justify-items: start;
+				text-align: left;
+			}
 
 			+ .image {
 				margin: unset;
@@ -82,75 +105,54 @@ const Content = styled('div')(
 	`
 );
 
-type SlideContainerProps = {
-	key: number;
-	nodeRef: RefObject<HTMLDivElement>;
-	children: ReactElement;
-};
-
-const SlideContainer: FC<SlideContainerProps> = ({key, nodeRef, children}) => (
-	<TransitionGroup mode="in-out">
-		<SlideAnimation key={key} container={nodeRef.current} direction="up">
-			{children}
-		</SlideAnimation>
-	</TransitionGroup>
-);
-
-export const IntroBlock: FC<IntroBlockProps> = ({
-	className,
-	slides = [],
-	color
-}) => {
+export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const ResolvedContainer =
+		slides.length > 1 ? MultipleSlidesContainer : Container;
 
 	return (
-		<Container>
-			<IntroBlockWrapper className={className}>
-				<Content>
-					<div className="content">
-						<Heading level={1}>
-							{slides[currentIndex].title}
-						</Heading>
-						<Text>{slides[currentIndex].description}</Text>{' '}
-						<ActionStack
-							size="large"
-							actions={slides[currentIndex].actions}
-						/>
-						<div>
-							<button
-								type="button"
-								onClick={() => {
-									if (currentIndex > 0) {
-										setCurrentIndex(currentIndex - 1);
-									}
-								}}
-							>
-								Previous
-							</button>
-							<button
-								type="button"
-								onClick={() => {
-									if (currentIndex < slides.length - 1) {
-										setCurrentIndex(currentIndex + 1);
-									}
-								}}
-							>
-								Next
-							</button>
-						</div>
-					</div>
-				</Content>
-				<figure className="image">
-					<img
-						className="Image-root"
-						src={
-							slides[currentIndex].image ??
-							(IntroImage.src as string)
-						}
-						alt="thing"
+		<ResolvedContainer className={className} slides={slides}>
+			<Content>
+				<div className="content">
+					<Heading level={1}>{slides[currentIndex].title}</Heading>
+					<Text>{slides[currentIndex].description}</Text>{' '}
+					<ActionStack
+						size="large"
+						actions={slides[currentIndex].actions}
 					/>
-				</figure>
-			</IntroBlockWrapper>
-		</Container>
+					<div>
+						<button
+							type="button"
+							onClick={() => {
+								if (currentIndex > 0) {
+									setCurrentIndex(currentIndex - 1);
+								}
+							}}
+						>
+							Previous
+						</button>
+						<button
+							type="button"
+							onClick={() => {
+								if (currentIndex < slides.length - 1) {
+									setCurrentIndex(currentIndex + 1);
+								}
+							}}
+						>
+							Next
+						</button>
+					</div>
+				</div>
+			</Content>
+			{/* <figure className="image">
+				<img
+					className="Image-root"
+					src={
+						slides[currentIndex].image ?? (IntroImage.src as string)
+					}
+					alt="thing"
+				/>
+			</figure> */}
+		</ResolvedContainer>
 	);
 };
