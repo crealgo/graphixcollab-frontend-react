@@ -6,34 +6,29 @@ import Head from 'next/head';
 
 const values = [
 	{
-		name: 'Be world-class',
+		name: 'Collaborative Approach',
 		description:
-			'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.'
+			'We believe in working closely with our clients as partners, involving them in the design process to ensure that the end result meets their expectations.'
 	},
 	{
-		name: 'Share everything you know',
+		name: 'Creative Excellence',
 		description:
-			'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.'
+			'Our team of skilled designers are passionate about their craft and strive for excellence in every project, creating visually appealing designs that stand out in the market.'
 	},
 	{
-		name: 'Always learning',
+		name: 'Strategic Thinking',
 		description:
-			'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.'
+			"We take a strategic approach to design, ensuring that our solutions are aligned with your brand's objectives, target audience, and market positioning."
 	},
 	{
-		name: 'Be supportive',
+		name: 'Timely Delivery',
 		description:
-			'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.'
+			'We understand the importance of meeting deadlines, and our team works diligently to deliver high-quality designs within the agreed-upon timeframe.'
 	},
 	{
-		name: 'Take responsibility',
+		name: 'Exceptional Customer Service',
 		description:
-			'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.'
-	},
-	{
-		name: 'Enjoy downtime',
-		description:
-			'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.'
+			'We pride ourselves on providing outstanding customer service, keeping our clients informed, and providing prompt responses to their inquiries throughout the design process.'
 	}
 ];
 
@@ -49,7 +44,7 @@ export const Example = () => {
 			</Head>
 			<div className="relative isolate -z-10">
 				<div className="overflow-hidden">
-					<div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
+					<div className="mx-auto max-w-7xl px-6">
 						<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 							<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
 								<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -57,15 +52,19 @@ export const Example = () => {
 								</h1>
 								<div className="mt-6 lg:w-full lg:max-w-2xl lg:flex-auto">
 									<p className="text-xl leading-8 text-gray-600">
-										Aliquet nec orci mattis amet quisque
-										ullamcorper neque, nibh sem. At arcu,
-										sit dui mi, nibh dui, diam eget aliquam.
-										Quisque id at vitae feugiat egestas ac.
-										Diam nulla orci at in viverra
-										scelerisque eget. Eleifend egestas
-										fringilla sapien.
+										Fashion Greek, USC was founded with a
+										vision to provide top-quality printing
+										solutions to businesses of all sizes.
+										Since then, we have grown into a leading
+										printing company, serving clients across
+										various industries and sectors. We have
+										invested in the latest printing
+										technology, expanded our range of
+										services, and built a team of
+										experienced professionals who share our
+										passion for printing.
 									</p>
-									<div className="mt-6 max-w-xl text-base leading-7 text-gray-700">
+									{/* <div className="mt-6 max-w-xl text-base leading-7 text-gray-700">
 										<p>
 											Faucibus commodo massa rhoncus,
 											volutpat. Dignissim sed eget risus
@@ -89,7 +88,7 @@ export const Example = () => {
 											convallis ac tempor et ut. Ac lorem
 											vel integer orci.
 										</p>
-									</div>
+									</div> */}
 								</div>
 							</div>
 							<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -147,12 +146,14 @@ export const Example = () => {
 			<div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-						Our values
+						Why Choose FashionGreek?
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
-						Lorem ipsum dolor sit amet consect adipisicing elit.
-						Possimus magnam voluptatum cupiditate veritatis in
-						accusamus quisquam.
+						Let us bring your visual ideas to life and help you make
+						a lasting impression in the market. Contact us today to
+						discuss your design needs and explore how we can
+						collaborate to create exceptional designs for your
+						brand.
 					</p>
 				</div>
 				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">

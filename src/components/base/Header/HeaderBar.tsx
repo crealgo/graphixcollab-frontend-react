@@ -12,6 +12,7 @@ export const StyledHeaderBar = styled(
 	'header',
 	_e('isBranded', 'isScrolled')
 )<HeaderBarProps>(({theme, isScrolled, isBranded}) => {
+	const backgroundColor = isScrolled ? 'white' : 'transparent';
 	const borderBottomColor = isScrolled
 		? theme.palette.grey[200]
 		: 'transparent';
@@ -21,7 +22,7 @@ export const StyledHeaderBar = styled(
 		transition: all 200ms;
 		border-bottom-style: solid;
 		border-bottom-width: 1px;
-		background-color: white;
+		background-color: ${backgroundColor};
 		border-bottom-color: ${borderBottomColor};
 		z-index: 999;
 

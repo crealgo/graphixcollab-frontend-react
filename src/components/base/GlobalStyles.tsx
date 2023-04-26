@@ -12,6 +12,11 @@ export const GlobalStyles: FC = () => (
 			* {
 				font-family: Inter;
 			}
+
+			mark {
+				background-color: transparent;
+				color: var(--color-brand-primary-main);
+			}
 		`}
 	/>
 );
