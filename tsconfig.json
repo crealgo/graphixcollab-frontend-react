@@ -30,7 +30,7 @@
     "docs",
     "docs-test",
     "src"
-  ],
+, "scripts/createTags.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "d8a86e0c-daaf-4ae0-9358-6cf1a9650b2d",
+    "name": "Embroidery",
+    "slug": "embroidery",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": "Some Icon"
+    },
+    "tags": [
+      "promotion",
+      "branding"
+    ]
+  },
+  {
+    "id": "f859b176-6f4b-45cd-bdd8-f7477aed590a",
+    "name": "Direct to Garment",
+    "slug": "direct-to-garment",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": "Some icon"
+    },
+    "tags": [
+      "promotion",
+      "branding"
+    ]
+  },
+  {
+    "id": "395cf064-694c-4cc1-8193-f678e083a12d",
+    "name": "Graphic Design",
+    "slug": "graphic-design",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "cb569511-a5f6-4b99-8926-4f00ae7dee7a",
+    "name": "Brand Strategy",
+    "slug": "brand-strategy",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "eb17369b-793a-4650-8433-506b4d9e8033",
+    "name": "Photography",
+    "slug": "photography",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "98b138e2-0cd0-43f7-83b7-6fa0618df73c",
+    "name": "Vinyl Cutting",
+    "slug": "vinyl-cutting",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "8057fd21-480f-56ae-a4c6-2457993cec94",
+    "name": "T-Shirt Printing",
+    "slug": "t-shirt-printing",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "d5fff302-974c-58c7-a426-71d3eb7f0ecf",
+    "name": "Poster Printing",
+    "slug": "poster-printing",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  },
+  {
+    "id": "ab28bec9-7063-57ab-9f9b-a3761ceeed13",
+    "name": "Business Cards",
+    "slug": "business-cards",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": [
+      "promotion",
+      "small-business"
+    ]
+  },
+  {
+    "id": "ddcfc814-9823-5182-b543-9259f79278f8",
+    "name": "Flyers",
+    "slug": "flyers",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": [
+      "promotion",
+      "small-business"
+    ]
+  },
+  {
+    "id": "bdec14a5-df33-5575-8d57-5aef85b1a997",
+    "name": "UPS Drop-Off",
+    "slug": "ups-drop-off",
+    "description": "",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "tags": []
+  }
+]

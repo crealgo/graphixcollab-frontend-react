@@ -53,7 +53,7 @@ const AdornmentImage = styled('img')`
 	transform: translateX(-45%) translateY(50%);
 
 	${({theme}) => theme.breakpoints.up('md')} {
-		width: 50rem;
+		/* width: 30%; */
 		left: auto;
 		right: 0;
 		transform: translateX(20%) translateY(35%);
@@ -67,9 +67,7 @@ const AdornmentImage = styled('img')`
 	}
 `;
 
-export const InteractiveEstimator: FC<InteractiveEstimatorProps> = ({
-	actions
-}) => (
+export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 	<Container>
 		<StyledBlock
 			isRounded

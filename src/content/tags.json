@@ -1,0 +1,32 @@
+[
+  {
+    "id": "48a0a7c5-44f6-578b-ad76-dd34bb0eae5f",
+    "label": "Promotion",
+    "slug": "promotion"
+  },
+  {
+    "id": "d934b811-4d03-5990-9483-4576afe5c5f0",
+    "label": "Marketing",
+    "slug": "marketing"
+  },
+  {
+    "id": "3927197b-6e9c-5cff-96c7-a58fc66f5e44",
+    "label": "Small Business",
+    "slug": "small-business"
+  },
+  {
+    "id": "b278e791-9209-5bbd-9d41-619ca6bc7665",
+    "label": "Business Promotion",
+    "slug": "business-promotion"
+  },
+  {
+    "id": "c583c964-599e-507e-9c62-ea8a203798df",
+    "label": "",
+    "slug": ""
+  },
+  {
+    "id": "998c5bfd-8ce9-5000-ac76-4dfb8d266f79",
+    "label": "npm un ts-node",
+    "slug": "npm-un-ts-node"
+  }
+]

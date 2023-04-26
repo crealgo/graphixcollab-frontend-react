@@ -7,6 +7,8 @@ import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
 import {MultipleSlidesContainer} from './MultipleSlidesContainer';
+import {Image} from '../../base/Image';
+import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
 
 export type Slide = {
 	title: string;
@@ -29,7 +31,6 @@ export const SlideBackground = styled('div')`
 	bottom: 0;
 	height: 100%;
 	width: 100%;
-	z-index: -1;
 
 	border-radius: 0.5rem;
 
@@ -48,8 +49,14 @@ export const SlideBackground = styled('div')`
 	}
 `;
 
+const IntroBlockWrapper = styled(Block)`
+	&::before {
+	}
+`;
+
 const Content = styled('div')(
 	({theme}) => css`
+		z-index: 1;
 		position: relative;
 		display: grid;
 
@@ -111,48 +118,56 @@ export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
 		slides.length > 1 ? MultipleSlidesContainer : Container;
 
 	return (
-		<ResolvedContainer className={className} slides={slides}>
-			<Content>
-				<div className="content">
-					<Heading level={1}>{slides[currentIndex].title}</Heading>
-					<Text>{slides[currentIndex].description}</Text>{' '}
-					<ActionStack
-						size="large"
-						actions={slides[currentIndex].actions}
-					/>
-					<div>
-						<button
-							type="button"
-							onClick={() => {
-								if (currentIndex > 0) {
-									setCurrentIndex(currentIndex - 1);
-								}
-							}}
-						>
-							Previous
-						</button>
-						<button
-							type="button"
-							onClick={() => {
-								if (currentIndex < slides.length - 1) {
-									setCurrentIndex(currentIndex + 1);
-								}
-							}}
-						>
-							Next
-						</button>
+		<Container className={className}>
+			<IntroBlockWrapper isRounded>
+				<SlideBackground />
+				<SlideBackground />
+				<SlideBackground />
+				<SlideBackground />
+				<SlideBackground />
+				<Content>
+					<div className="content">
+						<Heading level={1}>
+							{slides[currentIndex].title}
+						</Heading>
+						<Text>{slides[currentIndex].description}</Text>{' '}
+						<ActionStack
+							size="large"
+							actions={slides[currentIndex].actions}
+						/>
+						<div>
+							<button
+								type="button"
+								onClick={() => {
+									if (currentIndex > 0) {
+										setCurrentIndex(currentIndex - 1);
+									}
+								}}
+							>
+								Previous
+							</button>
+							<button
+								type="button"
+								onClick={() => {
+									if (currentIndex < slides.length - 1) {
+										setCurrentIndex(currentIndex + 1);
+									}
+								}}
+							>
+								Next
+							</button>
+						</div>
 					</div>
+				</Content>
+				<div className="image">
+					<Image
+						src={
+							slides[currentIndex].image ??
+							(IntroImage.src as string)
+						}
+					/>
 				</div>
-			</Content>
-			{/* <figure className="image">
-				<img
-					className="Image-root"
-					src={
-						slides[currentIndex].image ?? (IntroImage.src as string)
-					}
-					alt="thing"
-				/>
-			</figure> */}
-		</ResolvedContainer>
+			</IntroBlockWrapper>
+		</Container>
 	);
 };

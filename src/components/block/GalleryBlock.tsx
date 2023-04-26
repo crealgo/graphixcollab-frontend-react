@@ -48,28 +48,36 @@ const Wrapper = styled(Block)(
 				}
 			}
 		}
-	`,
+	`
 );
 
 export const GalleryBlock: FC<GalleryBlockProps> = ({className, ...props}) => (
 	<Wrapper className={clsx(className, 'GalleryBlock-root')}>
 		<Container>
-			<div className='content'>
+			<div className="content">
 				<Heading level={2}>{props.title}</Heading>
-				<Container size='small'>
-					<Typography variant='body2'>{props.description}</Typography>
+				<Container size="small">
+					<Typography variant="body2">{props.description}</Typography>
 				</Container>
-				<SocialMediaBlock {...props.SocialMediaBlockProps}/>
+				<SocialMediaBlock {...props.SocialMediaBlockProps} />
 			</div>
-			<div className='gallery'>
+			<div className="gallery">
 				{props.images?.length ? (
 					<Marquee pauseOnHover>
 						{props.images.map((imageProps, imageIndex) => (
-							<Image key={imageIndex} className='GalleryBlock-image' {...imageProps}/>
+							<Image
+								key={imageIndex}
+								className="GalleryBlock-image"
+								{...imageProps}
+							/>
 						))}
 					</Marquee>
 				) : (
-					<StatusMessage isContained IconComponent={Warning} text='No Images Available'/>
+					<StatusMessage
+						isContained
+						IconComponent={Warning}
+						text="No Images Available"
+					/>
 				)}
 			</div>
 		</Container>

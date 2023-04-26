@@ -31,6 +31,7 @@ export const StyledHeaderBar = styled(
 
 		${theme.breakpoints.up('md')} {
 			padding-inline: 2rem;
+			/* margin-inline: 0.5rem; */
 			height: 5rem;
 		}
 

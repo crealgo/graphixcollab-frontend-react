@@ -1,5 +1,13 @@
 import {Facebook, Instagram, Twitter} from '@mui/icons-material';
-import {Box, css, IconButton, Link, Stack, styled, Typography} from '@mui/material';
+import {
+	Box,
+	css,
+	IconButton,
+	Link,
+	Stack,
+	styled,
+	Typography
+} from '@mui/material';
 import {type FC} from 'react';
 import {type Term} from '../../types/general';
 import {Container} from '../base/Container';
@@ -25,7 +33,7 @@ const Column = styled('div')(
 		${theme.breakpoints.up('md')} {
 			row-gap: 2rem;
 		}
-	`,
+	`
 );
 
 const Content = styled('div')(
@@ -38,14 +46,16 @@ const Content = styled('div')(
 		${theme.breakpoints.up('md')} {
 			grid-template-columns: 1.5fr 1fr 1fr;
 		}
-	`,
+	`
 );
 
-const FooterBlockWrapper = styled(Block)(({theme}) => css`
-	background-color: var(--color-gray-100);
-	border-bottom: var(--input-border-composite);
-	margin-top: 1rem;
-`).withComponent('footer');
+const FooterBlockWrapper = styled(Block)(
+	({theme}) => css`
+		background-color: var(--color-gray-100);
+		border-bottom: var(--input-border-composite);
+		margin-top: 1rem;
+	`
+);
 
 const CopyrightBlockWrapper = styled(Block)(
 	({theme}) => css`
@@ -63,77 +73,91 @@ const CopyrightBlockWrapper = styled(Block)(
 				gap: 1.5rem;
 			}
 		}
-	`,
+	`
 );
 
 const defaultContent = {
 	title: 'Fashion Greek, USC',
-	description: 'Your premier custom apparel store! We make customer apparel fast and easy. Designers on-site to help you out with your order. No minimum quantity.',
+	description:
+		'Your premier custom apparel store! We make customer apparel fast and easy. Designers on-site to help you out with your order. No minimum quantity.',
 	meta: [
 		{
 			term: 'Location',
-			description: '2626 S Figueroa St #A, Los Angeles, California 90007',
+			description: '2626 S Figueroa St #A, Los Angeles, California 90007'
 		},
 		{
 			term: 'Phone',
-			description: '(323) 379-3728',
+			description: '(323) 379-3728'
 		},
 		{
 			term: 'Email',
-			description: 'info@fashiongreekusc.com',
-		},
-	],
+			description: 'info@fashiongreekusc.com'
+		}
+	]
 };
 
 export const FooterBlock: FC<FooterBlockProps> = ({
 	title = defaultContent.title,
 	description = defaultContent.description,
-	meta = defaultContent.meta,
+	meta = defaultContent.meta
 }) => (
-	<>
-		<FooterBlockWrapper>
+	<footer>
+		<FooterBlockWrapper hasNoDefaultMargin>
 			<Container>
 				<Content>
 					<Column>
 						<div>
-							<Typography gutterBottom variant='h3'>
+							<Typography gutterBottom variant="h3">
 								{title}
 							</Typography>
-							<Typography variant='body1'>{description}</Typography>
+							<Typography variant="body1">
+								{description}
+							</Typography>
 						</div>
 						<div>
-							<Typography variant='subtitle1' color='grey.700'>
+							<Typography variant="subtitle1" color="grey.700">
 								Social Media
 							</Typography>
-							<Stack gap='0.25rem' direction='row'>
-								<IconButton size='small'>
-									<Facebook fontSize='small'/>
+							<Stack gap="0.25rem" direction="row">
+								<IconButton size="small">
+									<Facebook fontSize="small" />
 								</IconButton>
-								<IconButton size='small'>
-									<Twitter fontSize='small'/>
+								<IconButton size="small">
+									<Twitter fontSize="small" />
 								</IconButton>
-								<IconButton size='small'>
-									<Instagram fontSize='small'/>
+								<IconButton size="small">
+									<Instagram fontSize="small" />
 								</IconButton>
 							</Stack>
 						</div>
 						<div>
-							<Typography variant='subtitle1' color='grey.700'>
+							<Typography variant="subtitle1" color="grey.700">
 								Newsletter
 							</Typography>
-							<Box display='flex' gap='0.25rem'>
-								<Input type='text' inputSize='large' placeholder='your@email.com'/>
-								<Button size='large' color='secondary'>Sign Up</Button>
+							<Box display="flex" gap="0.25rem">
+								<Input
+									type="text"
+									inputSize="large"
+									placeholder="your@email.com"
+								/>
+								<Button size="large" color="secondary">
+									Sign Up
+								</Button>
 							</Box>
 						</div>
 					</Column>
 					<Column>
-						<MapEmbed/>
+						<MapEmbed />
 					</Column>
 					<Column>
 						{meta?.map((term, termIndex) => (
 							<div key={termIndex}>
-								<Typography variant='subtitle1' fontWeight={500} letterSpacing='-0.0125em' color='grey.700'>
+								<Typography
+									variant="subtitle1"
+									fontWeight={500}
+									letterSpacing="-0.0125em"
+									color="grey.700"
+								>
 									{term.term}
 								</Typography>
 								<Typography>{term.description}</Typography>
@@ -143,17 +167,21 @@ export const FooterBlock: FC<FooterBlockProps> = ({
 				</Content>
 			</Container>
 		</FooterBlockWrapper>
-		<CopyrightBlockWrapper>
+		<CopyrightBlockWrapper hasNoDefaultMargin>
 			<Container>
-				<Typography variant='caption'>
+				<Typography variant="caption">
 					<Link>Privacy & Cookie Policy</Link>
 				</Typography>
-				<Typography variant='caption'>
+				<Typography variant="caption">
 					<Link>Terms of Service</Link>
 				</Typography>
-				<Typography variant='caption'>©Copyright 2015-2020, FashionGreek, USC.</Typography>
-				<Typography variant='caption'>Made with ❤️ by Crealgo, LLC. All rights reserved.</Typography>
+				<Typography variant="caption">
+					©Copyright 2015-2020, FashionGreek, USC.
+				</Typography>
+				<Typography variant="caption">
+					Made with ❤️ by Crealgo, LLC. All rights reserved.
+				</Typography>
 			</Container>
 		</CopyrightBlockWrapper>
-	</>
+	</footer>
 );

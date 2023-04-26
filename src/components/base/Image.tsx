@@ -7,7 +7,13 @@ export type ImageProps = ComponentPropsWithRef<'img'> & {
 	shape?: 'square' | 'portrait' | 'landscape';
 };
 
-const BaseElement: FC<ImageProps> = ({className, onLoad: userOnLoad, onError: userOnError, caption, ...props}) => {
+const BaseElement: FC<ImageProps> = ({
+	className,
+	onLoad: userOnLoad,
+	onError: userOnError,
+	caption,
+	...props
+}) => {
 	const onLoad: ImageProps['onLoad'] = event => {
 		console.log('loaded');
 
@@ -22,8 +28,15 @@ const BaseElement: FC<ImageProps> = ({className, onLoad: userOnLoad, onError: us
 
 	return (
 		<figure className={clsx('Image-root', className)}>
-			<img className='Image-element' onLoad={onLoad} onError={onError} {...props}/>
-			<figcaption className='Image-caption'>{caption}</figcaption>
+			<img
+				className="Image-element"
+				onLoad={onLoad}
+				onError={onError}
+				{...props}
+			/>
+			{caption && (
+				<figcaption className="Image-caption">{caption}</figcaption>
+			)}
 		</figure>
 	);
 };
@@ -34,7 +47,7 @@ export const Image = styled(BaseElement)(({theme, shape}) => {
 			aspect-ratio: 1;
 		`,
 		portrait: css``,
-		landscape: css``,
+		landscape: css``
 	}[shape ?? 'square'];
 
 	return css`

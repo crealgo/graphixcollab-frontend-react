@@ -57,7 +57,7 @@ const StyledBlock = styled(Block)(
 		.Banner-closeButton {
 			flex: none;
 		}
-	`,
+	`
 );
 
 const BannerClose = styled(IconButton)`
@@ -65,7 +65,12 @@ const BannerClose = styled(IconButton)`
 	font-size: 1rem;
 `;
 
-export const Banner: FC<BannerProps> = ({actions, onCloseClick, text, children}) => {
+export const Banner: FC<BannerProps> = ({
+	actions,
+	onCloseClick,
+	text,
+	children
+}) => {
 	// const textRef = useRef<HTMLParagraphElement>(null);
 	// const containerRef = useRef<HTMLDivElement>(null);
 
@@ -82,20 +87,29 @@ export const Banner: FC<BannerProps> = ({actions, onCloseClick, text, children})
 	const resolvedTitle = typeof children === 'string' ? children : '';
 
 	return (
-		<StyledBlock className='Banner-root' title={resolvedTitle}>
-			<Container className='Banner-container'>
-				<div className='Banner-content'>
-					<span className='Banner-textContent'>
+		<StyledBlock
+			hasNoDefaultMargin
+			className="Banner-root"
+			title={resolvedTitle}
+		>
+			<Container className="Banner-container">
+				<div className="Banner-content">
+					<span className="Banner-textContent">
 						{children ?? text}
 					</span>
 					{actions?.length && (
-						<ActionStack className='Banner-actionStack' size='small' color='text' actions={actions}/>
+						<ActionStack
+							className="Banner-actionStack"
+							size="small"
+							color="text"
+							actions={actions}
+						/>
 					)}
 				</div>
 				<BannerClose
-					className='Banner-closeButton'
-					aria-label='Close Banner'
-					color='text'
+					className="Banner-closeButton"
+					aria-label="Close Banner"
+					color="text"
 					Icon={Close}
 					onClick={onCloseClick}
 				/>

@@ -1,4 +1,5 @@
-import {css, styled} from '@mui/material';
+import {styled} from '@mui/material';
+import {css} from 'code-tag';
 import {_e} from '../../utils/excludePropsFromForwarding';
 import {type ComponentPropsWithRef, type FC} from 'react';
 import clsx from 'clsx';
@@ -45,6 +46,6 @@ export const Container = styled(
 	return css`
 		width: 100%;
 		margin-inline: auto;
-		${containerMaxWidth}
+		${containerMaxWidth};
 	`;
 });
