@@ -6,14 +6,22 @@ const prompt = require('prompt-sync')();
 
 const chance = new Chance();
 
-const createService = (name, description, imageSrc, imageAlt, tags) => ({
+const createService = (
+	name,
+	description,
+	featured,
+	imageSrc,
+	imageAlt,
+	tags
+) => ({
 	id: chance.guid(),
 	name: name ?? '',
 	slug: paramCase(name) ?? '',
 	description: description ?? '',
+	featured: /(yes|yep|y)/i.test(featured),
 	image: {
 		src: imageSrc ?? chance.avatar(),
-		alt: imageAlt ?? ''
+		alt: imageAlt ?? name ?? ''
 	},
 	tags: tags ? tags.split(',').map(tag => tag.trim()) : []
 });
@@ -21,12 +29,15 @@ const createService = (name, description, imageSrc, imageAlt, tags) => ({
 const addService = () => {
 	const name = prompt('name: ');
 	const description = prompt('description: ');
+	const featured = prompt('featured (y/n): ');
 	const imageSrc = prompt('imageSrc: ');
 	const imageAlt = prompt('imageAlt: ');
 	const tags = prompt('tags: ');
 
 	// TODO: add fail-safes for empty inputs
-	services.push(createService(name, description, imageSrc, imageAlt, tags));
+	services.push(
+		createService(name, description, featured, imageSrc, imageAlt, tags)
+	);
 
 	writeFileSync(
 		'src/content/services.json',

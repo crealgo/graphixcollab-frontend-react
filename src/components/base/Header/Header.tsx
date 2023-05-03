@@ -9,7 +9,7 @@ import {FlexSpacer} from '../FlexSpacer';
 import {NavItems} from '../NavItems';
 import {HeaderBar} from './HeaderBar';
 import {HeaderContent} from './HeaderContent';
-import {HeaderLogo} from './HeaderLogo';
+import Logo from '../../atoms/Logo';
 
 export type HeaderProps = {
 	// logo?: string;
@@ -31,12 +31,8 @@ export const Header: FC<HeaderProps> = ({
 
 	return (
 		<HeaderBar className={className} isScrolled={isScrolled}>
-			<HeaderContent>
-				<HeaderLogo
-					className="Logo-root"
-					// src='https://fashiongreekusc.square.site/uploads/b/ed0dc040-de8b-11ea-adbe-f1c93472ece4/89a929c7885b56db4508a726fae7f212.png?width=500&optimize=small'
-					src={FGUSCLogo.src as string}
-				/>
+		<HeaderContent>
+				<Logo />
 				<NavItems items={items} />
 				<FlexSpacer />
 				<ActionStack actions={actions} />

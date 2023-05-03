@@ -1,14 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
-    "rootDirs": [
-      "src",
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "plugins": [{"name": "typescript-plugin-css-modules"}],
+    "rootDirs": ["src"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -29,9 +24,8 @@
     ".storybook/**/*.tsx",
     "docs",
     "docs-test",
-    "src"
-, "scripts/createTags.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "src",
+    "scripts/createTags.js"
+  ],
+  "exclude": ["node_modules"]
 }

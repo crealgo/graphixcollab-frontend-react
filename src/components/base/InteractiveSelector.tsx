@@ -40,7 +40,7 @@ const StyledButton = styled('button')(
 			left: 50%;
 			transform: translateX(-50%);
 
-			background-color: ${alpha(theme.palette.secondary.main, 0.5)};
+			background-color: var(--color-brand-tertiary-light);
 			z-index: -1;
 		}
 
@@ -52,7 +52,7 @@ const StyledButton = styled('button')(
 		&:hover,
 		&:focus-visible {
 			&::before {
-				background-color: ${alpha(theme.palette.secondary.main, 0.875)};
+				background-color: var(--color-brand-tertiary-dark);
 			}
 		}
 	`

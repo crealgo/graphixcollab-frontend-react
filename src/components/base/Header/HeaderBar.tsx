@@ -28,6 +28,7 @@ export const StyledHeaderBar = styled(
 
 		display: flex;
 		align-items: center;
+		padding-block: 0.5rem;
 		padding-inline: 1.5rem;
 
 		${theme.breakpoints.up('md')} {

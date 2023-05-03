@@ -26,16 +26,17 @@ const Content = styled('div')`
 		text-align: center;
 	}
 
-	${({theme}) => theme.breakpoints.up('md')} {
+	/* ${({theme}) => theme.breakpoints.up('md')} {
 		transform: translateY(2rem);
 
 		& ~ .ActionStack-root {
 			transform: translateY(2rem);
 		}
-	}
+	} */
 `;
 
 const ContentWrapper = styled(Block)`
+	background-color: var(--color-brand-yelp-light);
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
@@ -45,6 +46,8 @@ const ContentWrapper = styled(Block)`
 	justify-items: center;
 
 	gap: 4rem;
+
+	padding-block: 3rem !important;
 `;
 
 const avatarCount = 16;

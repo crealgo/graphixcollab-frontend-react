@@ -4,10 +4,11 @@ import {GalleryBlock} from '../components/block/GalleryBlock';
 import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
 import {IntroBlock} from '../components/block/IntroBlock/IntroBlock';
 import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
+import galleryImages from '../content/galleryImages.json';
+import services from '../content/services.json';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
-import {chance, generateActions, generateServicesBlock} from '../utils/chance';
-import galleryImages from '../content/galleryImages.json';
+import {chance, generateActions} from '../utils/chance';
 
 const HomePage: NextPage<PageProps> = props => (
 	<DefaultLayout>
@@ -25,33 +26,9 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		IntroBlockProps: {
 			color: 'none',
-			slides: [
-				{
-					title: 'Welcome to Fashion Greek',
-					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
-					actions: [
-						{
-							label: 'Get Started',
-							color: 'primary'
-						},
-						{
-							label: 'Book an appointment',
-							color: 'text'
-						}
-					],
-					image: 'https://picsum.photos/200/300'
-				},
-				...chance.n(
-					() => ({
-						title: chance.sentence({words: 3}),
-						description: chance.paragraph({sentences: 3}),
-						actions: [],
-						image: 'https://picsum.photos/200/300'
-					}),
-					3
-				)
-			]
+			title: 'Weclome to Graphix Collab',
+			description:
+				"We're your one-stop shop for all your apparel customization needs. We offer a wide range of services, from garment printing to embroidery."
 		},
 		FeaturedInBlockProps: {
 			title: 'Featured In',
@@ -68,7 +45,10 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 		InteractiveEstimatorProps: {
 			actions: generateActions()
 		},
-		ServicesPreviewBlockProps: generateServicesBlock(),
+		ServicesPreviewBlockProps: {
+			title: 'Popular Services',
+			services: services.filter(s => s.featured)
+		},
 		GalleryBlockProps: {
 			title: "See what we're up to",
 			description:

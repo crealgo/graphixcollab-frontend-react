@@ -1,8 +1,10 @@
-import {Message} from '@mui/icons-material';
-import {Box, Typography, useMediaQuery, type Theme} from '@mui/material';
+import {KeyboardArrowRight, Message} from '@mui/icons-material';
+import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
+import {useRouter} from 'next/router';
 import {type FC} from 'react';
-import {type ServiceOptions, type SharedBlockProps} from '../../types/general';
+import type serviceJSON from '../../content/services.json';
+import {type SharedBlockProps} from '../../types/general';
 import {colorIterator} from '../../utils/colorIterator';
 import {ActionStack} from '../base/ActionStack';
 import {Block, type BlockProps} from '../base/Block';
@@ -13,8 +15,8 @@ import {Heading} from '../base/Heading';
 import {HorizontalCard} from '../base/HorizontalCard';
 
 export type ServicesPreviewBlockProps = {
-	services?: ServiceOptions[];
-	BlockProps?: BlockProps;
+	services?: typeof serviceJSON;
+	// BlockProps?: BlockProps;
 } & SharedBlockProps;
 
 export const Content = styled('div')(
@@ -86,6 +88,7 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 	services
 }) => {
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
+	const router = useRouter();
 
 	const CardComponent = isDesktop ? Card : HorizontalCard;
 
@@ -95,23 +98,32 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 				<Wrapper>
 					<Container size="small">
 						<Typography variant="overline">{subtitle}</Typography>
-						<Heading level={1}>{title}</Heading>
+						<Heading level={2}>{title}</Heading>
 						<Typography variant="body2">{description}</Typography>
 					</Container>
 					<div className="services">
-						{services?.map((service, serviceIndex) => (
+						{services?.map(service => (
 							<CardComponent
+								key={service.id}
 								className="service"
-								{...service}
-								key={serviceIndex}
+								title={service.name}
+								description={service.summary}
+								image={service.image}
 							/>
 						))}
 					</div>
 					<Container size="small">
 						<ActionStack align="center" color="secondary">
-							<Box mr={-2} zIndex={1}>
+							{/* <Box mr={-2} zIndex={1}>
 								Looking for something else?
-							</Box>
+							</Box> */}
+							<Button
+								color="secondary"
+								href={`${router.basePath}/services`}
+								endIcon={<KeyboardArrowRight />}
+							>
+								View All Services
+							</Button>
 							<Button color="text" endIcon={<Message />}>
 								Contact Us
 							</Button>

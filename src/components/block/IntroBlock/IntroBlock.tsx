@@ -1,22 +1,14 @@
 import {css, styled} from '@mui/material';
-import {
-	useState,
-	type ComponentPropsWithoutRef,
-	type FC,
-	useRef,
-	useMemo
-} from 'react';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
 import {type Action, type SharedBlockProps} from '../../../types/general';
 import {ActionStack} from '../../base/ActionStack';
 import {Block} from '../../base/Block';
 import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
-import {MultipleSlidesContainer} from './MultipleSlidesContainer';
-import {Image} from '../../base/Image';
-import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
-import {Carousel} from '../../base/Carousel';
-import {CarouselSlide} from '../../base/Carousel/CarouselSlide';
+import {Carousel, CarouselSlide} from '../../base/Carousel';
+import Logo from '../../atoms/Logo';
 
 export type Slide = {
 	title: string;
@@ -32,53 +24,43 @@ export type IntroBlockProps = {
 } & ComponentPropsWithoutRef<'div'> &
 	SharedBlockProps;
 
-export const SlideBackground = styled('div')`
-	/* position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0; */
-	display: block;
-
-	border-radius: 0.5rem;
-
-	&:nth-of-type(1n) {
-		background-color: var(--color-sequence-0-light);
-	}
-
-	&:nth-of-type(2n) {
-		background-color: var(--color-sequence-1-light);
-		transform: translateX(calc(-100% - 1rem));
-	}
-
-	&:nth-of-type(3n) {
-		background-color: var(--color-sequence-2-light);
-		transform: translateX(calc(100% + 1rem));
-	}
-`;
+const images = [
+	{src: 'assets/embroidery-denim.jpg', alt: 'Embroidery'},
+	{src: 'assets/sash-hs.jpg', alt: 'Sashes'},
+	{src: 'assets/laughing-group.jpg', alt: 'T-Shirts'},
+	{src: 'assets/embroidery-shirts.avif', alt: 'Embroidery'},
+	// {src: 'assets/sash-ucla.jpg', alt: 'Sashes'}
+];
 
 const StyledCarousel = styled(Carousel)`
-	overflow: visible;
+	height: 35rem;
+	overflow: hidden;
+	width: 100%;
 `;
 
 const StyledCarouselSlide = styled(CarouselSlide)`
-	padding: 0 2rem;
+	height: inherit;
+	position: relative;
 
-	&:nth-of-type(1n) .Block-root {
-		background-color: var(--color-sequence-0-light);
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
 	}
 
-	&:nth-of-type(2n) .Block-root {
-		background-color: var(--color-sequence-1-light);
-	}
+	.Heading-root {
+		position: absolute;
+		color: white;
 
-	&:nth-of-type(3n) .Block-root {
-		background-color: var(--color-sequence-2-light);
+		bottom: 1rem;
+		left: 1rem;
+		line-height: 1;
 	}
 `;
 
 const Content = styled('div')(
 	({theme}) => css`
-		z-index: 1;
 		position: relative;
 		display: grid;
 
@@ -90,115 +72,63 @@ const Content = styled('div')(
 			justify-items: center;
 			border-radius: 0.5rem;
 			text-align: center;
+			padding-inline: 0;
 
 			.Text-root {
 				max-width: ${theme.breakpoints.values.sm}px;
 			}
 		}
 
-		+ .image {
-			display: none;
+		.image {
+			background: blue;
+			width: 100%;
 		}
 
 		${theme.breakpoints.up('lg')} {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr 1fr;
 
 			.content {
 				justify-items: start;
 				text-align: left;
 			}
-
-			+ .image {
-				margin: unset;
-				position: absolute;
-				aspect-ratio: 1.1 / 1;
-				border-radius: 0.5rem;
-				display: block;
-				overflow: hidden;
-				box-shadow: var(--elevation-5);
-
-				width: auto;
-				height: 90%;
-
-				top: 50%;
-				transform: translateY(-50%);
-				right: -5%;
-
-				img {
-					height: 100%;
-					width: 100%;
-					object-fit: cover;
-				}
-			}
 		}
 	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const blockRef = useRef<HTMLDivElement>(null);
-
+export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 	return (
 		<Container className="IntroBlock-root">
-			<StyledCarousel>
-				{slides?.map(({description}, index) => (
-					<StyledCarouselSlide key={index}>
-						<Block ref={blockRef} isRounded>
-							<Content>
-								<div className="content">
-									<Heading level={1}>
-										{slides[currentIndex].title}
-									</Heading>
-									<Text>
-										{slides[currentIndex].description}
-									</Text>{' '}
-									<ActionStack
-										size="large"
-										actions={slides[currentIndex].actions}
-									/>
-									<div>
-										<button
-											type="button"
-											onClick={() => {
-												if (currentIndex > 0) {
-													setCurrentIndex(
-														currentIndex - 1
-													);
-												}
-											}}
-										>
-											Previous
-										</button>
-										<button
-											type="button"
-											onClick={() => {
-												if (
-													currentIndex <
-													slides.length - 1
-												) {
-													setCurrentIndex(
-														currentIndex + 1
-													);
-												}
-											}}
-										>
-											Next
-										</button>
-									</div>
-								</div>
-							</Content>
-							<div className="image">
-								<Image
-									src={
-										slides[currentIndex].image ??
-										(IntroImage.src as string)
-									}
-								/>
-							</div>
-						</Block>
-					</StyledCarouselSlide>
-				))}
-			</StyledCarousel>
+			<Content>
+				<Block className="content">
+					<Heading gutterBottom level={1}>
+						Welcome to <Logo />
+					</Heading>
+					<Text>{description}</Text>{' '}
+					<ActionStack
+						size="large"
+						actions={[
+							{
+								label: 'Get Started',
+								color: 'primary'
+							},
+							{
+								label: 'Book Appointment',
+								color: 'text'
+							}
+						]}
+					/>
+				</Block>
+				<div className="image">
+					<StyledCarousel>
+						{images.map(image => (
+							<StyledCarouselSlide key={image.alt}>
+								<img {...image} />
+								<Heading level={2}>{image.alt}</Heading>
+							</StyledCarouselSlide>
+						))}
+					</StyledCarousel>
+				</div>
+			</Content>
 		</Container>
 	);
 };

@@ -1,0 +1,38 @@
+.logotype {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: inherit;
+  letter-spacing: -0.05em;
+  position: relative;
+}
+
+.dots {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 0.1em;
+  left: 0.1em;
+  transform: translateY(-0.125em);
+
+  div {
+    width: 0.25em;
+    height: 0.25em;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      background: var(--color-brand-primary-main);
+    }
+
+    &:nth-child(2) {
+      background: var(--color-brand-secondary-main);
+    }
+
+    &:nth-child(3) {
+      background: var(--color-brand-tertiary-main);
+    }
+
+    &:nth-child(4) {
+      background: var(--color-text-primary);
+    }
+  }
+}

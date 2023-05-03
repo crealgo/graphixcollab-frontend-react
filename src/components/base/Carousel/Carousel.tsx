@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import useEmblaCarousel, {EmblaOptionsType} from 'embla-carousel-react';
-import {useEffect, type FC, type ReactElement} from 'react';
 import autoplay from 'embla-carousel-autoplay';
+import useEmblaCarousel from 'embla-carousel-react';
+import {type ReactNode, useEffect, type FC} from 'react';
 
 const Wrapper = styled.div`
 	overflow: hidden;
@@ -9,12 +9,13 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
 	display: flex;
+	height: 100%;
 `;
 
 type CarouselProps = {
 	onSlideChange?: () => void;
 	className?: string;
-	children?: ReactElement | ReactElement[];
+	children?: ReactNode;
 };
 
 export const Carousel: FC<CarouselProps> = ({

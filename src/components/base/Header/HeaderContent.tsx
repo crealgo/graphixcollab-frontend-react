@@ -37,5 +37,7 @@ export const HeaderContent = styled('div')(
 				display: none;
 			}
 		}
+
+		font-size: 1.25rem;
 	`
 );

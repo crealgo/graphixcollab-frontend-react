@@ -1,19 +1,19 @@
-import {KeyboardArrowRight} from '@mui/icons-material';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
-import {type FC, type ComponentPropsWithRef} from 'react';
+import clsx from 'clsx';
+import {type ComponentPropsWithRef, type FC} from 'react';
 import {useAppState} from '../../hooks/useAppState';
 import {colorIterator} from '../../utils/colorIterator';
-import {ActionStack, type ActionStackProps} from './ActionStack';
-import {Button} from './Button';
-import {Image, type ImageProps} from './Image';
-import clsx from 'clsx';
+import {type ActionStackProps} from './ActionStack';
 
 type CardProps = {
 	title?: string;
 	subtitle?: string;
-	summary?: string;
-	ImageProps?: ImageProps;
+	description?: string;
+	image?: {
+		src: string;
+		alt: string;
+	};
 	actions?: ActionStackProps['actions'];
 } & ComponentPropsWithRef<'a'>;
 
@@ -23,7 +23,12 @@ const CardAnchor = styled('a')`
 	grid-template-columns: 100px 1fr;
 	gap: 1rem;
 
-	.image {
+	img {
+		width: 100px;
+		height: auto;
+	}
+
+	/* .image {
 		aspect-ratio: 1;
 		position: relative;
 		border-radius: 0.5rem;
@@ -40,7 +45,7 @@ const CardAnchor = styled('a')`
 
 			transition: all 300ms;
 		}
-	}
+	} */
 
 	.content {
 		display: grid;
@@ -61,29 +66,30 @@ const CardAnchor = styled('a')`
 export const HorizontalCard: FC<CardProps> = ({
 	title,
 	subtitle,
-	summary,
+	description,
 	className,
-	ImageProps,
+	image,
 	actions,
 	...props
 }) => {
-	const {toggleBooking} = useAppState();
-
 	return (
 		<CardAnchor
 			className={clsx('HorizontalCard-root', className)}
 			{...props}
 		>
-			<Image className="image" />
+			<img {...image} />
 			<div className="content">
 				{/* <Typography variant="caption">{subtitle}</Typography> */}
 				<Typography className="title" variant="h5">
 					{title}
 				</Typography>
-				<Typography className="summary" color="var(--color-gray-700)">
-					{summary}
+				<Typography
+					className="description"
+					color="var(--color-gray-700)"
+				>
+					{description}
 				</Typography>
-				<ActionStack actions={actions}>
+				{/* <ActionStack actions={actions}>
 					<Button
 						color="text"
 						size="small"
@@ -94,7 +100,7 @@ export const HorizontalCard: FC<CardProps> = ({
 					>
 						Book Appointment
 					</Button>
-				</ActionStack>
+				</ActionStack> */}
 			</div>
 		</CardAnchor>
 	);

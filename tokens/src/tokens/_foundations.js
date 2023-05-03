@@ -43,7 +43,7 @@ const size = generateSequenceFromColorScale({
 	64: '16rem',
 	72: '18rem',
 	80: '20rem',
-	96: '24rem',
+	96: '24rem'
 });
 
 module.exports = {
@@ -51,8 +51,9 @@ module.exports = {
 		white: f(colors.white),
 		black: f(colors.black),
 		brand: {
-			primary: generateColorVariants(colors.rose[700]),
-			secondary: generateColorVariants(colors.yellow[300]),
+			primary: generateColorVariants('#00aad2'),
+			secondary: generateColorVariants('#d40072'),
+			tertiary: generateColorVariants('#edb700'),
 			text: generateColorVariants('{color.white}'),
 
 			// other brands
@@ -60,19 +61,19 @@ module.exports = {
 			facebook: generateColorVariants('#1877f2'),
 			twitter: generateColorVariants('#1da1f2'),
 			instagram: generateColorVariants('#c13584'),
-			square: generateColorVariants('#28c101'),
+			square: generateColorVariants('#28c101')
 		},
 		feedback: {
 			success: generateColorVariants(colors.green[600]),
 			error: generateColorVariants(colors.red[600]),
 			warning: generateColorVariants(colors.amber[600]),
-			info: generateColorVariants(colors.blue[600]),
+			info: generateColorVariants(colors.blue[600])
 		},
 		gray: grayScale,
 		text: {
 			primary: f(colors.slate[900]),
-			secondary: f(colors.slate[400]),
-		},
+			secondary: f(colors.slate[400])
+		}
 	},
 	size,
 	shape: {
@@ -82,22 +83,30 @@ module.exports = {
 			medium: f('0.5rem'),
 			large: f('0.75rem'),
 			xLarge: f('1rem'),
-			full: f('9999px'),
+			full: f('9999px')
 		},
 		aspectRatio: {
 			square: f('1 / 1'),
 			landscape: f('16 / 9'),
-			portrait: f('9 / 16'),
-		},
+			portrait: f('9 / 16')
+		}
 	},
-	elevation: {...[
-		f('none'),
-		f('0 1px 2px 0 rgb(0 0 0 / 0.05)'),
-		f('0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'),
-		f('0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'),
-		f('0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'),
-		f('0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'),
-		f('0 25px 50px -12px rgb(0 0 0 / 0.25)'),
-		f('inset 0 2px 4px 0 rgb(0 0 0 / 0.05)'),
-	]},
+	elevation: {
+		...[
+			f('none'),
+			f('0 1px 2px 0 rgb(0 0 0 / 0.05)'),
+			f('0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'),
+			f(
+				'0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+			),
+			f(
+				'0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+			),
+			f(
+				'0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'
+			),
+			f('0 25px 50px -12px rgb(0 0 0 / 0.25)'),
+			f('inset 0 2px 4px 0 rgb(0 0 0 / 0.05)')
+		]
+	}
 };

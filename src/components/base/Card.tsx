@@ -11,7 +11,10 @@ import {Image, type ImageProps} from './Image';
 import clsx from 'clsx';
 
 type CardProps = {
-	ImageProps?: ImageProps;
+	image?: {
+		src: string;
+		alt: string;
+	};
 } & ServiceOptions &
 	ComponentPropsWithRef<'a'>;
 
@@ -28,24 +31,11 @@ const CardAnchor = styled('a')(() => {
 		gap: 1rem;
 		text-align: center;
 
-		.image {
-			aspect-ratio: 1;
-			position: relative;
-			border-radius: 0.5rem;
-			overflow: hidden;
+		img {
 			transition: all 200ms;
-
-			.Image-root {
-				z-index: 0;
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-
-				transition: all 300ms;
-			}
+			width: 100%;
+			max-width: 7rem;
+			margin-inline: auto;
 		}
 
 		.content {
@@ -62,7 +52,7 @@ const CardAnchor = styled('a')(() => {
 		}
 
 		&:hover {
-			.image {
+			img {
 				transform: translateY(-5px) rotate(${randomRotation}deg);
 			}
 		}
@@ -74,15 +64,18 @@ export const Card: FC<CardProps> = ({
 	subtitle,
 	description,
 	className,
+	image,
 	...props
 }) => {
 	const {breakpoints} = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
 	const {toggleBooking} = useAppState();
 
+	console.log({props});
+
 	return (
 		<CardAnchor className={clsx('Card-root', className)} {...props}>
-			<Image className="image" />
+			<img {...image} />
 			<div className="content">
 				<Typography variant="caption">{subtitle}</Typography>
 				<Typography variant="h5">{title}</Typography>
