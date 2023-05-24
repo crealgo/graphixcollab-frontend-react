@@ -3,6 +3,11 @@ import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {useState} from 'react';
 import Head from 'next/head';
+import {Marked} from '../components/base/Marked';
+import {Heading} from '../components/base/Heading';
+import styled from '@emotion/styled';
+import {Text} from '../components/base/Text';
+import {Typography} from '@mui/material';
 
 const values = [
 	{
@@ -34,6 +39,17 @@ const values = [
 
 const exampleUrl = 'https://google.com';
 
+const ContentWrapper = styled('div')`
+	background: var(--color-brand-primary-light);
+	margin-top: -5rem;
+	padding-top: 5rem;
+
+	.Heading-root,
+	.MuiTypography-root {
+		color: var(--color-brand-primary-dark);
+	}
+`;
+
 export const Example = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -42,56 +58,28 @@ export const Example = () => {
 			<Head>
 				<script src="https://cdn.tailwindcss.com" />
 			</Head>
-			<div className="relative isolate -z-10">
+			<ContentWrapper className="relative isolate -z-10">
 				<div className="overflow-hidden">
 					<div className="mx-auto max-w-7xl px-6">
 						<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 							<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-								<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-									Our Mission
-								</h1>
-								<div className="mt-6 lg:w-full lg:max-w-2xl lg:flex-auto">
-									<p className="text-xl leading-8 text-gray-600">
-										Fashion Greek, USC was founded with a
-										vision to provide top-quality printing
-										solutions to businesses of all sizes.
-										Since then, we have grown into a leading
-										printing company, serving clients across
-										various industries and sectors. We have
-										invested in the latest printing
-										technology, expanded our range of
-										services, and built a team of
-										experienced professionals who share our
-										passion for printing.
-									</p>
-									{/* <div className="mt-6 max-w-xl text-base leading-7 text-gray-700">
-										<p>
-											Faucibus commodo massa rhoncus,
-											volutpat. Dignissim sed eget risus
-											enim. Mattis mauris semper sed amet
-											vitae sed turpis id. Id dolor
-											praesent donec est. Odio penatibus
-											risus viverra tellus varius sit
-											neque erat velit. Faucibus commodo
-											massa rhoncus, volutpat. Dignissim
-											sed eget risus enim. Mattis mauris
-											semper sed amet vitae sed turpis id.
-										</p>
-										<p className="mt-10">
-											Et vitae blandit facilisi magna
-											lacus commodo. Vitae sapien duis
-											odio id et. Id blandit molestie
-											auctor fermentum dignissim. Lacus
-											diam tincidunt ac cursus in vel.
-											Mauris varius vulputate et ultrices
-											hac adipiscing egestas. Iaculis
-											convallis ac tempor et ut. Ac lorem
-											vel integer orci.
-										</p>
-									</div> */}
-								</div>
+								<Heading gutterBottom level={1}>
+									<Marked>Our Mission</Marked>
+								</Heading>
+								<Typography className="mt-6 text-lg leading-8 text-gray-600">
+									Fashion Greek, USC was founded with a vision
+									to provide top-quality printing solutions to
+									businesses of all sizes. Since then, we have
+									grown into a leading printing company,
+									serving clients across various industries
+									and sectors. We have invested in the latest
+									printing technology, expanded our range of
+									services, and built a team of experienced
+									professionals who share our passion for
+									printing.
+								</Typography>
 							</div>
-							<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+							<div className="hidden lg:flex justify-end gap-8 sm:justify-start sm:pl-20 lg:pl-0 lg:-my-12">
 								<div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
 									<div className="relative">
 										<img
@@ -142,11 +130,11 @@ export const Example = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</ContentWrapper>
 			<div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-						Why Choose FashionGreek?
+						Why Choose Graphix Collab?
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
 						Let us bring your visual ideas to life and help you make

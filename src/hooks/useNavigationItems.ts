@@ -6,14 +6,13 @@ export const useNavigationItems = (): NavItemOptions[] => {
 
 	const routes: Record<string, string> = {
 		'Home': '/',
-		'About Us': '/about',
-		'Graphix Collab': '/graphix-collab',
-		'Services': '/services'
+		'Services': '/services',
+		'About Us': '/about'
 	};
 
 	return Object.keys(routes).map(title => ({
 		label: title,
-		href: routes[title],
+		href: `${router.basePath}${routes[title]}`,
 		selected: router.pathname === routes[title]
 	}));
 };

@@ -1,15 +1,16 @@
-import {Typography} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
-import {type FC} from 'react';
+import {type FC, type ReactNode} from 'react';
 import {type NavItemOptions} from '../../types/general';
 import {Block, type BlockProps} from '../base/Block';
 import {Breadcrumbs, type BreadcrumbOptions} from '../base/Breadcrumbs';
 import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
 import {Image, type ImageProps} from '../base/Image';
-import {TopNav} from '../base/TopNav';
+import {Text} from '../base/Text';
 
 export type PageHeaderBlockProps = {
-	title?: string;
+	title?: ReactNode;
+	description?: string;
 	color?: string;
 	breadcrumbs?: BreadcrumbOptions[];
 	navigationItems?: NavItemOptions[];
@@ -22,15 +23,50 @@ const Wrapper = styled(Block)<{
 	color?: string;
 }>(
 	({theme, color}) => css`
-		padding-block: 2rem !important;
-		background-color: ${color ? color : 'transparent'};
+		background-color: var(--color-brand-tertiary-light);
+		padding-top: 10rem !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		margin-top: calc(5rem - 10rem);
+
+		.image {
+			img {
+				width: 100%;
+				object-position: center center;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			position: relative;
+			height: auto;
+			width: 100%;
+			right: 0;
+			margin-top: 2rem;
+			margin-bottom: -8rem;
+
+			${theme.breakpoints.up('lg')} {
+				margin-top: 0;
+				margin-bottom: 0;
+
+				position: absolute;
+				height: 40rem;
+				width: 40rem;
+				left: 55%;
+				top: 20%;
+			}
+		}
+
+		.Heading-root,
+		.Text-root {
+			color: var(--color-brand-tertiary-dark);
+		}
 	`
 );
 
 const Content = styled('div')(
 	({theme}) => css`
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: minmax(auto, 40rem);
 		gap: 2rem;
 
 		.TopNav-root {
@@ -51,9 +87,8 @@ const TextContent = styled('div')`
 
 export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title,
-	color,
 	breadcrumbs,
-	navigationItems,
+	description,
 	ImageProps
 }) => (
 	<>
@@ -62,12 +97,18 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 				<Content>
 					<TextContent className="PageHeader-textContent">
 						<Breadcrumbs items={breadcrumbs} />
-						<Typography variant="h2" component="h1">
+						<Heading gutterBottom level={1}>
 							{title}
-						</Typography>
+						</Heading>
+						<Text>{description}</Text>
 					</TextContent>
-					<TopNav align="end" items={navigationItems} />
 				</Content>
+				<div className="image">
+					<img
+						src="assets/juicy-team-discussing-the-project.gif"
+						alt=""
+					/>
+				</div>
 			</Container>
 		</Wrapper>
 		{ImageProps && <Image {...ImageProps} height="10rem" width="cover" />}

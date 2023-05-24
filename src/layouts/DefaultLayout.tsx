@@ -56,7 +56,7 @@ const Main = styled('main')(
 		grid-template-columns: minmax(0, 1fr);
 
 		${theme.breakpoints.up('md')} {
-			padding-block: 1rem;
+			padding-bottom: 1rem;
 			gap: 1rem;
 		}
 	`

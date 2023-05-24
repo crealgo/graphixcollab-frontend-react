@@ -10,12 +10,12 @@ import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {HorizontalCard} from '../base/HorizontalCard';
+import {Marked} from '../base/Marked';
 
 type Service = (typeof services)[number];
 
 export type ServicesBlockProps = {
 	services?: Service[];
-	BlockProps?: BlockProps;
 } & SharedBlockProps;
 
 export const Content = styled('div')(
@@ -32,11 +32,19 @@ export const Content = styled('div')(
 	`
 );
 
+const StyledBlock = styled(Block)`
+	padding-block: 3rem !important;
+`;
+
 const Wrapper = styled('div')(
 	({theme}) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;
+
+		hgroup {
+			max-width: 35rem;
+		}
 
 		.container {
 			text-align: center;
@@ -78,14 +86,15 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 	description,
 	services
 }) => (
-	<Block>
+	<StyledBlock>
 		<Container>
 			<Wrapper>
-				<Container className="container" size="small">
-					<Typography variant="overline">{subtitle}</Typography>
-					<Heading level={1}>{title}</Heading>
-					<Typography variant="body2">{description}</Typography>
-				</Container>
+				<hgroup>
+					<Heading gutterBottom level={2}>
+						<Marked>{title}</Marked>
+					</Heading>
+					<Typography variant="body1">{description}</Typography>
+				</hgroup>
 				<div className="services">
 					{services?.map((service, serviceIndex) => (
 						<HorizontalCard
@@ -96,19 +105,17 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 						/>
 					))}
 				</div>
-				<Container size="small">
-					<ActionStack align="center" color="secondary">
-						<Box mr={-1} zIndex={1}>
-							Looking for something else?
-						</Box>
-						<Button color="text" endIcon={<Message />}>
-							Contact Us
-						</Button>
-					</ActionStack>
-				</Container>
+				<ActionStack color="secondary">
+					<Box mr={-1} zIndex={1}>
+						Looking for something else?
+					</Box>
+					<Button color="text" endIcon={<Message />}>
+						Contact Us
+					</Button>
+				</ActionStack>
 			</Wrapper>
 		</Container>
-	</Block>
+	</StyledBlock>
 );
 
 ServicesBlock.displayName = 'ServicesBlock';

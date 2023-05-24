@@ -20,32 +20,13 @@ type CardProps = {
 const CardAnchor = styled('a')`
 	cursor: pointer;
 	display: grid;
-	grid-template-columns: 100px 1fr;
-	gap: 1rem;
+	grid-template-columns: auto 1fr;
+	gap: 1.5rem;
 
 	img {
-		width: 100px;
-		height: auto;
+		width: 75px;
+		height: 75px;
 	}
-
-	/* .image {
-		aspect-ratio: 1;
-		position: relative;
-		border-radius: 0.5rem;
-		overflow: hidden;
-
-		.Image-root {
-			z-index: 0;
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-
-			transition: all 300ms;
-		}
-	} */
 
 	.content {
 		display: grid;

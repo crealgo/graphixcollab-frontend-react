@@ -36,7 +36,6 @@ const Content = styled('div')`
 `;
 
 const ContentWrapper = styled(Block)`
-	background-color: var(--color-brand-yelp-light);
 	position: relative;
 	z-index: 1;
 	overflow: hidden;

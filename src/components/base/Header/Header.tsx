@@ -12,11 +12,8 @@ import {HeaderContent} from './HeaderContent';
 import Logo from '../../atoms/Logo';
 
 export type HeaderProps = {
-	// logo?: string;
 	navigationItems?: NavItemOptions[];
 	actions?: Action[];
-	// backgroundColor?: 'primary' | 'secondary' | 'white';
-	// withHero?: boolean;
 } & ComponentPropsWithoutRef<'header'>;
 
 export const Header: FC<HeaderProps> = ({
@@ -31,7 +28,7 @@ export const Header: FC<HeaderProps> = ({
 
 	return (
 		<HeaderBar className={className} isScrolled={isScrolled}>
-		<HeaderContent>
+			<HeaderContent>
 				<Logo />
 				<NavItems items={items} />
 				<FlexSpacer />

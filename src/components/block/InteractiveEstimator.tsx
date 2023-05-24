@@ -7,7 +7,6 @@ import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {InteractiveSelector} from '../base/InteractiveSelector';
 import {styled} from '@mui/material';
-import Illustration from '../../assets/illustrations/estimate.png';
 
 export type InteractiveEstimatorProps = {
 	actions?: Action[];
@@ -43,26 +42,29 @@ const ContentGrid = styled('div')`
 `;
 
 const AdornmentImage = styled('img')`
-	position: absolute;
-	width: 35rem;
+	position: relative;
+	width: 100%;
+	margin-bottom: -20rem;
 	height: auto;
 	z-index: 0;
 
 	bottom: 0;
-	left: 50%;
-	transform: translateX(-45%) translateY(50%);
+	/* left: 50%; */
+	/* transform: translateX(-20%) translateY(50%); */
 
 	${({theme}) => theme.breakpoints.up('md')} {
-		/* width: 30%; */
-		left: auto;
+		margin-bottom: unset;
+
+		position: absolute;
+		width: 30rem;
 		right: 0;
-		transform: translateX(20%) translateY(35%);
+		bottom: 0;
+		transform: translateX(20%);
 		height: auto;
 	}
 
 	${({theme}) => theme.breakpoints.up('lg')} {
-		position: absolute;
-		bottom: 0;
+		width: 40rem;
 		transform: translateX(25%) translateY(6%);
 	}
 `;
@@ -146,7 +148,10 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 						}
 					]}
 				/>
-				<AdornmentImage src={Illustration.src as string} alt="" />
+				<AdornmentImage
+					src="assets/juicy-business-coach-explains-the-material.gif"
+					alt=""
+				/>
 			</ContentGrid>
 		</StyledBlock>
 	</Container>

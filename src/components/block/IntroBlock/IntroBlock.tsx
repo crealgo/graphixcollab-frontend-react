@@ -1,14 +1,13 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
 import {type Action, type SharedBlockProps} from '../../../types/general';
+import Logo from '../../atoms/Logo';
 import {ActionStack} from '../../base/ActionStack';
 import {Block} from '../../base/Block';
+import {Carousel, CarouselSlide} from '../../base/Carousel';
 import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
-import {Carousel, CarouselSlide} from '../../base/Carousel';
-import Logo from '../../atoms/Logo';
 
 export type Slide = {
 	title: string;
@@ -27,35 +26,76 @@ export type IntroBlockProps = {
 const images = [
 	{src: 'assets/embroidery-denim.jpg', alt: 'Embroidery'},
 	{src: 'assets/sash-hs.jpg', alt: 'Sashes'},
-	{src: 'assets/laughing-group.jpg', alt: 'T-Shirts'},
 	{src: 'assets/embroidery-shirts.avif', alt: 'Embroidery'},
-	// {src: 'assets/sash-ucla.jpg', alt: 'Sashes'}
+	{src: 'assets/laughing-group.jpg', alt: 'T-Shirts'}
 ];
 
+const Wrapper = styled('div')`
+	position: relative;
+	background-color: var(--color-gray-200);
+	margin-top: -5rem;
+
+	.IntroBlock-root {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+`;
+
 const StyledCarousel = styled(Carousel)`
-	height: 35rem;
-	overflow: hidden;
+	position: absolute;
+	height: 100%;
 	width: 100%;
+	overflow: hidden;
+
+	opacity: 0.5;
 `;
 
 const StyledCarouselSlide = styled(CarouselSlide)`
-	height: inherit;
+	height: 100%;
 	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-brand-primary-main);
+		opacity: 0.5;
+		z-index: 1;
+	}
 
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center center;
+		filter: contrast(50%) opacity(90%);
 	}
 
-	.Heading-root {
+	.Block-root {
 		position: absolute;
+		width: 100%;
 		color: white;
+		z-index: 2;
 
-		bottom: 1rem;
-		left: 1rem;
-		line-height: 1;
+		padding-block: 3rem !important;
+		bottom: 0;
+
+		.Container-root {
+			line-height: 1;
+
+			.Heading-root {
+				color: white;
+				text-align: center;
+
+				${({theme}) => theme.breakpoints.up('lg')} {
+					text-align: left;
+				}
+			}
+		}
 	}
 `;
 
@@ -63,6 +103,9 @@ const Content = styled('div')(
 	({theme}) => css`
 		position: relative;
 		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
 
 		.content {
 			display: grid;
@@ -80,8 +123,6 @@ const Content = styled('div')(
 		}
 
 		.image {
-			background: blue;
-			width: 100%;
 		}
 
 		${theme.breakpoints.up('lg')} {
@@ -97,38 +138,43 @@ const Content = styled('div')(
 
 export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 	return (
-		<Container className="IntroBlock-root">
-			<Content>
-				<Block className="content">
-					<Heading gutterBottom level={1}>
-						Welcome to <Logo />
-					</Heading>
-					<Text>{description}</Text>{' '}
-					<ActionStack
-						size="large"
-						actions={[
-							{
-								label: 'Get Started',
-								color: 'primary'
-							},
-							{
-								label: 'Book Appointment',
-								color: 'text'
-							}
-						]}
-					/>
-				</Block>
-				<div className="image">
-					<StyledCarousel>
-						{images.map(image => (
-							<StyledCarouselSlide key={image.alt}>
-								<img {...image} />
+		<Wrapper>
+			<StyledCarousel>
+				{images.map(image => (
+					<StyledCarouselSlide key={image.alt}>
+						<img {...image} />
+						<Block>
+							<Container>
 								<Heading level={2}>{image.alt}</Heading>
-							</StyledCarouselSlide>
-						))}
-					</StyledCarousel>
-				</div>
-			</Content>
-		</Container>
+							</Container>
+						</Block>
+					</StyledCarouselSlide>
+				))}
+			</StyledCarousel>
+			<Container className="IntroBlock-root">
+				<Content>
+					<Block className="content">
+						<Heading gutterBottom level={1}>
+							Welcome to <Logo />
+						</Heading>
+						<Text>{description}</Text>{' '}
+						<ActionStack
+							size="large"
+							actions={[
+								{
+									label: 'Get Started',
+									color: 'primary'
+								},
+								{
+									label: 'Book Appointment',
+									color: 'text'
+								}
+							]}
+						/>
+					</Block>
+					<div className="image" />
+				</Content>
+			</Container>
+		</Wrapper>
 	);
 };

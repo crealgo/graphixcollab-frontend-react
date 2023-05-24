@@ -1,5 +1,5 @@
 import {type StaticImageData} from 'next/image';
-import {type MouseEventHandler} from 'react';
+import {type ReactNode, type MouseEventHandler} from 'react';
 import {type ActionStackProps} from '../components/base/ActionStack';
 import {type ButtonProps} from '../components/base/Button';
 import {type CalloutBlockProps} from '../components/block/CalloutBlock';
@@ -98,9 +98,9 @@ export type ServiceOptions = {
 };
 
 export type SharedBlockProps = {
-	title?: string;
-	subtitle?: string;
-	description?: string;
+	title?: ReactNode;
+	subtitle?: ReactNode;
+	description?: ReactNode;
 	actions?: Action[];
 	ActionStackProps?: ActionStackProps;
 };

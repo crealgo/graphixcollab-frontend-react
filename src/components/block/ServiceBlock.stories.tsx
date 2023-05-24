@@ -6,6 +6,4 @@ export default {
 	component: ServicesBlock
 } as Meta;
 
-export const Default: StoryObj<ServicesBlockProps> = {
-	args: generateServicesBlock()
-};
+export const Default: StoryObj<ServicesBlockProps> = {};

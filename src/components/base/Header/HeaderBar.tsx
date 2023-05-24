@@ -16,10 +16,11 @@ export const StyledHeaderBar = styled(
 	const borderBottomColor = isScrolled
 		? theme.palette.grey[200]
 		: 'transparent';
+
 	return css`
 		position: sticky;
 		top: 0;
-		transition: all 200ms;
+		transition: all 100ms;
 		border-bottom-style: solid;
 		border-bottom-width: 1px;
 		background-color: ${backgroundColor};
@@ -33,7 +34,6 @@ export const StyledHeaderBar = styled(
 
 		${theme.breakpoints.up('md')} {
 			padding-inline: 2rem;
-			/* margin-inline: 0.5rem; */
 			height: 5rem;
 		}
 

@@ -7,7 +7,7 @@ const nextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: ['@svgr/webpack']
     });
 
     // Unset client-side javascript that only works server-side
@@ -16,11 +16,11 @@ const nextConfig = {
     return config;
   },
   ...(process.env.NODE_ENV === 'production' && {
-    basePath: '/projects/fashiongreek',
+    basePath: '/graphixcollab',
     images: {
-      unoptimized: true,
-    },
-  }),
+      unoptimized: true
+    }
+  })
 };
 
 export default nextConfig;

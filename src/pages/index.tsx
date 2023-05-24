@@ -9,6 +9,7 @@ import services from '../content/services.json';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
 import {chance, generateActions} from '../utils/chance';
+import featuredCompanies from '../content/featured-companies';
 
 const HomePage: NextPage<PageProps> = props => (
 	<DefaultLayout>
@@ -20,8 +21,6 @@ const HomePage: NextPage<PageProps> = props => (
 	</DefaultLayout>
 );
 
-const exampleLink = 'https://google.com';
-
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		IntroBlockProps: {
@@ -32,15 +31,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 		},
 		FeaturedInBlockProps: {
 			title: 'Featured In',
-			companies: [
-				{name: 'Dazed', url: exampleLink},
-				{name: 'i-D', url: exampleLink},
-				{name: 'Buffalo Zine', url: exampleLink},
-				{name: 'Gal-dem', url: exampleLink},
-				{name: 'Polyester', url: exampleLink},
-				{name: 'Another Magazine', url: exampleLink},
-				{name: 'i-D', url: exampleLink}
-			]
+			companies: featuredCompanies
 		},
 		InteractiveEstimatorProps: {
 			actions: generateActions()
