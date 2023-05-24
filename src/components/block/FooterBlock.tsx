@@ -172,6 +172,8 @@ const ContactInfoList = styled('ul')`
 	display: grid;
 	padding-block: 0.75rem;
 	gap: 0.75rem;
+	padding: unset;
+	list-style: none;
 
 	& *:first-child {
 		font-weight: bold;
@@ -215,17 +217,15 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 								{footerContent.sections.connect.title}
 							</Typography>
 							<Stack
-								component="ul"
+								component="nav"
 								flexDirection="row"
 								gap="0.5rem"
 							>
 								{footerContent.sections.connect.links.map(
 									(link, index) => (
-										<li key={index}>
-											<Link href={link.href}>
-												{link.label}
-											</Link>
-										</li>
+										<Link key={index} href={link.href}>
+											{link.label}
+										</Link>
 									)
 								)}
 							</Stack>

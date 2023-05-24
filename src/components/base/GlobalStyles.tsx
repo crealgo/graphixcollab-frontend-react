@@ -1,4 +1,3 @@
-import '@fontsource/inter';
 import MuiGlobalStyles from '@mui/material/GlobalStyles';
 import {css} from '@mui/material/styles';
 import {type FC} from 'react';

@@ -184,7 +184,10 @@ export const defaultTheme = createTheme({
 			},
 			styleOverrides: {
 				root: {
-					cursor: 'pointer'
+					'cursor': 'pointer',
+					'&:hover': {
+						filter: 'brightness(0.7)'
+					}
 				}
 			}
 		},

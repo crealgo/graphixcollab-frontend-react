@@ -8,6 +8,7 @@ import {Heading} from '../components/base/Heading';
 import styled from '@emotion/styled';
 import {Text} from '../components/base/Text';
 import {Typography} from '@mui/material';
+import featuredCompanies from '../content/featured-companies';
 
 const values = [
 	{
@@ -157,18 +158,7 @@ export const Example = () => {
 					))}
 				</dl>
 			</div>
-			<FeaturedInBlock
-				className="my-16"
-				companies={[
-					{name: 'Dazed', url: exampleUrl},
-					{name: 'i-D', url: exampleUrl},
-					{name: 'Buffalo Zine', url: exampleUrl},
-					{name: 'Gal-dem', url: exampleUrl},
-					{name: 'Polyester', url: exampleUrl},
-					{name: 'Another Magazine', url: exampleUrl},
-					{name: 'i-D', url: exampleUrl}
-				]}
-			/>
+			<FeaturedInBlock className="my-16" companies={featuredCompanies} />
 		</DefaultLayout>
 	);
 };

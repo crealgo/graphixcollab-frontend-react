@@ -12,19 +12,19 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'Melissa King',
 		url: 'https://www.chefmelissaking.com/',
-		image: '/assets/collabs/melissa-king.png'
+		image: 'assets/collabs/melissa-king.png'
 	},
 	{
 		type: 'logo',
 		name: "Bob's Liquor Store",
 		url: 'https://www.bobsliquorstore.com/',
-		image: '/assets/collabs/bobs-liquor-store.webp'
+		image: 'assets/collabs/bobs-liquor-store.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Black Beverly Hills',
 		url: 'https://www.blackbh.com/',
-		image: '/assets/collabs/bbh-gold.webp',
+		image: 'assets/collabs/bbh-gold.webp',
 		styleOverrides: {
 			transform: 'scale(0.75)'
 		}
@@ -33,7 +33,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'San Gabriel Academy',
 		url: 'https://www.sangabrielacademy.org/',
-		image: '/assets/collabs/san-gabriel-academy.png',
+		image: 'assets/collabs/san-gabriel-academy.png',
 		styleOverrides: {
 			filter: 'invert(1)'
 		}
@@ -51,13 +51,13 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: '550 Wheels',
 		url: 'https://550wheels.com/',
-		image: '/assets/collabs/550-wheels.webp'
+		image: 'assets/collabs/550-wheels.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Have It All',
 		url: 'https://haveittall.com/',
-		image: '/assets/collabs/have-it-tall.webp'
+		image: 'assets/collabs/have-it-tall.webp'
 	},
 	{
 		type: 'logo',
