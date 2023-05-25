@@ -7,7 +7,7 @@ const websiteSizes = [150, 250, 250, 1200, 1280, 1600, 1920];
 
 // resize all images using sharp, excluding the ones in node_modules
 const resizeImages = async () => {
-	const files = await glob(['{public,src}/**/*.{png,jpg,jpeg,svg}']);
+	const files = await glob(['public/**/*.{png,jpg,jpeg,svg}']);
 
 	files.forEach(async file => {
 		const {dir, name, ext} = path.parse(file);
@@ -22,7 +22,7 @@ const resizeImages = async () => {
 
 			await sharp(file)
 				.resize(size)
-				.toFile(`test/${dir}/${name}@${size}w.webp`);
+				.toFile(`${dir}/${name}@${size}w.webp`);
 			// .webp({
 			// 	lossless: true,
 			// 	dir: `test/${dir}/${name}@${size}w.webp`,
