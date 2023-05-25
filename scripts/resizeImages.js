@@ -33,7 +33,7 @@ const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
 
 // resize all images using sharp, excluding the ones in node_modules
 const resizeImages = async () => {
-	const files = await glob(['public/assets/**/*.{png,jpg,jpeg,svg,gif}']);
+	const files = await glob(['public/assets/**/*.*']);
 
 	files.forEach(async file => {
 		const parsedPath = path.parse(file);

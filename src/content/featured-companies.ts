@@ -13,19 +13,19 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'Melissa King',
 		url: 'https://www.chefmelissaking.com/',
-		image: 'assets/collabs/melissa-king.png'
+		image: 'assets/collabs/melissa-king@192w.webp'
 	},
 	{
 		type: 'logo',
 		name: "Bob's Liquor Store",
 		url: 'https://www.bobsliquorstore.com/',
-		image: 'assets/collabs/bobs-liquor-store.webp'
+		image: 'assets/collabs/bobs-liquor-store@192w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Black Beverly Hills',
 		url: 'https://www.blackbh.com/',
-		image: 'assets/collabs/bbh-gold.webp',
+		image: 'assets/collabs/bbh-gold@192w.webp',
 		styleOverrides: {
 			transform: 'scale(0.75)'
 		}
@@ -34,7 +34,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'San Gabriel Academy',
 		url: 'https://www.sangabrielacademy.org/',
-		image: 'assets/collabs/san-gabriel-academy.png',
+		image: 'assets/collabs/san-gabriel-academy@192w.webp',
 		styleOverrides: {
 			filter: 'invert(1)'
 		}
@@ -43,7 +43,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'Solano Elementary School',
 		url: 'https://solano-lausd-ca.schoolloop.com/',
-		image: 'assets/collabs/solano-scholars.png',
+		image: 'assets/collabs/solano-scholars@192w.webp',
 		styleOverrides: {
 			transform: 'scale(1.5)'
 		}
@@ -52,24 +52,24 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: '550 Wheels',
 		url: 'https://550wheels.com/',
-		image: 'assets/collabs/550-wheels.webp'
+		image: 'assets/collabs/550-wheels@192w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Have It All',
 		url: 'https://haveittall.com/',
-		image: 'assets/collabs/have-it-tall.webp'
+		image: 'assets/collabs/have-it-tall@192w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Hot 8 Yoga',
 		url: 'https://www.hot8yoga.com/',
-		image: 'assets/collabs/hot-8-yoga.png'
+		image: 'assets/collabs/hot-8-yoga@192w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'LuluLemon',
-		image: 'assets/collabs/lululemon.svg',
+		image: 'assets/collabs/lululemon@192w.webp',
 		styleOverrides: {
 			transform: 'scale(0.675)'
 		}
@@ -78,7 +78,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'AeroVironment',
 		url: 'https://www.avinc.com/',
-		image: 'assets/collabs/aerovironment.png'
+		image: 'assets/collabs/aerovironment@192w.webp'
 	},
 	{
 		type: 'type',

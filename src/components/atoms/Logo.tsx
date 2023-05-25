@@ -14,19 +14,19 @@ const LogoDots = styled.div`
 		height: 0.25em;
 		border-radius: 50%;
 
-		&:nth-child(1) {
+		&:nth-of-type(1) {
 			background: var(--color-brand-cyan-main);
 		}
 
-		&:nth-child(2) {
+		&:nth-of-type(2) {
 			background: var(--color-brand-magenta-main);
 		}
 
-		&:nth-child(3) {
+		&:nth-of-type(3) {
 			background: var(--color-brand-yellow-main);
 		}
 
-		&:nth-child(4) {
+		&:nth-of-type(4) {
 			background: var(--color-brand-key-main);
 		}
 	}

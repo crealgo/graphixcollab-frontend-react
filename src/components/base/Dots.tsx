@@ -21,19 +21,19 @@ export const Dots = styled((props: HTMLProps<HTMLDivElement>) => (
 		height: 0.175em;
 		border-radius: 50%;
 
-		&:nth-child(1) {
+		&:nth-of-type(1) {
 			background: var(--color-brand-primary-main);
 		}
 
-		&:nth-child(2) {
+		&:nth-of-type(2) {
 			background: var(--color-brand-secondary-main);
 		}
 
-		&:nth-child(3) {
+		&:nth-of-type(3) {
 			background: var(--color-brand-tertiary-main);
 		}
 
-		&:nth-child(4) {
+		&:nth-of-type(4) {
 			background: var(--color-text-primary);
 		}
 	}
