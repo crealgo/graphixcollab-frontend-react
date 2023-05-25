@@ -11,7 +11,7 @@ type HeaderBarProps = ComponentPropsWithoutRef<'header'> & {
 export const StyledHeaderBar = styled(
 	'header',
 	_e('isBranded', 'isScrolled')
-)<HeaderBarProps>(({theme, isScrolled, isBranded}) => {
+)<HeaderBarProps>(({theme, isScrolled}) => {
 	const backgroundColor = isScrolled ? 'white' : 'transparent';
 	const borderBottomColor = isScrolled
 		? theme.palette.grey[200]
@@ -30,15 +30,15 @@ export const StyledHeaderBar = styled(
 		display: flex;
 		align-items: center;
 		padding-block: 0.5rem;
-		padding-inline: 1.5rem;
+		padding-inline: var(--section-mobile-padding-inline) 0.5rem;
 
 		${theme.breakpoints.up('md')} {
-			padding-inline: 2rem;
+			padding-inline: var(--section-tablet-padding-inline);
 			height: 5rem;
 		}
 
 		${theme.breakpoints.up('xl')} {
-			padding-inline: 4rem;
+			padding-inline: var(--section-widescreen-padding-inline);
 		}
 	`;
 });

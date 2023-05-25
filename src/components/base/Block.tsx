@@ -28,18 +28,18 @@ const StyledDiv = styled(
 		background-color: ${blockColor};
 		position: relative;
 
-		padding-block: 4rem;
-		padding-inline: 1.5rem;
+		padding-block: var(--section-mobile-padding-block);
+		padding-inline: var(--section-mobile-padding-inline);
 
 		${theme.breakpoints.up('md')} {
-			padding-block: 7rem;
-			padding-inline: 2rem;
+			padding-block: var(--section-tablet-padding-block);
+			padding-inline: var(--section-tablet-padding-inline);
 			margin-inline: ${hasNoDefaultMargin ? 'unset' : '0.5rem'};
 			border-radius: ${isRounded ? '0.5rem' : '0rem'};
 		}
 
 		${theme.breakpoints.up('xl')} {
-			padding-inline: 4rem;
+			padding-inline: var(--section-widescreen-padding-inline);
 		}
 	`;
 });

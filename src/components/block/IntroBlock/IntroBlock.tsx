@@ -54,7 +54,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 	height: 100%;
 	position: relative;
 
-	&::before {
+	/* &::before {
 		content: '';
 		position: absolute;
 		display: block;
@@ -62,17 +62,16 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: var(--color-brand-primary-main);
-		opacity: 0.5;
+		background-color: ;
 		z-index: 1;
-	}
+	} */
 
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center center;
-		filter: contrast(50%) opacity(90%);
+		/* filter: contrast(1.3) grayscale(0.29) sepia(0.12) saturate(1.1); */
 	}
 
 	.Block-root {

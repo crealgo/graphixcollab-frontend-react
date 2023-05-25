@@ -85,26 +85,6 @@ const CopyrightBlockWrapper = styled(Block)(
 	`
 );
 
-const defaultContent = {
-	title: 'Fashion Greek, USC',
-	description:
-		'Your premier custom apparel store! We make customer apparel fast and easy. Designers on-site to help you out with your order. No minimum quantity.',
-	meta: [
-		{
-			term: 'Location',
-			description: '2626 S Figueroa St #A, Los Angeles, California 90007'
-		},
-		{
-			term: 'Phone',
-			description: '(323) 379-3728'
-		},
-		{
-			term: 'Email',
-			description: 'info@fashiongreekusc.com'
-		}
-	]
-};
-
 const footerContent = {
 	title: 'Fashion Greek, USC',
 	description:
@@ -171,10 +151,13 @@ const SocialBar: FC<unknown> = () => (
 );
 
 const FooterContentBlock = styled('div')`
-	padding: 1rem;
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 0.25rem;
+
+	${({theme}) => theme.breakpoints.up('md')} {
+		padding: 1rem;
+	}
 `;
 
 const ContactInfoList = styled('ul')`

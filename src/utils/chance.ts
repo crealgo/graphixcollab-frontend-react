@@ -184,7 +184,7 @@ export const generateNavItems = (n = 3): NavItemOptions[] =>
 	chance.n(() => generateNavItem(true), n);
 
 export const generateHeader = (): HeaderProps => ({
-	navigationItems: generateNavItems()
+	// navigationItems: generateNavItems()
 	// actions: [
 	// 	{
 	// 		label: 'Contact Us',

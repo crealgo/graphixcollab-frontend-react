@@ -1,10 +1,5 @@
 import {Close} from '@mui/icons-material';
-import {
-	forwardRef,
-	type FC,
-	type MouseEventHandler,
-	type PropsWithChildren
-} from 'react';
+import {type FC, type MouseEventHandler, type PropsWithChildren} from 'react';
 import {type Action, type NavItemOptions} from '../../../types/general';
 import {Heading} from '../Heading';
 import {DrawerBoxClose} from './DrawerBoxClose';
@@ -71,44 +66,46 @@ const StyledLink = styled.a`
 	}
 `;
 
-export const DrawerContent = forwardRef<any, any>(
-	({navigationItems, actions, onCloseButtonClick}, ref) => {
-		const router = useRouter();
+export const DrawerContent: FC<DrawerContentProps> = ({
+	navigationItems,
+	actions,
+	onCloseButtonClick
+}) => {
+	const router = useRouter();
 
-		console.log({actions});
+	console.log({actions});
 
-		return (
-			<Wrapper ref={ref}>
-				<TitleBox hasBorder>
-					<Heading level={4}>Menu</Heading>
-					<DrawerBoxClose onClick={onCloseButtonClick}>
-						<Close fontSize="small" />
-					</DrawerBoxClose>
-				</TitleBox>
-				<StyledList>
-					{navigationItems?.map(({label, href}, itemIndex) => (
-						<StyledListItem key={itemIndex}>
-							<StyledLink
-								href={href}
-								aria-current={
-									router.pathname === href ? 'page' : 'false'
-								}
-							>
-								{label}
-							</StyledLink>
-						</StyledListItem>
-					))}
-				</StyledList>
-				<StyledList>
-					{actions?.map((action, itemIndex) => (
-						<StyledListItem key={itemIndex}>
-							<StyledLink href={action.href}>
-								{action.label}
-							</StyledLink>
-						</StyledListItem>
-					))}
-				</StyledList>
-			</Wrapper>
-		);
-	}
-);
+	return (
+		<Wrapper>
+			<TitleBox hasBorder>
+				<Heading level={4}>Menu</Heading>
+				<DrawerBoxClose onClick={onCloseButtonClick}>
+					<Close fontSize="small" />
+				</DrawerBoxClose>
+			</TitleBox>
+			<StyledList>
+				{navigationItems?.map(({label, href}, itemIndex) => (
+					<StyledListItem key={itemIndex}>
+						<StyledLink
+							href={href}
+							aria-current={
+								router.pathname === href ? 'page' : 'false'
+							}
+						>
+							{label}
+						</StyledLink>
+					</StyledListItem>
+				))}
+			</StyledList>
+			<StyledList>
+				{actions?.map((action, itemIndex) => (
+					<StyledListItem key={itemIndex}>
+						<StyledLink href={action.href}>
+							{action.label}
+						</StyledLink>
+					</StyledListItem>
+				))}
+			</StyledList>
+		</Wrapper>
+	);
+};

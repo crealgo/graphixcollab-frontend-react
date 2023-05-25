@@ -49,7 +49,6 @@ const StyledAnchor = styled('a')`
 	place-items: center;
 
 	aspect-ratio: 1 / 1;
-	padding: 0.5rem;
 	width: 100%;
 	max-width: 15rem;
 	filter: grayscale(100%);
@@ -60,6 +59,10 @@ const StyledAnchor = styled('a')`
 		opacity: 1;
 		filter: grayscale(0%);
 		transform: translateY(-3px);
+	}
+
+	${({theme}) => theme.breakpoints.up('sm')} {
+		padding: 1.5rem;
 	}
 `;
 

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 25 May 2023 03:37:10 GMT
+ * Generated on Thu, 25 May 2023 05:55:31 GMT
  */
 
 :root {
@@ -161,6 +161,14 @@
   --elevation-7: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --mark-background-color: transparent;
   --mark-color: #00aad2;
+  --section-mobile-padding-block: 4rem;
+  --section-mobile-padding-inline: 1.5rem;
+  --section-tablet-padding-block: 4rem;
+  --section-tablet-padding-inline: 2rem;
+  --section-desktop-padding-block: 7rem;
+  --section-desktop-padding-inline: 2rem;
+  --section-widescreen-padding-block: 7rem;
+  --section-widescreen-padding-inline: 4rem;
   --block-testimonials-container-display: flex;
   --block-testimonials-avatar-positions-0-width: 205.2px;
   --block-testimonials-avatar-positions-0-height: 205.2px;

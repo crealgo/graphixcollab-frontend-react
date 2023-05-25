@@ -10,19 +10,16 @@ export type EventBlockProps = {
 	// imgAlt?: string;
 } & BaseComponentsProps;
 const connectorThickness = '0.25rem';
-const markerSize = '2rem';
+const markerSize = '1.75rem';
 
 const Marker = styled('div')`
 	height: ${markerSize};
 	width: ${markerSize};
-
-	background-color: var(--color-secondary);
-	border-radius: 0.5rem 0 0 0.5rem;
+	border-radius: 0.5rem 0 0.5rem 0;
 
 	position: absolute;
 	top: 0;
 	left: 0;
-	transform: translateX(-100%);
 
 	display: flex;
 	align-items: center;
@@ -31,7 +28,7 @@ const Marker = styled('div')`
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 1rem;
+	font-size: 0.875rem;
 	text-align: center;
 	letter-spacing: -0.02em;
 
@@ -46,7 +43,7 @@ const EventConnector = styled('div')`
 
 	height: calc(100%);
 	width: 0;
-	left: calc(-1 * (${markerSize} + ${connectorThickness}) / 2);
+	left: 0.5rem;
 
 	border-left: dotted ${connectorThickness} #cbd5e1;
 `;
@@ -76,33 +73,29 @@ export const MobileTimelineEvent = styled(BaseElement)<EventBlockProps>`
 	grid-template-columns: 1fr;
 	align-content: start;
 
-	.image,
-	.content {
-		order: 1;
-	}
-
 	.image {
+		position: relative;
 		padding: unset;
 		margin: unset;
 
 		display: block;
 		width: 100%;
 		background-color: #cbd5e1;
-		border-radius: 0 var(--image-border-radius) var(--image-border-radius)
-			var(--image-border-radius);
+		border-radius: var(--image-border-radius);
 
 		min-height: 160px;
+		aspect-ratio: 1.75/1;
 	}
 
 	.content {
-		padding-inline: var(--image-border-radius) 0;
+		padding-inline: 1.75rem 0;
 		padding-block: 1rem 3rem;
 
 		.title {
 			font-family: Inter;
-			font-size: 1.75rem;
+			font-size: 1.5rem;
+			line-height: 1.125;
 			font-weight: 700;
-			line-height: ${markerSize};
 			letter-spacing: -0.02em;
 			text-align: left;
 
@@ -121,5 +114,34 @@ export const MobileTimelineEvent = styled(BaseElement)<EventBlockProps>`
 
 	&:last-of-type {
 		margin-bottom: 0;
+	}
+
+	/* sequence */
+	&:nth-of-type(1n) {
+		.marker {
+			background-color: var(--color-brand-cyan-main);
+			color: var(--color-brand-cyan-contrast);
+		}
+	}
+
+	&:nth-of-type(2n) {
+		.marker {
+			background-color: var(--color-brand-magenta-main);
+			color: var(--color-brand-magenta-contrast);
+		}
+	}
+
+	&:nth-of-type(3n) {
+		.marker {
+			background-color: var(--color-brand-yellow-main);
+			color: var(--color-brand-yellow-contrast);
+		}
+	}
+
+	&:nth-of-type(4n) {
+		.marker {
+			background-color: var(--color-brand-key-main);
+			color: var(--color-brand-key-contrast);
+		}
 	}
 `;
