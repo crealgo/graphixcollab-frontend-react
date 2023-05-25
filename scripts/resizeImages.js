@@ -1,12 +1,16 @@
 const {glob} = require('glob');
 const sharp = require('sharp');
 const path = require('path');
+const chalk = require('chalk');
 
 // const metaSizes = [16, 32, 100];
 const faviconSizes = [16, 32, 96, 192];
 const websiteSizes = [150, 192, 250, 250, 512, 1200, 1280, 1600, 1920];
 
 const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
+	chalk.green(`Resizing ${file}`);
+
+	chalk.red(`Size: OG`);
 	await sharp(file, sharpOptions)
 		.webp({
 			quality: 90,
@@ -16,13 +20,14 @@ const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
 
 	// convert original image to webp, with original size
 	sizeArray.forEach(async size => {
+		chalk.red(`Size: ${size}w`);
 		await sharp(file, sharpOptions)
 			.resize(size)
 			.webp({
 				quality: 90,
 				lossless: true
 			})
-			.toFile(`${parsedPath.dir}/${parsedPath.name}@ogw.webp`);
+			.toFile(`${parsedPath.dir}/${parsedPath.name}@${size}w.webp`);
 	});
 };
 
