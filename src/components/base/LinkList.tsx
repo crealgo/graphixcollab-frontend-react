@@ -5,19 +5,17 @@ import {Link} from './Link';
 import {LinkListItem} from './LinkListItem';
 
 export type LinkListProps = PropsWithChildren<{
-	hasDivider?: boolean;
+	// hasDivider?: boolean;
 	items?: NavItemOptions[];
 }>;
 
-const LinkListUl = styled('ul')(
-	({theme}) => css`
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	`
-);
+const LinkListUl = styled('ul')`
+	list-style: none;
+	padding: 0;
+	margin: 0;
+`;
 
-export const LinkList: FC<LinkListProps> = ({children, hasDivider, items}) => (
+export const LinkList: FC<LinkListProps> = ({items}) => (
 	<LinkListUl>
 		{items?.map(({label}, itemIndex) => (
 			<LinkListItem key={itemIndex}>

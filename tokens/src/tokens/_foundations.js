@@ -51,6 +51,11 @@ module.exports = {
 		white: f(colors.white),
 		black: f(colors.black),
 		brand: {
+			cyan: generateColorVariants('#00aad2'),
+			magenta: generateColorVariants('#d40072'),
+			yellow: generateColorVariants('#edb700'),
+			key: generateColorVariants('#111827'),
+			// as a hierarchy
 			primary: generateColorVariants('#00aad2'),
 			secondary: generateColorVariants('#d40072'),
 			tertiary: generateColorVariants('#edb700'),

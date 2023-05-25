@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 import {Rating} from './Rating';
 import {type FC} from 'react';
 import type reviews from '../../content/yelp-reviews.json';
@@ -38,6 +38,10 @@ const BaseElement = styled('article')`
 		-webkit-line-clamp: 3;
 		white-space: normal;
 	}
+
+	/* ${({theme}) => theme.breakpoints.up('md')} {
+		flex-direction: row;
+	} */
 `;
 
 export const Testimonial: FC<TestimonialProps> = ({user, comment, rating}) => (

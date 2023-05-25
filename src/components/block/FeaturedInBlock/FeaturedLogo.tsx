@@ -5,7 +5,7 @@ export const FeaturedLogo: FC<FeaturedCompanyInfo> = props => (
 	<figure
 		style={{
 			display: 'flex',
-			height: '100%',
+			height: 'inherit',
 			width: 'inherit',
 			placeItems: 'center',
 			placeContent: 'center',

@@ -1,12 +1,24 @@
-import styled from '@emotion/styled';
+import {css, styled} from '@mui/material/styles';
 import Head from 'next/head';
 import {type FC} from 'react';
 import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
 
-const StyledSpan = styled.span`
-	font-size: 2rem;
-	white-space: nowrap;
-`;
+type SpanProps = Pick<
+	FeaturedCompanyInfo,
+	'font' | 'styleOverrides' | 'mobileStyleOverrides'
+>;
+
+const StyledSpan = styled('span')<SpanProps>(
+	({theme, font, styleOverrides, mobileStyleOverrides}) => ({
+		fontSize: '2rem',
+		whiteSpace: 'nowrap',
+		fontFamily: font,
+		...styleOverrides,
+		[theme.breakpoints.down('sm')]: {
+			...mobileStyleOverrides
+		}
+	})
+);
 
 export const FeaturedLogoType: FC<FeaturedCompanyInfo> = props => {
 	const resolvedFont = props.font ?? 'Karla';
@@ -26,10 +38,9 @@ export const FeaturedLogoType: FC<FeaturedCompanyInfo> = props => {
 				/>
 			</Head>
 			<StyledSpan
-				style={{
-					fontFamily: resolvedFont,
-					...props.styleOverrides
-				}}
+				font={resolvedFont}
+				styleOverrides={props.styleOverrides}
+				mobileStyleOverrides={props.mobileStyleOverrides}
 			>
 				{props.name}
 			</StyledSpan>

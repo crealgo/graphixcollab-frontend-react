@@ -1,13 +1,11 @@
-import tw from 'twin.macro';
 import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {useState} from 'react';
 import Head from 'next/head';
 import {Marked} from '../components/base/Marked';
 import {Heading} from '../components/base/Heading';
-import styled from '@emotion/styled';
 import {Text} from '../components/base/Text';
-import {Typography} from '@mui/material';
+import {Typography, styled} from '@mui/material';
 import featuredCompanies from '../content/featured-companies';
 
 const values = [
@@ -43,89 +41,88 @@ const exampleUrl = 'https://google.com';
 const ContentWrapper = styled('div')`
 	background: var(--color-brand-primary-light);
 	margin-top: -5rem;
-	padding-top: 5rem;
+	padding-block: 10rem 5rem;
 
 	.Heading-root,
 	.MuiTypography-root {
 		color: var(--color-brand-primary-dark);
 	}
+
+	${({theme}) => theme.breakpoints.up('md')} {
+		padding-block: 5rem 0;
+	}
 `;
 
 export const Example = () => {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
 	return (
 		<DefaultLayout pageTitle="About Us">
 			<Head>
 				<script src="https://cdn.tailwindcss.com" />
 			</Head>
 			<ContentWrapper className="relative isolate -z-10">
-				<div className="overflow-hidden">
-					<div className="mx-auto max-w-7xl px-6">
-						<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-							<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-								<Heading gutterBottom level={1}>
-									<Marked>Our Mission</Marked>
-								</Heading>
-								<Typography className="mt-6 text-lg leading-8 text-gray-600">
-									Fashion Greek, USC was founded with a vision
-									to provide top-quality printing solutions to
-									businesses of all sizes. Since then, we have
-									grown into a leading printing company,
-									serving clients across various industries
-									and sectors. We have invested in the latest
-									printing technology, expanded our range of
-									services, and built a team of experienced
-									professionals who share our passion for
-									printing.
-								</Typography>
+				<div className="mx-auto max-w-7xl px-6">
+					<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+						<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+							<Heading gutterBottom level={1}>
+								<Marked>Our Mission</Marked>
+							</Heading>
+							<Typography className="mt-6 text-lg leading-8 text-gray-600">
+								Fashion Greek, USC was founded with a vision to
+								provide top-quality printing solutions to
+								businesses of all sizes. Since then, we have
+								grown into a leading printing company, serving
+								clients across various industries and sectors.
+								We have invested in the latest printing
+								technology, expanded our range of services, and
+								built a team of experienced professionals who
+								share our passion for printing.
+							</Typography>
+						</div>
+						<div className="hidden lg:flex justify-end gap-8 sm:justify-start sm:pl-20 lg:pl-0 lg:-my-12">
+							<div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+								<div className="relative">
+									<img
+										src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+										alt=""
+										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+									/>
+									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+								</div>
 							</div>
-							<div className="hidden lg:flex justify-end gap-8 sm:justify-start sm:pl-20 lg:pl-0 lg:-my-12">
-								<div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-									<div className="relative">
-										<img
-											src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-											alt=""
-											className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
+							<div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+								<div className="relative">
+									<img
+										src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+										alt=""
+										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+									/>
+									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
-								<div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-									<div className="relative">
-										<img
-											src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-											alt=""
-											className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
-									<div className="relative">
-										<img
-											src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
-											alt=""
-											className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
+								<div className="relative">
+									<img
+										src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
+										alt=""
+										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+									/>
+									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
-								<div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-									<div className="relative">
-										<img
-											src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-											alt=""
-											className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
-									<div className="relative">
-										<img
-											src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-											alt=""
-											className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
+							</div>
+							<div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+								<div className="relative">
+									<img
+										src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
+										alt=""
+										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+									/>
+									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+								</div>
+								<div className="relative">
+									<img
+										src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+										alt=""
+										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+									/>
+									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
 							</div>
 						</div>
@@ -164,27 +161,3 @@ export const Example = () => {
 };
 
 export default Example;
-
-/**
- Services
- - embroidery
- - direct-to-garment
- - screen-printing
-	- tshirts
-	- poster(s)
-	- other apparel
- - large format printing
- - graphic design (graphix collab)
-	- brand strategy (consult) <--
-	- photography (consult)
-	- consultations
- - vinyl cutting
-
-- UPS Drop-off point
-
-- business promotion
- - business cards
- - flyers
- -
-
- */

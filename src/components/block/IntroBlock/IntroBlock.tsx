@@ -115,7 +115,6 @@ const Content = styled('div')(
 			justify-items: center;
 			border-radius: 0.5rem;
 			text-align: center;
-			padding-inline: 0;
 
 			.Text-root {
 				max-width: ${theme.breakpoints.values.sm}px;
@@ -129,6 +128,7 @@ const Content = styled('div')(
 			grid-template-columns: 1fr 1fr;
 
 			.content {
+				padding-inline: 0;
 				justify-items: start;
 				text-align: left;
 			}

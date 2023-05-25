@@ -129,11 +129,20 @@ const footerContent = {
 			description:
 				"We're here to help! If you have any questions or inquiries about our printing services, feel free to get in touch with us. You can contact us through the following channels:",
 			links: [
-				{label: 'Phone', href: 'tel:323-379-3728'},
-				{label: 'Email', href: 'mailto:fashiongreekusc@gmail.com'},
+				{
+					label: 'Phone',
+					displayName: '+1 (323) 379-3728',
+					href: 'tel:323-379-3728'
+				},
+				{
+					label: 'Email',
+					displayName: 'fashiongreekusc@gmail.com',
+					href: 'mailto:fashiongreekusc@gmail.com'
+				},
 				{
 					label: 'Address',
-					href: 'https://goo.gl/maps/6Y5Z9Z2Z2Z2Z2Z2Z2'
+					displayName: '2626 S Figueroa St A, Los Angeles, CA 90007',
+					href: 'https://goo.gl/maps/g3bKdJBYSRZvvmpaA'
 				}
 			]
 		},
@@ -175,7 +184,7 @@ const ContactInfoList = styled('ul')`
 	padding: unset;
 	list-style: none;
 
-	& *:first-child {
+	& *:first-of-type {
 		font-weight: bold;
 	}
 `;
@@ -245,7 +254,9 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 									(link, index) => (
 										<li key={index}>
 											<Text>{link.label}</Text>
-											<Text>{link.href}</Text>
+											<Link href={link.href}>
+												{link.displayName}
+											</Link>
 										</li>
 									)
 								)}

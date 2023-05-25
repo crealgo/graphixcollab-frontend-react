@@ -1,10 +1,26 @@
 export default `/**
 * Do not edit directly
-* Generated on Wed, 24 May 2023 02:36:40 GMT
+* Generated on Thu, 25 May 2023 03:37:10 GMT
 */
 :root {
 --color-white: #ffffff;
 --color-black: #000000;
+--color-brand-cyan-light: #6ce3ff;
+--color-brand-cyan-main: #00aad2;
+--color-brand-cyan-dark: #15363e;
+--color-brand-cyan-contrast: #ffffff;
+--color-brand-magenta-light: #ff6ebc;
+--color-brand-magenta-main: #d40072;
+--color-brand-magenta-dark: #3f152c;
+--color-brand-magenta-contrast: #ffffff;
+--color-brand-yellow-light: #ffe487;
+--color-brand-yellow-main: #edb700;
+--color-brand-yellow-dark: #52461b;
+--color-brand-yellow-contrast: #000000;
+--color-brand-key-light: #32559f;
+--color-brand-key-main: #111827;
+--color-brand-key-dark: #000000;
+--color-brand-key-contrast: #ffffff;
 --color-brand-primary-light: #6ce3ff;
 --color-brand-primary-main: #00aad2;
 --color-brand-primary-dark: #15363e;
@@ -257,7 +273,7 @@ export default `/**
 --select-spacing-padding-inline-large: 0.875rem calc(2*0.5625rem + 1.375rem);
 --button-display: inline-flex;
 --button-align-items: center;
---button-font-weight: 500;
+--button-font-weight: 700;
 --button-font-size-small: 0.875rem;
 --button-font-size-medium: 0.875rem;
 --button-font-size-large: 1rem;

@@ -15,7 +15,7 @@ export type BlockProps = {
 
 const StyledDiv = styled(
 	'div',
-	_e('isRounded', 'color')
+	_e('isRounded', 'color', 'hasNoDefaultMargin')
 )<BlockProps>(({theme, color, hasNoDefaultMargin, isRounded = false}) => {
 	const blockColor = {
 		default: 'transparent',

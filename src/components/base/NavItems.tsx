@@ -6,7 +6,7 @@ import {type FC, type PropsWithChildren} from 'react';
 
 const NavItemsWrapper = styled('nav')(
 	({theme}) => css`
-		gap: 0.25rem;
+		gap: 0;
 		display: none;
 
 		${theme.breakpoints.up('md')} {

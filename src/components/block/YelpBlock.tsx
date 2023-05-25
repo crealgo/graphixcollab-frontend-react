@@ -25,14 +25,6 @@ const Content = styled('div')`
 	.Heading-root {
 		text-align: center;
 	}
-
-	/* ${({theme}) => theme.breakpoints.up('md')} {
-		transform: translateY(2rem);
-
-		& ~ .ActionStack-root {
-			transform: translateY(2rem);
-		}
-	} */
 `;
 
 const ContentWrapper = styled(Block)`
@@ -107,8 +99,6 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 
 export const YelpBlock: FC<YelpBlockProps> = () => {
 	const ref = useRef<HTMLDivElement>(null);
-
-	// TODO: parallax
 
 	return (
 		<Container ref={ref}>

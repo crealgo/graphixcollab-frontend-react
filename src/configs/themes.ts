@@ -33,10 +33,13 @@ const {typography} = createTheme({
 	typography: {
 		allVariants: bodyFontCss,
 		h1: {
-			fontSize: '4rem',
+			fontSize: '3rem',
 			fontWeight: 700,
 			lineHeight: '1.125',
-			letterSpacing: '-0.02em'
+			letterSpacing: '-0.02em',
+			[breakpoints.up('md')]: {
+				fontSize: '4rem'
+			}
 		},
 		h2: {
 			fontSize: '2.5rem',

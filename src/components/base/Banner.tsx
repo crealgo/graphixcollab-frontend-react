@@ -7,6 +7,7 @@ import {Block} from './Block';
 import {Container} from './Container';
 import {IconButton} from './IconButton';
 import {type IconButtonBaseProps} from './IconButtonBase';
+import {_e} from '../../utils/excludePropsFromForwarding';
 
 export type BannerProps = PropsWithChildren<{
 	text?: string;

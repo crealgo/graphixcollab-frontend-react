@@ -5,6 +5,7 @@ export type FeaturedCompanyInfo = {
 	image?: string;
 	font?: string;
 	styleOverrides?: React.CSSProperties;
+	mobileStyleOverrides?: React.CSSProperties;
 };
 
 export default <FeaturedCompanyInfo[]>[
@@ -88,7 +89,11 @@ export default <FeaturedCompanyInfo[]>[
 			color: '#19162e',
 			fontFamily: 'Karla, sans-serif',
 			fontWeight: 400,
-			letterSpacing: '-0.025em'
+			letterSpacing: '-0.025em',
+			fontSize: '1.5rem'
+		},
+		mobileStyleOverrides: {
+			fontSize: '0.9rem'
 		}
 	}
 ];

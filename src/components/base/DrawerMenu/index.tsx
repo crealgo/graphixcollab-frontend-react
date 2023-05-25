@@ -1,18 +1,20 @@
 import {DrawerContent} from './DrawerContent';
 import {MenuTrigger} from './MenuTrigger';
-import {type NavItemOptions} from '../../../types/general';
+import {type Action, type NavItemOptions} from '../../../types/general';
 import {Close, Menu} from '@mui/icons-material';
 import {Drawer, useControlled, type DrawerProps} from '@mui/material';
 import {type FC, type MouseEventHandler} from 'react';
 
 export type DrawerMenuProps = {
 	items?: NavItemOptions[];
+	actions?: Action[];
 } & Pick<DrawerProps, 'open' | 'onClose'>;
 
 export const contentBoxPadding = '1rem';
 
 export const DrawerMenu: FC<DrawerMenuProps> = ({
 	items,
+	actions,
 	open: controlledOpen
 }) => {
 	const [open, setOpen] = useControlled({
@@ -41,6 +43,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({
 			<Drawer anchor="left" open={open} onClose={handleClose}>
 				<DrawerContent
 					navigationItems={items}
+					actions={actions}
 					onCloseButtonClick={handleClose}
 				/>
 			</Drawer>

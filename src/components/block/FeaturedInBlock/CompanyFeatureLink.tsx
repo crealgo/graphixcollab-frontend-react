@@ -41,14 +41,17 @@ const StyledAnchor = styled('a')`
 	all: unset;
 
 	cursor: pointer;
-	display: inline-flex;
+	box-sizing: border-box;
+
+	display: inline-grid;
+	grid-template-columns: 1fr;
 	place-content: center;
 	place-items: center;
 
 	aspect-ratio: 1 / 1;
 	padding: 0.5rem;
-	width: 15rem;
-	margin: 0 0.5rem;
+	width: 100%;
+	max-width: 15rem;
 	filter: grayscale(100%);
 	opacity: 0.5;
 	transition: all 100ms ease-in-out;

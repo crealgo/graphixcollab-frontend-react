@@ -9,6 +9,7 @@ export const TitleBox = styled('div')<{hasBorder?: boolean}>(
 	grid-template-columns: 1fr auto;
 	gap: 1rem;
 	align-items: center;
+	flex: none;
 
 	${hasBorder ? `border-bottom: solid 1px ${theme.palette.grey[300]};` : ''}
 `

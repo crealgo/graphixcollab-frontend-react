@@ -87,24 +87,6 @@ export const DefaultLayout: DefaultLayoutProps = ({
 			</Head>
 			<Header
 				{...HeaderProps}
-				navigationItems={[
-					{
-						label: 'Home',
-						href: `${router.basePath}/`
-					},
-					{
-						label: 'About',
-						href: `${router.basePath}/about`
-					},
-					{
-						label: 'Graphix Collab',
-						href: `${router.basePath}/graphix-collab`
-					},
-					{
-						label: 'Services',
-						href: `${router.basePath}/services`
-					}
-				]}
 				actions={[
 					{
 						color: 'text',

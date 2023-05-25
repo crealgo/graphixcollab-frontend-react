@@ -1,8 +1,7 @@
 import {useMemo, type ComponentPropsWithoutRef, type FC} from 'react';
-import FGUSCLogo from '../../../assets/fashiongreek-usc-logo.png';
 import {useNavigationItems} from '../../../hooks/useNavigationItems';
 import useScrollPosition from '../../../hooks/useScrollPosition';
-import {type Action, type NavItemOptions} from '../../../types/general';
+import {type Action} from '../../../types/general';
 import {ActionStack} from '../ActionStack';
 import {DrawerMenu} from '../DrawerMenu';
 import {FlexSpacer} from '../FlexSpacer';
@@ -12,15 +11,10 @@ import {HeaderContent} from './HeaderContent';
 import Logo from '../../atoms/Logo';
 
 export type HeaderProps = {
-	navigationItems?: NavItemOptions[];
 	actions?: Action[];
 } & ComponentPropsWithoutRef<'header'>;
 
-export const Header: FC<HeaderProps> = ({
-	navigationItems,
-	actions,
-	className
-}) => {
+export const Header: FC<HeaderProps> = ({actions, className}) => {
 	const items = useNavigationItems();
 	const scrollPosition = useScrollPosition();
 
@@ -33,7 +27,7 @@ export const Header: FC<HeaderProps> = ({
 				<NavItems items={items} />
 				<FlexSpacer />
 				<ActionStack actions={actions} />
-				<DrawerMenu items={navigationItems} />
+				<DrawerMenu items={items} actions={actions} />
 			</HeaderContent>
 		</HeaderBar>
 	);
