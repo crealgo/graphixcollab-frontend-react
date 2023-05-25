@@ -33,7 +33,9 @@ const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
 
 // resize all images using sharp, excluding the ones in node_modules
 const resizeImages = async () => {
-	const files = await glob(['public/assets/**/*.*']);
+	const files = (await glob(['public/assets/**/*.*'])).filter(
+		f => !f.includes('@')
+	);
 
 	files.forEach(async file => {
 		const parsedPath = path.parse(file);
@@ -48,6 +50,7 @@ const resizeImages = async () => {
 			? faviconSizes.filter(size => image.width >= size)
 			: [];
 
+		/**  @type {import('sharp').SharpOptions} */
 		const sharpOptions = {
 			animated: true
 		};
