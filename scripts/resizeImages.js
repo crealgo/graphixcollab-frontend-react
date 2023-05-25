@@ -23,11 +23,6 @@ const resizeImages = async () => {
 			await sharp(file)
 				.resize(size)
 				.toFile(`${dir}/${name}@${size}w.webp`);
-			// .webp({
-			// 	lossless: true,
-			// 	dir: `test/${dir}/${name}@${size}w.webp`,
-			// 	file: `test/${dir}/${name}@${size}w.webp`
-			// });
 		});
 	});
 };
