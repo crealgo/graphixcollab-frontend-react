@@ -17,9 +17,9 @@ const resizeImages = async () => {
 			size => image.width >= size
 		);
 
-		constrainedSizes.forEach(async size => {
-			console.log(file);
+		await sharp(file).toFile(`${dir}/${name}@ogw.webp`);
 
+		constrainedSizes.forEach(async size => {
 			await sharp(file)
 				.resize(size)
 				.toFile(`${dir}/${name}@${size}w.webp`);
