@@ -68,10 +68,10 @@ const StyledAnchor = styled('a')`
 
 type Props = ComponentPropsWithoutRef<'a'>;
 
-export const CompanyFeatureLink: FC<Props> = ({children, ...props}) => {
+export const CompanyFeatureLink: FC<Props> = ({children, title, ...props}) => {
 	const tooltipTitle = (
 		<>
-			<span className="Tooltip-text">{props.title}</span>
+			<span className="Tooltip-text">{title}</span>
 			{props.href && <OutBoundIcon className="Tooltip-icon" />}
 		</>
 	);

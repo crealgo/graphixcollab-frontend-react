@@ -1,6 +1,3 @@
-import posterImage from '../assets/screen-printing/poster.jpg';
-import silkScreenImage from '../assets/screen-printing/silk-screen.jpg';
-import toteImage from '../assets/screen-printing/tote.jpg';
 import {type BannerProps} from '../components/base/Banner';
 import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
 import {type GalleryBlockProps} from '../components/block/GalleryBlock';
@@ -269,31 +266,31 @@ export const generateService = (): ServiceOptions => ({
 export const generateServices = (): ServiceOptions[] => [
 	{
 		title: 'T-Shirts',
-		imageSrc: silkScreenImage as StaticImageData,
+		imageSrc: 'assets/screen-printing/silk-screen@ogw.webp',
 		description:
 			'Add screen printing, embroidery, or tags to create something unique.'
 	},
 	{
 		title: 'Merch',
-		imageSrc: posterImage as StaticImageData,
+		imageSrc: 'assets/screen-printing/poster@ogw.webp',
 		description:
 			"It's the little things that keep a brand sticking around in your customers' minds."
 	},
 	{
 		title: 'Apparel',
-		imageSrc: toteImage as StaticImageData,
+		imageSrc: 'assets/screen-printing/tote@ogw.webp',
 		description:
 			'Make your brand stand out with high-quality blank garments and a stunning print.'
 	},
 	{
 		title: 'Embroidery',
-		imageSrc: toteImage as StaticImageData,
+		imageSrc: 'assets/screen-printing/tote@ogw.webp',
 		description:
 			'Create eye-catching products with your designs embroidered or on a patch.'
 	},
 	{
 		title: 'Paper',
-		imageSrc: toteImage as StaticImageData,
+		imageSrc: 'assets/screen-printing/tote@ogw.webp',
 		description:
 			'From postcards to business cards and even screen-printed posters.'
 	}
