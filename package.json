@@ -66,6 +66,7 @@
     "site:dev": "next dev",
     "site:build": "rm -rf .next && next build && next export",
     "site:serve": "npx http-server out -p 6006",
+    "scripts:regenerate-images": "node scripts/resizeImages",
     "scripts:dev": "npm-watch scripts:rename",
     "scripts:clean": "rm -rf lib .next dist storybook-static",
     "scripts:entry-file": "node scripts/generateEntryFile",
