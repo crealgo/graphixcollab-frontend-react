@@ -1,9 +1,9 @@
 name: Deploy Hydra Static Site
 
 on:
-  push:
-    branches:
-      - "main"
+  # push:
+  #   branches:
+  #     - 'main'
 
   workflow_dispatch:
 
@@ -43,4 +43,3 @@ jobs:
           external_repository: crealgo/crealgo-static
           publish_dir: out
           destination_dir: projects/fashiongreek
-

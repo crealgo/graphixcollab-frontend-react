@@ -1,11 +1,11 @@
 name: Deploy Hydra React Storybook
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      -  "pages/**"
+  # push:
+  #   branches:
+  #     - main
+  #   paths-ignore:
+  #     -  "pages/**"
 
   workflow_dispatch:
 
@@ -43,4 +43,3 @@ jobs:
           external_repository: crealgo/crealgo-static
           publish_dir: storybook-static
           destination_dir: ./component-library
-
