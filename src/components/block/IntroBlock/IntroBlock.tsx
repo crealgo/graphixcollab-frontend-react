@@ -24,10 +24,10 @@ export type IntroBlockProps = {
 	SharedBlockProps;
 
 const images = [
-	{src: 'assets/embroidery-denim.jpg', alt: 'Embroidery'},
-	{src: 'assets/sash-hs.jpg', alt: 'Sashes'},
-	{src: 'assets/embroidery-shirts.avif', alt: 'Embroidery'},
-	{src: 'assets/laughing-group.jpg', alt: 'T-Shirts'}
+	{src: 'assets/embroidery-denim@ogw.webp', alt: 'Embroidery'},
+	{src: 'assets/sash-hs@ogw.webp', alt: 'Sashes'},
+	{src: 'assets/embroidery-shirts@ogw.webp', alt: 'Embroidery'},
+	{src: 'assets/laughing-group@ogw.webp', alt: 'T-Shirts'}
 ];
 
 const Wrapper = styled('div')`

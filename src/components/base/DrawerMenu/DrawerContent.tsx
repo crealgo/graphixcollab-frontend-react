@@ -27,10 +27,13 @@ const StyledList = styled.ul`
 	margin: unset;
 	padding: 2rem 1rem;
 	flex: 1;
+	border-top: solid 1px var(--color-gray-400);
+
+	background-color: var(--color-gray-200);
 
 	&:nth-last-of-type(1) {
+		background-color: var(--color-white);
 		flex: none;
-		border-top: solid 1px var(--color-gray-400);
 		font-size: 2rem;
 	}
 `;
@@ -77,7 +80,7 @@ export const DrawerContent: FC<DrawerContentProps> = ({
 
 	return (
 		<Wrapper>
-			<TitleBox hasBorder>
+			<TitleBox>
 				<Heading level={4}>Menu</Heading>
 				<DrawerBoxClose onClick={onCloseButtonClick}>
 					<Close fontSize="small" />

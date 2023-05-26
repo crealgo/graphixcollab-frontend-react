@@ -41,10 +41,22 @@ const StyledAnchor = styled('a')`
 
 	&:hover,
 	&[aria-current='true'] {
-		${colorIterator('text-decoration-color')}
 		text-decoration: var(--button-text-decoration-${variant});
 		text-underline-offset: var(--button-text-offset-${variant});
 		text-decoration-thickness: var(--button-text-thickness-${variant});
+
+		&:nth-of-type(1n) {
+			text-decoration-color: var(--color-sequence-0-main);
+		}
+		&:nth-of-type(2n) {
+			text-decoration-color: var(--color-sequence-1-main);
+		}
+		&:nth-of-type(3n) {
+			text-decoration-color: var(--color-sequence-2-main);
+		}
+		&:nth-of-type(4n) {
+			text-decoration-color: var(--color-sequence-3-main);
+		}
 	}
 `;
 

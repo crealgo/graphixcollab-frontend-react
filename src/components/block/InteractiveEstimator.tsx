@@ -149,7 +149,7 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 					]}
 				/>
 				<AdornmentImage
-					src="assets/juicy-business-coach-explains-the-material.gif"
+					src="assets/juicy-business-coach-explains-the-material@ogw.webp"
 					alt=""
 				/>
 			</ContentGrid>

@@ -91,28 +91,22 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	description,
 	ImageProps
 }) => (
-	<>
-		<Wrapper>
-			<Container>
-				<Content>
-					<TextContent className="PageHeader-textContent">
-						<Breadcrumbs items={breadcrumbs} />
-						<Heading gutterBottom level={1}>
-							{title}
-						</Heading>
-						<Text>{description}</Text>
-					</TextContent>
-				</Content>
-				<div className="image">
-					<img
-						src="assets/juicy-team-discussing-the-project.gif"
-						alt=""
-					/>
-				</div>
-			</Container>
-		</Wrapper>
-		{ImageProps && <Image {...ImageProps} height="10rem" width="cover" />}
-	</>
+	<Wrapper>
+		<Container>
+			<Content>
+				<TextContent className="PageHeader-textContent">
+					<Breadcrumbs items={breadcrumbs} />
+					<Heading gutterBottom level={1}>
+						{title}
+					</Heading>
+					<Text>{description}</Text>
+				</TextContent>
+			</Content>
+			<div className="image">
+				<img {...ImageProps} />
+			</div>
+		</Container>
+	</Wrapper>
 );
 
 PageHeaderBlock.displayName = 'PageHeaderBlock';
