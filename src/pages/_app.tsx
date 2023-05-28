@@ -1,10 +1,9 @@
-import {ThemeProvider} from '../providers/ThemeProvider';
-import {AppStateContextProvider} from '../providers/AppStateContextProvider';
 import '@fontsource/inter';
 import {type AppProps} from 'next/app';
 import Head from 'next/head';
+import {AppStateContextProvider} from '../providers/AppStateContextProvider';
+import {ThemeProvider} from '../providers/ThemeProvider';
 import '../styles/global.css';
-import {DefaultSeo} from 'next-seo';
 
 const App = ({Component, pageProps}: AppProps) => (
 	<>

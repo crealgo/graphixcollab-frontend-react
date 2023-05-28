@@ -1,5 +1,5 @@
+import {colors} from '@mui/material';
 import {createTheme} from '@mui/material/styles';
-import colors from 'tailwindcss/colors';
 
 const defaultFontStack =
 	'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
