@@ -40,25 +40,31 @@ const resizeImages = async () => {
 	files.forEach(async file => {
 		const parsedPath = path.parse(file);
 		const image = await sharp(file).metadata();
-
-		// check if image is smaller than some of the sizes
-		const constrainedWebsiteSizes = websiteSizes.filter(
-			size => image.width >= size
-		);
-
-		const constrainedFaviconSizes = parsedPath.dir.match(/brandmark|logo/i)
-			? faviconSizes.filter(size => image.width >= size)
-			: [];
+		let sizeArray = [];
 
 		/**  @type {import('sharp').SharpOptions} */
 		const sharpOptions = {
 			animated: true
 		};
 
-		const sizeArray = [
-			...constrainedWebsiteSizes,
-			...constrainedFaviconSizes
-		];
+		// check if image is smaller than some of the sizes
+		if (parsedPath.ext === '.svg') {
+			sizeArray = [...websiteSizes, ...faviconSizes];
+		} else {
+			const constrainedWebsiteSizes = websiteSizes.filter(
+				size => image.width >= size
+			);
+			const constrainedFaviconSizes = parsedPath.dir.match(
+				/brandmark|logo/i
+			)
+				? faviconSizes.filter(size => image.width >= size)
+				: [];
+
+			sizeArray = [
+				...constrainedWebsiteSizes,
+				...constrainedFaviconSizes
+			];
+		}
 
 		// convert original image to webp, with original size
 		await resizeSteps(file, sharpOptions, parsedPath, sizeArray);

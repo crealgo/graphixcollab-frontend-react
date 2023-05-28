@@ -1,6 +1,6 @@
 export default `/**
 * Do not edit directly
-* Generated on Thu, 25 May 2023 19:57:16 GMT
+* Generated on Fri, 26 May 2023 00:14:07 GMT
 */
 :root {
 --color-white: #ffffff;
@@ -86,26 +86,22 @@ export default `/**
 --color-gray-950: #020617;
 --color-text-primary: #0f172a;
 --color-text-secondary: #94a3b8;
---color-sequence-0-light: #fecece;
---color-sequence-0-main: #ef4444;
---color-sequence-0-dark: #783b3b;
+--color-sequence-0-light: #564343;
+--color-sequence-0-main: #00aad2;
+--color-sequence-0-dark: #000000;
 --color-sequence-0-contrast: #ffffff;
---color-sequence-1-light: #ffcca9;
---color-sequence-1-main: #f97316;
---color-sequence-1-dark: #684227;
---color-sequence-1-contrast: #000000;
---color-sequence-2-light: #8cf4b2;
---color-sequence-2-main: #22c55e;
---color-sequence-2-dark: #293e31;
---color-sequence-2-contrast: #000000;
---color-sequence-3-light: #cbdfff;
---color-sequence-3-main: #3b82f6;
---color-sequence-3-dark: #34507d;
+--color-sequence-1-light: #564343;
+--color-sequence-1-main: #d40072;
+--color-sequence-1-dark: #000000;
+--color-sequence-1-contrast: #ffffff;
+--color-sequence-2-light: #564343;
+--color-sequence-2-main: #edb700;
+--color-sequence-2-dark: #000000;
+--color-sequence-2-contrast: #ffffff;
+--color-sequence-3-light: #564343;
+--color-sequence-3-main: #111827;
+--color-sequence-3-dark: #000000;
 --color-sequence-3-contrast: #ffffff;
---color-sequence-4-light: #f3e6ff;
---color-sequence-4-main: #a855f7;
---color-sequence-4-dark: #673c90;
---color-sequence-4-contrast: #000000;
 --size-0: 0rem;
 --size-1: 0.25rem;
 --size-2: 0.5rem;

@@ -1,17 +1,14 @@
 // @ts-check
-
-const colors = require('tailwindcss/colors');
 const generateColorVariants = require('../utils/generateColorVariants');
 
 module.exports = {
 	color: {
 		sequence: {
 			...[
-				generateColorVariants(colors.red[500]),
-				generateColorVariants(colors.orange[500]),
-				generateColorVariants(colors.green[500]),
-				generateColorVariants(colors.blue[500]),
-				generateColorVariants(colors.purple[500])
+				generateColorVariants('{color.brand.cyan.main}'),
+				generateColorVariants('{color.brand.magenta.main}'),
+				generateColorVariants('{color.brand.yellow.main}'),
+				generateColorVariants('{color.brand.key.main}')
 			]
 		}
 	}

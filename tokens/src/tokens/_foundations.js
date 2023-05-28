@@ -51,28 +51,29 @@ module.exports = {
 		white: f(colors.white),
 		black: f(colors.black),
 		brand: {
-			cyan: generateColorVariants('#00aad2'),
-			magenta: generateColorVariants('#d40072'),
-			yellow: generateColorVariants('#edb700'),
-			key: generateColorVariants('#111827'),
+			cyan: '#00aad2',
+			magenta: '#d40072',
+			yellow: '#edb700',
+			key: '#111827',
+
 			// as a hierarchy
-			primary: generateColorVariants('#00aad2'),
-			secondary: generateColorVariants('#d40072'),
-			tertiary: generateColorVariants('#edb700'),
-			text: generateColorVariants('{color.white}'),
+			primary: '#00aad2',
+			secondary: '#d40072',
+			tertiary: '#edb700',
+			text: '{color.white',
 
 			// other brands
-			yelp: generateColorVariants('#af0606'),
-			facebook: generateColorVariants('#1877f2'),
-			twitter: generateColorVariants('#1da1f2'),
-			instagram: generateColorVariants('#c13584'),
-			square: generateColorVariants('#28c101')
+			yelp: '#af0606',
+			facebook: '#1877f2',
+			twitter: '#1da1f2',
+			instagram: '#c13584',
+			square: '#28c101'
 		},
 		feedback: {
-			success: generateColorVariants(colors.green[600]),
-			error: generateColorVariants(colors.red[600]),
-			warning: generateColorVariants(colors.amber[600]),
-			info: generateColorVariants(colors.blue[600])
+			success: colors.green[600],
+			error: colors.red[600],
+			warning: colors.amber[600],
+			info: colors.blue[600]
 		},
 		gray: grayScale,
 		text: {
