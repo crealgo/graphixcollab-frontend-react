@@ -82,9 +82,6 @@ export const DefaultLayout: DefaultLayoutProps = ({
 
 	return (
 		<>
-			<Head>
-				<title>{pageTitle ?? 'Fashion Greek, USC'}</title>
-			</Head>
 			<Header
 				{...HeaderProps}
 				actions={[
