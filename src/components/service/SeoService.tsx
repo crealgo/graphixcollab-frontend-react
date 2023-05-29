@@ -1,18 +1,11 @@
 import Head from 'next/head';
 import {type FC} from 'react';
+import {PageTitle} from '../utility/PageTitle';
 
-type Props = {
-	title?: string;
-};
-
-export const SeoService: FC<Props> = props => {
-	const resolvedPageTitle = props.title
-		? `${props.title} | Graphix Collab`
-		: 'Graphix Collab';
-
+export const SeoService: FC<unknown> = () => {
 	return (
 		<Head>
-			<title>{resolvedPageTitle}</title>
+			<PageTitle />
 			<meta
 				name="viewport"
 				content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"

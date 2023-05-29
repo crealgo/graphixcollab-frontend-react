@@ -1,6 +1,5 @@
 import {css, styled} from '@mui/material/styles';
 import {type NextPage} from 'next';
-import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {useEffect, type ReactNode} from 'react';
 import {type BannerProps} from '../components/base/Banner';
@@ -10,12 +9,10 @@ import {
 	FooterBlock,
 	type FooterBlockProps
 } from '../components/block/FooterBlock';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 import {YelpBlock} from '../components/block/YelpBlock';
 import {useAppState} from '../hooks/useAppState';
 
 type DefaultLayoutProps = NextPage<{
-	pageTitle?: string;
 	breadcrumbs?: BreadcrumbOptions[];
 	children: ReactNode;
 	hideHeader?: boolean;
@@ -63,7 +60,6 @@ const Main = styled('main')(
 );
 
 export const DefaultLayout: DefaultLayoutProps = ({
-	pageTitle,
 	HeaderProps,
 	FooterProps,
 	children
@@ -102,20 +98,6 @@ export const DefaultLayout: DefaultLayoutProps = ({
 			<BackgroundImage className="Motif">
 				<BackgroundImageWrapper />
 			</BackgroundImage>
-			{/* {hasPageHeader && (
-				<PageHeaderBlock
-					breadcrumbs={[
-						{
-							label: 'Home',
-							href: `${router.basePath}/`
-						},
-						{
-							label: 'Services'
-						}
-					]}
-					title={pageTitle ?? 'Page Title'}
-				/>
-			)} */}
 			<Main id="main-content">
 				{children}
 				<YelpBlock />

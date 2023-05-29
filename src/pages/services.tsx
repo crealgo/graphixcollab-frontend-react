@@ -16,6 +16,7 @@ import {TimelineBlock} from '../components/block/TimelineBlock';
 import services from '../content/services.json';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {generateFaqBlock, generateFooter} from '../utils/chance';
+import {PageTitle} from '../components/utility/PageTitle';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
@@ -31,7 +32,8 @@ const ServicesPage: NextPage<PageProps> = ({
 	serviceBlocks,
 	FaqBlockProps
 }) => (
-	<DefaultLayout pageTitle="Services" FooterProps={FooterProps}>
+	<DefaultLayout FooterProps={FooterProps}>
+		<PageTitle text="Services" />
 		<PageHeaderBlock
 			{...PageHeaderBlockProps}
 			title={<Marked>Our Services</Marked>}

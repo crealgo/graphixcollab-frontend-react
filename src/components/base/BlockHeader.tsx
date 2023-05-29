@@ -4,23 +4,42 @@ import {type SharedBlockProps} from '../../types/general';
 import Typography from '@mui/material/Typography';
 import {type FC} from 'react';
 import {Container} from './Container';
+import {styled} from '@mui/material/styles';
+import {Text} from './Text';
 
-type BlockHeaderProps = SharedBlockProps;
+type BlockHeaderProps = SharedBlockProps & {
+	/**
+	 * The title of the block.
+	 *
+	 * @default 2;
+	 */
+	level?: 1 | 2;
+};
 
-export const BlockHeader: FC<BlockHeaderProps> = ({
-	title,
-	subtitle,
-	description,
-	actions
-}) => (
-	<hgroup>
-		{subtitle && <Typography variant="overline">{subtitle}</Typography>}
-		{title && <Heading level={1}>{title}</Heading>}
-		{description && (
+const StyledHGroup = styled('hgroup')`
+	display: grid;
+	gap: 1rem;
+
+	.Container-root {
+		margin-left: 0;
+	}
+`;
+
+export const BlockHeader: FC<BlockHeaderProps> = props => (
+	<StyledHGroup>
+		{props.subtitle && (
+			<Typography variant="overline">{props.subtitle}</Typography>
+		)}
+		{props.title && (
+			<Heading level={props.level ?? 2}>{props.title}</Heading>
+		)}
+		{props.description && (
 			<Container size="small">
-				<Typography variant="body2">{description}</Typography>
+				<Text size="large">{props.description}</Text>
 			</Container>
 		)}
-		{actions && <ActionStack color="secondary" actions={actions} />}
-	</hgroup>
+		{props.actions && (
+			<ActionStack color="secondary" actions={props.actions} />
+		)}
+	</StyledHGroup>
 );

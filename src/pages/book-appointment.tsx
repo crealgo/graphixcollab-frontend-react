@@ -7,6 +7,7 @@ import {DefaultLayout} from '../layouts/DefaultLayout';
 import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
 import {type FooterBlockProps} from '../components/block/FooterBlock';
 import {AppointBookEmbed} from '../components/embed/AppointBookEmbed';
+import {PageTitle} from '../components/utility/PageTitle';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
@@ -15,6 +16,7 @@ type PageProps = {
 
 const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
+		<PageTitle text="Book Appointment" />
 		<PageHeaderBlock
 			navigationType="anchor-link"
 			title="Book Appointment"

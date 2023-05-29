@@ -5,12 +5,10 @@ import {useRef, type FC} from 'react';
 import reviews from '../../content/yelp-reviews.json';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
+import {Carousel, CarouselSlide} from '../base/Carousel';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Testimonial} from '../base/Testimonial';
-import {Carousel, CarouselSlide} from '../base/Carousel';
-import {Parallax, ParallaxProvider} from 'react-scroll-parallax';
-import {chance} from '../../utils/chance';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];

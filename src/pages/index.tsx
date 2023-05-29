@@ -10,9 +10,11 @@ import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
 import {chance, generateActions} from '../utils/chance';
 import featuredCompanies from '../content/featured-companies';
+import {PageTitle} from '../components/utility/PageTitle';
 
 const HomePage: NextPage<PageProps> = props => (
 	<DefaultLayout>
+		<PageTitle text="Home" />
 		<IntroBlock {...props.IntroBlockProps} />
 		<FeaturedInBlock {...props.FeaturedInBlockProps} />
 		<InteractiveEstimator {...props.InteractiveEstimatorProps} />
