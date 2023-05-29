@@ -16,16 +16,7 @@ const nextConfig = {
     return config;
   },
   ...(process.env.NODE_ENV === 'staging' && {
-    basePath: '/graphixcollab',
-    images: {
-      unoptimized: true
-    }
-  }),
-  ...(process.env.NODE_ENV === 'prod' && {
-    basePath: '/graphixcollab',
-    images: {
-      unoptimized: true
-    }
+    basePath: '/graphixcollab'
   })
 };
 
