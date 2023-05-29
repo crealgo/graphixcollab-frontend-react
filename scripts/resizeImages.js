@@ -7,15 +7,23 @@ const chalk = require('chalk');
 const faviconSizes = [16, 32, 96, 192];
 const websiteSizes = [150, 192, 250, 250, 512, 1200, 1280, 1600, 1920];
 
-const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
+/**  @type {import('sharp').SharpOptions} */
+const sharpOptions = {
+	animated: true
+};
+
+/**  @type {import('sharp').WebpOptions} */
+const webpOptions = {
+	quality: 95,
+	smartSubsample: true
+};
+
+const resizeSteps = async (file, parsedPath, sizeArray) => {
 	chalk.green(`Resizing ${file}`);
 
 	chalk.red(`Size: OG`);
 	await sharp(file, sharpOptions)
-		.webp({
-			quality: 90,
-			lossless: true
-		})
+		.webp(webpOptions)
 		.toFile(`${parsedPath.dir}/${parsedPath.name}@ogw.webp`);
 
 	// convert original image to webp, with original size
@@ -23,10 +31,7 @@ const resizeSteps = async (file, sharpOptions, parsedPath, sizeArray) => {
 		chalk.red(`Size: ${size}w`);
 		await sharp(file, sharpOptions)
 			.resize(size)
-			.webp({
-				quality: 90,
-				lossless: true
-			})
+			.webp(webpOptions)
 			.toFile(`${parsedPath.dir}/${parsedPath.name}@${size}w.webp`);
 	});
 };
@@ -38,18 +43,15 @@ const resizeImages = async () => {
 	);
 
 	files.forEach(async file => {
+		chalk.green(`Resizing ${file}`);
+
 		const parsedPath = path.parse(file);
 		const image = await sharp(file).metadata();
-		let sizeArray = [];
-
-		/**  @type {import('sharp').SharpOptions} */
-		const sharpOptions = {
-			animated: true
-		};
+		let refinedSizeArray = [];
 
 		// check if image is smaller than some of the sizes
 		if (parsedPath.ext === '.svg') {
-			sizeArray = [...websiteSizes, ...faviconSizes];
+			refinedSizeArray = [...websiteSizes, ...faviconSizes];
 		} else {
 			const constrainedWebsiteSizes = websiteSizes.filter(
 				size => image.width >= size
@@ -60,14 +62,14 @@ const resizeImages = async () => {
 				? faviconSizes.filter(size => image.width >= size)
 				: [];
 
-			sizeArray = [
+			refinedSizeArray = [
 				...constrainedWebsiteSizes,
 				...constrainedFaviconSizes
 			];
 		}
 
 		// convert original image to webp, with original size
-		await resizeSteps(file, sharpOptions, parsedPath, sizeArray);
+		await resizeSteps(file, parsedPath, refinedSizeArray);
 	});
 };
 
