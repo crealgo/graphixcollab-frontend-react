@@ -53,10 +53,10 @@
     "site:deploy-local": "rm -rf ~/Developer/Sites/graphixcollab && mv out ~/Developer/Sites/graphixcollab",
     "site:deploy-dev": "npx gh-pages -d out --repo https://github.com/crealgo/crealgo-static-projects --dest ./graphixcollab",
     "site:deploy-prod": "npx gh-pages -d out --repo https://github.com/crealgo/graphixcollab-static",
-    "scripts:regenerate-images": "node scripts/resizeImages",
-    "scripts:dev": "npm-watch scripts:rename",
-    "scripts:clean": "rm -rf lib .next dist storybook-static",
-    "scripts:entry-file": "node scripts/generateEntryFile",
+    "script:resize-images": "node scripts/resizeImages",
+    "script:dev": "npm-watch script:rename",
+    "script:clean": "rm -rf lib .next dist storybook-static",
+    "script:entry-file": "node scripts/generateEntryFile",
     "tokens:dev": "npm-watch tokens:build",
     "tokens:build": "node tokens/scripts/buildTokens.js"
   },
@@ -104,6 +104,7 @@
     "eslint-plugin-yaml": "^0.5.0",
     "glob": "^9.2.1",
     "lighthouse": "^10.2.0",
+    "mkdirp": "^3.0.1",
     "playwright": "^1.34.3",
     "prettier": "^2.8.8",
     "prompt-sync": "^4.2.0",
@@ -115,7 +116,7 @@
     "vitest": "^0.31.1"
   },
   "watch": {
-    "scripts:rename": "scripts/changeFilenameCase.ts",
+    "script:rename": "scripts/changeFilenameCase.ts",
     "tokens:build": "tokens/{src,scripts}/**/*.js"
   }
 }

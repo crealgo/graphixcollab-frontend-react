@@ -1,22 +1,27 @@
 [
   {
     "name": "Collaborative Approach",
+    "image": "assets/why-us/quirky-customer-support.png",
     "description": "We believe in working closely with our clients as partners, involving them in the design process to ensure that the end result meets their expectations."
   },
   {
     "name": "Creative Excellence",
+    "image": "assets/why-us/quirky-customer-support.png",
     "description": "Our team of skilled designers are passionate about their craft and strive for excellence in every project, creating visually appealing designs that stand out in the market."
   },
   {
     "name": "Strategic Thinking",
+    "image": "assets/why-us/quirky-customer-support.png",
     "description": "We take a strategic approach to design, ensuring that our solutions are aligned with your brand's objectives, target audience, and market positioning."
   },
   {
     "name": "Timely Delivery",
+    "image": "assets/why-us/quirky-customer-support.png",
     "description": "We understand the importance of meeting deadlines, and our team works diligently to deliver high-quality designs within the agreed-upon timeframe."
   },
   {
     "name": "Exceptional Customer Service",
+    "image": "assets/why-us/quirky-customer-support.png",
     "description": "We pride ourselves on providing outstanding customer service, keeping our clients informed, and providing prompt responses to their inquiries throughout the design process."
   }
 ]

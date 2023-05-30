@@ -2,10 +2,15 @@ const {glob} = require('glob');
 const sharp = require('sharp');
 const path = require('path');
 const chalk = require('chalk');
+const {mkdirp} = require('mkdirp');
 
 // const metaSizes = [16, 32, 100];
 const faviconSizes = [16, 32, 96, 192];
 const websiteSizes = [150, 192, 250, 250, 512, 1200, 1280, 1600, 1920];
+
+const globPath = 'src/assets';
+const exportPath = 'public/assets';
+const resolvePath = path => path.replace(globPath, exportPath);
 
 /**  @type {import('sharp').SharpOptions} */
 const sharpOptions = {
@@ -15,34 +20,19 @@ const sharpOptions = {
 /**  @type {import('sharp').WebpOptions} */
 const webpOptions = {
 	quality: 95,
-	smartSubsample: true
-};
-
-const resizeSteps = async (file, parsedPath, sizeArray) => {
-	chalk.green(`Resizing ${file}`);
-
-	chalk.red(`Size: OG`);
-	await sharp(file, sharpOptions)
-		.webp(webpOptions)
-		.toFile(`${parsedPath.dir}/${parsedPath.name}@ogw.webp`);
-
-	// convert original image to webp, with original size
-	sizeArray.forEach(async size => {
-		chalk.red(`Size: ${size}w`);
-		await sharp(file, sharpOptions)
-			.resize(size)
-			.webp(webpOptions)
-			.toFile(`${parsedPath.dir}/${parsedPath.name}@${size}w.webp`);
-	});
+	smartSubsample: true,
+	effort: 6
 };
 
 // resize all images using sharp, excluding the ones in node_modules
 const resizeImages = async () => {
-	const files = (await glob(['public/assets/**/*.*'])).filter(
-		f => !f.includes('@')
-	);
+	const files = await glob(`${globPath}/**/*.*`);
 
-	files.forEach(async file => {
+	files.every(async (file, fileIndex) => {
+		// if (fileIndex > 0) {
+		// 	return false;
+		// }
+
 		chalk.green(`Resizing ${file}`);
 
 		const parsedPath = path.parse(file);
@@ -68,8 +58,27 @@ const resizeImages = async () => {
 			];
 		}
 
+		chalk.green(`Resizing ${file}`);
+		chalk.red(`Size: OG`);
+
+		const resolvedPath = resolvePath(parsedPath.dir);
+
+		// check if directory exists, if not create it
+		await mkdirp(resolvedPath);
+
 		// convert original image to webp, with original size
-		await resizeSteps(file, parsedPath, refinedSizeArray);
+		await sharp(file, sharpOptions)
+			.webp(webpOptions)
+			.toFile(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`);
+
+		// convert original image to webp, with original size
+		refinedSizeArray.forEach(async size => {
+			chalk.red(`Size: ${size}w`);
+			await sharp(file, sharpOptions)
+				.resize(size)
+				.webp(webpOptions)
+				.toFile(`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`);
+		});
 	});
 };
 
