@@ -2,7 +2,7 @@ const {glob} = require('glob');
 const sharp = require('sharp');
 const path = require('path');
 const chalk = require('chalk');
-const {mkdirp} = require('mkdirp');
+const fs = require('fs');
 
 // const metaSizes = [16, 32, 100];
 const faviconSizes = [16, 32, 96, 192];
@@ -63,8 +63,10 @@ const resizeImages = async () => {
 
 		const resolvedPath = resolvePath(parsedPath.dir);
 
-		// check if directory exists, if not create it
-		await mkdirp(resolvedPath);
+		// check if directory exists, if not create it, including all parent directories
+		if (!fs.existsSync(resolvedPath)) {
+			fs.mkdirSync(resolvedPath, {recursive: true});
+		}
 
 		// convert original image to webp, with original size
 		await sharp(file, sharpOptions)
