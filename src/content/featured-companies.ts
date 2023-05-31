@@ -13,19 +13,19 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'Melissa King',
 		url: 'https://www.chefmelissaking.com/',
-		image: 'assets/collabs/melissa-king@512w.webp'
+		image: 'assets/collabs/melissa-king-min@250w.webp'
 	},
 	{
 		type: 'logo',
 		name: "Bob's Liquor Store",
 		url: 'https://www.bobsliquorstore.com/',
-		image: 'assets/collabs/bobs-liquor-store@512w.webp'
+		image: 'assets/collabs/bobs-liquor-store-min@250w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Black Beverly Hills',
 		url: 'https://www.blackbh.com/',
-		image: 'assets/collabs/bbh-gold@512w.webp',
+		image: 'assets/collabs/bbh-gold-min@250w.webp',
 		styleOverrides: {
 			transform: 'scale(0.75)'
 		}
@@ -34,7 +34,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'San Gabriel Academy',
 		url: 'https://www.sangabrielacademy.org/',
-		image: 'assets/collabs/san-gabriel-academy@512w.webp',
+		image: 'assets/collabs/san-gabriel-academy-min@250w.webp',
 		styleOverrides: {
 			filter: 'invert(1)'
 		}
@@ -43,7 +43,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'Solano Elementary School',
 		url: 'https://solano-lausd-ca.schoolloop.com/',
-		image: 'assets/collabs/solano-scholars@512w.webp',
+		image: 'assets/collabs/solano-scholars-min@250w.webp',
 		styleOverrides: {
 			transform: 'scale(1.5)'
 		}
@@ -52,24 +52,24 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: '550 Wheels',
 		url: 'https://550wheels.com/',
-		image: 'assets/collabs/550-wheels@512w.webp'
+		image: 'assets/collabs/550-wheels-min@250w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Have It All',
 		url: 'https://haveittall.com/',
-		image: 'assets/collabs/have-it-tall@512w.webp'
+		image: 'assets/collabs/have-it-tall-min@250w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'Hot 8 Yoga',
 		url: 'https://www.hot8yoga.com/',
-		image: 'assets/collabs/hot-8-yoga@512w.webp'
+		image: 'assets/collabs/hot-8-yoga-min@250w.webp'
 	},
 	{
 		type: 'logo',
 		name: 'LuluLemon',
-		image: 'assets/collabs/lululemon@512w.webp',
+		image: 'assets/collabs/lululemon-min@250w.webp',
 		styleOverrides: {
 			transform: 'scale(0.675)'
 		}
@@ -78,7 +78,7 @@ export default <FeaturedCompanyInfo[]>[
 		type: 'logo',
 		name: 'AeroVironment',
 		url: 'https://www.avinc.com/',
-		image: 'assets/collabs/aerovironment@512w.webp'
+		image: 'assets/collabs/aerovironment-min@250w.webp'
 	},
 	{
 		type: 'type',

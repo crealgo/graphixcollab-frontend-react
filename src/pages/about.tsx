@@ -226,6 +226,10 @@ export const Example = () => {
 					<DetailList>
 						{reasonsToChooseUs.map(value => (
 							<div key={value.name}>
+								<img
+									src={value.image as string}
+									alt={value.name}
+								/>
 								<DetailTerm>{value.name}</DetailTerm>
 								<DetailDefinition>
 									{value.description}

@@ -4,7 +4,6 @@ const path = require('path');
 const chalk = require('chalk');
 const fs = require('fs');
 
-// const metaSizes = [16, 32, 100];
 const faviconSizes = [16, 32, 96, 192];
 const websiteSizes = [150, 192, 250, 250, 512, 1200, 1280, 1600, 1920];
 
@@ -28,11 +27,7 @@ const webpOptions = {
 const resizeImages = async () => {
 	const files = await glob(`${globPath}/**/*.*`);
 
-	files.every(async (file, fileIndex) => {
-		// if (fileIndex > 0) {
-		// 	return false;
-		// }
-
+	files.every(async file => {
 		chalk.green(`Resizing ${file}`);
 
 		const parsedPath = path.parse(file);

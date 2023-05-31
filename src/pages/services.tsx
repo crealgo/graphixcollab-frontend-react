@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			description:
 				"We offer a wide range of screen printing services to meet your needs. Whether you're looking for custom t-shirts, posters, stickers, or other promotional materials, we have you covered. Here are some of our most popular services. With our state-of-the-art printing technology, experienced team, and commitment to quality, we are your trusted partner for all things printing. Explore our comprehensive range of services below",
 			ImageProps: {
-				src: 'assets/juicy-team-discussing-the-project@ogw.webp',
+				src: 'assets/juicy-team-discussing-the-project-min@512w.webp',
 				alt: 'Team Discussing the Project'
 			}
 		},

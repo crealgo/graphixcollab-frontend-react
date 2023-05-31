@@ -8,6 +8,7 @@ import {Carousel, CarouselSlide} from '../../base/Carousel';
 import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
+import {ArrowRight} from '@mui/icons-material';
 
 export type Slide = {
 	title: string;
@@ -24,10 +25,10 @@ export type IntroBlockProps = {
 	SharedBlockProps;
 
 const images = [
-	{src: 'assets/page-home/embroidery-denim@ogw.webp', alt: 'Embroidery'},
-	{src: 'assets/page-home/sash-hs@ogw.webp', alt: 'Sashes'},
-	{src: 'assets/page-home/embroidery-shirts@ogw.webp', alt: 'Embroidery'},
-	{src: 'assets/page-home/laughing-group@ogw.webp', alt: 'T-Shirts'}
+	{src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery'},
+	{src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
+	{src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
+	{src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts'}
 ];
 
 const Wrapper = styled('div')`
@@ -135,6 +136,14 @@ const Content = styled('div')(
 	`
 );
 
+const StyledText = styled(Text)`
+	mark {
+		line-height: 1.5;
+		background-color: var(--color-brand-cyan-light);
+		color: var(--color-text-primary);
+	}
+`;
+
 export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 	return (
 		<Wrapper>
@@ -156,17 +165,22 @@ export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 						<Heading gutterBottom level={1}>
 							Welcome to <Logo />
 						</Heading>
-						<Text>{description}</Text>{' '}
+						<StyledText size="large">
+							<mark>{description}</mark>
+						</StyledText>{' '}
 						<ActionStack
 							size="large"
 							actions={[
 								{
 									label: 'Get Started',
-									color: 'primary'
+									color: 'primary',
+									href: '/services',
+									endIcon: <ArrowRight />
 								},
 								{
 									label: 'Book Appointment',
-									color: 'text'
+									color: 'text',
+									endIcon: <ArrowRight />
 								}
 							]}
 						/>
