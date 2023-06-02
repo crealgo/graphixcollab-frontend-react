@@ -1,4 +1,4 @@
-name: Deploy Hydra React Storybook
+name: Deploy Graphix Collab React Storybook
 
 on:
   push:
@@ -28,13 +28,13 @@ jobs:
           cache: npm
 
       - name: Setup Repository
-        run: npm i
+        run: npm ci
 
       - name: Verify
         run: npm run verify
 
       - name: Build Storybook
-        run: npx storybook build -s public
+        run: npm run docs:build
 
       - name: Deploy Storybook
         uses: peaceiris/actions-gh-pages@v3
@@ -42,6 +42,6 @@ jobs:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           user_name: Crealgo Bot 🤖
           user_email: hello.crealgo@gmail.com
-          external_repository: crealgo/crealgo-static
+          external_repository: crealgo/crealgo-static-projects
           publish_dir: storybook-static
-          destination_dir: ./component-library
+          destination_dir: graphixcollab-storybook

@@ -1,4 +1,4 @@
-name: Deploy Hydra Static Site
+name: Deploy Graphix Collab Static Site
 
 on:
   push:
@@ -32,15 +32,13 @@ jobs:
           cache: npm
 
       - name: Setup Repository
-        run: npm i
+        run: npm ci
 
       - name: Verify
         run: npm run verify
 
-      - name: Build Storybook
-        run: |
-          npx next build
-          npx next export
+      - name: Build Next App
+        run: npm run site:build
 
       - name: Test Step
         run: echo "${{ inputs.deployment_type }} }}"
