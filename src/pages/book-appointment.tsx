@@ -17,10 +17,7 @@ type PageProps = {
 const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
 		<PageTitle text="Book Appointment" />
-		<PageHeaderBlock
-			navigationType="anchor-link"
-			title="Book Appointment"
-		/>
+		<PageHeaderBlock title="Book Appointment" />
 		<AppointBookEmbed />
 	</DefaultLayout>
 );

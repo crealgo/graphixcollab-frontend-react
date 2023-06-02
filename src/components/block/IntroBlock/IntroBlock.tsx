@@ -1,5 +1,10 @@
 import {css, styled} from '@mui/material';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {
+	useState,
+	type ComponentPropsWithoutRef,
+	type FC,
+	useEffect
+} from 'react';
 import {type Action, type SharedBlockProps} from '../../../types/general';
 import Logo from '../../atoms/Logo';
 import {ActionStack} from '../../base/ActionStack';
@@ -9,6 +14,7 @@ import {Container} from '../../base/Container';
 import {Heading} from '../../base/Heading';
 import {Text} from '../../base/Text';
 import {ArrowRight} from '@mui/icons-material';
+import {useTrail, a} from '@react-spring/web';
 
 export type Slide = {
 	title: string;
@@ -33,7 +39,7 @@ const images = [
 
 const Wrapper = styled('div')`
 	position: relative;
-	background-color: var(--color-gray-200);
+	background-color: var(--color-brand-primary-light);
 	margin-top: -5rem;
 
 	.IntroBlock-root {
@@ -144,10 +150,10 @@ const StyledText = styled(Text)`
 	}
 `;
 
-export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
+export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
 	return (
 		<Wrapper>
-			<StyledCarousel>
+			{/* <StyledCarousel>
 				{images.map(image => (
 					<StyledCarouselSlide key={image.alt}>
 						<img {...image} />
@@ -158,16 +164,15 @@ export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 						</Block>
 					</StyledCarouselSlide>
 				))}
-			</StyledCarousel>
+			</StyledCarousel> */}
 			<Container className="IntroBlock-root">
 				<Content>
 					<Block className="content">
 						<Heading gutterBottom level={1}>
-							Welcome to <Logo />
+							Welcome to
+							<Logo />
 						</Heading>
-						<StyledText size="large">
-							<mark>{description}</mark>
-						</StyledText>{' '}
+						<Text size="large">{description}</Text>
 						<ActionStack
 							size="large"
 							actions={[
@@ -180,6 +185,7 @@ export const IntroBlock: FC<IntroBlockProps> = ({title, description}) => {
 								{
 									label: 'Book Appointment',
 									color: 'text',
+									href: '/book-appointment',
 									endIcon: <ArrowRight />
 								}
 							]}

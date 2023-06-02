@@ -1,11 +1,11 @@
 // @ts-check
 
-const colors = require('tailwindcss/colors');
+const {colors} = require('@mui/material');
 const generateColorVariants = require('../utils/generateColorVariants');
 const f = require('../utils/formatToken');
 const generateSequenceFromColorScale = require('../utils/generateSequenceFromColorScale');
 
-const grayScale = generateSequenceFromColorScale(colors.slate);
+const grayScale = generateSequenceFromColorScale(colors.blueGrey);
 
 // taken from tailwind spacing
 const size = generateSequenceFromColorScale({
@@ -48,19 +48,19 @@ const size = generateSequenceFromColorScale({
 
 module.exports = {
 	color: {
-		white: f(colors.white),
-		black: f(colors.black),
+		white: f('#FFFFFF'),
+		black: f('#000000'),
 		brand: {
-			cyan: '#00aad2',
-			magenta: '#d40072',
-			yellow: '#edb700',
-			key: '#111827',
+			cyan: generateColorVariants('#00aad2'),
+			magenta: generateColorVariants('#d40072'),
+			yellow: generateColorVariants('#edb700'),
+			key: generateColorVariants('#111827'),
 
 			// as a hierarchy
-			primary: '#00aad2',
-			secondary: '#d40072',
-			tertiary: '#edb700',
-			text: '{color.white',
+			primary: generateColorVariants('#00aad2'),
+			secondary: generateColorVariants('#d40072'),
+			tertiary: generateColorVariants('#edb700'),
+			text: '{color.white}',
 
 			// other brands
 			yelp: '#af0606',
@@ -77,8 +77,8 @@ module.exports = {
 		},
 		gray: grayScale,
 		text: {
-			primary: f(colors.slate[900]),
-			secondary: f(colors.slate[400])
+			primary: f(colors.blueGrey[900]),
+			secondary: f(colors.blueGrey[400])
 		}
 	},
 	size,

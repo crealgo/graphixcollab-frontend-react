@@ -1,17 +1,18 @@
-import {css, styled} from '@mui/material/styles';
-import {type FC, type ReactNode} from 'react';
-import {type NavItemOptions} from '../../types/general';
-import {Block, type BlockProps} from '../base/Block';
-import {Breadcrumbs, type BreadcrumbOptions} from '../base/Breadcrumbs';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Image, type ImageProps} from '../base/Image';
-import {Text} from '../base/Text';
+import { css, styled } from '@mui/material/styles';
+import { type FC, type ReactNode } from 'react';
+import { type NavItemOptions } from '../../types/general';
+import { Block, type BlockProps } from '../base/Block';
+import { Breadcrumbs, type BreadcrumbOptions } from '../base/Breadcrumbs';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { type ImageProps } from '../base/Image';
+import { Text } from '../base/Text';
+import { type ColorVariants } from '../../types/color';
 
 export type PageHeaderBlockProps = {
 	title?: ReactNode;
 	description?: string;
-	color?: string;
+	color?: ColorVariants;
 	breadcrumbs?: BreadcrumbOptions[];
 	navigationItems?: NavItemOptions[];
 	navigationType?: 'scroll' | 'anchor-link';
@@ -19,11 +20,9 @@ export type PageHeaderBlockProps = {
 	ImageProps?: ImageProps;
 };
 
-const Wrapper = styled(Block)<{
-	color?: string;
-}>(
-	({theme, color}) => css`
-		background-color: var(--color-brand-tertiary-light);
+const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
+	({ theme, color = 'tertiary' }) => css`
+		background-color: var(--color-brand-${color}-light);
 		padding-top: 10rem !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -64,7 +63,7 @@ const Wrapper = styled(Block)<{
 );
 
 const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: minmax(auto, 40rem);
 		gap: 2rem;
@@ -89,9 +88,10 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title,
 	breadcrumbs,
 	description,
+	color,
 	ImageProps
 }) => (
-	<Wrapper>
+	<Wrapper color={color}>
 		<Container>
 			<Content>
 				<TextContent className="PageHeader-textContent">
@@ -102,9 +102,11 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 					<Text>{description}</Text>
 				</TextContent>
 			</Content>
-			<div className="image">
-				<img {...ImageProps} />
-			</div>
+			{ImageProps && (
+				<div className="image">
+					<img {...ImageProps} />
+				</div>
+			)}
 		</Container>
 	</Wrapper>
 );

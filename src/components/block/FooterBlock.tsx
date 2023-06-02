@@ -15,15 +15,12 @@ import {Block} from '../base/Block';
 import {Input} from '../form/Input';
 import {Button} from '../base/Button';
 import {MapEmbed} from './MapEmbed';
-import {Heading} from '../base/Heading';
 import {Text} from '../base/Text';
 
 export type FooterBlockProps = {
 	title?: string;
 	description?: string;
 	meta?: Term[];
-	// copyrightText?: string;
-	// extraText?: string;
 };
 
 const Column = styled('div')(
@@ -53,7 +50,7 @@ const Content = styled('div')(
 
 const FooterBlockWrapper = styled(Block)(
 	({theme}) => css`
-		background-color: var(--color-gray-100);
+		background-color: var(--color-gray-50);
 		border-bottom: var(--input-border-composite);
 		margin-top: 1rem;
 	`

@@ -12,6 +12,7 @@ import {Block} from '../components/base/Block';
 import {Container} from '../components/base/Container';
 import {BlockHeader} from '../components/base/BlockHeader';
 import reasonsToChooseUs from '../content/why-us.json';
+import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 
 const exampleUrl = 'https://google.com';
 
@@ -148,6 +149,7 @@ export const Example = () => {
 				<script src="https://cdn.tailwindcss.com" />
 			</Head>
 			<PageTitle text="About Us" />
+			<PageHeaderBlock color="secondary" title="Our Mission" />
 			<ContentWrapper className="relative isolate -z-10">
 				<Block>
 					<Container>

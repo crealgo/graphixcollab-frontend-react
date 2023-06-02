@@ -64,4 +64,9 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	}
 });
 
+/**
+- brand assets
+- meagan or diana, for brand assets
+*/
+
 export default HomePage;

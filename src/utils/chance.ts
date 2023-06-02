@@ -103,66 +103,19 @@ export const generateFeaturedItem = (): FeaturedItemProps => ({
 export const generateFeaturedItems = (n = 4): FeaturedItemProps[] =>
 	chance.n(() => generateFeaturedItem(), n);
 
-/* eslint-disable */
 export const generateOptions = (n = 5): OptionValue[] =>
 	chance.n(() => {
 		const word = generateWord();
 
 		return {
 			label: word,
-			value: word,
+			value: word
 		};
 	}, n);
-/* eslint-enable */
-
-// export const generateMilestones = (n = 5): MileStoneValue[] => [
-// 	{
-// 		label: "Design Creation",
-// 		description:
-// 			"The first step in screen printing is to create the design that will be printed. This design is typically created using graphic design software and is saved as a high-resolution file.",
-// 	},
-// 	{
-// 		label: "Screen Preparation",
-// 		description:
-// 			"Once the design is created, a mesh screen is prepared by coating it with a light-sensitive emulsion. The emulsion is then allowed to dry, and the design is printed onto a transparent film.",
-// 	},
-// 	{
-// 		label: "Exposure",
-// 		description:
-// 			"The printed film is placed on the prepared screen and exposed to a bright light. The light hardens the emulsion on the screen, except for the areas where the design has been printed. These areas remain soft and can be washed away later.",
-// 	},
-// 	{
-// 		label: "Washing",
-// 		description:
-// 			"After exposure, the screen is washed with water, which removes the soft emulsion, leaving the design on the screen.",
-// 	},
-// 	{
-// 		label: "Ink Preparation",
-// 		description: "The ink is mixed and prepared according to the color and type of substrate being printed on.",
-// 	},
-// 	{
-// 		label: "Printing",
-// 		description:
-// 			"The substrate is placed on the printing press, and the screen is placed on top of it. Ink is then poured onto the screen and spread across it using a squeegee. The ink is forced through the mesh and onto the substrate, creating the printed design.",
-// 	},
-// 	{
-// 		label: "Drying and Curing",
-// 		description:
-// 			"After printing, the substrate is dried and cured to ensure that the ink is fully set and will not smudge or wash away.",
-// 	},
-// ];
 
 export const generateBanner = (): BannerProps => ({
 	children:
 		"⚡️⚡️ It's sash season!! Don't wait too long, spots are filling up."
-	// actions: [
-	// 	{
-	// 		label: "Book a Time",
-	// 	},
-	// ],
-	// ImageProps: {
-	// 	src: generateImage(),
-	// },
 });
 
 export const generateNavItem = (sub?: boolean): NavItemOptions => {
@@ -180,19 +133,7 @@ export const generateNavItem = (sub?: boolean): NavItemOptions => {
 export const generateNavItems = (n = 3): NavItemOptions[] =>
 	chance.n(() => generateNavItem(true), n);
 
-export const generateHeader = (): HeaderProps => ({
-	// navigationItems: generateNavItems()
-	// actions: [
-	// 	{
-	// 		label: 'Contact Us',
-	// 		href: 'https://google.com'
-	// 	},
-	// 	{
-	// 		label: 'Book Appointment',
-	// 		href: 'https://google.com'
-	// 	}
-	// ]
-});
+export const generateHeader = (): HeaderProps => ({});
 
 export const generateFooter = () => ({
 	title: 'Fashion Greek, USC',
@@ -252,7 +193,6 @@ export const generateGalleryBlock = (): GalleryBlockProps => ({
 
 export const generateProfilesBlock = (): ProfilesBlockProps => ({
 	title: 'Profiles Page',
-	// description: chance.sentence(),
 	profileGroups: generateEmployeeGroups()
 });
 
@@ -318,9 +258,6 @@ export const generateIntroBlock = (): IntroBlockProps => ({
 			label: 'Book an Appointment'
 		}
 	]
-	// ImageProps: {
-	// 	src: generateImage(400),
-	// },
 });
 
 export const generatePageHeaderBlock = (): PageHeaderBlockProps => ({
