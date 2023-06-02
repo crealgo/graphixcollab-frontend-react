@@ -1,8 +1,8 @@
-import {styled} from '@mui/material/styles';
-import {type ComponentPropsWithoutRef, type FC, type ReactNode} from 'react';
-import {type NavItemOptions} from '../../types/general';
-import {colorIterator} from '../../utils/colorIterator';
-import {KeyboardArrowDown} from '@mui/icons-material';
+import { styled } from '@mui/material/styles';
+import { type ComponentPropsWithoutRef, type FC, type ReactNode } from 'react';
+import { type NavItemOptions } from '../../types/general';
+import { colorIterator } from '../../utils/colorIterator';
+import { KeyboardArrowDown } from '@mui/icons-material';
 
 export type NavItemProps = {
 	icon?: ReactNode;

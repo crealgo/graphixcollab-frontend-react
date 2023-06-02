@@ -1,6 +1,6 @@
-import {css, styled} from '@mui/material';
-import {type FC, type ComponentPropsWithoutRef} from 'react';
-import {Phone, type PhoneProps} from './Phone';
+import { css, styled } from '@mui/material';
+import { type FC, type ComponentPropsWithoutRef } from 'react';
+import { Phone, type PhoneProps } from './Phone';
 
 export type DualPhoneDisplayProps = {
 	phone1Props?: PhoneProps;
@@ -8,7 +8,7 @@ export type DualPhoneDisplayProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 const Wrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: transparent;
 		z-index: 1;
 		position: relative;

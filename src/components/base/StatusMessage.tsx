@@ -1,8 +1,8 @@
-import {Warning} from '@mui/icons-material';
-import {css, Typography, type SvgIconProps} from '@mui/material';
-import {styled} from '@mui/material/styles';
-import {type ComponentPropsWithoutRef} from 'react';
-import {type ComponentType, type FC} from 'react';
+import { Warning } from '@mui/icons-material';
+import { css, Typography, type SvgIconProps } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { type ComponentPropsWithoutRef } from 'react';
+import { type ComponentType, type FC } from 'react';
 
 type StatusMessageProps = {
 	IconComponent?: ComponentType<SvgIconProps>;
@@ -11,7 +11,7 @@ type StatusMessageProps = {
 	isActionable?: boolean;
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
-	({theme, isContained, isActionable}) => css`
+	({ theme, isContained, isActionable }) => css`
 		${isContained &&
 		`
 		padding-inline: 1rem;

@@ -1,4 +1,4 @@
-import {Facebook, Instagram, Twitter} from '@mui/icons-material';
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 import {
 	Box,
 	css,
@@ -8,14 +8,14 @@ import {
 	styled,
 	Typography
 } from '@mui/material';
-import {type FC} from 'react';
-import {type Term} from '../../types/general';
-import {Container} from '../base/Container';
-import {Block} from '../base/Block';
-import {Input} from '../form/Input';
-import {Button} from '../base/Button';
-import {MapEmbed} from './MapEmbed';
-import {Text} from '../base/Text';
+import { type FC } from 'react';
+import { type Term } from '../../types/general';
+import { Container } from '../base/Container';
+import { Block } from '../base/Block';
+import { Input } from '../form/Input';
+import { Button } from '../base/Button';
+import { MapEmbed } from './MapEmbed';
+import { Text } from '../base/Text';
 
 export type FooterBlockProps = {
 	title?: string;
@@ -24,7 +24,7 @@ export type FooterBlockProps = {
 };
 
 const Column = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: flex;
 		flex-direction: column;
 		row-gap: 2rem;
@@ -36,7 +36,7 @@ const Column = styled('div')(
 );
 
 const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		row-gap: 3rem;
 		column-gap: 1.5rem;
@@ -49,7 +49,7 @@ const Content = styled('div')(
 );
 
 const FooterBlockWrapper = styled(Block)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: var(--color-gray-50);
 		border-bottom: var(--input-border-composite);
 		margin-top: 1rem;
@@ -57,7 +57,7 @@ const FooterBlockWrapper = styled(Block)(
 );
 
 const CopyrightBlockWrapper = styled(Block)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: var(--color-gray-100);
 		padding-block: 2rem !important;
 
@@ -90,10 +90,10 @@ const footerContent = {
 		connect: {
 			title: 'Connect',
 			links: [
-				{label: 'The Process', href: ''},
-				{label: 'Get Samples', href: ''},
-				{label: 'Templates', href: ''},
-				{label: 'Jobs', href: ''}
+				{ label: 'The Process', href: '' },
+				{ label: 'Get Samples', href: '' },
+				{ label: 'Templates', href: '' },
+				{ label: 'Jobs', href: '' }
 			]
 		},
 		getAQuote: {
@@ -152,7 +152,7 @@ const FooterContentBlock = styled('div')`
 	grid-template-columns: 1fr;
 	gap: 0.25rem;
 
-	${({theme}) => theme.breakpoints.up('md')} {
+	${({ theme }) => theme.breakpoints.up('md')} {
 		padding: 1rem;
 	}
 `;

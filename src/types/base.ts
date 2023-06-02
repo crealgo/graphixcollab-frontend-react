@@ -1,4 +1,4 @@
-import {type Size} from './general';
+import { type Size } from './general';
 
 export type BaseElement = JSX.IntrinsicElements['div'];
 export type BaseComponentsProps<T = unknown> = Pick<

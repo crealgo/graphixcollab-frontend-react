@@ -1,9 +1,13 @@
-import {styled} from '@mui/material';
+import { styled } from '@mui/material';
 import MuiButtonBase from '@mui/material/ButtonBase';
-import {type ComponentPropsWithoutRef, type FC, type ReactElement} from 'react';
-import {type ColorVariants} from '../../types/color';
-import {type Size} from '../../types/general';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import {
+	type ComponentPropsWithoutRef,
+	type FC,
+	type ReactElement
+} from 'react';
+import { type ColorVariants } from '../../types/color';
+import { type Size } from '../../types/general';
+import { _e } from '../../utils/excludePropsFromForwarding';
 
 export type ButtonBaseSizes = Size;
 
@@ -19,7 +23,7 @@ const StyledButton = styled(
 	MuiButtonBase,
 	_e('endIcon', 'startIcon', 'size')
 )<ButtonBaseProps>(
-	({size = 'medium'}) => /* scss */ `
+	({ size = 'medium' }) => /* scss */ `
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -41,7 +45,7 @@ const ButtonIcon = styled(
 	'span',
 	_e('end', 'start')
 )<ButtonIconProps>(
-	({start, end}) => /* scss */ `
+	({ start, end }) => /* scss */ `
 	svg {
 		height: 0.875em;
 		width: 0.875em;

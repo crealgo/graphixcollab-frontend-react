@@ -1,10 +1,10 @@
-import {ActionStack} from '../base/ActionStack';
-import {Container} from '../base/Container';
-import {DualPhoneDisplay} from '../base/DualPhoneDisplay';
-import {type Action} from '../../types/general';
-import {css, styled, Typography} from '@mui/material';
-import {type FC} from 'react';
-import {Block} from '../base/Block';
+import { ActionStack } from '../base/ActionStack';
+import { Container } from '../base/Container';
+import { DualPhoneDisplay } from '../base/DualPhoneDisplay';
+import { type Action } from '../../types/general';
+import { css, styled, Typography } from '@mui/material';
+import { type FC } from 'react';
+import { Block } from '../base/Block';
 
 export type CalloutBlockProps = {
 	title?: string;
@@ -18,7 +18,7 @@ const CalloutContentWrapper = styled(Block)`
 `;
 
 const InnerWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		.content {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -76,7 +76,7 @@ export const CalloutBlock: FC<CalloutBlockProps> = ({
 					<Typography
 						variant="body2"
 						className="CalloutBlock-description"
-						sx={{mb: 2}}
+						sx={{ mb: 2 }}
 					>
 						{description}
 					</Typography>

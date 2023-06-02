@@ -1,5 +1,5 @@
-import {type FC, type ReactNode} from 'react';
-import {Dots} from './Dots';
+import { type FC, type ReactNode } from 'react';
+import { Dots } from './Dots';
 import styled from '@emotion/styled';
 
 type MarkedProps = {
@@ -11,7 +11,7 @@ const Wrapper = styled.span`
 	position: relative;
 `;
 
-export const Marked: FC<MarkedProps> = ({children, className}) => {
+export const Marked: FC<MarkedProps> = ({ children, className }) => {
 	return (
 		<Wrapper className={className}>
 			{children}

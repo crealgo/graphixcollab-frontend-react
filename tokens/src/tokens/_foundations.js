@@ -1,6 +1,6 @@
 // @ts-check
 
-const {colors} = require('@mui/material');
+const { colors } = require('@mui/material');
 const generateColorVariants = require('../utils/generateColorVariants');
 const f = require('../utils/formatToken');
 const generateSequenceFromColorScale = require('../utils/generateSequenceFromColorScale');

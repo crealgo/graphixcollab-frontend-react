@@ -1,13 +1,13 @@
-import {KeyboardArrowRight} from '@mui/icons-material';
-import {Typography, useMediaQuery} from '@mui/material';
-import {css, styled, useTheme} from '@mui/material/styles';
-import {type FC, type ComponentPropsWithRef} from 'react';
-import {useAppState} from '../../hooks/useAppState';
-import {type ServiceOptions} from '../../types/general';
-import {chance} from '../../utils/chance';
-import {ActionStack} from './ActionStack';
-import {Button} from './Button';
-import {Image, type ImageProps} from './Image';
+import { KeyboardArrowRight } from '@mui/icons-material';
+import { Typography, useMediaQuery } from '@mui/material';
+import { css, styled, useTheme } from '@mui/material/styles';
+import { type FC, type ComponentPropsWithRef } from 'react';
+import { useAppState } from '../../hooks/useAppState';
+import { type ServiceOptions } from '../../types/general';
+import { chance } from '../../utils/chance';
+import { ActionStack } from './ActionStack';
+import { Button } from './Button';
+import { Image, type ImageProps } from './Image';
 import clsx from 'clsx';
 
 type CardProps = {
@@ -67,11 +67,11 @@ export const Card: FC<CardProps> = ({
 	image,
 	...props
 }) => {
-	const {breakpoints} = useTheme();
+	const { breakpoints } = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
-	const {toggleBooking} = useAppState();
+	const { toggleBooking } = useAppState();
 
-	console.log({props});
+	console.log({ props });
 
 	return (
 		<CardAnchor className={clsx('Card-root', className)} {...props}>

@@ -1,6 +1,6 @@
 const Chance = require('chance');
-const {paramCase} = require('change-case');
-const {writeFileSync} = require('fs');
+const { paramCase } = require('change-case');
+const { writeFileSync } = require('fs');
 const timelines = require('../../src/content/timelines.json');
 
 const chance = new Chance();
@@ -265,7 +265,7 @@ const createTimeline = (title = '', description = '', steps = []) => ({
 
 const refinedTimelines = jsonSteps.map(timeline => {
 	const refinedSteps = timeline.steps.map(step => {
-		const {title, description} = step;
+		const { title, description } = step;
 		const imageSrc = `./images/${timeline.title}/${paramCase(title)}.jpg`;
 		const imageAlt = `${timeline.title} ${title}`;
 		return createTimelineStep(title, description, imageSrc, imageAlt);

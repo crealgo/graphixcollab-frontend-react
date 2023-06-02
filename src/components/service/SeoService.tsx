@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import {type FC} from 'react';
-import {PageTitle} from '../utility/PageTitle';
+import { type FC } from 'react';
+import { PageTitle } from '../utility/PageTitle';
 
 export const SeoService: FC<unknown> = () => {
 	return (

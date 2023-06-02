@@ -1,5 +1,5 @@
-import {css, styled} from '@mui/material/styles';
-import {type Size} from '../../types/general';
+import { css, styled } from '@mui/material/styles';
+import { type Size } from '../../types/general';
 
 type TextProps = {
 	size?: Size;
@@ -8,7 +8,7 @@ type TextProps = {
 };
 
 export const Text = styled('p')<TextProps>(
-	({theme, contrast, variant, size}) => {
+	({ theme, contrast, variant, size }) => {
 		const sizeStyles = {
 			small: css`
 				font-size: 14px;

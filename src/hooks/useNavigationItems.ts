@@ -1,5 +1,5 @@
-import {type NavItemOptions} from '../types/general';
-import {useRouter} from 'next/router';
+import { type NavItemOptions } from '../types/general';
+import { useRouter } from 'next/router';
 
 export const useNavigationItems = (): NavItemOptions[] => {
 	const router = useRouter();

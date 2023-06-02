@@ -1,6 +1,6 @@
 const Chance = require('chance');
-const {paramCase} = require('change-case');
-const {writeFileSync} = require('fs');
+const { paramCase } = require('change-case');
+const { writeFileSync } = require('fs');
 const services = require('../src/content/services.json');
 const prompt = require('prompt-sync')();
 

@@ -1,6 +1,6 @@
-import {type StoryObj} from '@storybook/react';
-import {generateGalleryBlock} from '../../utils/chance';
-import {GalleryBlock, type GalleryBlockProps} from './GalleryBlock';
+import { type StoryObj } from '@storybook/react';
+import { generateGalleryBlock } from '../../utils/chance';
+import { GalleryBlock, type GalleryBlockProps } from './GalleryBlock';
 
 export default {
 	component: GalleryBlock

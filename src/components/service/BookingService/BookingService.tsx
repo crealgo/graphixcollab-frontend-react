@@ -1,5 +1,5 @@
-import {ActionStack} from '../../base/ActionStack';
-import {DialogTitle} from '../../base/DialogTitle';
+import { ActionStack } from '../../base/ActionStack';
+import { DialogTitle } from '../../base/DialogTitle';
 import {
 	ArrowCircleLeft,
 	ArrowCircleRight,
@@ -18,11 +18,11 @@ import {
 	Stepper,
 	styled
 } from '@mui/material';
-import {type FC, type MouseEvent, useState} from 'react';
-import {Button} from '../../base/Button';
-import {CustomerInfoStep} from './steps/CustomerInfoStep';
-import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
-import {SelectServiceStep} from './steps/SelectServiceStep';
+import { type FC, type MouseEvent, useState } from 'react';
+import { Button } from '../../base/Button';
+import { CustomerInfoStep } from './steps/CustomerInfoStep';
+import { ReserveTimeSlotStep } from './steps/ReserveTimeSlotStep';
+import { SelectServiceStep } from './steps/SelectServiceStep';
 
 type BookingServiceProps = {
 	isOpen?: boolean;
@@ -49,7 +49,7 @@ const steps = [
 ];
 
 const StyledDialogContent = styled(DialogContent)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: ${theme.palette.grey[100]};
 		border-top: solid 1px ${theme.palette.grey[300]};
 		border-bottom: solid 1px ${theme.palette.grey[300]};
@@ -106,7 +106,7 @@ export const BookingService: FC<BookingServiceProps> = ({
 					>
 						{steps.map(
 							(
-								{label, StepContent: ResolvedStepContent},
+								{ label, StepContent: ResolvedStepContent },
 								stepIndex
 							) => (
 								<Step key={stepIndex}>

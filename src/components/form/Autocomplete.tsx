@@ -1,8 +1,8 @@
-import {type FC, type PropsWithChildren, useId} from 'react';
-import {type Size} from '../../types/general';
-import {Input, type InputProps} from './Input';
-import {type OptionValue} from '../../types/OptionValue';
-import {type BaseInputProps} from '../../types/base';
+import { type FC, type PropsWithChildren, useId } from 'react';
+import { type Size } from '../../types/general';
+import { Input, type InputProps } from './Input';
+import { type OptionValue } from '../../types/OptionValue';
+import { type BaseInputProps } from '../../types/base';
 
 export type AutocompleteProps = {
 	inputSize?: Size;
@@ -24,7 +24,7 @@ export const Autocomplete: FC<AutocompleteProps> = ({
 			<Input list={listId} {...props} />
 			<datalist id={listId}>
 				{children ??
-					options?.map(({label, value}, optionIndex) => (
+					options?.map(({ label, value }, optionIndex) => (
 						<option key={optionIndex} value={label}>
 							{value}
 						</option>

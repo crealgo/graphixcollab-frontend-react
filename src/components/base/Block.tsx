@@ -1,8 +1,8 @@
-import {styled} from '@mui/material';
-import {css} from 'code-tag';
+import { styled } from '@mui/material';
+import { css } from 'code-tag';
 import clsx from 'clsx';
-import {type ComponentPropsWithRef, type FC} from 'react';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import { type ComponentPropsWithRef, type FC } from 'react';
+import { _e } from '../../utils/excludePropsFromForwarding';
 
 export type BlockProps = {
 	/**
@@ -16,7 +16,7 @@ export type BlockProps = {
 const StyledDiv = styled(
 	'div',
 	_e('isRounded', 'color', 'hasNoDefaultMargin')
-)<BlockProps>(({theme, color, hasNoDefaultMargin, isRounded = false}) => {
+)<BlockProps>(({ theme, color, hasNoDefaultMargin, isRounded = false }) => {
 	const blockColor = {
 		default: 'transparent',
 		primary: theme.palette.primary.light,
@@ -44,7 +44,7 @@ const StyledDiv = styled(
 	`;
 });
 
-export const Block: FC<BlockProps> = ({className, children, ...props}) => (
+export const Block: FC<BlockProps> = ({ className, children, ...props }) => (
 	<StyledDiv {...props} className={clsx('Block-root', className)}>
 		{children}
 	</StyledDiv>

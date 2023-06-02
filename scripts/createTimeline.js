@@ -1,6 +1,6 @@
 const Chance = require('chance');
-const {paramCase} = require('change-case');
-const {writeFileSync} = require('fs');
+const { paramCase } = require('change-case');
+const { writeFileSync } = require('fs');
 const timelines = require('../src/content/timelines.json');
 const prompt = require('prompt-sync')();
 
@@ -28,7 +28,7 @@ const createTimeline = (title = '', description = '', steps = []) => ({
 	description,
 	steps,
 	createdOn: new Date().toISOString(),
-	createBy: '',
+	createBy: ''
 });
 
 const addStep = (steps = [], stepIndex = 0) => {

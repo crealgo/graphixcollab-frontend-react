@@ -1,14 +1,14 @@
-import {Block} from '../base/Block';
-import {useRef, type FC, useMemo, useState} from 'react';
-import {Button} from '../base/Button';
-import {Container} from '../base/Container';
+import { Block } from '../base/Block';
+import { useRef, type FC, useMemo, useState } from 'react';
+import { Button } from '../base/Button';
+import { Container } from '../base/Container';
 import timelines from '../../content/timelines.json';
-import {Heading} from '../base/Heading';
-import {Select} from '../form/Select';
-import {MobileTimelineEvent} from '../base/MobileTimelineEvent';
-import {type EventBlockProps, TimelineEvent} from '../base/TimelineEvent';
-import {Timeline} from '../base/Timeline';
-import {useMediaQuery, useTheme} from '@mui/material';
+import { Heading } from '../base/Heading';
+import { Select } from '../form/Select';
+import { MobileTimelineEvent } from '../base/MobileTimelineEvent';
+import { type EventBlockProps, TimelineEvent } from '../base/TimelineEvent';
+import { Timeline } from '../base/Timeline';
+import { useMediaQuery, useTheme } from '@mui/material';
 import styled from '@emotion/styled';
 
 export type TimelineBlockProps = {
@@ -31,8 +31,8 @@ const Content = styled(Container)`
 	}
 `;
 
-export const TimelineBlock: FC<TimelineBlockProps> = ({events}) => {
-	const {breakpoints} = useTheme();
+export const TimelineBlock: FC<TimelineBlockProps> = ({ events }) => {
+	const { breakpoints } = useTheme();
 	const isMobile = useMediaQuery(breakpoints.down('sm'));
 	const [currentTimeline, setCurrentTimeline] = useState(0);
 
@@ -56,7 +56,7 @@ export const TimelineBlock: FC<TimelineBlockProps> = ({events}) => {
 						}))}
 						onChange={event => {
 							const index = timelines.findIndex(
-								({slug}) => slug === event.target.value
+								({ slug }) => slug === event.target.value
 							);
 
 							setCurrentTimeline(index);

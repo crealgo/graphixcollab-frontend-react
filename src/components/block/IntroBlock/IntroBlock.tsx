@@ -1,20 +1,14 @@
-import {css, styled} from '@mui/material';
-import {
-	useState,
-	type ComponentPropsWithoutRef,
-	type FC,
-	useEffect
-} from 'react';
-import {type Action, type SharedBlockProps} from '../../../types/general';
+import { ArrowRight } from '@mui/icons-material';
+import { css, styled } from '@mui/material';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { type Action, type SharedBlockProps } from '../../../types/general';
 import Logo from '../../atoms/Logo';
-import {ActionStack} from '../../base/ActionStack';
-import {Block} from '../../base/Block';
-import {Carousel, CarouselSlide} from '../../base/Carousel';
-import {Container} from '../../base/Container';
-import {Heading} from '../../base/Heading';
-import {Text} from '../../base/Text';
-import {ArrowRight} from '@mui/icons-material';
-import {useTrail, a} from '@react-spring/web';
+import { ActionStack } from '../../base/ActionStack';
+import { Block } from '../../base/Block';
+import { Carousel, CarouselSlide } from '../../base/Carousel';
+import { Container } from '../../base/Container';
+import { Heading } from '../../base/Heading';
+import { Text } from '../../base/Text';
 
 export type Slide = {
 	title: string;
@@ -25,16 +19,16 @@ export type Slide = {
 
 export type IntroBlockProps = {
 	// color?: 'primary' | 'secondary' | 'grey' | 'none';
-	slides?: Slide[];
+	// slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> &
 	SharedBlockProps;
 
 const images = [
-	{src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery'},
-	{src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
-	{src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
-	{src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts'}
+	{ src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery' },
+	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
+	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
+	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
 ];
 
 const Wrapper = styled('div')`
@@ -97,7 +91,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 				color: white;
 				text-align: center;
 
-				${({theme}) => theme.breakpoints.up('lg')} {
+				${({ theme }) => theme.breakpoints.up('lg')} {
 					text-align: left;
 				}
 			}
@@ -106,7 +100,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 `;
 
 const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		position: relative;
 		display: grid;
 		grid-template-columns: 1fr;
@@ -150,7 +144,7 @@ const StyledText = styled(Text)`
 	}
 `;
 
-export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
+export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 	return (
 		<Wrapper>
 			{/* <StyledCarousel>

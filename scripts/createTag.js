@@ -1,6 +1,6 @@
 const Chance = require('chance');
-const {paramCase} = require('change-case');
-const {writeFileSync} = require('fs');
+const { paramCase } = require('change-case');
+const { writeFileSync } = require('fs');
 const tags = require('../src/content/tags.json');
 const prompt = require('prompt-sync')();
 const chalk = require('chalk');
@@ -19,7 +19,7 @@ const createTags = async () => {
 	const isValid = label => {
 		return (
 			Boolean(label.length > 0) &&
-			tags.findIndex(({slug}) => slug === paramCase(label)) === -1
+			tags.findIndex(({ slug }) => slug === paramCase(label)) === -1
 		);
 	};
 

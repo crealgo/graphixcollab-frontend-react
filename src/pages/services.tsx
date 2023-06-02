@@ -1,9 +1,9 @@
-import {type GetStaticProps, type NextPage} from 'next';
-import {Marked} from '../components/base/Marked';
-import {type CalloutBlockProps} from '../components/block/CalloutBlock';
-import {FaqBlock, type FaqBlockProps} from '../components/block/FaqBlock';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
+import { type GetStaticProps, type NextPage } from 'next';
+import { Marked } from '../components/base/Marked';
+import { type CalloutBlockProps } from '../components/block/CalloutBlock';
+import { FaqBlock, type FaqBlockProps } from '../components/block/FaqBlock';
+import { type FooterBlockProps } from '../components/block/FooterBlock';
+import { InteractiveEstimator } from '../components/block/InteractiveEstimator';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps
@@ -12,11 +12,11 @@ import {
 	ServicesBlock,
 	type ServicesBlockProps
 } from '../components/block/ServicesBlock';
-import {TimelineBlock} from '../components/block/TimelineBlock';
+import { TimelineBlock } from '../components/block/TimelineBlock';
 import services from '../content/services.json';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {generateFaqBlock, generateFooter} from '../utils/chance';
-import {PageTitle} from '../components/utility/PageTitle';
+import { DefaultLayout } from '../layouts/DefaultLayout';
+import { generateFaqBlock, generateFooter } from '../utils/chance';
+import { PageTitle } from '../components/utility/PageTitle';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;

@@ -1,16 +1,16 @@
-import {css, styled} from '@mui/material/styles';
-import {type NextPage} from 'next';
-import {useRouter} from 'next/router';
-import {useEffect, type ReactNode} from 'react';
-import {type BannerProps} from '../components/base/Banner';
-import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
-import {Header, type HeaderProps} from '../components/base/Header/Header';
+import { css, styled } from '@mui/material/styles';
+import { type NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect, type ReactNode } from 'react';
+import { type BannerProps } from '../components/base/Banner';
+import { type BreadcrumbOptions } from '../components/base/Breadcrumbs';
+import { Header, type HeaderProps } from '../components/base/Header/Header';
 import {
 	FooterBlock,
 	type FooterBlockProps
 } from '../components/block/FooterBlock';
-import {YelpBlock} from '../components/block/YelpBlock';
-import {useAppState} from '../hooks/useAppState';
+import { YelpBlock } from '../components/block/YelpBlock';
+import { useAppState } from '../hooks/useAppState';
 
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
@@ -32,8 +32,8 @@ const BackgroundImage = styled('div')`
 	height: inherit;
 `;
 
-const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
-	({theme, flipped}) => css`
+const BackgroundImageWrapper = styled('div')<{ flipped?: boolean }>(
+	({ theme, flipped }) => css`
 		width: 3322px;
 		height: auto;
 
@@ -48,7 +48,7 @@ const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
 );
 
 const Main = styled('main')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 
@@ -64,7 +64,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 	FooterProps,
 	children
 }) => {
-	const {setBannerProps, toggleContact, toggleBooking} = useAppState();
+	const { setBannerProps, toggleContact, toggleBooking } = useAppState();
 
 	const router = useRouter();
 

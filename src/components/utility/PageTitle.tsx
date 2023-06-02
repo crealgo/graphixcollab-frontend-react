@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {type FC} from 'react';
+import { type FC } from 'react';
 
 type Props = {
 	text?: string;

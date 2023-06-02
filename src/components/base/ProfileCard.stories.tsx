@@ -1,12 +1,12 @@
-import {type StoryObj, type Meta} from '@storybook/react';
-import {generateEmployee} from '../../utils/chance';
-import {ProfileCard, type ProfileCardProps} from './ProfileCard';
+import { type StoryObj, type Meta } from '@storybook/react';
+import { generateEmployee } from '../../utils/chance';
+import { ProfileCard, type ProfileCardProps } from './ProfileCard';
 
 export default {
 	component: ProfileCard,
 	decorators: [
 		Story => (
-			<div style={{maxWidth: 300}}>
+			<div style={{ maxWidth: 300 }}>
 				<Story />
 			</div>
 		)

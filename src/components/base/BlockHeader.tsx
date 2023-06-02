@@ -1,11 +1,11 @@
-import {ActionStack} from './ActionStack';
-import {Heading} from './Heading';
-import {type SharedBlockProps} from '../../types/general';
+import { ActionStack } from './ActionStack';
+import { Heading } from './Heading';
+import { type SharedBlockProps } from '../../types/general';
 import Typography from '@mui/material/Typography';
-import {type FC} from 'react';
-import {Container} from './Container';
-import {styled} from '@mui/material/styles';
-import {Text} from './Text';
+import { type FC } from 'react';
+import { Container } from './Container';
+import { styled } from '@mui/material/styles';
+import { Text } from './Text';
 
 type BlockHeaderProps = SharedBlockProps & {
 	/**

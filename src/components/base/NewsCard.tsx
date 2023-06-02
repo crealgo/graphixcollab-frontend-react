@@ -1,16 +1,16 @@
-import {ArrowForward} from '@mui/icons-material';
-import {Button, css, Divider, Stack, styled, Typography} from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
+import { Button, css, Divider, Stack, styled, Typography } from '@mui/material';
 import clsx from 'clsx';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Article} from '../../types/general';
-import {Profile} from './Profile';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { type Article } from '../../types/general';
+import { Profile } from './Profile';
 
 export type NewsCardsProps = {
 	article: Article;
 } & ComponentPropsWithoutRef<'div'>;
 
 const NewsCardWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		max-width: 20rem;
 		display: grid;
 		grid-template-columns: 1fr;
@@ -23,7 +23,7 @@ const NewsCardWrapper = styled('div')(
 	`
 );
 
-export const NewsCard: FC<NewsCardsProps> = ({className, article}) => (
+export const NewsCard: FC<NewsCardsProps> = ({ className, article }) => (
 	<NewsCardWrapper className={clsx(className, 'NewsCard-root')}>
 		<Profile profile={article.author} />
 		{Array.isArray(article.tags) && (

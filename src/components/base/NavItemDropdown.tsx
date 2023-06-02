@@ -1,14 +1,14 @@
-import {KeyboardArrowDown} from '@mui/icons-material';
-import {Menu, MenuItem, Popover, type PopoverOrigin} from '@mui/material';
+import { KeyboardArrowDown } from '@mui/icons-material';
+import { Menu, MenuItem, Popover, type PopoverOrigin } from '@mui/material';
 import {
 	useState,
 	type ComponentType,
 	type FC,
 	type MouseEventHandler
 } from 'react';
-import {type NavItemOptions} from '../../types/general';
-import {type ButtonProps} from './Button';
-import {NavItem} from './NavItem';
+import { type NavItemOptions } from '../../types/general';
+import { type ButtonProps } from './Button';
+import { NavItem } from './NavItem';
 
 export type NavItemDropdownProps = {
 	items?: NavItemOptions[];

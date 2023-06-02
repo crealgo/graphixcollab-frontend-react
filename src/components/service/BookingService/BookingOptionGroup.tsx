@@ -1,11 +1,11 @@
-import {css, styled} from '@mui/material';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
+import { css, styled } from '@mui/material';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
 
 const BaseElement: FC<
 	ComponentPropsWithoutRef<'div'> & {
 		name?: string;
 	}
-> = ({name, children, ...props}) => (
+> = ({ name, children, ...props }) => (
 	<div {...props} role="radiogroup" aria-labelledby={name}>
 		<span hidden id={name}>
 			Some Title
@@ -15,7 +15,7 @@ const BaseElement: FC<
 );
 
 export const BookingOptionGroup = styled(BaseElement)(
-	({theme}) => css`
+	({ theme }) => css`
 		border: unset;
 		padding: unset;
 

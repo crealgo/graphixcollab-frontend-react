@@ -6,9 +6,9 @@ import {
 	useId
 } from 'react';
 import styled from '@emotion/styled';
-import {type InputProps} from './Input';
-import {type AutocompleteProps} from './Autocomplete';
-import {type Size} from '../../types/general';
+import { type InputProps } from './Input';
+import { type AutocompleteProps } from './Autocomplete';
+import { type Size } from '../../types/general';
 
 // Type ExposedInputProps = Pick<InputProps, "id" | "placeholder" | "ref">;
 type BaseElementProps = ComponentPropsWithoutRef<'div'>;

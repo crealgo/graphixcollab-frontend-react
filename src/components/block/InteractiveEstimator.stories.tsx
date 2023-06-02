@@ -1,5 +1,5 @@
-import {type StoryObj} from '@storybook/react';
-import {generateActions} from '../../utils/chance';
+import { type StoryObj } from '@storybook/react';
+import { generateActions } from '../../utils/chance';
 import {
 	InteractiveEstimator,
 	type InteractiveEstimatorProps

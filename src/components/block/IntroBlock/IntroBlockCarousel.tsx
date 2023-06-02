@@ -1,15 +1,20 @@
-import {css, styled} from '@mui/material';
-import {useRef, useState, type ComponentPropsWithoutRef, type FC} from 'react';
+import { css, styled } from '@mui/material';
+import {
+	useRef,
+	useState,
+	type ComponentPropsWithoutRef,
+	type FC
+} from 'react';
 import IntroImage from '../../../assets/sitting-and-laughing-intro.webp';
-import {type Action, type SharedBlockProps} from '../../../types/general';
-import {ActionStack} from '../../base/ActionStack';
-import {Block} from '../../base/Block';
-import {Carousel} from '../../base/Carousel';
-import {CarouselSlide} from '../../base/Carousel/CarouselSlide';
-import {Container} from '../../base/Container';
-import {Heading} from '../../base/Heading';
-import {Image} from '../../base/Image';
-import {Text} from '../../base/Text';
+import { type Action, type SharedBlockProps } from '../../../types/general';
+import { ActionStack } from '../../base/ActionStack';
+import { Block } from '../../base/Block';
+import { Carousel } from '../../base/Carousel';
+import { CarouselSlide } from '../../base/Carousel/CarouselSlide';
+import { Container } from '../../base/Container';
+import { Heading } from '../../base/Heading';
+import { Image } from '../../base/Image';
+import { Text } from '../../base/Text';
 
 export type Slide = {
 	title: string;
@@ -46,7 +51,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 `;
 
 const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		z-index: 1;
 		position: relative;
 		display: grid;
@@ -103,14 +108,14 @@ const Content = styled('div')(
 	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({className, slides = []}) => {
+export const IntroBlock: FC<IntroBlockProps> = ({ className, slides = [] }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const blockRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<Container className="IntroBlock-root">
 			<StyledCarousel>
-				{slides?.map(({description}, index) => (
+				{slides?.map(({ description }, index) => (
 					<StyledCarouselSlide key={index}>
 						<Block ref={blockRef} isRounded>
 							<Content>

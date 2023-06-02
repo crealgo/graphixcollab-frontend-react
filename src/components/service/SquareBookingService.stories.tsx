@@ -1,7 +1,7 @@
-import {type StoryObj} from '@storybook/react';
-import {useState} from 'react';
-import {Button} from '../base/Button';
-import {SquareBookingService} from './SquareBookingService';
+import { type StoryObj } from '@storybook/react';
+import { useState } from 'react';
+import { Button } from '../base/Button';
+import { SquareBookingService } from './SquareBookingService';
 
 export default {
 	component: SquareBookingService

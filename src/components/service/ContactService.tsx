@@ -1,4 +1,4 @@
-import {Cancel, CheckCircle, MailTwoTone} from '@mui/icons-material';
+import { Cancel, CheckCircle, MailTwoTone } from '@mui/icons-material';
 import {
 	css,
 	Dialog,
@@ -8,9 +8,9 @@ import {
 	styled,
 	TextField
 } from '@mui/material';
-import {type FC, type MouseEvent} from 'react';
-import {Button} from '../base/Button';
-import {DialogTitle} from '../base/DialogTitle';
+import { type FC, type MouseEvent } from 'react';
+import { Button } from '../base/Button';
+import { DialogTitle } from '../base/DialogTitle';
 
 type ContactServiceProps = {
 	isOpen?: boolean;
@@ -19,7 +19,7 @@ type ContactServiceProps = {
 };
 
 const StyledDialogContent = styled(DialogContent)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: ${theme.palette.grey[100]};
 		border-top: solid 1px ${theme.palette.grey[300]};
 		border-bottom: solid 1px ${theme.palette.grey[300]};

@@ -1,13 +1,13 @@
-import {Close} from '@mui/icons-material';
-import {css, styled} from '@mui/material';
-import {type FC, type PropsWithChildren} from 'react';
-import {type Action} from '../../types/general';
-import {ActionStack} from './ActionStack';
-import {Block} from './Block';
-import {Container} from './Container';
-import {IconButton} from './IconButton';
-import {type IconButtonBaseProps} from './IconButtonBase';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import { Close } from '@mui/icons-material';
+import { css, styled } from '@mui/material';
+import { type FC, type PropsWithChildren } from 'react';
+import { type Action } from '../../types/general';
+import { ActionStack } from './ActionStack';
+import { Block } from './Block';
+import { Container } from './Container';
+import { IconButton } from './IconButton';
+import { type IconButtonBaseProps } from './IconButtonBase';
+import { _e } from '../../utils/excludePropsFromForwarding';
 
 export type BannerProps = PropsWithChildren<{
 	text?: string;
@@ -17,7 +17,7 @@ export type BannerProps = PropsWithChildren<{
 }>;
 
 const StyledBlock = styled(Block)(
-	({theme}) => css`
+	({ theme }) => css`
 		display: block;
 		position: relative;
 		background-color: ${theme.palette.error.light};

@@ -1,9 +1,9 @@
 // @ts-check
 
-const {colors} = require('@mui/material');
+const { colors } = require('@mui/material');
 const generateSizeValues = require('../utils/generateSizeValues');
 const f = require('../utils/formatToken');
-const {colord} = require('colord');
+const { colord } = require('colord');
 
 /*
 	namespace-object-base-modifier

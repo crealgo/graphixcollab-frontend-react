@@ -1,7 +1,7 @@
-import {css, styled} from '@mui/material/styles';
-import {forwardRef, type ComponentPropsWithRef} from 'react';
-import {type NavItemOptions} from '../../types/general';
-import {NavItem} from './NavItem';
+import { css, styled } from '@mui/material/styles';
+import { forwardRef, type ComponentPropsWithRef } from 'react';
+import { type NavItemOptions } from '../../types/general';
+import { NavItem } from './NavItem';
 
 type TopNavProps = {
 	items?: NavItemOptions[];
@@ -11,7 +11,7 @@ type TopNavProps = {
 const defaultAlignment = 'start';
 
 const TopNavWrapper = styled('nav')<TopNavProps>(
-	({theme, align = defaultAlignment}) => css`
+	({ theme, align = defaultAlignment }) => css`
 		display: flex;
 		gap: 0.25rem;
 		align-items: center;
@@ -20,7 +20,7 @@ const TopNavWrapper = styled('nav')<TopNavProps>(
 );
 
 export const TopNav = forwardRef<HTMLDivElement, TopNavProps>(
-	({children, items, align = defaultAlignment, ...props}, ref) => (
+	({ children, items, align = defaultAlignment, ...props }, ref) => (
 		<TopNavWrapper
 			{...props}
 			ref={ref}

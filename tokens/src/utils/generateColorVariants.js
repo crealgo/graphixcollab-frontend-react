@@ -1,6 +1,6 @@
 // @ts-check
 
-const {colord} = require('colord');
+const { colord } = require('colord');
 const f = require('./formatToken');
 
 /**

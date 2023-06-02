@@ -1,11 +1,11 @@
-import {type StoryObj, type Meta} from '@storybook/react';
-import {Phone, type PhoneProps} from './Phone';
+import { type StoryObj, type Meta } from '@storybook/react';
+import { Phone, type PhoneProps } from './Phone';
 
 export default {
 	component: Phone,
 	decorators: [
 		Story => (
-			<div style={{maxWidth: 400}}>
+			<div style={{ maxWidth: 400 }}>
 				<Story />
 			</div>
 		)
@@ -15,7 +15,7 @@ export default {
 export const Default: StoryObj<PhoneProps> = {
 	argTypes: {
 		elevation: {
-			control: {type: 'number'},
+			control: { type: 'number' },
 			defaultValue: 20
 		}
 	}

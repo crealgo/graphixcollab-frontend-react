@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import {type BaseComponentsProps} from '../../types/base';
+import { type BaseComponentsProps } from '../../types/base';
 import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
-import {type FC} from 'react';
+import { type FC } from 'react';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 

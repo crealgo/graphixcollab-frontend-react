@@ -1,12 +1,12 @@
-import {CheckCircleOutline, PaletteOutlined} from '@mui/icons-material';
-import {type FC} from 'react';
-import {type Action} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {InteractiveSelector} from '../base/InteractiveSelector';
-import {styled} from '@mui/material';
+import { CheckCircleOutline, PaletteOutlined } from '@mui/icons-material';
+import { type FC } from 'react';
+import { type Action } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
+import { Block } from '../base/Block';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { InteractiveSelector } from '../base/InteractiveSelector';
+import { styled } from '@mui/material';
 
 export type InteractiveEstimatorProps = {
 	actions?: Action[];
@@ -19,7 +19,7 @@ const StyledBlock = styled(Block)`
 const ContentGrid = styled('div')`
 	display: grid;
 	gap: 2rem;
-	max-width: ${({theme}) => theme.breakpoints.values.md}px;
+	max-width: ${({ theme }) => theme.breakpoints.values.md}px;
 	z-index: 1;
 
 	padding-block-end: 15rem;
@@ -28,7 +28,7 @@ const ContentGrid = styled('div')`
 		margin-top: 1rem;
 	}
 
-	${({theme}) => theme.breakpoints.up('md')} {
+	${({ theme }) => theme.breakpoints.up('md')} {
 		padding-block-end: 5rem;
 
 		.ActionStack-root {
@@ -36,7 +36,7 @@ const ContentGrid = styled('div')`
 		}
 	}
 
-	${({theme}) => theme.breakpoints.up('lg')} {
+	${({ theme }) => theme.breakpoints.up('lg')} {
 		padding-block-end: unset;
 	}
 `;
@@ -52,7 +52,7 @@ const AdornmentImage = styled('img')`
 	/* left: 50%; */
 	/* transform: translateX(-20%) translateY(50%); */
 
-	${({theme}) => theme.breakpoints.up('md')} {
+	${({ theme }) => theme.breakpoints.up('md')} {
 		margin-bottom: unset;
 
 		position: absolute;
@@ -63,7 +63,7 @@ const AdornmentImage = styled('img')`
 		height: auto;
 	}
 
-	${({theme}) => theme.breakpoints.up('lg')} {
+	${({ theme }) => theme.breakpoints.up('lg')} {
 		width: 40rem;
 		transform: translateX(25%) translateY(6%);
 	}

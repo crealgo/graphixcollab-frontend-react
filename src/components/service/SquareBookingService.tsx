@@ -1,8 +1,13 @@
-import {Cancel, CheckCircle, MailTwoTone} from '@mui/icons-material';
-import {DialogActions, DialogContent, DialogTitle, Paper} from '@mui/material';
-import {css, styled} from '@mui/material/styles';
-import {type FC, type MouseEvent} from 'react';
-import {Button} from '../base/Button';
+import { Cancel, CheckCircle, MailTwoTone } from '@mui/icons-material';
+import {
+	DialogActions,
+	DialogContent,
+	DialogTitle,
+	Paper
+} from '@mui/material';
+import { css, styled } from '@mui/material/styles';
+import { type FC, type MouseEvent } from 'react';
+import { Button } from '../base/Button';
 
 type DialogServiceProps = {
 	// FIXME: open?: boolean;
@@ -11,7 +16,7 @@ type DialogServiceProps = {
 };
 
 const StyledDialogContent = styled(DialogContent)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: ${theme.palette.grey[100]};
 		border-top: solid 1px ${theme.palette.grey[300]};
 		border-bottom: solid 1px ${theme.palette.grey[300]};

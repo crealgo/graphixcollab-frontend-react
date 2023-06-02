@@ -1,14 +1,14 @@
-import {css, styled} from '@mui/material';
+import { css, styled } from '@mui/material';
 import clsx from 'clsx';
-import {forwardRef} from 'react';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import { forwardRef } from 'react';
+import { _e } from '../../utils/excludePropsFromForwarding';
 import {
 	getButtonColors,
 	getButtonHoverColors,
 	getButtonSizes
 } from '../../utils/getButtonStyles';
-import {type ColorVariants} from '../../types/color';
-import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
+import { type ColorVariants } from '../../types/color';
+import { IconButtonBase, type IconButtonBaseProps } from './IconButtonBase';
 
 export type IconButtonProps = {
 	color?: ColorVariants;
@@ -18,22 +18,22 @@ const StyledIconButton = styled(
 	IconButtonBase,
 	_e('color')
 )<IconButtonProps>(
-	({theme, color = 'text', size = 'medium'}) => css`
+	({ theme, color = 'text', size = 'medium' }) => css`
 		font-weight: bold;
-		background-color: ${getButtonColors({theme, color})};
+		background-color: ${getButtonColors({ theme, color })};
 
-		${getButtonSizes({theme, size})}
+		${getButtonSizes({ theme, size })}
 		padding: 0;
 
 		&:hover,
 		&:focus-visible {
-			background-color: ${getButtonHoverColors({theme, color})};
+			background-color: ${getButtonHoverColors({ theme, color })};
 		}
 	`
 );
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-	({children, className, color = 'tertiary', ...props}, ref) => (
+	({ children, className, color = 'tertiary', ...props }, ref) => (
 		<StyledIconButton
 			{...props}
 			ref={ref}

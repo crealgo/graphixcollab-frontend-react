@@ -1,10 +1,10 @@
-import {css} from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {KeyboardArrowDownRounded} from '@mui/icons-material';
-import {useRef, type ComponentPropsWithRef, type FC} from 'react';
-import {type BaseInputProps} from '../../types/base';
-import {type OptionValue} from '../../types/general';
-import {getInputStyles} from '../../utils/getInputStyles';
+import { KeyboardArrowDownRounded } from '@mui/icons-material';
+import { useRef, type ComponentPropsWithRef, type FC } from 'react';
+import { type BaseInputProps } from '../../types/base';
+import { type OptionValue } from '../../types/general';
+import { getInputStyles } from '../../utils/getInputStyles';
 
 export type SelectProps = {
 	options?: OptionValue[];
@@ -12,7 +12,7 @@ export type SelectProps = {
 	ComponentPropsWithRef<'select'>;
 
 const SelectWrapper = styled('div')<SelectProps>(
-	({inputSize}) => css`
+	({ inputSize }) => css`
 		position: relative;
 
 		& svg {
@@ -30,8 +30,8 @@ const SelectWrapper = styled('div')<SelectProps>(
 );
 
 const StyledInput = styled('select')<SelectProps>(
-	({inputSize}) => css`
-		${getInputStyles({inputSize})}
+	({ inputSize }) => css`
+		${getInputStyles({ inputSize })}
 
 		padding-inline: var(--select-spacing-padding-inline-${inputSize});
 		appearance: none;
@@ -53,7 +53,7 @@ export const Select: FC<SelectProps> = ({
 	return (
 		<SelectWrapper inputSize={inputSize} onClick={handleWrapperClick}>
 			<StyledInput ref={selectRef} inputSize={inputSize} {...props}>
-				{options?.map(({label, value}, optionIndex) => (
+				{options?.map(({ label, value }, optionIndex) => (
 					<option key={optionIndex} value={value}>
 						{label}
 					</option>

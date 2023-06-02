@@ -1,16 +1,16 @@
-import {Message} from '@mui/icons-material';
-import {Box, Typography} from '@mui/material';
-import {css, styled} from '@mui/material/styles';
-import {type FC} from 'react';
+import { Message } from '@mui/icons-material';
+import { Box, Typography } from '@mui/material';
+import { css, styled } from '@mui/material/styles';
+import { type FC } from 'react';
 import type services from '../../content/services.json';
-import {type SharedBlockProps} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {Block, type BlockProps} from '../base/Block';
-import {Button} from '../base/Button';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {HorizontalCard} from '../base/HorizontalCard';
-import {Marked} from '../base/Marked';
+import { type SharedBlockProps } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
+import { Block, type BlockProps } from '../base/Block';
+import { Button } from '../base/Button';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { HorizontalCard } from '../base/HorizontalCard';
+import { Marked } from '../base/Marked';
 
 type Service = (typeof services)[number];
 
@@ -19,7 +19,7 @@ export type ServicesBlockProps = {
 } & SharedBlockProps;
 
 export const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		max-width: ${theme.breakpoints.values.sm}px;
 
 		.ActionStack-root {
@@ -37,7 +37,7 @@ const StyledBlock = styled(Block)`
 `;
 
 const Wrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;

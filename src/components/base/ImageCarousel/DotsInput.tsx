@@ -1,6 +1,6 @@
-import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material';
-import {alpha, IconButton, styled, useControlled} from '@mui/material';
-import {useId, type FC} from 'react';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import { alpha, IconButton, styled, useControlled } from '@mui/material';
+import { useId, type FC } from 'react';
 
 type DotsInputProps = {
 	currentIndex?: number;
@@ -14,7 +14,7 @@ const dotWidthExpanded = '1.5rem';
 const controlGap = '0.125rem';
 
 const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(
-	({theme, count}) => ({
+	({ theme, count }) => ({
 		'display': 'flex',
 		'gap': controlGap,
 		'alignItems': 'center',
@@ -104,7 +104,7 @@ export const DotsInput: FC<DotsInputProps> = ({
 				<KeyboardArrowLeft />
 			</IconButton>
 			<div className="DotInput-dots">
-				{Array.from({length: count}, (_, radioIndex) => {
+				{Array.from({ length: count }, (_, radioIndex) => {
 					const inputId = `${generatedId}-dot-input-${radioIndex}`;
 					return (
 						<label

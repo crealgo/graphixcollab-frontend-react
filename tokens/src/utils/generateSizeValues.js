@@ -15,13 +15,13 @@ module.exports = (...sizes) => {
 		return {
 			small: f(sizes[0]),
 			medium: f(sizes[1]),
-			large: f(sizes[2]),
+			large: f(sizes[2])
 		};
 	}
 
 	return {
 		small: f(sizes[0]),
 		medium: f(sizes[0]),
-		large: f(sizes[0]),
+		large: f(sizes[0])
 	};
 };

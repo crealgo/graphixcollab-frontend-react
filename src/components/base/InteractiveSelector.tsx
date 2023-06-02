@@ -1,4 +1,4 @@
-import {KeyboardArrowDown} from '@mui/icons-material';
+import { KeyboardArrowDown } from '@mui/icons-material';
 import {
 	css,
 	alpha,
@@ -7,15 +7,15 @@ import {
 	styled,
 	type OutlinedTextFieldProps
 } from '@mui/material';
-import {useState, type FC, type MouseEventHandler} from 'react';
-import {type OptionValue} from '../../types/general';
+import { useState, type FC, type MouseEventHandler } from 'react';
+import { type OptionValue } from '../../types/general';
 
 export type InteractiveSelectorProps = {
 	options?: OptionValue[];
 } & Omit<OutlinedTextFieldProps, 'variant' | 'size'>;
 
 const StyledButton = styled('button')(
-	({theme}) => css`
+	({ theme }) => css`
 		border-radius: unset;
 		border: unset;
 		outline: unset;

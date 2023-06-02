@@ -1,8 +1,8 @@
-import {TextField, Typography} from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import {type FC} from 'react';
-import {TimeSlot} from '../TimeSlot';
-import {TimeSlotGroup} from '../TimeSlotGroup';
+import { type FC } from 'react';
+import { TimeSlot } from '../TimeSlot';
+import { TimeSlotGroup } from '../TimeSlotGroup';
 
 export const ReserveTimeSlotStep: FC<unknown> = () => (
 	<Grid container gap={3}>

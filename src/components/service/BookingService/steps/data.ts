@@ -3,7 +3,7 @@ import {
 	PaletteTwoTone,
 	SchoolTwoTone
 } from '@mui/icons-material';
-import {type ElementType} from 'react';
+import { type ElementType } from 'react';
 
 export type ServiceInformation = {
 	icon?: ElementType;

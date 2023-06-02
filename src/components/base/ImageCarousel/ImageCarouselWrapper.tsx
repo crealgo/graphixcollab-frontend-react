@@ -1,6 +1,6 @@
-import {colors, styled} from '@mui/material';
-import {_e} from '../../../utils/excludePropsFromForwarding';
-import {type SharedCarouseProps} from '.';
+import { colors, styled } from '@mui/material';
+import { _e } from '../../../utils/excludePropsFromForwarding';
+import { type SharedCarouseProps } from '.';
 
 type CarouseWrapperProps = {
 	imageCount?: number;

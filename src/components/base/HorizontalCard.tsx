@@ -1,10 +1,10 @@
-import {Typography} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
-import {type ComponentPropsWithRef, type FC} from 'react';
-import {useAppState} from '../../hooks/useAppState';
-import {colorIterator} from '../../utils/colorIterator';
-import {type ActionStackProps} from './ActionStack';
+import { type ComponentPropsWithRef, type FC } from 'react';
+import { useAppState } from '../../hooks/useAppState';
+import { colorIterator } from '../../utils/colorIterator';
+import { type ActionStackProps } from './ActionStack';
 
 type CardProps = {
 	title?: string;

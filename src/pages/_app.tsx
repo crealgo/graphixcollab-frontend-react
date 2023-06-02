@@ -1,11 +1,11 @@
 import '@fontsource/inter';
-import {type AppProps} from 'next/app';
-import {SeoService} from '../components/service/SeoService';
-import {AppStateContextProvider} from '../providers/AppStateContextProvider';
-import {ThemeProvider} from '../providers/ThemeProvider';
+import { type AppProps } from 'next/app';
+import { SeoService } from '../components/service/SeoService';
+import { AppStateContextProvider } from '../providers/AppStateContextProvider';
+import { ThemeProvider } from '../providers/ThemeProvider';
 import '../styles/global.css';
 
-const App = ({Component, pageProps}: AppProps) => (
+const App = ({ Component, pageProps }: AppProps) => (
 	<>
 		<SeoService />
 		<ThemeProvider>

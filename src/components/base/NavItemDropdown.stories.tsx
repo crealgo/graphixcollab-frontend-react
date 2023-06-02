@@ -1,7 +1,7 @@
-import {type StoryObj, type Meta} from '@storybook/react';
-import {chance} from '../../utils/chance';
-import {Flyout} from './Flyout';
-import {NavItemDropdown, type NavItemDropdownProps} from './NavItemDropdown';
+import { type StoryObj, type Meta } from '@storybook/react';
+import { chance } from '../../utils/chance';
+import { Flyout } from './Flyout';
+import { NavItemDropdown, type NavItemDropdownProps } from './NavItemDropdown';
 
 export default {
 	component: NavItemDropdown
@@ -10,7 +10,7 @@ export default {
 export const Default: StoryObj<NavItemDropdownProps> = {
 	args: {
 		children: 'Nav Item Dropdown',
-		items: chance.n(() => ({label: chance.word({length: 5})}), 5),
+		items: chance.n(() => ({ label: chance.word({ length: 5 }) }), 5),
 		FlyoutComponent: Flyout
 	}
 };

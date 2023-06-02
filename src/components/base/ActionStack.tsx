@@ -1,7 +1,7 @@
-import {Stack, Typography} from '@mui/material';
-import {type PropsWithChildren, type FC} from 'react';
-import {type Action} from '../../types/general';
-import {Button, type ButtonProps} from './Button';
+import { Stack, Typography } from '@mui/material';
+import { type PropsWithChildren, type FC } from 'react';
+import { type Action } from '../../types/general';
+import { Button, type ButtonProps } from './Button';
 
 export type ActionStackProps = PropsWithChildren<{
 	prefix?: string;
@@ -35,7 +35,7 @@ export const ActionStack: FC<ActionStackProps> = ({
 			{children}
 			{actions
 				?.slice(0, max)
-				.map(({label, ...actionItemsProps}, actionIndex) => (
+				.map(({ label, ...actionItemsProps }, actionIndex) => (
 					<Button
 						key={actionIndex}
 						size={size}

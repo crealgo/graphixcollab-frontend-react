@@ -1,5 +1,5 @@
-import {css, styled} from '@mui/material';
-import {type ComponentPropsWithRef} from 'react';
+import { css, styled } from '@mui/material';
+import { type ComponentPropsWithRef } from 'react';
 
 export type PhoneProps = {
 	hasBorder?: boolean;
@@ -9,7 +9,7 @@ export type PhoneProps = {
 const iphoneCornerRadius = '10%';
 
 export const Phone = styled('img')<PhoneProps>(
-	({theme, hasBorder, elevation = 0}) => css`
+	({ theme, hasBorder, elevation = 0 }) => css`
 		box-sizing: border-box;
 		width: 100%;
 		border-radius: ${iphoneCornerRadius};

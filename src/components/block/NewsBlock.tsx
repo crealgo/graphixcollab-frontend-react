@@ -1,8 +1,8 @@
-import {css, styled, Typography} from '@mui/material';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type Article} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {NewsCard} from '../base/NewsCard';
+import { css, styled, Typography } from '@mui/material';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { type Action, type Article } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
+import { NewsCard } from '../base/NewsCard';
 
 /** START PLAYGROUND */
 
@@ -14,7 +14,7 @@ export type NewsBlockProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 export const NewsBlockWrapper = styled('div')(
-	({theme}) => /* scss */ `
+	({ theme }) => /* scss */ `
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
@@ -34,7 +34,7 @@ export const NewsBlockWrapper = styled('div')(
 );
 
 const NewsBlockContent = styled('div')(
-	({theme}) => /* scss */ `
+	({ theme }) => /* scss */ `
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;

@@ -1,13 +1,13 @@
-import {type GetStaticProps, type NextPage} from 'next';
+import { type GetStaticProps, type NextPage } from 'next';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps
 } from '../components/block/PageHeaderBlock';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {AppointBookEmbed} from '../components/embed/AppointBookEmbed';
-import {PageTitle} from '../components/utility/PageTitle';
+import { DefaultLayout } from '../layouts/DefaultLayout';
+import { generateFooter, generatePageHeaderBlock } from '../utils/chance';
+import { type FooterBlockProps } from '../components/block/FooterBlock';
+import { AppointBookEmbed } from '../components/embed/AppointBookEmbed';
+import { PageTitle } from '../components/utility/PageTitle';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;

@@ -1,6 +1,6 @@
-import {styled} from '@mui/material/styles';
-import {Rating} from './Rating';
-import {type FC} from 'react';
+import { styled } from '@mui/material/styles';
+import { Rating } from './Rating';
+import { type FC } from 'react';
 import type reviews from '../../content/yelp-reviews.json';
 
 export type TestimonialProps = (typeof reviews)[0];
@@ -39,12 +39,16 @@ const BaseElement = styled('article')`
 		white-space: normal;
 	}
 
-	/* ${({theme}) => theme.breakpoints.up('md')} {
+	/* ${({ theme }) => theme.breakpoints.up('md')} {
 		flex-direction: row;
 	} */
 `;
 
-export const Testimonial: FC<TestimonialProps> = ({user, comment, rating}) => (
+export const Testimonial: FC<TestimonialProps> = ({
+	user,
+	comment,
+	rating
+}) => (
 	<BaseElement>
 		<img
 			className="image"

@@ -1,5 +1,5 @@
-import {Chip, type ChipProps, styled} from '@mui/material';
-import {forwardRef} from 'react';
+import { Chip, type ChipProps, styled } from '@mui/material';
+import { forwardRef } from 'react';
 
 const StyledChip = styled(Chip)`
 	padding: 0.125rem 0.25rem;
@@ -7,7 +7,7 @@ const StyledChip = styled(Chip)`
 `;
 
 export const Tag = forwardRef<HTMLDivElement, ChipProps>(
-	({children, ...props}, ref) => <StyledChip {...props} ref={ref} />
+	({ children, ...props }, ref) => <StyledChip {...props} ref={ref} />
 );
 
 Tag.defaultProps = {

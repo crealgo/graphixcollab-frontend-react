@@ -5,8 +5,8 @@ import {
 	type FC,
 	type PropsWithChildren
 } from 'react';
-import {BannerService} from '../components/service/BannerService';
-import {ContactService} from '../components/service/ContactService';
+import { BannerService } from '../components/service/BannerService';
+import { ContactService } from '../components/service/ContactService';
 import {
 	AppStateContext,
 	type AppStateContextOptions as Context

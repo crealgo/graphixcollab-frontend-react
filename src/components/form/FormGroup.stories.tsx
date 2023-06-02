@@ -1,6 +1,6 @@
-import {type Meta, type StoryObj} from '@storybook/react';
-import {FormGroup, type FormGroupProps} from './FormGroup';
-import {Autocomplete} from './Autocomplete';
+import { type Meta, type StoryObj } from '@storybook/react';
+import { FormGroup, type FormGroupProps } from './FormGroup';
+import { Autocomplete } from './Autocomplete';
 
 export default {
 	component: FormGroup

@@ -1,10 +1,10 @@
-import {type BannerProps} from '../components/base/Banner';
-import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
-import {type GalleryBlockProps} from '../components/block/GalleryBlock';
-import {type HeaderProps} from '../components/base/Header/Header';
-import {type IntroBlockProps} from '../components/block/IntroBlock/IntroBlock';
-import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
-import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';
+import { type BannerProps } from '../components/base/Banner';
+import { type FeaturedItemProps } from '../components/base/DrawerMenu/FeaturedItem';
+import { type GalleryBlockProps } from '../components/block/GalleryBlock';
+import { type HeaderProps } from '../components/base/Header/Header';
+import { type IntroBlockProps } from '../components/block/IntroBlock/IntroBlock';
+import { type PageHeaderBlockProps } from '../components/block/PageHeaderBlock';
+import { type ProfilesBlockProps } from '../components/block/ProfilesBlock';
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import {
 	type Action,
@@ -18,12 +18,12 @@ import {
 	type ServiceOptions
 } from '../types/general';
 import Chance from 'chance';
-import {type StaticImageData} from 'next/image';
+import { type StaticImageData } from 'next/image';
 
 export const chance = new Chance();
 
 export const generateWord = (): string =>
-	chance.word({capitalize: true, syllables: 3});
+	chance.word({ capitalize: true, syllables: 3 });
 
 export const generatePerson = (): Person => ({
 	avatar: chance.avatar(),
@@ -45,7 +45,7 @@ export const generateEmployees = (n = 3): Employee[] =>
 	chance.n(generateEmployee, n);
 
 export const generatePersonGroup = (): PersonGroup => ({
-	title: chance.sentence({words: 4}),
+	title: chance.sentence({ words: 4 }),
 	description: chance.sentence(),
 	profiles: generatePersons(10)
 });
@@ -67,7 +67,7 @@ export const generateArticle = (): Article => ({
 	postDate: chance.date().toString(),
 	summary: chance.paragraph(),
 	tags: chance.n(chance.word, 3),
-	title: chance.sentence({words: 3}),
+	title: chance.sentence({ words: 3 }),
 	url: chance.url()
 });
 
@@ -137,10 +137,10 @@ export const generateHeader = (): HeaderProps => ({});
 
 export const generateFooter = () => ({
 	title: 'Fashion Greek, USC',
-	description: chance.sentence({words: 15}),
+	description: chance.sentence({ words: 15 }),
 	meta: chance.n(
 		() => ({
-			term: chance.sentence({words: 3}),
+			term: chance.sentence({ words: 3 }),
 			description: chance.sentence()
 		}),
 		3
@@ -148,8 +148,8 @@ export const generateFooter = () => ({
 });
 
 export const generateCalloutBlock = () => ({
-	title: chance.sentence({words: 5}),
-	meta: chance.sentence({words: 3}),
+	title: chance.sentence({ words: 5 }),
+	meta: chance.sentence({ words: 3 }),
 	description: chance.sentence(),
 	actions: generateActions(2)
 });
@@ -199,7 +199,7 @@ export const generateProfilesBlock = (): ProfilesBlockProps => ({
 export const generateService = (): ServiceOptions => ({
 	title: generateWord(),
 	subtitle: generateWord(),
-	description: chance.sentence({words: 20}),
+	description: chance.sentence({ words: 20 }),
 	imageSrc: generateImage(500)
 });
 
@@ -310,8 +310,8 @@ export const generateFaqBlock = () => ({
 });
 
 export const generateFanServiceBlock = () => ({
-	title: chance.sentence({words: 3}),
-	description: chance.paragraph({sentences: 3}),
+	title: chance.sentence({ words: 3 }),
+	description: chance.paragraph({ sentences: 3 }),
 	images: generateImages(),
 	actions: generateActions(2),
 	ActionStackProps: {

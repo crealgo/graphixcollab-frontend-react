@@ -1,8 +1,8 @@
-import {styled} from '@mui/material';
-import {contentBoxPadding} from '.';
+import { styled } from '@mui/material';
+import { contentBoxPadding } from '.';
 
-export const TitleBox = styled('div')<{hasBorder?: boolean}>(
-	({theme, hasBorder}) => `
+export const TitleBox = styled('div')<{ hasBorder?: boolean }>(
+	({ theme, hasBorder }) => `
 	padding: ${contentBoxPadding};
 
 	display: grid;

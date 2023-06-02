@@ -1,12 +1,12 @@
-import {css, styled} from '@mui/material';
-import {contentBoxPadding} from '.';
+import { css, styled } from '@mui/material';
+import { contentBoxPadding } from '.';
 
 type ContentBoxProps = {
 	isColored?: boolean;
 	hasBorder?: boolean;
 };
 export const ContentBox = styled('div')<ContentBoxProps>(
-	({theme, isColored, hasBorder}) => css`
+	({ theme, isColored, hasBorder }) => css`
 		padding: ${contentBoxPadding};
 		display: grid;
 		grid-template-columns: 1fr;

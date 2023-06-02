@@ -1,5 +1,5 @@
-import {colors} from '@mui/material';
-import {createTheme} from '@mui/material/styles';
+import { colors } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 
 const defaultFontStack =
 	'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -17,7 +17,7 @@ const bodyFontCss = {
 	fontWeight: 400
 };
 
-const {breakpoints, palette, shadows} = createTheme({
+const { breakpoints, palette, shadows } = createTheme({
 	palette: {
 		primary: {
 			main: colors.red[700]
@@ -29,7 +29,7 @@ const {breakpoints, palette, shadows} = createTheme({
 	}
 });
 
-const {typography} = createTheme({
+const { typography } = createTheme({
 	typography: {
 		allVariants: bodyFontCss,
 		h1: {

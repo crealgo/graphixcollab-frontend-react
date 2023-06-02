@@ -7,7 +7,7 @@ import {
 	type RatingProps as MuiRatingProps
 } from '@mui/material';
 import clsx from 'clsx';
-import {type FC, type HTMLAttributes} from 'react';
+import { type FC, type HTMLAttributes } from 'react';
 
 type QuoteWrapperProps = {
 	height?: number;
@@ -20,7 +20,7 @@ export type QuoteProps = {
 } & QuoteWrapperProps;
 
 const QuoteWrapper = styled('div')<QuoteWrapperProps>(
-	({theme}) => css`
+	({ theme }) => css`
 		position: relative;
 		aspect-ratio: auto;
 		display: flex;

@@ -1,4 +1,4 @@
-import {DialogTitle as MuiDialogTitle, styled} from '@mui/material';
+import { DialogTitle as MuiDialogTitle, styled } from '@mui/material';
 
 export const DialogTitle = styled(MuiDialogTitle)`
 	display: flex;

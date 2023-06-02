@@ -1,7 +1,7 @@
 import React from 'react';
-import {type Preview} from '@storybook/react';
-import {ThemeProvider} from '../src/providers/ThemeProvider';
-import {colors} from '@mui/material';
+import { type Preview } from '@storybook/react';
+import { ThemeProvider } from '../src/providers/ThemeProvider';
+import { colors } from '@mui/material';
 
 export default {
 	parameters: {

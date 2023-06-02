@@ -1,6 +1,6 @@
-import {TidBit, type TidBitProps} from './TidBit';
-import {SiYelp} from '@icons-pack/react-simple-icons';
-import {type Meta, type StoryObj} from '@storybook/react';
+import { TidBit, type TidBitProps } from './TidBit';
+import { SiYelp } from '@icons-pack/react-simple-icons';
+import { type Meta, type StoryObj } from '@storybook/react';
 
 export default {
 	component: TidBit

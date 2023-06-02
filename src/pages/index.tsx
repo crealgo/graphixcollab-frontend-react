@@ -1,16 +1,16 @@
-import {type GetStaticProps, type NextPage} from 'next';
-import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
-import {GalleryBlock} from '../components/block/GalleryBlock';
-import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
-import {IntroBlock} from '../components/block/IntroBlock/IntroBlock';
-import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
+import { type GetStaticProps, type NextPage } from 'next';
+import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
+import { GalleryBlock } from '../components/block/GalleryBlock';
+import { InteractiveEstimator } from '../components/block/InteractiveEstimator';
+import { IntroBlock } from '../components/block/IntroBlock/IntroBlock';
+import { ServicesPreviewBlock } from '../components/block/ServicesPreviewBlock';
 import galleryImages from '../content/galleryImages.json';
 import services from '../content/services.json';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {type PageProps} from '../types/general';
-import {chance, generateActions} from '../utils/chance';
+import { DefaultLayout } from '../layouts/DefaultLayout';
+import { type PageProps } from '../types/general';
+import { chance, generateActions } from '../utils/chance';
 import featuredCompanies from '../content/featured-companies';
-import {PageTitle} from '../components/utility/PageTitle';
+import { PageTitle } from '../components/utility/PageTitle';
 
 const HomePage: NextPage<PageProps> = props => (
 	<DefaultLayout>

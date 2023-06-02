@@ -1,6 +1,6 @@
 import MuiGlobalStyles from '@mui/material/GlobalStyles';
-import {css} from '@mui/material/styles';
-import {type FC} from 'react';
+import { css } from '@mui/material/styles';
+import { type FC } from 'react';
 import tokens from '../../../tokens/build/css/variablesString';
 
 export const GlobalStyles: FC = () => (

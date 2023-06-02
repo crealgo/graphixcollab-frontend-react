@@ -1,6 +1,6 @@
-import {type FC} from 'react';
+import { type FC } from 'react';
 import styled from '@emotion/styled';
-import {Container} from '../base/Container';
+import { Container } from '../base/Container';
 
 const AppointBookingEmbedWrapper = styled.div`
 	width: 100%;

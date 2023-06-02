@@ -1,15 +1,15 @@
-import {type Meta, type StoryObj} from '@storybook/react';
-import {InputGroup, type InputGroupProps} from './InputGroup';
-import {Autocomplete} from './Autocomplete';
-import {Input} from './Input';
-import {Button} from '../base/Button';
+import { type Meta, type StoryObj } from '@storybook/react';
+import { InputGroup, type InputGroupProps } from './InputGroup';
+import { Autocomplete } from './Autocomplete';
+import { Input } from './Input';
+import { Button } from '../base/Button';
 
 export default {
 	component: InputGroup
 } as Meta;
 
 export const Default: StoryObj<InputGroupProps> = {
-	render: ({InputProps, ...args}) => (
+	render: ({ InputProps, ...args }) => (
 		<InputGroup {...args}>
 			<Input {...InputProps} />
 		</InputGroup>
@@ -24,7 +24,7 @@ export const Default: StoryObj<InputGroupProps> = {
 };
 
 export const WithAutocomplete: StoryObj<InputGroupProps> = {
-	render: ({InputProps, ...args}) => (
+	render: ({ InputProps, ...args }) => (
 		<InputGroup {...args}>
 			<Autocomplete {...InputProps}>
 				<option value="test-things">Test Things</option>

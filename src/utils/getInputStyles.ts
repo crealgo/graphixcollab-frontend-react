@@ -1,5 +1,5 @@
-import {css, type SerializedStyles} from '@emotion/react';
-import {type BaseInputProps} from '../types/base';
+import { css, type SerializedStyles } from '@emotion/react';
+import { type BaseInputProps } from '../types/base';
 
 export const getInputStyles = ({
 	inputSize = 'medium'

@@ -1,15 +1,15 @@
-import {css, styled, Typography} from '@mui/material';
-import {type FC} from 'react';
-import {type SharedBlockProps} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {ImageCarousel} from '../base/ImageCarousel';
+import { css, styled, Typography } from '@mui/material';
+import { type FC } from 'react';
+import { type SharedBlockProps } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
+import { ImageCarousel } from '../base/ImageCarousel';
 
 export type FanServiceBlockProps = {
 	images?: string[];
 } & SharedBlockProps;
 
 const FanServiceBlockWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 

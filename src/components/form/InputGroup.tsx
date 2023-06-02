@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import {type ComponentPropsWithoutRef, type FC, type ReactNode} from 'react';
-import {type InputProps} from './Input';
-import {type Size} from '../../types/general';
+import { type ComponentPropsWithoutRef, type FC, type ReactNode } from 'react';
+import { type InputProps } from './Input';
+import { type Size } from '../../types/general';
 
 type ExposedInputProps = Pick<InputProps, 'ref'>;
 type BaseElementProps = ComponentPropsWithoutRef<'div'>;

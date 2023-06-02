@@ -1,18 +1,18 @@
-import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {useState} from 'react';
+import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
+import { DefaultLayout } from '../layouts/DefaultLayout';
+import { useState } from 'react';
 import Head from 'next/head';
-import {Marked} from '../components/base/Marked';
-import {Heading} from '../components/base/Heading';
-import {Text} from '../components/base/Text';
-import {Typography, styled} from '@mui/material';
+import { Marked } from '../components/base/Marked';
+import { Heading } from '../components/base/Heading';
+import { Text } from '../components/base/Text';
+import { Typography, styled } from '@mui/material';
 import featuredCompanies from '../content/featured-companies';
-import {PageTitle} from '../components/utility/PageTitle';
-import {Block} from '../components/base/Block';
-import {Container} from '../components/base/Container';
-import {BlockHeader} from '../components/base/BlockHeader';
+import { PageTitle } from '../components/utility/PageTitle';
+import { Block } from '../components/base/Block';
+import { Container } from '../components/base/Container';
+import { BlockHeader } from '../components/base/BlockHeader';
 import reasonsToChooseUs from '../content/why-us.json';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
+import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
 
 const exampleUrl = 'https://google.com';
 
@@ -26,7 +26,7 @@ const ContentWrapper = styled('div')`
 		color: var(--color-brand-primary-dark);
 	}
 
-	${({theme}) => theme.breakpoints.up('md')} {
+	${({ theme }) => theme.breakpoints.up('md')} {
 		padding-block: 5rem 0;
 	}
 `;
@@ -228,10 +228,7 @@ export const Example = () => {
 					<DetailList>
 						{reasonsToChooseUs.map(value => (
 							<div key={value.name}>
-								<img
-									src={value.image as string}
-									alt={value.name}
-								/>
+								<img src={value.image} alt={value.name} />
 								<DetailTerm>{value.name}</DetailTerm>
 								<DetailDefinition>
 									{value.description}

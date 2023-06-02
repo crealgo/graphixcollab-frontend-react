@@ -1,5 +1,5 @@
-import {writeFileSync} from 'fs';
-import {globSync} from 'glob';
+import { writeFileSync } from 'fs';
+import { globSync } from 'glob';
 
 const tsFiles = globSync('src/{components,global,utils}/**/*.{ts,tsx}');
 const refinedPathsString = tsFiles.reduce((templateString, path) => {

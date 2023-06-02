@@ -1,6 +1,6 @@
-import {type StoryObj} from '@storybook/react';
-import {chance} from '../../utils/chance';
-import {Quote, type QuoteProps} from './Quote';
+import { type StoryObj } from '@storybook/react';
+import { chance } from '../../utils/chance';
+import { Quote, type QuoteProps } from './Quote';
 
 export default {
 	component: Quote

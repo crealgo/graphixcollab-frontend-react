@@ -1,6 +1,6 @@
-import {type ServiceInformation} from './steps/data';
-import {css, styled} from '@mui/material';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
+import { type ServiceInformation } from './steps/data';
+import { css, styled } from '@mui/material';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
 
 export type BookingOptionProps = Record<string, unknown> &
 	ServiceInformation &
@@ -27,7 +27,7 @@ const BaseElement: FC<BookingOptionProps> = ({
 );
 
 export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
-	({theme}) => css`
+	({ theme }) => css`
 		cursor: pointer;
 
 		display: inline-flex;

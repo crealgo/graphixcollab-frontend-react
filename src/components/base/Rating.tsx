@@ -1,7 +1,7 @@
 import MuiRating, {
 	type RatingProps as MuiRatingProps
 } from '@mui/material/Rating';
-import {type FC} from 'react';
+import { type FC } from 'react';
 
 export type RatingProps = {
 	max?: number;

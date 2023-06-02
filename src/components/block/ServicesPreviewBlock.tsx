@@ -1,18 +1,18 @@
-import {KeyboardArrowRight, Message} from '@mui/icons-material';
-import {Typography, useMediaQuery, type Theme} from '@mui/material';
-import {css, styled} from '@mui/material/styles';
-import {useRouter} from 'next/router';
-import {type FC} from 'react';
+import { KeyboardArrowRight, Message } from '@mui/icons-material';
+import { Typography, useMediaQuery, type Theme } from '@mui/material';
+import { css, styled } from '@mui/material/styles';
+import { useRouter } from 'next/router';
+import { type FC } from 'react';
 import type serviceJSON from '../../content/services.json';
-import {type SharedBlockProps} from '../../types/general';
-import {colorIterator} from '../../utils/colorIterator';
-import {ActionStack} from '../base/ActionStack';
-import {Block, type BlockProps} from '../base/Block';
-import {Button} from '../base/Button';
-import {Card} from '../base/Card';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {HorizontalCard} from '../base/HorizontalCard';
+import { type SharedBlockProps } from '../../types/general';
+import { colorIterator } from '../../utils/colorIterator';
+import { ActionStack } from '../base/ActionStack';
+import { Block, type BlockProps } from '../base/Block';
+import { Button } from '../base/Button';
+import { Card } from '../base/Card';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { HorizontalCard } from '../base/HorizontalCard';
 
 export type ServicesPreviewBlockProps = {
 	services?: typeof serviceJSON;
@@ -20,7 +20,7 @@ export type ServicesPreviewBlockProps = {
 } & SharedBlockProps;
 
 export const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		max-width: ${theme.breakpoints.values.sm}px;
 
 		.ActionStack-root {
@@ -34,7 +34,7 @@ export const Content = styled('div')(
 );
 
 const Wrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;

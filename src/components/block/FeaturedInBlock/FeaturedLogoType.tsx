@@ -1,7 +1,7 @@
-import {css, styled} from '@mui/material/styles';
+import { css, styled } from '@mui/material/styles';
 import Head from 'next/head';
-import {type FC} from 'react';
-import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
+import { type FC } from 'react';
+import { type FeaturedCompanyInfo } from '../../../content/featured-companies';
 
 type SpanProps = Pick<
 	FeaturedCompanyInfo,
@@ -9,7 +9,7 @@ type SpanProps = Pick<
 >;
 
 const StyledSpan = styled('span')<SpanProps>(
-	({theme, font, styleOverrides, mobileStyleOverrides}) => ({
+	({ theme, font, styleOverrides, mobileStyleOverrides }) => ({
 		fontSize: '2rem',
 		whiteSpace: 'nowrap',
 		fontFamily: font,

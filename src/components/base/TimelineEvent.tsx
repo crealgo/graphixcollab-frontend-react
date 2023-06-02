@@ -1,6 +1,6 @@
-import {type BaseComponentsProps} from '../../types/base';
-import {styled} from '@mui/material/styles';
-import {type FC} from 'react';
+import { type BaseComponentsProps } from '../../types/base';
+import { styled } from '@mui/material/styles';
+import { type FC } from 'react';
 
 export type EventBlockProps = {
 	stepNumber?: number;

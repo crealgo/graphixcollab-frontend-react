@@ -1,4 +1,4 @@
-import {AddCircleOutline} from '@mui/icons-material';
+import { AddCircleOutline } from '@mui/icons-material';
 import {
 	Accordion,
 	AccordionDetails,
@@ -6,9 +6,9 @@ import {
 	css,
 	styled
 } from '@mui/material';
-import {type FC} from 'react';
-import {ActionStack} from './ActionStack';
-import {type FaqOptions} from '../block/FaqBlock';
+import { type FC } from 'react';
+import { ActionStack } from './ActionStack';
+import { type FaqOptions } from '../block/FaqBlock';
 
 type FaqAccordionProps = FaqOptions;
 
@@ -16,7 +16,7 @@ const fontSize = '18px';
 const fontHeight = '28px';
 
 const Wrapper = styled(Accordion)(
-	({theme}) => css`
+	({ theme }) => css`
 		padding: 1rem 1rem;
 		border-left: none;
 		border-right: none;
@@ -64,7 +64,7 @@ const Wrapper = styled(Accordion)(
 	`
 );
 
-const AccordionHead = styled(AccordionSummary)(({theme}) => ({
+const AccordionHead = styled(AccordionSummary)(({ theme }) => ({
 	...theme.typography.body2
 }));
 

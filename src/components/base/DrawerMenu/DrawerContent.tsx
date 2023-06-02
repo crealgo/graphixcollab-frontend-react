@@ -1,12 +1,12 @@
-import {Close} from '@mui/icons-material';
-import {type FC, type MouseEventHandler, type PropsWithChildren} from 'react';
-import {type Action, type NavItemOptions} from '../../../types/general';
-import {Heading} from '../Heading';
-import {DrawerBoxClose} from './DrawerBoxClose';
-import {TitleBox} from './TitleBox';
-import {Wrapper} from './Wrapper';
+import { Close } from '@mui/icons-material';
+import { type FC, type MouseEventHandler, type PropsWithChildren } from 'react';
+import { type Action, type NavItemOptions } from '../../../types/general';
+import { Heading } from '../Heading';
+import { DrawerBoxClose } from './DrawerBoxClose';
+import { TitleBox } from './TitleBox';
+import { Wrapper } from './Wrapper';
 import styled from '@emotion/styled';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 type DrawerContentProps = PropsWithChildren<{
 	actions?: Action[];
@@ -76,7 +76,7 @@ export const DrawerContent: FC<DrawerContentProps> = ({
 }) => {
 	const router = useRouter();
 
-	console.log({actions});
+	console.log({ actions });
 
 	return (
 		<Wrapper>
@@ -87,7 +87,7 @@ export const DrawerContent: FC<DrawerContentProps> = ({
 				</DrawerBoxClose>
 			</TitleBox>
 			<StyledList>
-				{navigationItems?.map(({label, href}, itemIndex) => (
+				{navigationItems?.map(({ label, href }, itemIndex) => (
 					<StyledListItem key={itemIndex}>
 						<StyledLink
 							href={href}

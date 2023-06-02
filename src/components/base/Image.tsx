@@ -1,6 +1,6 @@
-import {css, styled} from '@mui/material';
+import { css, styled } from '@mui/material';
 import clsx from 'clsx';
-import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
+import { type ComponentPropsWithRef, type FC, type ReactNode } from 'react';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
 	caption?: ReactNode;
@@ -41,7 +41,7 @@ const BaseElement: FC<ImageProps> = ({
 	);
 };
 
-export const Image = styled(BaseElement)(({theme, shape}) => {
+export const Image = styled(BaseElement)(({ theme, shape }) => {
 	const shapeCss = {
 		square: css`
 			aspect-ratio: 1;

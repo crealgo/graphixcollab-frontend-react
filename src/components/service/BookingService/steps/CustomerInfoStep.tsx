@@ -1,6 +1,6 @@
-import {TextField} from '@mui/material';
+import { TextField } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import {type FC} from 'react';
+import { type FC } from 'react';
 
 export const CustomerInfoStep: FC<unknown> = () => (
 	<Grid container gap={1}>

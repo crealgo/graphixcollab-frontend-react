@@ -1,6 +1,6 @@
-import {FeaturedItem, type FeaturedItemProps} from './FeaturedItem';
-import {styled} from '@mui/material';
-import {forwardRef, type ComponentPropsWithoutRef} from 'react';
+import { FeaturedItem, type FeaturedItemProps } from './FeaturedItem';
+import { styled } from '@mui/material';
+import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 
 export type FeaturedItemsProps = {
 	items?: FeaturedItemProps[];
@@ -13,7 +13,7 @@ const WrapperNav = styled('nav')`
 `;
 
 export const FeaturedItems = forwardRef<HTMLElement, FeaturedItemsProps>(
-	({className, children, items}, ref) => (
+	({ className, children, items }, ref) => (
 		<WrapperNav ref={ref} className={className}>
 			{children ??
 				items?.map((item, itemIndex) => (

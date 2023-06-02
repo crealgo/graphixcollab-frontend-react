@@ -1,14 +1,14 @@
-import {type CSSObject} from '@emotion/react';
-import {alpha, type Theme} from '@mui/material';
-import {type ButtonProps} from '../components/base/Button';
+import { type CSSObject } from '@emotion/react';
+import { alpha, type Theme } from '@mui/material';
+import { type ButtonProps } from '../components/base/Button';
 
-export type ButtonStyledFuncProps = ButtonProps & {theme: Theme};
+export type ButtonStyledFuncProps = ButtonProps & { theme: Theme };
 
 export type ButtonStyledFunc = (
 	props: ButtonStyledFuncProps
 ) => string | CSSObject;
 
-export const getButtonColors: ButtonStyledFunc = ({theme, color = 'text'}) =>
+export const getButtonColors: ButtonStyledFunc = ({ theme, color = 'text' }) =>
 	({
 		primary: theme.palette.primary.main,
 		secondary: theme.palette.secondary.main,
@@ -38,7 +38,7 @@ export const getButtonHoverColors: ButtonStyledFunc = ({
 		text: alpha(theme.palette.common.white, 0.25)
 	}[color]);
 
-export const getButtonSizes: ButtonStyledFunc = ({theme, size = 'medium'}) =>
+export const getButtonSizes: ButtonStyledFunc = ({ theme, size = 'medium' }) =>
 	({
 		small: {
 			height: '2.125rem',

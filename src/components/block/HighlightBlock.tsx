@@ -1,5 +1,5 @@
-import {css, styled, Typography} from '@mui/material';
-import {type FC} from 'react';
+import { css, styled, Typography } from '@mui/material';
+import { type FC } from 'react';
 
 export type HighlightBlockProps = {
 	quote?: string;
@@ -7,7 +7,7 @@ export type HighlightBlockProps = {
 };
 
 const HighlightBlockWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: ${theme.palette.secondary.main};
 		display: flex;
 		justify-content: center;

@@ -1,6 +1,6 @@
-import {Close} from '@mui/icons-material';
-import {type StoryObj, type Meta} from '@storybook/react';
-import {IconButton, type IconButtonProps} from './IconButton';
+import { Close } from '@mui/icons-material';
+import { type StoryObj, type Meta } from '@storybook/react';
+import { IconButton, type IconButtonProps } from './IconButton';
 
 export default {
 	component: IconButton
@@ -13,7 +13,7 @@ export const Default: StoryObj<IconButtonProps> = {
 		color: {
 			defaultValue: 'tertiary',
 			options: ['primary', 'secondary', 'tertiary'],
-			control: {type: 'select'}
+			control: { type: 'select' }
 		}
 	}
 };

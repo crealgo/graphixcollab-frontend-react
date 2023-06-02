@@ -1,14 +1,14 @@
-import {css} from '@emotion/react';
-import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
-import {styled} from '@mui/material';
-import {useRef, type FC} from 'react';
+import { css } from '@emotion/react';
+import { MessageOutlined, SearchOutlined } from '@mui/icons-material';
+import { styled } from '@mui/material';
+import { useRef, type FC } from 'react';
 import reviews from '../../content/yelp-reviews.json';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Carousel, CarouselSlide} from '../base/Carousel';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Testimonial} from '../base/Testimonial';
+import { ActionStack } from '../base/ActionStack';
+import { Block } from '../base/Block';
+import { Carousel, CarouselSlide } from '../base/Carousel';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { Testimonial } from '../base/Testimonial';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];
@@ -71,7 +71,7 @@ const ReviewAvatar = styled('div')`
 		height: 100%;
 	}
 
-	${Array.from({length: avatarCount}, (_, i) => i).reduce(
+	${Array.from({ length: avatarCount }, (_, i) => i).reduce(
 		(aggregate, i) => css`
 			${aggregate}
 			&:nth-of-type(${i + 1}) {
@@ -102,8 +102,8 @@ export const YelpBlock: FC<YelpBlockProps> = () => {
 		<Container ref={ref}>
 			<ContentWrapper isRounded color="grey">
 				<ReviewAvatars>
-					{Array.from({length: avatarCount}, (_, i) => {
-						const {user} = reviews[i % reviews.length];
+					{Array.from({ length: avatarCount }, (_, i) => {
+						const { user } = reviews[i % reviews.length];
 						return (
 							<ReviewAvatar key={i}>
 								<img

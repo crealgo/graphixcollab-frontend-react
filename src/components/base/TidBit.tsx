@@ -1,8 +1,8 @@
-import {css} from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {type FC, type PropsWithChildren} from 'react';
-import {type ColorVariants} from '../../types/color';
-import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
+import { type FC, type PropsWithChildren } from 'react';
+import { type ColorVariants } from '../../types/color';
+import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
 import clsx from 'clsx';
 
 export type TidBitProps = PropsWithChildren<{
@@ -29,7 +29,7 @@ const BaseElement: FC<TidBitProps> = ({
 );
 
 export const TidBit = styled(BaseElement)<TidBitProps>(
-	({icon, color = 'primary'}) => css`
+	({ icon, color = 'primary' }) => css`
 		--background-color: #ffffff;
 		--border-color: #cbd5e1;
 

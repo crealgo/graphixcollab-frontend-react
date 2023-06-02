@@ -1,5 +1,5 @@
 import * as allIcons from '@mui/icons-material';
-import {createElement} from 'react';
+import { createElement } from 'react';
 
 export const iconMap = Object.entries(allIcons)
 	.filter(([iconName]) =>

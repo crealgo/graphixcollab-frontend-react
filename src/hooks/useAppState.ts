@@ -1,6 +1,6 @@
-import {AppStateContext} from '../contexts/AppStateContext';
-import {type AppStateContextOptions} from '../contexts/AppStateContext';
-import {useContext} from 'react';
+import { AppStateContext } from '../contexts/AppStateContext';
+import { type AppStateContextOptions } from '../contexts/AppStateContext';
+import { useContext } from 'react';
 
 type UseAppState = () => AppStateContextOptions;
 

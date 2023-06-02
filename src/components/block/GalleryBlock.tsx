@@ -1,16 +1,19 @@
-import {Warning} from '@mui/icons-material';
-import {type Theme, Typography, useMediaQuery} from '@mui/material';
-import {css, styled} from '@mui/material/styles';
+import { Warning } from '@mui/icons-material';
+import { type Theme, Typography, useMediaQuery } from '@mui/material';
+import { css, styled } from '@mui/material/styles';
 import clsx from 'clsx';
-import {type FC} from 'react';
+import { type FC } from 'react';
 import Marquee from 'react-fast-marquee';
-import {type Action} from '../../types/general';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Image, type ImageProps} from '../base/Image';
-import {StatusMessage} from '../base/StatusMessage';
-import {SocialMediaBlock, type SocialMediaBlockProps} from './SocialMediaBlock';
+import { type Action } from '../../types/general';
+import { Block } from '../base/Block';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { Image, type ImageProps } from '../base/Image';
+import { StatusMessage } from '../base/StatusMessage';
+import {
+	SocialMediaBlock,
+	type SocialMediaBlockProps
+} from './SocialMediaBlock';
 
 export type GalleryBlockProps = {
 	title?: string;
@@ -22,7 +25,7 @@ export type GalleryBlockProps = {
 };
 
 const Wrapper = styled(Block)(
-	({theme}) => css`
+	({ theme }) => css`
 		/* padding-inline: 0rem; */
 
 		.Container-root {

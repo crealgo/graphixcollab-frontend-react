@@ -1,4 +1,4 @@
-const {glob} = require('glob');
+const { glob } = require('glob');
 const sharp = require('sharp');
 const path = require('path');
 const chalk = require('chalk');
@@ -60,7 +60,7 @@ const resizeImages = async () => {
 
 		// check if directory exists, if not create it, including all parent directories
 		if (!fs.existsSync(resolvedPath)) {
-			fs.mkdirSync(resolvedPath, {recursive: true});
+			fs.mkdirSync(resolvedPath, { recursive: true });
 		}
 
 		// convert original image to webp, with original size

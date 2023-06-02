@@ -1,8 +1,8 @@
-import {css, styled} from '@mui/material';
-import {IconButtonBase} from '../IconButtonBase';
+import { css, styled } from '@mui/material';
+import { IconButtonBase } from '../IconButtonBase';
 
 export const MenuTrigger = styled(IconButtonBase)(
-	({theme}) => css`
+	({ theme }) => css`
 		grid-area: mobile-menu;
 
 		&:hover {

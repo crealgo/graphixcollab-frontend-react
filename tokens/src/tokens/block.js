@@ -12,7 +12,7 @@ const f = require('../utils/formatToken');
  * 	bottom: TokenValue;
  * }}
  */
-const createAvatarCss = ({size, left, bottom}) => ({
+const createAvatarCss = ({ size, left, bottom }) => ({
 	width: f(`${size * 0.95}px`),
 	height: f(`${size * 0.95}px`),
 	left: f(`${(left / 1680) * 100}%`),

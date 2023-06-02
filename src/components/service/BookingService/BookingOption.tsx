@@ -1,8 +1,8 @@
-import {type ServiceInformation} from './steps/data';
-import {Heading} from '../../base/Heading';
-import {css, styled} from '@mui/material';
-import {colorIterator} from '../../../utils/colorIterator';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
+import { type ServiceInformation } from './steps/data';
+import { Heading } from '../../base/Heading';
+import { css, styled } from '@mui/material';
+import { colorIterator } from '../../../utils/colorIterator';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
 
 export type BookingOptionProps = Record<string, unknown> &
 	ServiceInformation &
@@ -35,7 +35,7 @@ const BaseElement: FC<BookingOptionProps> = ({
 );
 
 export const BookingOption = styled(BaseElement)<BookingOptionProps>(
-	({theme}) => css`
+	({ theme }) => css`
 		cursor: pointer;
 		display: grid;
 		grid-template-columns: 1fr;

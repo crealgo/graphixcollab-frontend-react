@@ -1,13 +1,13 @@
-import {Block} from '../base/Block';
-import {ProfileCard} from '../base/ProfileCard';
-import {type EmployeeGroup} from '../../types/general';
-import {css, styled} from '@mui/material/styles';
+import { Block } from '../base/Block';
+import { ProfileCard } from '../base/ProfileCard';
+import { type EmployeeGroup } from '../../types/general';
+import { css, styled } from '@mui/material/styles';
 import clsx from 'clsx';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {Container} from '../base/Container';
-import {ContentGrid} from '../base/ContentGrid';
-import {Heading} from '../base/Heading';
-import {Text} from '../base/Text';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { Container } from '../base/Container';
+import { ContentGrid } from '../base/ContentGrid';
+import { Heading } from '../base/Heading';
+import { Text } from '../base/Text';
 
 export type ProfilesBlockProps = {
 	// title?: string;
@@ -16,7 +16,7 @@ export type ProfilesBlockProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 const Content = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: grid;
 
 		.ProfilesBlock-profileGroup {

@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import {type FC} from 'react';
-import {type ColorVariants} from '../../types/color';
-import {_e} from '../../utils/excludePropsFromForwarding';
-import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
-import {css} from '@emotion/react';
+import { type FC } from 'react';
+import { type ColorVariants } from '../../types/color';
+import { _e } from '../../utils/excludePropsFromForwarding';
+import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export type ButtonProps = {
@@ -11,7 +11,7 @@ export type ButtonProps = {
 } & ButtonBaseProps;
 
 const StyledButton = styled(ButtonBase)<ButtonProps>(
-	({color: variant = 'primary', size = 'medium'}) => css`
+	({ color: variant = 'primary', size = 'medium' }) => css`
 		border-radius: var(--button-bezel-${size});
 
 		font-weight: var(--button-font-weight);

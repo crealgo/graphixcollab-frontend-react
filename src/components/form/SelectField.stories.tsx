@@ -1,6 +1,6 @@
-import {type StoryObj, type Meta} from '@storybook/react';
-import {generateOptions} from '../../utils/chance';
-import {SelectField, type SelectFieldProps} from './SelectField';
+import { type StoryObj, type Meta } from '@storybook/react';
+import { generateOptions } from '../../utils/chance';
+import { SelectField, type SelectFieldProps } from './SelectField';
 
 export default {
 	component: SelectField

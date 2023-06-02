@@ -1,4 +1,4 @@
-import {type StorybookConfig} from '@storybook/react-vite';
+import { type StorybookConfig } from '@storybook/react-vite';
 
 export default {
 	stories: [
@@ -12,13 +12,13 @@ export default {
 		'../src/providers',
 		'../src/styles',
 		'../src/types',
-		'../src/utils',
+		'../src/utils'
 	],
 	addons: [
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-a11y',
-		'@storybook/addon-links',
+		'@storybook/addon-links'
 	],
-	framework: '@storybook/react-vite',
+	framework: '@storybook/react-vite'
 } satisfies StorybookConfig;

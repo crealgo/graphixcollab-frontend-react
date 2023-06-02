@@ -1,10 +1,10 @@
-import {defaultTheme} from '../configs/themes';
+import { defaultTheme } from '../configs/themes';
 import {
 	CssBaseline,
 	ThemeProvider as DefaultThemeProvider
 } from '@mui/material';
-import {type PropsWithChildren, type FC} from 'react';
-import {GlobalStyles} from '../components/base/GlobalStyles';
+import { type PropsWithChildren, type FC } from 'react';
+import { GlobalStyles } from '../components/base/GlobalStyles';
 
 export type ThemeProviderProps = PropsWithChildren<typeof DefaultThemeProvider>;
 

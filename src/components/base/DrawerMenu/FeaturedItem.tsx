@@ -1,6 +1,6 @@
-import {Image, type ImageProps} from '../Image';
-import {css, styled} from '@mui/material';
-import {type FC} from 'react';
+import { Image, type ImageProps } from '../Image';
+import { css, styled } from '@mui/material';
+import { type FC } from 'react';
 
 export type FeaturedItemProps = {
 	label?: string;
@@ -8,7 +8,7 @@ export type FeaturedItemProps = {
 };
 
 const FeaturedItemWrapper = styled('div')(
-	({theme}) => css`
+	({ theme }) => css`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -30,7 +30,7 @@ const FeaturedItemWrapper = styled('div')(
 );
 
 const FeaturedItemImage = styled(Image)(
-	({theme}) => css`
+	({ theme }) => css`
 		background-color: ${theme.palette.grey[300]};
 		width: 100%;
 		aspect-ratio: 1;
@@ -38,7 +38,7 @@ const FeaturedItemImage = styled(Image)(
 );
 
 const Title = styled('span')(
-	({theme}) => css`
+	({ theme }) => css`
 		font-size: 0.75rem;
 		text-align: center;
 		white-space: nowrap;
@@ -49,7 +49,7 @@ const Title = styled('span')(
 	`
 );
 
-export const FeaturedItem: FC<FeaturedItemProps> = ({ImageProps, label}) => (
+export const FeaturedItem: FC<FeaturedItemProps> = ({ ImageProps, label }) => (
 	<FeaturedItemWrapper>
 		<FeaturedItemImage {...ImageProps} />
 		<Title className="Title-root">{label}</Title>
