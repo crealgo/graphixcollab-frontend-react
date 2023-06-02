@@ -1,0 +1,77 @@
+name: Deploy Hydra Static Site
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      deployment_type:
+        type: choice
+        description: Environment Type
+        options:
+          - development
+          - staging
+          - production
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: npm
+
+      - name: Setup Repository
+        run: npm i
+
+      - name: Verify
+        run: npm run verify
+
+      - name: Build Storybook
+        run: |
+          npx next build
+          npx next export
+
+      - name: Test Step
+        run: echo "${{ inputs.deployment_type }} }}"
+
+      # - if: ${{ github.event_name == 'push' || inputs.deployment_type == 'development' }}
+      #   name: Deploy Storybook to Development
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+      #     user_name: Crealgo Bot 🤖
+      #     user_email: hello.crealgo@gmail.com
+      #     external_repository: crealgo/crealgo-static-projects
+      #     publish_dir: out
+      #     destination_dir: graphixcollab
+
+      # - if: ${{ inputs.deployment_type == 'staging' }}
+      #   name: Deploy Storybook to Staging
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+      #     user_name: Crealgo Bot 🤖
+      #     user_email: hello.crealgo@gmail.com
+      #     external_repository: crealgo/graphixcollab-static-staging
+      #     publish_dir: out
+
+      # - if: ${{ inputs.deployment_type == 'production' }}
+      #   name: Deploy Storybook to Production
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+      #     user_name: Crealgo Bot 🤖
+      #     user_email: hello.crealgo@gmail.com
+      #     external_repository: crealgo/graphixcollab-static-production
+      #     publish_dir: out
