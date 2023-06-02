@@ -12,7 +12,7 @@ import { type ColorVariants } from '../../types/color';
 export type PageHeaderBlockProps = {
 	title?: ReactNode;
 	description?: string;
-	color?: ColorVariants;
+	color?: Extract<ColorVariants, 'primary' | 'secondary' | 'tertiary'>;
 	breadcrumbs?: BreadcrumbOptions[];
 	navigationItems?: NavItemOptions[];
 	navigationType?: 'scroll' | 'anchor-link';

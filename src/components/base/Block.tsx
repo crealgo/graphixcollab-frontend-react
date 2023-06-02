@@ -3,13 +3,14 @@ import { css } from 'code-tag';
 import clsx from 'clsx';
 import { type ComponentPropsWithRef, type FC } from 'react';
 import { _e } from '../../utils/excludePropsFromForwarding';
+import { type ColorVariants } from '../../types/color';
 
 export type BlockProps = {
 	/**
 	 * Disables the block's inline margin
 	 */
 	hasNoDefaultMargin?: boolean;
-	color?: 'primary' | 'secondary' | 'grey';
+	color?: Exclude<ColorVariants, 'text'> | 'grey';
 	isRounded?: boolean;
 } & ComponentPropsWithRef<'div'>;
 
@@ -19,9 +20,10 @@ const StyledDiv = styled(
 )<BlockProps>(({ theme, color, hasNoDefaultMargin, isRounded = false }) => {
 	const blockColor = {
 		default: 'transparent',
-		primary: theme.palette.primary.light,
-		secondary: theme.palette.secondary.light,
-		grey: theme.palette.grey[100]
+		primary: 'var(--color-brand-primary-light)',
+		secondary: 'var(--color-brand-secondary-light)',
+		tertiary: 'var(--color-brand-tertiary-light)',
+		grey: 'var(--color-brand-grey-100)'
 	}[color ?? 'default'];
 
 	return css`

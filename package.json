@@ -31,7 +31,6 @@
     "yaml": "^2.2.1"
   },
   "scripts": {
-    "presite:build": "rm -rf .next",
     "dev": "concurrently npm:site:dev npm:tokens:dev",
     "build": "rollup -c",
     "verify": "npm run lint:ts && npm run lint:es",
@@ -45,7 +44,7 @@
     "create:service": "node scripts/createService",
     "create:timeline": "node scripts/createTimeline",
     "site:dev": "next dev",
-    "site:build": "NEXT_SHARP_PATH=\"node_modules/sharp\" next build && next export",
+    "site:build": "next build && next export",
     "site:serve": "npx http-server out -p 6006",
     "script:resize-images": "node scripts/resizeImages",
     "script:dev": "npm-watch script:rename",
