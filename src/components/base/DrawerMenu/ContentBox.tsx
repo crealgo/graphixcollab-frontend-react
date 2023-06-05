@@ -12,9 +12,9 @@ export const ContentBox = styled('div')<ContentBoxProps>(
 		grid-template-columns: 1fr;
 		gap: 1rem;
 
-		${isColored ? `background-color: ${theme.palette.grey[100]};` : ''}
+		${isColored ? `background-color: var(--color-gray-100);` : ''}
 		${hasBorder
-			? `border-bottom: solid 1px ${theme.palette.grey[300]};`
+			? `border-bottom: solid 1px var(--color-gray-300);`
 			: ''}
 	`
 );

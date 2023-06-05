@@ -1,6 +1,6 @@
 import { type ServiceInformation } from './steps/data';
 import { css, styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { Fragment, type ComponentPropsWithoutRef, type FC } from 'react';
 
 export type BookingOptionProps = Record<string, unknown> &
 	ServiceInformation &
@@ -8,22 +8,14 @@ export type BookingOptionProps = Record<string, unknown> &
 
 const BaseElement: FC<BookingOptionProps> = ({
 	label,
-	description,
 	icon: Icon,
-	checked,
-	className,
 	name,
 	...props
 }) => (
-	<label
-		htmlFor={name}
-		tabIndex={0}
-		className={className}
-		aria-checked={checked}
-	>
-		{label}
+	<>
+		<label htmlFor={name}>{label}</label>
 		<input hidden type="radio" id={name} {...props} />
-	</label>
+	</>
 );
 
 export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
@@ -35,7 +27,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 
 		border-style: solid;
 		border-width: 1px;
-		border-color: ${theme.palette.grey[400]};
+		border-color: var(--color-gray-400);
 		border-radius: 0.25rem;
 
 		padding: 0.25rem 0.5rem;
@@ -43,16 +35,16 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 		transition-property: transform, box-shadow;
 		transition-duration: 200ms;
 
-		box-shadow: ${theme.shadows[1]};
+		box-shadow: var(--elevation-1);
 		font-size: ${theme.typography.caption.fontSize};
 
 		&:active {
-			background-color: ${theme.palette.grey[200]} !important;
+			background-color: var(--color-gray-200) !important;
 		}
 
 		&:hover {
 			transform: translateY(-5%);
-			box-shadow: ${theme.shadows[3]};
+			box-shadow: var(--elevation-3);
 		}
 
 		&[aria-checked='true'] {
@@ -61,7 +53,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 		}
 
 		&:focus-visible {
-			outline: solid 2px ${theme.palette.grey[800]};
+			outline: solid 2px var(--color-gray-800);
 			outline-offset: 3px;
 		}
 	`

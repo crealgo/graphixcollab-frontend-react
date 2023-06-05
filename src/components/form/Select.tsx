@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { KeyboardArrowDownRounded } from '@mui/icons-material';
+import { ArrowDownwardRounded } from '@mui/icons-material';
 import { useRef, type ComponentPropsWithRef, type FC } from 'react';
 import { type BaseInputProps } from '../../types/base';
 import { type OptionValue } from '../../types/general';
@@ -59,7 +59,7 @@ export const Select: FC<SelectProps> = ({
 					</option>
 				))}
 			</StyledInput>
-			<KeyboardArrowDownRounded />
+			<ArrowDownwardRounded />
 		</SelectWrapper>
 	);
 };

@@ -20,9 +20,9 @@ type ContactServiceProps = {
 
 const StyledDialogContent = styled(DialogContent)(
 	({ theme }) => css`
-		background-color: ${theme.palette.grey[100]};
-		border-top: solid 1px ${theme.palette.grey[300]};
-		border-bottom: solid 1px ${theme.palette.grey[300]};
+		background-color: var(--color-gray-100);
+		border-top: solid 1px var(--color-gray-300);
+		border-bottom: solid 1px var(--color-gray-300);
 
 		.stepper {
 			padding-block: 1rem;

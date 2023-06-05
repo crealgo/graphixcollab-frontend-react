@@ -5,12 +5,13 @@ import { type FC } from 'react';
 import type services from '../../content/services.json';
 import { type SharedBlockProps } from '../../types/general';
 import { ActionStack } from '../base/ActionStack';
-import { Block, type BlockProps } from '../base/Block';
+import { Block } from '../base/Block';
 import { Button } from '../base/Button';
 import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { HorizontalCard } from '../base/HorizontalCard';
 import { Marked } from '../base/Marked';
+import { Text } from '../base/Text';
 
 type Service = (typeof services)[number];
 
@@ -43,7 +44,14 @@ const Wrapper = styled('div')(
 		gap: 3rem;
 
 		hgroup {
-			max-width: 35rem;
+			display: block;
+
+			h2 {
+				max-width: 1200px;
+			}
+			p {
+				max-width: 500px;
+			}
 		}
 
 		.container {
@@ -82,7 +90,6 @@ const Wrapper = styled('div')(
 
 export const ServicesBlock: FC<ServicesBlockProps> = ({
 	title,
-	subtitle,
 	description,
 	services
 }) => (
@@ -90,10 +97,10 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 		<Container>
 			<Wrapper>
 				<hgroup>
-					<Heading gutterBottom level={2}>
+					<Heading hasMargin level={2}>
 						<Marked>{title}</Marked>
 					</Heading>
-					<Typography variant="body1">{description}</Typography>
+					<Text>{description}</Text>
 				</hgroup>
 				<div className="services">
 					{services?.map((service, serviceIndex) => (
@@ -102,6 +109,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 							title={service.name}
 							description={service.summary}
 							image={service.image}
+							imageColor={service.color}
 						/>
 					))}
 				</div>

@@ -11,6 +11,8 @@ import {
 } from '../components/block/FooterBlock';
 import { YelpBlock } from '../components/block/YelpBlock';
 import { useAppState } from '../hooks/useAppState';
+import BookATimeIcon from '@mui/icons-material/Book';
+import ContactUsIcon from '@mui/icons-material/ContactSupport';
 
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
@@ -61,10 +63,9 @@ const Main = styled('main')(
 
 export const DefaultLayout: DefaultLayoutProps = ({
 	HeaderProps,
-	FooterProps,
 	children
 }) => {
-	const { setBannerProps, toggleContact, toggleBooking } = useAppState();
+	const { setBannerProps, toggleContact } = useAppState();
 
 	const router = useRouter();
 
@@ -73,8 +74,6 @@ export const DefaultLayout: DefaultLayoutProps = ({
 			text: '⚡️⚡️ Flash Sash Sale!! Come and get yours quick!'
 		});
 	}, []);
-
-	const hasPageHeader = router.pathname !== '/';
 
 	return (
 		<>
@@ -86,12 +85,14 @@ export const DefaultLayout: DefaultLayoutProps = ({
 						onClick() {
 							toggleContact();
 						},
-						label: 'Contact Us'
+						label: 'Contact Us',
+						endIcon: <ContactUsIcon />
 					},
 					{
 						color: 'primary',
 						href: `${router.basePath}/book-appointment`,
-						label: 'Book a time'
+						label: 'Book a time',
+						endIcon: <BookATimeIcon />
 					}
 				]}
 			/>

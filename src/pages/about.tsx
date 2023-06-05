@@ -158,7 +158,7 @@ export const Example = () => {
 								<Marked>Our Mission</Marked>
 							</Heading>
 							<Typography className="mt-6 text-lg leading-8 text-gray-600">
-								Fashion Greek, USC was founded with a vision to
+								Graphix Collab was founded with a vision to
 								provide top-quality printing solutions to
 								businesses of all sizes. Since then, we have
 								grown into a leading printing company, serving

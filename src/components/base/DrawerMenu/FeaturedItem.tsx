@@ -17,12 +17,12 @@ const FeaturedItemWrapper = styled('div')(
 
 		&:hover {
 			.Title-root {
-				color: ${theme.palette.grey[800]};
+				color: var(--color-gray-800);
 			}
 
 			.Image-root {
-				background-color: ${theme.palette.grey[400]};
-				outline: dashed 2px ${theme.palette.grey[400]};
+				background-color: var(--color-gray-400);
+				outline: dashed 2px var(--color-gray-400);
 				outline-offset: 2px;
 			}
 		}
@@ -31,7 +31,7 @@ const FeaturedItemWrapper = styled('div')(
 
 const FeaturedItemImage = styled(Image)(
 	({ theme }) => css`
-		background-color: ${theme.palette.grey[300]};
+		background-color: var(--color-gray-300);
 		width: 100%;
 		aspect-ratio: 1;
 	`
@@ -45,7 +45,7 @@ const Title = styled('span')(
 		text-overflow: ellipsis;
 		overflow: hidden;
 
-		color: ${theme.palette.grey[600]};
+		color: var(--color-gray-600);
 	`
 );
 

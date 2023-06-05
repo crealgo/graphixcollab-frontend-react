@@ -1,6 +1,6 @@
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { alpha, IconButton, styled, useControlled } from '@mui/material';
-import { useId, type FC } from 'react';
+import { useId, type FC, Fragment } from 'react';
 
 type DotsInputProps = {
 	currentIndex?: number;
@@ -36,7 +36,7 @@ const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(
 					borderRadius: '9999px',
 					height: dotWidth,
 					width: dotWidth,
-					backgroundColor: alpha(theme.palette.primary.main, 0.5),
+					backgroundColor: 'var(--color-brand-primary-main)',
 					border: 'solid 1px white',
 
 					transition: 'width 300ms',
@@ -46,7 +46,7 @@ const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(
 					opacity: 1
 				},
 				'&[data-checked=true]::before': {
-					backgroundColor: alpha(theme.palette.primary.main, 1),
+					backgroundColor: 'var(--color-brand-primary-main)',
 					width: dotWidthExpanded,
 					cursor: 'default'
 				},
@@ -101,38 +101,27 @@ export const DotsInput: FC<DotsInputProps> = ({
 	return (
 		<DotsInputWrapper className="DotsInput-root" count={count}>
 			<IconButton size="small" color="primary" onClick={goPrevious}>
-				<KeyboardArrowLeft />
+				<ArrowBack />
 			</IconButton>
 			<div className="DotInput-dots">
-				{Array.from({ length: count }, (_, radioIndex) => {
-					const inputId = `${generatedId}-dot-input-${radioIndex}`;
-					return (
-						<label
-							key={radioIndex}
-							className="DotsInput-inputLabel"
-							htmlFor={inputId}
-							data-checked={index === radioIndex}
-							title={`image-${radioIndex}`}
-						>
-							<input
-								key={radioIndex}
-								type="radio"
-								className="DotsInput-input"
-								id={inputId}
-								value={radioIndex}
-								name={radioGroupId}
-								checked={index === radioIndex}
-								onChange={() => {
-									setIndex(radioIndex);
-									onIndexChange?.(radioIndex);
-								}}
-							/>
-						</label>
-					);
-				})}
+				{Array.from({ length: count }, (_, radioIndex) => (
+					<input
+						key={radioIndex}
+						type="radio"
+						className="DotsInput-input"
+						value={radioIndex}
+						aria-label={radioGroupId}
+						name={radioGroupId}
+						checked={index === radioIndex}
+						onChange={() => {
+							setIndex(radioIndex);
+							onIndexChange?.(radioIndex);
+						}}
+					/>
+				))}
 			</div>
 			<IconButton size="small" color="primary" onClick={goNext}>
-				<KeyboardArrowRight />
+				<ArrowForward />
 			</IconButton>
 		</DotsInputWrapper>
 	);

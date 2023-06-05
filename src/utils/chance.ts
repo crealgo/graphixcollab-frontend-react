@@ -136,7 +136,7 @@ export const generateNavItems = (n = 3): NavItemOptions[] =>
 export const generateHeader = (): HeaderProps => ({});
 
 export const generateFooter = () => ({
-	title: 'Fashion Greek, USC',
+	title: 'Graphix Collab',
 	description: chance.sentence({ words: 15 }),
 	meta: chance.n(
 		() => ({

@@ -1,4 +1,4 @@
-import { AddCircleOutline } from '@mui/icons-material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import {
 	Accordion,
 	AccordionDetails,
@@ -54,7 +54,7 @@ const Wrapper = styled(Accordion)(
 			.MuiSvgIcon-root {
 				transform: rotate(45deg);
 				opacity: 1;
-				color: ${theme.palette.primary.main};
+				color: var(--color-brand-primary-main);
 			}
 		}
 
@@ -76,7 +76,7 @@ export const FaqAccordion: FC<FaqAccordionProps> = ({
 }) => (
 	<Wrapper variant="outlined">
 		<AccordionHead>
-			<AddCircleOutline />
+			<AddCircleOutlineIcon />
 			{question}
 		</AccordionHead>
 		<AccordionDetails>

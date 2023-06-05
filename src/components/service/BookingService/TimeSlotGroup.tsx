@@ -16,7 +16,7 @@ const BaseElement: FC<
 
 export const TimeSlotGroup = styled(BaseElement)(
 	({ theme }) => css`
-		border: dashed 1px ${theme.palette.grey[400]};
+		border: dashed 1px var(--color-gray-400);
 		background-color: white;
 		padding: 1rem;
 

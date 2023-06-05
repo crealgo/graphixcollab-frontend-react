@@ -8,36 +8,6 @@ export type ButtonStyledFunc = (
 	props: ButtonStyledFuncProps
 ) => string | CSSObject;
 
-export const getButtonColors: ButtonStyledFunc = ({ theme, color = 'text' }) =>
-	({
-		primary: theme.palette.primary.main,
-		secondary: theme.palette.secondary.main,
-		tertiary: alpha(theme.palette.common.white, 0.675),
-		text: 'transparent'
-	}[color]);
-
-export const getButtonTextColors: ButtonStyledFunc = ({
-	theme,
-	color = 'text'
-}) =>
-	({
-		primary: theme.palette.primary.contrastText,
-		secondary: theme.palette.secondary.contrastText,
-		tertiary: theme.palette.grey[900],
-		text: theme.palette.grey[900]
-	}[color]);
-
-export const getButtonHoverColors: ButtonStyledFunc = ({
-	theme,
-	color = 'text'
-}) =>
-	({
-		primary: theme.palette.primary.dark,
-		secondary: theme.palette.secondary.dark,
-		tertiary: alpha(theme.palette.common.white, 0.95),
-		text: alpha(theme.palette.common.white, 0.25)
-	}[color]);
-
 export const getButtonSizes: ButtonStyledFunc = ({ theme, size = 'medium' }) =>
 	({
 		small: {

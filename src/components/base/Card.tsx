@@ -1,14 +1,13 @@
-import { KeyboardArrowRight } from '@mui/icons-material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Typography, useMediaQuery } from '@mui/material';
 import { css, styled, useTheme } from '@mui/material/styles';
-import { type FC, type ComponentPropsWithRef } from 'react';
+import clsx from 'clsx';
+import { type ComponentPropsWithRef, type FC } from 'react';
 import { useAppState } from '../../hooks/useAppState';
 import { type ServiceOptions } from '../../types/general';
 import { chance } from '../../utils/chance';
 import { ActionStack } from './ActionStack';
 import { Button } from './Button';
-import { Image, type ImageProps } from './Image';
-import clsx from 'clsx';
 
 type CardProps = {
 	image?: {
@@ -84,7 +83,7 @@ export const Card: FC<CardProps> = ({
 					<Button
 						color={isMobile ? 'secondary' : 'text'}
 						size="small"
-						endIcon={<KeyboardArrowRight />}
+						endIcon={<ArrowForwardIcon />}
 						onClick={() => {
 							toggleBooking();
 						}}

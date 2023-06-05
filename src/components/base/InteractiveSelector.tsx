@@ -1,7 +1,5 @@
 import { KeyboardArrowDown } from '@mui/icons-material';
 import {
-	css,
-	alpha,
 	Menu,
 	MenuItem,
 	styled,
@@ -14,49 +12,47 @@ export type InteractiveSelectorProps = {
 	options?: OptionValue[];
 } & Omit<OutlinedTextFieldProps, 'variant' | 'size'>;
 
-const StyledButton = styled('button')(
-	({ theme }) => css`
-		border-radius: unset;
-		border: unset;
-		outline: unset;
-		background: unset;
-		padding: unset;
+const StyledButton = styled('button')`
+	border-radius: unset;
+	border: unset;
+	outline: unset;
+	background: unset;
+	padding: unset;
 
-		cursor: pointer;
-		position: relative;
-		display: inline-flex;
-		align-items: center;
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
 
-		z-index: 0;
+	z-index: 0;
 
-		font: inherit;
+	font: inherit;
 
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 102%;
+		height: 90%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		background-color: var(--color-brand-tertiary-light);
+		z-index: -1;
+	}
+
+	.endIcon {
+		font-size: 0.875em;
+		margin-right: -0.5rem;
+	}
+
+	&:hover,
+	&:focus-visible {
 		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 102%;
-			height: 90%;
-			left: 50%;
-			transform: translateX(-50%);
-
-			background-color: var(--color-brand-tertiary-light);
-			z-index: -1;
+			background-color: var(--color-brand-tertiary-main);
 		}
-
-		.endIcon {
-			font-size: 0.875em;
-			margin-right: -0.5rem;
-		}
-
-		&:hover,
-		&:focus-visible {
-			&::before {
-				background-color: var(--color-brand-tertiary-dark);
-			}
-		}
-	`
-);
+	}
+`;
 
 export const InteractiveSelector: FC<InteractiveSelectorProps> = ({
 	options,

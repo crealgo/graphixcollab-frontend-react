@@ -12,10 +12,6 @@ export type InteractiveEstimatorProps = {
 	actions?: Action[];
 };
 
-const StyledBlock = styled(Block)`
-	overflow: hidden;
-`;
-
 const ContentGrid = styled('div')`
 	display: grid;
 	gap: 2rem;
@@ -71,7 +67,8 @@ const AdornmentImage = styled('img')`
 
 export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 	<Container>
-		<StyledBlock
+		<Block
+			isClipped
 			isRounded
 			color="grey"
 			className="InteractiveEstimator-root"
@@ -153,6 +150,6 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 					alt=""
 				/>
 			</ContentGrid>
-		</StyledBlock>
+		</Block>
 	</Container>
 );

@@ -14,9 +14,9 @@ type LabelFunc = (params: LabelFuncParams) => CSSObject;
 
 export const getLabelStyles: LabelFunc = ({ theme, variant = 'primary' }) => {
 	const colorHex = {
-		primary: theme.palette.primary.main,
-		secondary: theme.palette.secondary.main,
-		grey: theme.palette.grey[300]
+		primary: 'var(--color-brand-primary-main)',
+		secondary: 'var(--color-brand-secondary-main)',
+		grey: 'var(--color-grey-300)'
 	}[variant];
 
 	return {

@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { type BaseComponentsProps } from '../../types/base';
-import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
 import { type FC } from 'react';
+import { css } from '@emotion/react';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-const HeadingText = styled('span')`
+const HeadingText = styled.span`
 	mark {
 		background-color: var(--mark-background-color);
 		color: var(--mark-color);
@@ -15,24 +15,32 @@ const HeadingText = styled('span')`
 
 export type HeadingProps = BaseComponentsProps<{
 	level?: HeadingLevel;
-	contrast?: boolean;
-	gutterBottom?: boolean;
+	isContrast?: boolean;
+	hasMargin?: boolean;
 }>;
 
-export const Heading: FC<HeadingProps> = ({
-	children,
-	contrast,
-	className,
-	level = 5,
-	...props
-}) => (
-	<Typography
-		{...props}
-		className={clsx(className, 'Heading-root', `Heading-h${level}`)}
-		variant={level && `h${level}`}
-		component={level ? `h${level}` : 'span'}
-		color={contrast ? 'white' : undefined}
-	>
-		<HeadingText>{children}</HeadingText>
-	</Typography>
+const BaseElement = styled.span<HeadingProps>(
+	props => css`
+		font-size: var(--type-heading-font-size-${props.level});
+		font-family: var(--type-heading-font-family);
+		font-weight: var(--type-heading-font-weight);
+		letter-spacing: var(--type-heading-font-tracking);
+		line-height: var(--type-heading-font-leading);
+		color: var(--color-text-${props.isContrast ? 'contrast' : 'primary'});
+
+		margin: ${props.hasMargin
+			? 'var(--type-heading-font-margin-top) 0 var(--type-heading-font-margin-bottom)'
+			: 'unset'};
+	`
 );
+
+export const Heading: FC<HeadingProps> = ({ children, ...props }) => {
+	const resolvedLevel = props.level ?? 6;
+	const resolvedComponent = `h${resolvedLevel}` as const;
+
+	return (
+		<BaseElement {...props} as={resolvedComponent}>
+			{children}
+		</BaseElement>
+	);
+};

@@ -1,4 +1,4 @@
-import { KeyboardArrowRight, Message } from '@mui/icons-material';
+import { ArrowForward, Message } from '@mui/icons-material';
 import { Typography, useMediaQuery, type Theme } from '@mui/material';
 import { css, styled } from '@mui/material/styles';
 import { useRouter } from 'next/router';
@@ -120,7 +120,7 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 							<Button
 								color="secondary"
 								href={`${router.basePath}/services`}
-								endIcon={<KeyboardArrowRight />}
+								endIcon={<ArrowForward />}
 							>
 								View All Services
 							</Button>

@@ -14,8 +14,8 @@ const f = require('./formatToken');
  * }}
  **/
 module.exports = baseHex => ({
-	light: f(colord(baseHex).lighten(0.4).toHex()),
+	light: f(colord(baseHex).lighten(0.5).toHex()),
 	main: f(baseHex),
-	dark: f(colord(baseHex).darken(0.25).desaturate(0.5).toHex()),
+	dark: f(colord(baseHex).darken(0.25).desaturate(0.125).toHex()),
 	contrast: f(colord(baseHex).isDark() ? '#ffffff' : '#000000')
 });

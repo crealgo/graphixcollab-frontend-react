@@ -1,41 +1,39 @@
-import { styled, css } from '@mui/material/styles';
-import Tooltip, {
-	type TooltipProps,
-	tooltipClasses
-} from '@mui/material/Tooltip';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
 import OutBoundIcon from '@mui/icons-material/OpenInNew';
+import Tooltip, {
+	tooltipClasses,
+	type TooltipProps
+} from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
 
 const StyledTooltip = styled(({ className, ...props }: TooltipProps) => (
 	<Tooltip {...props} classes={{ popper: className }} />
-))(
-	({ theme }) => css`
-		--tooltip-line-height: 0.9rem;
+))`
+	--tooltip-line-height: 0.9rem;
 
-		.${tooltipClasses.tooltip} {
-			background-color: #ffffff;
-			border: 1px solid rgba(0, 0, 0, 0.23);
-			color: rgba(0, 0, 0, 0.87);
-			box-shadow: ${theme.shadows[2]};
+	.${tooltipClasses.tooltip} {
+		background-color: #ffffff;
+		border: 1px solid rgba(0, 0, 0, 0.23);
+		color: rgba(0, 0, 0, 0.87);
+		box-shadow: var(--elevation-2);
+		display: inline-flex;
+		place-items: center;
+		place-content: center;
+		gap: 0.25em;
+
+		.Tooltip-text {
+			// light theme
 			display: inline-flex;
-			place-items: center;
-			place-content: center;
-			gap: 0.25em;
-
-			.Tooltip-text {
-				// light theme
-				display: inline-flex;
-				vertical-align: middle;
-				line-height: auto;
-			}
-			.Tooltip-icon {
-				display: inline-flex;
-				font-size: var(--tooltip-line-height);
-				line-height: auto;
-			}
+			vertical-align: middle;
+			line-height: auto;
 		}
-	`
-);
+		.Tooltip-icon {
+			display: inline-flex;
+			font-size: var(--tooltip-line-height);
+			line-height: auto;
+		}
+	}
+`;
 
 const StyledAnchor = styled('a')`
 	all: unset;

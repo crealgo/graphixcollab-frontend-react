@@ -1,4 +1,5 @@
 import '@fontsource/inter';
+import '@fontsource/inter-tight';
 import { type AppProps } from 'next/app';
 import { SeoService } from '../components/service/SeoService';
 import { AppStateContextProvider } from '../providers/AppStateContextProvider';

@@ -1,46 +1,30 @@
-import { css, styled } from '@mui/material/styles';
+import styled from '@emotion/styled';
 import { type Size } from '../../types/general';
+import { css } from '@emotion/react';
+import { type PropsWithChildren, type FC } from 'react';
+import { _e } from '../../utils/excludePropsFromForwarding';
 
-type TextProps = {
+type TextProps = PropsWithChildren<{
 	size?: Size;
+	spacing?: Size;
 	variant?: 'body' | 'caption';
-	contrast?: boolean;
-};
+	color?: 'primary' | 'secondary' | 'contrast';
+}>;
 
-export const Text = styled('p')<TextProps>(
-	({ theme, contrast, variant, size }) => {
-		const sizeStyles = {
-			small: css`
-				font-size: 14px;
-			`,
-			medium: css`
-				font-size: 16px;
-			`,
-			large: css`
-				font-size: 19px;
-
-				${theme.breakpoints.up('md')} {
-					font-size: 21px;
-				}
-			`
-		}[size ?? 'medium'];
-
-		const variantColor = {
-			body: '#111827',
-			caption: '#6b7280'
-		}[variant ?? 'body'];
-
-		return css`
-			font-family: Inter;
-			font-weight: 400;
-			margin: 0;
-			${sizeStyles}
-			line-height: 1.675;
-			color: ${contrast ? 'white' : variantColor};
-		`;
-	}
+const BaseElement = styled(
+	'p',
+	_e('color')
+)<TextProps>(
+	({ spacing = 'medium', size = 'medium', color = 'primary' }) => css`
+		margin: unset;
+		color: var(--color-text-${color});
+		font-family: var(--type-body-font-family);
+		font-weight: var(--type-body-font-weight);
+		line-height: var(--type-body-font-leading-${spacing});
+		font-size: var(--type-body-font-size-${size});
+	`
 );
 
-Text.defaultProps = {
-	className: 'Text-root'
-};
+export const Text: FC<TextProps> = ({ children, ...props }) => (
+	<BaseElement {...props}>{children}</BaseElement>
+);

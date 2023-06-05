@@ -4,10 +4,10 @@ export const LinkListItem = styled('li')(
 	({ theme }) => css`
 		display: block;
 		padding-block: 0.75rem;
-		border-bottom: solid 1px ${theme.palette.grey[300]};
+		border-bottom: solid 1px var(--color-gray-300);
 
 		&:nth-of-type(1) {
-			border-top: solid 1px ${theme.palette.grey[300]};
+			border-top: solid 1px var(--color-gray-300);
 		}
 	`
 );

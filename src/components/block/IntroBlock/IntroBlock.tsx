@@ -1,4 +1,5 @@
-import { ArrowRight } from '@mui/icons-material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import BookATimeIcon from '@mui/icons-material/Book';
 import { css, styled } from '@mui/material';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
 import { type Action, type SharedBlockProps } from '../../../types/general';
@@ -162,7 +163,7 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 			<Container className="IntroBlock-root">
 				<Content>
 					<Block className="content">
-						<Heading gutterBottom level={1}>
+						<Heading level={1}>
 							Welcome to
 							<Logo />
 						</Heading>
@@ -174,13 +175,13 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 									label: 'Get Started',
 									color: 'primary',
 									href: '/services',
-									endIcon: <ArrowRight />
+									endIcon: <ArrowForwardIcon />
 								},
 								{
 									label: 'Book Appointment',
 									color: 'text',
 									href: '/book-appointment',
-									endIcon: <ArrowRight />
+									endIcon: <BookATimeIcon />
 								}
 							]}
 						/>

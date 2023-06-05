@@ -6,7 +6,7 @@ export const MenuTrigger = styled(IconButtonBase)(
 		grid-area: mobile-menu;
 
 		&:hover {
-			background-color: ${theme.palette.grey[300]};
+			background-color: var(--color-gray-300);
 		}
 	`
 );

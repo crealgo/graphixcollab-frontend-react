@@ -1,4 +1,7 @@
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import {
 	Box,
 	css,
@@ -47,15 +50,6 @@ const Content = styled('div')(
 		}
 	`
 );
-
-const FooterBlockWrapper = styled(Block)(
-	({ theme }) => css`
-		background-color: var(--color-gray-50);
-		border-bottom: var(--input-border-composite);
-		margin-top: 1rem;
-	`
-);
-
 const CopyrightBlockWrapper = styled(Block)(
 	({ theme }) => css`
 		background-color: var(--color-gray-100);
@@ -83,19 +77,19 @@ const CopyrightBlockWrapper = styled(Block)(
 );
 
 const footerContent = {
-	title: 'Fashion Greek, USC',
+	title: 'Graphix Collab',
 	description:
 		"As a leading printing-service company, we are dedicated to providing high-quality printing solutions to our clients. With a team of experienced professionals and state-of-the-art printing equipment, we deliver exceptional results that meet and exceed our clients' expectations.",
 	sections: {
-		connect: {
-			title: 'Connect',
-			links: [
-				{ label: 'The Process', href: '' },
-				{ label: 'Get Samples', href: '' },
-				{ label: 'Templates', href: '' },
-				{ label: 'Jobs', href: '' }
-			]
-		},
+		// connect: {
+		// 	title: 'Connect',
+		// 	links: [
+		// 		{ label: 'The Process', href: '' },
+		// 		{ label: 'Get Samples', href: '' },
+		// 		{ label: 'Templates', href: '' },
+		// 		{ label: 'Jobs', href: '' }
+		// 	]
+		// },
 		getAQuote: {
 			title: 'Get a Quote',
 			description:
@@ -127,6 +121,7 @@ const footerContent = {
 			showSocial: true,
 			phrases: [
 				'©Copyright 2015-2020, FashionGreek, USC.',
+				// TODO: make this a web component
 				'Made with ❤️ by Crealgo, LLC. All rights reserved.'
 			]
 		}
@@ -136,13 +131,13 @@ const footerContent = {
 const SocialBar: FC<unknown> = () => (
 	<Stack gap="0.25rem" direction="row">
 		<IconButton size="small">
-			<Facebook fontSize="small" />
+			<FacebookIcon fontSize="small" />
 		</IconButton>
 		<IconButton size="small">
-			<Twitter fontSize="small" />
+			<TwitterIcon fontSize="small" />
 		</IconButton>
 		<IconButton size="small">
-			<Instagram fontSize="small" />
+			<InstagramIcon fontSize="small" />
 		</IconButton>
 	</Stack>
 );
@@ -171,7 +166,7 @@ const ContactInfoList = styled('ul')`
 
 export const FooterBlock: FC<FooterBlockProps> = () => (
 	<footer>
-		<FooterBlockWrapper hasNoDefaultMargin>
+		<Block hasNoDefaultMargin color="grey">
 			<Container>
 				<Content>
 					<Column>
@@ -196,12 +191,16 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 									inputSize="large"
 									placeholder="your@email.com"
 								/>
-								<Button size="large" color="secondary">
-									Send
+								<Button
+									size="large"
+									color="secondary"
+									endIcon={<QuestionAnswerIcon />}
+								>
+									Inquire
 								</Button>
 							</Box>
 						</FooterContentBlock>
-						<FooterContentBlock>
+						{/* <FooterContentBlock>
 							<Typography variant="h5">
 								{footerContent.sections.connect.title}
 							</Typography>
@@ -218,7 +217,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 									)
 								)}
 							</Stack>
-						</FooterContentBlock>
+						</FooterContentBlock> */}
 					</Column>
 					<Column>
 						<MapEmbed />
@@ -245,7 +244,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 					</Column>
 				</Content>
 			</Container>
-		</FooterBlockWrapper>
+		</Block>
 		<CopyrightBlockWrapper hasNoDefaultMargin>
 			<Container>
 				<div className="leftContent">

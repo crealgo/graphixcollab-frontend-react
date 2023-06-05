@@ -18,9 +18,9 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		padding-block: 0.75rem;
 
 		border-radius: 0.25rem;
-		background-color: ${theme.palette.grey[300]};
-		border: solid 1px ${theme.palette.grey[50]};
-		outline: solid 1px ${theme.palette.grey[400]};
+		background-color: var(--color-gray-300);
+		border: solid 1px var(--color-gray-50);
+		outline: solid 1px var(--color-gray-400);
 	`}
 
 		display: grid;
@@ -28,14 +28,14 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		gap: 0.25rem;
 
 		align-items: center;
-		color: ${theme.palette.grey[700]};
+		color: var(--color-gray-700);
 
 		${isActionable
 			? css`
 					cursor: pointer;
 
 					&:hover {
-						color: ${theme.palette.primary.main};
+						color: var(--color-brand-primary-main);
 					}
 			  `
 			: null}

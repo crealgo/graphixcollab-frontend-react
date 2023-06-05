@@ -11,21 +11,21 @@ export type ButtonProps = {
 } & ButtonBaseProps;
 
 const StyledButton = styled(ButtonBase)<ButtonProps>(
-	({ color: variant = 'primary', size = 'medium' }) => css`
+	({ color = 'primary', size = 'medium' }) => css`
 		border-radius: var(--button-bezel-${size});
 
 		font-weight: var(--button-font-weight);
 		font-size: var(--input-font-size-${size});
 		letter-spacing: var(--button-letter-spacing);
 
-		background-color: var(--button-background-color-${variant});
-		box-shadow: var(--button-shadow-${variant});
-		color: var(--button-text-color-${variant});
-		border: var(--button-border-${variant});
+		background-color: var(--button-background-color-${color});
+		box-shadow: var(--button-shadow-${color});
+		color: var(--button-text-color-${color});
+		border: var(--button-border-${color});
 
-		text-decoration: var(--button-text-decoration-${variant});
-		text-underline-offset: var(--button-text-offset-${variant});
-		text-decoration-thickness: var(--button-text-thickness-${variant});
+		text-decoration: var(--button-text-decoration-${color});
+		text-underline-offset: var(--button-text-offset-${color});
+		text-decoration-thickness: var(--button-text-thickness-${color});
 
 		padding-inline: var(--input-spacing-padding-inline-${size});
 		line-height: var(--input-height-${size});
@@ -33,15 +33,9 @@ const StyledButton = styled(ButtonBase)<ButtonProps>(
 	`
 );
 
-export const Button: FC<ButtonProps> = ({
-	children,
-	className,
-	color = 'tertiary',
-	...props
-}) => (
+export const Button: FC<ButtonProps> = ({ children, className, ...props }) => (
 	<StyledButton
 		{...props}
-		color={color}
 		role="button"
 		className={clsx(className, 'Button-root')}
 	>

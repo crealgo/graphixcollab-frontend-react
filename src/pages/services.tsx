@@ -59,6 +59,11 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			}
 		},
 		serviceBlocks: [
+			// TODO: DEV
+			// {
+			// 	title: 'All',
+			// 	services
+			// },
 			{
 				title: 'Printing Services',
 				description:
