@@ -11,15 +11,16 @@ const StyledFigure = styled.figure`
 	margin: 0 0.5rem;
 `;
 
+const StyledImage = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+`;
+
 export const FeaturedLogo: FC<FeaturedCompanyInfo> = props => (
 	<StyledFigure>
-		<img
-			style={{
-				objectFit: 'contain',
-				...props.styleOverrides
-			}}
-			height="200"
-			width="200"
+		<StyledImage
+			style={props.styleOverrides}
 			src={props.image}
 			alt={props.name}
 		/>
