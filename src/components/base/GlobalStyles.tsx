@@ -8,13 +8,8 @@ export const GlobalStyles: FC = () => (
 		styles={css`
 			${tokens}
 
-			* {
+			html {
 				font-family: Inter;
-			}
-
-			mark {
-				background-color: transparent;
-				color: var(--color-brand-primary-main);
 			}
 		`}
 	/>

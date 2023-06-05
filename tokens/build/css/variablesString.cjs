@@ -1,6 +1,6 @@
 module.exports = `/**
 * Do not edit directly
-* Generated on Mon, 05 Jun 2023 04:48:17 GMT
+* Generated on Mon, 05 Jun 2023 11:08:28 GMT
 */
 :root {
 --color-white: #ffffff;
@@ -132,7 +132,7 @@ module.exports = `/**
 --shape-aspect-ratio-landscape: 16 / 9;
 --shape-aspect-ratio-portrait: 9 / 16;
 --type-heading-font-family: Inter Tight, Arial, Helvetica, sans-serif;
---type-heading-font-weight: 600;
+--type-heading-font-weight: 700;
 --type-heading-font-leading: 1.25;
 --type-heading-font-margin-top: 3rem;
 --type-heading-font-margin-bottom: 1.39rem;

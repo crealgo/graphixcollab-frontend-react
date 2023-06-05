@@ -1,10 +1,12 @@
-import styled from '@emotion/styled';
-import { type Size } from '../../types/general';
 import { css } from '@emotion/react';
-import { type PropsWithChildren, type FC } from 'react';
+import styled from '@emotion/styled';
+import { type FC } from 'react';
+import { type BaseComponentsProps } from '../../types/base';
+import { type Size } from '../../types/general';
 import { _e } from '../../utils/excludePropsFromForwarding';
 
-type TextProps = PropsWithChildren<{
+type TextProps = BaseComponentsProps<{
+	className?: string;
 	size?: Size;
 	spacing?: Size;
 	variant?: 'body' | 'caption';

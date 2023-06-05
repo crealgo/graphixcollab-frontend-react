@@ -10,7 +10,7 @@ import { Button } from '../base/Button';
 import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { HorizontalCard } from '../base/HorizontalCard';
-import { Marked } from '../base/Marked';
+import { Mark } from '../base/Mark';
 import { Text } from '../base/Text';
 
 type Service = (typeof services)[number];
@@ -98,7 +98,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 			<Wrapper>
 				<hgroup>
 					<Heading hasMargin level={2}>
-						<Marked>{title}</Marked>
+						<Mark brand>{title}</Mark>
 					</Heading>
 					<Text>{description}</Text>
 				</hgroup>

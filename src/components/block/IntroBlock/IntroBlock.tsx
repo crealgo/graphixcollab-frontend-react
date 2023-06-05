@@ -1,6 +1,6 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BookATimeIcon from '@mui/icons-material/Book';
-import { css, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
 import { type Action, type SharedBlockProps } from '../../../types/general';
 import Logo from '../../atoms/Logo';
@@ -38,23 +38,30 @@ const Wrapper = styled('div')`
 	padding-block: 5rem;
 `;
 
-const Content = styled('div')(
-	({ theme }) => css`
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-		align-content: center;
-		justify-items: center;
-		border-radius: 0.5rem;
-		text-align: center;
+const Content = styled('div')`
+	--intro-block-place-items: center;
+	--intro-block-text-align: center;
 
-		${theme.breakpoints.up('lg')} {
-			padding-inline: 0;
-			justify-items: start;
-			text-align: left;
-		}
-	`
-);
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		--intro-block-place-items: start;
+		--intro-block-text-align: left;
+	}
+
+	place-content: center;
+	place-items: --intro-block-place-items;
+	text-align: --intro-block-text-align;
+
+	max-width: 1200px;
+
+	.IntroBlock-header {
+		margin-bottom: 2rem;
+	}
+
+	.IntroBlock-text {
+		max-width: 600px;
+		margin-bottom: 2.5rem;
+	}
+`;
 
 export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 	return (
@@ -62,11 +69,12 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 			<Container>
 				<Block hasNoHorizontalPadding>
 					<Content>
-						<Heading level={1}>
-							Welcome to
-							<Logo />
+						<Heading className="IntroBlock-header" level={1}>
+							Welcome to <Logo />
 						</Heading>
-						<Text size="large">{description}</Text>
+						<Text className="IntroBlock-text" size="large">
+							{description}
+						</Text>
 						<ActionStack
 							size="large"
 							actions={[

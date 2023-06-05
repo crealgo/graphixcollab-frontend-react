@@ -7,7 +7,8 @@ const LogoDots = styled.div`
 	flex-direction: row;
 	gap: 0.1em;
 	left: 0.1em;
-	transform: translateY(-0.125em);
+	bottom: 0;
+	transform: translateY(40%);
 
 	div {
 		width: 0.25em;
@@ -33,10 +34,11 @@ const LogoDots = styled.div`
 `;
 
 const StyledDiv = styled.div`
-	font-weight: bold;
+	font-family: Inter Tight;
+	display: inline;
+	font-weight: 700;
 	font-size: 1em;
 	line-height: inherit;
-	letter-spacing: -0.05em;
 	position: relative;
 `;
 

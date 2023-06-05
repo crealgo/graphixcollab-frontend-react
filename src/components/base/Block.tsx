@@ -50,24 +50,24 @@ const StyledDiv = styled(
 
 			${theme.breakpoints.up('md')} {
 				--section-padding-block: var(--section-tablet-padding-block);
-				--section-padding-inline: var(--section-tablet-padding-inline);
+				--section-padding-inline: ${hasNoHorizontalPadding
+					? 'unset'
+					: 'var(--section-tablet-padding-inline)'};
 				--section-margin-inline: var(--section-tablet-margin-inline);
 				--section-border-radius: 0.5rem;
 			}
 
 			${theme.breakpoints.up('xl')} {
-				--section-padding-inline: var(
-					--section-widescreen-padding-inline
-				);
+				--section-padding-inline: ${hasNoHorizontalPadding
+					? 'unset'
+					: 'var(--section-widescreen-padding-inline)'};
 			}
 
 			background-color: ${blockColor};
 			position: relative;
 
 			padding-block: var(--section-padding-block);
-			padding-inline: ${hasNoHorizontalPadding
-				? 'unset'
-				: 'var(--section-padding-inline)'};
+			padding-inline: var(--section-padding-inline);
 			margin-inline: ${hasNoDefaultMargin
 				? 'unset'
 				: 'var(--section-margin-inline)'};

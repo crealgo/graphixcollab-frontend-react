@@ -2,7 +2,7 @@ import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { useState } from 'react';
 import Head from 'next/head';
-import { Marked } from '../components/base/Marked';
+import { Mark } from '../components/base/Mark';
 import { Heading } from '../components/base/Heading';
 import { Text } from '../components/base/Text';
 import { Typography, styled } from '@mui/material';
@@ -154,8 +154,8 @@ export const Example = () => {
 				<Block>
 					<Container>
 						<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-							<Heading gutterBottom level={1}>
-								<Marked>Our Mission</Marked>
+							<Heading hasMargin level={1}>
+								<Mark brand>Our Mission</Mark>
 							</Heading>
 							<Typography className="mt-6 text-lg leading-8 text-gray-600">
 								Graphix Collab was founded with a vision to

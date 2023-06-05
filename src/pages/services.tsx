@@ -1,5 +1,5 @@
 import { type GetStaticProps, type NextPage } from 'next';
-import { Marked } from '../components/base/Marked';
+import { Mark } from '../components/base/Mark';
 import { type CalloutBlockProps } from '../components/block/CalloutBlock';
 import { FaqBlock, type FaqBlockProps } from '../components/block/FaqBlock';
 import { type FooterBlockProps } from '../components/block/FooterBlock';
@@ -36,7 +36,7 @@ const ServicesPage: NextPage<PageProps> = ({
 		<PageTitle text="Services" />
 		<PageHeaderBlock
 			{...PageHeaderBlockProps}
-			title={<Marked>Our Services</Marked>}
+			title={<Mark brand>Our Services</Mark>}
 		/>
 		{serviceBlocks.map((props, index) => (
 			<ServicesBlock key={index} {...props} />

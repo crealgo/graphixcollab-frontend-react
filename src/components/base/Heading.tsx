@@ -1,17 +1,9 @@
-import styled from '@emotion/styled';
-import { type BaseComponentsProps } from '../../types/base';
-import clsx from 'clsx';
-import { type FC } from 'react';
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { type FC } from 'react';
+import { type BaseComponentsProps } from '../../types/base';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-
-const HeadingText = styled.span`
-	mark {
-		background-color: var(--mark-background-color);
-		color: var(--mark-color);
-	}
-`;
 
 export type HeadingProps = BaseComponentsProps<{
 	level?: HeadingLevel;
@@ -24,7 +16,6 @@ const BaseElement = styled.span<HeadingProps>(
 		font-size: var(--type-heading-font-size-${props.level});
 		font-family: var(--type-heading-font-family);
 		font-weight: var(--type-heading-font-weight);
-		letter-spacing: var(--type-heading-font-tracking);
 		line-height: var(--type-heading-font-leading);
 		color: var(--color-text-${props.isContrast ? 'contrast' : 'primary'});
 

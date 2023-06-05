@@ -102,7 +102,7 @@ const type = {
 	heading: {
 		font: {
 			family: f('Inter Tight, Arial, Helvetica, sans-serif'),
-			weight: f(600),
+			weight: f(700),
 			leading: f(1.25),
 			// tracking: f('-2px'),
 			margin: {

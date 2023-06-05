@@ -22,6 +22,7 @@ import { FeaturedMarquee } from './FeaturedMarquee';
 import { FeaturedText } from './FeaturedText';
 import { FeaturedLogoType } from './FeaturedLogoType';
 import { type FeaturedCompanyInfo } from '../../../content/featured-companies';
+import { Mark } from '../../base/Mark';
 
 export type FeaturedInBlockProps = {
 	title?: string;
@@ -87,9 +88,13 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					maxWidth="50rem"
 				>
 					<Heading level={4}>
-						We work with <mark>creatives</mark> like you.
+						We work with <Mark>creatives</Mark> like you.
 					</Heading>
-					<Typography variant="body2">{props.description}</Typography>
+					{props.description ? (
+						<Typography variant="body2">
+							{props.description}
+						</Typography>
+					) : null}
 				</ContentGrid>
 				{companies?.length && (
 					<FeaturedComponent>
@@ -107,8 +112,9 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 						}
 					]}
 				>
-					<TidBit href="#yelp-test" icon={<SiYelp />}>
-						Trusted by <mark>150+</mark> on <mark>Yelp</mark>
+					<TidBit href="#yelp-test" color="magenta" icon={<SiYelp />}>
+						Trusted by <Mark color="magenta">150+</Mark> on{' '}
+						<Mark color="magenta">Yelp</Mark>
 					</TidBit>
 				</ActionStack>
 			</StyledContainer>

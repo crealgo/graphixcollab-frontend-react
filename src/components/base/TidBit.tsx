@@ -6,7 +6,7 @@ import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
 import clsx from 'clsx';
 
 export type TidBitProps = PropsWithChildren<{
-	color?: ColorVariants;
+	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
 	className?: string;
 	icon?: ButtonBaseProps['startIcon'];
 }> &
@@ -16,6 +16,7 @@ const BaseElement: FC<TidBitProps> = ({
 	className,
 	icon,
 	children,
+	color,
 	...props
 }) => (
 	<ButtonBase
@@ -48,13 +49,8 @@ export const TidBit = styled(BaseElement)<TidBitProps>(
 		border: var(--button-border-primary);
 		box-shadow: var(--button-shadow-primary);
 
-		mark {
-			background-color: unset;
-		}
-
-		.Button-icon,
-		mark {
-			color: var(--button-background-color-${color});
+		.Button-icon {
+			color: var(--color-brand-${color}-main);
 		}
 
 		.Button-icon {
