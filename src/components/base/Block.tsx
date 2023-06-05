@@ -13,13 +13,27 @@ export type BlockProps = {
 	color?: Exclude<ColorVariants, 'text'> | 'grey';
 	isRounded?: boolean;
 	isClipped?: boolean;
+	hasNoHorizontalPadding?: boolean;
 } & ComponentPropsWithRef<'div'>;
 
 const StyledDiv = styled(
 	'div',
-	_e('isRounded', 'color', 'hasNoDefaultMargin')
+	_e(
+		'hasNoDefaultMargin',
+		'color',
+		'isRounded',
+		'isClipped',
+		'hasNoHorizontalPadding'
+	)
 )<BlockProps>(
-	({ theme, color, hasNoDefaultMargin, isClipped, isRounded = false }) => {
+	({
+		theme,
+		color,
+		hasNoDefaultMargin,
+		hasNoHorizontalPadding,
+		isClipped,
+		isRounded = false
+	}) => {
 		const blockColor = {
 			default: 'transparent',
 			primary: 'var(--color-brand-primary-light)',
@@ -29,24 +43,38 @@ const StyledDiv = styled(
 		}[color ?? 'default'];
 
 		return css`
-			background-color: ${blockColor};
-			position: relative;
-
-			padding-block: var(--section-mobile-padding-block);
-			padding-inline: var(--section-mobile-padding-inline);
-
-			${isClipped ? 'overflow: hidden;' : ''};
+			--section-padding-block: var(--section-mobile-padding-block);
+			--section-padding-inline: var(--section-mobile-padding-inline);
+			--section-margin-inline: 0rem;
+			--section-border-radius: none;
 
 			${theme.breakpoints.up('md')} {
-				padding-block: var(--section-tablet-padding-block);
-				padding-inline: var(--section-tablet-padding-inline);
-				margin-inline: ${hasNoDefaultMargin ? 'unset' : '0.5rem'};
-				border-radius: ${isRounded ? '0.5rem' : '0rem'};
+				--section-padding-block: var(--section-tablet-padding-block);
+				--section-padding-inline: var(--section-tablet-padding-inline);
+				--section-margin-inline: var(--section-tablet-margin-inline);
+				--section-border-radius: 0.5rem;
 			}
 
 			${theme.breakpoints.up('xl')} {
-				padding-inline: var(--section-widescreen-padding-inline);
+				--section-padding-inline: var(
+					--section-widescreen-padding-inline
+				);
 			}
+
+			background-color: ${blockColor};
+			position: relative;
+
+			padding-block: var(--section-padding-block);
+			padding-inline: ${hasNoHorizontalPadding
+				? 'unset'
+				: 'var(--section-padding-inline)'};
+			margin-inline: ${hasNoDefaultMargin
+				? 'unset'
+				: 'var(--section-margin-inline)'};
+			border-radius: ${isRounded
+				? 'var(--section-border-radius)'
+				: 'none'};
+			${isClipped ? 'overflow: hidden;' : ''};
 		`;
 	}
 );
