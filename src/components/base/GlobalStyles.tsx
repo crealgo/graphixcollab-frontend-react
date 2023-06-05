@@ -11,6 +11,9 @@ export const GlobalStyles: FC = () => (
 			html {
 				font-family: Inter;
 			}
+
+			@media screen and (max-width: 768px) {
+			}
 		`}
 	/>
 );

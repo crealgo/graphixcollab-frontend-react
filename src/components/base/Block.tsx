@@ -60,7 +60,7 @@ const StyledDiv = styled(
 			${theme.breakpoints.up('xl')} {
 				--section-padding-inline: ${hasNoHorizontalPadding
 					? 'unset'
-					: 'var(--section-widescreen-padding-inline)'};
+					: 'var(--section-tablet-padding-inline)'};
 			}
 
 			background-color: ${blockColor};

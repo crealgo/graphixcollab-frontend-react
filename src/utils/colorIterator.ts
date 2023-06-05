@@ -1,5 +1,5 @@
 import { alpha } from '@mui/material/styles';
-import { colors } from '@mui/material';
+import colors from 'tailwindcss/colors';
 
 export const colorIterator = (
 	property = 'background',

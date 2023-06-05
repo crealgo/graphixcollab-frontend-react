@@ -13,7 +13,23 @@ export type HeadingProps = BaseComponentsProps<{
 
 const BaseElement = styled.span<HeadingProps>(
 	props => css`
-		font-size: var(--type-heading-font-size-${props.level});
+		--type-heading-font-size: var(
+			--type-heading-font-size-small-${props.level}
+		);
+
+		@media screen and (min-width: 425px) {
+			--type-heading-font-size: var(
+				--type-heading-font-size-medium-${props.level}
+			);
+		}
+
+		@media screen and (min-width: 768px) {
+			--type-heading-font-size: var(
+				--type-heading-font-size-large-${props.level}
+			);
+		}
+
+		font-size: var(--type-heading-font-size);
 		font-family: var(--type-heading-font-family);
 		font-weight: var(--type-heading-font-weight);
 		line-height: var(--type-heading-font-leading);

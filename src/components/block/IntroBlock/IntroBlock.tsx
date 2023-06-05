@@ -32,10 +32,19 @@ export type IntroBlockProps = {
 // ];
 
 const Wrapper = styled('div')`
+	--intro-block-padding-block-start: 5rem;
+	--intro-block-padding-block-end: 2.5rem;
+
+	@media screen and (min-width: 768px) {
+		--intro-block-padding-block-start: 5rem;
+		--intro-block-padding-block-end: 5rem;
+	}
+
 	position: relative;
 	background-color: var(--color-brand-primary-light);
-	margin-top: -5rem;
-	padding-block: 5rem;
+	margin-top: calc(-1 * var(--intro-block-padding-block-start));
+	padding-block-start: var(--intro-block-padding-block-start);
+	padding-block-end: var(--intro-block-padding-block-end);
 `;
 
 const Content = styled('div')`

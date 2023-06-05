@@ -1,4 +1,4 @@
-import { colors } from '@mui/material';
+import colors from 'tailwindcss/colors';
 import { createTheme } from '@mui/material/styles';
 
 const defaultFontStack =

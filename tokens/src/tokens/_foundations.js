@@ -1,14 +1,12 @@
 // @ts-check
 
-const material = require('@mui/material');
+const colors = require('tailwindcss/colors');
 const generateColorVariants = require('../utils/generateColorVariants');
 const f = require('../utils/formatToken');
-const generateSequenceFromColorScale = require('../utils/generateSequenceFromColorScale');
-
-const grayScale = generateSequenceFromColorScale(material.colors.blueGrey);
+const generateScaleFromObject = require('../utils/generateScaleFromObject');
 
 // taken from tailwind spacing
-const size = generateSequenceFromColorScale({
+const size = generateScaleFromObject({
 	px: '1px',
 	0: '0',
 	0.5: '0.125rem',
@@ -69,15 +67,15 @@ const color = {
 		square: f('#28c101')
 	},
 	feedback: {
-		success: generateColorVariants(material.colors.green[600]),
-		error: generateColorVariants(material.colors.red[600]),
-		warning: generateColorVariants(material.colors.amber[600]),
-		info: generateColorVariants(material.colors.blue[600])
+		success: generateColorVariants(colors.green[600]),
+		error: generateColorVariants(colors.red[600]),
+		warning: generateColorVariants(colors.amber[600]),
+		info: generateColorVariants(colors.blue[600])
 	},
-	gray: grayScale,
+	gray: generateScaleFromObject(colors.stone),
 	text: {
-		primary: f(material.colors.blueGrey[900]),
-		secondary: f(material.colors.blueGrey[400]),
+		primary: f(colors.stone[900]),
+		secondary: f(colors.stone[400]),
 		contrast: f('{color.white}')
 	}
 };
@@ -104,18 +102,35 @@ const type = {
 			family: f('Inter Tight, Arial, Helvetica, sans-serif'),
 			weight: f(700),
 			leading: f(1.25),
-			// tracking: f('-2px'),
 			margin: {
 				top: f('3rem'),
 				bottom: f('1.39rem')
 			},
 			size: {
-				1: f('4.209rem'),
-				2: f('3.157rem'),
-				3: f('2.369rem'),
-				4: f('1.777rem'),
-				5: f('1.333rem'),
-				6: f('1rem')
+				small: {
+					1: f('2.488rem'),
+					2: f('2.074rem'),
+					3: f('1.728rem'),
+					4: f('1.44rem'),
+					5: f('1.2rem'),
+					6: f('1rem')
+				},
+				medium: {
+					1: f('3.052rem'),
+					2: f('2.441rem'),
+					3: f('1.953rem'),
+					4: f('1.563rem'),
+					5: f('1.25rem'),
+					6: f('1rem')
+				},
+				large: {
+					1: f('4.209rem'),
+					2: f('3.157rem'),
+					3: f('2.369rem'),
+					4: f('1.777rem'),
+					5: f('1.333rem'),
+					6: f('1rem')
+				}
 			}
 		}
 	},

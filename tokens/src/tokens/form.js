@@ -1,6 +1,5 @@
 // @ts-check
-
-const { colors } = require('@mui/material');
+const colors = require('tailwindcss/colors');
 const generateSizeValues = require('../utils/generateSizeValues');
 const f = require('../utils/formatToken');
 const { colord } = require('colord');
@@ -31,7 +30,7 @@ const input = {
 	border: {
 		style: f('solid'),
 		width: f('0.0625rem'),
-		color: f(colord(colors.blueGrey[900]).alpha(0.25).toHex()),
+		color: f(colord(colors.stone[900]).alpha(0.25).toHex()),
 		composite: f(
 			'{input.border.style} {input.border.width} {input.border.color}'
 		)

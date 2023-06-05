@@ -1,7 +1,7 @@
 import React from 'react';
 import { type Preview } from '@storybook/react';
 import { ThemeProvider } from '../src/providers/ThemeProvider';
-import { colors } from '@mui/material';
+import colors from 'tailwindcss/colors';
 
 export default {
 	parameters: {
@@ -10,11 +10,11 @@ export default {
 			values: [
 				{
 					name: 'slate',
-					value: colors.blueGrey[100]
+					value: colors.stone[100]
 				},
 				{
 					name: 'dark',
-					value: colors.blueGrey[900]
+					value: colors.stone[900]
 				}
 			]
 		}
