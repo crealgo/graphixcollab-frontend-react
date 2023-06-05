@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import { css, styled } from '@mui/material';
 import MuiButtonBase from '@mui/material/ButtonBase';
 import {
 	type ComponentPropsWithoutRef,
@@ -23,11 +23,13 @@ const StyledButton = styled(
 	MuiButtonBase,
 	_e('endIcon', 'startIcon', 'size')
 )<ButtonBaseProps>(
-	({ size = 'medium' }) => /* scss */ `
+	({ size = 'medium' }) => css`
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
 		gap: var(--button-spacing-gap-${size});
+
+		font-family: inherit;
 
 		letter-spacing: -0.0156rem;
 		white-space: nowrap;

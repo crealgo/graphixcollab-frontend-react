@@ -9,6 +9,7 @@ import { Carousel, CarouselSlide } from '../base/Carousel';
 import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { Testimonial } from '../base/Testimonial';
+import { Mark } from '../base/Mark';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];
@@ -118,7 +119,7 @@ export const YelpBlock: FC<YelpBlockProps> = () => {
 				<Content>
 					<Heading level={2}>
 						{"We've helped "}
-						<mark>148</mark>
+						<Mark color="magenta">148</Mark>
 						{' happy customers!'}
 					</Heading>
 					<StyledCarousel>
