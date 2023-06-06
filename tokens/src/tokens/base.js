@@ -8,7 +8,7 @@ module.exports = {
 	section: {
 		mobile: {
 			paddingBlock: f('4rem'),
-			paddingInline: f('1.5rem')
+			paddingInline: f('1rem')
 		},
 		tablet: {
 			paddingBlock: f('{section.mobile.paddingBlock}'),

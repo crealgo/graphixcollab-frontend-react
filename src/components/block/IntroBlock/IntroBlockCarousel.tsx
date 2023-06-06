@@ -38,15 +38,15 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 	padding: 0 2rem;
 
 	&:nth-of-type(1n) .Block-root {
-		background-color: var(--color-brand-primary-light);
+		background-color: var(--color-brand-primary-lighter);
 	}
 
 	&:nth-of-type(2n) .Block-root {
-		background-color: var(--color-brand-secondary-light);
+		background-color: var(--color-brand-secondary-lighter);
 	}
 
 	&:nth-of-type(3n) .Block-root {
-		background-color: var(--color-brand-tertiary-light);
+		background-color: var(--color-brand-tertiary-lighter);
 	}
 `;
 

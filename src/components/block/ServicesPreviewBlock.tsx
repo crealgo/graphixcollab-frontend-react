@@ -109,6 +109,7 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 								title={service.name}
 								description={service.summary}
 								image={service.image}
+								imageColor={service.color}
 							/>
 						))}
 					</div>

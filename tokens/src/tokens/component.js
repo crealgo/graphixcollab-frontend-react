@@ -18,10 +18,10 @@ module.exports = {
 	},
 	testimonial: {
 		container: {
-			gap: f('{size.4}'),
-			padding: f('{size.6}'),
+			gap: f('{spacing.4}'),
+			padding: f('{spacing.6}'),
 			borderRadius: f('{shape.rounding.medium}'),
-			border: f('{size.px} solid {color.gray.300}'),
+			border: f('{spacing.px} solid {color.gray.300}'),
 			backgroundColor: f('{color.white}'),
 			maxWidth: f('34rem'),
 			shadow: f('{elevation.3}')

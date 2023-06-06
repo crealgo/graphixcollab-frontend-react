@@ -18,7 +18,7 @@ export type BannerProps = PropsWithChildren<{
 const StyledBlock = styled(Block)`
 	display: block;
 	position: relative;
-	background-color: var(--color-brand-primary-light);
+	background-color: var(--color-brand-primary-lighter);
 	padding-block: 0.5rem !important;
 	color: white;
 

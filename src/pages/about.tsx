@@ -17,13 +17,13 @@ import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
 const exampleUrl = 'https://google.com';
 
 const ContentWrapper = styled('div')`
-	background: var(--color-brand-primary-light);
+	background: var(--color-brand-primary-lighter);
 	margin-top: -5rem;
 	padding-block: 10rem 5rem;
 
 	.Heading-root,
 	.MuiTypography-root {
-		color: var(--color-brand-primary-dark);
+		color: var(--color-brand-primary-darker);
 	}
 
 	${({ theme }) => theme.breakpoints.up('md')} {

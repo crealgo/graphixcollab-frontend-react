@@ -22,7 +22,7 @@ export type PageHeaderBlockProps = {
 
 const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
 	({ theme, color = 'tertiary' }) => css`
-		background-color: var(--color-brand-${color}-light);
+		background-color: var(--color-brand-${color}-lighter);
 		padding-top: 10rem !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -57,7 +57,7 @@ const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
 
 		.Heading-root,
 		.Text-root {
-			color: var(--color-brand-tertiary-dark);
+			color: var(--color-brand-tertiary-darker);
 		}
 	`
 );
@@ -96,7 +96,7 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 			<Content>
 				<TextContent className="PageHeader-textContent">
 					<Breadcrumbs items={breadcrumbs} />
-					<Heading gutterBottom level={1}>
+					<Heading hasMargin level={1}>
 						{title}
 					</Heading>
 					<Text>{description}</Text>

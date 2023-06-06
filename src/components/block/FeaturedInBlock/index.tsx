@@ -87,9 +87,11 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					marginX="auto"
 					maxWidth="50rem"
 				>
-					<Heading level={4}>
-						We work with <Mark>creatives</Mark> like you.
-					</Heading>
+					{props.title ? (
+						<Heading level={4}>
+							We work with <Mark>creatives</Mark> like you.
+						</Heading>
+					) : null}
 					{props.description ? (
 						<Typography variant="body2">
 							{props.description}

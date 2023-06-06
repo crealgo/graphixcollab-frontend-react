@@ -36,9 +36,9 @@ const StyledDiv = styled(
 	}) => {
 		const blockColor = {
 			default: 'transparent',
-			primary: 'var(--color-brand-primary-light)',
-			secondary: 'var(--color-brand-secondary-light)',
-			tertiary: 'var(--color-brand-tertiary-light)',
+			primary: 'var(--color-brand-primary-lighter)',
+			secondary: 'var(--color-brand-secondary-lighter)',
+			tertiary: 'var(--color-brand-tertiary-lighter)',
 			grey: 'var(--color-gray-50)'
 		}[color ?? 'default'];
 

@@ -24,28 +24,16 @@ const BaseElement: FC<BaseElementProps> = ({
 export const Container = styled(
 	BaseElement,
 	_e('ref', 'size')
-)<ContainerProps>(({ theme, size }) => {
+)<ContainerProps>(({ theme, size = 'medium' }) => {
 	const containerSize = {
-		small: theme.breakpoints.values.md,
-		medium: theme.breakpoints.values.lg,
-		large: theme.breakpoints.values.xl
+		small: `${theme.breakpoints.values.md}`,
+		medium: `${theme.breakpoints.values.lg}`,
+		large: `${theme.breakpoints.values.xl}`
 	}[size ?? 'medium'];
-
-	const containerMaxWidth = size
-		? `max-width: ${containerSize}px;`
-		: `
-			${theme.breakpoints.up('md')} {
-				max-width: ${theme.breakpoints.values.md}px;
-			}
-
-			${theme.breakpoints.up('lg')} {
-				max-width: ${theme.breakpoints.values.lg}px;
-			}
-		`;
 
 	return css`
 		width: 100%;
 		margin-inline: auto;
-		${containerMaxWidth};
+		max-width: ${containerSize}px;
 	`;
 });

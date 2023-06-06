@@ -41,7 +41,7 @@ const Wrapper = styled('div')`
 	}
 
 	position: relative;
-	background-color: var(--color-brand-primary-light);
+	background-color: var(--color-brand-primary-lighter);
 	margin-top: calc(-1 * var(--intro-block-padding-block-start));
 	padding-block-start: var(--intro-block-padding-block-start);
 	padding-block-end: var(--intro-block-padding-block-end);

@@ -14,7 +14,7 @@ const StyledMark = styled('mark')<MarkProps>(
 	({ text, brand, color = 'cyan' }) => {
 		const sharedCss = css`
 			background: unset;
-			display: inline;
+			display: inline-flex;
 		`;
 
 		if (brand) {
@@ -33,10 +33,7 @@ const StyledMark = styled('mark')<MarkProps>(
 
 		return css`
 			${sharedCss}
-			background-color: var(--color-brand-${color}-light);
-			text-decoration: underline;
-			text-underline-position: under;
-			text-decoration-color: var(--color-brand-${color}-main);
+			background: var(--color-brand-${color}-lighter);
 		`;
 	}
 );
@@ -45,7 +42,7 @@ export const Mark: FC<MarkProps> = ({ children, ...props }) => {
 	return (
 		<StyledMark {...props}>
 			{children}
-			{props.variant === 'brand' ? <Dots className="Logo-dots" /> : null}
+			{props.brand ? <Dots className="Logo-dots" /> : null}
 		</StyledMark>
 	);
 };

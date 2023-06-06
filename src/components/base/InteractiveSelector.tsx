@@ -1,120 +1,84 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { KeyboardArrowDown } from '@mui/icons-material';
-import {
-	Menu,
-	MenuItem,
-	styled,
-	type OutlinedTextFieldProps
-} from '@mui/material';
-import { useState, type FC, type MouseEventHandler } from 'react';
+import { useState, type FC, type ChangeEventHandler } from 'react';
 import { type OptionValue } from '../../types/general';
 
 export type InteractiveSelectorProps = {
+	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
 	options?: OptionValue[];
-} & Omit<OutlinedTextFieldProps, 'variant' | 'size'>;
+};
 
-const StyledButton = styled('button')`
-	border-radius: unset;
-	border: unset;
-	outline: unset;
-	background: unset;
-	padding: unset;
+const ClickBox = styled.button<InteractiveSelectorProps>(
+	({ color = 'cyan' }) => css`
+		background: unset;
+		border-radius: 0rem;
+		outline: unset;
+		padding: unset;
 
-	cursor: pointer;
-	position: relative;
-	display: inline-flex;
-	align-items: center;
+		position: relative;
+		box-sizing: border-box;
 
-	z-index: 0;
+		display: inline-flex;
+		place-items: center;
 
-	font: inherit;
+		background: var(--color-brand-${color}-lighter);
+		border: none;
+		border-block-end: solid 0.25rem var(--color-brand-${color}-main);
 
-	&::before {
-		content: '';
-		display: block;
-		position: absolute;
-		width: 102%;
-		height: 90%;
-		left: 50%;
-		transform: translateX(-50%);
+		z-index: 0;
 
-		background-color: var(--color-brand-tertiary-light);
-		z-index: -1;
-	}
+		font: inherit;
+		color: inherit;
 
-	.endIcon {
-		font-size: 0.875em;
-		margin-right: -0.5rem;
-	}
-
-	&:hover,
-	&:focus-visible {
-		&::before {
-			background-color: var(--color-brand-tertiary-main);
+		.endIcon {
+			font-size: 0.875em;
+			margin-right: -0.5rem;
 		}
-	}
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--color-brand-${color}-light);
+		}
+	`
+);
+
+const StyledSelect = styled.select`
+	border-radius: 0rem;
+	cursor: pointer;
+
+	position: absolute;
+	opacity: 0;
+	inset: 50% 0 0 0;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 100%;
 `;
 
 export const InteractiveSelector: FC<InteractiveSelectorProps> = ({
-	options,
+	options = [],
 	...props
 }) => {
-	const [value, setValue] = useState<string>(options ? options[0].label : '');
-	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | undefined>(
-		undefined
-	);
-	const open = Boolean(anchorEl);
+	const [index, setIndex] = useState(0);
 
-	const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(undefined);
-	};
-
-	const sharedProps = {
-		open,
-		anchorEl,
-		onClose: handleClose
+	const handleChange: ChangeEventHandler<HTMLSelectElement> = event => {
+		setIndex(event.currentTarget.selectedIndex);
 	};
 
 	return (
-		<>
-			<StyledButton
-				aria-controls={open ? 'basic-menu' : undefined}
-				aria-haspopup="true"
-				aria-expanded={open ? 'true' : undefined}
-				type="button"
-				value={value}
-				onClick={handleClick}
+		<ClickBox {...props}>
+			{options[index].label}
+			<KeyboardArrowDown className="endIcon" />
+			<StyledSelect
+				className="InteractiveSelector-select"
+				onChange={handleChange}
 			>
-				{value}
-				<KeyboardArrowDown className="endIcon" />
-			</StyledButton>
-			<Menu
-				{...sharedProps}
-				MenuListProps={{
-					'aria-labelledby': 'basic-button',
-					'sx': {
-						minWidth: '10rem'
-					}
-				}}
-			>
-				<MenuItem disabled>Choose one:</MenuItem>
 				{options?.map((option, optionIndex) => (
-					<MenuItem
-						key={optionIndex}
-						value={option.value}
-						selected={option.value === value}
-						onClick={() => {
-							handleClose();
-							setValue(option.label);
-						}}
-					>
+					<option key={optionIndex} value={option.value}>
 						{option.label}
-					</MenuItem>
+					</option>
 				))}
-			</Menu>
-		</>
+			</StyledSelect>
+		</ClickBox>
 	);
 };
