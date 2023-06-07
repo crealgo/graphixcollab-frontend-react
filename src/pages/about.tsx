@@ -1,21 +1,15 @@
-import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
-import { DefaultLayout } from '../layouts/DefaultLayout';
-import { useState } from 'react';
-import Head from 'next/head';
-import { Mark } from '../components/base/Mark';
-import { Heading } from '../components/base/Heading';
-import { Text } from '../components/base/Text';
-import { type Theme, Typography, styled, useMediaQuery } from '@mui/material';
-import featuredCompanies from '../content/featured-companies';
-import { PageTitle } from '../components/utility/PageTitle';
+import { styled, useMediaQuery, type Theme } from '@mui/material';
 import { Block } from '../components/base/Block';
-import { Container } from '../components/base/Container';
 import { BlockHeader } from '../components/base/BlockHeader';
-import reasonsToChooseUs from '../content/why-us.json';
-import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
-import { useRouter } from 'next/router';
-import { HorizontalCard } from '../components/base/HorizontalCard';
 import { Card } from '../components/base/Card';
+import { Container } from '../components/base/Container';
+import { HorizontalCard } from '../components/base/HorizontalCard';
+import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
+import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
+import { PageTitle } from '../components/utility/PageTitle';
+import featuredCompanies from '../content/featured-companies';
+import reasonsToChooseUs from '../content/why-us.json';
+import { DefaultLayout } from '../layouts/DefaultLayout';
 
 const DetailList = styled('dl')`
 	display: grid;
@@ -40,16 +34,6 @@ const DetailList = styled('dl')`
 		max-width: none;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
-`;
-
-const DetailTerm = styled('dt')`
-	color: #111827;
-	font-weight: 600;
-`;
-
-const DetailDefinition = styled('dd')`
-	margin-top: 0.25rem;
-	color: #4b5563;
 `;
 
 export const About = (props: any) => {
