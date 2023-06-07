@@ -7,6 +7,7 @@ type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 export type HeadingProps = BaseComponentsProps<{
 	level?: HeadingLevel;
+	isCentered?: boolean;
 	isContrast?: boolean;
 	hasMargin?: boolean;
 }>;
@@ -16,6 +17,8 @@ const BaseElement = styled.span<HeadingProps>(
 		--type-heading-font-size: var(
 			--type-heading-font-size-small-${props.level}
 		);
+
+		--type-heading-align: ${props.isCentered ? 'center' : 'unset'};
 
 		@media screen and (min-width: 425px) {
 			--type-heading-font-size: var(
@@ -34,6 +37,7 @@ const BaseElement = styled.span<HeadingProps>(
 		font-weight: var(--type-heading-font-weight);
 		line-height: var(--type-heading-font-leading);
 		color: var(--color-text-${props.isContrast ? 'contrast' : 'primary'});
+		text-align: var(--type-heading-align);
 
 		margin: ${props.hasMargin
 			? 'var(--type-heading-font-margin-top) 0 var(--type-heading-font-margin-bottom)'

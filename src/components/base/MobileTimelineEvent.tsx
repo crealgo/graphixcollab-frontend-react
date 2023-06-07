@@ -6,8 +6,10 @@ export type EventBlockProps = {
 	stepNumber?: number;
 	title?: string;
 	description?: string;
-	// imgUrl?: string;
-	// imgAlt?: string;
+	image?: {
+		src: string;
+		alt: string;
+	};
 } & BaseComponentsProps;
 const connectorThickness = '0.25rem';
 const markerSize = '1.75rem';
@@ -51,6 +53,7 @@ const EventConnector = styled('div')`
 const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
 		<figure className="image">
+			<img {...props.image} />
 			<Marker className="marker">{props.stepNumber ?? 1}</Marker>
 		</figure>
 		<div className="content">
@@ -74,6 +77,7 @@ export const MobileTimelineEvent = styled(BaseElement)<EventBlockProps>`
 	align-content: start;
 
 	.image {
+		overflow: hidden;
 		position: relative;
 		padding: unset;
 		margin: unset;
@@ -85,6 +89,12 @@ export const MobileTimelineEvent = styled(BaseElement)<EventBlockProps>`
 
 		min-height: 160px;
 		aspect-ratio: 1.75/1;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.content {

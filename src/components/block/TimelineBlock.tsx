@@ -10,6 +10,7 @@ import { type EventBlockProps, TimelineEvent } from '../base/TimelineEvent';
 import { Timeline } from '../base/Timeline';
 import { useMediaQuery, useTheme } from '@mui/material';
 import styled from '@emotion/styled';
+import { Mark } from '../base/Mark';
 
 export type TimelineBlockProps = {
 	events?: EventBlockProps[];
@@ -43,10 +44,10 @@ export const TimelineBlock: FC<TimelineBlockProps> = ({ events }) => {
 	return (
 		<Block className="EventBlock-root">
 			<Content>
-				<Heading level={2} className="mb-4">
-					See how we work!
+				<Heading isCentered level={2} className="mb-4">
+					See how <Mark color="magenta">Screen Print</Mark>
 				</Heading>
-				<Switcher>
+				{/* <Switcher>
 					<span className="mr-2 font-semibold">Pick a process:</span>
 					<Select
 						defaultValue="T-Shirt Printing"
@@ -62,14 +63,16 @@ export const TimelineBlock: FC<TimelineBlockProps> = ({ events }) => {
 							setCurrentTimeline(index);
 						}}
 					/>
-				</Switcher>
+				</Switcher> */}
 			</Content>
 			<Timeline>
 				{timelines[currentTimeline].steps.map((eventDetails, index) => (
 					<ResolvedEventComponent
 						key={index}
 						stepNumber={index + 1}
-						{...eventDetails}
+						title={eventDetails.title}
+						description={eventDetails.description}
+						image={eventDetails.image}
 					/>
 				))}
 			</Timeline>

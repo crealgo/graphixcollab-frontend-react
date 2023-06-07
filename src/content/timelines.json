@@ -10,8 +10,8 @@
         "title": "Design Creation",
         "description": "The first step in screen printing is to create the design that will be printed. This design is typically created using graphic design software and is saved as a high-resolution file.",
         "image": {
-          "src": "",
-          "alt": ""
+          "src": "assets/process/screen-printing/design-creation-min@512w.webp",
+          "alt": "Design Creation"
         }
       },
       {
@@ -19,8 +19,8 @@
         "title": "Screen Preparation",
         "description": "Once the design is created, a mesh screen is prepared by coating it with a light-sensitive emulsion. The emulsion is then allowed to dry, and the design is printed onto a transparent film.",
         "image": {
-          "src": "",
-          "alt": ""
+          "src": "assets/process/screen-printing/print-machine-min@512w.webp",
+          "alt": "Screen Preparation"
         }
       },
       {
@@ -28,7 +28,7 @@
         "title": "Exposure",
         "description": "The printed film is placed on the prepared screen and exposed to a bright light. The light hardens the emulsion on the screen, except for the areas where the design has been printed. These areas remain soft and can be washed away later.",
         "image": {
-          "src": "",
+          "src": "assets/process/screen-printing/prepared-screen-min@512w.webp",
           "alt": ""
         }
       },
@@ -37,7 +37,7 @@
         "title": "Washing",
         "description": "After exposure, the screen is washed with water, which removes the soft emulsion, leaving the design on the screen.",
         "image": {
-          "src": "",
+          "src": "assets/process/screen-printing/screen-preparation-min@512w.webp",
           "alt": ""
         }
       },
@@ -46,7 +46,7 @@
         "title": "Ink Preparation",
         "description": "The ink is mixed and prepared according to the color and type of substrate being printed on.",
         "image": {
-          "src": "",
+          "src": "assets/process/screen-printing/ink-preparation-min@512w.webp",
           "alt": ""
         }
       },
@@ -55,8 +55,8 @@
         "title": "Drying and Curing",
         "description": "After printing, the substrate is dried and cured to ensure that the ink is fully set and will not smudge or wash away.",
         "image": {
-          "src": "",
-          "alt": ""
+          "src": "assets/process/screen-printing/drying-and-curing-min@512w.webp",
+          "alt": "Drying and Curing"
         }
       }
     ],
@@ -73,7 +73,7 @@
         "title": "Design Creation",
         "description": "Create a digital or physical design that you want to embroider on your chosen item, such as a garment, accessory, or promotional product.",
         "image": {
-          "src": "./images/Embroidery/design-creation.jpg",
+          "src": "",
           "alt": "Embroidery Design Creation"
         }
       },
@@ -82,7 +82,7 @@
         "title": "Digitization",
         "description": "Convert the design into a digital embroidery file format that can be read by an embroidery machine.",
         "image": {
-          "src": "./images/Embroidery/digitization.jpg",
+          "src": "",
           "alt": "Embroidery Digitization"
         }
       },
@@ -91,7 +91,7 @@
         "title": "Material Preparation",
         "description": "Choose the appropriate type and color of fabric or material for your embroidery project, and hoop it securely onto the embroidery machine.",
         "image": {
-          "src": "./images/Embroidery/material-preparation.jpg",
+          "src": "",
           "alt": "Embroidery Material Preparation"
         }
       },
@@ -100,7 +100,7 @@
         "title": "Embroidery",
         "description": "Load the digitized design into the embroidery machine and start the embroidery process. The machine will stitch the design onto the fabric according to the programmed pattern, using various colored threads to create the final embroidered design.",
         "image": {
-          "src": "./images/Embroidery/embroidery.jpg",
+          "src": "",
           "alt": "Embroidery Embroidery"
         }
       },
@@ -109,7 +109,7 @@
         "title": "Finishing",
         "description": "Once the embroidery is complete, trim any excess threads and remove the fabric from the hoop. The embroidered item may then be finished with additional steps, such as steaming, ironing, or adding backing material for stability.",
         "image": {
-          "src": "./images/Embroidery/finishing.jpg",
+          "src": "",
           "alt": "Embroidery Finishing"
         }
       }
@@ -128,7 +128,7 @@
         "title": "Design Creation",
         "description": "Create a digital design using computer software or choose an existing design that you want to print on a garment using DTG printing.",
         "image": {
-          "src": "./images/Direct to Garment (DTG) Printing/design-creation.jpg",
+          "src": "",
           "alt": "Direct to Garment (DTG) Printing Design Creation"
         }
       },
@@ -137,7 +137,7 @@
         "title": "Garment Preparation",
         "description": "Choose a suitable garment made of 100% cotton or a cotton blend, and pre-treat it with a special solution to prepare the fabric for optimal ink absorption.",
         "image": {
-          "src": "./images/Direct to Garment (DTG) Printing/garment-preparation.jpg",
+          "src": "",
           "alt": "Direct to Garment (DTG) Printing Garment Preparation"
         }
       },
@@ -146,7 +146,7 @@
         "title": "Printing",
         "description": "Load the pre-treated garment onto the DTG printer, and using specialized inkjet technology, the printer will directly apply the ink onto the fabric according to the design file. Multiple passes may be required for full color saturation.",
         "image": {
-          "src": "./images/Direct to Garment (DTG) Printing/printing.jpg",
+          "src": "",
           "alt": "Direct to Garment (DTG) Printing Printing"
         }
       },
@@ -155,7 +155,7 @@
         "title": "Curing",
         "description": "After printing, the garment is heat pressed or cured using a heat press machine or a conveyor dryer to cure the ink and ensure it adheres to the fabric.",
         "image": {
-          "src": "./images/Direct to Garment (DTG) Printing/curing.jpg",
+          "src": "",
           "alt": "Direct to Garment (DTG) Printing Curing"
         }
       },
@@ -164,7 +164,7 @@
         "title": "Finishing",
         "description": "Once cured, the DTG printed garment may be finished with additional steps, such as steaming, ironing, or adding any additional embellishments, such as rhinestones or studs.",
         "image": {
-          "src": "./images/Direct to Garment (DTG) Printing/finishing.jpg",
+          "src": "",
           "alt": "Direct to Garment (DTG) Printing Finishing"
         }
       }
@@ -183,7 +183,7 @@
         "title": "Design Creation",
         "description": "Create a digital or physical design that you want to print on your chosen item, such as a t-shirt, poster, or flyer.",
         "image": {
-          "src": "./images/Screen Printing/design-creation.jpg",
+          "src": "",
           "alt": "Screen Printing Design Creation"
         }
       },
@@ -192,7 +192,7 @@
         "title": "Screen Preparation",
         "description": "Create a screen for each color in the design by coating a mesh screen with a light-sensitive emulsion, exposing it to UV light through the design, and washing away the emulsion to create a stencil.",
         "image": {
-          "src": "./images/Screen Printing/screen-preparation.jpg",
+          "src": "",
           "alt": "Screen Printing Screen Preparation"
         }
       },
@@ -201,7 +201,7 @@
         "title": "Ink Preparation",
         "description": "Mix the ink colors according to the design specifications, and load them onto the appropriate screens.",
         "image": {
-          "src": "./images/Screen Printing/ink-preparation.jpg",
+          "src": "",
           "alt": "Screen Printing Ink Preparation"
         }
       },
@@ -210,7 +210,7 @@
         "title": "Printing",
         "description": "Place the item to be printed onto a flat surface, and position the screens over the item. Using a squeegee, force the ink through the stencil onto the item, creating the design. Repeat this process for each color in the design.",
         "image": {
-          "src": "./images/Screen Printing/printing.jpg",
+          "src": "",
           "alt": "Screen Printing Printing"
         }
       },
@@ -219,7 +219,7 @@
         "title": "Curing",
         "description": "Once the ink is applied, the item is dried and cured using a heat press machine, a conveyor dryer, or other curing methods, to ensure the ink bonds permanently to the fabric or surface.",
         "image": {
-          "src": "./images/Screen Printing/curing.jpg",
+          "src": "",
           "alt": "Screen Printing Curing"
         }
       },
@@ -228,7 +228,7 @@
         "title": "Finishing",
         "description": "After curing, the screen printed item may be finished with additional steps, such as steaming, ironing, or adding any additional embellishments.",
         "image": {
-          "src": "./images/Screen Printing/finishing.jpg",
+          "src": "",
           "alt": "Screen Printing Finishing"
         }
       }
@@ -247,7 +247,7 @@
         "title": "Design Creation",
         "description": "Create a digital design using computer software or choose an existing design that you want to cut out of vinyl material.",
         "image": {
-          "src": "./images/Vinyl Cutting/design-creation.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Design Creation"
         }
       },
@@ -256,7 +256,7 @@
         "title": "Material Preparation",
         "description": "Choose the appropriate type and color of vinyl material for your project, and load it onto a vinyl cutting machine.",
         "image": {
-          "src": "./images/Vinyl Cutting/material-preparation.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Material Preparation"
         }
       },
@@ -265,7 +265,7 @@
         "title": "Cutting",
         "description": "Using specialized blades, the vinyl cutting machine will precisely cut the design out of the vinyl material according to the design file. The excess vinyl material is peeled away, leaving only the desired design on the backing sheet.",
         "image": {
-          "src": "./images/Vinyl Cutting/cutting.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Cutting"
         }
       },
@@ -274,7 +274,7 @@
         "title": "Weeding",
         "description": "Once the design is cut, the excess vinyl material needs to be carefully removed from the backing sheet, a process known as weeding. This leaves only the desired design on the backing sheet, ready for application.",
         "image": {
-          "src": "./images/Vinyl Cutting/weeding.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Weeding"
         }
       },
@@ -283,7 +283,7 @@
         "title": "Transfer Tape Application",
         "description": "Transfer tape, also known as application tape, is applied over the top of the weeded design to help transfer it to the final surface.",
         "image": {
-          "src": "./images/Vinyl Cutting/transfer-tape-application.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Transfer Tape Application"
         }
       },
@@ -292,7 +292,7 @@
         "title": "Application",
         "description": "The transfer tape with the design is carefully positioned and applied onto the final surface, such as a garment, a sign, or a promotional product. The design is then pressed down firmly to ensure proper adhesion.",
         "image": {
-          "src": "./images/Vinyl Cutting/application.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Application"
         }
       },
@@ -301,7 +301,7 @@
         "title": "Removal of Transfer Tape",
         "description": "The transfer tape is peeled away, leaving behind the vinyl design on the final surface.",
         "image": {
-          "src": "./images/Vinyl Cutting/removal-of-transfer-tape.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Removal of Transfer Tape"
         }
       },
@@ -310,7 +310,7 @@
         "title": "Finishing",
         "description": "Once the vinyl design is applied, any excess vinyl material or transfer tape is trimmed away, and the final product may be finished with additional steps, such as heat pressing or additional embellishments.",
         "image": {
-          "src": "./images/Vinyl Cutting/finishing.jpg",
+          "src": "",
           "alt": "Vinyl Cutting Finishing"
         }
       }
@@ -329,7 +329,7 @@
         "title": "Design Creation",
         "description": "Create a digital or physical design that you want to print on a t-shirt.",
         "image": {
-          "src": "./images/T-Shirt Printing/design-creation.jpg",
+          "src": "",
           "alt": "T-Shirt Printing Design Creation"
         }
       },
@@ -338,7 +338,7 @@
         "title": "Garment Preparation",
         "description": "Choose a suitable t-shirt made of 100% cotton or a cotton blend, and pre-treat it with a special solution to prepare the fabric for optimal ink absorption, if necessary.",
         "image": {
-          "src": "./images/T-Shirt Printing/garment-preparation.jpg",
+          "src": "",
           "alt": "T-Shirt Printing Garment Preparation"
         }
       },
@@ -347,7 +347,7 @@
         "title": "Printing",
         "description": "Using the chosen printing method, such as screen printing, DTG printing, or vinyl cutting, apply the design onto the t-shirt according to the design file and method-specific steps.",
         "image": {
-          "src": "./images/T-Shirt Printing/printing.jpg",
+          "src": "",
           "alt": "T-Shirt Printing Printing"
         }
       },
@@ -356,7 +356,7 @@
         "title": "Curing",
         "description": "After printing, the t-shirt is heat pressed or cured using a heat press machine or a conveyor dryer to cure the ink or vinyl and ensure it adheres to the fabric.",
         "image": {
-          "src": "./images/T-Shirt Printing/curing.jpg",
+          "src": "",
           "alt": "T-Shirt Printing Curing"
         }
       },
@@ -365,7 +365,7 @@
         "title": "Finishing",
         "description": "Once cured, the printed t-shirt may be finished with additional steps, such as steaming, ironing, or adding any additional embellishments.",
         "image": {
-          "src": "./images/T-Shirt Printing/finishing.jpg",
+          "src": "",
           "alt": "T-Shirt Printing Finishing"
         }
       }
@@ -384,7 +384,7 @@
         "title": "Design Creation",
         "description": "Create a digital or physical design that you want to print on a poster.",
         "image": {
-          "src": "./images/Poster Printing/design-creation.jpg",
+          "src": "",
           "alt": "Poster Printing Design Creation"
         }
       },
@@ -393,7 +393,7 @@
         "title": "File Preparation",
         "description": "Convert the design into a high-resolution digital file with the appropriate color mode, resolution, and dimensions for poster printing.",
         "image": {
-          "src": "./images/Poster Printing/file-preparation.jpg",
+          "src": "",
           "alt": "Poster Printing File Preparation"
         }
       },
@@ -402,7 +402,7 @@
         "title": "Material Selection",
         "description": "Choose the appropriate type and size of paper or material for your poster, considering factors such as durability, finish, and intended use.",
         "image": {
-          "src": "./images/Poster Printing/material-selection.jpg",
+          "src": "",
           "alt": "Poster Printing Material Selection"
         }
       },
@@ -411,7 +411,7 @@
         "title": "Printing",
         "description": "Load the selected paper or material into the printer, and using the appropriate printing method, such as digital printing or offset printing, print the design onto the poster material according to the design file and method-specific steps.",
         "image": {
-          "src": "./images/Poster Printing/printing.jpg",
+          "src": "",
           "alt": "Poster Printing Printing"
         }
       },
@@ -420,7 +420,7 @@
         "title": "Finishing",
         "description": "Once printed, the poster may be finished with additional steps, such as laminating, mounting onto a backing board, or trimming to the desired size.",
         "image": {
-          "src": "./images/Poster Printing/finishing.jpg",
+          "src": "",
           "alt": "Poster Printing Finishing"
         }
       }
@@ -439,7 +439,7 @@
         "title": "Design Creation",
         "description": "Create a digital or physical design that you want to print on your business cards.",
         "image": {
-          "src": "./images/Business Cards/design-creation.jpg",
+          "src": "",
           "alt": "Business Cards Design Creation"
         }
       },
@@ -448,7 +448,7 @@
         "title": "File Preparation",
         "description": "Convert the design into a high-resolution digital file with the appropriate color mode, resolution, and dimensions for business card printing.",
         "image": {
-          "src": "./images/Business Cards/file-preparation.jpg",
+          "src": "",
           "alt": "Business Cards File Preparation"
         }
       },
@@ -457,7 +457,7 @@
         "title": "Material Selection",
         "description": "Choose the appropriate type and size of paper or material for your business cards, considering factors such as durability, finish, and intended use.",
         "image": {
-          "src": "./images/Business Cards/material-selection.jpg",
+          "src": "",
           "alt": "Business Cards Material Selection"
         }
       },
@@ -466,7 +466,7 @@
         "title": "Printing",
         "description": "Load the selected paper or material into the printer, and using the appropriate printing method, such as digital printing or offset printing, print the design onto the business card material according to the design file and method-specific steps.",
         "image": {
-          "src": "./images/Business Cards/printing.jpg",
+          "src": "",
           "alt": "Business Cards Printing"
         }
       },
@@ -475,7 +475,7 @@
         "title": "Finishing",
         "description": "Once printed, the business cards may be finished with additional steps, such as laminating, die-cutting into",
         "image": {
-          "src": "./images/Business Cards/finishing.jpg",
+          "src": "",
           "alt": "Business Cards Finishing"
         }
       }

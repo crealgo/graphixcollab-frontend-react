@@ -6,6 +6,10 @@ export type EventBlockProps = {
 	stepNumber?: number;
 	title?: string;
 	description?: string;
+	image?: {
+		src: string;
+		alt: string;
+	};
 	// imgUrl?: string;
 	// imgAlt?: string;
 } & BaseComponentsProps;
@@ -53,7 +57,9 @@ const EventConnector = styled('div')`
 const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
 		<Marker className="marker">{props.stepNumber ?? 1}</Marker>
-		<div className="image" />
+		<figure className="image">
+			<img {...props.image} />
+		</figure>
 		<div className="content">
 			<div className="title">{props.title}</div>
 			<div className="description">{props.description}</div>
@@ -83,10 +89,22 @@ export const TimelineEvent = styled(BaseElement)<EventBlockProps>`
 	}
 
 	.image {
+		display: inline-flex;
+		overflow: hidden;
+		position: relative;
+		padding: unset;
+		margin: unset;
+
+		width: 100%;
 		background-color: var(--image-background-color);
 		border-radius: 1rem;
+		aspect-ratio: 2/1.2;
 
-		min-height: 160px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	.content {
@@ -164,6 +182,35 @@ export const TimelineEvent = styled(BaseElement)<EventBlockProps>`
 			height: calc(${blockSpacing} + ${markerSize});
 			top: calc(-${connectorThickness} / 2);
 			transform: translateY(0);
+		}
+	}
+
+	/* alternating color */
+	&:nth-of-type(1n) {
+		.marker {
+			background-color: var(--color-brand-cyan-main);
+			color: var(--color-brand-cyan-contrast);
+		}
+	}
+
+	&:nth-of-type(2n) {
+		.marker {
+			background-color: var(--color-brand-magenta-main);
+			color: var(--color-brand-magenta-contrast);
+		}
+	}
+
+	&:nth-of-type(3n) {
+		.marker {
+			background-color: var(--color-brand-yellow-main);
+			color: var(--color-brand-yellow-contrast);
+		}
+	}
+
+	&:nth-of-type(4n) {
+		.marker {
+			background-color: var(--color-brand-key-main);
+			color: var(--color-brand-key-contrast);
 		}
 	}
 `;
