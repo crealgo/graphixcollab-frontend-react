@@ -10,12 +10,10 @@ pages.forEach(path => {
 
 	test(`${pageName} page`, async ({ page }, { project }) => {
 		await page.goto(`${devUrl}${path}`, {
-			waitUntil: 'networkidle'
+			waitUntil: 'domcontentloaded'
 		});
 
 		const projectName = paramCase(project.name);
-
-		console.log({ projectName });
 
 		await page.screenshot({
 			fullPage: true,
