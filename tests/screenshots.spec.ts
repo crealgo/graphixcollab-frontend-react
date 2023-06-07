@@ -3,17 +3,23 @@ import { paramCase } from 'change-case';
 
 const devUrl = 'http://localhost:3000/';
 
-test('home page', async ({ page }, { project }) => {
-	await page.goto(devUrl, {
-		waitUntil: 'domcontentloaded'
-	});
+const pages = ['/', '/about', '/book-appointment', '/services'];
 
-	const projectName = paramCase(project.name);
+pages.forEach(path => {
+	const pageName = path === '/' ? 'home' : path.replace('/', '');
 
-	console.log({ projectName });
+	test(`${pageName} page`, async ({ page }, { project }) => {
+		await page.goto(devUrl, {
+			waitUntil: 'domcontentloaded'
+		});
 
-	await page.screenshot({
-		fullPage: true,
-		path: `screenshots/full-page--${projectName}-home.png`
+		const projectName = paramCase(project.name);
+
+		console.log({ projectName });
+
+		await page.screenshot({
+			fullPage: true,
+			path: `screenshots/full-page--${projectName}-${pageName}.png`
+		});
 	});
 });

@@ -1,6 +1,6 @@
 export default `/**
 * Do not edit directly
-* Generated on Wed, 07 Jun 2023 17:28:41 GMT
+* Generated on Wed, 07 Jun 2023 18:07:31 GMT
 */
 :root {
 --color-white: #ffffff;
