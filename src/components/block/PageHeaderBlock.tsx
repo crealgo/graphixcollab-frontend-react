@@ -52,6 +52,7 @@ const HeaderImage = styled('img')`
 	max-width: 40rem;
 	display: block;
 	margin-bottom: -12rem;
+	padding: 3rem; // TODO: shouldn't be applied to all images
 
 	@media screen and (min-width: 600px) {
 		float: right;

@@ -64,17 +64,27 @@ const resizeImages = async () => {
 		}
 
 		// convert original image to webp, with original size
-		await sharp(file, sharpOptions)
-			.webp(webpOptions)
-			.toFile(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`);
+		if (!fs.existsSync(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`)) {
+			await sharp(file, sharpOptions)
+				.webp(webpOptions)
+				.toFile(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`);
+		}
 
 		// convert original image to webp, with original size
 		refinedSizeArray.forEach(async size => {
-			chalk.red(`Size: ${size}w`);
-			await sharp(file, sharpOptions)
-				.resize(size)
-				.webp(webpOptions)
-				.toFile(`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`);
+			if (
+				!fs.existsSync(
+					`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`
+				)
+			) {
+				chalk.red(`Size: ${size}w`);
+				await sharp(file, sharpOptions)
+					.resize(size)
+					.webp(webpOptions)
+					.toFile(
+						`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`
+					);
+			}
 		});
 	});
 };

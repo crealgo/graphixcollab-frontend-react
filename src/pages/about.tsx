@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Mark } from '../components/base/Mark';
 import { Heading } from '../components/base/Heading';
 import { Text } from '../components/base/Text';
-import { Typography, styled } from '@mui/material';
+import { type Theme, Typography, styled, useMediaQuery } from '@mui/material';
 import featuredCompanies from '../content/featured-companies';
 import { PageTitle } from '../components/utility/PageTitle';
 import { Block } from '../components/base/Block';
@@ -13,99 +13,9 @@ import { Container } from '../components/base/Container';
 import { BlockHeader } from '../components/base/BlockHeader';
 import reasonsToChooseUs from '../content/why-us.json';
 import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
-
-const exampleUrl = 'https://google.com';
-
-const ContentWrapper = styled('div')`
-	background: var(--color-brand-primary-lighter);
-	margin-top: -5rem;
-	padding-block: 10rem 5rem;
-
-	.Heading-root,
-	.MuiTypography-root {
-		color: var(--color-brand-primary-darker);
-	}
-
-	${({ theme }) => theme.breakpoints.up('md')} {
-		padding-block: 5rem 0;
-	}
-`;
-
-const IntroImages = styled('div')`
-	&:nth-of-type(1) {
-		padding-top: 8rem;
-		margin-left: auto;
-		margin-top: 2rem;
-		flex: none;
-		width: 11rem;
-
-		@media (min-width: 640px) {
-			padding-top: 20rem;
-			margin-left: 0;
-		}
-
-		@media (min-width: 1024px) {
-			padding-top: 9rem;
-			order: 9999;
-		}
-		@media (min-width: 1280px) {
-			padding-top: 20rem;
-			order: 0;
-		}
-	}
-
-	&:nth-of-type(2) {
-		margin-right: auto;
-		margin-top: 2rem;
-		flex: none;
-		width: 11rem;
-
-		@media (min-width: 640px) {
-			padding-top: 13rem;
-			margin-right: 0;
-		}
-
-		@media (min-width: 1024px) {
-			padding-top: 9rem;
-		}
-	}
-	&:nth-of-type(3) {
-		padding-top: 8rem;
-		margin-top: 2rem;
-		flex: none;
-		width: 11rem;
-
-		@media (min-width: 640px) {
-			padding-top: 0;
-		}
-	}
-`;
-
-const IntroImageWrapper = styled('div')`
-	position: relative;
-`;
-
-const IntroImage = styled('img')`
-	object-fit: cover;
-	width: 100%;
-	border-radius: 0.75rem;
-	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-		0 4px 6px -2px rgba(0, 0, 0, 0.05);
-`;
-
-const IntroImageSibling = styled('div')`
-	--tw-ring-inset: inset;
-
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	border-radius: 0.75rem;
-	box-shadow: var(--tw-ring-inset) 0 0 0
-		calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-	pointer-events: none;
-`;
+import { useRouter } from 'next/router';
+import { HorizontalCard } from '../components/base/HorizontalCard';
+import { Card } from '../components/base/Card';
 
 const DetailList = styled('dl')`
 	display: grid;
@@ -142,31 +52,32 @@ const DetailDefinition = styled('dd')`
 	color: #4b5563;
 `;
 
-export const Example = () => {
+export const About = (props: any) => {
+	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
+
+	const CardComponent = isDesktop ? Card : HorizontalCard;
+
 	return (
 		<DefaultLayout>
-			<Head>
-				<script src="https://cdn.tailwindcss.com" />
-			</Head>
 			<PageTitle text="About Us" />
-			<PageHeaderBlock color="secondary" title="Our Mission" />
-			<ContentWrapper className="relative isolate -z-10">
+			<PageHeaderBlock
+				color="secondary"
+				title="Our Services"
+				description="Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing."
+				ImageProps={{
+					src: 'assets/juicy-girl-working-at-home-min@ogw.webp',
+					alt: 'About Us Working GIF'
+				}}
+			/>
+			{/* <ContentWrapper className="relative isolate -z-10">
 				<Block>
 					<Container>
 						<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
 							<Heading hasMargin level={1}>
-								<Mark brand>Our Mission</Mark>
+								<Mark brand></Mark>
 							</Heading>
 							<Typography className="mt-6 text-lg leading-8 text-gray-600">
-								Graphix Collab was founded with a vision to
-								provide top-quality printing solutions to
-								businesses of all sizes. Since then, we have
-								grown into a leading printing company, serving
-								clients across various industries and sectors.
-								We have invested in the latest printing
-								technology, expanded our range of services, and
-								built a team of experienced professionals who
-								share our passion for printing.
+
 							</Typography>
 						</div>
 						<div className="hidden lg:flex justify-end gap-8 sm:justify-start sm:pl-20 lg:pl-0 lg:-my-12">
@@ -214,7 +125,7 @@ export const Example = () => {
 						</div>
 					</Container>
 				</Block>
-			</ContentWrapper>
+			</ContentWrapper> */}
 			<Block>
 				<Container>
 					<BlockHeader
@@ -226,21 +137,33 @@ export const Example = () => {
 						brand."
 					/>
 					<DetailList>
-						{reasonsToChooseUs.map(value => (
-							<div key={value.name}>
-								<img src={value.image} alt={value.name} />
-								<DetailTerm>{value.name}</DetailTerm>
-								<DetailDefinition>
-									{value.description}
-								</DetailDefinition>
-							</div>
+						{reasonsToChooseUs.map((value, valueIndex) => (
+							<CardComponent
+								key={valueIndex}
+								className="service"
+								title={value.name}
+								description={value.description}
+								image={{
+									src: value.image,
+									alt: value.name
+								}}
+								imageColor="#CCDCFA"
+							/>
 						))}
 					</DetailList>
 				</Container>
 			</Block>
-			<FeaturedInBlock className="my-16" companies={featuredCompanies} />
+			<FeaturedInBlock companies={featuredCompanies} />
 		</DefaultLayout>
 	);
 };
 
-export default Example;
+export const getStaticProps = () => ({
+	props: {
+		pageTitle: 'About Us',
+		pageDescription:
+			'Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing.'
+	}
+});
+
+export default About;

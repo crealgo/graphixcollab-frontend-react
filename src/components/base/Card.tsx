@@ -1,4 +1,3 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Typography, useMediaQuery } from '@mui/material';
 import { css, styled, useTheme } from '@mui/material/styles';
 import clsx from 'clsx';
@@ -6,8 +5,6 @@ import { type ComponentPropsWithRef, type FC } from 'react';
 import { useAppState } from '../../hooks/useAppState';
 import { type ServiceOptions } from '../../types/general';
 import { chance } from '../../utils/chance';
-import { ActionStack } from './ActionStack';
-import { Button } from './Button';
 
 type CardProps = {
 	image?: {
@@ -79,7 +76,7 @@ export const Card: FC<CardProps> = ({
 				<Typography variant="caption">{subtitle}</Typography>
 				<Typography variant="h5">{title}</Typography>
 				<Typography variant="caption">{description}</Typography>
-				<ActionStack align={isMobile ? 'start' : 'center'}>
+				{/* <ActionStack align={isMobile ? 'start' : 'center'}>
 					<Button
 						color={isMobile ? 'secondary' : 'text'}
 						size="small"
@@ -90,7 +87,7 @@ export const Card: FC<CardProps> = ({
 					>
 						Book Appointment
 					</Button>
-				</ActionStack>
+				</ActionStack> */}
 			</div>
 		</CardAnchor>
 	);
