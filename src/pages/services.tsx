@@ -17,6 +17,8 @@ import services from '../content/services.json';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { generateFaqBlock, generateFooter } from '../utils/chance';
 import { PageTitle } from '../components/utility/PageTitle';
+import styled from '@emotion/styled';
+import { Container } from '../components/base/Container';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
@@ -25,6 +27,36 @@ type PageProps = {
 	CalloutBlockProps: CalloutBlockProps;
 	FaqBlockProps: FaqBlockProps;
 };
+
+const StyledImage = styled.img`
+	display: inline-flex;
+	width: 100%;
+	max-width: 512px;
+`;
+
+const StyledContainer = styled(Container)`
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	background: transparent;
+	z-index: -1;
+
+	display: none;
+	place-content: end;
+
+	top: 98rem;
+
+	@media screen and (min-width: 1200px) {
+		display: flex;
+	}
+`;
+
+const StyledContainer2 = styled(StyledContainer)`
+	top: 55rem;
+`;
 
 const ServicesPage: NextPage<PageProps> = ({
 	PageHeaderBlockProps,
@@ -44,6 +76,18 @@ const ServicesPage: NextPage<PageProps> = ({
 		<TimelineBlock />
 		<InteractiveEstimator />
 		<FaqBlock {...FaqBlockProps} />
+		<StyledContainer>
+			<StyledImage
+				src="assets/juicy-girl-is-working-on-laptop-at-a-remote-job-min@512w.webp"
+				alt="Services 1"
+			/>
+		</StyledContainer>
+		<StyledContainer2>
+			<StyledImage
+				src="assets/juicy-web-designer-girl-making-landing-page-with-video-color-palette-and-site-blocks-min@512w.webp"
+				alt="Services 2"
+			/>
+		</StyledContainer2>
 	</DefaultLayout>
 );
 
