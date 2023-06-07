@@ -38,6 +38,7 @@
     "lint:ts": "tsc --noEmit",
     "lint:es": "eslint --fix --ext .ts,.tsx src/",
     "test:lighthouse": "lighthouse https://graphixcollab.test --output-path=lighthouse.html && mv lighthouse.html ~/Developer/Sites/graphixcollab/lighthouse.html",
+    "test:playwright": "playwright test",
     "docs:dev": "storybook dev -p 6006 -s public",
     "docs:build": "storybook build -s public",
     "docs:serve": "npx http-server storybook-static -p 6006",

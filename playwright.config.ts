@@ -32,33 +32,32 @@ export default defineConfig({
 
 	/* Configure projects for major browsers */
 	projects: [
-		{
-			name: 'desktop-chrome',
-			use: { ...devices['Desktop Edge'] }
-		},
+		// {
+		// 	name: 'desktop-edge',
+		// 	use: { ...devices['Desktop Edge'] }
+		// },
 		{
 			name: 'desktop-chrome',
 			use: { ...devices['Desktop Chrome'] }
 		},
-		{
-			name: 'desktop-firefox',
-			use: { ...devices['Desktop Firefox'] }
-		},
-
-		{
-			name: 'desktop-safari',
-			use: { ...devices['Desktop Safari'] }
-		},
+		// {
+		// 	name: 'desktop-firefox',
+		// 	use: { ...devices['Desktop Firefox'] }
+		// },
+		// {
+		// 	name: 'desktop-safari',
+		// 	use: { ...devices['Desktop Safari'] }
+		// },
 
 		/* Test against mobile viewports. */
 		{
 			name: 'android',
 			use: { ...devices['Pixel 5'] }
-		},
-		{
-			name: 'ios',
-			use: { ...devices['iPhone 12'] }
 		}
+		// {
+		// 	name: 'ios',
+		// 	use: { ...devices['iPhone 12'] }
+		// }
 	],
 
 	/* Run your local dev server before starting the tests */

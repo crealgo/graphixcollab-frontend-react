@@ -1,6 +1,6 @@
 module.exports = `/**
 * Do not edit directly
-* Generated on Wed, 07 Jun 2023 18:07:31 GMT
+* Generated on Wed, 07 Jun 2023 18:23:21 GMT
 */
 :root {
 --color-white: #ffffff;
