@@ -24,11 +24,11 @@ const color = {
 		text: '{color.white}',
 
 		// other brands
-		yelp: f('#af0606'),
-		facebook: f('#1877f2'),
-		twitter: f('#1da1f2'),
-		instagram: f('#c13584'),
-		square: f('#28c101')
+		yelp: generateColorVariants('#af0606'),
+		facebook: generateColorVariants('#1877f2'),
+		twitter: generateColorVariants('#1da1f2'),
+		instagram: generateColorVariants('#c13584'),
+		square: generateColorVariants('#28c101')
 	},
 	feedback: {
 		success: generateColorVariants(tailwind.colors.green[600]),

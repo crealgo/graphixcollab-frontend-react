@@ -2,12 +2,13 @@ import { css, styled } from '@mui/material/styles';
 import { type FC, type ReactNode } from 'react';
 import { type NavItemOptions } from '../../types/general';
 import { Block, type BlockProps } from '../base/Block';
-import { Breadcrumbs, type BreadcrumbOptions } from '../base/Breadcrumbs';
+import { type BreadcrumbOptions } from '../base/Breadcrumbs';
 import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { type ImageProps } from '../base/Image';
 import { Text } from '../base/Text';
 import { type ColorVariants } from '../../types/color';
+import { Mark } from '../base/Mark';
 
 export type PageHeaderBlockProps = {
 	title?: ReactNode;
@@ -21,38 +22,20 @@ export type PageHeaderBlockProps = {
 };
 
 const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
-	({ theme, color = 'tertiary' }) => css`
+	({ color = 'tertiary' }) => css`
+		--wrapper-padding-bottom: 6rem;
+
+		@media screen and (min-width: 1123px) {
+			--wrapper-padding-bottom: 5rem;
+		}
+
 		background-color: var(--color-brand-${color}-lighter);
-		padding-top: 10rem !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
 		margin-top: calc(5rem - 10rem);
 
-		.image {
-			img {
-				width: 100%;
-				object-position: center center;
-				height: 100%;
-				object-fit: contain;
-			}
+		padding-bottom: var(--wrapper-padding-bottom);
 
+		.PageHeaderBlock-container {
 			position: relative;
-			height: auto;
-			width: 100%;
-			right: 0;
-			margin-top: 2rem;
-			margin-bottom: -8rem;
-
-			${theme.breakpoints.up('lg')} {
-				margin-top: 0;
-				margin-bottom: 0;
-
-				position: absolute;
-				height: 40rem;
-				width: 40rem;
-				left: 55%;
-				top: 20%;
-			}
 		}
 
 		.Heading-root,
@@ -62,51 +45,58 @@ const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
 	`
 );
 
-const Content = styled('div')(
-	({ theme }) => css`
-		display: grid;
-		grid-template-columns: minmax(auto, 40rem);
-		gap: 2rem;
+const HeaderImage = styled('img')`
+	/* background-color: rgba(0, 0, 0, 0.1); */
 
-		.TopNav-root {
-			display: none;
+	width: 100%;
+	max-width: 40rem;
+	display: block;
+	margin-bottom: -12rem;
 
-			${theme.breakpoints.up('md')} {
-				display: flex;
-			}
-		}
-	`
-);
+	@media screen and (min-width: 600px) {
+		float: right;
+	}
 
-const TextContent = styled('div')`
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 0.25rem;
+	@media screen and (min-width: 768px) {
+		margin-top: -2.5rem;
+	}
+
+	@media screen and (min-width: 1027px) {
+		margin-top: -5rem;
+		margin-right: -2.5rem;
+	}
+
+	@media screen and (min-width: 1123px) {
+		position: absolute;
+		inset: 100% 0 auto auto;
+		margin-top: -15rem;
+		max-width: 35rem;
+	}
+
+	@media screen and (min-width: 1200px) {
+		max-width: 40rem;
+	}
+`;
+
+const Content = styled('hgroup')`
+	max-width: 40rem;
 `;
 
 export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title,
-	breadcrumbs,
 	description,
 	color,
 	ImageProps
 }) => (
 	<Wrapper color={color}>
-		<Container>
+		<Container className="PageHeaderBlock-container">
 			<Content>
-				<TextContent className="PageHeader-textContent">
-					<Breadcrumbs items={breadcrumbs} />
-					<Heading hasMargin level={1}>
-						{title}
-					</Heading>
-					<Text>{description}</Text>
-				</TextContent>
+				<Heading hasMargin level={1}>
+					<Mark brand>{title}</Mark>
+				</Heading>
+				<Text>{description}</Text>
 			</Content>
-			{ImageProps && (
-				<div className="image">
-					<img {...ImageProps} />
-				</div>
-			)}
+			{ImageProps && <HeaderImage {...ImageProps} />}
 		</Container>
 	</Wrapper>
 );

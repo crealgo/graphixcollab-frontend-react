@@ -2,11 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { type BaseComponentsProps } from '../../types/base';
-import { Dots } from './Dots';
+import { type Colors } from '../../types/color';
+import { BrandDots } from '../atoms/BrandDots';
 
 type MarkProps = BaseComponentsProps<{
 	text?: boolean;
-	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
+	color?: Colors;
 	brand?: boolean;
 }>;
 
@@ -42,7 +43,7 @@ export const Mark: FC<MarkProps> = ({ children, ...props }) => {
 	return (
 		<StyledMark {...props}>
 			{children}
-			{props.brand ? <Dots className="Logo-dots" /> : null}
+			{props.brand ? <BrandDots /> : null}
 		</StyledMark>
 	);
 };

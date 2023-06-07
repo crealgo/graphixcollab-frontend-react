@@ -1,5 +1,4 @@
-import { Warning } from '@mui/icons-material';
-import { type Theme, Typography, useMediaQuery } from '@mui/material';
+import { useMediaQuery, type Theme } from '@mui/material';
 import { css, styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import { type FC } from 'react';
@@ -9,7 +8,7 @@ import { Block } from '../base/Block';
 import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { Image, type ImageProps } from '../base/Image';
-import { StatusMessage } from '../base/StatusMessage';
+import { Text } from '../base/Text';
 import {
 	SocialMediaBlock,
 	type SocialMediaBlockProps
@@ -83,7 +82,7 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 				<div className="content">
 					<Heading level={2}>{title}</Heading>
 					<Container size="small">
-						<Typography variant="body2">{description}</Typography>
+						<Text size="large">{description}</Text>
 					</Container>
 					<SocialMediaBlock {...SocialMediaBlockProps} />
 				</div>
