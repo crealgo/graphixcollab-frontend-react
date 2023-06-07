@@ -19,14 +19,5 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
-    "docs",
-    "docs-test",
-    "src",
-    "scripts/createTags.js",
-    "vite.config.ts"
-  ],
   "exclude": ["node_modules"]
 }
