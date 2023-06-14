@@ -5,12 +5,12 @@ import { type BaseComponentProps } from '../../types/base';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type HeadingProps = BaseComponentProps<{
+export type HeadingProps = BaseComponentProps & {
 	level?: HeadingLevel;
 	isCentered?: boolean;
 	isContrast?: boolean;
 	hasMargin?: boolean;
-}>;
+};
 
 const BaseElement = styled.span<HeadingProps>(
 	props => css`

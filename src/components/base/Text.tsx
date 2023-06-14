@@ -5,13 +5,13 @@ import { type BaseComponentProps } from '../../types/base';
 import { type Size } from '../../types/general';
 import { _e } from '../../utils/excludePropsFromForwarding';
 
-type TextProps = BaseComponentProps<{
+type TextProps = BaseComponentProps & {
 	className?: string;
 	size?: Size;
 	spacing?: Size;
 	variant?: 'body' | 'caption';
 	color?: 'primary' | 'secondary' | 'contrast';
-}>;
+};
 
 const BaseElement = styled(
 	'p',

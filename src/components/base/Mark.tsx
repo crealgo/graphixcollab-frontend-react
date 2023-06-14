@@ -5,11 +5,11 @@ import { type BaseComponentProps } from '../../types/base';
 import { type Colors } from '../../types/color';
 import { BrandDots } from '../atoms/BrandDots';
 
-type MarkProps = BaseComponentProps<{
-	text?: boolean;
+type MarkProps = BaseComponentProps & {
+	text?: boolean; // eslint-disable-line react/boolean-prop-naming
 	color?: Colors;
-	brand?: boolean;
-}>;
+	brand?: boolean; // eslint-disable-line react/boolean-prop-naming
+};
 
 const StyledMark = styled('mark')<MarkProps>(
 	({ text, brand, color = 'cyan' }) => {
