@@ -1,5 +1,3 @@
-import process from 'process';
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -14,10 +12,7 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, module: false, path: false };
 
     return config;
-  },
-  ...(process.env.NODE_ENV === 'staging' && {
-    basePath: '/graphixcollab'
-  })
+  }
 };
 
 export default nextConfig;
