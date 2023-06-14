@@ -25,7 +25,7 @@ export type IntroBlockProps = {
 	SharedBlockProps;
 
 const images = [
-	{ src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery' },
+	// { src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroider' },
 	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
 	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
 	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }

@@ -7,7 +7,8 @@ export const useNavigationItems = (): NavItemOptions[] => {
 	const routes: Record<string, string> = {
 		'Home': '/',
 		'Services': '/services',
-		'About Us': '/about'
+		'About Us': '/about',
+		'Estimate': '/estimate'
 	};
 
 	return Object.keys(routes).map(title => ({

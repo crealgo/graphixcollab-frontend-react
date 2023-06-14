@@ -24,11 +24,12 @@ export type FormControlProps = {
 	label?: string;
 	helperText?: string;
 	controlSize?: Size;
+	isFullWidth?: boolean;
 	InputProps?: InputProps | SelectProps | AutocompleteProps;
 	LabelProps?: ComponentPropsWithRef<'label'>;
 	HelperTextProps?: ComponentPropsWithRef<'span'>;
 } & BaseComponentProps &
-	BaseInputProps;
+	Pick<BaseInputProps, 'variant' | 'required'>;
 
 export const Wrapper = styled.div`
 	display: inline-grid;
@@ -40,6 +41,17 @@ export const Wrapper = styled.div`
 
 	.input-helper-text {
 		margin-top: 0.125rem;
+	}
+
+	&.full-width {
+		width: 100%;
+	}
+
+	&.required {
+		.input-label::after {
+			content: '*';
+			color: var(--color-feedback-error-main);
+		}
 	}
 `;
 
@@ -87,7 +99,13 @@ export const FormControl: FC<FormControlProps> = ({
 	}, [wrapperRef]);
 
 	return (
-		<Wrapper ref={wrapperRef} className={clsx(props.className, 'root')}>
+		<Wrapper
+			ref={wrapperRef}
+			className={clsx(props.className, 'root', {
+				'required': props.required,
+				'full-width': props.isFullWidth
+			})}
+		>
 			{props.label && (
 				<InputLabel
 					className="input-label"
@@ -106,6 +124,7 @@ export const FormControl: FC<FormControlProps> = ({
 							child.props.className as string,
 							'input'
 						),
+						'required': props.required,
 						'inputSize': props.controlSize ?? 'medium',
 						'aria-describedby': helperTextId,
 						...(child.props as {}),

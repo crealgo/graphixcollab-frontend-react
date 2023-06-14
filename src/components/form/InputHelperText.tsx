@@ -5,5 +5,5 @@ export const InputHelperText = styled.span`
 	font-size: 0.75rem;
 	line-height: 1rem;
 
-	color: var(--input-helper-text-color);
+	color: var(--color-text-secondary);
 `;

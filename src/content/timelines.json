@@ -97,11 +97,11 @@
       },
       {
         "id": "bd13b1e2-8233-5684-a82c-44791dbd8019",
-        "title": "Embroidery",
+        "title": "Embroidery Garment",
         "description": "Load the digitized design into the embroidery machine and start the embroidery process. The machine will stitch the design onto the fabric according to the programmed pattern, using various colored threads to create the final embroidered design.",
         "image": {
           "src": "",
-          "alt": "Embroidery Embroidery"
+          "alt": "Embroider Garment"
         }
       },
       {

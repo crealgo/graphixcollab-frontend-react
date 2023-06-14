@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { ArrowDownwardRounded } from '@mui/icons-material';
-import { useRef, type ComponentPropsWithRef, type FC } from 'react';
+import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { type ComponentPropsWithRef, type FC } from 'react';
 import { type OptionValue } from '../../types/general';
-import { type BaseInputProps, Input } from './Input';
+import { generateBaseInputStyles, type BaseInputProps } from './Input';
 
 export type SelectProps = {
 	options?: OptionValue[];
@@ -12,6 +12,7 @@ export type SelectProps = {
 
 const SelectWrapper = styled('div')<SelectProps>(
 	({ inputSize }) => css`
+		display: inline-block;
 		position: relative;
 
 		& svg {
@@ -22,41 +23,37 @@ const SelectWrapper = styled('div')<SelectProps>(
 			width: var(--input-group-action-size-${inputSize});
 			right: var(--input-spacing-gap-${inputSize});
 			transform: translateY(-50%);
-			/* font-size: var(--input-group-action-size-${inputSize}); */
 			opacity: 0.5;
 		}
 	`
 );
 
-const StyledInput = styled<'select'>(props => {})<SelectProps>(
-	({ inputSize }) => css`
-		padding-inline: var(--select-spacing-padding-inline-${inputSize});
+const StyledInput = styled.select<SelectProps>(
+	props => css`
+		${generateBaseInputStyles(props)};
+
+		padding-inline: var(--select-spacing-padding-inline-${props.inputSize});
 		appearance: none;
 		cursor: pointer;
+
+		width: 100%;
 	`
-).withComponent('select');
+);
 
 export const Select: FC<SelectProps> = ({
 	options,
 	inputSize = 'medium',
+	className,
 	...props
-}) => {
-	const selectRef = useRef<HTMLSelectElement>(null);
-
-	const handleWrapperClick = () => {
-		selectRef.current?.focus();
-	};
-
-	return (
-		<SelectWrapper inputSize={inputSize} onClick={handleWrapperClick}>
-			<StyledInput ref={selectRef} inputSize={inputSize} {...props}>
-				{options?.map(({ label, value }, optionIndex) => (
-					<option key={optionIndex} value={value}>
-						{label}
-					</option>
-				))}
-			</StyledInput>
-			<ArrowDownwardRounded />
-		</SelectWrapper>
-	);
-};
+}) => (
+	<SelectWrapper className={className} inputSize={inputSize}>
+		<StyledInput inputSize={inputSize} {...props}>
+			{options?.map(({ label, value }, optionIndex) => (
+				<option key={optionIndex} value={value}>
+					{label}
+				</option>
+			))}
+		</StyledInput>
+		<ArrowDownIcon />
+	</SelectWrapper>
+);

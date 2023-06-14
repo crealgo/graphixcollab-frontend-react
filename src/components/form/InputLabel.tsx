@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const InputLabel = styled.label`
 	display: inline-flex;
 	color: var(--color-text-primary);

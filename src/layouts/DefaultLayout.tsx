@@ -17,6 +17,7 @@ import ContactUsIcon from '@mui/icons-material/ContactSupport';
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
 	children: ReactNode;
+	showYelp?: boolean;
 	hideHeader?: boolean;
 	hideFooter?: boolean;
 	HeaderProps?: HeaderProps;
@@ -63,7 +64,8 @@ const Main = styled('main')(
 
 export const DefaultLayout: DefaultLayoutProps = ({
 	HeaderProps,
-	children
+	children,
+	...props
 }) => {
 	const { setBannerProps, toggleContact } = useAppState();
 
@@ -101,7 +103,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 			</BackgroundImage>
 			<Main id="main-content">
 				{children}
-				<YelpBlock />
+				{props.showYelp && <YelpBlock />}
 			</Main>
 			<FooterBlock />
 		</>

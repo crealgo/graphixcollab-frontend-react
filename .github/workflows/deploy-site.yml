@@ -60,6 +60,7 @@ jobs:
           user_email: hello.crealgo@gmail.com
           external_repository: crealgo/graphixcollab-static-staging
           publish_dir: out
+          cname: beta.graphixcollab.com
 
       - if: ${{ inputs.deployment_type == 'production' }}
         name: Deploy Storybook to Production
@@ -70,3 +71,4 @@ jobs:
           user_email: hello.crealgo@gmail.com
           external_repository: crealgo/graphixcollab-static-production
           publish_dir: out
+          cname: beta.graphixcollab.com # FIXME: change in the future

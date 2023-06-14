@@ -49,7 +49,7 @@
     "site:build": "next build && next export",
     "site:serve": "npx http-server out -p 6006",
     "site:deploy-dev": "npx gh-pages -d out --repo https://github.com/crealgo/crealgo-static-projects --dest ./graphixcollab",
-    "site:deploy-prod": "npx gh-pages -d out --repo https://github.com/crealgo/graphixcollab-static-staging",
+    "site:deploy-staging": "npx gh-pages -d out --repo https://github.com/crealgo/graphixcollab-static-staging",
     "script:resize-images": "node scripts/resizeImages",
     "script:dev": "npm-watch script:rename",
     "script:clean": "rm -rf lib .next dist storybook-static",

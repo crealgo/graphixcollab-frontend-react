@@ -19,6 +19,8 @@ import { generateFaqBlock, generateFooter } from '../utils/chance';
 import { PageTitle } from '../components/utility/PageTitle';
 import styled from '@emotion/styled';
 import { Container } from '../components/base/Container';
+import { Estimator } from '../components/block/Estimator';
+import { EstimatorBlock } from '../components/block/EstimatorBlock';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
@@ -74,7 +76,7 @@ const ServicesPage: NextPage<PageProps> = ({
 			<ServicesBlock key={index} {...props} />
 		))}
 		<TimelineBlock />
-		<InteractiveEstimator />
+		<EstimatorBlock />
 		<FaqBlock {...FaqBlockProps} />
 		<StyledContainer>
 			<StyledImage

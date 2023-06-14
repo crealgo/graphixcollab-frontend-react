@@ -1,0 +1,243 @@
+import { ArrowForward, CheckCircleOutline, Restore } from '@mui/icons-material';
+import { styled } from '@mui/material';
+import { type FC, type FormEventHandler } from 'react';
+import { type Action } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
+import { Block } from '../base/Block';
+import { Button } from '../base/Button';
+import { Container } from '../base/Container';
+import { Heading } from '../base/Heading';
+import { Mark } from '../base/Mark';
+import { FormControl } from '../form/FormControl';
+import { Input } from '../form/Input';
+import { Select } from '../form/Select';
+import { Estimator } from './Estimator';
+// import styled from '@emotion/styled'
+
+export type EstimatorBlockProps = {
+	actions?: Action[];
+};
+
+const ContentGrid = styled('div')`
+	--content-grid-padding-block-end: 50%;
+	--action-stack-spacing: 1rem;
+
+	@media screen and (min-width: 425px) {
+		--content-grid-padding-block-end: 52%;
+	}
+
+	@media screen and (min-width: 768px) {
+		--content-grid-padding-block-end: 6.5rem;
+	}
+
+	@media screen and (min-width: 911px) {
+		--content-grid-padding-block-end: 5rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		--content-grid-padding-block-end: 3rem;
+	}
+
+	display: grid;
+	/* gap: 2rem; */
+	max-width: 900px;
+	z-index: 1;
+
+	padding-block-end: var(--content-grid-padding-block-end);
+
+	.ActionStack-root {
+		margin-top: var(--action-stack-spacing);
+	}
+`;
+
+const AdornmentImage = styled('img')`
+	--adornment-image-position: absolute;
+	--adornment-image-z-index: 0;
+
+	--adornment-image-width: 100%;
+	--adornment-image-max-width: 100%;
+	--adornment-image-inset: auto -1rem 0 auto;
+
+	@media screen and (min-width: 768px) {
+		--adornment-image-max-width: 36rem;
+		--adornment-image-inset: auto -1rem -2rem auto;
+	}
+
+	padding: 0 0 0 1rem;
+	max-width: var(--adornment-image-max-width);
+	width: var(--adornment-image-width);
+	height: auto;
+
+	position: var(--adornment-image-position);
+	inset: var(--adornment-image-inset);
+
+	z-index: var(--adornment-image-z-index);
+`;
+
+const materials = [
+	{
+		label: 'T-shirt',
+		value: 't-shirt'
+	},
+	{
+		label: 'Hoodie',
+		value: 'hoodie'
+	},
+	{
+		label: 'Sash',
+		value: 'sash'
+	},
+	{
+		label: 'Poster',
+		value: 'poster'
+	},
+	{
+		label: 'Sticker',
+		value: 'sticker'
+	}
+];
+
+const services = [
+	{
+		label: 'Embroider',
+		value: 'embroider'
+	},
+	{
+		label: 'Print',
+		value: 'print'
+	}
+];
+
+const serviceContent = [
+	{
+		label: 'An image',
+		value: 'image'
+	},
+	{
+		label: 'My name',
+		value: 'name'
+	},
+	{
+		label: 'My initials',
+		value: 'initials'
+	},
+	{
+		label: 'A quote',
+		value: 'quote'
+	}
+];
+
+const Instructions = styled('em')`
+	display: block;
+	margin-block-start: var(--spacing-2);
+	padding-block-start: var(--spacing-2);
+	margin-block-end: var(--spacing-10);
+	border-block-start: solid 2px var(--color-brand-magenta-lighter);
+`;
+
+const FieldGrid = styled('div')`
+	display: grid;
+	max-width: 50rem;
+	place-items: start;
+	gap: 1rem;
+	grid-template-columns: 1fr;
+
+	margin-bottom: 3rem;
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+
+		* {
+			grid-column: span 2;
+		}
+
+		*:nth-of-type(1) {
+			grid-column: span 3;
+		}
+
+		*:nth-of-type(2) {
+			grid-column: span 3;
+		}
+	}
+`;
+
+const sharedControlProps = {
+	controlSize: 'large',
+	isFullWidth: true
+} as const;
+
+export const EstimatorBlock: FC<EstimatorBlockProps> = () => {
+	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
+		event.preventDefault();
+
+		const formData = new FormData(event.currentTarget);
+
+		/*
+			EXAMPLE
+			content-type-input: "name"
+			deadline-input: "2023-06-15"
+			email-input: "test@email.com"
+			material-type-input: "sash"
+			name-input: "test name"
+			quantity-input: "10"
+			service-type-input: "embroider"
+		*/
+
+		const mailTo = 'hello.crealgo@gmail.com';
+
+		const contentType =
+			formData.get('content-type-input')?.toString() ?? '';
+		const deadline = formData.get('deadline-input')?.toString() ?? '';
+		const email = formData.get('email-input')?.toString() ?? '';
+		const materialType =
+			formData.get('material-type-input')?.toString() ?? '';
+		const name = formData.get('name-input')?.toString() ?? '';
+		const quantity = formData.get('quantity-input')?.toString() ?? '';
+		const serviceType =
+			formData.get('service-type-input')?.toString() ?? '';
+
+		const subject = encodeURIComponent(
+			`Estimate Request request for a ${materialType}`
+		);
+		const body = encodeURIComponent(`Hi, I'm ${name}!
+I'd like to get an estimate for a ${serviceType}. Here are my details:
+
+Customer Info
+Customer Name: ${name}
+Customer Email: ${email}
+Content Type: ${contentType}
+By Deadline: ${deadline}
+Material Type: ${materialType}
+Quantity: ${quantity}
+Service Type: ${serviceType}
+
+Attach your image or artwork below:
+///// Replace with Image or Artwork 🖼️ /////
+
+Thanks,
+${name}
+
+Generated by the 🤖 Crealgo Bot`);
+
+		location.href = `mailto:${mailTo}?subject=${subject}&body=${body}`;
+	};
+
+	const today = new Date().toISOString().split('T')[0];
+
+	return (
+		<Container>
+			<Block
+				isClipped
+				isRounded
+				color="grey"
+				className="EstimatorBlock-root"
+			>
+				<Estimator />
+				<AdornmentImage
+					src="assets/juicy-business-coach-explains-the-material-min@512w.webp"
+					alt="Explaining the material"
+				/>
+			</Block>
+		</Container>
+	);
+};

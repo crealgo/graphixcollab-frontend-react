@@ -1,23 +1,23 @@
 import { type GetStaticProps, type NextPage } from 'next';
+import { EstimatorBlock } from '../components/block/EstimatorBlock';
 import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
 import { GalleryBlock } from '../components/block/GalleryBlock';
-import { InteractiveEstimator } from '../components/block/InteractiveEstimator';
 import { IntroBlock } from '../components/block/IntroBlock/IntroBlock';
 import { ServicesPreviewBlock } from '../components/block/ServicesPreviewBlock';
+import { PageTitle } from '../components/utility/PageTitle';
+import featuredCompanies from '../content/featured-companies';
 import galleryImages from '../content/galleryImages.json';
 import services from '../content/services.json';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { type PageProps } from '../types/general';
 import { chance, generateActions } from '../utils/chance';
-import featuredCompanies from '../content/featured-companies';
-import { PageTitle } from '../components/utility/PageTitle';
 
 const HomePage: NextPage<PageProps> = props => (
-	<DefaultLayout>
+	<DefaultLayout showYelp>
 		<PageTitle text="Home" />
 		<IntroBlock {...props.IntroBlockProps} />
 		<FeaturedInBlock {...props.FeaturedInBlockProps} />
-		<InteractiveEstimator {...props.InteractiveEstimatorProps} />
+		<EstimatorBlock {...props.InteractiveEstimatorProps} />
 		<ServicesPreviewBlock {...props.ServicesPreviewBlockProps} />
 		<GalleryBlock {...props.GalleryBlockProps} />
 	</DefaultLayout>

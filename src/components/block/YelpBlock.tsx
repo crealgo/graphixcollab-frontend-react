@@ -97,10 +97,8 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 `;
 
 export const YelpBlock: FC<YelpBlockProps> = () => {
-	const ref = useRef<HTMLDivElement>(null);
-
 	return (
-		<Container ref={ref}>
+		<Container>
 			<ContentWrapper isRounded color="grey">
 				<ReviewAvatars>
 					{Array.from({ length: avatarCount }, (_, i) => {
