@@ -1,26 +1,20 @@
 import { type GetStaticProps, type NextPage } from 'next';
+import { Block } from '../components/base/Block';
+import { Container } from '../components/base/Container';
+import { Estimator } from '../components/block/Estimator';
+import { type FooterBlockProps } from '../components/block/FooterBlock';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps
 } from '../components/block/PageHeaderBlock';
+import { PageTitle } from '../components/utility/PageTitle';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { generateFooter, generatePageHeaderBlock } from '../utils/chance';
-import { type FooterBlockProps } from '../components/block/FooterBlock';
-import { AppointBookEmbed } from '../components/embed/AppointBookEmbed';
-import { PageTitle } from '../components/utility/PageTitle';
-import styled from '@emotion/styled';
-import { Estimator } from '../components/block/Estimator';
-import { Block } from '../components/base/Block';
-import { Container } from '../components/base/Container';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
 	FooterProps: FooterBlockProps;
 };
-
-const Spacer = styled.div`
-	margin-block: 6rem;
-`;
 
 const Page: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>

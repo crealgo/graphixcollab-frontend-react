@@ -1,5 +1,5 @@
 import { type StaticImageData } from 'next/image';
-import { type ReactNode, type MouseEventHandler } from 'react';
+import { type MouseEventHandler, type ReactNode } from 'react';
 import { type ActionStackProps } from '../components/base/ActionStack';
 import { type ButtonProps } from '../components/base/Button';
 import { type CalloutBlockProps } from '../components/block/CalloutBlock';

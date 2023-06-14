@@ -1,9 +1,11 @@
+import styled from '@emotion/styled';
 import { type GetStaticProps, type NextPage } from 'next';
+import { Container } from '../components/base/Container';
 import { Mark } from '../components/base/Mark';
 import { type CalloutBlockProps } from '../components/block/CalloutBlock';
+import { EstimatorBlock } from '../components/block/EstimatorBlock';
 import { FaqBlock, type FaqBlockProps } from '../components/block/FaqBlock';
 import { type FooterBlockProps } from '../components/block/FooterBlock';
-import { InteractiveEstimator } from '../components/block/InteractiveEstimator';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps
@@ -13,14 +15,10 @@ import {
 	type ServicesBlockProps
 } from '../components/block/ServicesBlock';
 import { TimelineBlock } from '../components/block/TimelineBlock';
+import { PageTitle } from '../components/utility/PageTitle';
 import services from '../content/services.json';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { generateFaqBlock, generateFooter } from '../utils/chance';
-import { PageTitle } from '../components/utility/PageTitle';
-import styled from '@emotion/styled';
-import { Container } from '../components/base/Container';
-import { Estimator } from '../components/block/Estimator';
-import { EstimatorBlock } from '../components/block/EstimatorBlock';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;

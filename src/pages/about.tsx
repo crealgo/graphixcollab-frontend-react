@@ -36,7 +36,7 @@ const DetailList = styled('dl')`
 	}
 `;
 
-export const About = (props: any) => {
+export const Page = () => {
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 
 	const CardComponent = isDesktop ? Card : HorizontalCard;
@@ -53,63 +53,6 @@ export const About = (props: any) => {
 					alt: 'About Us Working GIF'
 				}}
 			/>
-			{/* <ContentWrapper className="relative isolate -z-10">
-				<Block>
-					<Container>
-						<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-							<Heading hasMargin level={1}>
-								<Mark brand></Mark>
-							</Heading>
-							<Typography className="mt-6 text-lg leading-8 text-gray-600">
-
-							</Typography>
-						</div>
-						<div className="hidden lg:flex justify-end gap-8 sm:justify-start sm:pl-20 lg:pl-0 lg:-my-12">
-							<IntroImages>
-								<IntroImageWrapper>
-									<IntroImage
-										src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-										alt=""
-									/>
-									<IntroImageSibling />
-								</IntroImageWrapper>
-							</IntroImages>
-							<IntroImages>
-								<IntroImageWrapper>
-									<IntroImage
-										src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-										alt=""
-									/>
-									<IntroImageSibling />
-								</IntroImageWrapper>
-								<IntroImageWrapper>
-									<IntroImage
-										src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
-										alt=""
-									/>
-									<IntroImageSibling />
-								</IntroImageWrapper>
-							</IntroImages>
-							<IntroImages>
-								<IntroImageWrapper>
-									<IntroImage
-										src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-										alt=""
-									/>
-									<IntroImageSibling />
-								</IntroImageWrapper>
-								<IntroImageWrapper>
-									<IntroImage
-										src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-										alt=""
-									/>
-									<IntroImageSibling />
-								</IntroImageWrapper>
-							</IntroImages>
-						</div>
-					</Container>
-				</Block>
-			</ContentWrapper> */}
 			<Block>
 				<Container>
 					<BlockHeader
@@ -150,4 +93,4 @@ export const getStaticProps = () => ({
 	}
 });
 
-export default About;
+export default Page;

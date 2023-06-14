@@ -1,12 +1,12 @@
 import { Cancel, CheckCircle, MailTwoTone } from '@mui/icons-material';
 import {
-	css,
 	Dialog,
 	DialogActions,
 	DialogContent,
 	Grid,
-	styled,
-	TextField
+	TextField,
+	css,
+	styled
 } from '@mui/material';
 import { type FC, type MouseEvent } from 'react';
 import { Button } from '../base/Button';
@@ -18,22 +18,20 @@ type ContactServiceProps = {
 	// activeStep?: number;
 };
 
-const StyledDialogContent = styled(DialogContent)(
-	({ theme }) => css`
-		background-color: var(--color-gray-100);
-		border-top: solid 1px var(--color-gray-300);
-		border-bottom: solid 1px var(--color-gray-300);
+const StyledDialogContent = styled(DialogContent)`
+	background-color: var(--color-gray-100);
+	border-top: solid 1px var(--color-gray-300);
+	border-bottom: solid 1px var(--color-gray-300);
 
-		.stepper {
-			padding-block: 1rem;
-		}
+	.stepper {
+		padding-block: 1rem;
+	}
 
-		.step-content {
-			padding-inline: 0.5rem;
-			padding-block: 2rem;
-		}
-	`
-);
+	.step-content {
+		padding-inline: 0.5rem;
+		padding-block: 2rem;
+	}
+`;
 
 const StepContentWrapper = styled('div')`
 	padding-block: 1rem;

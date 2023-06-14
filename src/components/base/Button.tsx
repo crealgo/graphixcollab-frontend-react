@@ -1,10 +1,9 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { type FC } from 'react';
 import { type ColorVariants } from '../../types/color';
-import { _e } from '../../utils/excludePropsFromForwarding';
 import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
 export type ButtonProps = {
 	color?: ColorVariants;

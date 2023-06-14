@@ -38,7 +38,7 @@ export const getButtonHoverColors: ButtonStyledFunc = ({
 		text: alpha(theme.palette.common.white, 0.25)
 	}[color]);
 
-export const getButtonSizes: ButtonStyledFunc = ({ theme, size = 'medium' }) =>
+export const getButtonSizes: ButtonStyledFunc = ({ size = 'medium' }) =>
 	({
 		small: {
 			height: '2.125rem',

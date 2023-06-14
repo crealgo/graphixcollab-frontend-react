@@ -12,7 +12,8 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, module: false, path: false };
 
     return config;
-  }
+  },
+  output: 'export'
 };
 
 export default nextConfig;

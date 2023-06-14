@@ -6,7 +6,7 @@ type ContentBoxProps = {
 	hasBorder?: boolean;
 };
 export const ContentBox = styled('div')<ContentBoxProps>(
-	({ theme, isColored, hasBorder }) => css`
+	({ isColored, hasBorder }) => css`
 		padding: ${contentBoxPadding};
 		display: grid;
 		grid-template-columns: 1fr;

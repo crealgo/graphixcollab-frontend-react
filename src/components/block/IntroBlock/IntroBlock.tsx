@@ -9,6 +9,7 @@ import { Container } from '../../base/Container';
 import { Heading } from '../../base/Heading';
 import { Text } from '../../base/Text';
 import { ArrowRight } from '@mui/icons-material';
+import NextImage from 'next/image';
 
 export type Slide = {
 	title: string;
@@ -19,16 +20,16 @@ export type Slide = {
 
 export type IntroBlockProps = {
 	// color?: 'primary' | 'secondary' | 'grey' | 'none';
-	slides?: Slide[];
+	// slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> &
 	SharedBlockProps;
 
 const images = [
 	// { src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroider' },
-	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
-	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
-	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
+	{ src: 'assets/sash-hs.jpg', alt: 'Sashes' },
+	{ src: 'assets/embroidery-shirts.avif', alt: 'Embroidery' },
+	{ src: 'assets/laughing-group.jpg', alt: 'T-Shirts' }
 ];
 
 const Wrapper = styled('div')`
@@ -137,13 +138,13 @@ const Content = styled('div')(
 	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({ title, description }) => {
+export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 	return (
 		<Wrapper>
 			<StyledCarousel>
 				{images.map(image => (
 					<StyledCarouselSlide key={image.alt}>
-						<img {...image} />
+						<NextImage src={image.src} alt={image.alt} />
 						<Block>
 							<Container>
 								<Heading className="Slide-heading" level={2}>

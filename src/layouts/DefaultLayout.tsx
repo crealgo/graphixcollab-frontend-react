@@ -1,3 +1,5 @@
+import BookATimeIcon from '@mui/icons-material/Book';
+import ContactUsIcon from '@mui/icons-material/ContactSupport';
 import { css, styled } from '@mui/material/styles';
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -11,8 +13,6 @@ import {
 } from '../components/block/FooterBlock';
 import { YelpBlock } from '../components/block/YelpBlock';
 import { useAppState } from '../hooks/useAppState';
-import BookATimeIcon from '@mui/icons-material/Book';
-import ContactUsIcon from '@mui/icons-material/ContactSupport';
 
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
