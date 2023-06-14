@@ -26,7 +26,8 @@ const select = {
 const input = {
 	display: f('inline-flex'),
 	alignItems: f('center'),
-	fontSize: generateSizeValues('0.875rem', '0.875rem', '1rem'),
+	fontSize: generateSizeValues('0.875rem', '1rem', '1.125rem'),
+	textColor: f('{color.text.primary}'),
 	border: {
 		style: f('solid'),
 		width: f('0.0625rem'),
@@ -41,7 +42,7 @@ const input = {
 	},
 	height: generateSizeValues('1.75rem', '2rem', '2.25rem'),
 	bezel: generateSizeValues('0.25rem', '0.25rem', '0.375rem'),
-	shadow: f('none')
+	shadow: f('{elevation.1}')
 };
 
 const inputGroupAction = {

@@ -34,10 +34,10 @@ const ContentWrapper = styled(Block)`
 	display: grid;
 	align-content: center;
 	justify-items: center;
+
 	gap: 4rem;
 
 	padding-block: 3rem !important;
-	background-color: var(--color-brand-yelp-lightest);
 `;
 
 const avatarCount = 16;
@@ -45,18 +45,16 @@ const avatarCount = 16;
 const ReviewAvatars = styled('div')`
 	z-index: -1;
 	position: absolute;
-	inset: 0;
+	opacity: 0.25;
+	top: -35%;
+	left: 50%;
+	transform: translateX(-50%);
+
 	height: 100%;
 	width: 100%;
 
-	opacity: 0.25;
-	/*
 	min-width: 1400px;
-	min-height: 628.73; */
-
-	display: flex;
-	place-items: center;
-	place-content: center;
+	min-height: 628.73;
 `;
 
 const ReviewAvatar = styled('div')`
@@ -74,7 +72,7 @@ const ReviewAvatar = styled('div')`
 		height: 100%;
 	}
 
-	/* ${Array.from({ length: avatarCount }, (_, i) => i).reduce(
+	${Array.from({ length: avatarCount }, (_, i) => i).reduce(
 		(aggregate, i) => css`
 			${aggregate}
 			&:nth-of-type(${i + 1}) {
@@ -87,7 +85,7 @@ const ReviewAvatar = styled('div')`
 			}
 		`,
 		css``
-	)} */
+	)}
 `;
 
 const StyledCarousel = styled(Carousel)`
@@ -121,9 +119,7 @@ export const YelpBlock: FC<YelpBlockProps> = () => {
 				<Content>
 					<Heading level={2}>
 						{"We've helped "}
-						<Mark text color="yelp">
-							148
-						</Mark>
+						<Mark color="magenta">148</Mark>
 						{' happy customers!'}
 					</Heading>
 					<StyledCarousel>

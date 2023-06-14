@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { type FC } from 'react';
-import { type BaseComponentsProps } from '../../types/base';
+import { type BaseComponentProps } from '../../types/base';
 import { type Colors } from '../../types/color';
 import { BrandDots } from '../atoms/BrandDots';
 
-type MarkProps = BaseComponentsProps<{
+type MarkProps = BaseComponentProps<{
 	text?: boolean;
 	color?: Colors;
 	brand?: boolean;

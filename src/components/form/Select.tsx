@@ -2,9 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ArrowDownwardRounded } from '@mui/icons-material';
 import { useRef, type ComponentPropsWithRef, type FC } from 'react';
-import { type BaseInputProps } from '../../types/base';
 import { type OptionValue } from '../../types/general';
-import { getInputStyles } from '../../utils/getInputStyles';
+import { type BaseInputProps, Input } from './Input';
 
 export type SelectProps = {
 	options?: OptionValue[];
@@ -29,15 +28,13 @@ const SelectWrapper = styled('div')<SelectProps>(
 	`
 );
 
-const StyledInput = styled('select')<SelectProps>(
+const StyledInput = styled<'select'>(props => {})<SelectProps>(
 	({ inputSize }) => css`
-		${getInputStyles({ inputSize })}
-
 		padding-inline: var(--select-spacing-padding-inline-${inputSize});
 		appearance: none;
 		cursor: pointer;
 	`
-);
+).withComponent('select');
 
 export const Select: FC<SelectProps> = ({
 	options,

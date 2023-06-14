@@ -165,7 +165,7 @@ export const IntroBlock: FC<IntroBlockProps> = ({ className, slides = [] }) => {
 								<Image
 									src={
 										slides[currentIndex].image ??
-										(IntroImage.src as string)
+										IntroImage.src
 									}
 								/>
 							</div>

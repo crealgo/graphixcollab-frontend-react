@@ -1,4 +1,4 @@
-import { type BaseComponentsProps } from '../../types/base';
+import { type BaseComponentProps } from '../../types/base';
 import { styled } from '@mui/material/styles';
 import { type FC } from 'react';
 
@@ -12,7 +12,7 @@ export type EventBlockProps = {
 	};
 	// imgUrl?: string;
 	// imgAlt?: string;
-} & BaseComponentsProps;
+} & BaseComponentProps;
 const connectorThickness = '0.25rem';
 const markerSize = '3.5rem';
 const blockSpacing = '4rem';

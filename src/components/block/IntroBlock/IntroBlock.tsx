@@ -1,14 +1,14 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import BookATimeIcon from '@mui/icons-material/Book';
-import { styled } from '@mui/material';
+import { css, styled } from '@mui/material';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
 import { type Action, type SharedBlockProps } from '../../../types/general';
 import Logo from '../../atoms/Logo';
 import { ActionStack } from '../../base/ActionStack';
 import { Block } from '../../base/Block';
+import { Carousel, CarouselSlide } from '../../base/Carousel';
 import { Container } from '../../base/Container';
 import { Heading } from '../../base/Heading';
 import { Text } from '../../base/Text';
+import { ArrowRight } from '@mui/icons-material';
 
 export type Slide = {
 	title: string;
@@ -19,71 +19,148 @@ export type Slide = {
 
 export type IntroBlockProps = {
 	// color?: 'primary' | 'secondary' | 'grey' | 'none';
-	// slides?: Slide[];
+	slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> &
 	SharedBlockProps;
 
-// const images = [
-// 	{ src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery' },
-// 	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
-// 	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
-// 	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
-// ];
+const images = [
+	{ src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroidery' },
+	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
+	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
+	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
+];
 
 const Wrapper = styled('div')`
-	--intro-block-padding-block-start: 5rem;
-	--intro-block-padding-block-end: 2.5rem;
-
-	@media screen and (min-width: 768px) {
-		--intro-block-padding-block-start: 5rem;
-		--intro-block-padding-block-end: 5rem;
-	}
-
 	position: relative;
-	background-color: var(--color-brand-primary-lighter);
-	margin-top: calc(-1 * var(--intro-block-padding-block-start));
-	padding-block-start: var(--intro-block-padding-block-start);
-	padding-block-end: var(--intro-block-padding-block-end);
-`;
+	background-color: var(--color-gray-200);
+	margin-top: -5rem;
 
-const Content = styled('div')`
-	--intro-block-place-items: center;
-	--intro-block-text-align: center;
-
-	${({ theme }) => theme.breakpoints.up('lg')} {
-		--intro-block-place-items: start;
-		--intro-block-text-align: left;
-	}
-
-	place-content: center;
-	place-items: --intro-block-place-items;
-	text-align: --intro-block-text-align;
-
-	max-width: 1200px;
-
-	.IntroBlock-header {
-		margin-bottom: 2rem;
-	}
-
-	.IntroBlock-text {
-		max-width: 600px;
-		margin-bottom: 2.5rem;
+	.IntroBlock-root {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 	}
 `;
 
-export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
+const StyledCarousel = styled(Carousel)`
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+`;
+
+const StyledCarouselSlide = styled(CarouselSlide)`
+	height: 100%;
+	position: relative;
+
+	img {
+		width: 100%;
+		opacity: 0.25;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	.Block-root {
+		position: absolute;
+		width: 100%;
+		color: white;
+		z-index: 2;
+
+		padding-block: 3rem !important;
+		bottom: 0;
+
+		.Container-root {
+			line-height: 1;
+
+			.Slide-heading {
+				text-align: center;
+
+				${({ theme }) => theme.breakpoints.up('lg')} {
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	&:nth-of-type(1n) .Slide-heading {
+		color: var(--color-brand-cyan-dark);
+	}
+
+	&:nth-of-type(2n) .Slide-heading {
+		color: var(--color-brand-magenta-dark);
+	}
+
+	&:nth-of-type(3n) .Slide-heading {
+		color: var(--color-brand-yellow-dark);
+	}
+
+	&:nth-of-type(4n) .Slide-heading {
+		color: var(--color-brand-yellow-dark);
+	}
+`;
+
+const Content = styled('div')(
+	({ theme }) => css`
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
+
+		.content {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			align-content: center;
+			justify-items: center;
+			border-radius: 0.5rem;
+			text-align: center;
+
+			.Text-root {
+				max-width: ${theme.breakpoints.values.sm}px;
+			}
+		}
+
+		.image {
+		}
+
+		${theme.breakpoints.up('lg')} {
+			grid-template-columns: 1fr 1fr;
+
+			.content {
+				padding-inline: 0;
+				justify-items: start;
+				text-align: left;
+			}
+		}
+	`
+);
+
+export const IntroBlock: FC<IntroBlockProps> = ({ title, description }) => {
 	return (
 		<Wrapper>
-			<Container>
-				<Block hasNoHorizontalPadding>
-					<Content>
-						<Heading className="IntroBlock-header" level={1}>
+			<StyledCarousel>
+				{images.map(image => (
+					<StyledCarouselSlide key={image.alt}>
+						<img {...image} />
+						<Block>
+							<Container>
+								<Heading className="Slide-heading" level={2}>
+									{image.alt}
+								</Heading>
+							</Container>
+						</Block>
+					</StyledCarouselSlide>
+				))}
+			</StyledCarousel>
+			<Container className="IntroBlock-root">
+				<Content>
+					<Block className="content">
+						<Heading level={1}>
 							Welcome to <Logo />
 						</Heading>
-						<Text className="IntroBlock-text" size="large">
-							{description}
-						</Text>
+						<Text size="large">{description}</Text>
 						<ActionStack
 							size="large"
 							actions={[
@@ -91,18 +168,18 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 									label: 'Get Started',
 									color: 'primary',
 									href: '/services',
-									endIcon: <ArrowForwardIcon />
+									endIcon: <ArrowRight />
 								},
 								{
 									label: 'Book Appointment',
 									color: 'text',
-									href: '/book-appointment',
-									endIcon: <BookATimeIcon />
+									endIcon: <ArrowRight />
 								}
 							]}
 						/>
-					</Content>
-				</Block>
+					</Block>
+					<div className="image" />
+				</Content>
 			</Container>
 		</Wrapper>
 	);

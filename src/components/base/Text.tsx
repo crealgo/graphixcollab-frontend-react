@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { type FC } from 'react';
-import { type BaseComponentsProps } from '../../types/base';
+import { type BaseComponentProps } from '../../types/base';
 import { type Size } from '../../types/general';
 import { _e } from '../../utils/excludePropsFromForwarding';
 
-type TextProps = BaseComponentsProps<{
+type TextProps = BaseComponentProps<{
 	className?: string;
 	size?: Size;
 	spacing?: Size;

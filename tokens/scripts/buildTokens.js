@@ -4,8 +4,9 @@ const StyleDictionary = require('style-dictionary').extend({
 	source: ['tokens/src/tokens/**/*.js'],
 	platforms: {
 		css: {
-			transformGroup: 'css',
+			transFormControl: 'css',
 			buildPath: 'tokens/build/css/',
+			transforms: ['attribute/cti', 'name/cti/kebab'],
 			files: [
 				{
 					destination: 'variables.css',
@@ -16,10 +17,11 @@ const StyleDictionary = require('style-dictionary').extend({
 	}
 });
 
+// DEV
 // const StyleDictionary = require('style-dictionary').extend({
 // 	platforms: {
 // 		css: {
-// 			transformGroup: 'css',
+// 			transFormControl: 'css',
 // 			transforms: ['attribute/cti', 'name/cti/kebab', 'color/variants'],
 // 			buildPath: 'tokens/test/dist/',
 // 			files: [

@@ -9,6 +9,7 @@ import {
 } from '../../utils/getButtonStyles';
 import { type ColorVariants } from '../../types/color';
 import { IconButtonBase, type IconButtonBaseProps } from './IconButtonBase';
+import { type CSSObject } from '@emotion/react';
 
 export type IconButtonProps = {
 	color?: ColorVariants;
@@ -20,14 +21,17 @@ const StyledIconButton = styled(
 )<IconButtonProps>(
 	({ theme, color = 'text', size = 'medium' }) => css`
 		font-weight: bold;
-		background-color: ${getButtonColors({ theme, color })};
+		background-color: ${getButtonColors({ theme, color }) as CSSObject};
 
 		${getButtonSizes({ theme, size })}
 		padding: 0;
 
 		&:hover,
 		&:focus-visible {
-			background-color: ${getButtonHoverColors({ theme, color })};
+			background-color: ${getButtonHoverColors({
+				theme,
+				color
+			}) as CSSObject};
 		}
 	`
 );
