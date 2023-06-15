@@ -41,7 +41,7 @@ const BaseElement: FC<ImageProps> = ({
 	);
 };
 
-export const Image = styled(BaseElement)(({ theme, shape }) => {
+export const Image = styled(BaseElement)(({ shape }) => {
 	const shapeCss = {
 		square: css`
 			aspect-ratio: 1;

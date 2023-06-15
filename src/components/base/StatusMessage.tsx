@@ -11,7 +11,7 @@ type StatusMessageProps = {
 	isActionable?: boolean;
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
-	({ theme, isContained, isActionable }) => css`
+	({ isContained, isActionable }) => css`
 		${isContained &&
 		`
 		padding-inline: 1rem;

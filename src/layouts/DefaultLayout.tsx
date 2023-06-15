@@ -75,7 +75,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 		setBannerProps({
 			text: '⚡️⚡️ Flash Sash Sale!! Come and get yours quick!'
 		});
-	}, []);
+	}, [setBannerProps]);
 
 	return (
 		<>

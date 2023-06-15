@@ -1,12 +1,10 @@
-import clsx from 'clsx';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import clsx from 'clsx';
+import { colord } from 'colord';
 import { type ComponentPropsWithRef, type FC } from 'react';
-import { colorIterator } from '../../utils/colorIterator';
 import { type ActionStackProps } from './ActionStack';
 import { Heading } from './Heading';
 import { Text } from './Text';
-import { colord } from 'colord';
 
 type CardProps = {
 	title?: string;
@@ -86,12 +84,10 @@ const CardContent = styled.div`
 
 export const HorizontalCard: FC<CardProps> = ({
 	title,
-	subtitle,
 	description,
 	className,
 	image,
 	imageColor,
-	actions,
 	...props
 }) => {
 	const backgroundColor = colord(imageColor ?? 'lightgray')

@@ -5,7 +5,7 @@ import {
 	DialogTitle,
 	Paper
 } from '@mui/material';
-import { css, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { type FC, type MouseEvent } from 'react';
 import { Button } from '../base/Button';
 

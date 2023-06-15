@@ -3,7 +3,6 @@ import { type ComponentType } from 'react';
 import { Autocomplete } from './Autocomplete';
 import { FormControl, type FormControlProps } from './FormControl';
 import { Input } from './Input';
-import { createPortal } from 'react-dom';
 import { Select } from './Select';
 
 export default {

@@ -11,7 +11,7 @@ type TopNavProps = {
 const defaultAlignment = 'start';
 
 const TopNavWrapper = styled('nav')<TopNavProps>(
-	({ theme, align = defaultAlignment }) => css`
+	({ align = defaultAlignment }) => css`
 		display: flex;
 		gap: 0.25rem;
 		align-items: center;

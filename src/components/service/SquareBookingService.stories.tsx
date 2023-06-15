@@ -24,6 +24,7 @@ export const Default: StoryObj = {
 				<Button color="primary" onClick={handleClick}>
 					Open Booking Service
 				</Button>
+				{`It is ${open ? 'open' : 'closed'}`}
 				<SquareBookingService onCloseClick={handleClose} />
 			</>
 		);

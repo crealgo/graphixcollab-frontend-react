@@ -1,4 +1,4 @@
-import { css, styled, Typography } from '@mui/material';
+import { styled, Typography } from '@mui/material';
 import { type FC } from 'react';
 
 export type HighlightBlockProps = {
@@ -6,20 +6,18 @@ export type HighlightBlockProps = {
 	quoter?: string;
 };
 
-const HighlightBlockWrapper = styled('div')(
-	({ theme }) => css`
-		background-color: var(--color-brand-secondary-main);
-		display: flex;
-		justify-content: center;
+const HighlightBlockWrapper = styled('div')`
+	background-color: var(--color-brand-secondary-main);
+	display: flex;
+	justify-content: center;
 
-		.HighlightBlock-content {
-			display: grid;
-			gap: 1rem;
-			width: 100%;
-			max-width: 900px;
-		}
-	`
-);
+	.HighlightBlock-content {
+		display: grid;
+		gap: 1rem;
+		width: 100%;
+		max-width: 900px;
+	}
+`;
 
 export const HighlightBlock: FC<HighlightBlockProps> = props => (
 	<HighlightBlockWrapper>

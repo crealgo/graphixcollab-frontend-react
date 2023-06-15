@@ -1,4 +1,4 @@
-import { css, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
 
 const BaseElement: FC<
@@ -14,13 +14,11 @@ const BaseElement: FC<
 	</div>
 );
 
-export const TimeSlotGroup = styled(BaseElement)(
-	({ theme }) => css`
-		border: dashed 1px var(--color-gray-400);
-		background-color: white;
-		padding: 1rem;
+export const TimeSlotGroup = styled(BaseElement)`
+	border: dashed 1px var(--color-gray-400);
+	background-color: white;
+	padding: 1rem;
 
-		display: flex;
-		gap: 0.5rem;
-	`
-);
+	display: flex;
+	gap: 0.5rem;
+`;

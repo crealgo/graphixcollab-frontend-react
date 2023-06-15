@@ -58,7 +58,7 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
 			toggleContact,
 			toggleBooking
 		}),
-		[]
+		[bannerOpen, bannerProps, bookingOpen, contactOpen]
 	);
 
 	useEffect(() => {

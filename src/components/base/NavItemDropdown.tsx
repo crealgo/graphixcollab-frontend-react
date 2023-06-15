@@ -1,4 +1,3 @@
-import { ArrowDownward } from '@mui/icons-material';
 import { Menu, MenuItem, Popover, type PopoverOrigin } from '@mui/material';
 import {
 	useState,

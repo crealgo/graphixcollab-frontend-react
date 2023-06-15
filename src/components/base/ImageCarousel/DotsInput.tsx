@@ -1,12 +1,12 @@
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import { alpha, IconButton, styled, useControlled } from '@mui/material';
-import { useId, type FC, Fragment } from 'react';
+import { IconButton, styled, useControlled } from '@mui/material';
+import { useId, type FC } from 'react';
 
 type DotsInputProps = {
 	currentIndex?: number;
 	onIndexChange?: (index: number) => void;
 	count: number;
-	className?: string;
+	// className?: string;
 };
 
 const dotWidth = '0.5rem';
@@ -14,7 +14,7 @@ const dotWidthExpanded = '1.5rem';
 const controlGap = '0.125rem';
 
 const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(
-	({ theme, count }) => ({
+	({ count }) => ({
 		'display': 'flex',
 		'gap': controlGap,
 		'alignItems': 'center',
@@ -62,8 +62,7 @@ const DotsInputWrapper = styled('div')<Pick<DotsInputProps, 'count'>>(
 export const DotsInput: FC<DotsInputProps> = ({
 	currentIndex,
 	onIndexChange,
-	count = 0,
-	className
+	count = 0
 }) => {
 	const [index, setIndex] = useControlled({
 		default: 0,

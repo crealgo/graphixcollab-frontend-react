@@ -7,7 +7,7 @@ import type serviceJSON from '../../content/services.json';
 import { type SharedBlockProps } from '../../types/general';
 import { colorIterator } from '../../utils/colorIterator';
 import { ActionStack } from '../base/ActionStack';
-import { Block, type BlockProps } from '../base/Block';
+import { Block } from '../base/Block';
 import { Button } from '../base/Button';
 import { Card } from '../base/Card';
 import { Container } from '../base/Container';
@@ -115,9 +115,6 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 					</div>
 					<Container size="small">
 						<ActionStack align="center" color="secondary">
-							{/* <Box mr={-2} zIndex={1}>
-								Looking for something else?
-							</Box> */}
 							<Button
 								color="secondary"
 								href={`${router.basePath}/services`}

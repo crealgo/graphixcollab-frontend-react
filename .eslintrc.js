@@ -42,6 +42,7 @@ module.exports = {
 		'react/no-array-index-key': 'off',
 		'react/require-default-props': 'off',
 		'implicit-arrow-linebreak': ['error', 'beside'],
+		'no-warning-comments': 'off',
 		'no-useless-rename': 'error',
 		'no-useless-return': 'error',
 		...sharedEsRules
@@ -82,6 +83,7 @@ module.exports = {
 				'@typescript-eslint/ban-types': 'off',
 				'@typescript-eslint/consistent-type-assertions': 'off',
 				'@typescript-eslint/naming-convention': 'off',
+				'@typescript-eslint/no-explicit-any': 'off',
 				...sharedTsRules
 			}
 		},

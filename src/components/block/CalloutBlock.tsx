@@ -1,10 +1,9 @@
-import { ActionStack } from '../base/ActionStack';
-import { Container } from '../base/Container';
-import { DualPhoneDisplay } from '../base/DualPhoneDisplay';
-import { type Action } from '../../types/general';
 import { css, styled, Typography } from '@mui/material';
 import { type FC } from 'react';
+import { type Action } from '../../types/general';
+import { ActionStack } from '../base/ActionStack';
 import { Block } from '../base/Block';
+import { Container } from '../base/Container';
 
 export type CalloutBlockProps = {
 	title?: string;

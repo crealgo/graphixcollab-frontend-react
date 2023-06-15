@@ -1,6 +1,6 @@
-import { type FC, type PropsWithChildren, useId } from 'react';
-import { type BaseInputProps, Input, type InputProps } from './Input';
+import { useId, type FC, type PropsWithChildren } from 'react';
 import { type OptionValue } from '../../types/OptionValue';
+import { Input, type BaseInputProps } from './Input';
 
 export type AutocompleteProps = {
 	options?: OptionValue[];

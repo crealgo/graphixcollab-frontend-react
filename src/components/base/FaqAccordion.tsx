@@ -3,66 +3,63 @@ import {
 	Accordion,
 	AccordionDetails,
 	AccordionSummary,
-	css,
 	styled
 } from '@mui/material';
 import { type FC } from 'react';
-import { ActionStack } from './ActionStack';
 import { type FaqOptions } from '../block/FaqBlock';
+import { ActionStack } from './ActionStack';
 
 type FaqAccordionProps = FaqOptions;
 
 const fontSize = '18px';
 const fontHeight = '28px';
 
-const Wrapper = styled(Accordion)(
-	({ theme }) => css`
-		padding: 1rem 1rem;
-		border-left: none;
-		border-right: none;
-		border-bottom: none;
-		background-color: transparent;
+const Wrapper = styled(Accordion)`
+	padding: 1rem 1rem;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	background-color: transparent;
 
-		&:nth-of-type(1) {
-			border-top: none;
-		}
+	&:nth-of-type(1) {
+		border-top: none;
+	}
 
+	.MuiSvgIcon-root {
+		padding: 4px;
+		height: ${fontHeight};
+		width: ${fontHeight};
+
+		display: block;
+		margin-right: 0.25rem;
+		opacity: 0.5;
+
+		transition: all 300ms;
+		transform: rotate(0deg);
+	}
+
+	.MuiAccordionSummary-root {
+		display: flex;
+		gap: 2rem;
+		padding: 0;
+		font-size: ${fontSize};
+		line-height: ${fontHeight};
+
+		font-weight: normal;
+	}
+
+	&.Mui-expanded {
 		.MuiSvgIcon-root {
-			padding: 4px;
-			height: ${fontHeight};
-			width: ${fontHeight};
-
-			display: block;
-			margin-right: 0.25rem;
-			opacity: 0.5;
-
-			transition: all 300ms;
-			transform: rotate(0deg);
+			transform: rotate(45deg);
+			opacity: 1;
+			color: var(--color-brand-primary-main);
 		}
+	}
 
-		.MuiAccordionSummary-root {
-			display: flex;
-			gap: 2rem;
-			padding: 0;
-			font-size: ${fontSize};
-			line-height: ${fontHeight};
-
-			font-weight: normal;
-		}
-
-		&.Mui-expanded {
-			.MuiSvgIcon-root {
-				transform: rotate(45deg);
-				opacity: 1;
-				color: var(--color-brand-primary-main);
-			}
-		}
-
-		.MuiAccordionDetails-root {
-			padding-left: calc(0.25rem + ${fontHeight});
-		}
-	`
-);
+	.MuiAccordionDetails-root {
+		padding-left: calc(0.25rem + ${fontHeight});
+	}
+`;
 
 const AccordionHead = styled(AccordionSummary)(({ theme }) => ({
 	...theme.typography.body2
@@ -71,8 +68,7 @@ const AccordionHead = styled(AccordionSummary)(({ theme }) => ({
 export const FaqAccordion: FC<FaqAccordionProps> = ({
 	question,
 	answer,
-	actions,
-	resources
+	actions
 }) => (
 	<Wrapper variant="outlined">
 		<AccordionHead>

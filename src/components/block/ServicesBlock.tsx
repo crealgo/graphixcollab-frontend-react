@@ -1,5 +1,5 @@
 import { Message } from '@mui/icons-material';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { css, styled } from '@mui/material/styles';
 import { type FC } from 'react';
 import type services from '../../content/services.json';

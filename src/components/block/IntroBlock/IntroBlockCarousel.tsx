@@ -108,14 +108,14 @@ const Content = styled('div')(
 	`
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({ className, slides = [] }) => {
+export const IntroBlock: FC<IntroBlockProps> = ({ slides = [] }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const blockRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<Container className="IntroBlock-root">
 			<StyledCarousel>
-				{slides?.map(({ description }, index) => (
+				{slides?.map((_, index) => (
 					<StyledCarouselSlide key={index}>
 						<Block ref={blockRef} isRounded>
 							<Content>

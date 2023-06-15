@@ -3,9 +3,7 @@ import { styled } from '@mui/material';
 import { type FC, type FormEventHandler } from 'react';
 import { type Action } from '../../types/general';
 import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
 import { Button } from '../base/Button';
-import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { Mark } from '../base/Mark';
 import { FormControl } from '../form/FormControl';
@@ -47,30 +45,6 @@ const ContentGrid = styled('div')`
 	.ActionStack-root {
 		margin-top: var(--action-stack-spacing);
 	}
-`;
-
-const AdornmentImage = styled('img')`
-	--adornment-image-position: absolute;
-	--adornment-image-z-index: 0;
-
-	--adornment-image-width: 100%;
-	--adornment-image-max-width: 100%;
-	--adornment-image-inset: auto -1rem 0 auto;
-
-	@media screen and (min-width: 768px) {
-		--adornment-image-max-width: 36rem;
-		--adornment-image-inset: auto -1rem -2rem auto;
-	}
-
-	padding: 0 0 0 1rem;
-	max-width: var(--adornment-image-max-width);
-	width: var(--adornment-image-width);
-	height: auto;
-
-	position: var(--adornment-image-position);
-	inset: var(--adornment-image-inset);
-
-	z-index: var(--adornment-image-z-index);
 `;
 
 const materials = [

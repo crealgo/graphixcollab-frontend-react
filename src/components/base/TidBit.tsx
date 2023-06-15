@@ -1,9 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { type FC, type PropsWithChildren } from 'react';
-import { type ColorVariants } from '../../types/color';
-import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
 import clsx from 'clsx';
+import { type FC, type PropsWithChildren } from 'react';
+import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
 
 export type TidBitProps = PropsWithChildren<{
 	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
@@ -16,7 +15,7 @@ const BaseElement: FC<TidBitProps> = ({
 	className,
 	icon,
 	children,
-	color,
+	color, // eslint-disable-line @typescript-eslint/no-unused-vars
 	...props
 }) => (
 	<ButtonBase

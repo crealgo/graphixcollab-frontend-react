@@ -1,4 +1,4 @@
-import { css, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Head from 'next/head';
 import { type FC } from 'react';
 import { type FeaturedCompanyInfo } from '../../../content/featured-companies';

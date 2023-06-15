@@ -23,8 +23,7 @@ export const SocialMediaBlock: FC<SocialMediaBlockProps> = ({
 	className,
 	url,
 	text,
-	actions,
-	...props
+	actions
 }) => (
 	<SocialMediaBlockWrapper
 		className={clsx(className, 'SocialMediaBlock-root')}

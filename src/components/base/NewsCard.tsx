@@ -1,5 +1,5 @@
 import { ArrowForward } from '@mui/icons-material';
-import { Button, css, Divider, Stack, styled, Typography } from '@mui/material';
+import { Button, Divider, Stack, styled, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { type ComponentPropsWithoutRef, type FC } from 'react';
 import { type Article } from '../../types/general';
@@ -9,19 +9,17 @@ export type NewsCardsProps = {
 	article: Article;
 } & ComponentPropsWithoutRef<'div'>;
 
-const NewsCardWrapper = styled('div')(
-	({ theme }) => css`
-		max-width: 20rem;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-		justify-content: start;
+const NewsCardWrapper = styled('div')`
+	max-width: 20rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	justify-content: start;
 
-		.NewsCard-actions {
-			display: flex;
-		}
-	`
-);
+	.NewsCard-actions {
+		display: flex;
+	}
+`;
 
 export const NewsCard: FC<NewsCardsProps> = ({ className, article }) => (
 	<NewsCardWrapper className={clsx(className, 'NewsCard-root')}>

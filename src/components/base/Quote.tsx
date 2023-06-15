@@ -2,7 +2,6 @@ import {
 	Avatar,
 	Rating,
 	Typography,
-	css,
 	styled,
 	type RatingProps as MuiRatingProps
 } from '@mui/material';
@@ -19,40 +18,33 @@ export type QuoteProps = {
 	RatingProps?: MuiRatingProps;
 } & QuoteWrapperProps;
 
-const QuoteWrapper = styled('div')<QuoteWrapperProps>(
-	({ theme }) => css`
-		position: relative;
-		aspect-ratio: auto;
+const QuoteWrapper = styled('div')<QuoteWrapperProps>`
+	position: relative;
+	aspect-ratio: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 1rem;
+
+	overflow: visible;
+
+	.Quote-avatar {
+		flex: none;
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.Quote-content {
+		flex: 1 1 1rem;
+		width: 100%;
+
 		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		gap: 1rem;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+`;
 
-		overflow: visible;
-
-		.Quote-avatar {
-			flex: none;
-			width: 3rem;
-			height: 3rem;
-		}
-
-		.Quote-content {
-			flex: 1 1 1rem;
-			width: 100%;
-
-			display: flex;
-			flex-direction: column;
-			gap: 0.75rem;
-		}
-	`
-);
-
-export const Quote: FC<QuoteProps> = ({
-	text,
-	className,
-	RatingProps,
-	...props
-}) => (
+export const Quote: FC<QuoteProps> = ({ text, className, ...props }) => (
 	<QuoteWrapper {...props} className={clsx(className, 'Quote-root')}>
 		<Avatar className="Quote-avatar" />
 		<div className="Quote-content">

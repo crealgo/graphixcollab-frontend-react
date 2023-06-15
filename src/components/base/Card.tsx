@@ -1,8 +1,7 @@
-import { Typography, useMediaQuery } from '@mui/material';
-import { css, styled, useTheme } from '@mui/material/styles';
+import { Typography } from '@mui/material';
+import { css, styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import { type ComponentPropsWithRef, type FC } from 'react';
-import { useAppState } from '../../hooks/useAppState';
 import { type ServiceOptions } from '../../types/general';
 import { chance } from '../../utils/chance';
 
@@ -62,33 +61,13 @@ export const Card: FC<CardProps> = ({
 	className,
 	image,
 	...props
-}) => {
-	const { breakpoints } = useTheme();
-	const isMobile = useMediaQuery(breakpoints.down('sm'));
-	const { toggleBooking } = useAppState();
-
-	console.log({ props });
-
-	return (
-		<CardAnchor className={clsx('Card-root', className)} {...props}>
-			<img {...image} />
-			<div className="content">
-				<Typography variant="caption">{subtitle}</Typography>
-				<Typography variant="h5">{title}</Typography>
-				<Typography variant="caption">{description}</Typography>
-				{/* <ActionStack align={isMobile ? 'start' : 'center'}>
-					<Button
-						color={isMobile ? 'secondary' : 'text'}
-						size="small"
-						endIcon={<ArrowForwardIcon />}
-						onClick={() => {
-							toggleBooking();
-						}}
-					>
-						Book Appointment
-					</Button>
-				</ActionStack> */}
-			</div>
-		</CardAnchor>
-	);
-};
+}) => (
+	<CardAnchor className={clsx('Card-root', className)} {...props}>
+		<img {...image} />
+		<div className="content">
+			<Typography variant="caption">{subtitle}</Typography>
+			<Typography variant="h5">{title}</Typography>
+			<Typography variant="caption">{description}</Typography>
+		</div>
+	</CardAnchor>
+);

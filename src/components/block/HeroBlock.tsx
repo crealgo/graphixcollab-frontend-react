@@ -1,14 +1,9 @@
-import {
-	useRef,
-	useState,
-	type ComponentPropsWithoutRef,
-	type FC
-} from 'react';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
 import { type Action, type SharedBlockProps } from '../../types/general';
-import { Container } from '../base/Container';
-import styles from './HeroBlock.module.scss';
 import { Block } from '../base/Block';
+import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
+import styles from './HeroBlock.module.scss';
 
 export type Slide = {
 	title: string;

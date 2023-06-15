@@ -1,17 +1,12 @@
-import { type ServiceInformation } from './steps/data';
 import { css, styled } from '@mui/material';
-import { Fragment, type ComponentPropsWithoutRef, type FC } from 'react';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { type ServiceInformation } from './steps/data';
 
 export type BookingOptionProps = Record<string, unknown> &
 	ServiceInformation &
 	ComponentPropsWithoutRef<'input'>;
 
-const BaseElement: FC<BookingOptionProps> = ({
-	label,
-	icon: Icon,
-	name,
-	...props
-}) => (
+const BaseElement: FC<BookingOptionProps> = ({ label, name, ...props }) => (
 	<>
 		<label htmlFor={name}>{label}</label>
 		<input hidden type="radio" id={name} {...props} />

@@ -1,5 +1,5 @@
-import { css, styled } from '@mui/material/styles';
-import { type PropsWithChildren, type FC } from 'react';
+import { styled } from '@mui/material/styles';
+import { type FC, type PropsWithChildren } from 'react';
 import { type NavItemOptions } from '../../types/general';
 import { Link } from './Link';
 import { LinkListItem } from './LinkListItem';

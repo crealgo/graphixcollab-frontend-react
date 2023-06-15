@@ -29,14 +29,7 @@ const StyledBlockHeaderWrapper = styled('div')`
 	text-align: center;
 `;
 
-export const FaqBlock: FC<FaqBlockProps> = ({
-	title,
-	subtitle,
-	description,
-	actions,
-	faqs,
-	children
-}) => (
+export const FaqBlock: FC<FaqBlockProps> = ({ title, faqs }) => (
 	<Container>
 		<Block isRounded color="grey">
 			<ContentGrid>

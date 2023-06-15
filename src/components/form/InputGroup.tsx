@@ -38,8 +38,6 @@ const EndContent = styled(BaseContentElement)`
 export const InputGroup: FC<InputGroupProps> = ({
 	startContent,
 	endContent,
-	InputProps,
-	ref,
 	children,
 	...props
 }) => (

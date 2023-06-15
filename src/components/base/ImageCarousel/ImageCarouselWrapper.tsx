@@ -11,13 +11,7 @@ export const ImageCarouselWrapper = styled(
 	'div',
 	_e('height', 'width', 'imageCount', 'currentIndex')
 )<CarouseWrapperProps>(
-	({
-		theme,
-		imageCount = 0,
-		currentIndex = 0,
-		height = '100%',
-		width = '100%'
-	}) => {
+	({ imageCount = 0, currentIndex = 0, height = '100%', width = '100%' }) => {
 		const imageCss: Record<string, unknown> = {};
 
 		for (let i = 0; i <= imageCount; i++) {
