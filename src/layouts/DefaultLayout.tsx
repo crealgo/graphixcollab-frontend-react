@@ -67,7 +67,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 	children,
 	...props
 }) => {
-	const { setBannerProps, toggleContact } = useAppState();
+	const { setBannerProps } = useAppState();
 
 	const router = useRouter();
 
