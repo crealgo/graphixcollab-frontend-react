@@ -9,6 +9,7 @@ import { Block } from '../../base/Block';
 import { Container } from '../../base/Container';
 import { Heading } from '../../base/Heading';
 import { Text } from '../../base/Text';
+import { useRouter } from 'next/router';
 
 export type Slide = {
 	title: string;
@@ -73,6 +74,8 @@ const Content = styled('div')`
 `;
 
 export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
+	const router = useRouter();
+
 	return (
 		<Wrapper>
 			<Container>
@@ -90,13 +93,13 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 								{
 									label: 'Get Started',
 									color: 'primary',
-									href: '/services',
+									href: `${router.basePath}/services`,
 									endIcon: <ArrowForwardIcon />
 								},
 								{
 									label: 'Book Appointment',
 									color: 'text',
-									href: '/book-appointment',
+									href: `${router.basePath}/book-appointment`,
 									endIcon: <BookATimeIcon />
 								}
 							]}

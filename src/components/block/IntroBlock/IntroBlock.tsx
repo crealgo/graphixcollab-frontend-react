@@ -9,6 +9,7 @@ import { Container } from '../../base/Container';
 import { Heading } from '../../base/Heading';
 import { Text } from '../../base/Text';
 import { ArrowRight } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 
 export type Slide = {
 	title: string;
@@ -26,9 +27,9 @@ export type IntroBlockProps = {
 
 const images = [
 	// { src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroider' },
-	{ src: 'assets/sash-hs.jpg', alt: 'Sashes' },
-	{ src: 'assets/embroidery-shirts.avif', alt: 'Embroidery' },
-	{ src: 'assets/laughing-group.jpg', alt: 'T-Shirts' }
+	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
+	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
+	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
 ];
 
 const Wrapper = styled('div')`
@@ -138,6 +139,8 @@ const Content = styled('div')(
 );
 
 export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
+	const router = useRouter();
+
 	return (
 		<Wrapper>
 			<StyledCarousel>
@@ -167,11 +170,12 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 								{
 									label: 'Get Started',
 									color: 'primary',
-									href: '/services',
+									href: `${router.basePath}/services`,
 									endIcon: <ArrowRight />
 								},
 								{
 									label: 'Book Appointment',
+									href: `${router.basePath}/book-appointment`,
 									color: 'text',
 									endIcon: <ArrowRight />
 								}

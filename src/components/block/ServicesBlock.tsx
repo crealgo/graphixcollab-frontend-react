@@ -117,7 +117,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 					<Box mr={-1} zIndex={1}>
 						Looking for something else?
 					</Box>
-					<Button color="text" endIcon={<Message />}>
+					<Button color="text" href='mailto:fashiongreekusc@gmail.com?subject=Inquiry%20from%20website' endIcon={<Message />}>
 						Contact Us
 					</Button>
 				</ActionStack>
