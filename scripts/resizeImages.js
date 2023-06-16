@@ -1,15 +1,8 @@
-const { glob } = require('glob');
-const sharp = require('sharp');
-const path = require('path');
-const chalk = require('chalk');
-const fs = require('fs');
-
-const faviconSizes = [16, 32, 96, 192];
-const websiteSizes = [150, 192, 250, 250, 512, 1200, 1280, 1600, 1920];
-
-const globPath = 'src/assets';
-const exportPath = 'public/assets';
-const resolvePath = path => path.replace(globPath, exportPath);
+import glob from 'glob';
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import chalk from 'chalk';
 
 /**  @type {import('sharp').SharpOptions} */
 const sharpOptions = {
@@ -23,70 +16,108 @@ const webpOptions = {
 	effort: 6
 };
 
-// resize all images using sharp, excluding the ones in node_modules
-const resizeImages = async () => {
-	const files = await glob(`${globPath}/**/*.*`);
+// get all files
+const filesWithImageStrings = await glob(
+	`src/**/*.{json,ts,tsx,js,jsx,md,mdx,css,scss,html}`
+);
 
-	files.every(async file => {
-		chalk.green(`Resizing ${file}`);
+const sourceImages = await glob(`src/**/*.{png,jpg,jpeg,avif,webp,gif,svg}`);
 
-		const parsedPath = path.parse(file);
-		const image = await sharp(file).metadata();
-		let refinedSizeArray = [];
+// console.log({ sourceImages });
 
-		// check if image is smaller than some of the sizes
-		if (parsedPath.ext === '.svg') {
-			refinedSizeArray = [...websiteSizes, ...faviconSizes];
-		} else {
-			const constrainedWebsiteSizes = websiteSizes.filter(
-				size => image.width >= size
-			);
-			const constrainedFaviconSizes = parsedPath.dir.match(
-				/brandmark|logo/i
-			)
-				? faviconSizes.filter(size => image.width >= size)
-				: [];
+const imageStringMatcher =
+	/assets\/(?<imagePath>.*)-min@(?<imageWidth>.*)w.webp/gim;
 
-			refinedSizeArray = [
-				...constrainedWebsiteSizes,
-				...constrainedFaviconSizes
-			];
+// loop through files with image strings
+// create array of images to resize
+
+/**
+ * @typedef {Object} ImageToResize
+ * @property {string} sourceImage
+ * @property {string} targetDir
+ * @property {string} targetFile
+ * @property {'og' | string} width
+ * */
+
+/**
+ * @type {ImageToResize[]} imagesToResize
+ * */
+let imagesToResize = [];
+
+filesWithImageStrings.forEach(image => {
+	const fileContents = fs.readFileSync(image, 'utf8');
+
+	const matches = fileContents.matchAll(imageStringMatcher);
+
+	const images = [...matches].map(match => {
+		const {
+			/** @type {string} */
+			imagePath,
+			/** @type {string} */
+			imageWidth
+		} = match.groups ?? {};
+
+		// find source image
+		const sourceImage = sourceImages.find(imageName =>
+			imageName.includes(imagePath)
+		);
+
+		if (sourceImage) {
+			// construct target dir
+			const { dir, base } = path.parse(imagePath);
+			const targetDir = path.join('public/assets', dir);
+			const resizedImageName = `${base}-min@${imageWidth}w.webp`;
+
+			return {
+				sourceImage,
+				targetDir: targetDir,
+				targetFile: path.join(targetDir, resizedImageName),
+				width: imageWidth
+			};
 		}
-
-		chalk.green(`Resizing ${file}`);
-		chalk.red(`Size: OG`);
-
-		const resolvedPath = resolvePath(parsedPath.dir);
-
-		// check if directory exists, if not create it, including all parent directories
-		if (!fs.existsSync(resolvedPath)) {
-			fs.mkdirSync(resolvedPath, { recursive: true });
-		}
-
-		// convert original image to webp, with original size
-		if (!fs.existsSync(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`)) {
-			await sharp(file, sharpOptions)
-				.webp(webpOptions)
-				.toFile(`${resolvedPath}/${parsedPath.name}-min@ogw.webp`);
-		}
-
-		// convert original image to webp, with original size
-		refinedSizeArray.forEach(async size => {
-			if (
-				!fs.existsSync(
-					`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`
-				)
-			) {
-				chalk.red(`Size: ${size}w`);
-				await sharp(file, sharpOptions)
-					.resize(size)
-					.webp(webpOptions)
-					.toFile(
-						`${resolvedPath}/${parsedPath.name}-min@${size}w.webp`
-					);
-			}
-		});
 	});
-};
 
-resizeImages();
+	if (images) {
+		imagesToResize.push(...images);
+	}
+});
+
+// console.log({ imagesToResize });
+
+// resize images if need be
+imagesToResize.forEach(async props => {
+	// skip if the file already exists
+	if (fs.existsSync(props.targetFile)) {
+		// FOR DEV: uncomment to see which files are skipped
+		// console.log(
+		// 	chalk.bgYellow(`${props.sourceImage} already exists, skipping...`)
+		// );
+		return;
+	} else {
+		console.log(
+			chalk.red(`Resizing ${props.sourceImage} to ${props.targetFile}`)
+		);
+	}
+
+	// needs to optimize for og image
+	const resizedImage =
+		props.width === 'og'
+			? await sharp(props.sourceImage, sharpOptions)
+					.webp(webpOptions)
+					.toBuffer()
+			: await sharp(props.sourceImage, sharpOptions)
+					.resize(parseInt(props.width))
+					.webp(webpOptions)
+					.toBuffer();
+
+	// create directory if it doesn't exist
+	if (!fs.existsSync(props.targetDir)) {
+		fs.mkdirSync(props.targetDir, { recursive: true });
+	}
+
+	fs.writeFileSync(props.targetFile, resizedImage);
+
+	console.log(
+		chalk.greenBright(`Resized ${props.sourceImage} to ${props.targetFile}`)
+	);
+});

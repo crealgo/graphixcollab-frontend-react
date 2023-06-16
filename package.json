@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "type": "module",
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.5",
@@ -32,7 +33,7 @@
     "yaml": "^2.2.1"
   },
   "scripts": {
-    "dev": "concurrently npm:site:dev npm:tokens:dev",
+    "dev": "concurrently npm:site:dev npm:tokens:dev npm:script:resize-images-watch",
     "build": "rollup -c",
     "verify": "npm run lint:ts && npm run lint:es",
     "lint:ts": "tsc --noEmit",
@@ -50,6 +51,7 @@
     "site:serve": "npx http-server out -p 6006",
     "site:deploy-dev": "npx gh-pages -d out --repo https://github.com/crealgo/crealgo-static-projects --dest ./graphixcollab",
     "site:deploy-staging": "npx gh-pages -d out --repo https://github.com/crealgo/graphixcollab-static-staging",
+    "script:resize-images-watch": "npx nodemon --watch src --exec \"npm run script:resize-images\"",
     "script:resize-images": "node scripts/resizeImages",
     "script:dev": "npm-watch script:rename",
     "script:clean": "rm -rf lib .next dist storybook-static",
@@ -85,7 +87,7 @@
     "@types/node": "^18.14.6",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
-    "chalk": "^4.1.2",
+    "chalk": "^5.2.0",
     "chance": "^1.1.9",
     "change-case": "^4.1.2",
     "concurrently": "^8.0.1",

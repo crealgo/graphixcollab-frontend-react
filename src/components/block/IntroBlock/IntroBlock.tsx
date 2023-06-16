@@ -9,7 +9,6 @@ import { Container } from '../../base/Container';
 import { Heading } from '../../base/Heading';
 import { Text } from '../../base/Text';
 import { ArrowRight } from '@mui/icons-material';
-import NextImage from 'next/image';
 
 export type Slide = {
 	title: string;
@@ -144,7 +143,7 @@ export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
 			<StyledCarousel>
 				{images.map(image => (
 					<StyledCarouselSlide key={image.alt}>
-						<NextImage src={image.src} alt={image.alt} />
+						<img src={image.src} alt={image.alt} />
 						<Block>
 							<Container>
 								<Heading className="Slide-heading" level={2}>

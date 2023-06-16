@@ -1,8 +1,12 @@
+// import { sharpImageLoader } from './plugins/sharp-image-loader';
+import fs from 'fs';
+import path from 'path';
+
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  webpack(config) {
+  webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack']
@@ -12,8 +16,7 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, module: false, path: false };
 
     return config;
-  },
-  output: 'export'
+  }
 };
 
 export default nextConfig;
