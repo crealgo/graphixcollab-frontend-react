@@ -1,13 +1,20 @@
 import { type StoryObj } from '@storybook/react';
-import { generateActions } from '../../utils/chance';
-import { EstimatorBlock, type EstimatorBlockProps } from './EstimatorBlock';
+import { Estimator } from './Estimator';
+import { type EstimatorBlockProps } from './EstimatorBlock';
+import { within, userEvent } from '@storybook/testing-library';
 
 export default {
-	component: EstimatorBlock
+	component: Estimator
 };
 
 export const Default: StoryObj<EstimatorBlockProps> = {
-	args: {
-		actions: generateActions()
+	play: async ({ args, canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.type(canvas.getByLabelText('Name'), 'John Doe');
+
+		const submit = canvas.getByText('Get Estimate');
+
+		await userEvent.click(submit);
 	}
 };

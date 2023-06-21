@@ -4,6 +4,7 @@ import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { type ComponentPropsWithRef, type FC } from 'react';
 import { type OptionValue } from '../../types/general';
 import { generateBaseInputStyles, type BaseInputProps } from './Input';
+import clsx from 'clsx';
 
 export type SelectProps = {
 	options?: OptionValue[];
@@ -46,7 +47,10 @@ export const Select: FC<SelectProps> = ({
 	className,
 	...props
 }) => (
-	<SelectWrapper className={className} inputSize={inputSize}>
+	<SelectWrapper
+		className={clsx('Select-root', className)}
+		inputSize={inputSize}
+	>
 		<StyledInput inputSize={inputSize} {...props}>
 			{options?.map(({ label, value }, optionIndex) => (
 				<option key={optionIndex} value={value}>

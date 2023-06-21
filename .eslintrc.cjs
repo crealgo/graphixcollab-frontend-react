@@ -86,6 +86,8 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off',
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-confusing-void-expression': 'off',
+        '@typescript-eslint/await-thenable': 'off',
         ...sharedTsRules
       }
     },

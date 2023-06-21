@@ -36,7 +36,7 @@ export const TimelineBlock: FC<TimelineBlockProps> = () => {
 		<Block className="EventBlock-root">
 			<Content>
 				<Heading isCentered level={2} className="mb-4">
-					See how <Mark color="magenta">Screen Print</Mark>
+					See how we <Mark color="magenta">Screen Print</Mark>
 				</Heading>
 			</Content>
 			<Timeline>
