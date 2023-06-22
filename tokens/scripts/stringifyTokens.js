@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-module.exports = () => {
+export default () => {
 	const variablesFile = 'tokens/build/css/variables.css';
 	const distStringFile = 'tokens/build/css/variablesString';
 	const tokensExist = fs.existsSync(variablesFile);

@@ -2,7 +2,6 @@
 /* @tailwind components; */
 /* @tailwind utilities; */
 
-
 dd {
-    margin-left: unset;
+  margin-left: unset;
 }

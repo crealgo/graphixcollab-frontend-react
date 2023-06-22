@@ -1,8 +1,6 @@
 // @ts-check
-const colors = require('tailwindcss/colors');
-const generateSizeValues = require('../utils/generateSizeValues');
-const f = require('../utils/formatToken');
-const { colord } = require('colord');
+const generateSizeValues = await import('../utils/generateSizeValues');
+const f = await import('../utils/formatToken');
 
 /*
 	namespace-object-base-modifier
@@ -31,7 +29,7 @@ const input = {
 	border: {
 		style: f('solid'),
 		width: f('0.0625rem'),
-		color: f(colord(colors.stone[900]).alpha(0.25).toHex()),
+		color: f('{color.grey.600}'),
 		composite: f(
 			'{input.border.style} {input.border.width} {input.border.color}'
 		)
@@ -109,7 +107,7 @@ const button = {
 	bezel: input.bezel
 };
 
-module.exports = {
+export default {
 	input,
 	inputGroupAction,
 	select,

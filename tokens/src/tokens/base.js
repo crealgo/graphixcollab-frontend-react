@@ -1,6 +1,6 @@
-const f = require('../utils/formatToken');
+const f = await import('../utils/formatToken');
 
-module.exports = {
+export default {
 	mark: {
 		backgroundColor: f('transparent'),
 		color: f('{color.brand.primary.main}')

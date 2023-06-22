@@ -12,7 +12,21 @@ export const GlobalStyles: FC = () => (
 				font-family: Inter;
 			}
 
-			@media screen and (max-width: 768px) {
+			// anything tab-able
+			a[href],
+			area,
+			button:enabled,
+			/* link[href], */
+			/* object, */
+			input:not([type='hidden']):enabled,
+			select:enabled,
+			textarea:enabled,
+			[tabindex],
+			[draggable] {
+				&:focus-visible {
+					outline: var(--color-brand-key-light) dashed 2px;
+					outline-offset: 3px;
+				}
 			}
 		`}
 	/>
