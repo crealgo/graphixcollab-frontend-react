@@ -1,6 +1,5 @@
-// @ts-check
-const generateSizeValues = await import('../utils/generateSizeValues');
-const f = await import('../utils/formatToken');
+import { generateSizeValues } from '../utils/generators';
+import f from '../utils/format-token';
 
 /*
 	namespace-object-base-modifier

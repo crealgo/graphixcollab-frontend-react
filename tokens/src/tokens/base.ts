@@ -1,4 +1,4 @@
-const f = await import('../utils/formatToken');
+import f from '../utils/format-token';
 
 export default {
 	mark: {

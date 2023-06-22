@@ -1,12 +1,14 @@
 // @ts-check
 
-const tailwind = require('../utils/tailwindValues');
-const generateColorVariants = require('../utils/generateColorVariants');
-const f = require('../utils/formatToken');
-const generateScaleFromObject = require('../utils/generateScaleFromObject');
+import { spacing as _spacing, colors } from '../utils/tailwind-values';
+import {
+	generateColorVariants,
+	generateScaleFromObject
+} from '../utils/generators';
+import f from '../utils/format-token';
 
 // taken from tailwind spacing
-const spacing = generateScaleFromObject({ ...tailwind.spacing });
+const spacing = generateScaleFromObject({ ..._spacing });
 
 const color = {
 	white: f('#FFFFFF'),
@@ -31,15 +33,15 @@ const color = {
 		square: generateColorVariants('#28c101')
 	},
 	feedback: {
-		success: generateColorVariants(tailwind.colors.green[600]),
-		error: generateColorVariants(tailwind.colors.red[600]),
-		warning: generateColorVariants(tailwind.colors.amber[600]),
-		info: generateColorVariants(tailwind.colors.blue[600])
+		success: generateColorVariants(colors.green[600] as string),
+		error: generateColorVariants(colors.red[600] as string),
+		warning: generateColorVariants(colors.amber[600] as string),
+		info: generateColorVariants(colors.blue[600] as string)
 	},
-	gray: generateScaleFromObject(tailwind.colors.stone),
+	gray: generateScaleFromObject(colors.stone),
 	text: {
-		primary: f(tailwind.colors.stone[900]),
-		secondary: f(tailwind.colors.stone[400]),
+		primary: f(colors.stone[900] as string),
+		secondary: f(colors.stone[400] as string),
 		contrast: f('{color.white}')
 	}
 };
@@ -131,7 +133,7 @@ const elevation = {
 	]
 };
 
-module.exports = {
+export default {
 	color,
 	spacing,
 	shape,

@@ -1,18 +1,25 @@
 // @ts-check
-const f = require('../utils/formatToken');
+import { type TokenValue } from '../types';
+import f from '../utils/format-token';
 
-/**
- *
- * @param {{ size: number; left: number; bottom:number; }} param
- *
- * @returns {{
- * 	width: TokenValue;
- * 	height: TokenValue;
- * 	left: TokenValue;
- * 	bottom: TokenValue;
- * }}
- */
-const createAvatarCss = ({ size, left, bottom }) => ({
+type AvatarPosition = {
+	size: number;
+	left: number;
+	bottom: number;
+};
+
+type AvatarCssPosition = {
+	width: TokenValue;
+	height: TokenValue;
+	left: TokenValue;
+	bottom: TokenValue;
+};
+
+const createAvatarCss = ({
+	size,
+	left,
+	bottom
+}: AvatarPosition): AvatarCssPosition => ({
 	width: f(`${size * 0.95}px`),
 	height: f(`${size * 0.95}px`),
 	left: f(`${(left / 1680) * 100}%`),
