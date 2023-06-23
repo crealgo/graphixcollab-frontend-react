@@ -1,26 +1,24 @@
-import f from '../utils/format-token';
-
 export default {
 	mark: {
-		backgroundColor: f('transparent'),
-		color: f('{color.brand.primary.main}')
+		backgroundColor: 'transparent',
+		color: '{color.brand.primary.main}'
 	},
 	section: {
 		mobile: {
-			paddingBlock: f('4rem'),
-			paddingInline: f('1rem')
+			paddingBlock: '4rem',
+			paddingInline: '1rem'
 		},
 		tablet: {
-			paddingBlock: f('{section.mobile.paddingBlock}'),
-			paddingInline: f('2rem')
+			paddingBlock: '{section.mobile.paddingBlock}',
+			paddingInline: '2rem'
 		},
 		desktop: {
-			paddingBlock: f('7rem'),
-			paddingInline: f('{section.tablet.paddingInline}')
+			paddingBlock: '7rem',
+			paddingInline: '{section.tablet.paddingInline}'
 		},
 		widescreen: {
-			paddingBlock: f('{section.desktop.paddingBlock}'),
-			paddingInline: f('4rem')
+			paddingBlock: '{section.desktop.paddingBlock}',
+			paddingInline: '4rem'
 		}
 	}
 };

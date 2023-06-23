@@ -1,5 +1,4 @@
 import { generateSizeValues } from '../utils/generators';
-import f from '../utils/format-token';
 
 /*
 	namespace-object-base-modifier
@@ -21,17 +20,16 @@ const select = {
 };
 
 const input = {
-	display: f('inline-flex'),
-	alignItems: f('center'),
+	display: 'inline-flex',
+	alignItems: 'center',
 	fontSize: generateSizeValues('0.875rem', '1rem', '1.125rem'),
-	textColor: f('{color.text.primary}'),
+	textColor: '{color.text.primary}',
 	border: {
-		style: f('solid'),
-		width: f('0.0625rem'),
-		color: f('{color.grey.600}'),
-		composite: f(
+		style: 'solid',
+		width: '0.0625rem',
+		color: '{color.gray.600}',
+		composite:
 			'{input.border.style} {input.border.width} {input.border.color}'
-		)
 	},
 	spacing: {
 		paddingInline: generateSizeValues('0.5rem', '0.75rem', '0.875rem'),
@@ -39,7 +37,7 @@ const input = {
 	},
 	height: generateSizeValues('1.75rem', '2rem', '2.25rem'),
 	bezel: generateSizeValues('0.25rem', '0.25rem', '0.375rem'),
-	shadow: f('{elevation.1}')
+	shadow: '{elevation.1}'
 };
 
 const inputGroupAction = {
@@ -47,59 +45,59 @@ const inputGroupAction = {
 };
 
 const button = {
-	display: f('{input.display}'),
-	alignItems: f('{input.alignItems}'),
+	display: '{input.display}',
+	alignItems: '{input.alignItems}',
 	font: {
-		weight: f(700),
+		weight: 700,
 		size: generateSizeValues(
 			'{input.fontSize.small}',
 			'{input.fontSize.medium}',
 			'{input.fontSize.large}'
 		)
 	},
-	letterSpacing: f('-0.01em'),
+	letterSpacing: '-0.01em',
 	textColor: {
-		primary: f('{color.brand.primary.contrast}'),
-		secondary: f('{color.brand.secondary.contrast}'),
-		tertiary: f('{color.text.primary}'),
-		text: f('{color.text.primary}')
+		primary: '{color.brand.primary.contrast}',
+		secondary: '{color.brand.secondary.contrast}',
+		tertiary: '{color.text.primary}',
+		text: '{color.text.primary}'
 	},
 	border: {
-		primary: f('{input.border.composite}'),
-		secondary: f('{input.border.composite}'),
-		tertiary: f('{input.border.composite}'),
-		text: f('none')
+		primary: '{input.border.composite}',
+		secondary: '{input.border.composite}',
+		tertiary: '{input.border.composite}',
+		text: 'none'
 	},
 	backgroundColor: {
-		primary: f('{color.brand.primary.main}'),
-		secondary: f('{color.brand.secondary.main}'),
-		tertiary: f('{color.white}'),
-		text: f('transparent')
+		primary: '{color.brand.primary.main}',
+		secondary: '{color.brand.secondary.main}',
+		tertiary: '{color.white}',
+		text: 'transparent'
 	},
 	shadow: {
-		primary: f('{elevation.2}'),
-		secondary: f('{elevation.2}'),
-		tertiary: f('{elevation.0}'),
-		text: f('{elevation.0}')
+		primary: '{elevation.2}',
+		secondary: '{elevation.2}',
+		tertiary: '{elevation.0}',
+		text: '{elevation.0}'
 	},
 	text: {
 		decoration: {
-			primary: f('unset'),
-			secondary: f('unset'),
-			tertiary: f('unset'),
-			text: f('underline')
+			primary: 'unset',
+			secondary: 'unset',
+			tertiary: 'unset',
+			text: 'underline'
 		},
 		thickness: {
-			primary: f('unset'),
-			secondary: f('unset'),
-			tertiary: f('unset'),
-			text: f('2px')
+			primary: 'unset',
+			secondary: 'unset',
+			tertiary: 'unset',
+			text: '2px'
 		},
 		offset: {
-			primary: f('unset'),
-			secondary: f('unset'),
-			tertiary: f('unset'),
-			text: f('2px')
+			primary: 'unset',
+			secondary: 'unset',
+			tertiary: 'unset',
+			text: '2px'
 		}
 	},
 	spacing: input.spacing,

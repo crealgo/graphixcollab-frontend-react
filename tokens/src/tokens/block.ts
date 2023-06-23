@@ -1,6 +1,4 @@
-// @ts-check
-import { type TokenValue } from '../types';
-import f from '../utils/format-token';
+import { type RawToken } from '../types';
 
 type AvatarPosition = {
 	size: number;
@@ -9,10 +7,10 @@ type AvatarPosition = {
 };
 
 type AvatarCssPosition = {
-	width: TokenValue;
-	height: TokenValue;
-	left: TokenValue;
-	bottom: TokenValue;
+	width: RawToken;
+	height: RawToken;
+	left: RawToken;
+	bottom: RawToken;
 };
 
 const createAvatarCss = ({
@@ -20,17 +18,17 @@ const createAvatarCss = ({
 	left,
 	bottom
 }: AvatarPosition): AvatarCssPosition => ({
-	width: f(`${size * 0.95}px`),
-	height: f(`${size * 0.95}px`),
-	left: f(`${(left / 1680) * 100}%`),
-	bottom: f(`${(bottom / 628.73) * 100}%`)
+	width: `${size * 0.95}px`,
+	height: `${size * 0.95}px`,
+	left: `${(left / 1680) * 100}%`,
+	bottom: `${(bottom / 628.73) * 100}%`
 });
 
 module.exports = {
 	block: {
 		testimonials: {
 			container: {
-				display: f('flex')
+				display: 'flex'
 			},
 			avatarPositions: {
 				...[
