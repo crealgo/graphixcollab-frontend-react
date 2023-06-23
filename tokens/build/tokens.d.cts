@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 06:10:16 GMT
+ * Generated on Fri, 23 Jun 2023 14:40:52 GMT
  */
 
 export default tokens;
@@ -380,6 +380,41 @@ declare const tokens: {
     "6": DesignToken,
     "inset": DesignToken
   },
+  "image": {
+    "borderRadius": DesignToken,
+    "backgroundColor": DesignToken
+  },
+  "testimonial": {
+    "container": {
+      "gap": DesignToken,
+      "padding": DesignToken,
+      "borderRadius": DesignToken,
+      "border": DesignToken,
+      "backgroundColor": DesignToken,
+      "maxWidth": DesignToken,
+      "shadow": DesignToken
+    },
+    "content": {
+      "gap": DesignToken
+    },
+    "quote": {
+      "maxRows": DesignToken
+    },
+    "image": {
+      "width": DesignToken,
+      "height": DesignToken,
+      "borderRadius": DesignToken
+    }
+  },
+  "select": {
+    "spacing": {
+      "paddingInline": {
+        "small": DesignToken,
+        "medium": DesignToken,
+        "large": DesignToken
+      }
+    }
+  },
   "input": {
     "display": DesignToken,
     "alignItems": DesignToken,
@@ -424,15 +459,6 @@ declare const tokens: {
       "small": DesignToken,
       "medium": DesignToken,
       "large": DesignToken
-    }
-  },
-  "select": {
-    "spacing": {
-      "paddingInline": {
-        "small": DesignToken,
-        "medium": DesignToken,
-        "large": DesignToken
-      }
     }
   },
   "button": {

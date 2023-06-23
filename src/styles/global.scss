@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,8 +19,8 @@ textarea:enabled,
 [tabindex],
 [draggable] {
   &:focus-visible {
-    outline: var(--color-brand-key-light) dashed 2px;
-    outline-offset: 3px;
+    outline: dashed 2px var(--color-brand-key-main);
+    outline-offset: 2px;
   }
 }
 

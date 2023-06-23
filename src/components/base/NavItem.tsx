@@ -27,6 +27,7 @@ const StyledAnchor = styled('a')`
 	box-shadow: var(--button-shadow-${variant});
 	color: var(--button-text-color-${variant});
 	border: var(--button-border-${variant});
+	border-radius: var(--button-bezel-${size});
 
 	padding-inline: var(--input-spacing-padding-inline-${size});
 	line-height: var(--input-height-${size});

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 06:10:16 GMT
+ * Generated on Fri, 23 Jun 2023 14:40:52 GMT
  */
 
 export const SequenceColor0Lightest = "#00aad2";
@@ -271,6 +271,23 @@ export const Elevation4 = "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb
 export const Elevation5 = "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)";
 export const Elevation6 = "0 25px 50px -12px rgb(0 0 0 / 0.25)";
 export const ElevationInset = "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)";
+export const ImageBorderRadius = "0.25rem";
+export const ImageBackgroundColor = "#d6d3d1";
+export const TestimonialContainerGap = "1rem";
+export const TestimonialContainerPadding = "1.5rem";
+export const TestimonialContainerBorderRadius = "0.5rem";
+export const TestimonialContainerBorder = "1px solid #d6d3d1";
+export const TestimonialContainerBackgroundColor = "#ffffff";
+export const TestimonialContainerMaxWidth = "34rem";
+export const TestimonialContainerShadow = "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)";
+export const TestimonialContentGap = "0.75rem";
+export const TestimonialQuoteMaxRows = "3";
+export const TestimonialImageWidth = "5.75rem";
+export const TestimonialImageHeight = "testimonials.image.width";
+export const TestimonialImageBorderRadius = "9999px";
+export const SelectSpacingPaddingInlineSmall = "0.5rem calc(2*0.375rem + 1.125rem)";
+export const SelectSpacingPaddingInlineMedium = "0.75rem calc(2*0.375rem + 1.25rem)";
+export const SelectSpacingPaddingInlineLarge = "0.875rem calc(2*0.5625rem + 1.375rem)";
 export const InputDisplay = "inline-flex";
 export const InputAlignItems = "center";
 export const InputFontSizeSmall = "0.875rem";
@@ -279,8 +296,8 @@ export const InputFontSizeLarge = "1.125rem";
 export const InputTextColor = "#1c1917";
 export const InputBorderStyle = "solid";
 export const InputBorderWidth = "0.0625rem";
-export const InputBorderColor = "#57534e";
-export const InputBorderComposite = "solid 0.0625rem #57534e";
+export const InputBorderColor = "#d6d3d1";
+export const InputBorderComposite = "solid 0.0625rem #d6d3d1";
 export const InputSpacingPaddingInlineSmall = "0.5rem";
 export const InputSpacingPaddingInlineMedium = "0.75rem";
 export const InputSpacingPaddingInlineLarge = "0.875rem";
@@ -297,12 +314,9 @@ export const InputShadow = "0 1px 2px 0 rgb(0 0 0 / 0.05)";
 export const InputGroupActionSizeSmall = "1.125rem";
 export const InputGroupActionSizeMedium = "1.25rem";
 export const InputGroupActionSizeLarge = "1.375rem";
-export const SelectSpacingPaddingInlineSmall = "0.5rem calc(2*0.375rem + 1.125rem)";
-export const SelectSpacingPaddingInlineMedium = "0.75rem calc(2*0.375rem + 1.25rem)";
-export const SelectSpacingPaddingInlineLarge = "0.875rem calc(2*0.5625rem + 1.375rem)";
 export const ButtonDisplay = "inline-flex";
 export const ButtonAlignItems = "center";
-export const ButtonFontWeight = 700;
+export const ButtonFontWeight = 600;
 export const ButtonFontSizeSmall = "0.875rem";
 export const ButtonFontSizeMedium = "1rem";
 export const ButtonFontSizeLarge = "1.125rem";
@@ -311,9 +325,9 @@ export const ButtonTextColorPrimary = "#00aad2";
 export const ButtonTextColorSecondary = "#d40072";
 export const ButtonTextColorTertiary = "#1c1917";
 export const ButtonTextColorText = "#1c1917";
-export const ButtonBorderPrimary = "solid 0.0625rem #57534e";
-export const ButtonBorderSecondary = "solid 0.0625rem #57534e";
-export const ButtonBorderTertiary = "solid 0.0625rem #57534e";
+export const ButtonBorderPrimary = "solid 0.0625rem #d6d3d1";
+export const ButtonBorderSecondary = "solid 0.0625rem #d6d3d1";
+export const ButtonBorderTertiary = "solid 0.0625rem #d6d3d1";
 export const ButtonBorderText = "none";
 export const ButtonBackgroundColorPrimary = "#00aad2";
 export const ButtonBackgroundColorSecondary = "#d40072";

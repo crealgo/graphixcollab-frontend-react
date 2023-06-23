@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 06:10:16 GMT
+ * Generated on Fri, 23 Jun 2023 14:40:52 GMT
  */
 
 :root {
@@ -272,6 +272,23 @@
   --elevation-5: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --elevation-6: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --elevation-inset: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --image-border-radius: 0.25rem;
+  --image-background-color: #d6d3d1;
+  --testimonial-container-gap: 1rem;
+  --testimonial-container-padding: 1.5rem;
+  --testimonial-container-border-radius: 0.5rem;
+  --testimonial-container-border: 1px solid #d6d3d1;
+  --testimonial-container-background-color: #ffffff;
+  --testimonial-container-max-width: 34rem;
+  --testimonial-container-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --testimonial-content-gap: 0.75rem;
+  --testimonial-quote-max-rows: 3;
+  --testimonial-image-width: 5.75rem;
+  --testimonial-image-height: testimonials.image.width;
+  --testimonial-image-border-radius: 9999px;
+  --select-spacing-padding-inline-small: 0.5rem calc(2*0.375rem + 1.125rem);
+  --select-spacing-padding-inline-medium: 0.75rem calc(2*0.375rem + 1.25rem);
+  --select-spacing-padding-inline-large: 0.875rem calc(2*0.5625rem + 1.375rem);
   --input-display: inline-flex;
   --input-align-items: center;
   --input-font-size-small: 0.875rem;
@@ -280,8 +297,8 @@
   --input-text-color: #1c1917;
   --input-border-style: solid;
   --input-border-width: 0.0625rem;
-  --input-border-color: #57534e;
-  --input-border-composite: solid 0.0625rem #57534e;
+  --input-border-color: #d6d3d1;
+  --input-border-composite: solid 0.0625rem #d6d3d1;
   --input-spacing-padding-inline-small: 0.5rem;
   --input-spacing-padding-inline-medium: 0.75rem;
   --input-spacing-padding-inline-large: 0.875rem;
@@ -298,12 +315,9 @@
   --input-group-action-size-small: 1.125rem;
   --input-group-action-size-medium: 1.25rem;
   --input-group-action-size-large: 1.375rem;
-  --select-spacing-padding-inline-small: 0.5rem calc(2*0.375rem + 1.125rem);
-  --select-spacing-padding-inline-medium: 0.75rem calc(2*0.375rem + 1.25rem);
-  --select-spacing-padding-inline-large: 0.875rem calc(2*0.5625rem + 1.375rem);
   --button-display: inline-flex;
   --button-align-items: center;
-  --button-font-weight: 700;
+  --button-font-weight: 600;
   --button-font-size-small: 0.875rem;
   --button-font-size-medium: 1rem;
   --button-font-size-large: 1.125rem;
@@ -312,9 +326,9 @@
   --button-text-color-secondary: #ffffff;
   --button-text-color-tertiary: #1c1917;
   --button-text-color-text: #1c1917;
-  --button-border-primary: solid 0.0625rem #57534e;
-  --button-border-secondary: solid 0.0625rem #57534e;
-  --button-border-tertiary: solid 0.0625rem #57534e;
+  --button-border-primary: solid 0.0625rem #d6d3d1;
+  --button-border-secondary: solid 0.0625rem #d6d3d1;
+  --button-border-tertiary: solid 0.0625rem #d6d3d1;
   --button-border-text: none;
   --button-background-color-primary: #00aad2;
   --button-background-color-secondary: #d40072;

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 06:10:16 GMT
+ * Generated on Fri, 23 Jun 2023 14:40:52 GMT
  */
 
 module.exports = {
@@ -5012,6 +5012,315 @@ module.exports = {
       ]
     }
   },
+  "image": {
+    "borderRadius": {
+      "value": "0.25rem",
+      "original": {
+        "value": "{shape.rounding.small}"
+      },
+      "name": "ImageBorderRadius",
+      "attributes": {
+        "category": "image",
+        "type": "borderRadius"
+      },
+      "path": [
+        "image",
+        "borderRadius"
+      ]
+    },
+    "backgroundColor": {
+      "value": "#d6d3d1",
+      "original": {
+        "value": "{color.gray.300}"
+      },
+      "name": "ImageBackgroundColor",
+      "attributes": {
+        "category": "image",
+        "type": "backgroundColor"
+      },
+      "path": [
+        "image",
+        "backgroundColor"
+      ]
+    }
+  },
+  "testimonial": {
+    "container": {
+      "gap": {
+        "value": "1rem",
+        "original": {
+          "value": "{spacing.4}"
+        },
+        "name": "TestimonialContainerGap",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "gap"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "gap"
+        ]
+      },
+      "padding": {
+        "value": "1.5rem",
+        "original": {
+          "value": "{spacing.6}"
+        },
+        "name": "TestimonialContainerPadding",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "padding"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "padding"
+        ]
+      },
+      "borderRadius": {
+        "value": "0.5rem",
+        "original": {
+          "value": "{shape.rounding.medium}"
+        },
+        "name": "TestimonialContainerBorderRadius",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "borderRadius"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "borderRadius"
+        ]
+      },
+      "border": {
+        "value": "1px solid #d6d3d1",
+        "original": {
+          "value": "{spacing.px} solid {color.gray.300}"
+        },
+        "name": "TestimonialContainerBorder",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "border"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "border"
+        ]
+      },
+      "backgroundColor": {
+        "value": "#ffffff",
+        "original": {
+          "value": "{color.white}"
+        },
+        "name": "TestimonialContainerBackgroundColor",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "backgroundColor"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "backgroundColor"
+        ]
+      },
+      "maxWidth": {
+        "value": "34rem",
+        "original": {
+          "value": "34rem"
+        },
+        "name": "TestimonialContainerMaxWidth",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "maxWidth"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "maxWidth"
+        ]
+      },
+      "shadow": {
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "original": {
+          "value": "{elevation.3}"
+        },
+        "name": "TestimonialContainerShadow",
+        "attributes": {
+          "category": "testimonial",
+          "type": "container",
+          "item": "shadow"
+        },
+        "path": [
+          "testimonial",
+          "container",
+          "shadow"
+        ]
+      }
+    },
+    "content": {
+      "gap": {
+        "value": "0.75rem",
+        "original": {
+          "value": "0.75rem"
+        },
+        "name": "TestimonialContentGap",
+        "attributes": {
+          "category": "testimonial",
+          "type": "content",
+          "item": "gap"
+        },
+        "path": [
+          "testimonial",
+          "content",
+          "gap"
+        ]
+      }
+    },
+    "quote": {
+      "maxRows": {
+        "value": "3",
+        "original": {
+          "value": "3"
+        },
+        "name": "TestimonialQuoteMaxRows",
+        "attributes": {
+          "category": "testimonial",
+          "type": "quote",
+          "item": "maxRows"
+        },
+        "path": [
+          "testimonial",
+          "quote",
+          "maxRows"
+        ]
+      }
+    },
+    "image": {
+      "width": {
+        "value": "5.75rem",
+        "original": {
+          "value": "5.75rem"
+        },
+        "name": "TestimonialImageWidth",
+        "attributes": {
+          "category": "testimonial",
+          "type": "image",
+          "item": "width"
+        },
+        "path": [
+          "testimonial",
+          "image",
+          "width"
+        ]
+      },
+      "height": {
+        "value": "testimonials.image.width",
+        "original": {
+          "value": "testimonials.image.width"
+        },
+        "name": "TestimonialImageHeight",
+        "attributes": {
+          "category": "testimonial",
+          "type": "image",
+          "item": "height"
+        },
+        "path": [
+          "testimonial",
+          "image",
+          "height"
+        ]
+      },
+      "borderRadius": {
+        "value": "9999px",
+        "original": {
+          "value": "{shape.rounding.full}"
+        },
+        "name": "TestimonialImageBorderRadius",
+        "attributes": {
+          "category": "testimonial",
+          "type": "image",
+          "item": "borderRadius"
+        },
+        "path": [
+          "testimonial",
+          "image",
+          "borderRadius"
+        ]
+      }
+    }
+  },
+  "select": {
+    "spacing": {
+      "paddingInline": {
+        "small": {
+          "value": "0.5rem calc(2*0.375rem + 1.125rem)",
+          "original": {
+            "value": "0.5rem calc(2*{input.spacing.gap.small} + {inputGroupAction.size.small})"
+          },
+          "name": "SelectSpacingPaddingInlineSmall",
+          "attributes": {
+            "category": "select",
+            "type": "spacing",
+            "item": "paddingInline",
+            "subitem": "small"
+          },
+          "path": [
+            "select",
+            "spacing",
+            "paddingInline",
+            "small"
+          ]
+        },
+        "medium": {
+          "value": "0.75rem calc(2*0.375rem + 1.25rem)",
+          "original": {
+            "value": "0.75rem calc(2*{input.spacing.gap.medium} + {inputGroupAction.size.medium})"
+          },
+          "name": "SelectSpacingPaddingInlineMedium",
+          "attributes": {
+            "category": "select",
+            "type": "spacing",
+            "item": "paddingInline",
+            "subitem": "medium"
+          },
+          "path": [
+            "select",
+            "spacing",
+            "paddingInline",
+            "medium"
+          ]
+        },
+        "large": {
+          "value": "0.875rem calc(2*0.5625rem + 1.375rem)",
+          "original": {
+            "value": "0.875rem calc(2*{input.spacing.gap.large} + {inputGroupAction.size.large})"
+          },
+          "name": "SelectSpacingPaddingInlineLarge",
+          "attributes": {
+            "category": "select",
+            "type": "spacing",
+            "item": "paddingInline",
+            "subitem": "large"
+          },
+          "path": [
+            "select",
+            "spacing",
+            "paddingInline",
+            "large"
+          ]
+        }
+      }
+    }
+  },
   "input": {
     "display": {
       "value": "inline-flex",
@@ -5147,9 +5456,9 @@ module.exports = {
         ]
       },
       "color": {
-        "value": "#57534e",
+        "value": "#d6d3d1",
         "original": {
-          "value": "{color.gray.600}"
+          "value": "{color.gray.300}"
         },
         "name": "InputBorderColor",
         "attributes": {
@@ -5164,7 +5473,7 @@ module.exports = {
         ]
       },
       "composite": {
-        "value": "solid 0.0625rem #57534e",
+        "value": "solid 0.0625rem #d6d3d1",
         "original": {
           "value": "{input.border.style} {input.border.width} {input.border.color}"
         },
@@ -5478,69 +5787,6 @@ module.exports = {
       }
     }
   },
-  "select": {
-    "spacing": {
-      "paddingInline": {
-        "small": {
-          "value": "0.5rem calc(2*0.375rem + 1.125rem)",
-          "original": {
-            "value": "0.5rem calc(2*{input.spacing.gap.small} + {inputGroupAction.size.small})"
-          },
-          "name": "SelectSpacingPaddingInlineSmall",
-          "attributes": {
-            "category": "select",
-            "type": "spacing",
-            "item": "paddingInline",
-            "subitem": "small"
-          },
-          "path": [
-            "select",
-            "spacing",
-            "paddingInline",
-            "small"
-          ]
-        },
-        "medium": {
-          "value": "0.75rem calc(2*0.375rem + 1.25rem)",
-          "original": {
-            "value": "0.75rem calc(2*{input.spacing.gap.medium} + {inputGroupAction.size.medium})"
-          },
-          "name": "SelectSpacingPaddingInlineMedium",
-          "attributes": {
-            "category": "select",
-            "type": "spacing",
-            "item": "paddingInline",
-            "subitem": "medium"
-          },
-          "path": [
-            "select",
-            "spacing",
-            "paddingInline",
-            "medium"
-          ]
-        },
-        "large": {
-          "value": "0.875rem calc(2*0.5625rem + 1.375rem)",
-          "original": {
-            "value": "0.875rem calc(2*{input.spacing.gap.large} + {inputGroupAction.size.large})"
-          },
-          "name": "SelectSpacingPaddingInlineLarge",
-          "attributes": {
-            "category": "select",
-            "type": "spacing",
-            "item": "paddingInline",
-            "subitem": "large"
-          },
-          "path": [
-            "select",
-            "spacing",
-            "paddingInline",
-            "large"
-          ]
-        }
-      }
-    }
-  },
   "button": {
     "display": {
       "value": "inline-flex",
@@ -5574,9 +5820,9 @@ module.exports = {
     },
     "font": {
       "weight": {
-        "value": 700,
+        "value": 600,
         "original": {
-          "value": 700
+          "value": 600
         },
         "name": "ButtonFontWeight",
         "attributes": {
@@ -5737,7 +5983,7 @@ module.exports = {
     },
     "border": {
       "primary": {
-        "value": "solid 0.0625rem #57534e",
+        "value": "solid 0.0625rem #d6d3d1",
         "original": {
           "value": "{input.border.composite}"
         },
@@ -5754,7 +6000,7 @@ module.exports = {
         ]
       },
       "secondary": {
-        "value": "solid 0.0625rem #57534e",
+        "value": "solid 0.0625rem #d6d3d1",
         "original": {
           "value": "{input.border.composite}"
         },
@@ -5771,7 +6017,7 @@ module.exports = {
         ]
       },
       "tertiary": {
-        "value": "solid 0.0625rem #57534e",
+        "value": "solid 0.0625rem #d6d3d1",
         "original": {
           "value": "{input.border.composite}"
         },

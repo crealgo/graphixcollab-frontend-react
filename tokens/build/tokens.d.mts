@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 06:10:16 GMT
+ * Generated on Fri, 23 Jun 2023 14:40:52 GMT
  */
 
 export const SequenceColor0Lightest : string;
@@ -271,6 +271,23 @@ export const Elevation4 : string;
 export const Elevation5 : string;
 export const Elevation6 : string;
 export const ElevationInset : string;
+export const ImageBorderRadius : string;
+export const ImageBackgroundColor : string;
+export const TestimonialContainerGap : string;
+export const TestimonialContainerPadding : string;
+export const TestimonialContainerBorderRadius : string;
+export const TestimonialContainerBorder : string;
+export const TestimonialContainerBackgroundColor : string;
+export const TestimonialContainerMaxWidth : string;
+export const TestimonialContainerShadow : string;
+export const TestimonialContentGap : string;
+export const TestimonialQuoteMaxRows : string;
+export const TestimonialImageWidth : string;
+export const TestimonialImageHeight : string;
+export const TestimonialImageBorderRadius : string;
+export const SelectSpacingPaddingInlineSmall : string;
+export const SelectSpacingPaddingInlineMedium : string;
+export const SelectSpacingPaddingInlineLarge : string;
 export const InputDisplay : string;
 export const InputAlignItems : string;
 export const InputFontSizeSmall : string;
@@ -297,9 +314,6 @@ export const InputShadow : string;
 export const InputGroupActionSizeSmall : string;
 export const InputGroupActionSizeMedium : string;
 export const InputGroupActionSizeLarge : string;
-export const SelectSpacingPaddingInlineSmall : string;
-export const SelectSpacingPaddingInlineMedium : string;
-export const SelectSpacingPaddingInlineLarge : string;
 export const ButtonDisplay : string;
 export const ButtonAlignItems : string;
 export const ButtonFontWeight : number;
