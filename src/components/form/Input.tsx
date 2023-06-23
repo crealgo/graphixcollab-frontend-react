@@ -18,13 +18,13 @@ export type InputProps = ComponentPropsWithRef<'input'> & BaseInputProps;
 
 // FIXME: this is a temporary solution to the type issue, passing any props
 export const generateBaseInputStyles = (props: any) => css`
-	/* --input-status-color-main: blue; */
 	--input-placeholder-color: var(--color-gray-300);
 	--input-background-color: var(--color-white);
 	--input-opacity: 1;
 
-	&:hover {
-		--input-border-color: var(--color-gray-400);
+	&:hover,
+	&:focus-visible {
+		--input-border-color: var(--color-gray-600);
 	}
 
 	// if has value and is invalid
@@ -55,7 +55,7 @@ export const generateBaseInputStyles = (props: any) => css`
 
 	border: unset;
 	padding: unset;
-	outline: unset;
+	/* outline: unset; */
 
 	height: var(--input-height-${props.inputSize});
 	padding-inline: var(--input-spacing-padding-inline-${props.inputSize});

@@ -88,6 +88,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/await-thenable': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
         ...sharedTsRules
       }
     },

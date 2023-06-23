@@ -1,19 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
       }
     ],
-    "rootDirs": [
-      "src"
-    ],
+    "rootDirs": ["src"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +14,9 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "checkJs": true,
     "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -29,12 +24,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "out", "dist", ".next", "build", "test-results"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

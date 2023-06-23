@@ -45,16 +45,16 @@ const StyledAnchor = styled('a')`
 		text-decoration-thickness: var(--button-text-thickness-${variant});
 
 		&:nth-of-type(1n) {
-			text-decoration-color: var(--color-sequence-0-main);
+			text-decoration-color: var(--sequence-color-0-main);
 		}
 		&:nth-of-type(2n) {
-			text-decoration-color: var(--color-sequence-1-main);
+			text-decoration-color: var(--sequence-color-1-main);
 		}
 		&:nth-of-type(3n) {
-			text-decoration-color: var(--color-sequence-2-main);
+			text-decoration-color: var(--sequence-color-2-main);
 		}
 		&:nth-of-type(4n) {
-			text-decoration-color: var(--color-sequence-3-main);
+			text-decoration-color: var(--sequence-color-3-main);
 		}
 	}
 `;

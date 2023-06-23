@@ -1,29 +1,34 @@
-// @ts-check
-const f = require('../utils/formatToken');
+import { type RawToken } from '../types';
 
-/**
- *
- * @param {{ size: number; left: number; bottom:number; }} param
- *
- * @returns {{
- * 	width: TokenValue;
- * 	height: TokenValue;
- * 	left: TokenValue;
- * 	bottom: TokenValue;
- * }}
- */
-const createAvatarCss = ({ size, left, bottom }) => ({
-	width: f(`${size * 0.95}px`),
-	height: f(`${size * 0.95}px`),
-	left: f(`${(left / 1680) * 100}%`),
-	bottom: f(`${(bottom / 628.73) * 100}%`)
+type AvatarPosition = {
+	size: number;
+	left: number;
+	bottom: number;
+};
+
+type AvatarCssPosition = {
+	width: RawToken;
+	height: RawToken;
+	left: RawToken;
+	bottom: RawToken;
+};
+
+const createAvatarCss = ({
+	size,
+	left,
+	bottom
+}: AvatarPosition): AvatarCssPosition => ({
+	width: `${size * 0.95}px`,
+	height: `${size * 0.95}px`,
+	left: `${(left / 1680) * 100}%`,
+	bottom: `${(bottom / 628.73) * 100}%`
 });
 
 module.exports = {
 	block: {
 		testimonials: {
 			container: {
-				display: f('flex')
+				display: 'flex'
 			},
 			avatarPositions: {
 				...[
