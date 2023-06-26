@@ -1,40 +1,40 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 14:40:52 GMT
+ * Generated on Mon, 26 Jun 2023 21:06:15 GMT
  */
 
 :root {
-  --sequence-color-0-lightest: #d2f6ff33;
-  --sequence-color-0-lighter: #d2f6ffcc;
-  --sequence-color-0-light: #b8f2ff;
-  --sequence-color-0-main: #00aad2;
-  --sequence-color-0-dark: #097189;
-  --sequence-color-0-darker: #05404d;
-  --sequence-color-0-darkest: #042c35;
+  --sequence-color-0-lightest: rgba(210, 246, 255, 0.2);
+  --sequence-color-0-lighter: rgba(210, 246, 255, 0.8);
+  --sequence-color-0-light: rgb(184, 242, 255);
+  --sequence-color-0-main: rgb(0, 170, 210);
+  --sequence-color-0-dark: rgb(9, 113, 137);
+  --sequence-color-0-darker: rgb(5, 64, 77);
+  --sequence-color-0-darkest: rgb(4, 44, 53);
   --sequence-color-0-contrast: #ffffff;
-  --sequence-color-1-lightest: #ffd4eb33;
-  --sequence-color-1-lighter: #ffd4ebcc;
-  --sequence-color-1-light: #ffbadf;
-  --sequence-color-1-main: #d40072;
-  --sequence-color-1-dark: #8b094f;
-  --sequence-color-1-darker: #4f052d;
-  --sequence-color-1-darkest: #37041f;
+  --sequence-color-1-lightest: rgba(255, 212, 235, 0.2);
+  --sequence-color-1-lighter: rgba(255, 212, 235, 0.8);
+  --sequence-color-1-light: rgb(255, 186, 223);
+  --sequence-color-1-main: rgb(212, 0, 114);
+  --sequence-color-1-dark: rgb(139, 9, 79);
+  --sequence-color-1-darker: rgb(79, 5, 45);
+  --sequence-color-1-darkest: rgb(55, 4, 31);
   --sequence-color-1-contrast: #ffffff;
-  --sequence-color-2-lightest: #fffbed33;
-  --sequence-color-2-lighter: #fffbedcc;
-  --sequence-color-2-light: #fff5d3;
-  --sequence-color-2-main: #edb700;
-  --sequence-color-2-dark: #a2800b;
-  --sequence-color-2-darker: #675107;
-  --sequence-color-2-darkest: #4f3e05;
+  --sequence-color-2-lightest: rgba(255, 251, 237, 0.2);
+  --sequence-color-2-lighter: rgba(255, 251, 237, 0.8);
+  --sequence-color-2-light: rgb(255, 245, 211);
+  --sequence-color-2-main: rgb(237, 183, 0);
+  --sequence-color-2-dark: rgb(162, 128, 11);
+  --sequence-color-2-darker: rgb(103, 81, 7);
+  --sequence-color-2-darkest: rgb(79, 62, 5);
   --sequence-color-2-contrast: #000000;
-  --sequence-color-3-lightest: #748dc333;
-  --sequence-color-3-lighter: #748dc3cc;
-  --sequence-color-3-light: #637fbb;
-  --sequence-color-3-main: #111827;
-  --sequence-color-3-dark: #000000;
-  --sequence-color-3-darker: #000000;
-  --sequence-color-3-darkest: #000000;
+  --sequence-color-3-lightest: rgba(155, 132, 121, 0.2);
+  --sequence-color-3-lighter: rgba(155, 132, 121, 0.8);
+  --sequence-color-3-light: rgb(143, 119, 107);
+  --sequence-color-3-main: rgb(12, 10, 9);
+  --sequence-color-3-dark: rgb(0, 0, 0);
+  --sequence-color-3-darker: rgb(0, 0, 0);
+  --sequence-color-3-darkest: rgb(0, 0, 0);
   --sequence-color-3-contrast: #ffffff;
   --color-white: #ffffff;
   --color-black: #1c1917;
@@ -70,10 +70,10 @@
   --color-brand-yellow-darker: #675107;
   --color-brand-yellow-darkest: #4f3e05;
   --color-brand-yellow-contrast: #000000;
-  --color-brand-key-lightest: rgba(116, 141, 195, 0.2);
-  --color-brand-key-lighter: rgba(116, 141, 195, 0.8);
-  --color-brand-key-light: #637fbb;
-  --color-brand-key-main: #111827;
+  --color-brand-key-lightest: rgba(155, 132, 121, 0.2);
+  --color-brand-key-lighter: rgba(155, 132, 121, 0.8);
+  --color-brand-key-light: #8f776b;
+  --color-brand-key-main: #0c0a09;
   --color-brand-key-dark: #000000;
   --color-brand-key-darker: #000000;
   --color-brand-key-darkest: #000000;
@@ -297,8 +297,8 @@
   --input-text-color: #1c1917;
   --input-border-style: solid;
   --input-border-width: 0.0625rem;
-  --input-border-color: #d6d3d1;
-  --input-border-composite: solid 0.0625rem #d6d3d1;
+  --input-border-color: rgba(155, 132, 121, 0.8);
+  --input-border-composite: solid 0.0625rem rgba(155, 132, 121, 0.8);
   --input-spacing-padding-inline-small: 0.5rem;
   --input-spacing-padding-inline-medium: 0.75rem;
   --input-spacing-padding-inline-large: 0.875rem;
@@ -326,9 +326,9 @@
   --button-text-color-secondary: #ffffff;
   --button-text-color-tertiary: #1c1917;
   --button-text-color-text: #1c1917;
-  --button-border-primary: solid 0.0625rem #d6d3d1;
-  --button-border-secondary: solid 0.0625rem #d6d3d1;
-  --button-border-tertiary: solid 0.0625rem #d6d3d1;
+  --button-border-primary: solid 0.0625rem rgba(155, 132, 121, 0.8);
+  --button-border-secondary: solid 0.0625rem rgba(155, 132, 121, 0.8);
+  --button-border-tertiary: solid 0.0625rem rgba(155, 132, 121, 0.8);
   --button-border-text: none;
   --button-background-color-primary: #00aad2;
   --button-background-color-secondary: #d40072;

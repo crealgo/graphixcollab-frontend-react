@@ -1,7 +1,6 @@
 import { ArrowForward, CheckCircleOutline, Restore } from '@mui/icons-material';
 import { styled } from '@mui/material';
-import { type FC } from 'react';
-import { useForm } from 'react-hook-form';
+import { type FC, type FormEventHandler } from 'react';
 import { type Action } from '../../../types/general';
 import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
@@ -9,9 +8,9 @@ import { Heading } from '../../base/Heading';
 import { Mark } from '../../base/Mark';
 import { FormControl } from '../../form/FormControl';
 import { Input } from '../../form/Input';
-import { onValid } from './utils';
-import { materials, serviceContent, services } from './data';
 import { Select } from '../../form/Select';
+import { materials, serviceContent, services } from './data';
+import axios from 'axios';
 
 export type EstimatorProps = {
 	actions?: Action[];
@@ -93,54 +92,30 @@ export type FormData = {
 	deadline: string;
 };
 
-// const fields = [
-// 		{
-// 			label: 'Name',
-// 			type: 'text'
-// 		},
-// 		{
-// 			label: 'Email',
-// 			type: 'email',
-// 			helperText: 'The estimate will be sent here.'
-// 		},
-// 		{
-// 			label: 'Material Type',
-// 			type: 'select',
-// 			options: materials,
-// 			helperText: 'The type of material to print on'
-// 		},
-// 		{
-// 			label: 'Service Type',
-// 			type: 'select',
-// 			options: services
-// 		},
-// 		{
-// 			label: 'Artwork Type',
-// 			type: 'select',
-// 			helperText: 'This is printed on the material'
-// 		},
-// 		{
-// 			label: 'Quantity',
-// 			type: 'number',
-// 			min: 10,
-// 			max: 99999
-// 		},
-// 		{
-// 			label: 'Deadline',
-// 			type: 'date',
-// 			min: today
-// 		}
-// 	] as const;
-
 const today = new Date().toISOString().split('T')[0];
 
 export const Estimator: FC<EstimatorProps> = () => {
-	const { handleSubmit, formState, register } = useForm<FormData>();
+	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
+		event.preventDefault();
 
-	const { errors, touchedFields } = formState;
+		const formData = new FormData(event.currentTarget);
+		const data = Object.fromEntries(formData.entries());
+
+		// console.log(data);
+
+		const url = 'https://api.crealgo.com/';
+
+		const promise = axios({
+			method: 'post',
+			url: `${url}/api/graphix-collab/send-mail`,
+			data: data
+		}).then(response => {
+			console.log(response);
+		});
+	};
 
 	return (
-		<form id="estimator-form" onSubmit={handleSubmit(onValid)}>
+		<form id="estimator-form" onSubmit={handleSubmit}>
 			<ContentGrid>
 				<Heading level={2}>
 					Get a quick{' '}
@@ -155,8 +130,10 @@ export const Estimator: FC<EstimatorProps> = () => {
 				<FieldGrid className="FieldGrid-root">
 					<FormControl isFullWidth label="Name" labelFor="name">
 						<Input
+							required
 							inputSize="large"
 							id="name"
+							name="name"
 							type="text"
 							placeholder="John Snow"
 						/>
@@ -169,8 +146,11 @@ export const Estimator: FC<EstimatorProps> = () => {
 						helperTextId="email-helper-text"
 					>
 						<Input
+							required
 							inputSize="large"
 							placeholder="johnsnow@aol.com"
+							id="email"
+							name="email"
 							type="email"
 							aria-describedby="email-helper-text"
 						/>
@@ -183,9 +163,11 @@ export const Estimator: FC<EstimatorProps> = () => {
 						helperTextId="material-type-helper-text"
 					>
 						<Select
+							required
 							inputSize="large"
 							options={materials}
 							id="material-type"
+							name="material-type"
 							aria-describedby="material-type-helper-text"
 						/>
 					</FormControl>
@@ -195,9 +177,11 @@ export const Estimator: FC<EstimatorProps> = () => {
 						labelFor="service-type"
 					>
 						<Select
+							required
 							inputSize="large"
 							options={services}
 							id="service-type"
+							name="service-type"
 						/>
 					</FormControl>
 					<FormControl
@@ -208,9 +192,11 @@ export const Estimator: FC<EstimatorProps> = () => {
 						helperTextId="artwork-type-helper-text"
 					>
 						<Select
+							required
 							inputSize="large"
 							options={serviceContent}
 							id="artwork-type"
+							name="artwork-type"
 							aria-describedby="artwork-type-helper-text"
 						/>
 					</FormControl>
@@ -222,12 +208,13 @@ export const Estimator: FC<EstimatorProps> = () => {
 						helperTextId="quantity-helper-text"
 					>
 						<Input
+							required
 							inputSize="large"
 							type="number"
-							defaultValue={10}
 							min={10}
 							max={9999}
 							id="quantity"
+							name="quantity"
 							aria-describedby="quantity-helper-text"
 						/>
 					</FormControl>
@@ -239,11 +226,12 @@ export const Estimator: FC<EstimatorProps> = () => {
 						helperTextId="deadline-helper-text"
 					>
 						<Input
+							required
 							inputSize="large"
 							type="date"
-							defaultValue={today}
 							min={today}
 							id="deadline"
+							name="deadline"
 							aria-describedby="deadline-helper-text"
 						/>
 					</FormControl>

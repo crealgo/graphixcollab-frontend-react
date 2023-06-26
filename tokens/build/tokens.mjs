@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 14:40:52 GMT
+ * Generated on Mon, 26 Jun 2023 21:06:15 GMT
  */
 
 export const SequenceColor0Lightest = "#00aad2";
@@ -27,14 +27,14 @@ export const SequenceColor2Dark = "#edb700";
 export const SequenceColor2Darker = "#edb700";
 export const SequenceColor2Darkest = "#edb700";
 export const SequenceColor2Contrast = "#edb700";
-export const SequenceColor3Lightest = "#111827";
-export const SequenceColor3Lighter = "#111827";
-export const SequenceColor3Light = "#111827";
-export const SequenceColor3Main = "#111827";
-export const SequenceColor3Dark = "#111827";
-export const SequenceColor3Darker = "#111827";
-export const SequenceColor3Darkest = "#111827";
-export const SequenceColor3Contrast = "#111827";
+export const SequenceColor3Lightest = "#0c0a09";
+export const SequenceColor3Lighter = "#0c0a09";
+export const SequenceColor3Light = "#0c0a09";
+export const SequenceColor3Main = "#0c0a09";
+export const SequenceColor3Dark = "#0c0a09";
+export const SequenceColor3Darker = "#0c0a09";
+export const SequenceColor3Darkest = "#0c0a09";
+export const SequenceColor3Contrast = "#0c0a09";
 export const ColorWhite = "#ffffff";
 export const ColorBlack = "#1c1917";
 export const ColorTestLightest = "#00aad2";
@@ -69,14 +69,14 @@ export const ColorBrandYellowDark = "#edb700";
 export const ColorBrandYellowDarker = "#edb700";
 export const ColorBrandYellowDarkest = "#edb700";
 export const ColorBrandYellowContrast = "#edb700";
-export const ColorBrandKeyLightest = "#111827";
-export const ColorBrandKeyLighter = "#111827";
-export const ColorBrandKeyLight = "#111827";
-export const ColorBrandKeyMain = "#111827";
-export const ColorBrandKeyDark = "#111827";
-export const ColorBrandKeyDarker = "#111827";
-export const ColorBrandKeyDarkest = "#111827";
-export const ColorBrandKeyContrast = "#111827";
+export const ColorBrandKeyLightest = "#0c0a09";
+export const ColorBrandKeyLighter = "#0c0a09";
+export const ColorBrandKeyLight = "#0c0a09";
+export const ColorBrandKeyMain = "#0c0a09";
+export const ColorBrandKeyDark = "#0c0a09";
+export const ColorBrandKeyDarker = "#0c0a09";
+export const ColorBrandKeyDarkest = "#0c0a09";
+export const ColorBrandKeyContrast = "#0c0a09";
 export const ColorBrandPrimaryLightest = "#00aad2";
 export const ColorBrandPrimaryLighter = "#00aad2";
 export const ColorBrandPrimaryLight = "#00aad2";
@@ -296,8 +296,8 @@ export const InputFontSizeLarge = "1.125rem";
 export const InputTextColor = "#1c1917";
 export const InputBorderStyle = "solid";
 export const InputBorderWidth = "0.0625rem";
-export const InputBorderColor = "#d6d3d1";
-export const InputBorderComposite = "solid 0.0625rem #d6d3d1";
+export const InputBorderColor = "#0c0a09";
+export const InputBorderComposite = "solid 0.0625rem #0c0a09";
 export const InputSpacingPaddingInlineSmall = "0.5rem";
 export const InputSpacingPaddingInlineMedium = "0.75rem";
 export const InputSpacingPaddingInlineLarge = "0.875rem";
@@ -325,9 +325,9 @@ export const ButtonTextColorPrimary = "#00aad2";
 export const ButtonTextColorSecondary = "#d40072";
 export const ButtonTextColorTertiary = "#1c1917";
 export const ButtonTextColorText = "#1c1917";
-export const ButtonBorderPrimary = "solid 0.0625rem #d6d3d1";
-export const ButtonBorderSecondary = "solid 0.0625rem #d6d3d1";
-export const ButtonBorderTertiary = "solid 0.0625rem #d6d3d1";
+export const ButtonBorderPrimary = "solid 0.0625rem #0c0a09";
+export const ButtonBorderSecondary = "solid 0.0625rem #0c0a09";
+export const ButtonBorderTertiary = "solid 0.0625rem #0c0a09";
 export const ButtonBorderText = "none";
 export const ButtonBackgroundColorPrimary = "#00aad2";
 export const ButtonBackgroundColorSecondary = "#d40072";

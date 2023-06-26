@@ -11,8 +11,8 @@ export const materials = generateValuesFromStringArray(
 export const services = generateValuesFromStringArray('Embroidery', 'Print');
 
 export const serviceContent = generateValuesFromStringArray(
-	'Image',
-	'Name',
-	'Initials',
-	'Quote'
+	'🌅 Image',
+	'👤 Name',
+	'🅰 Initials',
+	'💬 Quote'
 );

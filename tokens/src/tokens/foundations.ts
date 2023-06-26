@@ -12,7 +12,7 @@ const color = {
 		cyan: '#00aad2 !!has-variants',
 		magenta: '#d40072 !!has-variants',
 		yellow: '#edb700 !!has-variants',
-		key: '#111827 !!has-variants',
+		key: `${colors.stone[950]} !!has-variants`,
 
 		// as a hierarchy
 		primary: '#00aad2 !!has-variants',

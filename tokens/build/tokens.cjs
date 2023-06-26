@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Jun 2023 14:40:52 GMT
+ * Generated on Mon, 26 Jun 2023 21:06:15 GMT
  */
 
 module.exports = {
@@ -470,7 +470,7 @@ module.exports = {
       },
       "3": {
         "lightest": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -489,7 +489,7 @@ module.exports = {
           ]
         },
         "lighter": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -508,7 +508,7 @@ module.exports = {
           ]
         },
         "light": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -527,7 +527,7 @@ module.exports = {
           ]
         },
         "main": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -546,7 +546,7 @@ module.exports = {
           ]
         },
         "dark": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -565,7 +565,7 @@ module.exports = {
           ]
         },
         "darker": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -584,7 +584,7 @@ module.exports = {
           ]
         },
         "darkest": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -603,7 +603,7 @@ module.exports = {
           ]
         },
         "contrast": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
             "value": "{color.brand.key.main}"
           },
@@ -1258,9 +1258,9 @@ module.exports = {
       },
       "key": {
         "lightest": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyLightest",
           "attributes": {
@@ -1277,9 +1277,9 @@ module.exports = {
           ]
         },
         "lighter": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyLighter",
           "attributes": {
@@ -1296,9 +1296,9 @@ module.exports = {
           ]
         },
         "light": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyLight",
           "attributes": {
@@ -1315,9 +1315,9 @@ module.exports = {
           ]
         },
         "main": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyMain",
           "attributes": {
@@ -1334,9 +1334,9 @@ module.exports = {
           ]
         },
         "dark": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyDark",
           "attributes": {
@@ -1353,9 +1353,9 @@ module.exports = {
           ]
         },
         "darker": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyDarker",
           "attributes": {
@@ -1372,9 +1372,9 @@ module.exports = {
           ]
         },
         "darkest": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyDarkest",
           "attributes": {
@@ -1391,9 +1391,9 @@ module.exports = {
           ]
         },
         "contrast": {
-          "value": "#111827",
+          "value": "#0c0a09",
           "original": {
-            "value": "#111827"
+            "value": "#0c0a09"
           },
           "name": "ColorBrandKeyContrast",
           "attributes": {
@@ -5456,9 +5456,9 @@ module.exports = {
         ]
       },
       "color": {
-        "value": "#d6d3d1",
+        "value": "#0c0a09",
         "original": {
-          "value": "{color.gray.300}"
+          "value": "{color.brand.key.lighter}"
         },
         "name": "InputBorderColor",
         "attributes": {
@@ -5473,7 +5473,7 @@ module.exports = {
         ]
       },
       "composite": {
-        "value": "solid 0.0625rem #d6d3d1",
+        "value": "solid 0.0625rem #0c0a09",
         "original": {
           "value": "{input.border.style} {input.border.width} {input.border.color}"
         },
@@ -5983,7 +5983,7 @@ module.exports = {
     },
     "border": {
       "primary": {
-        "value": "solid 0.0625rem #d6d3d1",
+        "value": "solid 0.0625rem #0c0a09",
         "original": {
           "value": "{input.border.composite}"
         },
@@ -6000,7 +6000,7 @@ module.exports = {
         ]
       },
       "secondary": {
-        "value": "solid 0.0625rem #d6d3d1",
+        "value": "solid 0.0625rem #0c0a09",
         "original": {
           "value": "{input.border.composite}"
         },
@@ -6017,7 +6017,7 @@ module.exports = {
         ]
       },
       "tertiary": {
-        "value": "solid 0.0625rem #d6d3d1",
+        "value": "solid 0.0625rem #0c0a09",
         "original": {
           "value": "{input.border.composite}"
         },

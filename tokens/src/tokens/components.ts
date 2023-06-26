@@ -52,7 +52,7 @@ export default {
 		border: {
 			style: 'solid',
 			width: '0.0625rem',
-			color: '{color.gray.300}',
+			color: '{color.brand.key.lighter}',
 			composite:
 				'{input.border.style} {input.border.width} {input.border.color}'
 		},
