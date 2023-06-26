@@ -103,7 +103,7 @@ export const Estimator: FC<EstimatorProps> = () => {
 
 		// console.log(data);
 
-		const url = 'https://api.crealgo.com/';
+		const url = 'https://api.crealgo.com';
 
 		const promise = axios({
 			method: 'post',
