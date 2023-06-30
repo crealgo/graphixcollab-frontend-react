@@ -36,7 +36,7 @@ const AdornmentImage = styled('img')`
 export const EstimatorBlock: FC<EstimatorBlockProps> = () => (
 	<Container>
 		<Block isClipped isRounded color="grey" className="EstimatorBlock-root">
-			<Estimator />
+			<Estimator isSimple />
 			<AdornmentImage
 				src="assets/juicy-business-coach-explains-the-material-min@512w.webp"
 				alt="Explaining the material"

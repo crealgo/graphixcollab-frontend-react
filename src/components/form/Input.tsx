@@ -83,7 +83,9 @@ export const generateBaseInputStyles = (props: any) => css`
 `;
 
 export const BaseInputElement = styled.input<InputProps>(
-	generateBaseInputStyles
+	props => css`
+		${generateBaseInputStyles(props)};
+	`
 );
 
 const inputTouched = new Event('touched', { bubbles: true });

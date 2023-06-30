@@ -1,6 +1,5 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[react][typescript][typescriptreact][javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }

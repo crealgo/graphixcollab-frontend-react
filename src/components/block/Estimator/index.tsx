@@ -1,18 +1,19 @@
-import { ArrowForward, CheckCircleOutline, Restore } from '@mui/icons-material';
-import { styled } from '@mui/material';
+import styled from '@emotion/styled';
+import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
+import { Grid } from '@mui/material';
 import { type FC, type FormEventHandler } from 'react';
 import { type Action } from '../../../types/general';
 import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
 import { Heading } from '../../base/Heading';
 import { Mark } from '../../base/Mark';
-import { FormControl } from '../../form/FormControl';
-import { Input } from '../../form/Input';
-import { Select } from '../../form/Select';
-import { materials, serviceContent, services } from './data';
-import axios from 'axios';
+import { FileInputField } from '../../form/FileInputField';
+import { SelectField } from '../../form/SelectField';
+import { TextField } from '../../form/TextField';
+import { materials, services } from './data';
 
 export type EstimatorProps = {
+	isSimple?: boolean;
 	actions?: Action[];
 };
 
@@ -56,66 +57,43 @@ const Instructions = styled('em')`
 	border-block-start: solid 2px var(--color-brand-magenta-lighter);
 `;
 
-const FieldGrid = styled('div')`
-	display: grid;
-	max-width: 50rem;
-	place-items: start;
-	gap: 1rem;
-	grid-template-columns: 1fr;
-
-	margin-bottom: 3rem;
-
-	@media screen and (min-width: 768px) {
-		grid-template-columns: repeat(6, 1fr);
-
-		.FormControl-root {
-			grid-column: span 2;
-
-			&:nth-of-type(1) {
-				grid-column: span 3;
-			}
-
-			&:nth-of-type(2) {
-				grid-column: span 3;
-			}
-		}
-	}
-`;
-
-export type FormData = {
-	name: string;
-	email: string;
-	materialType: string;
-	serviceType: string;
-	quantity: number;
-	artworkType: string;
-	deadline: string;
-};
-
 const today = new Date().toISOString().split('T')[0];
 
-export const Estimator: FC<EstimatorProps> = () => {
-	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
+const getEstimate = async (data: FormData) => {
+	const url = 'http://localhost:8000';
+
+	const response = await fetch(`${url}/api/graphix-collab/get-estimate`, {
+		method: 'post',
+		body: data
+	});
+
+	// TODO: handle error, set helper text error and state for all inputs
+
+	console.log(response);
+};
+
+export const Estimator: FC<EstimatorProps> = props => {
+	const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
 		event.preventDefault();
-
 		const formData = new FormData(event.currentTarget);
-		const data = Object.fromEntries(formData.entries());
 
-		// console.log(data);
-
-		const url = 'https://api.crealgo.com';
-
-		const promise = axios({
-			method: 'post',
-			url: `${url}/api/graphix-collab/send-mail`,
-			data: data
-		}).then(response => {
-			console.log(response);
-		});
+		return getEstimate(formData);
 	};
 
+	const sharedInputProps = {
+		required: true,
+		inputSize: 'large' as const
+	};
+
+	const titleSpacing = '1.5rem';
+	const blockSpacing = '3rem';
+
 	return (
-		<form id="estimator-form" onSubmit={handleSubmit}>
+		<form
+			encType="multi-part/form"
+			id="estimator-form"
+			onSubmit={handleSubmit}
+		>
 			<ContentGrid>
 				<Heading level={2}>
 					Get a quick{' '}
@@ -127,115 +105,104 @@ export const Estimator: FC<EstimatorProps> = () => {
 				<Instructions>
 					Change the options below to what you’re looking for.
 				</Instructions>
-				<FieldGrid className="FieldGrid-root">
-					<FormControl isFullWidth label="Name" labelFor="name">
-						<Input
-							required
-							inputSize="large"
-							id="name"
-							name="name"
+				<Grid container spacing={3} marginBottom={titleSpacing}>
+					{!props.isSimple && (
+						<Grid item xs={12}>
+							<Heading level={4}>👋 Your Information</Heading>
+							<hr />
+						</Grid>
+					)}
+					<Grid item xs={12} md={4}>
+						<TextField
+							{...sharedInputProps}
+							defaultValue="John Snow"
 							type="text"
-							placeholder="John Snow"
+							label="Full Name"
+							name="name"
+							data-span={3}
 						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Email"
-						labelFor="email"
-						helperText="The estimate will be sent here."
-						helperTextId="email-helper-text"
-					>
-						<Input
-							required
-							inputSize="large"
-							placeholder="johnsnow@aol.com"
-							id="email"
-							name="email"
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<TextField
+							{...sharedInputProps}
+							defaultValue="johnsnow@gmail.com"
 							type="email"
-							aria-describedby="email-helper-text"
+							label="Email"
+							name="email"
 						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Material Type"
-						labelFor="material-type"
-						helperText="The type of material to print on"
-						helperTextId="material-type-helper-text"
-					>
-						<Select
-							required
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<TextField
 							inputSize="large"
-							options={materials}
-							id="material-type"
+							defaultValue="555555555"
+							type="tel"
+							label="Phone Number"
+							placeholder="XXX-XXX-XXXX"
+							name="email"
+						/>
+					</Grid>
+					{!props.isSimple && (
+						<Grid item xs={12} marginTop={titleSpacing}>
+							<Heading level={4}>⚙️ Service Request</Heading>
+							<hr />
+						</Grid>
+					)}
+
+					<Grid item xs={12} md={4}>
+						<SelectField
+							{...sharedInputProps}
+							label="Material Type"
 							name="material-type"
-							aria-describedby="material-type-helper-text"
+							defaultValue={materials[0].value}
+							options={materials}
 						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Material Type"
-						labelFor="service-type"
-					>
-						<Select
-							required
-							inputSize="large"
-							options={services}
-							id="service-type"
+					</Grid>
+					<Grid item xs={12} md={3}>
+						<SelectField
+							{...sharedInputProps}
+							defaultValue={services[0].value}
+							label="Service Type"
 							name="service-type"
+							options={services}
 						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Artwork Type"
-						labelFor="artwork-type"
-						helperText="What you want printed on the material."
-						helperTextId="artwork-type-helper-text"
-					>
-						<Select
-							required
-							inputSize="large"
-							options={serviceContent}
-							id="artwork-type"
-							name="artwork-type"
-							aria-describedby="artwork-type-helper-text"
-						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Quantity"
-						labelFor="quantity"
-						helperText="How many you want printed."
-						helperTextId="quantity-helper-text"
-					>
-						<Input
-							required
-							inputSize="large"
+					</Grid>
+					<Grid item xs={12} md={2}>
+						<TextField
+							{...sharedInputProps}
+							defaultValue={20}
 							type="number"
+							label="Quantity"
 							min={10}
 							max={9999}
-							id="quantity"
 							name="quantity"
-							aria-describedby="quantity-helper-text"
 						/>
-					</FormControl>
-					<FormControl
-						isFullWidth
-						label="Deadline"
-						labelFor="deadline"
-						helperText="When you need the material by."
-						helperTextId="deadline-helper-text"
-					>
-						<Input
-							required
-							inputSize="large"
+					</Grid>
+					<Grid item xs={12} md={3}>
+						<TextField
+							{...sharedInputProps}
+							defaultValue="2023-09-14"
 							type="date"
+							label="Deadline"
 							min={today}
-							id="deadline"
 							name="deadline"
-							aria-describedby="deadline-helper-text"
 						/>
-					</FormControl>
-				</FieldGrid>
+					</Grid>
+					{!props.isSimple && (
+						<Grid item xs={12} marginTop={titleSpacing}>
+							<Heading level={4}>🎨 Artwork Information</Heading>
+							<hr />
+						</Grid>
+					)}
+					<Grid item xs={12} md={8}>
+						<FileInputField
+							label="Artwork File"
+							name="artwork-file"
+							displayText="🌅 Upload your artwork"
+							accept=".jpeg,.jpg,.png,.pdf,.svg"
+							helperText="Although this step is optional, uploading your artwork helps us come up with a more accurate estimate."
+						/>
+					</Grid>
+				</Grid>
 				<ActionStack>
 					<Button
 						size="large"
@@ -247,19 +214,11 @@ export const Estimator: FC<EstimatorProps> = () => {
 					</Button>
 					<Button
 						size="large"
-						color="tertiary"
-						endIcon={<Restore />}
-						type="reset"
-					>
-						Reset
-					</Button>
-					{/* FIXME: */}
-					<Button
-						size="large"
 						color="text"
+						href="mailto:fashiongreekusc@gmail.com"
 						endIcon={<ArrowForward />}
 					>
-						Not sure
+						Not sure? Contact us
 					</Button>
 				</ActionStack>
 			</ContentGrid>

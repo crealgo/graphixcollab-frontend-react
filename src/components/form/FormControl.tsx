@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { useEffect, useRef, type FC } from 'react';
+import { useEffect, useRef, type FC, type ReactNode } from 'react';
 import { InputHelperText } from './InputHelperText';
 import { handleFormControlTouch } from './utils/handleFormControlTouch';
 import { type BaseComponentProps } from '../../types/base';
 
 export type FormControlProps = {
-	label?: string;
+	label?: ReactNode;
 	labelFor?: string;
 	// labelInfo?: string; // SEE blueprint js
-	helperText?: string;
+	helperText?: ReactNode;
 	helperTextId?: string;
 	isFullWidth?: boolean;
 } & Pick<BaseComponentProps, 'className' | 'children'>;
@@ -25,7 +25,7 @@ const StyledLabel = styled.label`
 	letter-spacing: -0.1px;
 
 	.Select-root,
-	.Input-root {
+	[class*='Input-root'] {
 		margin-top: 0.25rem;
 	}
 

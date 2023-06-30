@@ -8,19 +8,19 @@ html {
   font-family: Inter;
 }
 
-a[href],
-area,
-button:enabled,
-link[href],
-object,
-input:not([type='hidden']):enabled,
-select:enabled,
-textarea:enabled,
-[tabindex],
-[draggable] {
+*:focus-visible {
+  outline: solid 2px var(--color-brand-key-main);
+  outline-offset: 2px;
+}
+
+input:not([type="button"]):not([type="checkbox"]):not([type="radio"]),
+select,
+[role="combobox"][tabIndex="0"], // for file input
+textarea {
   &:focus-visible {
-    outline: dashed 2px var(--color-brand-key-main);
-    outline-offset: 2px;
+    border-color: var(--color-brand-key-main);
+    outline-width: 1px;
+    outline-offset: unset;
   }
 }
 
