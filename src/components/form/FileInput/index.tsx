@@ -6,7 +6,8 @@ import {
 	type ReactNode,
 	type ChangeEvent,
 	useState,
-	useMemo
+	useMemo,
+	forwardRef
 } from 'react';
 import { generateBaseInputStyles, type InputProps } from '../Input';
 import { Text } from '../../base/Text';
@@ -52,73 +53,78 @@ const DefaultFileInputDisplay = styled('div')`
 	}
 `;
 
-export const FileInput: FC<FileInputProps> = ({
-	displayText = '🌅 Upload a file',
-	inputSize = 'medium',
-	className,
-	...props
-}) => {
-	const inputRef = useRef<HTMLInputElement | null>(null);
-	const [files, setFiles] = useState<FileList | null>();
+export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
+	(
+		{
+			displayText = '🌅 Upload a file',
+			inputSize = 'medium',
+			className,
+			...props
+		},
+		ref
+	) => {
+		const [files, setFiles] = useState<FileList | null>();
 
-	const hasFiles = Boolean(files);
+		const hasFiles = Boolean(files);
 
-	const resolvedDisplayText = useMemo(() => {
-		if (files && files.length > 0) {
-			const content = [];
+		const resolvedDisplayText = useMemo(() => {
+			if (files && files.length > 0) {
+				const content = [];
 
-			for (let i = 0; i < files.length; i++) {
-				const file = files.item(i)!;
+				for (let i = 0; i < files.length; i++) {
+					const file = files.item(i)!;
 
-				content.push(
-					<FileListItem>
-						📄
-						<Text>{file.name}</Text>
-					</FileListItem>
+					content.push(
+						<FileListItem key={i}>
+							📄
+							<Text>{file.name}</Text>
+						</FileListItem>
+					);
+				}
+
+				return (
+					<FileDisplayList listTitle="Chosen Files:">
+						{content}
+					</FileDisplayList>
 				);
 			}
 
 			return (
-				<FileDisplayList listTitle="Chosen Files:">
-					{content}
-				</FileDisplayList>
+				<DefaultFileInputDisplay>
+					{displayText}
+					<small className="accepts">
+						Supported file types:{' '}
+						{props.accept?.replaceAll(',', ', ')}
+					</small>
+				</DefaultFileInputDisplay>
 			);
-		}
+		}, [files, props.accept, displayText]);
+
+		const handleChange = (event: ChangeEvent) => {
+			const el = event.target as HTMLInputElement;
+
+			console.log(el.files);
+
+			setFiles(el.files);
+		};
 
 		return (
-			<DefaultFileInputDisplay>
-				{displayText}
-				<small className="accepts">
-					Supported file types: {props.accept?.replaceAll(',', ', ')}
-				</small>
-			</DefaultFileInputDisplay>
+			<BaseInput
+				className={clsx('FileInput-root', className, {
+					hasFiles
+				})}
+				inputSize={inputSize}
+				role="combobox"
+				tabIndex={0}
+			>
+				{resolvedDisplayText}
+				<input
+					{...props}
+					ref={ref}
+					type="file"
+					onChange={handleChange}
+				/>
+			</BaseInput>
 		);
-	}, [files, props.accept, displayText]);
-
-	const handleChange = (event: ChangeEvent) => {
-		const el = event.target as HTMLInputElement;
-
-		console.log(el.files);
-
-		setFiles(el.files);
-	};
-
-	return (
-		<BaseInput
-			className={clsx('FileInput-root', className, {
-				hasFiles
-			})}
-			inputSize={inputSize}
-			role="combobox"
-			tabIndex={0}
-		>
-			{resolvedDisplayText}
-			<input
-				{...props}
-				ref={inputRef}
-				type="file"
-				onChange={handleChange}
-			/>
-		</BaseInput>
-	);
-};
+	}
+);

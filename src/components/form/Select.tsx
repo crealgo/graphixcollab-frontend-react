@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { type ComponentPropsWithRef, type FC } from 'react';
+import { forwardRef, type ComponentPropsWithRef, type FC } from 'react';
 import { type OptionValue } from '../../types/general';
 import { generateBaseInputStyles, type BaseInputProps } from './Input';
 import clsx from 'clsx';
@@ -29,7 +29,7 @@ const SelectWrapper = styled('div')<SelectProps>(
 	`
 );
 
-const StyledInput = styled.select<SelectProps>(
+const StyledSelect = styled.select<SelectProps>(
 	props => css`
 		${generateBaseInputStyles(props)};
 
@@ -41,23 +41,20 @@ const StyledInput = styled.select<SelectProps>(
 	`
 );
 
-export const Select: FC<SelectProps> = ({
-	options,
-	inputSize = 'medium',
-	className,
-	...props
-}) => (
-	<SelectWrapper
-		className={clsx('Select-root', className)}
-		inputSize={inputSize}
-	>
-		<StyledInput inputSize={inputSize} {...props}>
-			{options?.map(({ label, value }, optionIndex) => (
-				<option key={optionIndex} value={value}>
-					{label}
-				</option>
-			))}
-		</StyledInput>
-		<ArrowDownIcon />
-	</SelectWrapper>
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(
+	({ options, inputSize = 'medium', className, ...props }, ref) => (
+		<SelectWrapper
+			className={clsx('Select-root', className)}
+			inputSize={inputSize}
+		>
+			<StyledSelect {...props} ref={ref} inputSize={inputSize}>
+				{options?.map(({ label, value }, optionIndex) => (
+					<option key={optionIndex} value={value}>
+						{label}
+					</option>
+				))}
+			</StyledSelect>
+			<ArrowDownIcon />
+		</SelectWrapper>
+	)
 );

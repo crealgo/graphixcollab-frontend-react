@@ -1,45 +1,42 @@
 import { paramCase } from 'change-case';
-import { type FC } from 'react';
+import { forwardRef, type FC } from 'react';
 import { FileInput, type FileInputProps } from './FileInput';
 import { FormControl, type FormControlProps } from './FormControl';
 import clsx from 'clsx';
 
 type Props = FileInputProps & FormControlProps;
 
-export const FileInputField: FC<Props> = ({
-	label,
-	helperText,
-	isFullWidth,
-	className,
-	...props
-}) => {
-	const generatedName = paramCase(props.name ?? 'input-name');
+export const FileInputField = forwardRef<HTMLInputElement, Props>(
+	({ label, helperText, isFullWidth, className, ...props }, ref) => {
+		const generatedName = paramCase(props.name ?? 'input-name');
 
-	const requiredIndicator = <span style={{ color: 'red' }}>*</span>;
+		const requiredIndicator = <span style={{ color: 'red' }}>*</span>;
 
-	const resolvedLabel = label ? (
-		<>
-			{label}
-			{props.required && requiredIndicator}
-		</>
-	) : undefined;
+		const resolvedLabel = label ? (
+			<>
+				{label}
+				{props.required && requiredIndicator}
+			</>
+		) : undefined;
 
-	return (
-		<FormControl
-			isFullWidth
-			label={resolvedLabel}
-			labelFor={generatedName}
-			helperText={helperText}
-			helperTextId={`${generatedName}-helper-text`}
-			className={clsx('FileInputField-root', className)}
-		>
-			<FileInput
-				{...props}
-				multiple
-				type="file"
-				id={generatedName}
-				name={generatedName}
-			/>
-		</FormControl>
-	);
-};
+		return (
+			<FormControl
+				isFullWidth
+				label={resolvedLabel}
+				labelFor={generatedName}
+				helperText={helperText}
+				helperTextId={`${generatedName}-helper-text`}
+				className={clsx('FileInputField-root', className)}
+			>
+				<FileInput
+					{...props}
+					ref={ref}
+					multiple
+					type="file"
+					id={generatedName}
+					name={generatedName}
+				/>
+			</FormControl>
+		);
+	}
+);

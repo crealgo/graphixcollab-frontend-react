@@ -29,16 +29,14 @@ export const generateBaseInputStyles = (props: any) => css`
 
 	// if has value and is invalid
 	&.touched {
-		&:invalid,
-		&:out-of-range {
+		&.error {
 			--input-status-color-main: var(--color-feedback-error-main);
 			--input-status-color-light: var(--color-feedback-error-light);
 			--input-border-color: var(--color-feedback-error-main);
 			--input-background-color: var(--color-feedback-error-light);
 		}
 
-		&:valid,
-		&:in-range {
+		&.success {
 			--input-status-color-main: var(--color-feedback-success-light);
 			--input-border-color: var(--color-feedback-success-main);
 			--input-background-color: var(--color-feedback-success-lightest);

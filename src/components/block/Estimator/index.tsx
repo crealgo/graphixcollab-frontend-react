@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
-import { Grid } from '@mui/material';
-import { type FC, type FormEventHandler } from 'react';
+import { Alert, AlertTitle, Grid } from '@mui/material';
+import { type FC } from 'react';
+import { useForm, type SubmitHandler, type FieldValues } from 'react-hook-form';
 import { type Action } from '../../../types/general';
 import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
@@ -59,40 +60,113 @@ const Instructions = styled('em')`
 
 const today = new Date().toISOString().split('T')[0];
 
-const getEstimate = async (data: FormData) => {
-	const url = 'http://localhost:8000';
-
-	const response = await fetch(`${url}/api/graphix-collab/get-estimate`, {
-		method: 'post',
-		body: data
-	});
-
-	// TODO: handle error, set helper text error and state for all inputs
-
-	console.log(response);
+type FormDataInputs = {
+	'name': string;
+	'email': string;
+	'phone': string;
+	'material-type': string;
+	'service-type': string;
+	'quantity': string;
+	'deadline': string;
+	'artwork-file': string;
 };
 
+type FormDataTouched = {
+	[name in keyof FormDataInputs]?: boolean;
+};
+
+type FormDataErrors = {
+	[name in keyof FormDataInputs]?: string[];
+};
+
+// const useForm = () => {
+// 	const [success, setSuccess] = useState(false);
+// 	const [errors, setErrors] = useState<FormDataErrors>({});
+// 	const [touched, setTouched] = useState<FormDataTouched>({});
+// 	const formRef = useRef<HTMLFormElement>();
+
+// 	const getEstimate = async (data: FormData) => {
+// 		const url = 'http://localhost:8000';
+
+// 		// const testData = JSON.stringify({
+// 		// 	'name': 'John Snow',
+// 		// 	'email': 'johnsnow@gmail.com',
+// 		// 	'phone': '5555555555',
+// 		// 	'material-type': 't-shirt',
+// 		// 	'service-type': 'embroidery',
+// 		// 	'quantity': '20',
+// 		// 	'deadline': '2023-09-14',
+// 		// 	'artwork-file': [
+// 		// 		new File([''], 'test-file-1.png', { type: 'image/png' }),
+// 		// 		new File([''], 'test-file-2.png', { type: 'image/png' }),
+// 		// 		new File([''], 'test-file-3.png', { type: 'image/png' })
+// 		// 	]
+// 		// });
+
+// 		const response = await fetch(`${url}/api/graphix-collab/get-estimate`, {
+// 			method: 'post',
+// 			body: data
+// 		});
+
+// 		if (response.ok) {
+// 			setSuccess(true);
+// 			return;
+// 		}
+
+// 		const newErrors = (await response.json()) as FormDataErrors;
+
+// 		setTouched({
+// 			'name': true,
+// 			'email': true,
+// 			'phone': true,
+// 			'material-type': true,
+// 			'service-type': true,
+// 			'quantity': true,
+// 			'deadline': true,
+// 			'artwork-file': true
+// 		});
+
+// 		setErrors(newErrors);
+// 	};
+
+// 	const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
+// 		event.preventDefault();
+// 		formRef.current = event.currentTarget;
+// 		const formData = new FormData(event.currentTarget);
+
+// 		const filesArray = formData.get('artwork-file');
+
+// 		if (filesArray) {
+// 			// console.log('filesArray', filesArray);
+// 			formData.delete('artwork-file');
+// 			formData.append('artwork-file[]', filesArray);
+// 		}
+
+// 		return getEstimate(formData);
+// 	};
+
+// 	return {
+// 		handleSubmit,
+// 		success,
+// 		touched,
+// 		errors
+// 	};
+// };
+
 export const Estimator: FC<EstimatorProps> = props => {
-	const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
-		event.preventDefault();
-		const formData = new FormData(event.currentTarget);
+	const { handleSubmit, register } = useForm();
 
-		return getEstimate(formData);
-	};
-
-	const sharedInputProps = {
-		required: true,
-		inputSize: 'large' as const
+	const onValid: SubmitHandler<FieldValues> = async data => {
+		console.log('data', data);
 	};
 
 	const titleSpacing = '1.5rem';
-	const blockSpacing = '3rem';
 
 	return (
 		<form
-			encType="multi-part/form"
+			encType="multipart/form-data"
 			id="estimator-form"
-			onSubmit={handleSubmit}
+			onSubmit={handleSubmit(onValid)}
 		>
 			<ContentGrid>
 				<Heading level={2}>
@@ -114,31 +188,28 @@ export const Estimator: FC<EstimatorProps> = props => {
 					)}
 					<Grid item xs={12} md={4}>
 						<TextField
-							{...sharedInputProps}
+							inputSize="large"
 							defaultValue="John Snow"
-							type="text"
 							label="Full Name"
-							name="name"
-							data-span={3}
-						/>
-					</Grid>
-					<Grid item xs={12} md={4}>
-						<TextField
-							{...sharedInputProps}
-							defaultValue="johnsnow@gmail.com"
-							type="email"
-							label="Email"
-							name="email"
+							{...register('name', { required: true })}
 						/>
 					</Grid>
 					<Grid item xs={12} md={4}>
 						<TextField
 							inputSize="large"
-							defaultValue="555555555"
+							defaultValue="johnsnow@gmail.com"
+							label="Email"
+							{...register('email', { required: true })}
+						/>
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<TextField
+							inputSize="large"
+							defaultValue="5555555555"
 							type="tel"
 							label="Phone Number"
 							placeholder="XXX-XXX-XXXX"
-							name="email"
+							{...register('phone', { required: true })}
 						/>
 					</Grid>
 					{!props.isSimple && (
@@ -150,41 +221,46 @@ export const Estimator: FC<EstimatorProps> = props => {
 
 					<Grid item xs={12} md={4}>
 						<SelectField
-							{...sharedInputProps}
+							inputSize="large"
 							label="Material Type"
-							name="material-type"
 							defaultValue={materials[0].value}
 							options={materials}
+							{...register('material-type', { required: true })}
 						/>
 					</Grid>
 					<Grid item xs={12} md={3}>
 						<SelectField
-							{...sharedInputProps}
+							inputSize="large"
 							defaultValue={services[0].value}
 							label="Service Type"
-							name="service-type"
 							options={services}
+							{...register('service-type', { required: true })}
 						/>
 					</Grid>
 					<Grid item xs={12} md={2}>
 						<TextField
-							{...sharedInputProps}
+							inputSize="large"
 							defaultValue={20}
-							type="number"
 							label="Quantity"
-							min={10}
-							max={9999}
-							name="quantity"
+							type="number"
+							{...register('quantity', {
+								required: true,
+								min: 10,
+								max: 9999,
+								valueAsNumber: true
+							})}
 						/>
 					</Grid>
 					<Grid item xs={12} md={3}>
 						<TextField
-							{...sharedInputProps}
+							inputSize="large"
 							defaultValue="2023-09-14"
 							type="date"
 							label="Deadline"
-							min={today}
-							name="deadline"
+							{...register('deadline', {
+								required: true,
+								min: today
+							})}
 						/>
 					</Grid>
 					{!props.isSimple && (
@@ -195,14 +271,21 @@ export const Estimator: FC<EstimatorProps> = props => {
 					)}
 					<Grid item xs={12} md={8}>
 						<FileInputField
-							label="Artwork File"
-							name="artwork-file"
+							multiple
+							label="Artwork File(s)"
 							displayText="🌅 Upload your artwork"
-							accept=".jpeg,.jpg,.png,.pdf,.svg"
+							accept=".gif,.jpeg,.jpg,.png,.pdf,.svg,.webp"
 							helperText="Although this step is optional, uploading your artwork helps us come up with a more accurate estimate."
 						/>
 					</Grid>
 				</Grid>
+				{/* {success && (
+					<Alert severity="success">
+						<AlertTitle>Success!</AlertTitle>
+						We’ve received your request and will get back to you
+						shortly.
+					</Alert>
+				)} */}
 				<ActionStack>
 					<Button
 						size="large"
