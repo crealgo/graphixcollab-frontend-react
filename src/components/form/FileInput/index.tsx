@@ -1,20 +1,16 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import {
-	useRef,
-	type FC,
-	type ReactNode,
-	type ChangeEvent,
-	useState,
+	forwardRef,
 	useMemo,
-	forwardRef
+	useState,
+	type ChangeEvent,
+	type ReactNode
 } from 'react';
-import { generateBaseInputStyles, type InputProps } from '../Input';
 import { Text } from '../../base/Text';
-import DocumentIcon from '@mui/icons-material/FileCopy';
-import { FileListItem } from './FileListItem';
+import { generateBaseInputStyles, type InputProps } from '../Input';
 import { FileDisplayList } from './FileDisplayList';
-import { Box } from '@mui/material';
+import { FileListItem } from './FileListItem';
 
 export type FileInputProps = InputProps & {
 	displayText?: ReactNode;
