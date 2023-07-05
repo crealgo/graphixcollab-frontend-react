@@ -119,7 +119,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 					</Box>
 					<Button
 						color="text"
-						href="mailto:fashiongreekusc@gmail.com?subject=Inquiry%20from%20website"
+						href="mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website"
 						endIcon={<Message />}
 					>
 						Contact Us

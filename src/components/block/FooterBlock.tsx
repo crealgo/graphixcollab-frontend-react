@@ -107,8 +107,8 @@ const footerContent = {
 				},
 				{
 					label: 'Email',
-					displayName: 'fashiongreekusc@gmail.com',
-					href: 'mailto:fashiongreekusc@gmail.com'
+					displayName: 'graphixcollab@gmail.com',
+					href: 'mailto:graphixcollab@gmail.com'
 				},
 				{
 					label: 'Address',

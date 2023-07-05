@@ -20,6 +20,7 @@ const BaseInput = styled('div')<InputProps>`
 	${generateBaseInputStyles};
 	cursor: pointer;
 	display: inline-grid;
+	background-color: var(--color-gray-200);
 
 	height: 10rem;
 	border-style: dashed;

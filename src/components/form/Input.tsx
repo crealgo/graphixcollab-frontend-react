@@ -17,10 +17,14 @@ export type BaseInputProps = {
 export type InputProps = ComponentPropsWithRef<'input'> & BaseInputProps;
 
 // FIXME: this is a temporary solution to the type issue, passing any props
-export const generateBaseInputStyles = (props: any) => css`
+export const generateBaseInputStyles = ({
+	inputSize = 'medium'
+}: InputProps) => /* scss */ `
 	--input-placeholder-color: var(--color-gray-300);
 	--input-background-color: var(--color-white);
 	--input-opacity: 1;
+
+	min-width: 0rem;
 
 	&:hover,
 	&:focus-visible {
@@ -55,15 +59,15 @@ export const generateBaseInputStyles = (props: any) => css`
 	padding: unset;
 	/* outline: unset; */
 
-	height: var(--input-height-${props.inputSize});
-	padding-inline: var(--input-spacing-padding-inline-${props.inputSize});
-	font-size: var(--input-font-size-${props.inputSize});
+	height: var(--input-height-${inputSize});
+	padding-inline: var(--input-spacing-padding-inline-${inputSize});
+	font-size: var(--input-font-size-${inputSize});
 
 	background-color: var(--input-background-color);
 
 	color: var(--input-text-color);
 	box-shadow: var(--input-shadow);
-	border-radius: var(--input-bezel-${props.inputSize});
+	border-radius: var(--input-bezel-${inputSize});
 	opacity: var(--input-opacity);
 
 	border-style: var(--input-border-style);

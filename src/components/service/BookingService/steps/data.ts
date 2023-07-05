@@ -20,7 +20,7 @@ export const serviceOptions: ServiceInformation[] = [
 		description: 'Design and order a sash with a graphic designer.',
 		cost: undefined,
 		meta: [
-			'Design and order a sash with a graphic designer. ----- This is a service to design a custom sash. One appointment per person/custom sash. ----- Before your appointment, please send us a mock of your desired sash. Use Pride Sash Custom Builder > https://www.pridesash.com/builder/ to design your sash, take a screen shot, and then email to us at fashiongreekusc@gmail.com.'
+			'Design and order a sash with a graphic designer. ----- This is a service to design a custom sash. One appointment per person/custom sash. ----- Before your appointment, please send us a mock of your desired sash. Use Pride Sash Custom Builder > https://www.pridesash.com/builder/ to design your sash, take a screen shot, and then email to us at graphixcollab@gmail.com.'
 		]
 	},
 	{

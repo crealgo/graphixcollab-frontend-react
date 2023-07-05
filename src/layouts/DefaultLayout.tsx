@@ -84,7 +84,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 				actions={[
 					{
 						color: 'text',
-						href: 'mailto:fashiongreekusc@gmail.com?subject=Inquiry%20from%20website',
+						href: 'mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website',
 						label: 'Contact Us',
 						endIcon: <ContactUsIcon />
 					},
