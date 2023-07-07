@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const FileListItem = styled('li')`
 	display: flex;
-	gap: 0.5em;
+	gap: 0.25em;
 	place-items: center;
 	place-content: start;
 

@@ -15,7 +15,7 @@ const StyledMark = styled('mark')<MarkProps>(
 	({ text, brand, color = 'cyan' }) => {
 		const sharedCss = css`
 			background: unset;
-			display: inline-flex;
+			/* display: inline-flex; */
 		`;
 
 		if (brand) {

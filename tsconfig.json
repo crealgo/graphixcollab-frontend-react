@@ -25,5 +25,5 @@
     "incremental": true
   },
   "exclude": ["node_modules", "out", "dist", ".next", "build", "test-results"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/block/Estimator/esimatorFields.js"]
 }

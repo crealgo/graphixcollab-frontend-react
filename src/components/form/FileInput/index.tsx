@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { AttachFileTwoTone } from '@mui/icons-material';
 import clsx from 'clsx';
 import {
 	forwardRef,
@@ -20,9 +21,19 @@ const BaseInput = styled('div')<InputProps>`
 	${generateBaseInputStyles};
 	cursor: pointer;
 	display: inline-grid;
-	background-color: var(--color-gray-200);
+	background-color: var(--color-gray-100);
 
-	height: 10rem;
+	&:hover {
+		background-color: var(--color-gray-200);
+	}
+
+	&:active {
+		background-color: var(--color-gray-300);
+	}
+
+	min-height: 10rem;
+	height: auto;
+	padding-block: 1.75rem;
 	border-style: dashed;
 	place-content: center;
 	place-items: center;
@@ -36,6 +47,7 @@ const BaseInput = styled('div')<InputProps>`
 
 	&.hasFiles {
 		border-style: solid;
+		background-color: var(--color-gray-200);
 	}
 `;
 
@@ -60,28 +72,25 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 		},
 		ref
 	) => {
-		const [files, setFiles] = useState<FileList | null>();
-
-		const hasFiles = Boolean(files);
+		const [files, setFiles] = useState<FileList | null>(null);
 
 		const resolvedDisplayText = useMemo(() => {
-			if (files && files.length > 0) {
-				const content = [];
-
-				for (let i = 0; i < files.length; i++) {
-					const file = files.item(i)!;
-
-					content.push(
-						<FileListItem key={i}>
-							📄
-							<Text>{file.name}</Text>
-						</FileListItem>
-					);
-				}
+			if (files) {
+				console.log(files);
 
 				return (
 					<FileDisplayList listTitle="Chosen Files:">
-						{content}
+						{[...files].map((file, index) => (
+							<FileListItem key={index}>
+								<AttachFileTwoTone
+									fontSize="small"
+									sx={{
+										color: 'var(--color-brand-magenta-main)'
+									}}
+								/>
+								<Text>{file.name}</Text>
+							</FileListItem>
+						))}
 					</FileDisplayList>
 				);
 			}
@@ -95,20 +104,18 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 					</small>
 				</DefaultFileInputDisplay>
 			);
-		}, [files, props.accept, displayText]);
+		}, [displayText, files, props.accept]);
 
-		const handleChange = (event: ChangeEvent) => {
-			const el = event.target as HTMLInputElement;
-
-			console.log(el.files);
-
-			setFiles(el.files);
+		const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+			if (event.currentTarget.files?.length) {
+				setFiles(event.currentTarget.files);
+			}
 		};
 
 		return (
 			<BaseInput
 				className={clsx('FileInput-root', className, {
-					hasFiles
+					hasFiles: Boolean(files)
 				})}
 				inputSize={inputSize}
 				role="combobox"
@@ -119,6 +126,9 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 					{...props}
 					ref={ref}
 					type="file"
+					onClick={event => {
+						event.currentTarget.value = '';
+					}}
 					onChange={handleChange}
 				/>
 			</BaseInput>

@@ -31,6 +31,10 @@ export const generateBaseInputStyles = ({
 		--input-border-color: var(--color-gray-600);
 	}
 
+	&:active {
+		--input-background-color: var(--color-gray-100);
+	}
+
 	// if has value and is invalid
 	&.touched {
 		&.error {
@@ -45,6 +49,13 @@ export const generateBaseInputStyles = ({
 			--input-border-color: var(--color-feedback-success-main);
 			--input-background-color: var(--color-feedback-success-lightest);
 		}
+	}
+
+	&:read-only:not(select):not([role='combobox']) {
+		--input-border-color: transparent;
+		--input-background-color: var(--color-gray-200);
+		--input-placeholder-color: var(--color-gray-400);
+		--input-shadow: none;
 	}
 
 	&:disabled {
@@ -77,11 +88,6 @@ export const generateBaseInputStyles = ({
 	&::placeholder {
 		color: var(--input-placeholder-color);
 	}
-
-	/* + .input-helper-text {
-		color: var(--input-status-color-main);
-		opacity: var(--input-opacity);
-	} */
 `;
 
 export const BaseInputElement = styled.input<InputProps>(

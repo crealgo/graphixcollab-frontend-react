@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { type PropsWithChildren, type FC } from 'react';
+import { type FC, type PropsWithChildren } from 'react';
 import { Text } from '../../base/Text';
 
 type Props = PropsWithChildren<{
@@ -13,7 +13,13 @@ const BaseElement = styled('ul')`
 	padding-inline-start: 0;
 
 	.FileDisplayList-title {
-		margin-block-end: var(--spacing-2);
+		font-size: 0.875rem;
+		font-weight: 500;
+
+		& + hr {
+			margin-block-start: 0.125rem;
+			margin-block-end: 0.5rem;
+		}
 	}
 `;
 
@@ -21,7 +27,12 @@ export const FileDisplayList: FC<Props> = props => {
 	return (
 		<BaseElement>
 			{props.listTitle && (
-				<Text className="FileDisplayList-title">{props.listTitle}</Text>
+				<>
+					<Text className="FileDisplayList-title">
+						{props.listTitle}
+					</Text>
+					<hr />
+				</>
 			)}
 			{props.children}
 		</BaseElement>

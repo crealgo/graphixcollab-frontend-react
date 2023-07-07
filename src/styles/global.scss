@@ -15,13 +15,20 @@ html {
 
 input:not([type="button"]):not([type="checkbox"]):not([type="radio"]),
 select,
-[role="combobox"][tabIndex="0"], // for file input
+[role="combobox"][tabIndex="0"],
+// for file input
 textarea {
   &:focus-visible {
     border-color: var(--color-brand-key-main);
     outline-width: 1px;
     outline-offset: unset;
   }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(12,10,0, 0.25);
 }
 
 dd {
