@@ -1,9 +1,15 @@
-import { type HTMLInputTypeAttribute, type HTMLProps } from 'react';
+import Chance from 'chance';
+import { type HTMLProps } from 'react';
+import { type RegisterOptions } from 'react-hook-form';
 import { type FileInputProps } from '../../form/FileInput';
 import { type FormControlProps } from '../../form/FormControl';
-import { materials, services } from './data';
+import { deliveryMethods, materials, services } from './data';
 
-export type FormFieldNames =
+const chance = new Chance();
+
+const todayDate = new Date();
+
+export type FormFieldName =
 	| 'name'
 	| 'email'
 	| 'phone'
@@ -11,26 +17,34 @@ export type FormFieldNames =
 	| 'service'
 	| 'quantity'
 	| 'deadline'
+	| 'delivery'
 	| 'artwork';
 
 export type FormFields = {
-	[field in FormFieldNames]: string | number | FileList | null;
+	[field in FormFieldName]: string | number | FileList | null;
 };
 
-type OptionBag = {
-	value: string;
-	label: string;
-};
+export type FieldType =
+	| 'checkbox'
+	| 'radio'
+	| 'select'
+	| 'date'
+	| 'number'
+	| 'text'
+	| 'file';
 
 export type FieldBag = {
-	type: HTMLInputTypeAttribute | 'select';
-	name: FormFieldNames;
+	type: FieldType;
+	name: string;
 
 	// grid
 	span?: number;
 
 	// select field
 	options?: OptionBag[];
+
+	// react-hook-form:
+	registerOptions?: RegisterOptions;
 } & Pick<FormControlProps, 'label' | 'helperText'> &
 	Pick<
 		HTMLProps<HTMLInputElement>,
@@ -41,6 +55,8 @@ export type FieldBag = {
 		| 'accept'
 		| 'min'
 		| 'max'
+		| 'value'
+		| 'defaultValue'
 	> &
 	Pick<FileInputProps, 'displayText'>;
 
@@ -56,18 +72,23 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'text',
 				name: 'name',
+				defaultValue: chance.name(),
 				label: 'Full Name',
+				required: true,
 				span: 4
 			},
 			{
 				type: 'text',
 				name: 'email',
+				defaultValue: chance.email(),
 				label: 'Email',
+				required: true,
 				span: 4
 			},
 			{
 				type: 'text',
 				name: 'phone',
+				defaultValue: chance.phone(),
 				label: 'Phone Number',
 				placeholder: 'XXX-XXX-XXXX',
 				span: 4
@@ -80,6 +101,9 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'select',
 				name: 'material',
+				defaultValue: chance.pickone(
+					materials.map(({ value }) => value)
+				),
 				label: 'Material Type',
 				options: materials,
 				span: 4
@@ -87,26 +111,42 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'select',
 				name: 'service',
+				defaultValue: chance.pickone(
+					services.map(({ value }) => value)
+				),
 				label: 'Service Type',
 				options: services,
-				span: 3
+				span: 4
 			},
 			{
 				type: 'number',
 				name: 'quantity',
+				defaultValue: chance.natural({ min: 10, max: 9999 }),
 				label: 'Quantity',
 				required: true,
 				min: 10,
 				max: 9999,
-				span: 2
+				span: 4
 			},
 			{
 				type: 'date',
 				name: 'deadline',
+				defaultValue: chance.date().toISOString().split('T')[0],
 				label: 'Deadline',
 				required: true,
-				min: '@today',
-				span: 3
+				min: todayDate.toISOString().split('T')[0],
+				span: 4
+			},
+			{
+				type: 'radio',
+				name: 'delivery',
+				required: true,
+				defaultValue: chance.pickone(
+					deliveryMethods.map(({ value }) => value)
+				),
+				label: 'Delivery Method',
+				options: deliveryMethods,
+				span: 4
 			}
 		]
 	},
@@ -116,6 +156,7 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'file',
 				multiple: true,
+				defaultValue: '',
 				name: 'artwork',
 				label: 'Artwork File(s)',
 				displayText: '🌅 Upload your artwork',

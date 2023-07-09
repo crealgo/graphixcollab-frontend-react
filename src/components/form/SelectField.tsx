@@ -9,22 +9,14 @@ export const SelectField = forwardRef<HTMLSelectElement, Props>(
 	({ label, helperText, isFullWidth, ...props }, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
-		const requiredIndicator = <span style={{ color: 'red' }}>*</span>;
-
-		const resolvedLabel = label ? (
-			<>
-				{label}
-				{props.required && requiredIndicator}
-			</>
-		) : undefined;
-
 		return (
 			<FormControl
 				isFullWidth
-				label={resolvedLabel}
+				label={label}
 				labelFor={generatedName}
 				helperText={helperText}
 				helperTextId={`${generatedName}-helper-text`}
+				isRequired={props.required}
 			>
 				<Select
 					{...props}

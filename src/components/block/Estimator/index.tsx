@@ -13,13 +13,9 @@ import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
 import { Heading } from '../../base/Heading';
 import { Mark } from '../../base/Mark';
-import {
-	type FormFields,
-	estimatorFields,
-	type FieldBag
-} from './esimatorFields';
-import { SelectField } from '../../form/SelectField';
-import { TextField } from '../../form/TextField';
+import { DynamicControl } from './DynamicControl';
+import { estimatorFields, type FormFields } from './estimatorFields';
+import { paramCase } from 'change-case';
 
 export type EstimatorProps = {
 	isSimple?: boolean;
@@ -72,14 +68,37 @@ const Instructions = styled('em')`
 	max-width: 40rem;
 `;
 
-const today = new Date().toISOString().split('T')[0];
-
 export const Estimator: FC<EstimatorProps> = props => {
 	const { formState, handleSubmit, register } = useForm<FormFields>();
 
 	const onValid: SubmitHandler<FieldValues> = async data => {
-		// console.log('deadline', data.deadline);
-		console.log('data', JSON.stringify(data));
+		const formData = new FormData();
+
+		Object.entries(data).forEach(([key, value]) => {
+			if (key.includes('artwork')) {
+				formData.getAll('artwork').forEach((file, fileIndex) => {
+					formData.append(`artwork[${fileIndex}]`, file);
+				});
+
+				formData.delete('artwork');
+			}
+
+			formData.append(key, value as string);
+		});
+
+		const url = new URL(
+			'api/graphix-collab/get-estimate',
+			'http://localhost:8000'
+		);
+
+		const response = await fetch(url, {
+			method: 'POST',
+			body: formData
+		});
+
+		const json = (await response.json()) as Record<string, any>;
+
+		console.log('json', json);
 	};
 
 	const onInvalid: SubmitErrorHandler<FieldValues> = (errors, event) => {
@@ -87,28 +106,6 @@ export const Estimator: FC<EstimatorProps> = props => {
 	};
 
 	const titleSpacing = '1.5rem';
-
-	const renderFields = (fields: FieldBag[]) =>
-		fields.map(
-			({ span, required, min, max, disabled, ...field }, fieldIndex) => {
-				const InputComponent =
-					field.type === 'select' ? SelectField : TextField;
-
-				return (
-					<Grid key={fieldIndex} xs={span}>
-						<InputComponent
-							{...field}
-							{...register(field.name, {
-								required,
-								min,
-								max,
-								disabled
-							})}
-						/>
-					</Grid>
-				);
-			}
-		);
 
 	return (
 		<form
@@ -130,21 +127,39 @@ export const Estimator: FC<EstimatorProps> = props => {
 						a step closer to getting your project started!
 					</Mark>
 				</Instructions>
+				<Grid container rowSpacing={5} marginBottom={titleSpacing}>
+					{estimatorFields.map((group, groupIndex) => {
+						const fieldsetId = paramCase(group.legend);
 
-				<Grid
-					container
-					rowSpacing={3}
-					columnSpacing={1.5}
-					marginBottom={titleSpacing}
-				>
-					{estimatorFields.map((group, groupIndex) => (
-						<fieldset key={groupIndex}>
-							<legend>{group.legend}</legend>
-							<Grid item container spacing={2}>
-								{renderFields(group.fields)}
+						return (
+							<Grid
+								key={groupIndex}
+								item
+								aria-labelledby={fieldsetId}
+							>
+								{!props.isSimple && (
+									<>
+										<Heading level={4}>
+											{group.legend}
+										</Heading>
+										<hr />
+									</>
+								)}
+								<Grid container spacing={2}>
+									{group.fields.map((field, fieldIndex) => (
+										<Grid
+											key={fieldIndex}
+											item
+											xs={12}
+											sm={field.span}
+										>
+											<DynamicControl {...field} />
+										</Grid>
+									))}
+								</Grid>
 							</Grid>
-						</fieldset>
-					))}
+						);
+					})}
 				</Grid>
 				{formState.isSubmitSuccessful && (
 					<Alert severity="success">

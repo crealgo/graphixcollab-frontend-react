@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
       }
     ],
-    "rootDirs": ["src"],
+    "rootDirs": [
+      "src"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,8 +28,21 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
   },
-  "exclude": ["node_modules", "out", "dist", ".next", "build", "test-results"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/block/Estimator/esimatorFields.js"]
+  "exclude": [
+    "node_modules",
+    "out",
+    "dist",
+    ".next",
+    "build",
+    "test-results"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ]
 }

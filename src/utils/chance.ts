@@ -13,7 +13,6 @@ import {
 	type Employee,
 	type EmployeeGroup,
 	type NavItemOptions,
-	type OptionValue,
 	type Person,
 	type PersonGroup,
 	type ServiceOptions
@@ -102,7 +101,7 @@ export const generateFeaturedItem = (): FeaturedItemProps => ({
 export const generateFeaturedItems = (n = 4): FeaturedItemProps[] =>
 	chance.n(() => generateFeaturedItem(), n);
 
-export const generateOptions = (n = 5): OptionValue[] =>
+export const generateOptions = (n = 5): OptionBag[] =>
 	chance.n(() => {
 		const word = generateWord();
 

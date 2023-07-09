@@ -1,9 +1,8 @@
 import { useId, type FC, type PropsWithChildren } from 'react';
-import { type OptionValue } from '../../types/OptionValue';
 import { Input, type BaseInputProps } from './Input';
 
 export type AutocompleteProps = {
-	options?: OptionValue[];
+	options?: OptionBag[];
 } & BaseInputProps &
 	PropsWithChildren;
 

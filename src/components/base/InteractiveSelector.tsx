@@ -2,11 +2,10 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { useState, type FC, type ChangeEventHandler } from 'react';
-import { type OptionValue } from '../../types/general';
 
 export type InteractiveSelectorProps = {
 	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
-	options?: OptionValue[];
+	options?: OptionBag[];
 };
 
 const ClickBox = styled.button<InteractiveSelectorProps>(

@@ -65,11 +65,6 @@ export type Article = {
 	url: string;
 };
 
-export type OptionValue = {
-	label: string;
-	value: string;
-};
-
 export type Term = {
 	term: string;
 	description: string;

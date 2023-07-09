@@ -1,11 +1,7 @@
-import { test, type Page, type Locator } from '@playwright/test';
-import {
-	materials,
-	services
-} from '../../../src/components/block/Estimator/data';
-import { chance } from '../../utils/chance';
+import { test, type Page } from '@playwright/test';
+import { materials, services } from '../../src/components/block/Estimator/data';
+import { chance } from '../utils/chance';
 
-const testFile = 'playwright/assets/file_example_GIF_1MB.gif';
 const testFiles = [
 	'playwright/assets/file_example_GIF_1MB.gif',
 	'playwright/assets/file_example_JPG_1MB.jpg',
@@ -14,39 +10,13 @@ const testFiles = [
 	'playwright/assets/file-example_PDF_1MB.pdf'
 ];
 
-const setup = async (page: Page) => {
-	await page.goto('/estimate');
-};
-
 const submitForm = async (page: Page) => {
-	await page.locator('form').evaluate((form: HTMLFormElement) => {
-		const formData = new FormData(form);
-
-		if (formData.has('artwork')) {
-			formData.getAll('artwork').forEach((file, fileIndex) => {
-				formData.append(`artwork[${fileIndex}]`, file);
-			});
-
-			formData.delete('artwork');
-		}
-
-		// for dev purposes
-		const data = Object.fromEntries(formData.entries());
-		const displayData = JSON.stringify(
-			data,
-			(key: string, value: File | string) => {
-				if (key.includes('artwork') && value instanceof File) {
-					return value.name;
-				}
-
-				return value;
-			},
-			2
-		);
-		console.log(displayData);
+	await page.on('request', request => {
+		console.log(request.url());
+		console.log(request.postData());
 	});
 
-	// await page.getByText('Get Estimate').click();
+	await page.getByText('Get Estimate').click();
 };
 
 test.describe('Estimate Form', () => {
