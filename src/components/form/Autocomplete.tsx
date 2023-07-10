@@ -1,9 +1,9 @@
 import { useId, type FC, type PropsWithChildren } from 'react';
-import { Input, type BaseInputProps } from './Input';
+import { Input } from './Input';
 
 export type AutocompleteProps = {
 	options?: OptionBag[];
-} & BaseInputProps &
+} & BaseControlProps &
 	PropsWithChildren;
 
 // TODO: add dropdown icon 'button'

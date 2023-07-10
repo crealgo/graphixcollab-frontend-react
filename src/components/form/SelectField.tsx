@@ -17,6 +17,9 @@ export const SelectField = forwardRef<HTMLSelectElement, Props>(
 				helperText={helperText}
 				helperTextId={`${generatedName}-helper-text`}
 				isRequired={props.required}
+				isInvalid={props.isInvalid}
+				isValid={props.isValid}
+				isTouched={props.isTouched}
 			>
 				<Select
 					{...props}

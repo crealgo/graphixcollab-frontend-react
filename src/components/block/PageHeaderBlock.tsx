@@ -7,7 +7,6 @@ import { Container } from '../base/Container';
 import { Heading } from '../base/Heading';
 import { type ImageProps } from '../base/Image';
 import { Text } from '../base/Text';
-import { type ColorVariants } from '../../types/color';
 import { Mark } from '../base/Mark';
 
 export type PageHeaderBlockProps = {

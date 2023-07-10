@@ -11,6 +11,7 @@
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/inter-tight": "^5.0.2",
+    "@hookform/resolvers": "^3.1.1",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.10.11",
     "@react-spring/web": "^9.7.2",
@@ -34,7 +35,8 @@
     "storybook": "^7.0.21",
     "tsx": "^3.12.7",
     "typescript-plugin-css-modules": "^5.0.1",
-    "yaml": "^2.2.1"
+    "yaml": "^2.2.1",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "dev": "concurrently npm:site:dev npm:tokens:dev npm:script:resize-images-watch",

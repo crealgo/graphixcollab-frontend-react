@@ -3,6 +3,7 @@ import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
 import { Alert, AlertTitle, CircularProgress, Grid } from '@mui/material';
 import { type FC } from 'react';
 import {
+	FormProvider,
 	useForm,
 	type FieldValues,
 	type SubmitErrorHandler,
@@ -16,6 +17,8 @@ import { Mark } from '../../base/Mark';
 import { DynamicControl } from './DynamicControl';
 import { estimatorFields, type FormFields } from './estimatorFields';
 import { paramCase } from 'change-case';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 export type EstimatorProps = {
 	isSimple?: boolean;
@@ -68,37 +71,59 @@ const Instructions = styled('em')`
 	max-width: 40rem;
 `;
 
+const validationSchema = yup.object<FormFields>().shape({
+	name: yup.string().required(),
+	email: yup.string().email().required(),
+	phone: yup.lazy(value => {
+		return value
+			? yup.string().matches(/^\d{10}$/, 'Phone number is not valid')
+			: yup.string();
+	}),
+	material: yup.string().required(),
+	service: yup.string().required(),
+	quantity: yup.number().required(),
+	deadline: yup.date().required(),
+	delivery: yup.string().required(),
+	artwork: yup.mixed().notRequired()
+});
+
 export const Estimator: FC<EstimatorProps> = props => {
-	const { formState, handleSubmit, register } = useForm<FormFields>();
+	const formMethods = useForm<FormFields>({
+		resolver: yupResolver(validationSchema)
+	});
 
-	const onValid: SubmitHandler<FieldValues> = async data => {
-		const formData = new FormData();
+	const { handleSubmit, formState } = formMethods;
 
-		Object.entries(data).forEach(([key, value]) => {
-			if (key.includes('artwork')) {
-				formData.getAll('artwork').forEach((file, fileIndex) => {
-					formData.append(`artwork[${fileIndex}]`, file);
-				});
+	const onValid: SubmitHandler<FieldValues> = async (data, event) => {
+		console.log('data', data, event?.currentTarget);
 
-				formData.delete('artwork');
-			}
+		// const formData = new FormData();
 
-			formData.append(key, value as string);
-		});
+		// Object.entries(data).forEach(([key, value]) => {
+		// 	if (key === 'artwork') {
+		// 		formData.getAll('artwork').forEach((file, fileIndex) => {
+		// 			formData.append(`artwork[${fileIndex}]`, file);
+		// 		});
 
-		const url = new URL(
-			'api/graphix-collab/get-estimate',
-			'http://localhost:8000'
-		);
+		// 		formData.delete('artwork');
+		// 	}
 
-		const response = await fetch(url, {
-			method: 'POST',
-			body: formData
-		});
+		// 	formData.append(key, value as string);
+		// });
 
-		const json = (await response.json()) as Record<string, any>;
+		// const url = new URL(
+		// 	'api/graphix-collab/get-estimate',
+		// 	'http://localhost:8000'
+		// );
 
-		console.log('json', json);
+		// const response = await fetch(url, {
+		// 	method: 'POST',
+		// 	body: formData
+		// });
+
+		// const json = (await response.json()) as Record<string, any>;
+
+		// console.log('json', json);
 	};
 
 	const onInvalid: SubmitErrorHandler<FieldValues> = (errors, event) => {
@@ -107,96 +132,92 @@ export const Estimator: FC<EstimatorProps> = props => {
 
 	const titleSpacing = '1.5rem';
 
-	return (
-		<form
-			encType="multipart/form-data"
-			id="estimator-form"
-			onSubmit={handleSubmit(onValid, onInvalid)}
-		>
-			<ContentGrid>
-				<Heading level={2}>
-					Get {props.isSimple ? 'a quick ' : 'an '}
-					<Mark text color="magenta">
-						estimate
-					</Mark>
-					!
-				</Heading>
-				<Instructions>
-					<Mark color="magenta">
-						Fill out the form below to get your quick estimate, and
-						a step closer to getting your project started!
-					</Mark>
-				</Instructions>
-				<Grid container rowSpacing={5} marginBottom={titleSpacing}>
-					{estimatorFields.map((group, groupIndex) => {
-						const fieldsetId = paramCase(group.legend);
+	const fields = estimatorFields.map((group, groupIndex) => {
+		const fieldsetId = paramCase(group.legend);
 
-						return (
-							<Grid
-								key={groupIndex}
-								item
-								aria-labelledby={fieldsetId}
-							>
-								{!props.isSimple && (
-									<>
-										<Heading level={4}>
-											{group.legend}
-										</Heading>
-										<hr />
-									</>
-								)}
-								<Grid container spacing={2}>
-									{group.fields.map((field, fieldIndex) => (
-										<Grid
-											key={fieldIndex}
-											item
-											xs={12}
-											sm={field.span}
-										>
-											<DynamicControl {...field} />
-										</Grid>
-									))}
-								</Grid>
-							</Grid>
-						);
-					})}
-				</Grid>
-				{formState.isSubmitSuccessful && (
-					<Alert severity="success">
-						<AlertTitle>Success!</AlertTitle>
-						We’ve received your request and will get back to you
-						shortly.
-					</Alert>
+		return (
+			<Grid key={groupIndex} item xs={12} aria-labelledby={fieldsetId}>
+				{!props.isSimple && (
+					<>
+						<Heading level={4}>{group.legend}</Heading>
+						<hr style={{ marginBottom: '1rem' }} />
+					</>
 				)}
-				<ActionStack>
-					<Button
-						size="large"
-						color="secondary"
-						endIcon={
-							formState.isSubmitting ? (
-								<CircularProgress
-									size="inherit"
-									thickness={6}
-									sx={{ color: 'white' }}
-								/>
-							) : (
-								<CheckCircleOutline />
-							)
-						}
-						type="submit"
-					>
-						{formState.isSubmitting ? 'Sending...' : 'Get Estimate'}
-					</Button>
-					<Button
-						size="large"
-						color="text"
-						href="mailto:graphixcollab@gmail.com"
-						endIcon={<ArrowForward />}
-					>
-						Not sure? Contact us
-					</Button>
-				</ActionStack>
-			</ContentGrid>
-		</form>
+				<Grid container spacing={2}>
+					{group.fields.map((field, fieldIndex) => (
+						<Grid key={fieldIndex} item xs={12} sm={field.span}>
+							<DynamicControl {...field} />
+						</Grid>
+					))}
+				</Grid>
+			</Grid>
+		);
+	});
+
+	return (
+		<FormProvider {...formMethods}>
+			<form
+				noValidate
+				encType="multipart/form-data"
+				id="estimator-form"
+				onSubmit={handleSubmit(onValid, onInvalid)}
+			>
+				<ContentGrid>
+					<Heading level={2}>
+						Get {props.isSimple ? 'a quick ' : 'an '}
+						<Mark text color="magenta">
+							estimate
+						</Mark>
+						!
+					</Heading>
+					<Instructions>
+						<Mark color="magenta">
+							Fill out the form below to get your quick estimate,
+							and a step closer to getting your project started!
+						</Mark>
+					</Instructions>
+					<Grid container rowSpacing={5} marginBottom={titleSpacing}>
+						{fields}
+					</Grid>
+					{formState.isSubmitSuccessful && (
+						<Alert severity="success">
+							<AlertTitle>Success!</AlertTitle>
+							We’ve received your request and will get back to you
+							shortly.
+						</Alert>
+					)}
+					<ActionStack>
+						<Button
+							size="large"
+							color="secondary"
+							endIcon={
+								formState.isSubmitting ? (
+									<CircularProgress
+										size="inherit"
+										thickness={6}
+										sx={{ color: 'white' }}
+									/>
+								) : (
+									<CheckCircleOutline />
+								)
+							}
+							type="submit"
+						>
+							{formState.isSubmitting
+								? 'Sending...'
+								: 'Get Estimate'}
+						</Button>
+						<Button
+							size="large"
+							color="text"
+							href="mailto:graphixcollab@gmail.com"
+							endIcon={<ArrowForward />}
+						>
+							Not sure? Contact us
+						</Button>
+					</ActionStack>
+				</ContentGrid>
+			</form>
+		</FormProvider>
 	);
 };

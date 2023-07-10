@@ -2,15 +2,22 @@ import { paramCase } from 'change-case';
 import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { InputGroup } from './InputGroup';
-import { RadioInput } from './RadioInput';
-import { type SelectProps } from './Select';
+import { RadioInput, type RadioInputProps } from './RadioInput';
 
-// FIXME: fieldset not working
-
-type Props = FormControlProps & SelectProps;
+type Props = FormControlProps & Omit<RadioInputProps, 'label'>;
 
 export const RadioField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, isFullWidth = true, options, ...props }, ref) => {
+	(
+		{
+			label,
+			helperText,
+			isFullWidth = true,
+			options,
+			defaultValue,
+			...props
+		},
+		ref
+	) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
@@ -22,11 +29,15 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 				helperText={helperText}
 				helperTextId={`${generatedName}-helper-text`}
 				isRequired={props.required}
+				isInvalid={props.isInvalid}
+				isValid={props.isValid}
+				isTouched={props.isTouched}
 			>
 				<InputGroup>
-					{options?.map(option => (
+					{options?.map((option, optionIndex) => (
 						<RadioInput
-							key={generatedName}
+							{...props}
+							key={optionIndex}
 							ref={ref}
 							label={option.label}
 							value={option.value}
@@ -34,6 +45,7 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 							id={option.label}
 							meta={option.meta}
 							name={generatedName}
+							defaultChecked={option.value === defaultValue}
 						/>
 					))}
 				</InputGroup>

@@ -1,9 +1,8 @@
 import { css, type SerializedStyles } from '@emotion/react';
-import { type BaseInputProps } from '../components/form/Input';
 
 export const getInputGroupStyles = ({
 	inputSize = 'medium'
-}: BaseInputProps): SerializedStyles => css`
+}: BaseControlProps): SerializedStyles => css`
 	border: unset;
 	padding: unset;
 	outline: unset;

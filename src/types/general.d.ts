@@ -23,8 +23,6 @@ import { type YelpBlockProps } from '../components/block/YelpBlock';
 
 export type LoadingStatus = 'loading' | 'loaded' | 'error';
 
-export type Size = 'small' | 'medium' | 'large';
-
 export type Action<T = HTMLElement> = {
 	href?: string;
 	label?: string;

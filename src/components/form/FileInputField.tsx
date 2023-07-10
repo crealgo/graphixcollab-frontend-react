@@ -18,6 +18,9 @@ export const FileInputField = forwardRef<HTMLInputElement, Props>(
 				helperText={helperText}
 				helperTextId={`${generatedName}-helper-text`}
 				className={clsx('FileInputField-root', className)}
+				isInvalid={props.isInvalid}
+				isValid={props.isValid}
+				isTouched={props.isTouched}
 			>
 				<FileInput
 					{...props}

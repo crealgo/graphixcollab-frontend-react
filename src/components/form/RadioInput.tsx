@@ -1,17 +1,20 @@
 import styled from '@emotion/styled';
 import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { type BaseInputProps } from './Input';
+import RadioUnchecked from '@mui/icons-material/RadioButtonUnchecked';
+import RadioChecked from '@mui/icons-material/RadioButtonChecked';
 
-export type RadioProps = {
+export type RadioInputProps = {
 	label?: string;
 	meta?: string;
 	options?: OptionBag[];
-} & BaseInputProps &
+} & BaseControlProps &
 	ComponentPropsWithRef<'input'>;
+
+const inputSize = '1.25rem';
 
 const RadioLabel = styled.label`
 	display: grid;
-	grid-template-columns: 1rem 1fr;
+	grid-template-columns: ${inputSize} 1fr;
 	gap: var(--spacing-1-5);
 	place-items: start;
 	place-content: start;
@@ -23,57 +26,65 @@ const RadioLabel = styled.label`
 
 	.RadioInput-text {
 		display: grid;
+		line-height: ${inputSize};
 		grid-template-columns: 1fr;
-	}
 
-	.RadioInput-meta {
-		color: var(--color-gray-500);
+		.RadioInput-meta {
+			line-height: normal;
+			color: var(--color-gray-500);
+		}
 	}
 `;
 
-const Radio = styled.input`
+const Radio = styled('input', {
+	shouldForwardProp: prop =>
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+})/* scss */ `
 	opacity: 0;
-	visibility: hidden;
 	position: absolute;
+	cursor: pointer;
 
 	+ .RadioInput-indicator {
-		content: '';
-		background-clip: padding-box;
-		display: inline-flex;
-		height: var(--input-font-size-medium);
-		width: var(--input-font-size-medium);
+		display: flex;
 		border-radius: 50%;
-		border: var(--input-border-composite);
-		background-color: var(--color-white);
+		overflow: hidden;
+		width: ${inputSize};
+		height: ${inputSize};
+
+		.RadioInput-icon {
+			width: inherit;
+			height: inherit;
+			color: var(--color-gray-500);
+			display: none;
+		}
 	}
 
-	&:hover + .RadioInput-indicator,
-	&:focus-visible + .RadioInput-indicator {
-		border-color: var(--color-gray-600);
-		background-color: var(--color-gray-100);
+	&:not(:checked) + .RadioInput-indicator .RadioInput-icon.is-unchecked {
+		display: flex;
 	}
 
-	&:focus-visible + .RadioInput-indicator {
-		outline: solid 2px var(--color-gray-600);
-		outline-offset: 2px;
+	&:hover,
+	&:focus-visible {
+		+ .RadioInput-indicator .RadioInput-icon {
+			color: var(--color-gray-800);
+			background-color: var(--color-gray-100);
+		}
 	}
 
-	&:checked + .RadioInput-indicator {
-		border-color: var(--color-gray-600);
-		background-color: var(--color-brand-primary-main);
-		background-image: radial-gradient(
-			transparent 0%,
-			transparent 50%,
-			#fff 52%
-		);
+	&:checked + .RadioInput-indicator .RadioInput-icon.is-checked {
+		color: var(--color-brand-magenta-main);
+		display: flex;
 	}
 `;
 
-export const RadioInput = forwardRef<HTMLInputElement, RadioProps>(
+export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
 	(props, ref) => (
 		<RadioLabel htmlFor={props.id}>
 			<Radio ref={ref} type="radio" {...props} />
-			<span className="RadioInput-indicator" />
+			<div className="RadioInput-indicator">
+				<RadioChecked className="RadioInput-icon is-checked" />
+				<RadioUnchecked className="RadioInput-icon is-unchecked" />
+			</div>
 			<span className="RadioInput-text">
 				<span>{props.label}</span>
 				<small className="RadioInput-meta">{props.meta}</small>

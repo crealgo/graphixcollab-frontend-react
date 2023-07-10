@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { type Size } from '../../types/general';
 
 type BrandDotsProps = {
 	size?: Size;

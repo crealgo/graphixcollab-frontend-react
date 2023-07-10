@@ -5,8 +5,6 @@ import {
 	type FC,
 	type ReactElement
 } from 'react';
-import { type ColorVariants } from '../../types/color';
-import { type Size } from '../../types/general';
 import { _e } from '../../utils/excludePropsFromForwarding';
 
 export type ButtonBaseSizes = Size;

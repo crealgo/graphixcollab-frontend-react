@@ -2,12 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { forwardRef, type ComponentPropsWithRef, type FC } from 'react';
-import { generateBaseInputStyles, type BaseInputProps } from './Input';
+import { generateBaseInputStyles } from './generateBaseInputStyles';
 import clsx from 'clsx';
 
 export type SelectProps = {
 	options?: OptionBag[];
-} & BaseInputProps &
+} & BaseControlProps &
 	ComponentPropsWithRef<'select'>;
 
 const SelectWrapper = styled('div')<SelectProps>(
@@ -28,9 +28,14 @@ const SelectWrapper = styled('div')<SelectProps>(
 	`
 );
 
-const StyledSelect = styled.select<SelectProps>(
+const StyledSelect = styled('select', {
+	shouldForwardProp: prop =>
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+})<SelectProps>(
 	props => css`
-		${generateBaseInputStyles(props)};
+		${generateBaseInputStyles({
+			inputSize: props.inputSize
+		})};
 
 		padding-inline: var(--select-spacing-padding-inline-${props.inputSize});
 		appearance: none;

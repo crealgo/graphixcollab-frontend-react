@@ -17,6 +17,9 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
 				helperText={helperText}
 				helperTextId={`${generatedName}-helper-text`}
 				isRequired={props.required}
+				isInvalid={props.isInvalid}
+				isValid={props.isValid}
+				isTouched={props.isTouched}
 			>
 				<Input
 					{...props}

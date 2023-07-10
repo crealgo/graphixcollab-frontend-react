@@ -19,7 +19,8 @@ export type FormControlProps = {
 	 * @default false
 	 */
 	isFieldset?: boolean;
-} & Pick<BaseComponentProps, 'className' | 'children'>;
+} & Pick<BaseComponentProps, 'className' | 'children'> &
+	Pick<BaseControlProps, 'isTouched' | 'isInvalid' | 'isValid'>;
 
 const StyledLabel = styled.label`
 	display: inline-grid;
@@ -57,6 +58,14 @@ const StyledLabel = styled.label`
 		content: '*';
 		color: var(--color-feedback-error-main);
 	}
+
+	&.is-invalid .FormControl-helper-text {
+		color: var(--color-feedback-error-main);
+	}
+
+	&.is-valid .FormControl-helper-text {
+		color: var(--color-feedback-success-main);
+	}
 `;
 
 export const FormControl: FC<FormControlProps> = props => {
@@ -92,7 +101,10 @@ export const FormControl: FC<FormControlProps> = props => {
 			className={clsx(props.className, 'FormControl-root', {
 				'is-full-width': props.isFullWidth,
 				'is-fieldset': props.isFieldset,
-				'is-required': props.isRequired
+				'is-required': props.isRequired,
+				'is-invalid': props.isInvalid,
+				'is-valid': props.isValid,
+				'is-touched': props.isTouched
 			})}
 		>
 			<LabelComponent className="FormControl-label">

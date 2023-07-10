@@ -21,7 +21,15 @@ export type FormFieldName =
 	| 'artwork';
 
 export type FormFields = {
-	[field in FormFieldName]: string | number | FileList | null;
+	name: string;
+	email: string;
+	phone: string;
+	material: string;
+	service: string;
+	quantity: number;
+	deadline: string;
+	delivery: string;
+	artwork: FileList;
 };
 
 export type FieldType =
@@ -57,6 +65,7 @@ export type FieldBag = {
 		| 'max'
 		| 'value'
 		| 'defaultValue'
+		| 'onChange'
 	> &
 	Pick<FileInputProps, 'displayText'>;
 
@@ -86,11 +95,12 @@ export const estimatorFields: FieldsetBag[] = [
 				span: 4
 			},
 			{
-				type: 'text',
+				type: 'number',
 				name: 'phone',
-				defaultValue: chance.phone(),
 				label: 'Phone Number',
 				placeholder: 'XXX-XXX-XXXX',
+				min: 1000000000,
+				max: 9999999999,
 				span: 4
 			}
 		]
@@ -156,14 +166,13 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'file',
 				multiple: true,
-				defaultValue: '',
 				name: 'artwork',
 				label: 'Artwork File(s)',
 				displayText: '🌅 Upload your artwork',
 				accept: '.gif,.jpeg,.jpg,.png,.pdf,.svg,.webp',
 				helperText:
 					'Although this step is optional, uploading your artwork helps us come up with a more accurate estimate.',
-				span: 8
+				span: 12
 			}
 		]
 	}

@@ -1,3 +1,5 @@
+declare type Size = 'small' | 'medium' | 'large';
+
 declare type BaseElement<T extends keyof JSX.IntrinsicElements = 'div'> =
 	JSX.IntrinsicElements[T];
 

@@ -9,7 +9,8 @@ import {
 	type ReactNode
 } from 'react';
 import { Text } from '../../base/Text';
-import { generateBaseInputStyles, type InputProps } from '../Input';
+import { type InputProps } from '../Input';
+import { generateBaseInputStyles } from '../generateBaseInputStyles';
 import { FileDisplayList } from './FileDisplayList';
 import { FileListItem } from './FileListItem';
 
@@ -17,7 +18,7 @@ export type FileInputProps = InputProps & {
 	displayText?: ReactNode;
 };
 
-const BaseInput = styled('div')<InputProps>`
+const BaseElement = styled('div')<InputProps>`
 	${generateBaseInputStyles};
 	cursor: pointer;
 	display: inline-grid;
@@ -62,6 +63,10 @@ const DefaultFileInputDisplay = styled('div')`
 	}
 `;
 
+const BaseInput = styled('input', {
+	shouldForwardProp: prop =>
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+})()
 export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 	(
 		{
@@ -113,7 +118,7 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 		};
 
 		return (
-			<BaseInput
+			<BaseElement
 				className={clsx('FileInput-root', className, {
 					hasFiles: Boolean(files)
 				})}
@@ -122,7 +127,7 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 				tabIndex={0}
 			>
 				{resolvedDisplayText}
-				<input
+				<BaseInput
 					{...props}
 					ref={ref}
 					type="file"
@@ -131,7 +136,7 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 					}}
 					onChange={handleChange}
 				/>
-			</BaseInput>
+			</BaseElement>
 		);
 	}
 );

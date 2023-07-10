@@ -3,7 +3,6 @@ import { css } from 'code-tag';
 import clsx from 'clsx';
 import { type ComponentPropsWithRef, type FC } from 'react';
 import { _e } from '../../utils/excludePropsFromForwarding';
-import { type ColorVariants } from '../../types/color';
 
 export type BlockProps = {
 	/**

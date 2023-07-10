@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { type FC } from 'react';
-import { type BaseComponentProps } from '../../types/base';
-import { type Size } from '../../types/general';
 import { _e } from '../../utils/excludePropsFromForwarding';
 
 type TextProps = BaseComponentProps & {
