@@ -7,7 +7,6 @@ import {
 	getButtonHoverColors,
 	getButtonSizes
 } from '../../utils/getButtonStyles';
-import { type ColorVariants } from '../../types/color';
 import { IconButtonBase, type IconButtonBaseProps } from './IconButtonBase';
 import { type CSSObject } from '@emotion/react';
 

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
 import { Alert, AlertTitle, CircularProgress, Grid } from '@mui/material';
-import { type FC } from 'react';
+import { Fragment, type FC } from 'react';
 import {
 	FormProvider,
 	useForm,
@@ -89,7 +89,10 @@ const validationSchema = yup.object<FormFields>().shape({
 
 export const Estimator: FC<EstimatorProps> = props => {
 	const formMethods = useForm<FormFields>({
-		resolver: yupResolver(validationSchema)
+		mode: 'onBlur',
+		// @ts-expect-error yup types are hard to match with custom
+		resolver: yupResolver(validationSchema),
+		reValidateMode: 'onChange'
 	});
 
 	const { handleSubmit, formState, setError, clearErrors } = formMethods;
@@ -144,21 +147,25 @@ export const Estimator: FC<EstimatorProps> = props => {
 		const fieldsetId = paramCase(group.legend);
 
 		return (
-			<Grid key={groupIndex} item xs={12} aria-labelledby={fieldsetId}>
+			<Fragment key={groupIndex}>
 				{!props.isSimple && (
-					<>
+					<Grid item xs={12} marginTop={groupIndex > 0 ? 3 : 0}>
 						<Heading level={4}>{group.legend}</Heading>
-						<hr style={{ marginBottom: '1rem' }} />
-					</>
+						<hr />
+					</Grid>
 				)}
-				<Grid container spacing={2}>
-					{group.fields.map((field, fieldIndex) => (
+				{group.fields.map((field, fieldIndex) => {
+					if (props.isSimple && field.name === 'phone') {
+						return undefined;
+					}
+
+					return (
 						<Grid key={fieldIndex} item xs={12} sm={field.span}>
 							<DynamicControl {...field} />
 						</Grid>
-					))}
-				</Grid>
-			</Grid>
+					);
+				})}
+			</Fragment>
 		);
 	});
 
@@ -184,7 +191,7 @@ export const Estimator: FC<EstimatorProps> = props => {
 							and a step closer to getting your project started!
 						</Mark>
 					</Instructions>
-					<Grid container rowSpacing={5} marginBottom={titleSpacing}>
+					<Grid container spacing={2} marginBottom={titleSpacing}>
 						{fields}
 					</Grid>
 					{formState.isSubmitSuccessful && (

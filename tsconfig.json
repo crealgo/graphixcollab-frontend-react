@@ -36,6 +36,7 @@
     "dist",
     ".next",
     "build",
+    "scripts",
     "test-results"
   ],
   "include": [

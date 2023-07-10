@@ -153,7 +153,7 @@ export const estimatorFields: FieldsetBag[] = [
 				// defaultValue: deliveryMethods[0].value,
 				label: 'Delivery Method',
 				options: deliveryMethods,
-				span: 4
+				span: 3
 			}
 		]
 	},
@@ -169,7 +169,7 @@ export const estimatorFields: FieldsetBag[] = [
 				accept: '.gif,.jpeg,.jpg,.png,.pdf,.svg,.webp',
 				helperText:
 					'Although this step is optional, uploading your artwork helps us come up with a more accurate estimate.',
-				span: 12
+				span: 8
 			}
 		]
 	}

@@ -19,7 +19,7 @@ const AdornmentImage = styled('img')`
 
 	@media screen and (min-width: 768px) {
 		--adornment-image-max-width: 36rem;
-		--adornment-image-inset: auto -1rem -2rem auto;
+		--adornment-image-inset: auto -10rem -2rem auto;
 	}
 
 	padding: 0 0 0 1rem;

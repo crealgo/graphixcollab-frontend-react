@@ -1,4 +1,3 @@
-import { type BaseComponentProps } from '../../types/base';
 import { styled } from '@mui/material/styles';
 import { type FC } from 'react';
 

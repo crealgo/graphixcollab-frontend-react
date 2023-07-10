@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { type FC } from 'react';
-import { type BaseComponentProps } from '../../types/base';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 

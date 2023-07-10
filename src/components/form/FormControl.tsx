@@ -42,6 +42,7 @@ const StyledLabel = styled.label`
 
 	.FormControl-helper-text {
 		margin-top: 0.25rem;
+		max-width: 25rem;
 	}
 
 	&.is-full-width {
@@ -59,12 +60,18 @@ const StyledLabel = styled.label`
 		color: var(--color-feedback-error-main);
 	}
 
-	&.is-invalid .FormControl-helper-text {
-		color: var(--color-feedback-error-main);
+	&.is-invalid {
+		.FormControl-label,
+		.FormControl-helper-text {
+			color: var(--color-feedback-error-main);
+		}
 	}
 
-	&.is-valid .FormControl-helper-text {
-		color: var(--color-feedback-success-main);
+	&.is-valid {
+		.FormControl-label,
+		.FormControl-helper-text {
+			color: var(--color-feedback-success-main);
+		}
 	}
 `;
 
