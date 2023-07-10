@@ -81,7 +81,7 @@ const validationSchema = yup.object<FormFields>().shape({
 	}),
 	material: yup.string().required(),
 	service: yup.string().required(),
-	quantity: yup.number().required(),
+	quantity: yup.number().min(10).max(9999).required(),
 	deadline: yup.date().required(),
 	delivery: yup.string().required(),
 	artwork: yup.mixed().notRequired()
@@ -92,38 +92,46 @@ export const Estimator: FC<EstimatorProps> = props => {
 		resolver: yupResolver(validationSchema)
 	});
 
-	const { handleSubmit, formState } = formMethods;
+	const { handleSubmit, formState, setError, clearErrors } = formMethods;
 
 	const onValid: SubmitHandler<FieldValues> = async (data, event) => {
 		console.log('data', data, event?.currentTarget);
 
-		// const formData = new FormData();
+		const formData = new FormData();
 
-		// Object.entries(data).forEach(([key, value]) => {
-		// 	if (key === 'artwork') {
-		// 		formData.getAll('artwork').forEach((file, fileIndex) => {
-		// 			formData.append(`artwork[${fileIndex}]`, file);
-		// 		});
+		for await (const [key, value] of Object.entries(data)) {
+			if (key === 'artwork') {
+				[...(value as File[])].forEach((file, fileIndex) => {
+					formData.append(`artwork[${fileIndex}]`, file);
+				});
 
-		// 		formData.delete('artwork');
-		// 	}
+				formData.delete('artwork');
+			}
 
-		// 	formData.append(key, value as string);
-		// });
+			formData.append(key, value as string);
+		}
 
-		// const url = new URL(
-		// 	'api/graphix-collab/get-estimate',
-		// 	'http://localhost:8000'
-		// );
+		const url = new URL(
+			'api/graphix-collab/get-estimate',
+			'http://localhost:8000'
+		);
 
-		// const response = await fetch(url, {
-		// 	method: 'POST',
-		// 	body: formData
-		// });
+		const response = await fetch(url, {
+			method: 'POST',
+			body: formData
+		});
 
-		// const json = (await response.json()) as Record<string, any>;
+		if (!response.ok) {
+			const json = (await response.json()) as Record<string, any>;
+			console.log('json', json);
 
-		// console.log('json', json);
+			Object.entries(json).forEach(([key, value]) => {
+				setError(key as keyof FormFields, {
+					type: 'server',
+					message: (value as string[]).join(' ')
+				});
+			});
+		}
 	};
 
 	const onInvalid: SubmitErrorHandler<FieldValues> = (errors, event) => {

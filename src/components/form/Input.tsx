@@ -1,11 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-	forwardRef,
-	type ChangeEvent,
-	type ComponentPropsWithRef
-} from 'react';
 import clsx from 'clsx';
+import { forwardRef, type ComponentPropsWithRef } from 'react';
 import { generateBaseInputStyles } from './generateBaseInputStyles';
 
 export type InputProps = ComponentPropsWithRef<'input'> & BaseControlProps;

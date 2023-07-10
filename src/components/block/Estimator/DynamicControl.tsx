@@ -1,4 +1,3 @@
-import { sentenceCase } from 'change-case';
 import { type FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { CheckboxField } from '../../form/CheckboxField';
@@ -31,16 +30,11 @@ export const DynamicControl: FC<FieldBag> = ({ helperText, ...props }) => {
 		props.name as FormFieldName
 	);
 
-	const isInvalid = Boolean(error?.message);
-
 	return (
 		<ResolvedInputComponent
 			inputSize="large"
-			isInvalid={isInvalid}
-			isTouched={isTouched}
-			helperText={
-				error?.message ? sentenceCase(error.message) : helperText
-			}
+			isInvalid={invalid}
+			helperText={error?.message ?? helperText}
 			{...props}
 			{...register(props.name as FormFieldName, {
 				disabled: props.disabled,

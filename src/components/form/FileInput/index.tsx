@@ -66,7 +66,8 @@ const DefaultFileInputDisplay = styled('div')`
 const BaseInput = styled('input', {
 	shouldForwardProp: prop =>
 		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
-})()
+})();
+
 export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 	(
 		{
@@ -115,6 +116,8 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 			if (event.currentTarget.files?.length) {
 				setFiles(event.currentTarget.files);
 			}
+
+			props.onChange?.(event);
 		};
 
 		return (
@@ -131,9 +134,6 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
 					{...props}
 					ref={ref}
 					type="file"
-					onClick={event => {
-						event.currentTarget.value = '';
-					}}
 					onChange={handleChange}
 				/>
 			</BaseElement>
