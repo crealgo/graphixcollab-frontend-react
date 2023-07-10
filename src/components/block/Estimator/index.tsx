@@ -116,7 +116,7 @@ export const Estimator: FC<EstimatorProps> = props => {
 
 		const url = new URL(
 			'api/graphix-collab/get-estimate',
-			'http://localhost:8000'
+			process.env.apiUrl
 		);
 
 		const response = await fetch(url, {

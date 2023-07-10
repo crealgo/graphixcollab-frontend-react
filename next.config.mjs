@@ -1,7 +1,3 @@
-// import { sharpImageLoader } from './plugins/sharp-image-loader';
-import fs from 'fs';
-import path from 'path';
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -16,6 +12,12 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, module: false, path: false };
 
     return config;
+  },
+  env: {
+    apiUrl:
+      process.env.NODE_ENV === 'production'
+        ? 'https://api.crealgo.com'
+        : 'http://localhost:3000'
   }
 };
 

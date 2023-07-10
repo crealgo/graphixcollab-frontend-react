@@ -53,7 +53,7 @@
     "create:service": "node scripts/createService",
     "create:timeline": "node scripts/createTimeline",
     "site:dev": "next dev",
-    "site:build": "next build && next export",
+    "site:build": "NODE_ENV=production next build && next export",
     "site:serve": "npx http-server out -p 6006",
     "site:deploy-dev": "npx gh-pages -d out --repo https://github.com/crealgo/crealgo-static-projects --dest ./graphixcollab",
     "site:deploy-staging": "npx gh-pages -d out --repo https://github.com/crealgo/graphixcollab-static-staging",
