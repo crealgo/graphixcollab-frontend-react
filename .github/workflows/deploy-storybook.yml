@@ -1,13 +1,13 @@
 name: Deploy Graphix Collab React Storybook
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'tokens/**'
-      - 'src/**'
-      - '!src/pages/**'
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'tokens/**'
+  #     - 'src/**'
+  #     - '!src/pages/**'
 
   workflow_dispatch:
 

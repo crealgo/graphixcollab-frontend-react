@@ -5,15 +5,15 @@ on:
     branches:
       - main
 
-  workflow_dispatch:
-    inputs:
-      deployment_type:
-        type: choice
-        description: Environment Type
-        options:
-          - development
-          - staging
-          - production
+  # workflow_dispatch:
+  #   inputs:
+  #     deployment_type:
+  #       type: choice
+  #       description: Environment Type
+  #       options:
+  #         - development
+  #         - staging
+  #         - production
 
 permissions:
   contents: write
@@ -38,10 +38,11 @@ jobs:
         run: npm run verify
 
       - name: Build Next App
+
         run: npm run site:build
 
-      - if: ${{ github.event_name == 'push' || inputs.deployment_type == 'development' }}
-        name: Deploy Storybook to Development
+      # - if: ${{ github.event_name == 'push' || inputs.deployment_type == 'development' }}
+      - name: Deploy Storybook to Development
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
@@ -51,24 +52,24 @@ jobs:
           publish_dir: out
           destination_dir: graphixcollab
 
-      - if: ${{ inputs.deployment_type == 'staging' }}
-        name: Deploy Storybook to Staging
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: Crealgo Bot 🤖
-          user_email: hello.crealgo@gmail.com
-          external_repository: crealgo/graphixcollab-static-staging
-          publish_dir: out
-          cname: beta.graphixcollab.com
+      # - if: ${{ inputs.deployment_type == 'staging' }}
+      #   name: Deploy Storybook to Staging
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+      #     user_name: Crealgo Bot 🤖
+      #     user_email: hello.crealgo@gmail.com
+      #     external_repository: crealgo/graphixcollab-static-staging
+      #     publish_dir: out
+      #     cname: beta.graphixcollab.com
 
-      - if: ${{ inputs.deployment_type == 'production' }}
-        name: Deploy Storybook to Production
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: Crealgo Bot 🤖
-          user_email: hello.crealgo@gmail.com
-          external_repository: crealgo/graphixcollab-static-production
-          publish_dir: out
-          cname: beta.graphixcollab.com # FIXME: change in the future
+      # - if: ${{ inputs.deployment_type == 'production' }}
+      #   name: Deploy Storybook to Production
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+      #     user_name: Crealgo Bot 🤖
+      #     user_email: hello.crealgo@gmail.com
+      #     external_repository: crealgo/graphixcollab-static-production
+      #     publish_dir: out
+      #     cname: beta.graphixcollab.com # FIXME: change in the future
