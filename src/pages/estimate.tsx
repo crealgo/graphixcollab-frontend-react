@@ -36,17 +36,6 @@ const Page: NextPage<PageProps> = props => (
 	</DefaultLayout>
 );
 
-/*
-Add 5 questions
-- what items do they want? type, garment
-- what is the quantity? what sizes?
-- when do they need it by?
-- logistics, pick up or ship
-
-in email, open picture of artwork
-- what artwork?
-*/
-
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		PageHeaderBlockProps: generatePageHeaderBlock(),

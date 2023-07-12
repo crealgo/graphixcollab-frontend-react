@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
 import { Alert, AlertTitle, CircularProgress, Grid } from '@mui/material';
 import { Fragment, type FC } from 'react';
@@ -9,6 +10,7 @@ import {
 	type SubmitErrorHandler,
 	type SubmitHandler
 } from 'react-hook-form';
+import * as yup from 'yup';
 import { type Action } from '../../../types/general';
 import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
@@ -16,9 +18,6 @@ import { Heading } from '../../base/Heading';
 import { Mark } from '../../base/Mark';
 import { DynamicControl } from './DynamicControl';
 import { estimatorFields, type FormFields } from './estimatorFields';
-import { paramCase } from 'change-case';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 
 export type EstimatorProps = {
 	isSimple?: boolean;
@@ -95,7 +94,7 @@ export const Estimator: FC<EstimatorProps> = props => {
 		reValidateMode: 'onChange'
 	});
 
-	const { handleSubmit, formState, setError, clearErrors } = formMethods;
+	const { handleSubmit, formState, setError } = formMethods;
 
 	const onValid: SubmitHandler<FieldValues> = async (data, event) => {
 		console.log('data', data, event?.currentTarget);
@@ -116,7 +115,7 @@ export const Estimator: FC<EstimatorProps> = props => {
 
 		const url = new URL(
 			'api/graphix-collab/get-estimate',
-			process.env.apiUrl
+			process.env.NEXT_PUBLIC_API_URL
 		);
 
 		const response = await fetch(url, {
@@ -137,15 +136,13 @@ export const Estimator: FC<EstimatorProps> = props => {
 		}
 	};
 
-	const onInvalid: SubmitErrorHandler<FieldValues> = (errors, event) => {
+	const onInvalid: SubmitErrorHandler<FieldValues> = errors => {
 		console.log('errors', errors);
 	};
 
 	const titleSpacing = '1.5rem';
 
 	const fields = estimatorFields.map((group, groupIndex) => {
-		const fieldsetId = paramCase(group.legend);
-
 		return (
 			<Fragment key={groupIndex}>
 				{!props.isSimple && (

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 10 Jul 2023 05:47:33 GMT
+ * Generated on Wed, 12 Jul 2023 01:28:41 GMT
  */
 
 module.exports = {
@@ -5629,9 +5629,9 @@ module.exports = {
         ]
       },
       "medium": {
-        "value": "2rem",
+        "value": "2.25rem",
         "original": {
-          "value": "2rem"
+          "value": "2.25rem"
         },
         "name": "InputHeightMedium",
         "attributes": {
@@ -5646,9 +5646,9 @@ module.exports = {
         ]
       },
       "large": {
-        "value": "2.25rem",
+        "value": "2.5rem",
         "original": {
-          "value": "2.25rem"
+          "value": "2.5rem"
         },
         "name": "InputHeightLarge",
         "attributes": {

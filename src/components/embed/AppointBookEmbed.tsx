@@ -18,7 +18,7 @@ export const AppointBookEmbed: FC = () => (
 			{/* eslint-disable react/iframe-missing-sandbox */}
 			<iframe
 				title="Schedule with Graphix Collab"
-				src="https://squareup.com/appointments/book/pgkiyyqcz8g07b/LAR1DB5CED0WQ/start"
+				src="https://squareup.com/appointments/book/gyddlmedpd8xf/94H44SPS41D7K/start"
 			/>
 			{/* eslint-enable react/iframe-missing-sandbox */}
 		</AppointBookingEmbedWrapper>

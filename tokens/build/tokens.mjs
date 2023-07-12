@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 10 Jul 2023 05:47:33 GMT
+ * Generated on Wed, 12 Jul 2023 01:28:41 GMT
  */
 
 export const SequenceColor0Lightest = "#00aad2";
@@ -305,8 +305,8 @@ export const InputSpacingGapSmall = "0.375rem";
 export const InputSpacingGapMedium = "0.375rem";
 export const InputSpacingGapLarge = "0.5625rem";
 export const InputHeightSmall = "1.75rem";
-export const InputHeightMedium = "2rem";
-export const InputHeightLarge = "2.25rem";
+export const InputHeightMedium = "2.25rem";
+export const InputHeightLarge = "2.5rem";
 export const InputBezelSmall = "0.25rem";
 export const InputBezelMedium = "0.25rem";
 export const InputBezelLarge = "0.375rem";

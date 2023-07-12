@@ -13,12 +13,8 @@ const nextConfig = {
 
     return config;
   },
-  env: {
-    apiUrl:
-      process.env.NODE_ENV === 'production'
-        ? 'https://api.crealgo.com'
-        : 'http://localhost:3000'
-  }
+  assetPrefix: '.',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH
 };
 
 export default nextConfig;

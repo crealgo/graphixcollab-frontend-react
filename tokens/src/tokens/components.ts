@@ -60,7 +60,7 @@ export default {
 			paddingInline: generateSizeValues('0.5rem', '0.75rem', '0.875rem'),
 			gap: generateSizeValues('0.375rem', '0.375rem', '0.5625rem')
 		},
-		height: generateSizeValues('1.75rem', '2rem', '2.25rem'),
+		height: generateSizeValues('1.75rem', '2.25rem', '2.5rem'),
 		bezel: generateSizeValues('0.25rem', '0.25rem', '0.375rem'),
 		shadow: '{elevation.1}'
 	},

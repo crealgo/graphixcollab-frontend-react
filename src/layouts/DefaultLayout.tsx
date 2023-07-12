@@ -67,7 +67,7 @@ export const DefaultLayout: DefaultLayoutProps = ({
 	children,
 	...props
 }) => {
-	const { setBannerProps } = useAppState();
+	const { setBannerProps, toggleContact } = useAppState();
 
 	const router = useRouter();
 
@@ -80,12 +80,14 @@ export const DefaultLayout: DefaultLayoutProps = ({
 	return (
 		<>
 			<Header
-				{...HeaderProps}
 				actions={[
 					{
 						color: 'text',
-						href: 'mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website',
-						label: 'Contact Us',
+						// href: 'mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website',
+						onClick: () => {
+							toggleContact();
+						},
+						label: 'Contact Us 2',
 						endIcon: <ContactUsIcon />
 					},
 					{

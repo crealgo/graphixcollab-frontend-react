@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default: StoryObj<EstimatorBlockProps> = {
-	play: async ({ args, canvasElement }) => {
+	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
 		await userEvent.type(canvas.getByLabelText('Name'), 'John Doe');

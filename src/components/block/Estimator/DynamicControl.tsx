@@ -26,13 +26,10 @@ export const DynamicControl: FC<FieldBag> = ({ helperText, ...props }) => {
 		default: TextField
 	}[resolvedFieldType];
 
-	const { isTouched, invalid, isDirty, error } = getFieldState(
-		props.name as FormFieldName
-	);
+	const { invalid, error } = getFieldState(props.name as FormFieldName);
 
 	return (
 		<ResolvedInputComponent
-			inputSize="large"
 			isInvalid={invalid}
 			helperText={error?.message ?? helperText}
 			{...props}

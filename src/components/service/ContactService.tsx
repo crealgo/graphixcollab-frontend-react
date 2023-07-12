@@ -4,12 +4,13 @@ import {
 	DialogActions,
 	DialogContent,
 	Grid,
-	TextField,
 	styled
 } from '@mui/material';
 import { type FC, type MouseEvent } from 'react';
 import { Button } from '../base/Button';
 import { DialogTitle } from '../base/DialogTitle';
+import { TextAreaField } from '../form/TextAreaField';
+import { TextField } from '../form/TextField';
 
 type ContactServiceProps = {
 	isOpen?: boolean;
@@ -47,23 +48,18 @@ export const ContactService: FC<ContactServiceProps> = ({
 		</DialogTitle>
 		<StyledDialogContent>
 			<StepContentWrapper>
-				<Grid container gap={1}>
+				<Grid container gap={2}>
 					<Grid item xs={12}>
-						<TextField fullWidth label="Email" type="email" />
+						<TextField label="Email" type="email" />
 					</Grid>
 					<Grid item md xs={12}>
-						<TextField fullWidth label="First Name" type="text" />
+						<TextField label="First Name" type="text" />
 					</Grid>
 					<Grid item md xs={12}>
-						<TextField fullWidth label="Last Name" type="text" />
+						<TextField label="Last Name" type="text" />
 					</Grid>
 					<Grid item xs={12}>
-						<TextField
-							fullWidth
-							multiline
-							label="Message"
-							rows={5}
-						/>
+						<TextAreaField rows={10} label="Message" />
 					</Grid>
 				</Grid>
 			</StepContentWrapper>
