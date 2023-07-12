@@ -1,4 +1,4 @@
-import { generateValuesFromStringArray } from '../../../utils/generateValuesFromStringArray';
+import { generateValuesFromStringArray } from '../../utils/generateValuesFromStringArray';
 
 export const materials = generateValuesFromStringArray(
 	'T-shirt',

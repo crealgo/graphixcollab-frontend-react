@@ -3,9 +3,12 @@ import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { InputGroup } from './InputGroup';
 import { RadioInput, type RadioInputProps } from './RadioInput';
+import { type OptionBag } from './types';
 
-type Props = Omit<FormControlProps, 'isRequired'> &
-	Omit<RadioInputProps, 'label'>;
+type Props = {
+	options: OptionBag[];
+} & Omit<FormControlProps, 'isRequired'> &
+	Pick<RadioInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const RadioField = forwardRef<HTMLInputElement, Props>(
 	(
@@ -38,13 +41,11 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 					{options?.map((option, optionIndex) => (
 						<RadioInput
 							{...props}
+							{...option}
 							key={optionIndex}
 							ref={ref}
-							label={option.label}
-							value={option.value}
 							type="radio"
-							id={option.label}
-							meta={option.meta}
+							id={option.value}
 							name={generatedName}
 							defaultChecked={option.value === defaultValue}
 						/>

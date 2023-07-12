@@ -3,8 +3,12 @@ import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { InputGroup } from './InputGroup';
 import { CheckboxInput, type CheckboxInputProps } from './CheckboxInput';
+import { type OptionBag } from './types';
 
-type Props = Omit<FormControlProps, 'isRequired'> & Omit<CheckboxInputProps, 'label'>;
+type Props = {
+	options: OptionBag[];
+} & Omit<FormControlProps, 'isRequired'> &
+	Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const CheckboxField = forwardRef<HTMLInputElement, Props>(
 	(
@@ -37,9 +41,9 @@ export const CheckboxField = forwardRef<HTMLInputElement, Props>(
 					{options?.map((option, optionIndex) => (
 						<CheckboxInput
 							{...props}
+							{...option}
 							key={optionIndex}
 							ref={ref}
-							{...option}
 							name={option.value}
 							defaultChecked={option.value === defaultValue}
 						/>

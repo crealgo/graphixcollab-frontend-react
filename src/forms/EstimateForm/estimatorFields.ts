@@ -1,9 +1,9 @@
 import { type HTMLProps } from 'react';
 import { type RegisterOptions } from 'react-hook-form';
-import { type FileInputProps } from '../../form/FileInput';
-import { type FormControlProps } from '../../form/FormControl';
+import { type FileInputProps } from '../../components/form/FileInput';
+import { type FormControlProps } from '../../components/form/FormControl';
 import { deliveryMethods, materials, services } from './data';
-import { type OptionBag } from '../../form/types';
+import { type OptionBag } from '../../components/form/types';
 
 const todayDate = new Date();
 const defaultDeadline = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days from now

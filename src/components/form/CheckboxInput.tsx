@@ -4,11 +4,8 @@ import UncheckedIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckedIcon from '@mui/icons-material/Checkbox';
 import { type OptionBag } from './types';
 
-export type CheckboxInputProps = {
-	label?: ReactNode;
-	meta?: string;
-	options?: OptionBag[];
-} & BaseControlProps &
+export type CheckboxInputProps = OptionBag &
+	BaseControlProps &
 	ComponentPropsWithRef<'input'>;
 
 const inputSize = '1.25rem';
@@ -85,7 +82,7 @@ const Checkbox = styled('input', {
 export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
 	(props, ref) => (
 		<CheckboxLabel htmlFor={props.id}>
-			<Checkbox ref={ref} type="checkbox" {...props} />
+			<Checkbox ref={ref} type="checkbox" {...props} value="yes" />
 			<div className="CheckboxInput-indicator">
 				<CheckedIcon className="CheckboxInput-icon is-checked" />
 				<UncheckedIcon className="CheckboxInput-icon is-unchecked" />

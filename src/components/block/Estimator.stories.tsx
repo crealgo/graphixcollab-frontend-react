@@ -1,5 +1,5 @@
 import { type StoryObj } from '@storybook/react';
-import { Estimator } from './Estimator';
+import { Estimator } from '../../forms/EstimateForm';
 import { type EstimatorBlockProps } from './EstimatorBlock';
 import { within, userEvent } from '@storybook/testing-library';
 

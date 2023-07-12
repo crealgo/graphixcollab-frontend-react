@@ -11,12 +11,12 @@ import {
 	type SubmitHandler
 } from 'react-hook-form';
 import * as yup from 'yup';
-import { type Action } from '../../../types/general';
-import { ActionStack } from '../../base/ActionStack';
-import { Button } from '../../base/Button';
-import { Heading } from '../../base/Heading';
-import { Mark } from '../../base/Mark';
-import { DynamicControl } from '../../form/DynamicControl';
+import { type Action } from '../../types/general';
+import { ActionStack } from '../../components/base/ActionStack';
+import { Button } from '../../components/base/Button';
+import { Heading } from '../../components/base/Heading';
+import { Mark } from '../../components/base/Mark';
+import { DynamicControl } from '../../components/form/DynamicControl';
 import { estimatorFields, type FormFields } from './estimatorFields';
 
 export type EstimatorProps = {

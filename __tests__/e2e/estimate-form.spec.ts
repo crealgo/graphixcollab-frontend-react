@@ -3,7 +3,7 @@ import {
 	deliveryMethods,
 	materials,
 	services
-} from '../../src/components/block/Estimator/data';
+} from '../../src/forms/EstimateForm/data';
 import { chance } from '../utils/chance';
 
 const testFiles = [

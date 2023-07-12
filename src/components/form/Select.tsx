@@ -15,6 +15,7 @@ const SelectWrapper = styled('div')<SelectProps>(
 	({ inputSize }) => css`
 		display: inline-block;
 		position: relative;
+		width: 100%;
 
 		& svg {
 			pointer-events: none;
@@ -37,12 +38,12 @@ const StyledSelect = styled('select', {
 		${generateBaseInputStyles({
 			inputSize: props.inputSize
 		})};
+		width: 100%;
+		display: block;
 
 		padding-inline: var(--select-spacing-padding-inline-${props.inputSize});
 		appearance: none;
 		cursor: pointer;
-
-		width: 100%;
 	`
 );
 

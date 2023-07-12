@@ -4,11 +4,8 @@ import RadioUnchecked from '@mui/icons-material/RadioButtonUnchecked';
 import RadioChecked from '@mui/icons-material/RadioButtonChecked';
 import { type OptionBag } from './types';
 
-export type RadioInputProps = {
-	label?: string;
-	meta?: string;
-	options?: OptionBag[];
-} & BaseControlProps &
+export type RadioInputProps = OptionBag &
+	BaseControlProps &
 	ComponentPropsWithRef<'input'>;
 
 const inputSize = '1.25rem';

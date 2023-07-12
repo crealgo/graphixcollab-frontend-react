@@ -9,7 +9,7 @@ import {
 	type FieldBag,
 	type FormFieldName,
 	type FormFields
-} from '../block/Estimator/estimatorFields';
+} from '../../forms/EstimateForm/estimatorFields';
 import { TextAreaField } from './TextAreaField';
 
 export const DynamicControl: FC<FieldBag> = ({ helperText, ...props }) => {

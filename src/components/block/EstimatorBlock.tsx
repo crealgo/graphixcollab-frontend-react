@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { type Action } from '../../types/general';
 import { Block } from '../base/Block';
 import { Container } from '../base/Container';
-import { Estimator } from './Estimator';
+import { Estimator } from '../../forms/EstimateForm';
 
 export type EstimatorBlockProps = {
 	actions?: Action[];

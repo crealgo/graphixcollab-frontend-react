@@ -1,7 +1,7 @@
 import { type GetStaticProps, type NextPage } from 'next';
 import { Block } from '../components/base/Block';
 import { Container } from '../components/base/Container';
-import { Estimator } from '../components/block/Estimator';
+import { Estimator } from '../forms/EstimateForm';
 import { type FooterBlockProps } from '../components/block/FooterBlock';
 import {
 	PageHeaderBlock,

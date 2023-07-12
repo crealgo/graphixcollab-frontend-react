@@ -6,7 +6,12 @@
  * @property {string} [basePath]
  * @property {string} [appUrl]
  * @property {string} [apiUrl]
+ * @property {string} [busId]
  */
+
+const constants = {
+  busId: 'graphix-collab'
+};
 
 /**
  * @type {EnvVars}
@@ -16,25 +21,29 @@ const env = {
     assetPrefix: undefined,
     basePath: undefined,
     appUrl: 'http://localhost:3000',
-    apiUrl: 'http://localhost:8000/api/graphix-collab'
+    apiUrl: 'http://localhost:8000/api',
+    ...constants
   },
   development: {
     assetPrefix: '.',
     basePath: '/crealgo',
     appUrl: 'https://projects.crealgo.com/graphixcollab',
-    apiUrl: 'https://api.crealgo.com/api/graphix-collab'
+    apiUrl: 'https://api.crealgo.com/api',
+    ...constants
   },
   staging: {
     assetPrefix: '.',
     basePath: undefined,
     appUrl: 'https://beta.graphixcollab.com',
-    apiUrl: 'https://api.crealgo.com/api/graphix-collab'
+    apiUrl: 'https://api.crealgo.com/api',
+    ...constants
   },
   production: {
     assetPrefix: '.',
     basePath: '',
     appUrl: 'https://graphixcollab.com',
-    apiUrl: 'https://api.crealgo.com/api/graphix-collab'
+    apiUrl: 'https://api.crealgo.com/api',
+    ...constants
   }
 }[process.env.APP_ENV ?? 'local'];
 

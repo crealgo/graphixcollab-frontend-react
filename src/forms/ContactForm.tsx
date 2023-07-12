@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
-import { CheckCircleOutline } from '@mui/icons-material';
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import { CheckCircleOutline, Refresh } from '@mui/icons-material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ActionStack } from '../components/base/ActionStack';
 import { Button } from '../components/base/Button';
-import { useState, type FormEventHandler } from 'react';
-import { TextField } from '../components/form/TextField';
-import { TextAreaField } from '../components/form/TextAreaField';
-import { CheckboxInput } from '../components/form/CheckboxInput';
 import { Link } from '../components/base/Link';
 import { CheckboxField } from '../components/form/CheckboxField';
+import { TextAreaField } from '../components/form/TextAreaField';
+import { TextField } from '../components/form/TextField';
+import { useForm } from '../hooks/useForm';
+import { useRef } from 'react';
+import { renderFormAlert } from './renderFormAlert';
 
 const FieldGrid = styled.div`
 	/* --content-grid-padding-block-end: 50%; */
 	--content-grid-padding-block-end: 3rem;
 	--action-stack-spacing: 1rem;
 
-	max-width: 900px;
+	max-width: 40rem;
 	padding-block-end: var(--content-grid-padding-block-end);
 
 	display: grid;
@@ -42,64 +42,26 @@ const FieldGrid = styled.div`
 	}
 `;
 
-type FormFieldNames = 'first_name' | 'last_name' | 'email' | 'message';
-
-type FormFieldErrorBag = {
-	[fieldName in FormFieldNames]?: string;
-};
-
-type FormState = {
-	isSubmitting: boolean;
-	handleSubmit: FormEventHandler<HTMLFormElement>;
-	errors: FormFieldErrorBag;
-};
-
-const useForm = (endpoint: string): FormState => {
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [errors, setErrors] = useState<FormFieldErrorBag>({});
-
-	const apiUrl = new URL(endpoint, process.env.apiUrl);
-
-	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
-		event.preventDefault();
-
-		(async () => {
-			setIsSubmitting(true);
-
-			const formData = new FormData(event.currentTarget);
-
-			console.log(Object.fromEntries(formData.entries()));
-
-			// const request = new Request(apiUrl.toString(), {
-			// 	method: 'POST',
-			// 	body: formData
-			// });
-
-			// const response = await fetch(request);
-
-			// if (!response.ok) {
-			// 	const errors = (await response.json()) as ApiErrorBag;
-			// 	setErrors(errors);
-			// }
-
-			setIsSubmitting(false);
-		})();
-	};
-
-	return {
-		isSubmitting,
-		errors,
-		handleSubmit
-	};
-};
-
 export const ContactForm = () => {
-	const { handleSubmit, isSubmitting, errors } = useForm(
-		'/send-message/contact'
-	);
+	const formRef = useRef<HTMLFormElement>(null);
+	const {
+		handleSubmit,
+		handleReset,
+		isSuccessful,
+		isSubmitting,
+		isSubmitted,
+		errors
+	} = useForm();
 
 	return (
-		<form noValidate id="contact-form" onSubmit={handleSubmit}>
+		<form
+			ref={formRef}
+			noValidate
+			method="post"
+			action="send-message/contact"
+			name="contact-form"
+			onSubmit={handleSubmit}
+		>
 			<FieldGrid>
 				<TextField
 					required
@@ -141,19 +103,7 @@ export const ContactForm = () => {
 					name="terms"
 					options={[
 						{
-							value: 'agree',
-							label: (
-								<>
-									I agree to the{' '}
-									<Link href="https://google.com/">
-										Terms and Conditions
-									</Link>{' '}
-									and the <Link>Privacy Policy</Link>.
-								</>
-							)
-						},
-						{
-							value: 'hello',
+							value: 'terms',
 							label: (
 								<>
 									I agree to the{' '}
@@ -165,9 +115,10 @@ export const ContactForm = () => {
 							)
 						}
 					]}
-					isInvalid={Boolean(errors.message)}
-					helperText={errors.message}
+					isInvalid={Boolean(errors.terms)}
+					helperText={errors.terms}
 				/>
+				{isSubmitted && renderFormAlert(isSuccessful)}
 			</FieldGrid>
 			<ActionStack>
 				<Button
@@ -190,11 +141,12 @@ export const ContactForm = () => {
 				</Button>
 				<Button
 					size="large"
-					color="text"
-					href="mailto:graphixcollab@gmail.com"
-					endIcon={<ArrowForward />}
+					color="tertiary"
+					endIcon={<Refresh />}
+					type="button"
+					onClick={handleReset}
 				>
-					Not sure? Contact us
+					Reset
 				</Button>
 			</ActionStack>
 		</form>
