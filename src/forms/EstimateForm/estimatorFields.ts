@@ -4,6 +4,9 @@ import { type FileInputProps } from '../../components/form/FileInput';
 import { type FormControlProps } from '../../components/form/FormControl';
 import { deliveryMethods, materials, services } from './data';
 import { type OptionBag } from '../../components/form/types';
+import { Chance } from 'chance';
+
+const chance = new Chance();
 
 const todayDate = new Date();
 const defaultDeadline = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days from now
@@ -81,7 +84,7 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'text',
 				name: 'name',
-				// defaultValue: chance.name(),
+				placeholder: chance.name(),
 				label: 'Full Name',
 				required: true,
 				span: 4
@@ -89,7 +92,7 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'text',
 				name: 'email',
-				// defaultValue: chance.email(),
+				placeholder: chance.email(),
 				label: 'Email',
 				required: true,
 				span: 4
@@ -98,7 +101,7 @@ export const estimatorFields: FieldsetBag[] = [
 				type: 'number',
 				name: 'phone',
 				label: 'Phone Number',
-				placeholder: 'XXX-XXX-XXXX',
+				placeholder: 'XXXXXXXXXX',
 				min: 1000000000,
 				max: 9999999999,
 				span: 4
@@ -111,7 +114,7 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'select',
 				name: 'material',
-				// defaultValue: materials[0].value,
+				placeholder: materials[0].value,
 				label: 'Material Type',
 				options: materials,
 				span: 4
@@ -119,7 +122,7 @@ export const estimatorFields: FieldsetBag[] = [
 			{
 				type: 'select',
 				name: 'service',
-				// defaultValue: services[0].value,
+				placeholder: services[0].value,
 				label: 'Service Type',
 				options: services,
 				span: 4
@@ -148,7 +151,7 @@ export const estimatorFields: FieldsetBag[] = [
 				type: 'radio',
 				name: 'delivery',
 				required: true,
-				// defaultValue: deliveryMethods[0].value,
+				placeholder: deliveryMethods[0].value,
 				label: 'Delivery Method',
 				options: deliveryMethods,
 				span: 3
