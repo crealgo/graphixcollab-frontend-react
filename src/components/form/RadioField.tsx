@@ -4,7 +4,8 @@ import { FormControl, type FormControlProps } from './FormControl';
 import { InputGroup } from './InputGroup';
 import { RadioInput, type RadioInputProps } from './RadioInput';
 
-type Props = FormControlProps & Omit<RadioInputProps, 'label'>;
+type Props = Omit<FormControlProps, 'isRequired'> &
+	Omit<RadioInputProps, 'label'>;
 
 export const RadioField = forwardRef<HTMLInputElement, Props>(
 	(

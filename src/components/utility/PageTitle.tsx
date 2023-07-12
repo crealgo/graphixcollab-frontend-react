@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { type FC } from 'react';
 
-type Props = {
+export type PageTitleProps = {
 	text?: string;
 };
 
-export const PageTitle: FC<Props> = props => {
+export const PageTitle: FC<PageTitleProps> = props => {
 	const resolvedPageTitle = props.text
 		? `${props.text} | Graphix Collab`
 		: 'Graphix Collab';

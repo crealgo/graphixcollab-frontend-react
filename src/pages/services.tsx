@@ -58,7 +58,7 @@ const StyledContainer2 = styled(StyledContainer)`
 	top: 55rem;
 `;
 
-const ServicesPage: NextPage<PageProps> = ({
+const Page: NextPage<PageProps> = ({
 	PageHeaderBlockProps,
 	FooterProps,
 	serviceBlocks,
@@ -149,4 +149,4 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	}
 });
 
-export default ServicesPage;
+export default Page;

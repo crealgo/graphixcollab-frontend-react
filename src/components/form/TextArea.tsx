@@ -14,6 +14,7 @@ export const BaseElement = styled('textarea', {
 	props => css`
 		${generateBaseInputStyles(props)};
 		height: auto;
+		padding-block: 0.5rem;
 	`
 );
 

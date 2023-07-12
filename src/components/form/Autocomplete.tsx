@@ -1,5 +1,6 @@
 import { useId, type FC, type PropsWithChildren } from 'react';
 import { Input } from './Input';
+import { type OptionBag } from './types';
 
 export type AutocompleteProps = {
 	options?: OptionBag[];
@@ -21,7 +22,7 @@ export const Autocomplete: FC<AutocompleteProps> = ({
 			<datalist id={listId}>
 				{children ??
 					options?.map(({ label, value }, optionIndex) => (
-						<option key={optionIndex} value={label}>
+						<option key={optionIndex} value={label as string}>
 							{value}
 						</option>
 					))}

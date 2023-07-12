@@ -1,15 +1,16 @@
 import { type FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { CheckboxField } from '../../form/CheckboxField';
-import { FileInputField } from '../../form/FileInputField';
-import { RadioField } from '../../form/RadioField';
-import { SelectField } from '../../form/SelectField';
-import { TextField } from '../../form/TextField';
+import { CheckboxField } from './CheckboxField';
+import { FileInputField } from './FileInputField';
+import { RadioField } from './RadioField';
+import { SelectField } from './SelectField';
+import { TextField } from './TextField';
 import {
 	type FieldBag,
 	type FormFieldName,
 	type FormFields
-} from './estimatorFields';
+} from '../block/Estimator/estimatorFields';
+import { TextAreaField } from './TextAreaField';
 
 export const DynamicControl: FC<FieldBag> = ({ helperText, ...props }) => {
 	const { register, getFieldState } = useFormContext<FormFields>();
@@ -22,6 +23,7 @@ export const DynamicControl: FC<FieldBag> = ({ helperText, ...props }) => {
 		select: SelectField,
 		checkbox: CheckboxField,
 		radio: RadioField,
+		textarea: TextAreaField,
 		file: FileInputField,
 		default: TextField
 	}[resolvedFieldType];

@@ -16,7 +16,7 @@ import { ActionStack } from '../../base/ActionStack';
 import { Button } from '../../base/Button';
 import { Heading } from '../../base/Heading';
 import { Mark } from '../../base/Mark';
-import { DynamicControl } from './DynamicControl';
+import { DynamicControl } from '../../form/DynamicControl';
 import { estimatorFields, type FormFields } from './estimatorFields';
 
 export type EstimatorProps = {
@@ -70,7 +70,7 @@ const Instructions = styled('em')`
 	max-width: 40rem;
 `;
 
-const validationSchema = yup.object<FormFields>().shape({
+const validationSchema = yup.object().shape({
 	name: yup.string().required(),
 	email: yup.string().email().required(),
 	phone: yup.lazy(value => {
@@ -114,8 +114,8 @@ export const Estimator: FC<EstimatorProps> = props => {
 		}
 
 		const url = new URL(
-			'api/graphix-collab/get-estimate',
-			process.env.NEXT_PUBLIC_API_URL
+			'/send-message/estimate-request',
+			process.env.apiUrl
 		);
 
 		const response = await fetch(url, {
@@ -200,7 +200,6 @@ export const Estimator: FC<EstimatorProps> = props => {
 					)}
 					<ActionStack>
 						<Button
-							size="large"
 							color="secondary"
 							endIcon={
 								formState.isSubmitting ? (
@@ -220,7 +219,6 @@ export const Estimator: FC<EstimatorProps> = props => {
 								: 'Get Estimate'}
 						</Button>
 						<Button
-							size="large"
 							color="text"
 							href="mailto:graphixcollab@gmail.com"
 							endIcon={<ArrowForward />}

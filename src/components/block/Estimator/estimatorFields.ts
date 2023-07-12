@@ -1,11 +1,9 @@
-import Chance from 'chance';
 import { type HTMLProps } from 'react';
 import { type RegisterOptions } from 'react-hook-form';
 import { type FileInputProps } from '../../form/FileInput';
 import { type FormControlProps } from '../../form/FormControl';
 import { deliveryMethods, materials, services } from './data';
-
-const chance = new Chance();
+import { type OptionBag } from '../../form/types';
 
 const todayDate = new Date();
 const defaultDeadline = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days from now

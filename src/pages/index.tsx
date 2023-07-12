@@ -12,7 +12,7 @@ import { DefaultLayout } from '../layouts/DefaultLayout';
 import { type PageProps } from '../types/general';
 import { chance, generateActions } from '../utils/chance';
 
-const HomePage: NextPage<PageProps> = props => (
+const Page: NextPage<PageProps> = props => (
 	<DefaultLayout showYelp>
 		<PageTitle text="Home" />
 		<IntroBlock {...props.IntroBlockProps} />
@@ -69,4 +69,4 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 - meagan or diana, for brand assets
 */
 
-export default HomePage;
+export default Page;

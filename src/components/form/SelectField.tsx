@@ -3,7 +3,7 @@ import { forwardRef, type FC } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { Select, type SelectProps } from './Select';
 
-type Props = FormControlProps & SelectProps;
+type Props = Omit<FormControlProps, 'isRequired'> & SelectProps;
 
 export const SelectField = forwardRef<HTMLSelectElement, Props>(
 	({ label, helperText, isFullWidth, ...props }, ref) => {

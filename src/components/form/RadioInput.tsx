@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { forwardRef, type ComponentPropsWithRef } from 'react';
 import RadioUnchecked from '@mui/icons-material/RadioButtonUnchecked';
 import RadioChecked from '@mui/icons-material/RadioButtonChecked';
+import { type OptionBag } from './types';
 
 export type RadioInputProps = {
 	label?: string;

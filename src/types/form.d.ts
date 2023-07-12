@@ -1,9 +1,3 @@
-declare type OptionBag = {
-	value: string;
-	label: string;
-	meta?: string;
-};
-
 declare type BaseControlProps = {
 	variant?: 'standard' | 'branded';
 	inputSize?: Size;
@@ -14,3 +8,5 @@ declare type BaseControlProps = {
 	isValid?: boolean;
 	isTouched?: boolean;
 };
+
+declare type ApiErrorBag = Record<string, string[]>;

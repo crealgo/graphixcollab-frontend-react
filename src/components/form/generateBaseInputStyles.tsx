@@ -6,6 +6,7 @@ export const generateBaseInputStyles = ({
 	--input-opacity: 1;
 
 	min-width: 0rem;
+	width: 100%;
 
 	&:hover,
 	&:focus-visible {

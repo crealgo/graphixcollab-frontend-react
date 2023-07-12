@@ -3,7 +3,7 @@ import { forwardRef, type FC } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { Input, type InputProps } from './Input';
 
-type Props = FormControlProps & InputProps;
+type Props = Omit<FormControlProps, 'isRequired'> & InputProps;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
 	({ label, helperText, isFullWidth, ...props }, ref) => {

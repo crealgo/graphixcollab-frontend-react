@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { TextArea, type TextAreaProps } from './TextArea';
 
-type Props = FormControlProps & TextAreaProps;
+type Props = Omit<FormControlProps, 'isRequired'> & TextAreaProps;
 
 export const TextAreaField = forwardRef<HTMLTextAreaElement, Props>(
 	({ label, helperText, isFullWidth, ...props }, ref) => {

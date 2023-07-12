@@ -25,6 +25,8 @@ export type FormControlProps = {
 const StyledLabel = styled.label`
 	display: inline-grid;
 	grid-template-columns: 1fr;
+	place-items: start;
+	place-content: start;
 	border: unset;
 	padding: unset;
 
