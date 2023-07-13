@@ -53,7 +53,7 @@ jobs:
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
           NEXT_PUBLIC_API_ID: graphix-collab
         run: |
-          npx next build --no-lint # lints by default
+          npx next build --no-lint
           npx next export -o ${{ env.STATIC_BUILD_EXPORT_PATH }}
 
       # upload artifeact
@@ -76,7 +76,7 @@ jobs:
         with:
           name: ${{ env.STATIC_BUILD_NAME }}
 
-      # Always deploy development
+      # Always auto-deploy development
       - name: Deploy Site to Development
         uses: peaceiris/actions-gh-pages@v3
         with:
