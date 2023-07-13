@@ -1,4 +1,4 @@
-name: Build and Deploy Development Site
+name: Build and Deploy Prod/Staging Site
 
 on:
   workflow_dispatch:
