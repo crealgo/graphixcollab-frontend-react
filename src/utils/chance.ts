@@ -7,6 +7,7 @@ import { type PageHeaderBlockProps } from '../components/block/PageHeaderBlock';
 import { type ProfilesBlockProps } from '../components/block/ProfilesBlock';
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import Chance from 'chance';
+import { type OptionBag } from '../components/form/types';
 import {
 	type Action,
 	type Article,
