@@ -36,8 +36,8 @@ jobs:
 
       - name: Build Next App
         env:
-          BASE_PATH: /crealgo
           ASSET_PREFIX:  "."
+          BASE_PATH: /grahpixcollab
           NEXT_PUBLIC_PROJECT_ID: graphixcollab
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
           NEXT_PUBLIC_API_ID: graphix-collab
