@@ -18,8 +18,12 @@ on:
 permissions:
   contents: write
 
+env:
+  AUTHOR_NAME: 🤖 Crealgo Bot
+  AUTHOR_EMAIL: bot.crealgo@gmail.com
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,54 +32,33 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: 18
           cache: npm
 
-      - name: Setup Repository
+      - name: Install Dependencies
         run: npm ci
 
+      # - name: Verify
+        # run: npm run verify
+
       - name: Build Development App
+        if: ${{ github.event_name == 'push' || inputs.deployment_type == 'development' }}
         env:
           ASSET_PREFIX:  "."
           BASE_PATH: /grahpixcollab
           NEXT_PUBLIC_PROJECT_ID: graphixcollab
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
           NEXT_PUBLIC_API_ID: graphix-collab
-        run: npm run site:build
+        run: |
+          npx next build
+          npx next export
 
-      - if: ${{ inputs.deployment_type == 'staging' || inputs.deployment_type == 'production' }}
-        name: Build Staging/Production App
-        env:
-          ASSET_PREFIX:  "."
-          BASE_PATH:
-          NEXT_PUBLIC_PROJECT_ID: graphixcollab
-          NEXT_PUBLIC_API_URL: https://api.crealgo.com
-          NEXT_PUBLIC_API_ID: graphix-collab
-        run: npm run site:build
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy Site to Development
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: Crealgo Bot 🤖
-          user_email: hello.crealgo@gmail.com
+          user_name: ${{ env.AUTHOR_NAME }}
+          user_email:  ${{ env.AUTHOR_EMAIL }}
           external_repository: crealgo/crealgo-static-projects
           publish_dir: out
           destination_dir: graphixcollab
-
-      - if: ${{ inputs.deployment_type == 'staging' || inputs.deployment_type == 'production' }}
-        name: Deploy Site to Staging
-        uses: peaceiris/actions-gh-pages@v3
-        env:
-          CNAME_URL: ${{ inputs.deployment_type == 'staging' && 'beta.' || '' }}graphixcollab.com
-        with:
-          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: Crealgo Bot 🤖
-          user_email: hello.crealgo@gmail.com
-          external_repository: crealgo/graphixcollab-static-${{ inputs.deployment_type}}
-          publish_dir: out
-          cname: ${{ env.CNAME_URL }}
