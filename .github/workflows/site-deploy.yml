@@ -1,0 +1,64 @@
+name: Build and Deploy Development Site
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment-type:
+        description: 'Deployment Type'
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: write
+
+env:
+  AUTHOR_NAME: 🤖 Crealgo Bot
+  AUTHOR_EMAIL: bot.crealgo@gmail.com
+
+  STATIC_BUILD_EXPORT_PATH: out
+
+  DOMAIN: ${{ inputs.deployment-type == 'staging' && 'beta.graphixcollab.com' || 'graphixcollab.com' }}
+  CREALGO_REPOSITORY: crealgo/graphixcollab-static-${{ inputs.deployment-type }}
+  CREALGO_API_ID: graphix-collab
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Verify
+        run: npm run verify
+
+      - name: Build App
+        env:
+          ASSET_PREFIX:  "."
+          NEXT_PUBLIC_API_URL: https://api.crealgo.com
+          NEXT_PUBLIC_API_ID: ${{ env.CREALGO_API_ID }}
+        run: |
+          npx next build --no-lint
+          npx next export -o ${{ env.STATIC_BUILD_EXPORT_PATH }}
+
+      - name: Deploy Site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          user_name: ${{ env.AUTHOR_NAME }}
+          user_email:  ${{ env.AUTHOR_EMAIL }}
+          external_repository: ${{ env.CREALGO_REPOSITORY }}
+          cname: ${{ env.DOMAIN }}
+          publish_dir: ${{ env.STATIC_BUILD_EXPORT_PATH }}
