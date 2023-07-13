@@ -1,3 +1,4 @@
+import path from 'path';
 import { useState, type FormEventHandler, useEffect, useRef } from 'react';
 
 export const useForm = () => {
@@ -7,8 +8,6 @@ export const useForm = () => {
 	const [errors, setErrors] = useState<ApiErrorBag>({});
 	const [response, setResponse] = useState<Response | null>(null);
 
-	const form = useRef<HTMLFormElement | null>(null);
-
 	const handleReset = () => {
 		setIsSubmitting(false);
 		setIsSubmitted(false);
@@ -17,48 +16,44 @@ export const useForm = () => {
 		setResponse(null);
 	};
 
+	const submitForm = async (url: string, formElement: HTMLFormElement) => {
+		const formData = new FormData(formElement);
+
+		console.log(Object.fromEntries(formData.entries()));
+
+		const request = new Request(url, {
+			method: formElement.method,
+			body: formData
+		});
+
+		const response = await fetch(request);
+
+		setResponse(response);
+		setIsSuccessful(response.ok);
+
+		if (!response.ok) {
+			const errors = (await response.json()) as ApiErrorBag;
+			setErrors(errors);
+		}
+
+		setIsSubmitting(false);
+		setIsSubmitted(true);
+	};
+
 	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
 		event.preventDefault();
 		handleReset();
 
 		setIsSubmitting(true);
 
-		form.current = event.currentTarget;
+		const { pathname: action } = new URL(event.currentTarget.action);
+		const apiUrl = process.env.NEXT_PUBLIC_API_URL!;
+		const apiId = process.env.NEXT_PUBLIC_API_ID!;
 
-		const action = new URL(form.current?.action);
-		const apiUrl = new URL(process.env.apiUrl!);
-		const requestUrl = new URL(
-			`${apiUrl.pathname}/${process.env.busId!}${action.pathname}`,
-			apiUrl.origin
-		);
+		const endpoint = path.join(`api/${apiId}`, action);
+		const requestUrl = new URL(endpoint, apiUrl);
 
-		// console.log('apiUrl', apiUrl);
-		// console.log('action', action);
-		// console.log('requestUrl', requestUrl.toString());
-
-		(async () => {
-			const formData = new FormData(event.currentTarget);
-
-			console.log(Object.fromEntries(formData.entries()));
-
-			const request = new Request(requestUrl.toString(), {
-				method: form.current?.method,
-				body: formData
-			});
-
-			const response = await fetch(request);
-
-			setResponse(response);
-			setIsSuccessful(response.ok);
-
-			if (!response.ok) {
-				const errors = (await response.json()) as ApiErrorBag;
-				setErrors(errors);
-			}
-
-			setIsSubmitting(false);
-			setIsSubmitted(true);
-		})();
+		void submitForm(requestUrl.toString(), event.currentTarget);
 	};
 
 	return {

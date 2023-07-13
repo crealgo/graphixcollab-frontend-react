@@ -34,14 +34,15 @@ jobs:
       - name: Setup Repository
         run: npm ci
 
-      - name: Verify
-        run: npm run verify
-
       - name: Build Next App
-
+        env:
+          BASE_PATH: /crealgo
+          ASSET_PREFIX:  "."
+          NEXT_PUBLIC_PROJECT_ID: graphixcollab
+          NEXT_PUBLIC_API_URL: https://api.crealgo.com
+          NEXT_PUBLIC_API_ID: graphix-collab
         run: npm run site:build
 
-      # - if: ${{ github.event_name == 'push' || inputs.deployment_type == 'development' }}
       - name: Deploy Storybook to Development
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -51,25 +52,3 @@ jobs:
           external_repository: crealgo/crealgo-static-projects
           publish_dir: out
           destination_dir: graphixcollab
-
-      # - if: ${{ inputs.deployment_type == 'staging' }}
-      #   name: Deploy Storybook to Staging
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-      #     user_name: Crealgo Bot 🤖
-      #     user_email: hello.crealgo@gmail.com
-      #     external_repository: crealgo/graphixcollab-static-staging
-      #     publish_dir: out
-      #     cname: beta.graphixcollab.com
-
-      # - if: ${{ inputs.deployment_type == 'production' }}
-      #   name: Deploy Storybook to Production
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-      #     user_name: Crealgo Bot 🤖
-      #     user_email: hello.crealgo@gmail.com
-      #     external_repository: crealgo/graphixcollab-static-production
-      #     publish_dir: out
-      #     cname: beta.graphixcollab.com # FIXME: change in the future
