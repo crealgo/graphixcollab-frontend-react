@@ -1,8 +1,8 @@
 import { paramCase } from 'change-case';
 import { forwardRef } from 'react';
+import { CheckboxInput, type CheckboxInputProps } from './CheckboxInput';
 import { FormControl, type FormControlProps } from './FormControl';
 import { InputGroup } from './InputGroup';
-import { CheckboxInput, type CheckboxInputProps } from './CheckboxInput';
 import { type OptionBag } from './types';
 
 type Props = {
@@ -11,23 +11,12 @@ type Props = {
 	Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const CheckboxField = forwardRef<HTMLInputElement, Props>(
-	(
-		{
-			label,
-			helperText,
-			isFullWidth = true,
-			options,
-			defaultValue,
-			...props
-		},
-		ref
-	) => {
+	({ label, helperText, options, defaultValue, ...props }, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
 			<FormControl
 				isFieldset
-				isFullWidth={isFullWidth}
 				label={label}
 				labelFor={generatedName}
 				helperText={helperText}

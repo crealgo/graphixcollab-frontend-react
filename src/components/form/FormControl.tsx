@@ -11,7 +11,6 @@ export type FormControlProps = {
 	helperText?: ReactNode;
 	helperTextId?: string;
 	isRequired?: boolean;
-	isFullWidth?: boolean;
 	/**
 	 * This prop is primarily used for when the FormControl wraps a group of
 	 * radio buttons or checkboxes.
@@ -35,6 +34,7 @@ const StyledLabel = styled.label`
 	line-height: 1rem;
 	font-weight: 500;
 	letter-spacing: -0.1px;
+	width: 100%;
 
 	.FormControl-label {
 		margin-bottom: 0.25rem;
@@ -45,10 +45,6 @@ const StyledLabel = styled.label`
 	.FormControl-helper-text {
 		margin-top: 0.25rem;
 		max-width: 25rem;
-	}
-
-	&.is-full-width {
-		width: 100%;
 	}
 
 	&.is-fieldset .FormControl-label {
@@ -112,7 +108,6 @@ export const FormControl: FC<FormControlProps> = props => {
 				'FormControl-root',
 				props.labelFor ? `FormControl-id-${props.labelFor}` : undefined,
 				{
-					'is-full-width': props.isFullWidth,
 					'is-fieldset': props.isFieldset,
 					'is-required': props.isRequired,
 					'is-invalid': props.isInvalid,

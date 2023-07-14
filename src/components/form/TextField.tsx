@@ -6,12 +6,11 @@ import { Input, type InputProps } from './Input';
 type Props = Omit<FormControlProps, 'isRequired'> & InputProps;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, isFullWidth, ...props }, ref) => {
+	({ label, helperText, ...props }, ref) => {
 		const generatedName = snakeCase(props.name ?? 'input-name');
 
 		return (
 			<FormControl
-				isFullWidth
 				label={label}
 				labelFor={generatedName}
 				helperText={helperText}

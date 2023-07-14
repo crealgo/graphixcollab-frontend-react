@@ -6,12 +6,11 @@ import { TextArea, type TextAreaProps } from './TextArea';
 type Props = Omit<FormControlProps, 'isRequired'> & TextAreaProps;
 
 export const TextAreaField = forwardRef<HTMLTextAreaElement, Props>(
-	({ label, helperText, isFullWidth, ...props }, ref) => {
+	({ label, helperText, ...props }, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
 			<FormControl
-				isFullWidth
 				label={label}
 				labelFor={generatedName}
 				helperText={helperText}

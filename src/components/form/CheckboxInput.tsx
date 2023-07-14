@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { forwardRef, type ComponentPropsWithRef, type ReactNode } from 'react';
-import UncheckedIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckedIcon from '@mui/icons-material/CheckBox';
+import UncheckedIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import { forwardRef, type ComponentPropsWithRef } from 'react';
 import { type OptionBag } from './types';
 
 export type CheckboxInputProps = OptionBag &

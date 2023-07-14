@@ -1,17 +1,16 @@
 import { paramCase } from 'change-case';
-import { forwardRef, type FC } from 'react';
+import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { Select, type SelectProps } from './Select';
 
 type Props = Omit<FormControlProps, 'isRequired'> & SelectProps;
 
 export const SelectField = forwardRef<HTMLSelectElement, Props>(
-	({ label, helperText, isFullWidth, ...props }, ref) => {
+	({ label, helperText, ...props }, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
 			<FormControl
-				isFullWidth
 				label={label}
 				labelFor={generatedName}
 				helperText={helperText}

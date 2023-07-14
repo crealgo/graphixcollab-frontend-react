@@ -11,23 +11,12 @@ type Props = {
 	Pick<RadioInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const RadioField = forwardRef<HTMLInputElement, Props>(
-	(
-		{
-			label,
-			helperText,
-			isFullWidth = true,
-			options,
-			defaultValue,
-			...props
-		},
-		ref
-	) => {
+	({ label, helperText, options, defaultValue, ...props }, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
 			<FormControl
 				isFieldset
-				isFullWidth={isFullWidth}
 				label={label}
 				labelFor={generatedName}
 				helperText={helperText}
