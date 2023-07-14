@@ -35,16 +35,16 @@ export const estimateFormItems: FormItemBag[] = [
 	},
 	{
 		itemType: 'select',
-		name: 'material',
-		label: 'Material Type',
-		options: materials,
+		name: 'service',
+		label: 'Service Type',
+		options: services,
 		span: 4
 	},
 	{
 		itemType: 'select',
-		name: 'service',
-		label: 'Service Type',
-		options: services,
+		name: 'material',
+		label: 'Material Type',
+		options: materials,
 		span: 4
 	},
 	{

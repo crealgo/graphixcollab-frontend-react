@@ -1,10 +1,10 @@
 import { type StoryObj } from '@storybook/react';
-import { Estimator } from '../../forms/EstimateForm';
+import { QuickEstimateForm } from '../../forms/QuickEstimateForm';
 import { type EstimatorBlockProps } from './EstimatorBlock';
 import { within, userEvent } from '@storybook/testing-library';
 
 export default {
-	component: Estimator
+	component: QuickEstimateForm
 };
 
 export const Default: StoryObj<EstimatorBlockProps> = {

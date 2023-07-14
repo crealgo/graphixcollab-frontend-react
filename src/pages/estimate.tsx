@@ -1,7 +1,7 @@
 import { type GetStaticProps, type NextPage } from 'next';
 import { Block } from '../components/base/Block';
 import { Container } from '../components/base/Container';
-import { Estimator } from '../forms/EstimateForm';
+import { EstimateForm } from '../forms/EstimateForm';
 import { type FooterBlockProps } from '../components/block/FooterBlock';
 import {
 	PageHeaderBlock,
@@ -30,7 +30,7 @@ const Page: NextPage<PageProps> = props => (
 		/>
 		<Block>
 			<Container>
-				<Estimator />
+				<EstimateForm />
 			</Container>
 		</Block>
 	</DefaultLayout>

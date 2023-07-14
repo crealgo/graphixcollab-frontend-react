@@ -43,7 +43,11 @@ export const FormGrid = styled.form`
 
 	// fields
 	.FormControl-root {
-		grid-column: span 3;
+		grid-column: span 6;
+
+		@media screen and (min-width: 500px) {
+			grid-column: span 3;
+		}
 
 		&.FileInputField-root {
 			grid-column: span 6;

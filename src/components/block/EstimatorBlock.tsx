@@ -1,13 +1,8 @@
 import { styled } from '@mui/material';
 import { type FC } from 'react';
-import { type Action } from '../../types/general';
+import { QuickEstimateForm } from '../../forms/QuickEstimateForm';
 import { Block } from '../base/Block';
 import { Container } from '../base/Container';
-import { Estimator } from '../../forms/EstimateForm';
-
-export type EstimatorBlockProps = {
-	actions?: Action[];
-};
 
 const AdornmentImage = styled('img')`
 	--adornment-image-position: absolute;
@@ -33,10 +28,10 @@ const AdornmentImage = styled('img')`
 	z-index: var(--adornment-image-z-index);
 `;
 
-export const EstimatorBlock: FC<EstimatorBlockProps> = () => (
+export const EstimatorBlock: FC = () => (
 	<Container>
 		<Block isClipped isRounded color="grey" className="EstimatorBlock-root">
-			<Estimator isSimple />
+			<QuickEstimateForm />
 			<AdornmentImage
 				src="assets/juicy-business-coach-explains-the-material-min@512w.webp"
 				alt="Explaining the material"
