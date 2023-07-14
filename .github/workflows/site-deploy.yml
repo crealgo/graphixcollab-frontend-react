@@ -25,6 +25,8 @@ env:
   CREALGO_REPOSITORY: crealgo/graphixcollab-static-${{ inputs.deployment-type }}
   CREALGO_API_ID: graphix-collab
 
+run-name: Build and Deploy ${{ inputs.deployment-type == 'staging' && 'Staging' || 'Production' }} Site
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
