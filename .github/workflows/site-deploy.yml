@@ -48,7 +48,6 @@ jobs:
 
       - name: Build App
         env:
-          ASSET_PREFIX:  "."
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
           NEXT_PUBLIC_API_ID: ${{ env.CREALGO_API_ID }}
         run: |

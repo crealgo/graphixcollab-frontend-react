@@ -11,7 +11,7 @@ fieldset {
 }
 
 html {
-  font-family: Inter;
+  font-family: var(--type-body-font-family);
 }
 
 *:focus-visible {

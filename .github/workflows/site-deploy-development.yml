@@ -36,7 +36,6 @@ jobs:
 
       - name: Build Development App
         env:
-          ASSET_PREFIX:  "."
           BASE_PATH: /${{ env.CREALGO_APP_ID }}
           NEXT_PUBLIC_APP_ID: ${{ env.CREALGO_APP_ID }}
           NEXT_PUBLIC_API_URL: https://api.crealgo.com

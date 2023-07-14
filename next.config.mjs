@@ -15,7 +15,7 @@ const nextConfig = {
     // eslint-disable-next-line
 		return config;
   },
-  assetPrefix: process.env.ASSET_PREFIX,
+  assetPrefix: process.env.BASE_PATH,
   basePath: process.env.BASE_PATH
 };
 
