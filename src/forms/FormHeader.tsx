@@ -32,8 +32,8 @@ export const FormHeader: FC<FormHeaderProps> = props => (
 		<Heading level={2} className="FormHeader-title">
 			{props.title}
 		</Heading>
-		<caption className="FormHeader-instructions">
+		<p className="FormHeader-instructions">
 			<Mark color="magenta">{props.instructions}</Mark>
-		</caption>
+		</p>
 	</HeaderElement>
 );

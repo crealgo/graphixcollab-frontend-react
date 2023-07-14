@@ -29,16 +29,6 @@ export const estimateFormItems: FormItemBag[] = [
 		required: true,
 		span: 4
 	},
-	// {
-	// 	itemType: 'input',
-	// 	inputType: 'number',
-	// 	name: 'phone',
-	// 	label: 'Phone Number',
-	// 	placeholder: 'XXXXXXXXXX',
-	// 	min: 1000000000,
-	// 	max: 9999999999,
-	// 	span: 4
-	// },
 	{
 		itemType: 'title',
 		title: '⚙️ Service Request'

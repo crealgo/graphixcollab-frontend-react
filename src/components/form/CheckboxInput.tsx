@@ -82,7 +82,7 @@ const Checkbox = styled('input', {
 export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
 	(props, ref) => (
 		<CheckboxLabel htmlFor={props.id}>
-			<Checkbox ref={ref} type="checkbox" {...props} value="yes" />
+			<Checkbox ref={ref} {...props} value="yes" type="checkbox" />
 			<div className="CheckboxInput-indicator">
 				<CheckedIcon className="CheckboxInput-icon is-checked" />
 				<UncheckedIcon className="CheckboxInput-icon is-unchecked" />

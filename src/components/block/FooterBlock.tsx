@@ -187,35 +187,26 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 						</FooterContentBlock>
 						<FooterContentBlock>
 							<Typography variant="h5">🔗 Quick Links</Typography>
-							<Text size="medium">
-								<ul
-									style={{
-										marginTop: '0.25rem',
-										paddingLeft: '1rem'
-									}}
-								>
-									<li>
-										<Link href="/contact-us">
-											Contact Us
-										</Link>
-									</li>
-									<li>
-										<Link href="/estimate">
-											Get an Estimate
-										</Link>
-									</li>
-									<li>
-										<Link href="/terms/privacy-policy">
-											Privacy Policy
-										</Link>
-									</li>
-									<li>
-										<Link href="/terms/terms-and-conditions">
-											Terms and Conditions
-										</Link>
-									</li>
-								</ul>
-							</Text>
+							<ContactInfoList>
+								<li>
+									<Link href="/contact-us">Contact Us</Link>
+								</li>
+								<li>
+									<Link href="/estimate">
+										Get an Estimate
+									</Link>
+								</li>
+								<li>
+									<Link href="/terms/privacy-policy">
+										Privacy Policy
+									</Link>
+								</li>
+								<li>
+									<Link href="/terms/terms-and-conditions">
+										Terms and Conditions
+									</Link>
+								</li>
+							</ContactInfoList>
 						</FooterContentBlock>
 					</Column>
 					<Column>
