@@ -19,7 +19,7 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
 		<MuiBreadcrumbs {...props} ref={ref}>
 			{children ??
 				items?.map(({ label, ...props }, itemIndex) => (
-					<Link key={itemIndex} {...props}>
+					<Link key={itemIndex} href="#" {...props}>
 						{label}
 					</Link>
 				))}

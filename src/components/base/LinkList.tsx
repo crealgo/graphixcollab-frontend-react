@@ -17,9 +17,9 @@ const LinkListUl = styled('ul')`
 
 export const LinkList: FC<LinkListProps> = ({ items }) => (
 	<LinkListUl>
-		{items?.map(({ label }, itemIndex) => (
+		{items?.map(({ label, href }, itemIndex) => (
 			<LinkListItem key={itemIndex}>
-				<Link>{label}</Link>
+				<Link href={href ?? ''}>{label}</Link>
 			</LinkListItem>
 		))}
 	</LinkListUl>

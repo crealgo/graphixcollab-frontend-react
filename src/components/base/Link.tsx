@@ -1,6 +1,7 @@
-import { styled } from '@mui/material/styles';
+import styled from '@emotion/styled';
+import NextLink from 'next/link';
 
-export const Link = styled('a')`
+export const Link = styled(NextLink)`
 	font-size: inherit;
 	line-height: inherit;
 	cursor: pointer;

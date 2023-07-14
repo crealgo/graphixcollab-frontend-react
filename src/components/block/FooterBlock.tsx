@@ -2,14 +2,7 @@ import ArrowForward from '@mui/icons-material/ArrowForward';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import {
-	css,
-	IconButton,
-	Link,
-	Stack,
-	styled,
-	Typography
-} from '@mui/material';
+import { css, IconButton, Stack, styled, Typography } from '@mui/material';
 import { type FC } from 'react';
 import { type Term } from '../../types/general';
 import { ActionStack } from '../base/ActionStack';
@@ -17,6 +10,7 @@ import { Block } from '../base/Block';
 import { Container } from '../base/Container';
 import { Text } from '../base/Text';
 import { MapEmbed } from './MapEmbed';
+import { Link } from '../base/Link';
 
 export type FooterBlockProps = {
 	title?: string;
