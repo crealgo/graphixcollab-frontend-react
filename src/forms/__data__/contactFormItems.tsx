@@ -21,6 +21,7 @@ export const contactFormItems: FormItemBag[] = [
 	{
 		itemType: 'input',
 		inputType: 'email',
+		required: true,
 		label: 'Email',
 		name: 'email',
 		helperText: "We'll respond to this email address.",
@@ -28,8 +29,9 @@ export const contactFormItems: FormItemBag[] = [
 	},
 	{
 		itemType: 'textarea',
-		label: 'Message',
 		name: 'message',
+		label: 'Message',
+		required: true,
 		placeholder:
 			'Let us know how we can help you! Something like, "I would like to book an appointment, but I have a few questions first."',
 		rows: 5
