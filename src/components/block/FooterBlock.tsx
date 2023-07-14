@@ -11,6 +11,7 @@ import { Container } from '../base/Container';
 import { Text } from '../base/Text';
 import { MapEmbed } from './MapEmbed';
 import { Link } from '../base/Link';
+import Logo from '../atoms/Logo';
 
 export type FooterBlockProps = {
 	title?: string;
@@ -155,7 +156,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 					<Column>
 						<FooterContentBlock>
 							<Typography gutterBottom variant="h3">
-								{footerContent.title}
+								<Logo />
 							</Typography>
 							<Text size="medium">
 								{footerContent.description}
