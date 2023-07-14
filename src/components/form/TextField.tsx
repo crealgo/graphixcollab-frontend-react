@@ -1,5 +1,5 @@
 import { snakeCase } from 'change-case';
-import { forwardRef, type FC } from 'react';
+import { forwardRef } from 'react';
 import { FormControl, type FormControlProps } from './FormControl';
 import { Input, type InputProps } from './Input';
 

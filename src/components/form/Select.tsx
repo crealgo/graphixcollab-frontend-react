@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { forwardRef, type ComponentPropsWithRef, type FC } from 'react';
-import { generateBaseInputStyles } from './generateBaseInputStyles';
 import clsx from 'clsx';
+import { forwardRef, type ComponentPropsWithRef } from 'react';
+import { generateBaseInputStyles } from './generateBaseInputStyles';
 import { type OptionBag } from './types';
 
 export type SelectProps = {

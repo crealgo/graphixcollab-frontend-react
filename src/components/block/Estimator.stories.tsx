@@ -1,13 +1,12 @@
 import { type StoryObj } from '@storybook/react';
+import { userEvent, within } from '@storybook/testing-library';
 import { QuickEstimateForm } from '../../forms/QuickEstimateForm';
-import { type EstimatorBlockProps } from './EstimatorBlock';
-import { within, userEvent } from '@storybook/testing-library';
 
 export default {
 	component: QuickEstimateForm
 };
 
-export const Default: StoryObj<EstimatorBlockProps> = {
+export const Default: StoryObj = {
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 

@@ -17,7 +17,7 @@ const Page: NextPage<PageProps> = props => (
 		<PageTitle text="Home" />
 		<IntroBlock {...props.IntroBlockProps} />
 		<FeaturedInBlock {...props.FeaturedInBlockProps} />
-		<EstimatorBlock {...props.InteractiveEstimatorProps} />
+		<EstimatorBlock />
 		<ServicesPreviewBlock {...props.ServicesPreviewBlockProps} />
 		<GalleryBlock {...props.GalleryBlockProps} />
 	</DefaultLayout>

@@ -3,7 +3,7 @@ import ContactUsIcon from '@mui/icons-material/ContactSupport';
 import { css, styled } from '@mui/material/styles';
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { type BannerProps } from '../components/base/Banner';
 import { type BreadcrumbOptions } from '../components/base/Breadcrumbs';
 import { Header, type HeaderProps } from '../components/base/Header/Header';
@@ -12,7 +12,6 @@ import {
 	type FooterBlockProps
 } from '../components/block/FooterBlock';
 import { YelpBlock } from '../components/block/YelpBlock';
-import { useAppState } from '../hooks/useAppState';
 
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
@@ -62,11 +61,7 @@ const Main = styled('main')(
 	`
 );
 
-export const DefaultLayout: DefaultLayoutProps = ({
-	HeaderProps,
-	children,
-	...props
-}) => {
+export const DefaultLayout: DefaultLayoutProps = ({ children, ...props }) => {
 	const router = useRouter();
 
 	return (
