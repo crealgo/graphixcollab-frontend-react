@@ -6,7 +6,7 @@ import { CheckboxInput, type CheckboxInputProps } from './CheckboxInput';
 import { type OptionBag } from './types';
 
 type Props = {
-	options: OptionBag[];
+	options?: OptionBag[];
 } & Omit<FormControlProps, 'isRequired'> &
 	Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
 

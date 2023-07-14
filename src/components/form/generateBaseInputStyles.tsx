@@ -72,4 +72,8 @@ export const generateBaseInputStyles = ({
 	&::placeholder {
 		color: var(--input-placeholder-color);
 	}
+
+	// TODO: add auto-fill styling
+	// :autofill {}
+	// ::-webkit-autofill {}
 `;

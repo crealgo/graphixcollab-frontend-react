@@ -1,9 +1,8 @@
-import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import {
-	Box,
 	css,
 	IconButton,
 	Link,
@@ -13,12 +12,11 @@ import {
 } from '@mui/material';
 import { type FC } from 'react';
 import { type Term } from '../../types/general';
-import { Container } from '../base/Container';
+import { ActionStack } from '../base/ActionStack';
 import { Block } from '../base/Block';
-import { Input } from '../form/Input';
-import { Button } from '../base/Button';
-import { MapEmbed } from './MapEmbed';
+import { Container } from '../base/Container';
 import { Text } from '../base/Text';
+import { MapEmbed } from './MapEmbed';
 
 export type FooterBlockProps = {
 	title?: string;
@@ -81,22 +79,13 @@ const footerContent = {
 	description:
 		"As a leading printing-service company, we are dedicated to providing high-quality printing solutions to our clients. With a team of experienced professionals and state-of-the-art printing equipment, we deliver exceptional results that meet and exceed our clients' expectations.",
 	sections: {
-		// connect: {
-		// 	title: 'Connect',
-		// 	links: [
-		// 		{ label: 'The Process', href: '' },
-		// 		{ label: 'Get Samples', href: '' },
-		// 		{ label: 'Templates', href: '' },
-		// 		{ label: 'Jobs', href: '' }
-		// 	]
-		// },
 		getAQuote: {
-			title: 'Get a Quote',
+			title: '💬 Get a Quote',
 			description:
 				'Need a quote for your printing project? Contact us today to request a quote. We offer competitive pricing and personalized solutions to meet your printing needs.'
 		},
 		contact: {
-			title: 'Contact Us',
+			title: '✉️ Contact Us',
 			description:
 				"We're here to help! If you have any questions or inquiries about our printing services, feel free to get in touch with us. You can contact us through the following channels:",
 			links: [
@@ -185,44 +174,59 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 							<Text size="medium">
 								{footerContent.description}
 							</Text>
-							<Box display="flex" gap="0.25rem" mt="0.75rem">
-								<Input
-									type="text"
-									inputSize="large"
-									placeholder="your@email.com"
-								/>
-								<Button
-									size="large"
-									color="secondary"
-									endIcon={<QuestionAnswerIcon />}
-								>
-									Inquire
-								</Button>
-							</Box>
+							<br />
+							<ActionStack
+								actions={[
+									{
+										label: 'Get a Quote',
+										href: '/estimate',
+										endIcon: <ArrowForward />
+									}
+								]}
+							/>
 						</FooterContentBlock>
-						{/* <FooterContentBlock>
-							<Typography variant="h5">
-								{footerContent.sections.connect.title}
-							</Typography>
-							<Stack
-								component="nav"
-								flexDirection="row"
-								gap="0.5rem"
-							>
-								{footerContent.sections.connect.links.map(
-									(link, index) => (
-										<Link key={index} href={link.href}>
-											{link.label}
+						<FooterContentBlock>
+							<Typography variant="h5">🔗 Quick Links</Typography>
+							<Text size="medium">
+								<ul
+									style={{
+										marginTop: '0.25rem',
+										paddingLeft: '1rem'
+									}}
+								>
+									<li>
+										<Link href="/contact-us">
+											Contact Us
 										</Link>
-									)
-								)}
-							</Stack>
-						</FooterContentBlock> */}
+									</li>
+									<li>
+										<Link href="/estimate">
+											Get an Estimate
+										</Link>
+									</li>
+									<li>
+										<Link href="/terms/privacy-policy">
+											Privacy Policy
+										</Link>
+									</li>
+									<li>
+										<Link href="/terms/terms-and-conditions">
+											Terms and Conditions
+										</Link>
+									</li>
+								</ul>
+							</Text>
+						</FooterContentBlock>
 					</Column>
 					<Column>
-						<MapEmbed />
 						<FooterContentBlock>
-							<Typography gutterBottom variant="h3">
+							<Typography gutterBottom variant="h5">
+								📍 Stop by our office
+							</Typography>
+							<MapEmbed />
+						</FooterContentBlock>
+						<FooterContentBlock>
+							<Typography gutterBottom variant="h5">
 								{footerContent.sections.contact.title}
 							</Typography>
 							<Text size="medium">

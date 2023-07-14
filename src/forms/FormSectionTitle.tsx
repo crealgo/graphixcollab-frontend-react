@@ -14,7 +14,7 @@ export const FormSectionTitle: FC<{
 	hasTopGutter?: boolean;
 }> = props => (
 	<BaseElement
-		className={clsx('FormSection-title', 'FormSectionTitle-root', {
+		className={clsx('FormSectionTitle-root', {
 			'has-top-gutter': props.hasTopGutter
 		})}
 	>

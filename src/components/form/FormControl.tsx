@@ -106,15 +106,20 @@ export const FormControl: FC<FormControlProps> = props => {
 		<StyledLabel
 			ref={wrapperRef}
 			as={WrapperComponent}
-			htmlFor={props.labelFor}
-			className={clsx(props.className, 'FormControl-root', {
-				'is-full-width': props.isFullWidth,
-				'is-fieldset': props.isFieldset,
-				'is-required': props.isRequired,
-				'is-invalid': props.isInvalid,
-				'is-valid': props.isValid,
-				'is-touched': props.isTouched
-			})}
+			htmlFor={props.isFieldset ? undefined : props.labelFor}
+			className={clsx(
+				props.className,
+				'FormControl-root',
+				props.labelFor ? `FormControl-id-${props.labelFor}` : undefined,
+				{
+					'is-full-width': props.isFullWidth,
+					'is-fieldset': props.isFieldset,
+					'is-required': props.isRequired,
+					'is-invalid': props.isInvalid,
+					'is-valid': props.isValid,
+					'is-touched': props.isTouched
+				}
+			)}
 		>
 			<LabelComponent className="FormControl-label">
 				{props.label}

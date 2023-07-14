@@ -1,7 +1,17 @@
 import path from 'path';
-import { useState, type FormEventHandler, useEffect, useRef } from 'react';
+import { useState, type FormEventHandler } from 'react';
 
-export const useForm = () => {
+type FormState = {
+	isSubmitting: boolean;
+	isSubmitted: boolean;
+	isSuccessful: boolean;
+	response: Response | null;
+	errors: Record<string, string[]>;
+	handleReset: () => void;
+	handleSubmit: FormEventHandler<HTMLFormElement>;
+};
+
+export const useForm = (): FormState => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const [isSuccessful, setIsSuccessful] = useState(false);

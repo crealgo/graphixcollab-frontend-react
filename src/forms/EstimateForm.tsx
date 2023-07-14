@@ -1,7 +1,6 @@
-import styled from '@emotion/styled';
-import { CheckCircleOutline, Refresh } from '@mui/icons-material';
-import CircularProgress from '@mui/material/CircularProgress';
-import { type FC, type PropsWithChildren } from 'react';
+import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
+import { CircularProgress } from '@mui/material';
+import { type FC } from 'react';
 import { ActionStack } from '../components/base/ActionStack';
 import { Button } from '../components/base/Button';
 import { Mark } from '../components/base/Mark';
@@ -10,43 +9,45 @@ import { FormGrid } from './FormGrid';
 import { FormHeader } from './FormHeader';
 import { FormItemGenerator } from './FormItemGenerator';
 import { renderFormAlert } from './__utils__/renderFormAlert';
-import { contactFormItems as items } from './__data__/contactFormItems';
+import { estimateFormItems } from './__data__/estimateFormItems';
 
-const StyledFormGrid = styled(FormGrid)`
-	.FormControl-root {
-		grid-column: span 6;
-	}
-`;
+export type EstimatorProps = {
+	isSimple?: boolean;
+	// actions?: Action[];
+};
 
-export const ContactForm: FC<PropsWithChildren> = () => {
+export const Estimator: FC<EstimatorProps> = props => {
 	const formState = useForm();
 
 	return (
-		<StyledFormGrid
+		<FormGrid
 			noValidate
 			method="post"
-			action="send-message/contact"
-			name="contact-form"
+			action="send-message/estimate-request"
+			encType="multipart/form-data"
+			id="estimator-form"
+			onReset={formState.handleReset}
 			onSubmit={formState.handleSubmit}
 		>
 			<FormHeader
 				title={
 					<>
-						Send us a{' '}
+						Get {props.isSimple ? 'a quick ' : 'an '}
 						<Mark text color="magenta">
-							message
+							estimate
 						</Mark>
 						!
 					</>
 				}
-				instructions="Fill out the form below to send us a message, and we'll get back to you as soon as possible!"
+				instructions="Fill out the form below to get your quick estimate, and a step closer to getting your project started!"
 			/>
-			{/* TODO: combine first and last name into 'full name' */}
-			<FormItemGenerator items={items} formState={formState} />
+			<FormItemGenerator
+				items={estimateFormItems}
+				formState={formState}
+			/>
 			{formState.isSubmitted && renderFormAlert(formState.isSuccessful)}
 			<ActionStack>
 				<Button
-					size="large"
 					color="secondary"
 					endIcon={
 						formState.isSubmitting ? (
@@ -61,18 +62,16 @@ export const ContactForm: FC<PropsWithChildren> = () => {
 					}
 					type="submit"
 				>
-					{formState.isSubmitting ? 'Sending...' : 'Send Message'}
+					{formState.isSubmitting ? 'Sending...' : 'Get Estimate'}
 				</Button>
 				<Button
-					size="large"
-					color="tertiary"
-					endIcon={<Refresh />}
-					type="button"
-					onClick={formState.handleReset}
+					color="text"
+					href="mailto:graphixcollab@gmail.com"
+					endIcon={<ArrowForward />}
 				>
-					Reset
+					Not sure? Contact us
 				</Button>
 			</ActionStack>
-		</StyledFormGrid>
+		</FormGrid>
 	);
 };
