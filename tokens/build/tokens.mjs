@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 13 Jul 2023 02:53:31 GMT
+ * Generated on Sun, 16 Jul 2023 05:43:53 GMT
  */
 
 export const SequenceColor0Lightest = "#00aad2";
@@ -433,7 +433,7 @@ export const SectionMobilePaddingBlock = "4rem";
 export const SectionMobilePaddingInline = "1rem";
 export const SectionTabletPaddingBlock = "4rem";
 export const SectionTabletPaddingInline = "2rem";
-export const SectionDesktopPaddingBlock = "7rem";
+export const SectionDesktopPaddingBlock = "4rem";
 export const SectionDesktopPaddingInline = "2rem";
-export const SectionWidescreenPaddingBlock = "7rem";
+export const SectionWidescreenPaddingBlock = "4rem";
 export const SectionWidescreenPaddingInline = "4rem";

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 13 Jul 2023 02:53:31 GMT
+ * Generated on Sun, 16 Jul 2023 05:43:53 GMT
  */
 
 module.exports = {
@@ -8163,7 +8163,7 @@ module.exports = {
       "paddingBlock": {
         "value": "4rem",
         "original": {
-          "value": "{section.mobile.paddingBlock}"
+          "value": "4rem"
         },
         "name": "SectionTabletPaddingBlock",
         "attributes": {
@@ -8197,9 +8197,9 @@ module.exports = {
     },
     "desktop": {
       "paddingBlock": {
-        "value": "7rem",
+        "value": "4rem",
         "original": {
-          "value": "7rem"
+          "value": "4rem"
         },
         "name": "SectionDesktopPaddingBlock",
         "attributes": {
@@ -8216,7 +8216,7 @@ module.exports = {
       "paddingInline": {
         "value": "2rem",
         "original": {
-          "value": "{section.tablet.paddingInline}"
+          "value": "2rem"
         },
         "name": "SectionDesktopPaddingInline",
         "attributes": {
@@ -8233,7 +8233,7 @@ module.exports = {
     },
     "widescreen": {
       "paddingBlock": {
-        "value": "7rem",
+        "value": "4rem",
         "original": {
           "value": "{section.desktop.paddingBlock}"
         },

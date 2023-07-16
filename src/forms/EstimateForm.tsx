@@ -10,6 +10,7 @@ import { FormHeader } from './FormHeader';
 import { FormItemGenerator } from './FormItemGenerator';
 import { renderFormAlert } from './__utils__/renderFormAlert';
 import { estimateFormItems } from './__data__/estimateFormItems';
+import { getFormAction } from './__utils__/getFormAction';
 
 export const EstimateForm: FC = () => {
 	const formState = useForm();
@@ -18,7 +19,7 @@ export const EstimateForm: FC = () => {
 		<FormGrid
 			noValidate
 			method="post"
-			action="send-message/estimate-request"
+			action={getFormAction('send-message/estimate-request')}
 			encType="multipart/form-data"
 			id="estimator-form"
 			onReset={formState.handleReset}

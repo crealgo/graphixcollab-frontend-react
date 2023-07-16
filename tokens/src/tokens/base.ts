@@ -9,12 +9,12 @@ export default {
 			paddingInline: '1rem'
 		},
 		tablet: {
-			paddingBlock: '{section.mobile.paddingBlock}',
+			paddingBlock: '4rem',
 			paddingInline: '2rem'
 		},
 		desktop: {
-			paddingBlock: '7rem',
-			paddingInline: '{section.tablet.paddingInline}'
+			paddingBlock: '4rem',
+			paddingInline: '2rem'
 		},
 		widescreen: {
 			paddingBlock: '{section.desktop.paddingBlock}',

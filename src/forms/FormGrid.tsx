@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const FormGrid = styled.form`
 	--content-grid-padding-block-end: 50%;
 	--action-stack-spacing: 1rem;
+	--max-content-width: 50rem;
 
 	@media screen and (min-width: 425px) {
 		--content-grid-padding-block-end: 52%;
@@ -24,7 +25,7 @@ export const FormGrid = styled.form`
 	grid-template-columns: repeat(6, minmax(0, 1fr));
 	gap: 1rem;
 
-	max-width: 50rem;
+	max-width: var(--max-content-width);
 	padding-block-end: var(--content-grid-padding-block-end);
 
 	.FormHeader-root,

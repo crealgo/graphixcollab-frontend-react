@@ -41,6 +41,14 @@ const StyledDiv = styled(
 			grey: 'var(--color-gray-50)'
 		}[color ?? 'default'];
 
+		const borderColor = {
+			default: 'transparent',
+			primary: 'var(--color-brand-primary-main)',
+			secondary: 'var(--color-brand-secondary-main)',
+			tertiary: 'var(--color-brand-tertiary-main)',
+			grey: 'var(--color-gray-200)'
+		}[color ?? 'default'];
+
 		return css`
 			--section-padding-block: var(--section-mobile-padding-block);
 			--section-padding-inline: var(--section-mobile-padding-inline);
@@ -57,12 +65,14 @@ const StyledDiv = styled(
 			}
 
 			${theme.breakpoints.up('xl')} {
+				--section-padding-block: var(--section-desktop-padding-block);
 				--section-padding-inline: ${hasNoHorizontalPadding
 					? 'unset'
 					: 'var(--section-tablet-padding-inline)'};
 			}
 
 			background-color: ${blockColor};
+			border: solid 1px ${borderColor};
 			position: relative;
 
 			padding-block: var(--section-padding-block);

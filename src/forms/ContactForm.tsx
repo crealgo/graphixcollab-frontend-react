@@ -11,6 +11,7 @@ import { FormHeader } from './FormHeader';
 import { FormItemGenerator } from './FormItemGenerator';
 import { renderFormAlert } from './__utils__/renderFormAlert';
 import { contactFormItems as items } from './__data__/contactFormItems';
+import { getFormAction } from './__utils__/getFormAction';
 
 const StyledFormGrid = styled(FormGrid)`
 	.FormControl-root {
@@ -25,7 +26,7 @@ export const ContactForm: FC<PropsWithChildren> = () => {
 		<StyledFormGrid
 			noValidate
 			method="post"
-			action="send-message/contact"
+			action={getFormAction('send-message/contact')}
 			name="contact-form"
 			onSubmit={formState.handleSubmit}
 		>
