@@ -19,11 +19,10 @@ env:
   AUTHOR_NAME: 🤖 Crealgo Bot
   AUTHOR_EMAIL: bot.crealgo@gmail.com
 
-  STATIC_BUILD_EXPORT_PATH: out
+  CREALGO_APP_ID: graphixcollab
 
   DOMAIN: ${{ inputs.deployment-type == 'staging' && 'beta.graphixcollab.com' || 'graphixcollab.com' }}
   CREALGO_REPOSITORY: crealgo/graphixcollab-static-${{ inputs.deployment-type }}
-  CREALGO_API_ID: graphix-collab
 
 run-name: Build and Deploy ${{ inputs.deployment-type == 'staging' && 'Staging' || 'Production' }} Site
 
@@ -49,10 +48,10 @@ jobs:
       - name: Build App
         env:
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
-          NEXT_PUBLIC_API_ID: ${{ env.CREALGO_API_ID }}
+          NEXT_PUBLIC_APP_ID: ${{ env.CREALGO_APP_ID }}
         run: |
           npx next build --no-lint
-          npx next export -o ${{ env.STATIC_BUILD_EXPORT_PATH }}
+          npx next export
 
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
@@ -62,4 +61,4 @@ jobs:
           user_email:  ${{ env.AUTHOR_EMAIL }}
           external_repository: ${{ env.CREALGO_REPOSITORY }}
           cname: ${{ env.DOMAIN }}
-          publish_dir: ${{ env.STATIC_BUILD_EXPORT_PATH }}
+          publish_dir: out

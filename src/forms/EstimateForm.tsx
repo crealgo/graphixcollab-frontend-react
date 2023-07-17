@@ -11,12 +11,34 @@ import { FormItemGenerator } from './FormItemGenerator';
 import { renderFormAlert } from './__utils__/renderFormAlert';
 import { estimateFormItems } from './__data__/estimateFormItems';
 import { getFormAction } from './__utils__/getFormAction';
+import styled from '@emotion/styled';
+
+const StyledFormGrid = styled(FormGrid)`
+	@media screen and (min-width: 768px) {
+		.FormControl-id-name,
+		.FormControl-id-email {
+			grid-column: span 3;
+		}
+
+		.FormControl-id-service,
+		.FormControl-id-material,
+		.FormControl-id-quantity,
+		.FormControl-id-deadline,
+		.FormControl-id-delivery {
+			grid-column: span 2;
+		}
+
+		.FormControl-id-artwork {
+			grid-column: span 4;
+		}
+	}
+`;
 
 export const EstimateForm: FC = () => {
 	const formState = useForm();
 
 	return (
-		<FormGrid
+		<StyledFormGrid
 			noValidate
 			method="post"
 			action={getFormAction('send-message/estimate-request')}
@@ -68,6 +90,6 @@ export const EstimateForm: FC = () => {
 					Not sure? Contact us
 				</Button>
 			</ActionStack>
-		</FormGrid>
+		</StyledFormGrid>
 	);
 };

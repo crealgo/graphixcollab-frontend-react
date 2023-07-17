@@ -30,7 +30,9 @@ export const FormGrid = styled.form`
 
 	.FormHeader-root,
 	.FormSectionTitle-root,
-	.ActionStack-root {
+	.ActionStack-root,
+	.FormSection-alert,
+	.FormControl-root {
 		grid-column: span 6;
 	}
 
@@ -42,21 +44,7 @@ export const FormGrid = styled.form`
 		margin-top: var(--spacing-6);
 	}
 
-	// fields
-	.FormControl-root {
-		grid-column: span 6;
-
-		@media screen and (min-width: 500px) {
-			grid-column: span 3;
-		}
-
-		&.FileInputField-root {
-			grid-column: span 6;
-		}
-
-		&.FormControl-id-terms {
-			margin-top: var(--spacing-6);
-			grid-column: span 6;
-		}
+	.FormControl-id-terms {
+		margin-top: var(--spacing-6);
 	}
 `;

@@ -5,17 +5,9 @@ export const contactFormItems: FormItemBag[] = [
 	{
 		itemType: 'input',
 		inputType: 'text',
-		label: 'First Name',
-		name: 'first_name',
+		label: 'Full Name',
+		name: 'name',
 		placeholder: 'John',
-		required: true
-	},
-	{
-		itemType: 'input',
-		inputType: 'text',
-		label: 'Last Name',
-		name: 'last_name',
-		placeholder: 'Snow',
 		required: true
 	},
 	{

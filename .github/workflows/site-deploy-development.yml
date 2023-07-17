@@ -13,7 +13,6 @@ env:
   AUTHOR_EMAIL: bot.crealgo@gmail.com
 
   CREALGO_APP_ID: graphixcollab
-  CREALGO_API_ID: graphix-collab
 
 jobs:
   build-and-deploy:
@@ -39,7 +38,6 @@ jobs:
           BASE_PATH: /${{ env.CREALGO_APP_ID }}
           NEXT_PUBLIC_APP_ID: ${{ env.CREALGO_APP_ID }}
           NEXT_PUBLIC_API_URL: https://api.crealgo.com
-          NEXT_PUBLIC_API_ID: ${{ env.CREALGO_API_ID }}
         run: |
           npx next build --no-lint
           npx next export

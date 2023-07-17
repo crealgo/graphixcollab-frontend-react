@@ -17,34 +17,23 @@ const filteredItems = estimateFormItems.filter(
 );
 
 const StyledFormGrid = styled(FormGrid)`
-	.FormControl-root {
-		@media screen and (min-width: 500px) {
+	@media screen and (min-width: 768px) {
+		.FormControl-id-name,
+		.FormControl-id-email {
 			grid-column: span 3;
 		}
 
-		@media screen and (min-width: 688px) {
-			&:nth-of-type(1) {
-				grid-column: span 2;
-			}
-			&:nth-of-type(2) {
-				grid-column: span 2;
-			}
-			&:nth-of-type(3) {
-				grid-column: span 2;
-			}
-			&:nth-of-type(4) {
-				grid-column: span 1;
-			}
-			&:nth-of-type(5) {
-				grid-column: span 1;
-			}
-			&:nth-of-type(6) {
-				grid-column: span 2;
-			}
+		.FormControl-id-service,
+		.FormControl-id-material,
+		.FormControl-id-quantity,
+		.FormControl-id-deadline,
+		.FormControl-id-delivery {
+			grid-column: span 2;
+		}
 
-			&.FormControl-id-terms {
-				grid-column: span 6;
-			}
+		.FormControl-id-artwork,
+		.FormControl-id-terms {
+			grid-column: span 5;
 		}
 	}
 `;

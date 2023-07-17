@@ -17,7 +17,6 @@ const AdornmentImage = styled('img')`
 		--adornment-image-inset: auto -10rem -2rem auto;
 	}
 
-	padding: 0 0 0 1rem;
 	max-width: var(--adornment-image-max-width);
 	width: var(--adornment-image-width);
 	height: auto;

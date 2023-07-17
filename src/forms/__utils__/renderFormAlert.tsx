@@ -20,9 +20,11 @@ export const renderFormAlert = (isSuccessful: boolean) => {
 	}
 
 	return (
-		<Alert severity={severity}>
-			<AlertTitle>{title}</AlertTitle>
-			{message}
-		</Alert>
+		<div className="FormSection-alert">
+			<Alert severity={severity}>
+				<AlertTitle>{title}</AlertTitle>
+				{message}
+			</Alert>
+		</div>
 	);
 };
