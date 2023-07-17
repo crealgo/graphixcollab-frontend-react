@@ -21,7 +21,7 @@ env:
 
   CREALGO_APP_ID: graphixcollab
 
-  DOMAIN: ${{ inputs.deployment-type == 'staging' && 'beta.graphixcollab.com' || 'graphixcollab.com' }}
+  DOMAIN: ${{ inputs.deployment-type == 'staging' && 'graphixcollab.crealgo.dev' || 'graphixcollab.com' }}
   CREALGO_REPOSITORY: crealgo/graphixcollab-static-${{ inputs.deployment-type }}
 
 run-name: Build and Deploy ${{ inputs.deployment-type == 'staging' && 'Staging' || 'Production' }} Site
