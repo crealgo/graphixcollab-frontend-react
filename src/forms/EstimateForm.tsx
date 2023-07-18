@@ -50,7 +50,7 @@ export const EstimateForm: FC = () => {
 			<FormHeader
 				title={
 					<>
-						Get an
+						Get an{' '}
 						<Mark text color="magenta">
 							estimate
 						</Mark>
