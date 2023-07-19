@@ -5,14 +5,12 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 permissions:
   contents: write
 
-env:
-  AUTHOR_NAME: 🤖 Crealgo Bot
-  AUTHOR_EMAIL: bot.crealgo@gmail.com
-
-  CREALGO_APP_ID: graphixcollab
+run-name: Build and Deploy Site to Development
 
 jobs:
   build-and-deploy:
@@ -33,21 +31,20 @@ jobs:
       - name: Verify
         run: npm run verify
 
-      - name: Build Development App
+      - name: Build App
         env:
-          BASE_PATH: /${{ env.CREALGO_APP_ID }}
-          NEXT_PUBLIC_APP_ID: ${{ env.CREALGO_APP_ID }}
-          NEXT_PUBLIC_API_URL: https://api.crealgo.com
+          NEXT_PUBLIC_API_URL: https://api.crealgo.com/v1
+          NEXT_PUBLIC_APP_ID: graphixcollab
         run: |
           npx next build --no-lint
           npx next export
 
-      - name: Deploy Site to Development
+      - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: ${{ env.AUTHOR_NAME }}
-          user_email:  ${{ env.AUTHOR_EMAIL }}
-          external_repository: crealgo/crealgo-static-projects
+          user_name: 🤖 Crealgo Bot
+          user_email:  bot.crealgo@gmail.com
+          external_repository: crealgo/graphixcollab-static-staging
+          cname: graphixcollab.crealgo.dev
           publish_dir: out
-          destination_dir: ${{ env.CREALGO_APP_ID }}
