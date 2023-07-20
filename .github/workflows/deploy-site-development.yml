@@ -10,8 +10,6 @@ on:
 permissions:
   contents: write
 
-run-name: Build and Deploy Site to Development
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
