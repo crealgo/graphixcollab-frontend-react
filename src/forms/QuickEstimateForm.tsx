@@ -11,6 +11,7 @@ import { FormItemGenerator } from './FormItemGenerator';
 import { renderFormAlert } from './__utils__/renderFormAlert';
 import { estimateFormItems } from './__data__/estimateFormItems';
 import styled from '@emotion/styled';
+import { getFormAction } from './__utils__/getFormAction';
 
 const filteredItems = estimateFormItems.filter(
 	item => item.itemType !== 'title'
@@ -45,7 +46,7 @@ export const QuickEstimateForm: FC = () => {
 		<StyledFormGrid
 			noValidate
 			method="post"
-			action="send-message/estimate-request"
+			action={getFormAction('send-message/estimate-request')}
 			encType="multipart/form-data"
 			id="estimator-form"
 			onReset={formState.handleReset}
