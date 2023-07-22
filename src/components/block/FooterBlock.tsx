@@ -2,15 +2,15 @@ import ArrowForward from '@mui/icons-material/ArrowForward';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { css, IconButton, Stack, styled, Typography } from '@mui/material';
-import { type FC } from 'react';
-import { type Term } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
-import { Container } from '../base/Container';
-import { Text } from '../base/Text';
-import { MapEmbed } from './MapEmbed';
-import { Link } from '../base/Link';
+import {css, IconButton, Stack, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
+import {type Term} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Container} from '../base/Container';
+import {Text} from '../base/Text';
+import {MapEmbed} from './MapEmbed';
+import {Link} from '../base/Link';
 import Logo from '../atoms/Logo';
 
 export type FooterBlockProps = {
@@ -20,7 +20,7 @@ export type FooterBlockProps = {
 };
 
 const Column = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: flex;
 		flex-direction: column;
 		row-gap: 2rem;
@@ -28,11 +28,11 @@ const Column = styled('div')(
 		${theme.breakpoints.up('md')} {
 			row-gap: 2rem;
 		}
-	`
+	`,
 );
 
 const Content = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: grid;
 		row-gap: 3rem;
 		column-gap: 1.5rem;
@@ -41,10 +41,10 @@ const Content = styled('div')(
 		${theme.breakpoints.up('md')} {
 			grid-template-columns: 1fr 1.5fr;
 		}
-	`
+	`,
 );
 const CopyrightBlockWrapper = styled(Block)(
-	({ theme }) => css`
+	({theme}) => css`
 		background-color: var(--color-gray-100);
 		padding-block: 2rem !important;
 
@@ -66,62 +66,62 @@ const CopyrightBlockWrapper = styled(Block)(
 				gap: 1.5rem;
 			}
 		}
-	`
+	`,
 );
 
 const footerContent = {
 	title: 'Graphix Collab',
 	description:
-		"As a leading printing-service company, we are dedicated to providing high-quality printing solutions to our clients. With a team of experienced professionals and state-of-the-art printing equipment, we deliver exceptional results that meet and exceed our clients' expectations.",
+		'As a leading printing-service company, we are dedicated to providing high-quality printing solutions to our clients. With a team of experienced professionals and state-of-the-art printing equipment, we deliver exceptional results that meet and exceed our clients\' expectations.',
 	sections: {
 		getAQuote: {
 			title: '💬 Get a Quote',
 			description:
-				'Need a quote for your printing project? Contact us today to request a quote. We offer competitive pricing and personalized solutions to meet your printing needs.'
+				'Need a quote for your printing project? Contact us today to request a quote. We offer competitive pricing and personalized solutions to meet your printing needs.',
 		},
 		contact: {
 			title: '✉️ Contact Us',
 			description:
-				"We're here to help! If you have any questions or inquiries about our printing services, feel free to get in touch with us. You can contact us through the following channels:",
+				'We\'re here to help! If you have any questions or inquiries about our printing services, feel free to get in touch with us. You can contact us through the following channels:',
 			links: [
 				{
 					label: 'Phone',
 					displayName: '+1 (323) 379-3728',
-					href: 'tel:323-379-3728'
+					href: 'tel:323-379-3728',
 				},
 				{
 					label: 'Email',
 					displayName: 'graphixcollab@gmail.com',
-					href: 'mailto:graphixcollab@gmail.com'
+					href: 'mailto:graphixcollab@gmail.com',
 				},
 				{
 					label: 'Address',
 					displayName: '2626 S Figueroa St A, Los Angeles, CA 90007',
-					href: 'https://goo.gl/maps/g3bKdJBYSRZvvmpaA'
-				}
-			]
+					href: 'https://goo.gl/maps/g3bKdJBYSRZvvmpaA',
+				},
+			],
 		},
 		copyright: {
 			showSocial: true,
 			phrases: [
 				'©Copyright 2015-2020, FashionGreek, USC.',
 				// TODO: make this a web component
-				'Made with ❤️ by Crealgo, LLC. All rights reserved.'
-			]
-		}
-	}
+				'Made with ❤️ by Crealgo, LLC. All rights reserved.',
+			],
+		},
+	},
 };
 
 const SocialBar: FC<unknown> = () => (
-	<Stack gap="0.25rem" direction="row">
-		<IconButton size="small">
-			<FacebookIcon fontSize="small" />
+	<Stack gap='0.25rem' direction='row'>
+		<IconButton size='small'>
+			<FacebookIcon fontSize='small'/>
 		</IconButton>
-		<IconButton size="small">
-			<TwitterIcon fontSize="small" />
+		<IconButton size='small'>
+			<TwitterIcon fontSize='small'/>
 		</IconButton>
-		<IconButton size="small">
-			<InstagramIcon fontSize="small" />
+		<IconButton size='small'>
+			<InstagramIcon fontSize='small'/>
 		</IconButton>
 	</Stack>
 );
@@ -131,7 +131,7 @@ const FooterContentBlock = styled('div')`
 	grid-template-columns: 1fr;
 	gap: 0.25rem;
 
-	${({ theme }) => theme.breakpoints.up('md')} {
+	${({theme}) => theme.breakpoints.up('md')} {
 		padding: 1rem;
 	}
 `;
@@ -150,54 +150,54 @@ const ContactInfoList = styled('ul')`
 
 export const FooterBlock: FC<FooterBlockProps> = () => (
 	<footer>
-		<Block hasNoDefaultMargin color="grey">
+		<Block hasNoDefaultMargin color='grey'>
 			<Container>
 				<Content>
 					<Column>
 						<FooterContentBlock>
-							<Typography gutterBottom variant="h3">
-								<Logo />
+							<Typography gutterBottom variant='h3'>
+								<Logo/>
 							</Typography>
-							<Text size="medium">
+							<Text size='medium'>
 								{footerContent.description}
 							</Text>
 						</FooterContentBlock>
 						<FooterContentBlock>
-							<Typography variant="h5">
+							<Typography variant='h5'>
 								{footerContent.sections.getAQuote.title}
 							</Typography>
-							<Text size="medium">
+							<Text size='medium'>
 								{footerContent.description}
 							</Text>
-							<br />
+							<br/>
 							<ActionStack
 								actions={[
 									{
 										label: 'Get a Quote',
 										href: '/estimate',
-										endIcon: <ArrowForward />
-									}
+										endIcon: <ArrowForward/>,
+									},
 								]}
 							/>
 						</FooterContentBlock>
 						<FooterContentBlock>
-							<Typography variant="h5">🔗 Quick Links</Typography>
+							<Typography variant='h5'>🔗 Quick Links</Typography>
 							<ContactInfoList>
 								<li>
-									<Link href="/contact-us">Contact Us</Link>
+									<Link href='/contact-us'>Contact Us</Link>
 								</li>
 								<li>
-									<Link href="/estimate">
+									<Link href='/estimate'>
 										Get an Estimate
 									</Link>
 								</li>
 								<li>
-									<Link href="/terms/privacy-policy">
+									<Link href='/terms/privacy-policy'>
 										Privacy Policy
 									</Link>
 								</li>
 								<li>
-									<Link href="/terms/terms-and-conditions">
+									<Link href='/terms/terms-and-conditions'>
 										Terms and Conditions
 									</Link>
 								</li>
@@ -206,16 +206,16 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 					</Column>
 					<Column>
 						<FooterContentBlock>
-							<Typography gutterBottom variant="h5">
+							<Typography gutterBottom variant='h5'>
 								📍 Stop by our office
 							</Typography>
-							<MapEmbed />
+							<MapEmbed/>
 						</FooterContentBlock>
 						<FooterContentBlock>
-							<Typography gutterBottom variant="h5">
+							<Typography gutterBottom variant='h5'>
 								{footerContent.sections.contact.title}
 							</Typography>
-							<Text size="medium">
+							<Text size='medium'>
 								{footerContent.sections.contact.description}
 							</Text>
 							<ContactInfoList>
@@ -227,7 +227,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 												{link.displayName}
 											</Link>
 										</li>
-									)
+									),
 								)}
 							</ContactInfoList>
 						</FooterContentBlock>
@@ -237,17 +237,17 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 		</Block>
 		<CopyrightBlockWrapper hasNoDefaultMargin>
 			<Container>
-				<div className="leftContent">
+				<div className='leftContent'>
 					{footerContent.sections.copyright.phrases.map(
 						(text, index) => (
-							<Typography key={index} variant="caption">
+							<Typography key={index} variant='caption'>
 								{text}
 							</Typography>
-						)
+						),
 					)}
 				</div>
-				<div className="rightContent">
-					<SocialBar />
+				<div className='rightContent'>
+					<SocialBar/>
 				</div>
 			</Container>
 		</CopyrightBlockWrapper>

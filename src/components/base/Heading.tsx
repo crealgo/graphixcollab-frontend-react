@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
-import { type FC } from 'react';
+import {type FC} from 'react';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -39,12 +39,12 @@ const BaseElement = styled.span<HeadingProps>(
 		text-align: var(--type-heading-align);
 
 		margin: ${props.hasMargin
-			? 'var(--type-heading-font-margin-top) 0 var(--type-heading-font-margin-bottom)'
-			: 'unset'};
-	`
+		? 'var(--type-heading-font-margin-top) 0 var(--type-heading-font-margin-bottom)'
+		: 'unset'};
+	`,
 );
 
-export const Heading: FC<HeadingProps> = ({ children, ...props }) => {
+export const Heading: FC<HeadingProps> = ({children, ...props}) => {
 	const resolvedLevel = props.level ?? 6;
 	const resolvedComponent = `h${resolvedLevel}` as const;
 

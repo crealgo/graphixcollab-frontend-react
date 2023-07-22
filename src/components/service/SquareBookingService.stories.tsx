@@ -1,10 +1,10 @@
-import { type StoryObj } from '@storybook/react';
-import { useState } from 'react';
-import { Button } from '../base/Button';
-import { SquareBookingService } from './SquareBookingService';
+import {type StoryObj} from '@storybook/react';
+import {useState} from 'react';
+import {Button} from '../base/Button';
+import {SquareBookingService} from './SquareBookingService';
 
 export default {
-	component: SquareBookingService
+	component: SquareBookingService,
 };
 
 export const Default: StoryObj = {
@@ -21,12 +21,12 @@ export const Default: StoryObj = {
 
 		return (
 			<>
-				<Button color="primary" onClick={handleClick}>
+				<Button color='primary' onClick={handleClick}>
 					Open Booking Service
 				</Button>
 				{`It is ${open ? 'open' : 'closed'}`}
-				<SquareBookingService onCloseClick={handleClose} />
+				<SquareBookingService onCloseClick={handleClose}/>
 			</>
 		);
-	}
+	},
 };

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import MuiAlert, { type AlertProps } from '@mui/material/Alert';
+import MuiAlert, {type AlertProps} from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
 const Alert = styled(MuiAlert)`
@@ -15,12 +15,12 @@ export const renderFormAlert = (isSuccessful: boolean) => {
 	if (isSuccessful) {
 		severity = 'success';
 		title = 'Message Sent';
-		message =
-			'Your message has been sent. We will get back to you as soon as possible.';
+		message
+			= 'Your message has been sent. We will get back to you as soon as possible.';
 	}
 
 	return (
-		<div className="FormSection-alert">
+		<div className='FormSection-alert'>
 			<Alert severity={severity}>
 				<AlertTitle>{title}</AlertTitle>
 				{message}

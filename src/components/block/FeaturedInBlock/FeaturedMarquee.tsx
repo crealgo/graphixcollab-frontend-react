@@ -21,5 +21,5 @@ export const FeaturedMarquee = styled(Marquee)`
 FeaturedMarquee.defaultProps = {
 	direction: 'left',
 	speed: 10,
-	pauseOnHover: true
+	pauseOnHover: true,
 };

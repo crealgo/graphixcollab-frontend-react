@@ -1,17 +1,17 @@
-import { paramCase } from 'change-case';
-import { forwardRef } from 'react';
-import { CheckboxInput, type CheckboxInputProps } from './CheckboxInput';
-import { FormControl, type FormControlProps } from './FormControl';
-import { InputGroup } from './InputGroup';
-import { type OptionBag } from './types';
+import {paramCase} from 'change-case';
+import {forwardRef} from 'react';
+import {CheckboxInput, type CheckboxInputProps} from './CheckboxInput';
+import {FormControl, type FormControlProps} from './FormControl';
+import {InputGroup} from './InputGroup';
+import {type OptionBag} from './types';
 
 type Props = {
 	options?: OptionBag[];
 } & Omit<FormControlProps, 'isRequired'> &
-	Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
+Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const CheckboxField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, options, defaultValue, ...props }, ref) => {
+	({label, helperText, options, defaultValue, ...props}, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
@@ -40,5 +40,5 @@ export const CheckboxField = forwardRef<HTMLInputElement, Props>(
 				</InputGroup>
 			</FormControl>
 		);
-	}
+	},
 );

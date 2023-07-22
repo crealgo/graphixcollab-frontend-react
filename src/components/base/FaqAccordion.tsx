@@ -3,11 +3,11 @@ import {
 	Accordion,
 	AccordionDetails,
 	AccordionSummary,
-	styled
+	styled,
 } from '@mui/material';
-import { type FC } from 'react';
-import { type FaqOptions } from '../block/FaqBlock';
-import { ActionStack } from './ActionStack';
+import {type FC} from 'react';
+import {type FaqOptions} from '../block/FaqBlock';
+import {ActionStack} from './ActionStack';
 
 type FaqAccordionProps = FaqOptions;
 
@@ -61,27 +61,27 @@ const Wrapper = styled(Accordion)`
 	}
 `;
 
-const AccordionHead = styled(AccordionSummary)(({ theme }) => ({
-	...theme.typography.body2
+const AccordionHead = styled(AccordionSummary)(({theme}) => ({
+	...theme.typography.body2,
 }));
 
 export const FaqAccordion: FC<FaqAccordionProps> = ({
 	question,
 	answer,
-	actions
+	actions,
 }) => (
-	<Wrapper variant="outlined">
+	<Wrapper variant='outlined'>
 		<AccordionHead>
-			<AddCircleOutlineIcon />
+			<AddCircleOutlineIcon/>
 			{question}
 		</AccordionHead>
 		<AccordionDetails>
 			{answer}
 			{actions && (
 				<>
-					<br />
-					<br />
-					<ActionStack size="small" actions={actions} />
+					<br/>
+					<br/>
+					<ActionStack size='small' actions={actions}/>
 				</>
 			)}
 		</AccordionDetails>

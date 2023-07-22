@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
-import { AttachFileTwoTone } from '@mui/icons-material';
+import {AttachFileTwoTone} from '@mui/icons-material';
 import clsx from 'clsx';
 import {
 	forwardRef,
 	useMemo,
 	useState,
 	type ChangeEvent,
-	type ReactNode
+	type ReactNode,
 } from 'react';
-import { Text } from '../../base/Text';
-import { type InputProps } from '../Input';
-import { generateBaseInputStyles } from '../generateBaseInputStyles';
-import { FileDisplayList } from './FileDisplayList';
-import { FileListItem } from './FileListItem';
+import {Text} from '../../base/Text';
+import {type InputProps} from '../Input';
+import {generateBaseInputStyles} from '../generateBaseInputStyles';
+import {FileDisplayList} from './FileDisplayList';
+import {FileListItem} from './FileListItem';
 
 export type FileInputProps = InputProps & {
 	displayText?: ReactNode;
@@ -65,78 +65,72 @@ const DefaultFileInputDisplay = styled('div')`
 
 const BaseInput = styled('input', {
 	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })();
 
-export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
-	(
-		{
-			displayText = '🌅 Upload a file',
-			inputSize = 'medium',
-			className,
-			...props
-		},
-		ref
-	) => {
-		const [files, setFiles] = useState<FileList | null>(null);
+export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
+	displayText = '🌅 Upload a file', inputSize = 'medium',
+	className, ...props
+}, ref) => {
+	const [files, setFiles] = useState<FileList | null>(null);
 
-		const resolvedDisplayText = useMemo(() => {
-			if (files) {
-				console.log(files);
-
-				return (
-					<FileDisplayList listTitle="Chosen Files:">
-						{[...files].map((file, index) => (
-							<FileListItem key={index}>
-								<AttachFileTwoTone
-									fontSize="small"
-									sx={{
-										color: 'var(--color-brand-magenta-main)'
-									}}
-								/>
-								<Text>{file.name}</Text>
-							</FileListItem>
-						))}
-					</FileDisplayList>
-				);
-			}
+	const resolvedDisplayText = useMemo(() => {
+		if (files) {
+			console.log(files);
 
 			return (
-				<DefaultFileInputDisplay>
-					{displayText}
-					<small className="accepts">
-						Supported file types:{' '}
-						{props.accept?.replaceAll(',', ', ')}
-					</small>
-				</DefaultFileInputDisplay>
+				<FileDisplayList listTitle='Chosen Files:'>
+					{[...files].map((file, index) => (
+						<FileListItem key={index}>
+							<AttachFileTwoTone
+								fontSize='small'
+								sx={{
+									color: 'var(--color-brand-magenta-main)',
+								}}
+							/>
+							<Text>{file.name}</Text>
+						</FileListItem>
+					))}
+				</FileDisplayList>
 			);
-		}, [displayText, files, props.accept]);
-
-		const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-			if (event.currentTarget.files?.length) {
-				setFiles(event.currentTarget.files);
-			}
-
-			props.onChange?.(event);
-		};
+		}
 
 		return (
-			<BaseElement
-				className={clsx('FileInput-root', className, {
-					hasFiles: Boolean(files)
-				})}
-				inputSize={inputSize}
-				role="combobox"
-				tabIndex={0}
-			>
-				{resolvedDisplayText}
-				<BaseInput
-					{...props}
-					ref={ref}
-					type="file"
-					onChange={handleChange}
-				/>
-			</BaseElement>
+			<DefaultFileInputDisplay>
+				{displayText}
+				<small className='accepts'>
+					Supported file types:{' '}
+					{props.accept?.replaceAll(',', ', ')}
+				</small>
+			</DefaultFileInputDisplay>
 		);
-	}
+	}, [displayText, files, props.accept]);
+
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+		if (event.currentTarget.files?.length) {
+			setFiles(event.currentTarget.files);
+		}
+
+		props.onChange?.(event);
+	};
+
+	return (
+		<BaseElement
+			className={clsx('FileInput-root', className, {
+				hasFiles: Boolean(files),
+			})}
+			inputSize={inputSize}
+			role='combobox'
+			tabIndex={0}
+		>
+			{resolvedDisplayText}
+			<BaseInput
+				{...props}
+				ref={ref}
+				type='file'
+				onChange={handleChange}
+			/>
+		</BaseElement>
+	);
+},
 );

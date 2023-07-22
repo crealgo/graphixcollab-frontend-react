@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { type HTMLProps } from 'react';
+import {type HTMLProps} from 'react';
 
 export const Dots = styled((props: HTMLProps<HTMLDivElement>) => (
 	<div {...props}>
-		<div />
-		<div />
-		<div />
-		<div />
+		<div/>
+		<div/>
+		<div/>
+		<div/>
 	</div>
 ))`
 	position: absolute;

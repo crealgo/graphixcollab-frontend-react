@@ -1,9 +1,9 @@
-import { Typography } from '@mui/material';
-import { css, styled } from '@mui/material/styles';
+import {Typography} from '@mui/material';
+import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
-import { type ComponentPropsWithRef, type FC } from 'react';
-import { type ServiceOptions } from '../../types/general';
-import { chance } from '../../utils/chance';
+import {type ComponentPropsWithRef, type FC} from 'react';
+import {type ServiceOptions} from '../../types/general';
+import {chance} from '../../utils/chance';
 
 type CardProps = {
 	image?: {
@@ -11,12 +11,12 @@ type CardProps = {
 		alt: string;
 	};
 } & ServiceOptions &
-	ComponentPropsWithRef<'a'>;
+ComponentPropsWithRef<'a'>;
 
 const CardAnchor = styled('a')(() => {
 	const randomRotation = `${chance.bool() ? '' : '-'}${chance.natural({
 		min: 2,
-		max: 7
+		max: 7,
 	})}`;
 
 	return css`
@@ -63,11 +63,11 @@ export const Card: FC<CardProps> = ({
 	...props
 }) => (
 	<CardAnchor className={clsx('Card-root', className)} {...props}>
-		<img {...image} />
-		<div className="content">
-			<Typography variant="caption">{subtitle}</Typography>
-			<Typography variant="h5">{title}</Typography>
-			<Typography variant="caption">{description}</Typography>
+		<img {...image}/>
+		<div className='content'>
+			<Typography variant='caption'>{subtitle}</Typography>
+			<Typography variant='h5'>{title}</Typography>
+			<Typography variant='caption'>{description}</Typography>
 		</div>
 	</CardAnchor>
 );

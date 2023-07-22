@@ -1,9 +1,9 @@
-import { DrawerContent } from './DrawerContent';
-import { MenuTrigger } from './MenuTrigger';
-import { type Action, type NavItemOptions } from '../../../types/general';
-import { Close, Menu } from '@mui/icons-material';
-import { Drawer, useControlled, type DrawerProps } from '@mui/material';
-import { type FC, type MouseEventHandler } from 'react';
+import {DrawerContent} from './DrawerContent';
+import {MenuTrigger} from './MenuTrigger';
+import {type Action, type NavItemOptions} from '../../../types/general';
+import {Close, Menu} from '@mui/icons-material';
+import {Drawer, useControlled, type DrawerProps} from '@mui/material';
+import {type FC, type MouseEventHandler} from 'react';
 
 export type DrawerMenuProps = {
 	items?: NavItemOptions[];
@@ -15,12 +15,12 @@ export const contentBoxPadding = '1rem';
 export const DrawerMenu: FC<DrawerMenuProps> = ({
 	items,
 	actions,
-	open: controlledOpen
+	open: controlledOpen,
 }) => {
 	const [open, setOpen] = useControlled({
 		controlled: controlledOpen,
 		default: false,
-		name: 'DrawerMenu Open State'
+		name: 'DrawerMenu Open State',
 	});
 
 	const handleOpen: MouseEventHandler<HTMLButtonElement> = () => {
@@ -34,13 +34,13 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({
 	return (
 		<>
 			<MenuTrigger
-				size="small"
-				className="MenuTrigger-root"
+				size='small'
+				className='MenuTrigger-root'
 				onClick={handleOpen}
 			>
-				{open ? <Close /> : <Menu />}
+				{open ? <Close/> : <Menu/>}
 			</MenuTrigger>
-			<Drawer anchor="left" open={open} onClose={handleClose}>
+			<Drawer anchor='left' open={open} onClose={handleClose}>
 				<DrawerContent
 					navigationItems={items}
 					actions={actions}

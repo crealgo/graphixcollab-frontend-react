@@ -1,15 +1,15 @@
-import { css, styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { type Action, type SharedBlockProps } from '../../../types/general';
+import {css, styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {type Action, type SharedBlockProps} from '../../../types/general';
 import Logo from '../../atoms/Logo';
-import { ActionStack } from '../../base/ActionStack';
-import { Block } from '../../base/Block';
-import { Carousel, CarouselSlide } from '../../base/Carousel';
-import { Container } from '../../base/Container';
-import { Heading } from '../../base/Heading';
-import { Text } from '../../base/Text';
-import { ArrowRight } from '@mui/icons-material';
-import { useRouter } from 'next/router';
+import {ActionStack} from '../../base/ActionStack';
+import {Block} from '../../base/Block';
+import {Carousel, CarouselSlide} from '../../base/Carousel';
+import {Container} from '../../base/Container';
+import {Heading} from '../../base/Heading';
+import {Text} from '../../base/Text';
+import {ArrowRight} from '@mui/icons-material';
+import {useRouter} from 'next/router';
 
 export type Slide = {
 	title: string;
@@ -23,13 +23,13 @@ export type IntroBlockProps = {
 	// slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> &
-	SharedBlockProps;
+SharedBlockProps;
 
 const images = [
 	// { src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroider' },
-	{ src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes' },
-	{ src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery' },
-	{ src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts' }
+	{src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
+	{src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
+	{src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts'},
 ];
 
 const Wrapper = styled('div')`
@@ -43,14 +43,14 @@ const Wrapper = styled('div')`
 	}
 `;
 
-const StyledCarousel = styled(Carousel)`
+const BackgroundCarousel = styled(Carousel)`
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
 `;
 
-const StyledCarouselSlide = styled(CarouselSlide)`
+const BackgroundCarouselSlide = styled(CarouselSlide)`
 	height: 100%;
 	position: relative;
 
@@ -77,7 +77,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 			.Slide-heading {
 				text-align: center;
 
-				${({ theme }) => theme.breakpoints.up('lg')} {
+				${({theme}) => theme.breakpoints.up('lg')} {
 					text-align: left;
 				}
 			}
@@ -102,7 +102,7 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 `;
 
 const Content = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		position: relative;
 		display: grid;
 		grid-template-columns: 1fr;
@@ -112,7 +112,7 @@ const Content = styled('div')(
 		.content {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 1rem;
+			gap: 2rem;
 			align-content: center;
 			justify-items: center;
 			border-radius: 0.5rem;
@@ -120,6 +120,12 @@ const Content = styled('div')(
 
 			.Text-root {
 				max-width: ${theme.breakpoints.values.sm}px;
+				background-color: lightblue;
+			}
+
+			.ActionStack-root > * {
+				display: flex;
+				justify-content: center;
 			}
 		}
 
@@ -135,54 +141,54 @@ const Content = styled('div')(
 				text-align: left;
 			}
 		}
-	`
+	`,
 );
 
-export const IntroBlock: FC<IntroBlockProps> = ({ description }) => {
+export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
 	const router = useRouter();
 
 	return (
 		<Wrapper>
-			<StyledCarousel>
+			<BackgroundCarousel>
 				{images.map(image => (
-					<StyledCarouselSlide key={image.alt}>
-						<img src={image.src} alt={image.alt} />
+					<BackgroundCarouselSlide key={image.alt}>
+						<img src={image.src} alt={image.alt}/>
 						<Block>
 							<Container>
-								<Heading className="Slide-heading" level={2}>
+								<Heading className='Slide-heading' level={2}>
 									{image.alt}
 								</Heading>
 							</Container>
 						</Block>
-					</StyledCarouselSlide>
+					</BackgroundCarouselSlide>
 				))}
-			</StyledCarousel>
-			<Container className="IntroBlock-root">
+			</BackgroundCarousel>
+			<Container className='IntroBlock-root'>
 				<Content>
-					<Block className="content">
+					<Block className='content'>
 						<Heading level={1}>
-							Welcome to <Logo />
+							Welcome to <Logo/>
 						</Heading>
-						<Text size="large">{description}</Text>
+						<Text size='large'>{description}</Text>
 						<ActionStack
-							size="large"
+							size='large'
 							actions={[
-								{
-									label: 'Get Started',
-									color: 'primary',
-									href: `${router.basePath}/services`,
-									endIcon: <ArrowRight />
-								},
 								{
 									label: 'Book Appointment',
 									href: `${router.basePath}/book-appointment`,
+									color: 'primary',
+									endIcon: <ArrowRight/>,
+								},
+								{
+									label: 'Get Started',
 									color: 'text',
-									endIcon: <ArrowRight />
-								}
+									href: `${router.basePath}/services`,
+									endIcon: <ArrowRight/>,
+								},
 							]}
 						/>
 					</Block>
-					<div className="image" />
+					<div className='image'/>
 				</Content>
 			</Container>
 		</Wrapper>

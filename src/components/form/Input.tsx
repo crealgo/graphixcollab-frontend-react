@@ -1,22 +1,22 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { generateBaseInputStyles } from './generateBaseInputStyles';
+import {forwardRef, type ComponentPropsWithRef} from 'react';
+import {generateBaseInputStyles} from './generateBaseInputStyles';
 
 export type InputProps = ComponentPropsWithRef<'input'> & BaseControlProps;
 
 export const BaseInputElement = styled('input', {
 	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<InputProps>(
 	props => css`
 		${generateBaseInputStyles(props)};
-	`
+	`,
 );
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-	({ className, inputSize = 'medium', ...props }, ref) => (
+	({className, inputSize = 'medium', ...props}, ref) => (
 		<BaseInputElement
 			{...props}
 			ref={ref}
@@ -26,12 +26,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 				{
 					'is-invalid': props.isInvalid,
 					'is-valid': props.isValid,
-					'is-touched': props.isTouched
+					'is-touched': props.isTouched,
 				},
-				className
+				className,
 			)}
 		/>
-	)
+	),
 );
 
 Input.displayName = 'Input';

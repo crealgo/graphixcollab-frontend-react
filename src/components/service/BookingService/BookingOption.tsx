@@ -1,12 +1,12 @@
-import { styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { colorIterator } from '../../../utils/colorIterator';
-import { Heading } from '../../base/Heading';
-import { type ServiceInformation } from './steps/data';
+import {styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {colorIterator} from '../../../utils/colorIterator';
+import {Heading} from '../../base/Heading';
+import {type ServiceInformation} from './steps/data';
 
 export type BookingOptionProps = Record<string, unknown> &
-	ServiceInformation &
-	ComponentPropsWithoutRef<'input'>;
+ServiceInformation &
+ComponentPropsWithoutRef<'input'>;
 
 const BaseElement: FC<BookingOptionProps> = ({
 	label,
@@ -20,17 +20,17 @@ const BaseElement: FC<BookingOptionProps> = ({
 }) => (
 	<div
 		{...props}
-		role="radio"
+		role='radio'
 		aria-checked={checked ? 'true' : 'false'}
 		tabIndex={0}
 		aria-labelledby={name}
 		className={className}
 	>
-		{Icon && <Icon className="icon" />}
-		<Heading id={name} className="label" level={5}>
+		{Icon && <Icon className='icon'/>}
+		<Heading id={name} className='label' level={5}>
 			{label}
 		</Heading>
-		<small className="meta">{description}</small>
+		<small className='meta'>{description}</small>
 	</div>
 );
 

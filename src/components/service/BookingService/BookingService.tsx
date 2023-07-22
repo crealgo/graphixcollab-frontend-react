@@ -3,7 +3,7 @@ import {
 	ArrowCircleRight,
 	BookTwoTone,
 	Cancel,
-	CheckCircle
+	CheckCircle,
 } from '@mui/icons-material';
 import {
 	Dialog,
@@ -13,15 +13,15 @@ import {
 	StepContent,
 	StepLabel,
 	Stepper,
-	styled
+	styled,
 } from '@mui/material';
-import { useState, type FC, type MouseEvent } from 'react';
-import { ActionStack } from '../../base/ActionStack';
-import { Button } from '../../base/Button';
-import { DialogTitle } from '../../base/DialogTitle';
-import { CustomerInfoStep } from './steps/CustomerInfoStep';
-import { ReserveTimeSlotStep } from './steps/ReserveTimeSlotStep';
-import { SelectServiceStep } from './steps/SelectServiceStep';
+import {useState, type FC, type MouseEvent} from 'react';
+import {ActionStack} from '../../base/ActionStack';
+import {Button} from '../../base/Button';
+import {DialogTitle} from '../../base/DialogTitle';
+import {CustomerInfoStep} from './steps/CustomerInfoStep';
+import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
+import {SelectServiceStep} from './steps/SelectServiceStep';
 
 type BookingServiceProps = {
 	isOpen?: boolean;
@@ -33,18 +33,18 @@ const steps = [
 	{
 		completed: false,
 		label: 'Select a service',
-		StepContent: SelectServiceStep
+		StepContent: SelectServiceStep,
 	},
 	{
 		completed: false,
 		label: 'Select Date and time',
-		StepContent: ReserveTimeSlotStep
+		StepContent: ReserveTimeSlotStep,
 	},
 	{
 		completed: false,
 		label: 'Enter your details',
-		StepContent: CustomerInfoStep
-	}
+		StepContent: CustomerInfoStep,
+	},
 ];
 
 const StyledDialogContent = styled(DialogContent)`
@@ -68,7 +68,7 @@ const StepContentWrapper = styled('div')`
 
 export const BookingService: FC<BookingServiceProps> = ({
 	isOpen = false,
-	onCloseClick
+	onCloseClick,
 }) => {
 	const [activeStep, setActiveStep] = useState<number>(0);
 
@@ -92,53 +92,46 @@ export const BookingService: FC<BookingServiceProps> = ({
 		<Dialog fullWidth open={isOpen} onClose={onCloseClick}>
 			<DialogTitle>
 				<span>Book an Appointment</span>
-				<BookTwoTone color="primary" />
+				<BookTwoTone color='primary'/>
 			</DialogTitle>
 			<StyledDialogContent>
-				<div className="stepper">
+				<div className='stepper'>
 					<Stepper
 						nonLinear
-						orientation="vertical"
+						orientation='vertical'
 						activeStep={activeStep}
 					>
 						{steps.map(
 							(
-								{ label, StepContent: ResolvedStepContent },
-								stepIndex
+								{label, StepContent: ResolvedStepContent},
+								stepIndex,
 							) => (
 								<Step key={stepIndex}>
 									<StepLabel>{label}</StepLabel>
 									<StepContent>
 										<StepContentWrapper>
-											<ResolvedStepContent />
-											<br />
+											<ResolvedStepContent/>
+											<br/>
 											<ActionStack>
 												<Button
-													color="text"
-													startIcon={
-														<ArrowCircleLeft color="warning" />
-													}
+													color='text'
+													startIcon={<ArrowCircleLeft color='warning'/>}
 													onClick={handlePrevStep}
 												>
 													Previous
 												</Button>
-												{stepIndex ===
-												steps.length - 1 ? (
+												{stepIndex === steps.length - 1 ? (
 													<Button
-														color="tertiary"
-														endIcon={
-															<CheckCircle color="success" />
-														}
+														color='tertiary'
+														endIcon={<CheckCircle color='success'/>}
 														onClick={handleNextStep}
 													>
 														Submit
 													</Button>
 												) : (
 													<Button
-														color="text"
-														endIcon={
-															<ArrowCircleRight color="success" />
-														}
+														color='text'
+														endIcon={<ArrowCircleRight color='success'/>}
 														onClick={handleNextStep}
 													>
 														Next
@@ -148,15 +141,15 @@ export const BookingService: FC<BookingServiceProps> = ({
 										</StepContentWrapper>
 									</StepContent>
 								</Step>
-							)
+							),
 						)}
 					</Stepper>
 				</div>
 			</StyledDialogContent>
 			<DialogActions>
 				<Button
-					color="text"
-					endIcon={<Cancel color="error" />}
+					color='text'
+					endIcon={<Cancel color='error'/>}
 					onClick={onCloseClick}
 				>
 					Cancel

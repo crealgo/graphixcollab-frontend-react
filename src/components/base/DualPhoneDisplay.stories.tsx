@@ -1,7 +1,7 @@
-import { type StoryObj, type Meta } from '@storybook/react';
+import {type StoryObj, type Meta} from '@storybook/react';
 import {
 	DualPhoneDisplay,
-	type DualPhoneDisplayProps
+	type DualPhoneDisplayProps,
 } from './DualPhoneDisplay';
 
 export default {
@@ -10,15 +10,15 @@ export default {
 		Story => (
 			<div
 				style={{
-					maxWidth: '40rem'
+					maxWidth: '40rem',
 				}}
 			>
-				<Story />
+				<Story/>
 			</div>
-		)
-	]
+		),
+	],
 } as Meta;
 
 export const Default: StoryObj<DualPhoneDisplayProps> = {
-	args: {}
+	args: {},
 };

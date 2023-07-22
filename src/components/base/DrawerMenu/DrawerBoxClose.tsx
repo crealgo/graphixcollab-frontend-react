@@ -1,5 +1,5 @@
-import { styled } from '@mui/material';
-import { IconButtonBase } from '../IconButtonBase';
+import {styled} from '@mui/material';
+import {IconButtonBase} from '../IconButtonBase';
 
 export const DrawerBoxClose = styled(IconButtonBase)`
 	border-radius: 9999px;

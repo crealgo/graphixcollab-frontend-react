@@ -1,12 +1,12 @@
-import { styled } from '@mui/material';
+import {styled} from '@mui/material';
 import MuiButtonBase from '@mui/material/ButtonBase';
 import {
 	forwardRef,
 	type ComponentPropsWithRef,
-	type ElementType
+	type ElementType,
 } from 'react';
-import { _e } from '../../utils/excludePropsFromForwarding';
-import { type ButtonBaseSizes } from '../atoms/ButtonBase';
+import {_e} from '../../utils/excludePropsFromForwarding';
+import {type ButtonBaseSizes} from '../atoms/ButtonBase';
 
 export type IconButtonBaseProps = {
 	href?: string;
@@ -16,7 +16,7 @@ export type IconButtonBaseProps = {
 
 const StyledButton = styled(
 	MuiButtonBase,
-	_e('endIcon', 'startIcon', 'size')
+	_e('endIcon', 'startIcon', 'size'),
 )<IconButtonBaseProps>`
 	cursor: pointer;
 	display: inline-flex;
@@ -29,11 +29,11 @@ const StyledButton = styled(
 `;
 
 export const IconButtonBase = forwardRef<
-	HTMLButtonElement,
-	IconButtonBaseProps
->(({ children, Icon, ...props }, ref) => (
-	<StyledButton {...props} ref={ref} role="button">
-		{children ? children : Icon ? <Icon /> : null}
+HTMLButtonElement,
+IconButtonBaseProps
+>(({children, Icon, ...props}, ref) => (
+	<StyledButton {...props} ref={ref} role='button'>
+		{children ? children : Icon ? <Icon/> : null}
 	</StyledButton>
 ));
 

@@ -1,15 +1,15 @@
-import { styled, useMediaQuery, type Theme } from '@mui/material';
-import { Block } from '../components/base/Block';
-import { BlockHeader } from '../components/base/BlockHeader';
-import { Card } from '../components/base/Card';
-import { Container } from '../components/base/Container';
-import { HorizontalCard } from '../components/base/HorizontalCard';
-import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
-import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
-import { PageTitle } from '../components/utility/PageTitle';
+import {styled, useMediaQuery, type Theme} from '@mui/material';
+import {Block} from '../components/base/Block';
+import {BlockHeader} from '../components/base/BlockHeader';
+import {Card} from '../components/base/Card';
+import {Container} from '../components/base/Container';
+import {HorizontalCard} from '../components/base/HorizontalCard';
+import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
+import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
+import {PageTitle} from '../components/utility/PageTitle';
 import featuredCompanies from '../content/featured-companies';
 import reasonsToChooseUs from '../content/why-us.json';
-import { DefaultLayout } from '../layouts/DefaultLayout';
+import {DefaultLayout} from '../layouts/DefaultLayout';
 
 const DetailList = styled('dl')`
 	display: grid;
@@ -43,44 +43,44 @@ export const Page = () => {
 
 	return (
 		<DefaultLayout>
-			<PageTitle text="About Us" />
+			<PageTitle text='About Us'/>
 			<PageHeaderBlock
-				color="secondary"
-				title="Our Services"
-				description="Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing."
+				color='secondary'
+				title='Our Services'
+				description='Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing.'
 				ImageProps={{
 					src: 'assets/juicy-girl-working-at-home-min@ogw.webp',
-					alt: 'About Us Working GIF'
+					alt: 'About Us Working GIF',
 				}}
 			/>
 			<Block>
 				<Container>
 					<BlockHeader
-						title="Why Choose Us?"
-						description="Let us bring your visual ideas to life and help you make
+						title='Why Choose Us?'
+						description='Let us bring your visual ideas to life and help you make
 						a lasting impression in the market. Contact us today to
 						discuss your design needs and explore how we can
 						collaborate to create exceptional designs for your
-						brand."
+						brand.'
 					/>
 					<DetailList>
 						{reasonsToChooseUs.map((value, valueIndex) => (
 							<CardComponent
 								key={valueIndex}
-								className="service"
+								className='service'
 								title={value.name}
 								description={value.description}
 								image={{
 									src: value.image,
-									alt: value.name
+									alt: value.name,
 								}}
-								imageColor="#CCDCFA"
+								imageColor='#CCDCFA'
 							/>
 						))}
 					</DetailList>
 				</Container>
 			</Block>
-			<FeaturedInBlock companies={featuredCompanies} />
+			<FeaturedInBlock companies={featuredCompanies}/>
 		</DefaultLayout>
 	);
 };
@@ -89,8 +89,8 @@ export const getStaticProps = () => ({
 	props: {
 		pageTitle: 'About Us',
 		pageDescription:
-			'Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing.'
-	}
+			'Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing.',
+	},
 });
 
 export default Page;

@@ -1,13 +1,13 @@
-import { css, styled } from '@mui/material/styles';
-import { type FC, type ReactNode } from 'react';
-import { type NavItemOptions } from '../../types/general';
-import { Block, type BlockProps } from '../base/Block';
-import { type BreadcrumbOptions } from '../base/Breadcrumbs';
-import { Container } from '../base/Container';
-import { Heading } from '../base/Heading';
-import { type ImageProps } from '../base/Image';
-import { Text } from '../base/Text';
-import { Mark } from '../base/Mark';
+import {css, styled} from '@mui/material/styles';
+import {type FC, type ReactNode} from 'react';
+import {type NavItemOptions} from '../../types/general';
+import {Block, type BlockProps} from '../base/Block';
+import {type BreadcrumbOptions} from '../base/Breadcrumbs';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {type ImageProps} from '../base/Image';
+import {Text} from '../base/Text';
+import {Mark} from '../base/Mark';
 
 export type PageHeaderBlockProps = {
 	title?: ReactNode;
@@ -21,7 +21,7 @@ export type PageHeaderBlockProps = {
 };
 
 const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
-	({ color = 'tertiary' }) => css`
+	({color = 'tertiary'}) => css`
 		--wrapper-padding-bottom: 6rem;
 
 		@media screen and (min-width: 1123px) {
@@ -41,7 +41,7 @@ const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(
 		.Text-root {
 			color: var(--color-brand-tertiary-darker);
 		}
-	`
+	`,
 );
 
 const HeaderImage = styled('img')`
@@ -86,17 +86,17 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title,
 	description,
 	color,
-	ImageProps
+	ImageProps,
 }) => (
 	<Wrapper color={color}>
-		<Container className="PageHeaderBlock-container">
+		<Container className='PageHeaderBlock-container'>
 			<Content>
 				<Heading hasMargin level={1}>
 					<Mark brand>{title}</Mark>
 				</Heading>
 				<Text>{description}</Text>
 			</Content>
-			{ImageProps && <HeaderImage {...ImageProps} />}
+			{ImageProps && <HeaderImage {...ImageProps}/>}
 		</Container>
 	</Wrapper>
 );

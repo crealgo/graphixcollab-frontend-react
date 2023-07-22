@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import { type FC } from 'react';
+import {styled} from '@mui/material/styles';
+import {type FC} from 'react';
 
 export type EventBlockProps = {
 	stepNumber?: number;
@@ -55,16 +55,16 @@ const EventConnector = styled('div')`
 
 const BaseElement: FC<EventBlockProps> = props => (
 	<li id={props.id} className={props.className}>
-		<Marker className="marker">{props.stepNumber ?? 1}</Marker>
-		<figure className="image">
-			<img {...props.image} />
+		<Marker className='marker'>{props.stepNumber ?? 1}</Marker>
+		<figure className='image'>
+			<img {...props.image}/>
 		</figure>
-		<div className="content">
-			<div className="title">{props.title}</div>
-			<div className="description">{props.description}</div>
+		<div className='content'>
+			<div className='title'>{props.title}</div>
+			<div className='description'>{props.description}</div>
 			{props.children}
 		</div>
-		<EventConnector className="connector" />
+		<EventConnector className='connector'/>
 	</li>
 );
 

@@ -1,17 +1,17 @@
-import { paramCase } from 'change-case';
-import { forwardRef } from 'react';
-import { FormControl, type FormControlProps } from './FormControl';
-import { InputGroup } from './InputGroup';
-import { RadioInput, type RadioInputProps } from './RadioInput';
-import { type OptionBag } from './types';
+import {paramCase} from 'change-case';
+import {forwardRef} from 'react';
+import {FormControl, type FormControlProps} from './FormControl';
+import {InputGroup} from './InputGroup';
+import {RadioInput, type RadioInputProps} from './RadioInput';
+import {type OptionBag} from './types';
 
 type Props = {
 	options?: OptionBag[];
 } & Omit<FormControlProps, 'isRequired'> &
-	Pick<RadioInputProps, 'required' | 'name' | 'defaultValue'>;
+Pick<RadioInputProps, 'required' | 'name' | 'defaultValue'>;
 
 export const RadioField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, options, defaultValue, ...props }, ref) => {
+	({label, helperText, options, defaultValue, ...props}, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
@@ -33,7 +33,7 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 							{...option}
 							key={optionIndex}
 							ref={ref}
-							type="radio"
+							type='radio'
 							id={option.value}
 							name={generatedName}
 							defaultChecked={option.value === defaultValue}
@@ -42,5 +42,5 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 				</InputGroup>
 			</FormControl>
 		);
-	}
+	},
 );

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 20 Jul 2023 02:32:45 GMT
+ * Generated on Sat, 22 Jul 2023 05:17:02 GMT
  */
 
 export const SequenceColor0Lightest : string;

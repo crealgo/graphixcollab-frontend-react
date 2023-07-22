@@ -1,6 +1,6 @@
-import { css, styled } from '@mui/material';
+import {css, styled} from '@mui/material';
 import clsx from 'clsx';
-import { type ComponentPropsWithRef, type FC, type ReactNode } from 'react';
+import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
 	caption?: ReactNode;
@@ -29,25 +29,25 @@ const BaseElement: FC<ImageProps> = ({
 	return (
 		<figure className={clsx('Image-root', className)}>
 			<img
-				className="Image-element"
+				className='Image-element'
 				onLoad={onLoad}
 				onError={onError}
 				{...props}
 			/>
 			{caption && (
-				<figcaption className="Image-caption">{caption}</figcaption>
+				<figcaption className='Image-caption'>{caption}</figcaption>
 			)}
 		</figure>
 	);
 };
 
-export const Image = styled(BaseElement)(({ shape }) => {
+export const Image = styled(BaseElement)(({shape}) => {
 	const shapeCss = {
 		square: css`
 			aspect-ratio: 1;
 		`,
 		portrait: css``,
-		landscape: css``
+		landscape: css``,
 	}[shape ?? 'square'];
 
 	return css`

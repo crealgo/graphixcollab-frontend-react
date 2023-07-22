@@ -1,4 +1,4 @@
-import { useState, type FormEventHandler } from 'react';
+import {useState, type FormEventHandler} from 'react';
 
 type FormState = {
 	// TODO: change boolean to enum status e.g. 'idle' | 'submitting' | 'submitted' | 'successful'
@@ -32,7 +32,7 @@ export const useForm = (): FormState => {
 
 		const response = await fetch(form.action, {
 			method: form.method,
-			body: formData
+			body: formData,
 		});
 
 		setResponse(response);
@@ -63,6 +63,6 @@ export const useForm = (): FormState => {
 		response,
 		errors,
 		handleReset,
-		handleSubmit
+		handleSubmit,
 	};
 };

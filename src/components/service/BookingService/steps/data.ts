@@ -1,9 +1,9 @@
 import {
 	EmojiPeopleTwoTone,
 	PaletteTwoTone,
-	SchoolTwoTone
+	SchoolTwoTone,
 } from '@mui/icons-material';
-import { type ElementType } from 'react';
+import {type ElementType} from 'react';
 
 export type ServiceInformation = {
 	icon?: ElementType;
@@ -20,8 +20,8 @@ export const serviceOptions: ServiceInformation[] = [
 		description: 'Design and order a sash with a graphic designer.',
 		cost: undefined,
 		meta: [
-			'Design and order a sash with a graphic designer. ----- This is a service to design a custom sash. One appointment per person/custom sash. ----- Before your appointment, please send us a mock of your desired sash. Use Pride Sash Custom Builder > https://www.pridesash.com/builder/ to design your sash, take a screen shot, and then email to us at graphixcollab@gmail.com.'
-		]
+			'Design and order a sash with a graphic designer. ----- This is a service to design a custom sash. One appointment per person/custom sash. ----- Before your appointment, please send us a mock of your desired sash. Use Pride Sash Custom Builder > https://www.pridesash.com/builder/ to design your sash, take a screen shot, and then email to us at graphixcollab@gmail.com.',
+		],
 	},
 	{
 		icon: PaletteTwoTone,
@@ -29,7 +29,7 @@ export const serviceOptions: ServiceInformation[] = [
 		description:
 			'This is a 15 min appointment for graphic designing. $18.00 fee (15 min) is waived if you use our printing/embroidery service.',
 		cost: undefined,
-		meta: ['15min Appointment', 'in-person [Mon-Sat only]']
+		meta: ['15min Appointment', 'in-person [Mon-Sat only]'],
 	},
 	{
 		icon: EmojiPeopleTwoTone,
@@ -38,7 +38,7 @@ export const serviceOptions: ServiceInformation[] = [
 			'This is a 30 min appointment for graphic designing. $18.00 discount if you use our printing/embroidery service.',
 		cost: undefined,
 		meta: [
-			'This is a 30 min appointment for graphic designing. $18.00 discount if you use our printing/embroidery service.'
-		]
-	}
+			'This is a 30 min appointment for graphic designing. $18.00 discount if you use our printing/embroidery service.',
+		],
+	},
 ];

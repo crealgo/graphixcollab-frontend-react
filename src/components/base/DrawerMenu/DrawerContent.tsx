@@ -1,12 +1,12 @@
-import { Close } from '@mui/icons-material';
-import { type FC, type MouseEventHandler, type PropsWithChildren } from 'react';
-import { type Action, type NavItemOptions } from '../../../types/general';
-import { Heading } from '../Heading';
-import { DrawerBoxClose } from './DrawerBoxClose';
-import { TitleBox } from './TitleBox';
-import { Wrapper } from './Wrapper';
+import {Close} from '@mui/icons-material';
+import {type FC, type MouseEventHandler, type PropsWithChildren} from 'react';
+import {type Action, type NavItemOptions} from '../../../types/general';
+import {Heading} from '../Heading';
+import {DrawerBoxClose} from './DrawerBoxClose';
+import {TitleBox} from './TitleBox';
+import {Wrapper} from './Wrapper';
 import styled from '@emotion/styled';
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 
 type DrawerContentProps = PropsWithChildren<{
 	actions?: Action[];
@@ -72,28 +72,26 @@ const StyledLink = styled.a`
 export const DrawerContent: FC<DrawerContentProps> = ({
 	navigationItems,
 	actions,
-	onCloseButtonClick
+	onCloseButtonClick,
 }) => {
 	const router = useRouter();
 
-	console.log({ actions });
+	console.log({actions});
 
 	return (
 		<Wrapper>
 			<TitleBox>
 				<Heading level={4}>Menu</Heading>
 				<DrawerBoxClose onClick={onCloseButtonClick}>
-					<Close fontSize="small" />
+					<Close fontSize='small'/>
 				</DrawerBoxClose>
 			</TitleBox>
 			<StyledList>
-				{navigationItems?.map(({ label, href }, itemIndex) => (
+				{navigationItems?.map(({label, href}, itemIndex) => (
 					<StyledListItem key={itemIndex}>
 						<StyledLink
 							href={href}
-							aria-current={
-								router.pathname === href ? 'page' : 'false'
-							}
+							aria-current={router.pathname === href ? 'page' : 'false'}
 						>
 							{label}
 						</StyledLink>

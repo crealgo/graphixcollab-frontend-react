@@ -1,15 +1,15 @@
-import { css, styled, Typography } from '@mui/material';
-import { type FC } from 'react';
-import { type SharedBlockProps } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { ImageCarousel } from '../base/ImageCarousel';
+import {css, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
+import {type SharedBlockProps} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {ImageCarousel} from '../base/ImageCarousel';
 
 export type FanServiceBlockProps = {
 	images?: string[];
 } & SharedBlockProps;
 
 const FanServiceBlockWrapper = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 
@@ -47,24 +47,24 @@ const FanServiceBlockWrapper = styled('div')(
 				}
 			}
 		}
-	`
+	`,
 );
 
 export const FanServiceBlock: FC<FanServiceBlockProps> = props => (
 	<FanServiceBlockWrapper>
-		{props.images?.length ? <ImageCarousel images={props.images} /> : null}
-		<div className="FanServiceBlock-content">
-			<div className="FanServiceBlock-intro">
-				<Typography gutterBottom variant="h3">
+		{props.images?.length ? <ImageCarousel images={props.images}/> : null}
+		<div className='FanServiceBlock-content'>
+			<div className='FanServiceBlock-intro'>
+				<Typography gutterBottom variant='h3'>
 					{props.title}
 				</Typography>
-				<Typography variant="body1" marginTop="0.25rem">
+				<Typography variant='body1' marginTop='0.25rem'>
 					{props.description}
 				</Typography>
 			</div>
-			<div className="FanServiceBlock-cta">
+			<div className='FanServiceBlock-cta'>
 				<ActionStack
-					color="secondary"
+					color='secondary'
 					{...props.ActionStackProps}
 					actions={props.actions}
 				/>

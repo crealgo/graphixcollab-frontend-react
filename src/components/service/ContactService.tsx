@@ -1,16 +1,16 @@
-import { Cancel, CheckCircle, MailTwoTone } from '@mui/icons-material';
+import {Cancel, CheckCircle, MailTwoTone} from '@mui/icons-material';
 import {
 	Dialog,
 	DialogActions,
 	DialogContent,
 	Grid,
-	styled
+	styled,
 } from '@mui/material';
-import { type FC, type MouseEvent } from 'react';
-import { Button } from '../base/Button';
-import { DialogTitle } from '../base/DialogTitle';
-import { TextAreaField } from '../form/TextAreaField';
-import { TextField } from '../form/TextField';
+import {type FC, type MouseEvent} from 'react';
+import {Button} from '../base/Button';
+import {DialogTitle} from '../base/DialogTitle';
+import {TextAreaField} from '../form/TextAreaField';
+import {TextField} from '../form/TextField';
 
 type ContactServiceProps = {
 	isOpen?: boolean;
@@ -39,40 +39,40 @@ const StepContentWrapper = styled('div')`
 
 export const ContactService: FC<ContactServiceProps> = ({
 	isOpen = false,
-	onCloseClick
+	onCloseClick,
 }) => (
 	<Dialog fullWidth open={isOpen} onClose={onCloseClick}>
 		<DialogTitle>
 			<span>Contact Us</span>
-			<MailTwoTone color="primary" />
+			<MailTwoTone color='primary'/>
 		</DialogTitle>
 		<StyledDialogContent>
 			<StepContentWrapper>
 				<Grid container gap={2}>
 					<Grid item xs={12}>
-						<TextField label="Email" type="email" />
+						<TextField label='Email' type='email'/>
 					</Grid>
 					<Grid item md xs={12}>
-						<TextField label="First Name" type="text" />
+						<TextField label='First Name' type='text'/>
 					</Grid>
 					<Grid item md xs={12}>
-						<TextField label="Last Name" type="text" />
+						<TextField label='Last Name' type='text'/>
 					</Grid>
 					<Grid item xs={12}>
-						<TextAreaField rows={10} label="Message" />
+						<TextAreaField rows={10} label='Message'/>
 					</Grid>
 				</Grid>
 			</StepContentWrapper>
 		</StyledDialogContent>
 		<DialogActions>
 			<Button
-				color="text"
-				endIcon={<Cancel color="error" />}
+				color='text'
+				endIcon={<Cancel color='error'/>}
 				onClick={onCloseClick}
 			>
 				Cancel
 			</Button>
-			<Button color="tertiary" endIcon={<CheckCircle color="success" />}>
+			<Button color='tertiary' endIcon={<CheckCircle color='success'/>}>
 				Submit
 			</Button>
 		</DialogActions>

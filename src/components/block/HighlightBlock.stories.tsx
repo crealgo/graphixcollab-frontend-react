@@ -1,14 +1,14 @@
-import { type StoryObj } from '@storybook/react';
-import { chance } from '../../utils/chance';
-import { HighlightBlock, type HighlightBlockProps } from './HighlightBlock';
+import {type StoryObj} from '@storybook/react';
+import {chance} from '../../utils/chance';
+import {HighlightBlock, type HighlightBlockProps} from './HighlightBlock';
 
 export default {
-	component: HighlightBlock
+	component: HighlightBlock,
 };
 
 export const Default: StoryObj<HighlightBlockProps> = {
 	args: {
 		quote: chance.sentence(),
-		quoter: chance.name()
-	}
+		quoter: chance.name(),
+	},
 };

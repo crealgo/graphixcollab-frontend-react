@@ -1,13 +1,13 @@
-import { NewsCard, type NewsCardsProps } from './NewsCard';
-import { type StoryObj } from '@storybook/react';
-import { generateArticle } from '../../utils/chance';
+import {NewsCard, type NewsCardsProps} from './NewsCard';
+import {type StoryObj} from '@storybook/react';
+import {generateArticle} from '../../utils/chance';
 
 export default {
-	component: NewsCard
+	component: NewsCard,
 };
 
 export const Default: StoryObj<NewsCardsProps> = {
 	args: {
-		article: generateArticle()
-	}
+		article: generateArticle(),
+	},
 };

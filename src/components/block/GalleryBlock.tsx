@@ -1,17 +1,17 @@
-import { useMediaQuery, type Theme } from '@mui/material';
-import { css, styled } from '@mui/material/styles';
+import {useMediaQuery, type Theme} from '@mui/material';
+import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
-import { type FC } from 'react';
+import {type FC} from 'react';
 import Marquee from 'react-fast-marquee';
-import { type Action } from '../../types/general';
-import { Block } from '../base/Block';
-import { Container } from '../base/Container';
-import { Heading } from '../base/Heading';
-import { Image, type ImageProps } from '../base/Image';
-import { Text } from '../base/Text';
+import {type Action} from '../../types/general';
+import {Block} from '../base/Block';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {Image, type ImageProps} from '../base/Image';
+import {Text} from '../base/Text';
 import {
 	SocialMediaBlock,
-	type SocialMediaBlockProps
+	type SocialMediaBlockProps,
 } from './SocialMediaBlock';
 
 export type GalleryBlockProps = {
@@ -24,7 +24,7 @@ export type GalleryBlockProps = {
 };
 
 const Wrapper = styled(Block)(
-	({ theme }) => css`
+	({theme}) => css`
 		/* padding-inline: 0rem; */
 
 		.Container-root {
@@ -59,7 +59,7 @@ const Wrapper = styled(Block)(
 				}
 			}
 		}
-	`
+	`,
 );
 
 export const GalleryBlock: FC<GalleryBlockProps> = ({
@@ -67,7 +67,7 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 	title,
 	description,
 	SocialMediaBlockProps,
-	images = []
+	images = [],
 }) => {
 	const count = 7;
 
@@ -78,32 +78,32 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 
 	return (
 		<Wrapper className={clsx(className, 'GalleryBlock-root')}>
-			<Container className="GalleryBlock-container">
-				<div className="content">
+			<Container className='GalleryBlock-container'>
+				<div className='content'>
 					<Heading level={2}>{title}</Heading>
-					<Container size="small">
-						<Text size="large">{description}</Text>
+					<Container size='small'>
+						<Text size='large'>{description}</Text>
 					</Container>
-					<SocialMediaBlock {...SocialMediaBlockProps} />
+					<SocialMediaBlock {...SocialMediaBlockProps}/>
 				</div>
-				<div className="gallery">
+				<div className='gallery'>
 					{firstStack?.length && (
 						<Marquee gradient={isDesktop}>
 							{firstStack.map((imageProps, imageIndex) => (
 								<Image
 									key={imageIndex}
-									className="GalleryBlock-image"
+									className='GalleryBlock-image'
 									{...imageProps}
 								/>
 							))}
 						</Marquee>
 					)}
 					{secondStack?.length && (
-						<Marquee gradient={isDesktop} direction="right">
+						<Marquee gradient={isDesktop} direction='right'>
 							{secondStack.map((imageProps, imageIndex) => (
 								<Image
 									key={imageIndex}
-									className="GalleryBlock-image"
+									className='GalleryBlock-image'
 									{...imageProps}
 								/>
 							))}

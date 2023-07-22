@@ -1,8 +1,8 @@
-import { styled } from '@mui/material/styles';
-import { generateFeaturedItems } from '../../utils/chance';
-import { FeaturedItems } from './DrawerMenu/FeaturedItems';
-import { Heading } from './Heading';
-import { Text } from './Text';
+import {styled} from '@mui/material/styles';
+import {generateFeaturedItems} from '../../utils/chance';
+import {FeaturedItems} from './DrawerMenu/FeaturedItems';
+import {Heading} from './Heading';
+import {Text} from './Text';
 
 const FlyoutContent = styled('div')`
 	padding: 1.5rem;
@@ -34,7 +34,7 @@ export const Flyout = () => (
 					aperiam,
 				</Text>
 			</HeadingContent>
-			<FeaturedItems items={generateFeaturedItems()} />
+			<FeaturedItems items={generateFeaturedItems()}/>
 		</FlyoutFeaturedItems>
 	</FlyoutContent>
 );

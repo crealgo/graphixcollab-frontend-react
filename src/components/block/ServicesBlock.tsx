@@ -1,17 +1,17 @@
-import { Message } from '@mui/icons-material';
-import { Box } from '@mui/material';
-import { css, styled } from '@mui/material/styles';
-import { type FC } from 'react';
+import {Message} from '@mui/icons-material';
+import {Box} from '@mui/material';
+import {css, styled} from '@mui/material/styles';
+import {type FC} from 'react';
 import type services from '../../content/services.json';
-import { type SharedBlockProps } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
-import { Button } from '../base/Button';
-import { Container } from '../base/Container';
-import { Heading } from '../base/Heading';
-import { HorizontalCard } from '../base/HorizontalCard';
-import { Mark } from '../base/Mark';
-import { Text } from '../base/Text';
+import {type SharedBlockProps} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Button} from '../base/Button';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {HorizontalCard} from '../base/HorizontalCard';
+import {Mark} from '../base/Mark';
+import {Text} from '../base/Text';
 
 type Service = (typeof services)[number];
 
@@ -20,7 +20,7 @@ export type ServicesBlockProps = {
 } & SharedBlockProps;
 
 export const Content = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		max-width: ${theme.breakpoints.values.sm}px;
 
 		.ActionStack-root {
@@ -30,7 +30,7 @@ export const Content = styled('div')(
 		.Heading-root {
 			margin-bottom: 0.5rem;
 		}
-	`
+	`,
 );
 
 const StyledBlock = styled(Block)`
@@ -38,7 +38,7 @@ const StyledBlock = styled(Block)`
 `;
 
 const Wrapper = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3rem;
@@ -85,13 +85,13 @@ const Wrapper = styled('div')(
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
-	`
+	`,
 );
 
 export const ServicesBlock: FC<ServicesBlockProps> = ({
 	title,
 	description,
-	services
+	services,
 }) => (
 	<StyledBlock>
 		<Container>
@@ -102,7 +102,7 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 					</Heading>
 					<Text>{description}</Text>
 				</hgroup>
-				<div className="services">
+				<div className='services'>
 					{services?.map((service, serviceIndex) => (
 						<HorizontalCard
 							key={serviceIndex}
@@ -113,14 +113,14 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 						/>
 					))}
 				</div>
-				<ActionStack color="secondary">
+				<ActionStack color='secondary'>
 					<Box mr={-1} zIndex={1}>
 						Looking for something else?
 					</Box>
 					<Button
-						color="text"
-						href="mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website"
-						endIcon={<Message />}
+						color='text'
+						href='mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website'
+						endIcon={<Message/>}
 					>
 						Contact Us
 					</Button>

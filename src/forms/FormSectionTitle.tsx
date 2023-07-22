@@ -1,5 +1,5 @@
-import { type FC } from 'react';
-import { Heading } from '../components/base/Heading';
+import {type FC} from 'react';
+import {Heading} from '../components/base/Heading';
 import clsx from 'clsx';
 import styled from '@emotion/styled';
 
@@ -15,10 +15,10 @@ export const FormSectionTitle: FC<{
 }> = props => (
 	<BaseElement
 		className={clsx('FormSectionTitle-root', {
-			'has-top-gutter': props.hasTopGutter
+			'has-top-gutter': props.hasTopGutter,
 		})}
 	>
 		<Heading level={4}>{props.title}</Heading>
-		<hr />
+		<hr/>
 	</BaseElement>
 );

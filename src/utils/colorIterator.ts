@@ -1,17 +1,17 @@
-import { alpha } from '@mui/material/styles';
+import {alpha} from '@mui/material/styles';
 import colors from 'tailwindcss/colors';
 
 export const colorIterator = (
 	property = 'background',
 	subSelectorString = '',
-	opacity = 1
+	opacity = 1,
 ): string => {
 	const colorOrder = [
 		alpha(colors.red[500], opacity),
 		alpha(colors.orange[500], opacity),
 		alpha(colors.green[500], opacity),
 		alpha(colors.blue[500], opacity),
-		alpha(colors.purple[500], opacity)
+		alpha(colors.purple[500], opacity),
 	];
 
 	return colorOrder.reduce(
@@ -21,6 +21,6 @@ export const colorIterator = (
 			${property}: ${current};
 		}
 	`,
-		''
+		'',
 	);
 };

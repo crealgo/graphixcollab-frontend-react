@@ -1,8 +1,8 @@
-import { Warning } from '@mui/icons-material';
-import { css, Typography, type SvgIconProps } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { type ComponentPropsWithoutRef } from 'react';
-import { type ComponentType, type FC } from 'react';
+import {Warning} from '@mui/icons-material';
+import {css, Typography, type SvgIconProps} from '@mui/material';
+import {styled} from '@mui/material/styles';
+import {type ComponentPropsWithoutRef} from 'react';
+import {type ComponentType, type FC} from 'react';
 
 type StatusMessageProps = {
 	IconComponent?: ComponentType<SvgIconProps>;
@@ -11,9 +11,9 @@ type StatusMessageProps = {
 	isActionable?: boolean;
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
-	({ isContained, isActionable }) => css`
-		${isContained &&
-		`
+	({isContained, isActionable}) => css`
+		${isContained
+		&& `
 		padding-inline: 1rem;
 		padding-block: 0.75rem;
 
@@ -31,15 +31,15 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		color: var(--color-gray-700);
 
 		${isActionable
-			? css`
+		? css`
 					cursor: pointer;
 
 					&:hover {
 						color: var(--color-brand-primary-main);
 					}
 			  `
-			: null}
-	`
+		: null}
+	`,
 );
 
 export const StatusMessage: FC<StatusMessageProps> = ({
@@ -47,12 +47,12 @@ export const StatusMessage: FC<StatusMessageProps> = ({
 	text,
 	...props
 }) => (
-	<StatusMessageWrapper className="StatusMessage-root" {...props}>
-		<IconComponent fontSize="small" />
+	<StatusMessageWrapper className='StatusMessage-root' {...props}>
+		<IconComponent fontSize='small'/>
 		<Typography
-			className="StatusMessage-text"
-			variant="body1"
-			component="span"
+			className='StatusMessage-text'
+			variant='body1'
+			component='span'
 		>
 			{text}
 		</Typography>

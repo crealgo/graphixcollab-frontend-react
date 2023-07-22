@@ -1,8 +1,8 @@
-import { styled } from '@mui/material';
-import { type FC } from 'react';
-import { QuickEstimateForm } from '../../forms/QuickEstimateForm';
-import { Block } from '../base/Block';
-import { Container } from '../base/Container';
+import {styled} from '@mui/material';
+import {type FC} from 'react';
+import {QuickEstimateForm} from '../../forms/QuickEstimateForm';
+import {Block} from '../base/Block';
+import {Container} from '../base/Container';
 
 const AdornmentImage = styled('img')`
 	--adornment-image-position: absolute;
@@ -29,11 +29,11 @@ const AdornmentImage = styled('img')`
 
 export const EstimatorBlock: FC = () => (
 	<Container>
-		<Block isClipped isRounded color="grey" className="EstimatorBlock-root">
-			<QuickEstimateForm />
+		<Block isClipped isRounded color='grey' className='EstimatorBlock-root'>
+			<QuickEstimateForm/>
 			<AdornmentImage
-				src="assets/juicy-business-coach-explains-the-material-min@512w.webp"
-				alt="Explaining the material"
+				src='assets/juicy-business-coach-explains-the-material-min@512w.webp'
+				alt='Explaining the material'
 			/>
 		</Block>
 	</Container>

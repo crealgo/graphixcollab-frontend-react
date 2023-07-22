@@ -1,13 +1,13 @@
-import { paramCase } from 'change-case';
+import {paramCase} from 'change-case';
 import clsx from 'clsx';
-import { forwardRef } from 'react';
-import { FileInput, type FileInputProps } from './FileInput';
-import { FormControl, type FormControlProps } from './FormControl';
+import {forwardRef} from 'react';
+import {FileInput, type FileInputProps} from './FileInput';
+import {FormControl, type FormControlProps} from './FormControl';
 
 type Props = FileInputProps & FormControlProps;
 
 export const FileInputField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, className, ...props }, ref) => {
+	({label, helperText, className, ...props}, ref) => {
 		const generatedName = paramCase(props.name ?? 'input-name');
 
 		return (
@@ -25,11 +25,11 @@ export const FileInputField = forwardRef<HTMLInputElement, Props>(
 					{...props}
 					ref={ref}
 					multiple
-					type="file"
+					type='file'
 					id={generatedName}
 					name={generatedName}
 				/>
 			</FormControl>
 		);
-	}
+	},
 );

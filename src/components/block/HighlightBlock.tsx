@@ -1,5 +1,5 @@
-import { styled, Typography } from '@mui/material';
-import { type FC } from 'react';
+import {styled, Typography} from '@mui/material';
+import {type FC} from 'react';
 
 export type HighlightBlockProps = {
 	quote?: string;
@@ -21,11 +21,11 @@ const HighlightBlockWrapper = styled('div')`
 
 export const HighlightBlock: FC<HighlightBlockProps> = props => (
 	<HighlightBlockWrapper>
-		<div className="HighlightBlock-content">
-			<Typography variant="h4" className="HighlightBlock-quote">
+		<div className='HighlightBlock-content'>
+			<Typography variant='h4' className='HighlightBlock-quote'>
 				{props.quote}
 			</Typography>
-			<Typography variant="body1" className="HighlightBlock-quoter">
+			<Typography variant='body1' className='HighlightBlock-quoter'>
 				{props.quoter}
 			</Typography>
 		</div>

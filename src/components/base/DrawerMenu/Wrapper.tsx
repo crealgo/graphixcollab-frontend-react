@@ -1,7 +1,7 @@
-import { styled } from '@mui/material';
+import {styled} from '@mui/material';
 
 export const Wrapper = styled('div')(
-	({ theme }) => `
+	({theme}) => `
 	width: 100vw;
 	height: 100%;
 	display: flex;
@@ -10,5 +10,5 @@ export const Wrapper = styled('div')(
 	${theme.breakpoints.up('sm')} {
 		max-width: 25rem;
 	}
-`
+`,
 );

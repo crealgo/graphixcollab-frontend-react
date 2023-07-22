@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { type FC } from 'react';
-import { BrandDots } from './BrandDots';
+import {type FC} from 'react';
+import {BrandDots} from './BrandDots';
 import Link from 'next/link';
 
 const StyledDiv = styled(Link)`
@@ -24,14 +24,12 @@ const StyledDiv = styled(Link)`
 	}
 `;
 
-const Logo: FC = () => {
-	return (
-		<StyledDiv href="/" role="img" title="Graphix Collab, LLC">
-			<span className="Graphix">Graphix</span>
-			<span className="Logo-collab">Collab</span>
-			<BrandDots />
-		</StyledDiv>
-	);
-};
+const Logo: FC = () => (
+	<StyledDiv href='/' role='img' title='Graphix Collab, LLC'>
+		<span className='Graphix'>Graphix</span>
+		<span className='Logo-collab'>Collab</span>
+		<BrandDots/>
+	</StyledDiv>
+);
 
 export default Logo;

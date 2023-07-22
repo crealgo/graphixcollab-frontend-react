@@ -1,24 +1,24 @@
-import { generateValuesFromStringArray } from '../../utils/generateValuesFromStringArray';
+import {generateValuesFromStringArray} from '../../utils/generateValuesFromStringArray';
 
 export const materials = generateValuesFromStringArray(
 	'T-shirt',
 	'Hoodie',
 	'Sash',
 	'Poster',
-	'Sticker'
+	'Sticker',
 );
 
 export const deliveryMethods = [
 	{
 		value: 'pickup',
 		label: 'Pick-Up 📍',
-		meta: 'Pick up your order at our store'
+		meta: 'Pick up your order at our store',
 	},
 	{
 		value: 'ship',
 		label: 'Ship 📦',
-		meta: "We'll ship it to ya!"
-	}
+		meta: 'We\'ll ship it to ya!',
+	},
 ];
 
 export const services = generateValuesFromStringArray('Embroidery', 'Print');
@@ -27,5 +27,5 @@ export const serviceContent = generateValuesFromStringArray(
 	'🌅 Image',
 	'👤 Name',
 	'🅰 Initials',
-	'💬 Quote'
+	'💬 Quote',
 );

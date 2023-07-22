@@ -1,13 +1,13 @@
 import OutBoundIcon from '@mui/icons-material/OpenInNew';
 import Tooltip, {
 	tooltipClasses,
-	type TooltipProps
+	type TooltipProps,
 } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
+import {styled} from '@mui/material/styles';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
 
-const StyledTooltip = styled(({ className, ...props }: TooltipProps) => (
-	<Tooltip {...props} classes={{ popper: className }} />
+const StyledTooltip = styled(({className, ...props}: TooltipProps) => (
+	<Tooltip {...props} classes={{popper: className}}/>
 ))`
 	--tooltip-line-height: 0.9rem;
 
@@ -59,7 +59,7 @@ const StyledAnchor = styled('a')`
 		transform: translateY(-3px);
 	}
 
-	${({ theme }) => theme.breakpoints.up('sm')} {
+	${({theme}) => theme.breakpoints.up('sm')} {
 		padding: 1.5rem;
 	}
 `;
@@ -73,8 +73,8 @@ export const CompanyFeatureLink: FC<Props> = ({
 }) => {
 	const tooltipTitle = (
 		<>
-			<span className="Tooltip-text">{title}</span>
-			{props.href && <OutBoundIcon className="Tooltip-icon" />}
+			<span className='Tooltip-text'>{title}</span>
+			{props.href && <OutBoundIcon className='Tooltip-icon'/>}
 		</>
 	);
 

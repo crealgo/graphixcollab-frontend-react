@@ -1,8 +1,8 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { useState, type FC, type ChangeEventHandler } from 'react';
-import { type OptionBag } from '../form/types';
+import {KeyboardArrowDown} from '@mui/icons-material';
+import {useState, type FC, type ChangeEventHandler} from 'react';
+import {type OptionBag} from '../form/types';
 
 export type InteractiveSelectorProps = {
 	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
@@ -10,7 +10,7 @@ export type InteractiveSelectorProps = {
 };
 
 const ClickBox = styled.button<InteractiveSelectorProps>(
-	({ color = 'cyan' }) => css`
+	({color = 'cyan'}) => css`
 		background: unset;
 		border-radius: 0rem;
 		outline: unset;
@@ -40,7 +40,7 @@ const ClickBox = styled.button<InteractiveSelectorProps>(
 		&:focus-visible {
 			background-color: var(--color-brand-${color}-light);
 		}
-	`
+	`,
 );
 
 const StyledSelect = styled.select`
@@ -68,9 +68,9 @@ export const InteractiveSelector: FC<InteractiveSelectorProps> = ({
 	return (
 		<ClickBox {...props}>
 			{options[index].label}
-			<KeyboardArrowDown className="endIcon" />
+			<KeyboardArrowDown className='endIcon'/>
 			<StyledSelect
-				className="InteractiveSelector-select"
+				className='InteractiveSelector-select'
 				onChange={handleChange}
 			>
 				{options?.map((option, optionIndex) => (

@@ -1,15 +1,15 @@
-import { Link } from '../../components/base/Link';
-import { type FormItemBag } from '../FormItemGenerator';
-import { deliveryMethods, materials, services } from './serviceOptions';
+import {Link} from '../../components/base/Link';
+import {type FormItemBag} from '../FormItemGenerator';
+import {deliveryMethods, materials, services} from './serviceOptions';
 
 const todayDate = new Date();
-const defaultDeadline = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days from now
+const defaultDeadline = Date.now() + (1000 * 60 * 60 * 24 * 30); // 30 days from now
 const defaultDeadlineDate = new Date(defaultDeadline);
 
 export const estimateFormItems: FormItemBag[] = [
 	{
 		itemType: 'title',
-		title: '👋 Your Information'
+		title: '👋 Your Information',
 	},
 	{
 		itemType: 'input',
@@ -18,7 +18,7 @@ export const estimateFormItems: FormItemBag[] = [
 		placeholder: 'John Snow',
 		label: 'Full Name',
 		required: true,
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'input',
@@ -27,25 +27,25 @@ export const estimateFormItems: FormItemBag[] = [
 		placeholder: 'johnsnow@gmail.com',
 		label: 'Email',
 		required: true,
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'title',
-		title: '⚙️ Service Request'
+		title: '⚙️ Service Request',
 	},
 	{
 		itemType: 'select',
 		name: 'service',
 		label: 'Service Type',
 		options: services,
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'select',
 		name: 'material',
 		label: 'Material Type',
 		options: materials,
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'input',
@@ -56,7 +56,7 @@ export const estimateFormItems: FormItemBag[] = [
 		required: true,
 		min: 10,
 		max: 9999,
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'input',
@@ -67,7 +67,7 @@ export const estimateFormItems: FormItemBag[] = [
 		helperText: 'By default, we will assume 1 month from now.',
 		required: true,
 		min: todayDate.toISOString().split('T')[0],
-		span: 4
+		span: 4,
 	},
 	{
 		itemType: 'radio',
@@ -75,11 +75,11 @@ export const estimateFormItems: FormItemBag[] = [
 		required: true,
 		label: 'Delivery Method',
 		options: deliveryMethods,
-		span: 3
+		span: 3,
 	},
 	{
 		itemType: 'title',
-		title: '📝 Additional Information'
+		title: '📝 Additional Information',
 	},
 	{
 		itemType: 'input',
@@ -91,7 +91,7 @@ export const estimateFormItems: FormItemBag[] = [
 		accept: '.gif,.jpeg,.jpg,.png,.pdf,.svg,.webp',
 		helperText:
 			'Although this step is optional, uploading your artwork helps us come up with a more accurate estimate.',
-		span: 8
+		span: 8,
 	},
 	{
 		itemType: 'checkbox',
@@ -104,15 +104,15 @@ export const estimateFormItems: FormItemBag[] = [
 				label: (
 					<>
 						I agree to the{' '}
-						<Link href="/terms/terms-and-conditions">
+						<Link href='/terms/terms-and-conditions'>
 							Terms and Conditions
 						</Link>{' '}
 						and the{' '}
-						<Link href="/terms/privacy-policy">Privacy Policy</Link>
+						<Link href='/terms/privacy-policy'>Privacy Policy</Link>
 						.
 					</>
-				)
-			}
-		]
-	}
+				),
+			},
+		],
+	},
 ];

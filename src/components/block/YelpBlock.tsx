@@ -1,15 +1,15 @@
-import { css } from '@emotion/react';
-import { MessageOutlined, SearchOutlined } from '@mui/icons-material';
-import { styled } from '@mui/material';
-import { type FC } from 'react';
+import {css} from '@emotion/react';
+import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
+import {styled} from '@mui/material';
+import {type FC} from 'react';
 import reviews from '../../content/yelp-reviews.json';
-import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
-import { Carousel, CarouselSlide } from '../base/Carousel';
-import { Container } from '../base/Container';
-import { Heading } from '../base/Heading';
-import { Mark } from '../base/Mark';
-import { Testimonial } from '../base/Testimonial';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Carousel, CarouselSlide} from '../base/Carousel';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {Mark} from '../base/Mark';
+import {Testimonial} from '../base/Testimonial';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];
@@ -72,7 +72,7 @@ const ReviewAvatar = styled('div')`
 		height: 100%;
 	}
 
-	${Array.from({ length: avatarCount }, (_, i) => i).reduce(
+	${Array.from({length: avatarCount}, (_, i) => i).reduce(
 		(aggregate, i) => css`
 			${aggregate}
 			&:nth-of-type(${i + 1}) {
@@ -84,7 +84,7 @@ const ReviewAvatar = styled('div')`
 				bottom: var(--block-testimonials-avatar-positions-${i}-bottom);
 			}
 		`,
-		css``
+		css``,
 	)}
 `;
 
@@ -96,57 +96,55 @@ const StyledCarouselSlide = styled(CarouselSlide)`
 	padding: 1rem;
 `;
 
-export const YelpBlock: FC<YelpBlockProps> = () => {
-	return (
-		<Container>
-			<ContentWrapper isRounded color="grey">
-				<ReviewAvatars>
-					{Array.from({ length: avatarCount }, (_, i) => {
-						const { user } = reviews[i % reviews.length];
-						return (
-							<ReviewAvatar key={i}>
-								<img
-									src={user.src}
-									srcSet={user.srcSet ?? ''}
-									alt={user.altText}
-								/>
-							</ReviewAvatar>
-						);
-					})}
-				</ReviewAvatars>
-				<Content>
-					<Heading level={2}>
-						{"We've helped "}
-						<Mark color="magenta">148</Mark>
-						{' happy customers!'}
-					</Heading>
-					<StyledCarousel>
-						{reviews.slice(0, 10).map(quote => (
-							<StyledCarouselSlide key={quote.id}>
-								<Testimonial {...quote} />
-							</StyledCarouselSlide>
-						))}
-					</StyledCarousel>
-				</Content>
-				<ActionStack
-					actions={[
-						{
-							label: 'Read more reviews',
-							href: 'https://www.yelp.com/biz/fashion-greek-usc-los-angeles',
-							size: 'large',
-							color: 'secondary',
-							endIcon: <SearchOutlined />
-						},
-						{
-							label: 'Leave a review',
-							href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
-							size: 'large',
-							color: 'text',
-							endIcon: <MessageOutlined />
-						}
-					]}
-				/>
-			</ContentWrapper>
-		</Container>
-	);
-};
+export const YelpBlock: FC<YelpBlockProps> = () => (
+	<Container>
+		<ContentWrapper isRounded color='grey'>
+			<ReviewAvatars>
+				{Array.from({length: avatarCount}, (_, i) => {
+					const {user} = reviews[i % reviews.length];
+					return (
+						<ReviewAvatar key={i}>
+							<img
+								src={user.src}
+								srcSet={user.srcSet ?? ''}
+								alt={user.altText}
+							/>
+						</ReviewAvatar>
+					);
+				})}
+			</ReviewAvatars>
+			<Content>
+				<Heading level={2}>
+					{'We\'ve helped '}
+					<Mark color='magenta'>148</Mark>
+					{' happy customers!'}
+				</Heading>
+				<StyledCarousel>
+					{reviews.slice(0, 10).map(quote => (
+						<StyledCarouselSlide key={quote.id}>
+							<Testimonial {...quote}/>
+						</StyledCarouselSlide>
+					))}
+				</StyledCarousel>
+			</Content>
+			<ActionStack
+				actions={[
+					{
+						label: 'Read more reviews',
+						href: 'https://www.yelp.com/biz/fashion-greek-usc-los-angeles',
+						size: 'large',
+						color: 'secondary',
+						endIcon: <SearchOutlined/>,
+					},
+					{
+						label: 'Leave a review',
+						href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
+						size: 'large',
+						color: 'text',
+						endIcon: <MessageOutlined/>,
+					},
+				]}
+			/>
+		</ContentWrapper>
+	</Container>
+);

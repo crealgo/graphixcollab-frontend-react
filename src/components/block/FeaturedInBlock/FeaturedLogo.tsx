@@ -1,5 +1,5 @@
-import { type FC } from 'react';
-import { type FeaturedCompanyInfo } from '../../../content/featured-companies';
+import {type FC} from 'react';
+import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
 import styled from '@emotion/styled';
 
 const StyledFigure = styled.figure`

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { type FC, type PropsWithChildren, type ReactNode } from 'react';
-import { Heading } from '../components/base/Heading';
-import { Mark } from '../components/base/Mark';
+import {type FC, type PropsWithChildren, type ReactNode} from 'react';
+import {Heading} from '../components/base/Heading';
+import {Mark} from '../components/base/Mark';
 
 type FormHeaderProps = PropsWithChildren<{
 	title: ReactNode;
@@ -28,12 +28,12 @@ const HeaderElement = styled.header`
 `;
 
 export const FormHeader: FC<FormHeaderProps> = props => (
-	<HeaderElement className="FormHeader-root">
-		<Heading level={2} className="FormHeader-title">
+	<HeaderElement className='FormHeader-root'>
+		<Heading level={2} className='FormHeader-title'>
 			{props.title}
 		</Heading>
-		<p className="FormHeader-instructions">
-			<Mark color="magenta">{props.instructions}</Mark>
+		<p className='FormHeader-instructions'>
+			<Mark color='magenta'>{props.instructions}</Mark>
 		</p>
 	</HeaderElement>
 );

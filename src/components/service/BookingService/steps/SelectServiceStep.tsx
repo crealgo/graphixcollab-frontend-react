@@ -1,7 +1,7 @@
-import { BookingOption } from '../BookingOption';
-import { type FC, useState } from 'react';
-import { BookingOptionGroup } from '../BookingOptionGroup';
-import { serviceOptions } from './data';
+import {BookingOption} from '../BookingOption';
+import {type FC, useState} from 'react';
+import {BookingOptionGroup} from '../BookingOptionGroup';
+import {serviceOptions} from './data';
 
 export const SelectServiceStep: FC<unknown> = () => {
 	const [chosen, setChosen] = useState(0);

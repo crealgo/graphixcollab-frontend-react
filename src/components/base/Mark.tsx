@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
-import { type FC } from 'react';
-import { BrandDots } from '../atoms/BrandDots';
+import {type FC} from 'react';
+import {BrandDots} from '../atoms/BrandDots';
 
 type MarkProps = BaseComponentProps & {
 	text?: boolean; // eslint-disable-line react/boolean-prop-naming
@@ -10,7 +10,7 @@ type MarkProps = BaseComponentProps & {
 };
 
 const StyledMark = styled('mark')<MarkProps>(
-	({ text, brand, color = 'cyan' }) => {
+	({text, brand, color = 'cyan'}) => {
 		const sharedCss = css`
 			background: unset;
 			/* display: inline-flex; */
@@ -34,14 +34,12 @@ const StyledMark = styled('mark')<MarkProps>(
 			${sharedCss}
 			background: var(--color-brand-${color}-lighter);
 		`;
-	}
+	},
 );
 
-export const Mark: FC<MarkProps> = ({ children, ...props }) => {
-	return (
-		<StyledMark {...props}>
-			{children}
-			{props.brand ? <BrandDots /> : null}
-		</StyledMark>
-	);
-};
+export const Mark: FC<MarkProps> = ({children, ...props}) => (
+	<StyledMark {...props}>
+		{children}
+		{props.brand ? <BrandDots/> : null}
+	</StyledMark>
+);

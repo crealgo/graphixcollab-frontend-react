@@ -1,18 +1,18 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import clsx from 'clsx';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { generateBaseInputStyles } from './generateBaseInputStyles';
-import { type OptionBag } from './types';
+import {forwardRef, type ComponentPropsWithRef} from 'react';
+import {generateBaseInputStyles} from './generateBaseInputStyles';
+import {type OptionBag} from './types';
 
 export type SelectProps = {
 	options?: OptionBag[];
 } & BaseControlProps &
-	ComponentPropsWithRef<'select'>;
+ComponentPropsWithRef<'select'>;
 
 const SelectWrapper = styled('div')<SelectProps>(
-	({ inputSize }) => css`
+	({inputSize}) => css`
 		display: inline-block;
 		position: relative;
 		width: 100%;
@@ -27,40 +27,40 @@ const SelectWrapper = styled('div')<SelectProps>(
 			transform: translateY(-50%);
 			opacity: 0.5;
 		}
-	`
+	`,
 );
 
 const StyledSelect = styled('select', {
 	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<SelectProps>(
 	props => css`
 		${generateBaseInputStyles({
-			inputSize: props.inputSize
-		})};
+		inputSize: props.inputSize,
+	})};
 		width: 100%;
 		display: block;
 
 		padding-inline: var(--select-spacing-padding-inline-${props.inputSize});
 		appearance: none;
 		cursor: pointer;
-	`
+	`,
 );
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-	({ options, inputSize = 'medium', className, ...props }, ref) => (
+	({options, inputSize = 'medium', className, ...props}, ref) => (
 		<SelectWrapper
 			className={clsx('Select-root', className)}
 			inputSize={inputSize}
 		>
 			<StyledSelect {...props} ref={ref} inputSize={inputSize}>
-				{options?.map(({ label, value }, optionIndex) => (
+				{options?.map(({label, value}, optionIndex) => (
 					<option key={optionIndex} value={value}>
 						{label}
 					</option>
 				))}
 			</StyledSelect>
-			<ArrowDownIcon />
+			<ArrowDownIcon/>
 		</SelectWrapper>
-	)
+	),
 );

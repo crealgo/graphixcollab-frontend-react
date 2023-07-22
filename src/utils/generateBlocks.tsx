@@ -1,17 +1,17 @@
-import { type ReactNode, useId } from 'react';
-import { CalloutBlock } from '../components/block/CalloutBlock';
-import { FanServiceBlock } from '../components/block/FanServiceBlock';
-import { FaqBlock } from '../components/block/FaqBlock';
-import { FeaturedInBlock } from '../components/block/FeaturedInBlock';
-import { GalleryBlock } from '../components/block/GalleryBlock';
-import { InteractiveEstimator } from '../components/block/InteractiveEstimator';
-import { IntroBlock } from '../components/block/IntroBlock/IntroBlock';
-import { PageHeaderBlock } from '../components/block/PageHeaderBlock';
-import { PlaceholderBlock } from '../components/block/PlaceholderBlock';
-import { ProfilesBlock } from '../components/block/ProfilesBlock';
-import { ServicesBlock } from '../components/block/ServicesBlock';
-import { ServicesPreviewBlock } from '../components/block/ServicesPreviewBlock';
-import { TimelineBlock } from '../components/block/TimelineBlock';
+import {type ReactNode, useId} from 'react';
+import {CalloutBlock} from '../components/block/CalloutBlock';
+import {FanServiceBlock} from '../components/block/FanServiceBlock';
+import {FaqBlock} from '../components/block/FaqBlock';
+import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
+import {GalleryBlock} from '../components/block/GalleryBlock';
+import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
+import {IntroBlock} from '../components/block/IntroBlock/IntroBlock';
+import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
+import {PlaceholderBlock} from '../components/block/PlaceholderBlock';
+import {ProfilesBlock} from '../components/block/ProfilesBlock';
+import {ServicesBlock} from '../components/block/ServicesBlock';
+import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
+import {TimelineBlock} from '../components/block/TimelineBlock';
 
 const blockMap = {
 	callout: CalloutBlock,
@@ -27,7 +27,7 @@ const blockMap = {
 	profile: ProfilesBlock,
 	services: ServicesBlock,
 	servicesPreview: ServicesPreviewBlock,
-	timeline: TimelineBlock
+	timeline: TimelineBlock,
 } as const;
 
 export type BlockTypes = keyof typeof blockMap;
@@ -41,5 +41,5 @@ export const generateBlocks = (blockArray: BlockOptions[]): ReactNode[] =>
 	blockArray.map(block => {
 		const Component = blockMap[block.type];
 
-		return Component ? <Component key={useId()} {...block.props} /> : null;
+		return Component ? <Component key={useId()} {...block.props}/> : null;
 	});

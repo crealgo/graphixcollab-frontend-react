@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { type GetStaticProps, type NextPage } from 'next';
-import { BlogBlock } from '../../components/base/BlogBlock';
-import { Container } from '../../components/base/Container';
+import {type GetStaticProps, type NextPage} from 'next';
+import {BlogBlock} from '../../components/base/BlogBlock';
+import {Container} from '../../components/base/Container';
 import {
 	PageHeaderBlock,
-	type PageHeaderBlockProps
+	type PageHeaderBlockProps,
 } from '../../components/block/PageHeaderBlock';
-import { PageTitle } from '../../components/utility/PageTitle';
-import { DefaultLayout } from '../../layouts/DefaultLayout';
+import {PageTitle} from '../../components/utility/PageTitle';
+import {DefaultLayout} from '../../layouts/DefaultLayout';
 
 type PageProps = {
 	pageTitle: string;
@@ -93,10 +93,9 @@ const content = (
 		<p>
 			This Agreement shall begin on the date hereof. Our Terms and
 			Conditions were created with the help of the{' '}
-			<a href="https://www.termsandconditionsgenerator.com/">
+			<a href='https://www.termsandconditionsgenerator.com/'>
 				Free Terms and Conditions Generator
-			</a>
-			.
+			</a>.
 		</p>
 
 		<p>
@@ -342,22 +341,20 @@ const content = (
 	</>
 );
 
-const Page: NextPage<PageProps> = props => {
-	return (
-		<DefaultLayout>
-			<PageTitle text={props.pageTitle} />
-			<PageHeaderBlock
-				title={props.pageTitle}
-				{...props.pageHeaderProps}
-			/>
-			<Container>
-				<BlogBlock>
-					<div className="blog-container">{content}</div>
-				</BlogBlock>
-			</Container>
-		</DefaultLayout>
-	);
-};
+const Page: NextPage<PageProps> = props => (
+	<DefaultLayout>
+		<PageTitle text={props.pageTitle}/>
+		<PageHeaderBlock
+			title={props.pageTitle}
+			{...props.pageHeaderProps}
+		/>
+		<Container>
+			<BlogBlock>
+				<div className='blog-container'>{content}</div>
+			</BlogBlock>
+		</Container>
+	</DefaultLayout>
+);
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => ({
 	props: {
@@ -367,10 +364,10 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => ({
 			color: 'secondary',
 			ImageProps: {
 				src: '../assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
-				alt: 'Book an Appointment w/ Graphix Collab'
-			}
-		}
-	}
+				alt: 'Book an Appointment w/ Graphix Collab',
+			},
+		},
+	},
 });
 
 export default Page;

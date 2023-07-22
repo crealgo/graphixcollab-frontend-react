@@ -1,17 +1,17 @@
 import BookATimeIcon from '@mui/icons-material/Book';
 import ContactUsIcon from '@mui/icons-material/ContactSupport';
-import { css, styled } from '@mui/material/styles';
-import { type NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { type ReactNode } from 'react';
-import { type BannerProps } from '../components/base/Banner';
-import { type BreadcrumbOptions } from '../components/base/Breadcrumbs';
-import { Header, type HeaderProps } from '../components/base/Header/Header';
+import {css, styled} from '@mui/material/styles';
+import {type NextPage} from 'next';
+import {useRouter} from 'next/router';
+import {type ReactNode} from 'react';
+import {type BannerProps} from '../components/base/Banner';
+import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
+import {Header, type HeaderProps} from '../components/base/Header/Header';
 import {
 	FooterBlock,
-	type FooterBlockProps
+	type FooterBlockProps,
 } from '../components/block/FooterBlock';
-import { YelpBlock } from '../components/block/YelpBlock';
+import {YelpBlock} from '../components/block/YelpBlock';
 
 type DefaultLayoutProps = NextPage<{
 	breadcrumbs?: BreadcrumbOptions[];
@@ -34,8 +34,8 @@ const BackgroundImage = styled('div')`
 	height: inherit;
 `;
 
-const BackgroundImageWrapper = styled('div')<{ flipped?: boolean }>(
-	({ theme, flipped }) => css`
+const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
+	({theme, flipped}) => css`
 		width: 3322px;
 		height: auto;
 
@@ -46,11 +46,11 @@ const BackgroundImageWrapper = styled('div')<{ flipped?: boolean }>(
 			top: 25%;
 			transform: rotate(30deg) ${flipped ? 'scaleX(-1)' : ''};
 		}
-	`
+	`,
 );
 
 const Main = styled('main')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 
@@ -58,10 +58,10 @@ const Main = styled('main')(
 			padding-bottom: 1rem;
 			gap: 1rem;
 		}
-	`
+	`,
 );
 
-export const DefaultLayout: DefaultLayoutProps = ({ children, ...props }) => {
+export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
 	const router = useRouter();
 
 	return (
@@ -72,24 +72,24 @@ export const DefaultLayout: DefaultLayoutProps = ({ children, ...props }) => {
 						color: 'text',
 						href: `${router.basePath}/contact-us`,
 						label: 'Contact Us',
-						endIcon: <ContactUsIcon />
+						endIcon: <ContactUsIcon/>,
 					},
 					{
 						color: 'primary',
 						href: `${router.basePath}/book-appointment`,
 						label: 'Book a time',
-						endIcon: <BookATimeIcon />
-					}
+						endIcon: <BookATimeIcon/>,
+					},
 				]}
 			/>
-			<BackgroundImage className="Motif">
-				<BackgroundImageWrapper />
+			<BackgroundImage className='Motif'>
+				<BackgroundImageWrapper/>
 			</BackgroundImage>
-			<Main id="main-content">
+			<Main id='main-content'>
 				{children}
-				{props.showYelp && <YelpBlock />}
+				{props.showYelp && <YelpBlock/>}
 			</Main>
-			<FooterBlock />
+			<FooterBlock/>
 		</>
 	);
 };

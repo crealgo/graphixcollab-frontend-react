@@ -1,9 +1,9 @@
-import { css, styled, Typography } from '@mui/material';
-import { type FC } from 'react';
-import { type Action } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
-import { Container } from '../base/Container';
+import {css, styled, Typography} from '@mui/material';
+import {type FC} from 'react';
+import {type Action} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Container} from '../base/Container';
 
 export type CalloutBlockProps = {
 	title?: string;
@@ -17,7 +17,7 @@ const CalloutContentWrapper = styled(Block)`
 `;
 
 const InnerWrapper = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		.content {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -50,38 +50,38 @@ const InnerWrapper = styled('div')(
 				}
 			}
 		}
-	`
+	`,
 );
 
 export const CalloutBlock: FC<CalloutBlockProps> = ({
 	title,
 	description,
 	meta,
-	actions
+	actions,
 }) => (
 	<Container>
-		<CalloutContentWrapper isRounded color="secondary">
+		<CalloutContentWrapper isRounded color='secondary'>
 			<InnerWrapper>
-				<div className="content">
+				<div className='content'>
 					<Typography
-						variant="overline"
-						className="CalloutBlock-title"
+						variant='overline'
+						className='CalloutBlock-title'
 					>
 						{meta}
 					</Typography>
-					<Typography variant="h2" className="CalloutBlock-title">
+					<Typography variant='h2' className='CalloutBlock-title'>
 						{title}
 					</Typography>
 					<Typography
-						variant="body2"
-						className="CalloutBlock-description"
-						sx={{ mb: 2 }}
+						variant='body2'
+						className='CalloutBlock-description'
+						sx={{mb: 2}}
 					>
 						{description}
 					</Typography>
-					<ActionStack size="large" actions={actions} />
+					<ActionStack size='large' actions={actions}/>
 				</div>
-				<div className="image">{/* <DualPhoneDisplay /> */}</div>
+				<div className='image'>{/* <DualPhoneDisplay /> */}</div>
 			</InnerWrapper>
 		</CalloutContentWrapper>
 	</Container>

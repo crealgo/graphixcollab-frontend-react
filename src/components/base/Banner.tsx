@@ -1,12 +1,12 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { styled } from '@mui/material';
-import { type FC, type PropsWithChildren } from 'react';
-import { type Action } from '../../types/general';
-import { ActionStack } from './ActionStack';
-import { Block } from './Block';
-import { Container } from './Container';
-import { IconButton } from './IconButton';
-import { type IconButtonBaseProps } from './IconButtonBase';
+import {styled} from '@mui/material';
+import {type FC, type PropsWithChildren} from 'react';
+import {type Action} from '../../types/general';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Container} from './Container';
+import {IconButton} from './IconButton';
+import {type IconButtonBaseProps} from './IconButtonBase';
 
 export type BannerProps = PropsWithChildren<{
 	text?: string;
@@ -67,7 +67,7 @@ export const Banner: FC<BannerProps> = ({
 	actions,
 	onCloseClick,
 	text,
-	children
+	children,
 }) => {
 	// const textRef = useRef<HTMLParagraphElement>(null);
 	// const containerRef = useRef<HTMLDivElement>(null);
@@ -87,27 +87,27 @@ export const Banner: FC<BannerProps> = ({
 	return (
 		<StyledBlock
 			hasNoDefaultMargin
-			className="Banner-root"
+			className='Banner-root'
 			title={resolvedTitle}
 		>
-			<Container className="Banner-container">
-				<div className="Banner-content">
-					<span className="Banner-textContent">
+			<Container className='Banner-container'>
+				<div className='Banner-content'>
+					<span className='Banner-textContent'>
 						{children ?? text}
 					</span>
 					{actions?.length && (
 						<ActionStack
-							className="Banner-actionStack"
-							size="small"
-							color="text"
+							className='Banner-actionStack'
+							size='small'
+							color='text'
 							actions={actions}
 						/>
 					)}
 				</div>
 				<BannerClose
-					className="Banner-closeButton"
-					aria-label="Close Banner"
-					color="text"
+					className='Banner-closeButton'
+					aria-label='Close Banner'
+					color='text'
 					Icon={CloseIcon}
 					onClick={onCloseClick}
 				/>

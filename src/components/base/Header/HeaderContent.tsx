@@ -1,7 +1,7 @@
-import { css, styled } from '@mui/material';
+import {css, styled} from '@mui/material';
 
 export const HeaderContent = styled('div')(
-	({ theme }) => css`
+	({theme}) => css`
 		display: flex;
 		align-items: center;
 		gap: 1rem;
@@ -39,5 +39,5 @@ export const HeaderContent = styled('div')(
 		}
 
 		font-size: 1.25rem;
-	`
+	`,
 );

@@ -1,16 +1,16 @@
-import { ArrowForward, CheckCircleOutline } from '@mui/icons-material';
-import { CircularProgress } from '@mui/material';
-import { type FC } from 'react';
-import { ActionStack } from '../components/base/ActionStack';
-import { Button } from '../components/base/Button';
-import { Mark } from '../components/base/Mark';
-import { useForm } from '../hooks/useForm';
-import { FormGrid } from './FormGrid';
-import { FormHeader } from './FormHeader';
-import { FormItemGenerator } from './FormItemGenerator';
-import { renderFormAlert } from './__utils__/renderFormAlert';
-import { estimateFormItems } from './__data__/estimateFormItems';
-import { getFormAction } from './__utils__/getFormAction';
+import {ArrowForward, CheckCircleOutline} from '@mui/icons-material';
+import {CircularProgress} from '@mui/material';
+import {type FC} from 'react';
+import {ActionStack} from '../components/base/ActionStack';
+import {Button} from '../components/base/Button';
+import {Mark} from '../components/base/Mark';
+import {useForm} from '../hooks/useForm';
+import {FormGrid} from './FormGrid';
+import {FormHeader} from './FormHeader';
+import {FormItemGenerator} from './FormItemGenerator';
+import {renderFormAlert} from './__utils__/renderFormAlert';
+import {estimateFormItems} from './__data__/estimateFormItems';
+import {getFormAction} from './__utils__/getFormAction';
 import styled from '@emotion/styled';
 
 const StyledFormGrid = styled(FormGrid)`
@@ -40,10 +40,10 @@ export const EstimateForm: FC = () => {
 	return (
 		<StyledFormGrid
 			noValidate
-			method="post"
+			method='post'
 			action={getFormAction('send-message/estimate-request')}
-			encType="multipart/form-data"
-			id="estimator-form"
+			encType='multipart/form-data'
+			id='estimator-form'
 			onReset={formState.handleReset}
 			onSubmit={formState.handleSubmit}
 		>
@@ -51,13 +51,13 @@ export const EstimateForm: FC = () => {
 				title={
 					<>
 						Get an{' '}
-						<Mark text color="magenta">
+						<Mark text color='magenta'>
 							estimate
 						</Mark>
 						!
 					</>
 				}
-				instructions="Fill out the form below to get your quick estimate, and a step closer to getting your project started!"
+				instructions='Fill out the form below to get your quick estimate, and a step closer to getting your project started!'
 			/>
 			<FormItemGenerator
 				items={estimateFormItems}
@@ -66,26 +66,24 @@ export const EstimateForm: FC = () => {
 			{formState.isSubmitted && renderFormAlert(formState.isSuccessful)}
 			<ActionStack>
 				<Button
-					color="secondary"
-					endIcon={
-						formState.isSubmitting ? (
-							<CircularProgress
-								size="inherit"
-								thickness={6}
-								sx={{ color: 'white' }}
-							/>
-						) : (
-							<CheckCircleOutline />
-						)
-					}
-					type="submit"
+					color='secondary'
+					endIcon={formState.isSubmitting ? (
+						<CircularProgress
+							size='inherit'
+							thickness={6}
+							sx={{color: 'white'}}
+						/>
+					) : (
+						<CheckCircleOutline/>
+					)}
+					type='submit'
 				>
 					{formState.isSubmitting ? 'Sending...' : 'Get Estimate'}
 				</Button>
 				<Button
-					color="text"
-					href="mailto:graphixcollab@gmail.com"
-					endIcon={<ArrowForward />}
+					color='text'
+					href='mailto:graphixcollab@gmail.com'
+					endIcon={<ArrowForward/>}
 				>
 					Not sure? Contact us
 				</Button>

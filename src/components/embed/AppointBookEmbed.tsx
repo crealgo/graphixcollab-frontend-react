@@ -1,6 +1,6 @@
-import { type FC } from 'react';
+import {type FC} from 'react';
 import styled from '@emotion/styled';
-import { Container } from '../base/Container';
+import {Container} from '../base/Container';
 
 const AppointBookingEmbedWrapper = styled.div`
 	width: 100%;
@@ -17,8 +17,8 @@ export const AppointBookEmbed: FC = () => (
 		<AppointBookingEmbedWrapper>
 			{/* eslint-disable react/iframe-missing-sandbox */}
 			<iframe
-				title="Schedule with Graphix Collab"
-				src="https://squareup.com/appointments/book/gyddlmedpd8xf/94H44SPS41D7K/start"
+				title='Schedule with Graphix Collab'
+				src='https://squareup.com/appointments/book/gyddlmedpd8xf/94H44SPS41D7K/start'
 			/>
 			{/* eslint-enable react/iframe-missing-sandbox */}
 		</AppointBookingEmbedWrapper>

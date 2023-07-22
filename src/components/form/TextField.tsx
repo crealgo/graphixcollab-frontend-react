@@ -1,12 +1,12 @@
-import { snakeCase } from 'change-case';
-import { forwardRef } from 'react';
-import { FormControl, type FormControlProps } from './FormControl';
-import { Input, type InputProps } from './Input';
+import {snakeCase} from 'change-case';
+import {forwardRef} from 'react';
+import {FormControl, type FormControlProps} from './FormControl';
+import {Input, type InputProps} from './Input';
 
 type Props = Omit<FormControlProps, 'isRequired'> & InputProps;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
-	({ label, helperText, ...props }, ref) => {
+	({label, helperText, ...props}, ref) => {
 		const generatedName = snakeCase(props.name ?? 'input-name');
 
 		return (
@@ -28,5 +28,5 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
 				/>
 			</FormControl>
 		);
-	}
+	},
 );

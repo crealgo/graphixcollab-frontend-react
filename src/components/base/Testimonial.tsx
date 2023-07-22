@@ -1,6 +1,6 @@
-import { styled } from '@mui/material/styles';
-import { Rating } from './Rating';
-import { type FC } from 'react';
+import {styled} from '@mui/material/styles';
+import {Rating} from './Rating';
+import {type FC} from 'react';
 import type reviews from '../../content/yelp-reviews.json';
 
 export type TestimonialProps = (typeof reviews)[0];
@@ -39,7 +39,7 @@ const BaseElement = styled('article')`
 		white-space: normal;
 	}
 
-	/* ${({ theme }) => theme.breakpoints.up('md')} {
+	/* ${({theme}) => theme.breakpoints.up('md')} {
 		flex-direction: row;
 	} */
 `;
@@ -47,28 +47,28 @@ const BaseElement = styled('article')`
 export const Testimonial: FC<TestimonialProps> = ({
 	user,
 	comment,
-	rating
+	rating,
 }) => (
 	<BaseElement>
 		<img
-			className="image"
+			className='image'
 			src={user.src}
 			srcSet={user.srcSet ?? ''}
 			alt={user.altText}
 		/>
-		<div className="content">
+		<div className='content'>
 			<q
 				/* eslint-disable react/no-danger */
 				dangerouslySetInnerHTML={{
-					__html: comment.text
+					__html: comment.text,
 				}}
 				/* eslint-enable react/no-danger */
-				className="quote"
+				className='quote'
 			/>
 			<b>
 				<small>{user.markupDisplayName}</small>
 			</b>
-			<Rating readOnly className="rating" value={rating} />
+			<Rating readOnly className='rating' value={rating}/>
 		</div>
 	</BaseElement>
 );

@@ -1,25 +1,25 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { generateBaseInputStyles } from './generateBaseInputStyles';
+import {forwardRef, type ComponentPropsWithRef} from 'react';
+import {generateBaseInputStyles} from './generateBaseInputStyles';
 
 export type TextAreaProps = ComponentPropsWithRef<'textarea'> &
-	BaseControlProps;
+BaseControlProps;
 
 export const BaseElement = styled('textarea', {
 	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<TextAreaProps>(
 	props => css`
 		${generateBaseInputStyles(props)};
 		height: auto;
 		padding-block: 0.5rem;
-	`
+	`,
 );
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-	({ className, inputSize = 'medium', ...props }, ref) => (
+	({className, inputSize = 'medium', ...props}, ref) => (
 		<BaseElement
 			{...props}
 			ref={ref}
@@ -29,12 +29,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 				{
 					'is-invalid': props.isInvalid,
 					'is-valid': props.isValid,
-					'is-touched': props.isTouched
+					'is-touched': props.isTouched,
 				},
-				className
+				className,
 			)}
 		/>
-	)
+	),
 );
 
 TextArea.displayName = 'Input';

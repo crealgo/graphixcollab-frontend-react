@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
+import {forwardRef, type ComponentPropsWithRef} from 'react';
 import RadioUnchecked from '@mui/icons-material/RadioButtonUnchecked';
 import RadioChecked from '@mui/icons-material/RadioButtonChecked';
-import { type OptionBag } from './types';
+import {type OptionBag} from './types';
 
 export type RadioInputProps = OptionBag &
-	BaseControlProps &
-	ComponentPropsWithRef<'input'>;
+BaseControlProps &
+ComponentPropsWithRef<'input'>;
 
 const inputSize = '1.25rem';
 
@@ -36,8 +36,8 @@ const RadioLabel = styled.label`
 
 const Radio = styled('input', {
 	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop)
-})/* scss */ `
+		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
+})/* scss */`
 	opacity: 0;
 	position: absolute;
 	cursor: pointer;
@@ -78,15 +78,15 @@ const Radio = styled('input', {
 export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
 	(props, ref) => (
 		<RadioLabel htmlFor={props.id}>
-			<Radio ref={ref} type="radio" {...props} />
-			<div className="RadioInput-indicator">
-				<RadioChecked className="RadioInput-icon is-checked" />
-				<RadioUnchecked className="RadioInput-icon is-unchecked" />
+			<Radio ref={ref} type='radio' {...props}/>
+			<div className='RadioInput-indicator'>
+				<RadioChecked className='RadioInput-icon is-checked'/>
+				<RadioUnchecked className='RadioInput-icon is-unchecked'/>
 			</div>
-			<span className="RadioInput-text">
+			<span className='RadioInput-text'>
 				<span>{props.label}</span>
-				<small className="RadioInput-meta">{props.meta}</small>
+				<small className='RadioInput-meta'>{props.meta}</small>
 			</span>
 		</RadioLabel>
-	)
+	),
 );

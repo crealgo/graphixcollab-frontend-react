@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import { type ReactNode, useEffect, type FC } from 'react';
+import {type ReactNode, useEffect, type FC} from 'react';
 
 const Wrapper = styled.div`
 	overflow: hidden;
@@ -21,13 +21,13 @@ type CarouselProps = {
 export const Carousel: FC<CarouselProps> = ({
 	onSlideChange,
 	className,
-	children
+	children,
 }) => {
 	const [containerRef, carouselApi] = useEmblaCarousel(
 		{
-			loop: true
+			loop: true,
 		},
-		[autoplay()]
+		[autoplay()],
 	);
 
 	useEffect(() => {

@@ -1,23 +1,23 @@
 import styled from '@emotion/styled';
-import { SiYelp } from '@icons-pack/react-simple-icons';
-import { MessageOutlined } from '@mui/icons-material';
-import { Typography, useMediaQuery, type Theme } from '@mui/material';
+import {SiYelp} from '@icons-pack/react-simple-icons';
+import {MessageOutlined} from '@mui/icons-material';
+import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { type FeaturedCompanyInfo } from '../../../content/featured-companies';
-import { type Action } from '../../../types/general';
-import { ActionStack } from '../../base/ActionStack';
-import { Container } from '../../base/Container';
-import { ContentGrid } from '../../base/ContentGrid';
-import { Heading } from '../../base/Heading';
-import { Mark } from '../../base/Mark';
-import { TidBit } from '../../base/TidBit';
-import { CompanyFeatureLink } from './CompanyFeatureLink';
-import { CustomBlock } from './CustomBlock';
-import { FeaturedLogo } from './FeaturedLogo';
-import { FeaturedLogoType } from './FeaturedLogoType';
-import { FeaturedMarquee } from './FeaturedMarquee';
-import { FeaturedText } from './FeaturedText';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
+import {type Action} from '../../../types/general';
+import {ActionStack} from '../../base/ActionStack';
+import {Container} from '../../base/Container';
+import {ContentGrid} from '../../base/ContentGrid';
+import {Heading} from '../../base/Heading';
+import {Mark} from '../../base/Mark';
+import {TidBit} from '../../base/TidBit';
+import {CompanyFeatureLink} from './CompanyFeatureLink';
+import {CustomBlock} from './CustomBlock';
+import {FeaturedLogo} from './FeaturedLogo';
+import {FeaturedLogoType} from './FeaturedLogoType';
+import {FeaturedMarquee} from './FeaturedMarquee';
+import {FeaturedText} from './FeaturedText';
 
 export type FeaturedInBlockProps = {
 	title?: string;
@@ -37,9 +37,9 @@ const StyledContainer = styled(Container)`
 
 const renderCompany = (company: FeaturedCompanyInfo, companyIndex: number) => {
 	const resolvedContentType = {
-		logo: <FeaturedLogo {...company} />,
-		type: <FeaturedLogoType {...company} />,
-		default: <FeaturedText {...company} />
+		logo: <FeaturedLogo {...company}/>,
+		type: <FeaturedLogoType {...company}/>,
+		default: <FeaturedText {...company}/>,
 	}[company.type ?? 'default'];
 
 	return (
@@ -68,7 +68,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 	...props
 }) => {
 	const isMobile = useMediaQuery((theme: Theme) =>
-		theme.breakpoints.down('sm')
+		theme.breakpoints.down('sm'),
 	);
 
 	const FeaturedComponent = isMobile ? FeaturedGrid : FeaturedMarquee;
@@ -77,16 +77,16 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 		<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
 			<StyledContainer>
 				<ContentGrid
-					size="small"
-					textAlign="center"
-					marginX="auto"
-					maxWidth="50rem"
+					size='small'
+					textAlign='center'
+					marginX='auto'
+					maxWidth='50rem'
 				>
 					<Heading level={4}>
 						We work with <Mark>creatives</Mark> like you.
 					</Heading>
 					{props.description ? (
-						<Typography variant="body2">
+						<Typography variant='body2'>
 							{props.description}
 						</Typography>
 					) : null}
@@ -97,19 +97,19 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					</FeaturedComponent>
 				)}
 				<ActionStack
-					align="center"
-					size="large"
+					align='center'
+					size='large'
 					actions={[
 						{
 							label: 'Leave a Review',
 							color: 'text',
-							endIcon: <MessageOutlined />
-						}
+							endIcon: <MessageOutlined/>,
+						},
 					]}
 				>
-					<TidBit href="#yelp-test" color="magenta" icon={<SiYelp />}>
-						Trusted by <Mark color="magenta">150+</Mark> on{' '}
-						<Mark color="magenta">Yelp</Mark>
+					<TidBit href='#yelp-test' color='magenta' icon={<SiYelp/>}>
+						Trusted by <Mark color='magenta'>150+</Mark> on{' '}
+						<Mark color='magenta'>Yelp</Mark>
 					</TidBit>
 				</ActionStack>
 			</StyledContainer>

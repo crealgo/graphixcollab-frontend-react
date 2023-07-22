@@ -12,6 +12,9 @@ fieldset {
 
 html {
   font-family: var(--type-body-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
 *:focus-visible {

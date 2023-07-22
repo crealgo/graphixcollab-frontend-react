@@ -1,13 +1,13 @@
-import { CheckCircleOutline, PaletteOutlined } from '@mui/icons-material';
-import { styled } from '@mui/material';
-import { type FC } from 'react';
-import { type Action } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { Block } from '../base/Block';
-import { Container } from '../base/Container';
-import { Heading } from '../base/Heading';
-import { InteractiveSelector } from '../base/InteractiveSelector';
-import { Mark } from '../base/Mark';
+import {CheckCircleOutline, PaletteOutlined} from '@mui/icons-material';
+import {styled} from '@mui/material';
+import {type FC} from 'react';
+import {type Action} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {InteractiveSelector} from '../base/InteractiveSelector';
+import {Mark} from '../base/Mark';
 // import styled from '@emotion/styled'
 
 export type InteractiveEstimatorProps = {
@@ -73,46 +73,46 @@ const AdornmentImage = styled('img')`
 const materials = [
 	{
 		label: 'sash',
-		value: 'sash'
+		value: 'sash',
 	},
 	{
 		label: 't-shirt',
-		value: 't-shirt'
+		value: 't-shirt',
 	},
 	{
 		label: 'poster',
-		value: 'poster'
+		value: 'poster',
 	},
 	{
 		label: 'sticker',
-		value: 'sticker'
-	}
+		value: 'sticker',
+	},
 ];
 
 const services = [
 	{
 		label: 'embroidered',
-		value: 'embroidered'
+		value: 'embroidered',
 	},
 	{
 		label: 'printed',
-		value: 'printed'
-	}
+		value: 'printed',
+	},
 ];
 
 const serviceContent = [
 	{
 		label: 'my name',
-		value: 'name'
+		value: 'name',
 	},
 	{
 		label: 'my initials',
-		value: 'initials'
+		value: 'initials',
 	},
 	{
 		label: 'a quote',
-		value: 'initials'
-	}
+		value: 'initials',
+	},
 ];
 
 const Instructions = styled('em')`
@@ -128,22 +128,22 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 		<Block
 			isClipped
 			isRounded
-			color="grey"
-			className="InteractiveEstimator-root"
+			color='grey'
+			className='InteractiveEstimator-root'
 		>
 			<ContentGrid>
 				<Heading level={4}>
 					Get an{' '}
-					<Mark text color="magenta">
+					<Mark text color='magenta'>
 						estimate
 					</Mark>
 					!
 				</Heading>
 				<Heading level={2}>
 					I would like a custom{' '}
-					<InteractiveSelector options={materials} /> that is{' '}
-					<InteractiveSelector options={services} /> with{' '}
-					<InteractiveSelector options={serviceContent} />{' '}
+					<InteractiveSelector options={materials}/> that is{' '}
+					<InteractiveSelector options={services}/> with{' '}
+					<InteractiveSelector options={serviceContent}/>{' '}
 				</Heading>
 				<Instructions>
 					Change the options above to what you’re looking for.
@@ -154,20 +154,20 @@ export const InteractiveEstimator: FC<InteractiveEstimatorProps> = () => (
 							label: 'Estimate',
 							size: 'large',
 							color: 'secondary',
-							endIcon: <CheckCircleOutline />
+							endIcon: <CheckCircleOutline/>,
 						},
 						{
 							label: 'Design',
 							size: 'large',
 							color: 'text',
-							endIcon: <PaletteOutlined />
-						}
+							endIcon: <PaletteOutlined/>,
+						},
 					]}
 				/>
 			</ContentGrid>
 			<AdornmentImage
-				src="assets/juicy-business-coach-explains-the-material-min@512w.webp"
-				alt="Explaining the material"
+				src='assets/juicy-business-coach-explains-the-material-min@512w.webp'
+				alt='Explaining the material'
 			/>
 		</Block>
 	</Container>

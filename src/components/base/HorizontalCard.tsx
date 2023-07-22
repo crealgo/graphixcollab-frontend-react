@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { colord } from 'colord';
-import { type ComponentPropsWithRef, type FC } from 'react';
-import { type ActionStackProps } from './ActionStack';
-import { Heading } from './Heading';
-import { Text } from './Text';
+import {colord} from 'colord';
+import {type ComponentPropsWithRef, type FC} from 'react';
+import {type ActionStackProps} from './ActionStack';
+import {Heading} from './Heading';
+import {Text} from './Text';
 
 type CardProps = {
 	title?: string;
@@ -53,7 +53,7 @@ const CardImageBox = styled.figure`
 
 	position: relative;
 	padding: 0.5rem;
-	background-color: ${({ color }) => color};
+	background-color: ${({color}) => color};
 	border-radius: 0.5rem;
 	overflow: hidden;
 	display: flex;
@@ -100,14 +100,14 @@ export const HorizontalCard: FC<CardProps> = ({
 			{...props}
 		>
 			<CardImageBox color={backgroundColor}>
-				<CardImage {...image} />
+				<CardImage {...image}/>
 			</CardImageBox>
 			<CardContent>
 				{/* <Typography variant="caption">{subtitle}</Typography> */}
-				<Heading className="title" level={5}>
+				<Heading className='title' level={5}>
 					{title}
 				</Heading>
-				<Text spacing="small" color="secondary">
+				<Text spacing='small' color='secondary'>
 					{description}
 				</Text>
 			</CardContent>

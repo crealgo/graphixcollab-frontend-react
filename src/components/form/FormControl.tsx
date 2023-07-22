@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { useEffect, useRef, type FC, type ReactNode } from 'react';
-import { InputHelperText } from './InputHelperText';
-import { handleFormControlTouch } from './utils/handleFormControlTouch';
+import {useEffect, useRef, type FC, type ReactNode} from 'react';
+import {InputHelperText} from './InputHelperText';
+import {handleFormControlTouch} from './utils/handleFormControlTouch';
 
 export type FormControlProps = {
 	label?: ReactNode;
@@ -19,7 +19,7 @@ export type FormControlProps = {
 	 */
 	isFieldset?: boolean;
 } & Pick<BaseComponentProps, 'className' | 'children'> &
-	Pick<BaseControlProps, 'isTouched' | 'isInvalid' | 'isValid'>;
+Pick<BaseControlProps, 'isTouched' | 'isInvalid' | 'isValid'>;
 
 const StyledLabel = styled.label`
 	display: inline-grid;
@@ -112,18 +112,18 @@ export const FormControl: FC<FormControlProps> = props => {
 					'is-required': props.isRequired,
 					'is-invalid': props.isInvalid,
 					'is-valid': props.isValid,
-					'is-touched': props.isTouched
-				}
+					'is-touched': props.isTouched,
+				},
 			)}
 		>
-			<LabelComponent className="FormControl-label">
+			<LabelComponent className='FormControl-label'>
 				{props.label}
 			</LabelComponent>
 			{props.children}
 			{props.helperText && (
 				<InputHelperText
 					id={props.helperTextId}
-					className="FormControl-helper-text"
+					className='FormControl-helper-text'
 				>
 					{props.helperText}
 				</InputHelperText>

@@ -1,17 +1,17 @@
 import {
 	type ComponentType,
 	type FC,
-	type HTMLInputTypeAttribute
+	type HTMLInputTypeAttribute,
 } from 'react';
-import { CheckboxField } from '../components/form/CheckboxField';
-import { FileInputField } from '../components/form/FileInputField';
-import { RadioField } from '../components/form/RadioField';
-import { SelectField } from '../components/form/SelectField';
-import { TextAreaField } from '../components/form/TextAreaField';
-import { TextField } from '../components/form/TextField';
-import { type OptionBag } from '../components/form/types';
-import { type useForm } from '../hooks/useForm';
-import { FormSectionTitle } from './FormSectionTitle';
+import {CheckboxField} from '../components/form/CheckboxField';
+import {FileInputField} from '../components/form/FileInputField';
+import {RadioField} from '../components/form/RadioField';
+import {SelectField} from '../components/form/SelectField';
+import {TextAreaField} from '../components/form/TextAreaField';
+import {TextField} from '../components/form/TextField';
+import {type OptionBag} from '../components/form/types';
+import {type useForm} from '../hooks/useForm';
+import {FormSectionTitle} from './FormSectionTitle';
 
 export type FormItemBag = {
 	itemType: 'title' | 'input' | 'select' | 'radio' | 'checkbox' | 'textarea';
@@ -38,7 +38,7 @@ const itemTypeMap: Record<string, ComponentType<any>> = {
 	checkbox: CheckboxField,
 	radio: RadioField,
 	select: SelectField,
-	textarea: TextAreaField
+	textarea: TextAreaField,
 };
 
 const inputTypeMap: Record<string, ComponentType<any>> = {
@@ -46,7 +46,7 @@ const inputTypeMap: Record<string, ComponentType<any>> = {
 	number: TextField,
 	date: TextField,
 	email: TextField,
-	file: FileInputField
+	file: FileInputField,
 };
 
 const getFormItem = (itemType: string, inputType?: string) => {
@@ -66,10 +66,10 @@ type Props = {
 	formState: ReturnType<typeof useForm>;
 };
 
-export const FormItemGenerator: FC<Props> = ({ items, formState }) => (
+export const FormItemGenerator: FC<Props> = ({items, formState}) => (
 	<>
 		{items.map((itemProps, itemIndex) => {
-			const { itemType, inputType, ...props } = itemProps;
+			const {itemType, inputType, ...props} = itemProps;
 
 			const FormItem = getFormItem(itemType, inputType);
 
@@ -80,8 +80,8 @@ export const FormItemGenerator: FC<Props> = ({ items, formState }) => (
 					type={inputType}
 					isInvalid={Boolean(formState.errors[itemProps.name!])}
 					helperText={
-						formState.errors[itemProps.name!] ??
-						itemProps.helperText
+						formState.errors[itemProps.name!]
+						?? itemProps.helperText
 					}
 				/>
 			);

@@ -1,4 +1,4 @@
-import { type Breakpoint, type Theme, useMediaQuery } from '@mui/material';
+import {type Breakpoint, type Theme, useMediaQuery} from '@mui/material';
 
 type UseBreakpointHook = (
 	direction: 'up' | 'down',

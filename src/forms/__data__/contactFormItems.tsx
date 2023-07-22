@@ -1,5 +1,5 @@
-import { Link } from '../../components/base/Link';
-import { type FormItemBag } from '../FormItemGenerator';
+import {Link} from '../../components/base/Link';
+import {type FormItemBag} from '../FormItemGenerator';
 
 export const contactFormItems: FormItemBag[] = [
 	{
@@ -8,7 +8,7 @@ export const contactFormItems: FormItemBag[] = [
 		label: 'Full Name',
 		name: 'name',
 		placeholder: 'John',
-		required: true
+		required: true,
 	},
 	{
 		itemType: 'input',
@@ -16,8 +16,8 @@ export const contactFormItems: FormItemBag[] = [
 		required: true,
 		label: 'Email',
 		name: 'email',
-		helperText: "We'll respond to this email address.",
-		placeholder: 'johnsnow@gmail.com'
+		helperText: 'We\'ll respond to this email address.',
+		placeholder: 'johnsnow@gmail.com',
 	},
 	{
 		itemType: 'textarea',
@@ -26,7 +26,7 @@ export const contactFormItems: FormItemBag[] = [
 		required: true,
 		placeholder:
 			'Let us know how we can help you! Something like, "I would like to book an appointment, but I have a few questions first."',
-		rows: 5
+		rows: 5,
 	},
 	{
 		itemType: 'checkbox',
@@ -39,15 +39,15 @@ export const contactFormItems: FormItemBag[] = [
 				label: (
 					<>
 						I agree to the{' '}
-						<Link href="/terms/terms-and-conditions">
+						<Link href='/terms/terms-and-conditions'>
 							Terms and Conditions
 						</Link>{' '}
 						and the{' '}
-						<Link href="/terms/privacy-policy">Privacy Policy</Link>
+						<Link href='/terms/privacy-policy'>Privacy Policy</Link>
 						.
 					</>
-				)
-			}
-		]
-	}
+				),
+			},
+		],
+	},
 ];

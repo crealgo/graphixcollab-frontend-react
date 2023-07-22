@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { type GetStaticProps, type NextPage } from 'next';
-import { BlogBlock } from '../../components/base/BlogBlock';
+import {type GetStaticProps, type NextPage} from 'next';
+import {BlogBlock} from '../../components/base/BlogBlock';
 import {
 	PageHeaderBlock,
-	type PageHeaderBlockProps
+	type PageHeaderBlockProps,
 } from '../../components/block/PageHeaderBlock';
-import { PageTitle } from '../../components/utility/PageTitle';
-import { DefaultLayout } from '../../layouts/DefaultLayout';
-import { Container } from '../../components/base/Container';
-import { Mark } from '../../components/base/Mark';
+import {PageTitle} from '../../components/utility/PageTitle';
+import {DefaultLayout} from '../../layouts/DefaultLayout';
+import {Container} from '../../components/base/Container';
+import {Mark} from '../../components/base/Mark';
 
 type PageProps = {
 	pageTitle: string;
@@ -19,7 +19,7 @@ type PageProps = {
 const content = (
 	<>
 		<h1>
-			Privacy Policy for <Mark color="magenta">Graphix Collab, LLC</Mark>
+			Privacy Policy for <Mark color='magenta'>Graphix Collab, LLC</Mark>
 		</h1>
 		<p>
 			At Graphix Collab, accessible from graphixcollab.com, one of our
@@ -213,10 +213,9 @@ const content = (
 		</p>
 		<p>
 			Our Privacy Policy was created with the help of the{' '}
-			<a href="https://www.termsfeed.com/privacy-policy-generator/">
+			<a href='https://www.termsfeed.com/privacy-policy-generator/'>
 				Privacy Policy Generator
-			</a>
-			.
+			</a>.
 		</p>
 		<h2>Contact Us</h2>
 		<p>
@@ -226,22 +225,20 @@ const content = (
 	</>
 );
 
-const Page: NextPage<PageProps> = props => {
-	return (
-		<DefaultLayout>
-			<PageTitle text={props.pageTitle} />
-			<PageHeaderBlock
-				title={props.pageTitle}
-				{...props.pageHeaderProps}
-			/>
-			<Container>
-				<BlogBlock>
-					<div className="blog-container">{content}</div>
-				</BlogBlock>
-			</Container>
-		</DefaultLayout>
-	);
-};
+const Page: NextPage<PageProps> = props => (
+	<DefaultLayout>
+		<PageTitle text={props.pageTitle}/>
+		<PageHeaderBlock
+			title={props.pageTitle}
+			{...props.pageHeaderProps}
+		/>
+		<Container>
+			<BlogBlock>
+				<div className='blog-container'>{content}</div>
+			</BlogBlock>
+		</Container>
+	</DefaultLayout>
+);
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => ({
 	props: {
@@ -250,10 +247,10 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => ({
 			description: '',
 			ImageProps: {
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
-				alt: 'Book an Appointment w/ Graphix Collab'
-			}
-		}
-	}
+				alt: 'Book an Appointment w/ Graphix Collab',
+			},
+		},
+	},
 });
 
 export default Page;

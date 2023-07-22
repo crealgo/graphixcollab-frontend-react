@@ -1,6 +1,6 @@
-import { styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { Phone, type PhoneProps } from './Phone';
+import {styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {Phone, type PhoneProps} from './Phone';
 
 export type DualPhoneDisplayProps = {
 	phone1Props?: PhoneProps;
@@ -43,14 +43,14 @@ export const DualPhoneDisplay: FC<DualPhoneDisplayProps> = ({
 	...props
 }) => (
 	<Wrapper
-		className="DualPhoneDisplay-root"
-		role="img"
-		aria-label="Phone app display"
+		className='DualPhoneDisplay-root'
+		role='img'
+		aria-label='Phone app display'
 		{...props}
 	>
 		<InnerWrapper>
-			<Phone elevation={10} {...phone1Props} />
-			<Phone hasBorder elevation={20} {...phone2Props} />
+			<Phone elevation={10} {...phone1Props}/>
+			<Phone hasBorder elevation={20} {...phone2Props}/>
 		</InnerWrapper>
 	</Wrapper>
 );

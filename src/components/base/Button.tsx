@@ -1,15 +1,15 @@
-import { css } from '@emotion/react';
+import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { type FC } from 'react';
-import { ButtonBase, type ButtonBaseProps } from '../atoms/ButtonBase';
+import {type FC} from 'react';
+import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
 
 export type ButtonProps = {
 	color?: ColorVariants;
 } & ButtonBaseProps;
 
 const StyledButton = styled(ButtonBase)<ButtonProps>(
-	({ color = 'primary', size = 'medium' }) => css`
+	({color = 'primary', size = 'medium'}) => css`
 		border-radius: var(--button-bezel-${size});
 
 		font-weight: var(--button-font-weight);
@@ -28,13 +28,13 @@ const StyledButton = styled(ButtonBase)<ButtonProps>(
 		padding-inline: var(--input-spacing-padding-inline-${size});
 		line-height: var(--input-height-${size});
 		height: var(--input-height-${size});
-	`
+	`,
 );
 
-export const Button: FC<ButtonProps> = ({ children, className, ...props }) => (
+export const Button: FC<ButtonProps> = ({children, className, ...props}) => (
 	<StyledButton
 		{...props}
-		role="button"
+		role='button'
 		className={clsx(className, 'Button-root')}
 	>
 		{children}

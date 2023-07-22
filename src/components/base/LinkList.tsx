@@ -1,8 +1,8 @@
-import { styled } from '@mui/material/styles';
-import { type FC, type PropsWithChildren } from 'react';
-import { type NavItemOptions } from '../../types/general';
-import { Link } from './Link';
-import { LinkListItem } from './LinkListItem';
+import {styled} from '@mui/material/styles';
+import {type FC, type PropsWithChildren} from 'react';
+import {type NavItemOptions} from '../../types/general';
+import {Link} from './Link';
+import {LinkListItem} from './LinkListItem';
 
 export type LinkListProps = PropsWithChildren<{
 	// hasDivider?: boolean;
@@ -15,9 +15,9 @@ const LinkListUl = styled('ul')`
 	margin: 0;
 `;
 
-export const LinkList: FC<LinkListProps> = ({ items }) => (
+export const LinkList: FC<LinkListProps> = ({items}) => (
 	<LinkListUl>
-		{items?.map(({ label, href }, itemIndex) => (
+		{items?.map(({label, href}, itemIndex) => (
 			<LinkListItem key={itemIndex}>
 				<Link href={href ?? ''}>{label}</Link>
 			</LinkListItem>

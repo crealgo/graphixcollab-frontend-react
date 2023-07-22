@@ -3,24 +3,24 @@ import {
 	useMemo,
 	useState,
 	type FC,
-	type PropsWithChildren
+	type PropsWithChildren,
 } from 'react';
-import { ContactService } from '../components/service/ContactService';
+import {ContactService} from '../components/service/ContactService';
 import {
 	AppStateContext,
-	type AppStateContextOptions as Context
+	type AppStateContextOptions as Context,
 } from '../contexts/AppStateContext';
 
 type AppStateContextProviderProps = PropsWithChildren;
 
 export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
-	children
+	children,
 }) => {
 	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
-	const [bookingOpen, setBookingOpen] =
-		useState<Context['bookingOpen']>(false);
-	const [contactOpen, setContactOpen] =
-		useState<Context['contactOpen']>(false);
+	const [bookingOpen, setBookingOpen]
+		= useState<Context['bookingOpen']>(false);
+	const [contactOpen, setContactOpen]
+		= useState<Context['contactOpen']>(false);
 	const [bannerProps, setBannerProps] = useState<Context['BannerProps']>({});
 
 	const toggleBanner = (state?: boolean) => {
@@ -56,9 +56,9 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
 			setBannerProps,
 			toggleBanner,
 			toggleContact,
-			toggleBooking
+			toggleBooking,
 		}),
-		[bannerOpen, bannerProps, bookingOpen, contactOpen]
+		[bannerOpen, bannerProps, bookingOpen, contactOpen],
 	);
 
 	useEffect(() => {

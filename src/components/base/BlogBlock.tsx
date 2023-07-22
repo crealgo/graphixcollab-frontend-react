@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {
 	type PropsWithChildren,
 	type ComponentPropsWithRef,
-	type FC
+	type FC,
 } from 'react';
 
 export type BlockProps = {

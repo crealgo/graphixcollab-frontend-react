@@ -1,6 +1,6 @@
-import { styled } from '@mui/material';
-import { type FC } from 'react';
-import { Image, type ImageProps } from '../Image';
+import {styled} from '@mui/material';
+import {type FC} from 'react';
+import {Image, type ImageProps} from '../Image';
 
 export type FeaturedItemProps = {
 	label?: string;
@@ -43,9 +43,9 @@ const Title = styled('span')`
 	color: var(--color-gray-600);
 `;
 
-export const FeaturedItem: FC<FeaturedItemProps> = ({ ImageProps, label }) => (
+export const FeaturedItem: FC<FeaturedItemProps> = ({ImageProps, label}) => (
 	<FeaturedItemWrapper>
-		<FeaturedItemImage {...ImageProps} />
-		<Title className="Title-root">{label}</Title>
+		<FeaturedItemImage {...ImageProps}/>
+		<Title className='Title-root'>{label}</Title>
 	</FeaturedItemWrapper>
 );

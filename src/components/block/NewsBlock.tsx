@@ -1,8 +1,8 @@
-import { styled, Typography } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { type Action, type Article } from '../../types/general';
-import { ActionStack } from '../base/ActionStack';
-import { NewsCard } from '../base/NewsCard';
+import {styled, Typography} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {type Action, type Article} from '../../types/general';
+import {ActionStack} from '../base/ActionStack';
+import {NewsCard} from '../base/NewsCard';
 
 /** START PLAYGROUND */
 
@@ -14,7 +14,7 @@ export type NewsBlockProps = {
 } & ComponentPropsWithoutRef<'div'>;
 
 export const NewsBlockWrapper = styled('div')(
-	({ theme }) => /* scss */ `
+	({theme}) => /* scss */ `
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
@@ -30,36 +30,36 @@ export const NewsBlockWrapper = styled('div')(
 		${theme.breakpoints.up('md')} {
 			grid-template-columns: repeat(4, 1fr);
 		}
-	`
+	`,
 );
 
 const NewsBlockContent = styled('div')(
-	({ theme }) => /* scss */ `
+	({theme}) => /* scss */ `
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		padding: ${theme.spacing(2)};
-	`
+	`,
 );
 
 export const NewsBlock: FC<NewsBlockProps> = ({
 	articles,
 	meta,
 	title,
-	actions
+	actions,
 }) => (
-	<NewsBlockWrapper className="NewsBlock-root">
+	<NewsBlockWrapper className='NewsBlock-root'>
 		<NewsBlockContent>
-			<Typography variant="h2" className="NewsBlock-contentMeta">
+			<Typography variant='h2' className='NewsBlock-contentMeta'>
 				{meta}
 			</Typography>
-			<Typography variant="body1" className="NewsBlock-contentTitle">
+			<Typography variant='body1' className='NewsBlock-contentTitle'>
 				{title}
 			</Typography>
-			<ActionStack actions={actions} />
+			<ActionStack actions={actions}/>
 		</NewsBlockContent>
 		{articles?.map((article, articleIndex) => (
-			<NewsCard key={articleIndex} article={article} />
+			<NewsCard key={articleIndex} article={article}/>
 		))}
 	</NewsBlockWrapper>
 );

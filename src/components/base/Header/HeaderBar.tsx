@@ -1,7 +1,7 @@
-import { css, styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { _e } from '../../../utils/excludePropsFromForwarding';
-import { Container } from '../Container';
+import {css, styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {_e} from '../../../utils/excludePropsFromForwarding';
+import {Container} from '../Container';
 
 type HeaderBarProps = ComponentPropsWithoutRef<'header'> & {
 	isScrolled?: boolean;
@@ -10,8 +10,8 @@ type HeaderBarProps = ComponentPropsWithoutRef<'header'> & {
 
 export const StyledHeaderBar = styled(
 	'header',
-	_e('isBranded', 'isScrolled')
-)<HeaderBarProps>(({ theme, isScrolled }) => {
+	_e('isBranded', 'isScrolled'),
+)<HeaderBarProps>(({theme, isScrolled}) => {
 	const backgroundColor = isScrolled ? 'white' : 'transparent';
 	const borderBottomColor = isScrolled
 		? 'var(--color-gray-200)'
@@ -43,7 +43,7 @@ export const StyledHeaderBar = styled(
 	`;
 });
 
-export const HeaderBar: FC<HeaderBarProps> = ({ children, ...props }) => (
+export const HeaderBar: FC<HeaderBarProps> = ({children, ...props}) => (
 	<StyledHeaderBar {...props}>
 		<Container>{children}</Container>
 	</StyledHeaderBar>

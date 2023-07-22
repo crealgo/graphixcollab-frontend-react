@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import CheckedIcon from '@mui/icons-material/CheckBox';
 import UncheckedIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import { forwardRef, type ComponentPropsWithRef } from 'react';
-import { type OptionBag } from './types';
+import {forwardRef, type ComponentPropsWithRef} from 'react';
+import {type OptionBag} from './types';
 
 export type CheckboxInputProps = OptionBag &
-	BaseControlProps &
-	ComponentPropsWithRef<'input'>;
+BaseControlProps &
+ComponentPropsWithRef<'input'>;
 
 const inputSize = '1.25rem';
 
@@ -37,9 +37,9 @@ const CheckboxLabel = styled.label`
 const Checkbox = styled('input', {
 	shouldForwardProp: prop =>
 		!['inputSize', 'isTouched', 'isInvalid', 'isValid', 'label'].includes(
-			prop
-		)
-})/* scss */ `
+			prop,
+		),
+})/* scss */`
 	opacity: 0;
 	position: absolute;
 	cursor: pointer;
@@ -82,15 +82,15 @@ const Checkbox = styled('input', {
 export const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
 	(props, ref) => (
 		<CheckboxLabel htmlFor={props.id}>
-			<Checkbox ref={ref} {...props} value="yes" type="checkbox" />
-			<div className="CheckboxInput-indicator">
-				<CheckedIcon className="CheckboxInput-icon is-checked" />
-				<UncheckedIcon className="CheckboxInput-icon is-unchecked" />
+			<Checkbox ref={ref} {...props} value='yes' type='checkbox'/>
+			<div className='CheckboxInput-indicator'>
+				<CheckedIcon className='CheckboxInput-icon is-checked'/>
+				<UncheckedIcon className='CheckboxInput-icon is-unchecked'/>
 			</div>
-			<span className="CheckboxInput-text">
+			<span className='CheckboxInput-text'>
 				<span>{props.label}</span>
-				<small className="CheckboxInput-meta">{props.meta}</small>
+				<small className='CheckboxInput-meta'>{props.meta}</small>
 			</span>
 		</CheckboxLabel>
-	)
+	),
 );

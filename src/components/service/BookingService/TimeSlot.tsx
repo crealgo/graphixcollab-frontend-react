@@ -1,20 +1,20 @@
-import { css, styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { type ServiceInformation } from './steps/data';
+import {css, styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {type ServiceInformation} from './steps/data';
 
 export type BookingOptionProps = Record<string, unknown> &
-	ServiceInformation &
-	ComponentPropsWithoutRef<'input'>;
+ServiceInformation &
+ComponentPropsWithoutRef<'input'>;
 
-const BaseElement: FC<BookingOptionProps> = ({ label, name, ...props }) => (
+const BaseElement: FC<BookingOptionProps> = ({label, name, ...props}) => (
 	<>
 		<label htmlFor={name}>{label}</label>
-		<input hidden type="radio" id={name} {...props} />
+		<input hidden type='radio' id={name} {...props}/>
 	</>
 );
 
 export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
-	({ theme }) => css`
+	({theme}) => css`
 		cursor: pointer;
 
 		display: inline-flex;
@@ -51,5 +51,5 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 			outline: solid 2px var(--color-gray-800);
 			outline-offset: 3px;
 		}
-	`
+	`,
 );

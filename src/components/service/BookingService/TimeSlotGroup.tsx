@@ -1,12 +1,12 @@
-import { styled } from '@mui/material';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
+import {styled} from '@mui/material';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 const BaseElement: FC<
-	ComponentPropsWithoutRef<'div'> & {
-		name?: string;
-	}
-> = ({ name, children, ...props }) => (
-	<div {...props} role="radiogroup" aria-labelledby={name}>
+ComponentPropsWithoutRef<'div'> & {
+	name?: string;
+}
+> = ({name, children, ...props}) => (
+	<div {...props} role='radiogroup' aria-labelledby={name}>
 		<span hidden id={name}>
 			Some Title
 		</span>

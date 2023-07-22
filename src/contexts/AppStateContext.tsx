@@ -1,5 +1,5 @@
-import { type BannerProps } from '../components/base/Banner';
-import { createContext, type Dispatch, type SetStateAction } from 'react';
+import {type BannerProps} from '../components/base/Banner';
+import {createContext, type Dispatch, type SetStateAction} from 'react';
 
 export type AppStateContextOptions = {
 	bannerOpen: boolean;
@@ -15,5 +15,5 @@ export type AppStateContextOptions = {
 };
 
 export const AppStateContext = createContext<
-	AppStateContextOptions | undefined
+AppStateContextOptions | undefined
 >(undefined);

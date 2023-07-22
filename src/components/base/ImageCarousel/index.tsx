@@ -1,9 +1,9 @@
-import { useControlled } from '@mui/material';
+import {useControlled} from '@mui/material';
 import clsx from 'clsx';
-import { type FC } from 'react';
-import { Image } from '../Image';
-import { DotsInput } from './DotsInput';
-import { ImageCarouselWrapper } from './ImageCarouselWrapper';
+import {type FC} from 'react';
+import {Image} from '../Image';
+import {DotsInput} from './DotsInput';
+import {ImageCarouselWrapper} from './ImageCarouselWrapper';
 
 export type SharedCarouseProps = {
 	height?: number;
@@ -30,7 +30,7 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 	const [index, setIndex] = useControlled({
 		default: 0,
 		controlled: currentIndex,
-		name: 'Dots Input Index'
+		name: 'Dots Input Index',
 	});
 
 	return (
@@ -42,17 +42,17 @@ export const ImageCarousel: FC<CarouselCardProps> = ({
 		>
 			{images.length
 				? images.map((imageSrc, imageIndex) => (
-						<Image
-							key={imageIndex}
-							className={clsx('Carousel-image', {
-								'Carousel-selected': index === imageIndex
-							})}
-							// ImageElementProps={{
-							// 	src: imageSrc,
-							// 	alt: `Carousel Image ${imageIndex}`
-							// }}
-						/>
-				  ))
+					<Image
+						key={imageIndex}
+						className={clsx('Carousel-image', {
+							'Carousel-selected': index === imageIndex,
+						})}
+						// ImageElementProps={{
+						// 	src: imageSrc,
+						// 	alt: `Carousel Image ${imageIndex}`
+						// }}
+					/>
+				))
 				: null}
 			<DotsInput
 				currentIndex={index}

@@ -1,5 +1,5 @@
 export const generateBaseInputStyles = ({
-	inputSize = 'medium'
+	inputSize = 'medium',
 }: BaseControlProps) => /* scss */ `
 	--input-placeholder-color: var(--color-gray-300);
 	--input-background-color: var(--color-white);

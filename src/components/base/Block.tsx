@@ -1,8 +1,8 @@
-import { styled } from '@mui/material';
-import { css } from 'code-tag';
+import {styled} from '@mui/material';
+import {css} from 'code-tag';
 import clsx from 'clsx';
-import { type ComponentPropsWithRef, type FC } from 'react';
-import { _e } from '../../utils/excludePropsFromForwarding';
+import {type ComponentPropsWithRef, type FC} from 'react';
+import {_e} from '../../utils/excludePropsFromForwarding';
 
 export type BlockProps = {
 	/**
@@ -22,8 +22,8 @@ const StyledDiv = styled(
 		'color',
 		'isRounded',
 		'isClipped',
-		'hasNoHorizontalPadding'
-	)
+		'hasNoHorizontalPadding',
+	),
 )<BlockProps>(
 	({
 		theme,
@@ -31,14 +31,14 @@ const StyledDiv = styled(
 		hasNoDefaultMargin,
 		hasNoHorizontalPadding,
 		isClipped,
-		isRounded = false
+		isRounded = false,
 	}) => {
 		const blockColor = {
 			default: 'transparent',
 			primary: 'var(--color-brand-primary-lighter)',
 			secondary: 'var(--color-brand-secondary-lighter)',
 			tertiary: 'var(--color-brand-tertiary-lighter)',
-			grey: 'var(--color-gray-50)'
+			grey: 'var(--color-gray-50)',
 		}[color ?? 'default'];
 
 		const borderColor = {
@@ -46,7 +46,7 @@ const StyledDiv = styled(
 			primary: 'var(--color-brand-primary-main)',
 			secondary: 'var(--color-brand-secondary-main)',
 			tertiary: 'var(--color-brand-tertiary-main)',
-			grey: 'var(--color-gray-200)'
+			grey: 'var(--color-gray-200)',
 		}[color ?? 'default'];
 
 		return css`
@@ -58,8 +58,8 @@ const StyledDiv = styled(
 			${theme.breakpoints.up('md')} {
 				--section-padding-block: var(--section-tablet-padding-block);
 				--section-padding-inline: ${hasNoHorizontalPadding
-					? 'unset'
-					: 'var(--section-tablet-padding-inline)'};
+		? 'unset'
+		: 'var(--section-tablet-padding-inline)'};
 				--section-margin-inline: var(--section-tablet-margin-inline);
 				--section-border-radius: 0.5rem;
 			}
@@ -67,8 +67,8 @@ const StyledDiv = styled(
 			${theme.breakpoints.up('xl')} {
 				--section-padding-block: var(--section-desktop-padding-block);
 				--section-padding-inline: ${hasNoHorizontalPadding
-					? 'unset'
-					: 'var(--section-tablet-padding-inline)'};
+		? 'unset'
+		: 'var(--section-tablet-padding-inline)'};
 			}
 
 			background-color: ${blockColor};
@@ -78,17 +78,17 @@ const StyledDiv = styled(
 			padding-block: var(--section-padding-block);
 			padding-inline: var(--section-padding-inline);
 			margin-inline: ${hasNoDefaultMargin
-				? 'unset'
-				: 'var(--section-margin-inline)'};
+		? 'unset'
+		: 'var(--section-margin-inline)'};
 			border-radius: ${isRounded
-				? 'var(--section-border-radius)'
-				: 'none'};
+		? 'var(--section-border-radius)'
+		: 'none'};
 			${isClipped ? 'overflow: hidden;' : ''};
 		`;
-	}
+	},
 );
 
-export const Block: FC<BlockProps> = ({ className, children, ...props }) => (
+export const Block: FC<BlockProps> = ({className, children, ...props}) => (
 	<StyledDiv {...props} className={clsx('Block-root', className)}>
 		{children}
 	</StyledDiv>

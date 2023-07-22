@@ -37,9 +37,9 @@ const BrandDotsWrapper = styled.span<BrandDotsProps>`
 
 export const BrandDots = () => (
 	<BrandDotsWrapper>
-		<div />
-		<div />
-		<div />
-		<div />
+		<div/>
+		<div/>
+		<div/>
+		<div/>
 	</BrandDotsWrapper>
 );

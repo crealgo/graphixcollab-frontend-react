@@ -1,13 +1,13 @@
-import { type GetStaticProps, type NextPage } from 'next';
+import {type GetStaticProps, type NextPage} from 'next';
 import {
 	PageHeaderBlock,
-	type PageHeaderBlockProps
+	type PageHeaderBlockProps,
 } from '../components/block/PageHeaderBlock';
-import { DefaultLayout } from '../layouts/DefaultLayout';
-import { generateFooter, generatePageHeaderBlock } from '../utils/chance';
-import { type FooterBlockProps } from '../components/block/FooterBlock';
-import { AppointBookEmbed } from '../components/embed/AppointBookEmbed';
-import { PageTitle } from '../components/utility/PageTitle';
+import {DefaultLayout} from '../layouts/DefaultLayout';
+import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
+import {type FooterBlockProps} from '../components/block/FooterBlock';
+import {AppointBookEmbed} from '../components/embed/AppointBookEmbed';
+import {PageTitle} from '../components/utility/PageTitle';
 import styled from '@emotion/styled';
 
 type PageProps = {
@@ -21,18 +21,18 @@ const Spacer = styled.div`
 
 const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
-		<PageTitle text="Book Appointment" />
+		<PageTitle text='Book Appointment'/>
 		<PageHeaderBlock
-			title="Book Appointment"
-			description="Book an appointment to speak with our team! Open doors to a wide range of printing options, from apparel and promotional products to signage and more. Our state-of-the-art equipment and skilled professionals guarantee outstanding results that exceed your expectations."
+			title='Book Appointment'
+			description='Book an appointment to speak with our team! Open doors to a wide range of printing options, from apparel and promotional products to signage and more. Our state-of-the-art equipment and skilled professionals guarantee outstanding results that exceed your expectations.'
 			ImageProps={{
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
-				alt: 'Book an Appointment w/ Graphix Collab'
+				alt: 'Book an Appointment w/ Graphix Collab',
 			}}
 			// add 'contact us' actions
 		/>
 		<Spacer>
-			<AppointBookEmbed />
+			<AppointBookEmbed/>
 		</Spacer>
 	</DefaultLayout>
 );
@@ -40,8 +40,8 @@ const ServicesPage: NextPage<PageProps> = props => (
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		PageHeaderBlockProps: generatePageHeaderBlock(),
-		FooterProps: generateFooter()
-	}
+		FooterProps: generateFooter(),
+	},
 });
 
 export default ServicesPage;

@@ -1,13 +1,13 @@
-import { Cancel, CheckCircle, MailTwoTone } from '@mui/icons-material';
+import {Cancel, CheckCircle, MailTwoTone} from '@mui/icons-material';
 import {
 	DialogActions,
 	DialogContent,
 	DialogTitle,
-	Paper
+	Paper,
 } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { type FC, type MouseEvent } from 'react';
-import { Button } from '../base/Button';
+import {styled} from '@mui/material/styles';
+import {type FC, type MouseEvent} from 'react';
+import {Button} from '../base/Button';
 
 type DialogServiceProps = {
 	// FIXME: open?: boolean;
@@ -39,18 +39,18 @@ export const SquareBookingService: FC<DialogServiceProps> = props => (
 	<Modal>
 		<DialogTitle>
 			<span>Contact Us</span>
-			<MailTwoTone color="primary" />
+			<MailTwoTone color='primary'/>
 		</DialogTitle>
-		<StyledDialogContent />
+		<StyledDialogContent/>
 		<DialogActions>
 			<Button
-				color="text"
-				endIcon={<Cancel color="error" />}
+				color='text'
+				endIcon={<Cancel color='error'/>}
 				onClick={props.onCloseClick}
 			>
 				Cancel
 			</Button>
-			<Button color="tertiary" endIcon={<CheckCircle color="success" />}>
+			<Button color='tertiary' endIcon={<CheckCircle color='success'/>}>
 				Submit
 			</Button>
 		</DialogActions>
