@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jul 2023 20:37:35 GMT
+ * Generated on Sun, 23 Jul 2023 21:23:56 GMT
  */
 
 module.exports = {
@@ -5458,7 +5458,7 @@ module.exports = {
       "color": {
         "value": "#0c0a09",
         "original": {
-          "value": "{color.brand.key.lighter}"
+          "value": "{color.brand.key.lightest}"
         },
         "name": "InputBorderColor",
         "attributes": {

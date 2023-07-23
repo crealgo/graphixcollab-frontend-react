@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Jul 2023 20:37:35 GMT
+ * Generated on Sun, 23 Jul 2023 21:23:56 GMT
  */
 
 :root {
@@ -297,8 +297,8 @@
   --input-text-color: #1c1917;
   --input-border-style: solid;
   --input-border-width: 0.0625rem;
-  --input-border-color: #9b8479;
-  --input-border-composite: solid 0.0625rem #9b8479;
+  --input-border-color: #a69288;
+  --input-border-composite: solid 0.0625rem #a69288;
   --input-spacing-padding-inline-small: 0.5rem;
   --input-spacing-padding-inline-medium: 0.75rem;
   --input-spacing-padding-inline-large: 0.875rem;
@@ -326,9 +326,9 @@
   --button-text-color-secondary: #ffffff;
   --button-text-color-tertiary: #1c1917;
   --button-text-color-text: #1c1917;
-  --button-border-primary: solid 0.0625rem #9b8479;
-  --button-border-secondary: solid 0.0625rem #9b8479;
-  --button-border-tertiary: solid 0.0625rem #9b8479;
+  --button-border-primary: solid 0.0625rem #a69288;
+  --button-border-secondary: solid 0.0625rem #a69288;
+  --button-border-tertiary: solid 0.0625rem #a69288;
   --button-border-text: none;
   --button-background-color-primary: #00aad2;
   --button-background-color-secondary: #d40072;
