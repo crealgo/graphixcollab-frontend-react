@@ -21,7 +21,7 @@ export type FormControlProps = {
 } & Pick<BaseComponentProps, 'className' | 'children'> &
 Pick<BaseControlProps, 'isTouched' | 'isInvalid' | 'isValid'>;
 
-const StyledLabel = styled.label`
+const Wrapper = styled.div`
 	display: inline-grid;
 	grid-template-columns: 1fr;
 	place-items: start;
@@ -74,7 +74,7 @@ const StyledLabel = styled.label`
 `;
 
 export const FormControl: FC<FormControlProps> = props => {
-	const wrapperRef = useRef<HTMLLabelElement>(null);
+	const wrapperRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (wrapperRef.current) {
@@ -90,19 +90,9 @@ export const FormControl: FC<FormControlProps> = props => {
 		}
 	}, [wrapperRef]);
 
-	let WrapperComponent: 'label' | 'fieldset' = 'label';
-	let LabelComponent: 'span' | 'legend' = 'span';
-
-	if (props.isFieldset) {
-		WrapperComponent = 'fieldset';
-		LabelComponent = 'legend';
-	}
-
 	return (
-		<StyledLabel
+		<Wrapper
 			ref={wrapperRef}
-			as={WrapperComponent}
-			htmlFor={props.isFieldset ? undefined : props.labelFor}
 			className={clsx(
 				props.className,
 				'FormControl-root',
@@ -116,9 +106,12 @@ export const FormControl: FC<FormControlProps> = props => {
 				},
 			)}
 		>
-			<LabelComponent className='FormControl-label'>
+			<label
+				className='FormControl-label'
+				htmlFor={props.labelFor}
+			>
 				{props.label}
-			</LabelComponent>
+			</label>
 			{props.children}
 			{props.helperText && (
 				<InputHelperText
@@ -128,6 +121,6 @@ export const FormControl: FC<FormControlProps> = props => {
 					{props.helperText}
 				</InputHelperText>
 			)}
-		</StyledLabel>
+		</Wrapper>
 	);
 };
