@@ -1,21 +1,11 @@
 import {useState, type FormEventHandler} from 'react';
 
-type FormState = {
-	// TODO: change boolean to enum status e.g. 'idle' | 'submitting' | 'submitted' | 'successful'
-	isSubmitting: boolean;
-	isSubmitted: boolean;
-	isSuccessful: boolean;
-	response: Response | null;
-	errors: Record<string, string[]>;
-	handleReset: () => void;
-	handleSubmit: FormEventHandler<HTMLFormElement>;
-};
+// type FormStatus = 'idle' | 'submitting' | 'submitted' | 'successful';
 
-export const useForm = (): FormState => {
+export const useForm = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const [isSuccessful, setIsSuccessful] = useState(false);
-
 	const [errors, setErrors] = useState<ApiErrorBag>({});
 	const [response, setResponse] = useState<Response | null>(null);
 
@@ -27,8 +17,36 @@ export const useForm = (): FormState => {
 		setResponse(null);
 	};
 
-	const submitForm = async (form: HTMLFormElement) => {
-		const formData = new FormData(form);
+	let formData: FormData;
+	let form: HTMLFormElement;
+
+	const processFileInputs = async () => {
+		const fileInputs = form.querySelectorAll<HTMLInputElement>('input[type="file"]');
+
+		if (fileInputs.length === 0) {
+			return;
+		}
+
+		const fileInputKeys = [...fileInputs].map(input => input.name);
+
+		for await (const key of fileInputKeys) {
+			if (formData.has(key)) {
+				let fileIndex = 0;
+
+				for await (const file of formData.getAll(key)) {
+					formData.append(`${key}[${fileIndex}]`, file);
+					fileIndex++;
+				}
+
+				formData.delete(key);
+			}
+		}
+	};
+
+	const submitForm = async () => {
+		await processFileInputs();
+
+		console.log(Object.fromEntries(formData.entries()));
 
 		const response = await fetch(form.action, {
 			method: form.method,
@@ -51,9 +69,12 @@ export const useForm = (): FormState => {
 		event.preventDefault();
 		handleReset();
 
+		form = event.currentTarget;
+		formData = new FormData(form);
+
 		setIsSubmitting(true);
 
-		void submitForm(event.currentTarget);
+		void submitForm();
 	};
 
 	return {
@@ -66,3 +87,5 @@ export const useForm = (): FormState => {
 		handleSubmit,
 	};
 };
+
+export type FormState = ReturnType<typeof useForm>;

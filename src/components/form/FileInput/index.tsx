@@ -4,10 +4,12 @@ import {forwardRef, useState, type ChangeEvent, type ReactNode} from 'react';
 import {Text} from '../../base/Text';
 import {type InputProps} from '../Input';
 import {FileDisplayList} from './FileDisplayList';
+import {FileInputDisplay} from './FileInputDisplay';
 import {FileListItem} from './FileListItem';
-import {DefaultFileInputDisplay, BaseElement} from './styles';
+import {BaseWrapper} from './BaseWrapper';
+import {BaseInput} from './BaseInput';
 
-export type FileInputProps = InputProps & {
+export type FileInputProps = Omit<InputProps, 'isInvalid' | 'isValid' | 'isTouched'> & {
 	displayText?: ReactNode;
 };
 
@@ -33,13 +35,13 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
 			))}
 		</FileDisplayList>
 	) : (
-		<DefaultFileInputDisplay>
+		<>
 			{displayText}
 			<small className='accepts'>
 				Supported file types:{' '}
 				{props.accept?.replaceAll(',', ', ')}
 			</small>
-		</DefaultFileInputDisplay>
+		</>
 	);
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +53,7 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
 	};
 
 	return (
-		<BaseElement
+		<BaseWrapper
 			className={clsx('FileInput-root', className, {
 				'has-files': Boolean(files),
 				'is-drag-active': isActive,
@@ -60,8 +62,10 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
 			role='combobox'
 			tabIndex={0}
 		>
-			{resolvedDisplayText}
-			<input
+			<FileInputDisplay>
+				{resolvedDisplayText}
+			</FileInputDisplay>
+			<BaseInput
 				{...props}
 				ref={ref}
 				className='FileInput-input'
@@ -81,12 +85,11 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
 					setIsActive(false);
 				}}
 				onDrop={event => {
-					// event.preventDefault();
 					setIsActive(false);
 					setFiles(event.dataTransfer.files);
 				}}
 			/>
-		</BaseElement>
+		</BaseWrapper>
 	);
 },
 );
