@@ -63,6 +63,7 @@ const Wrapper = styled(Block)<PageHeaderBlockProps>(({
 		border-left: unset;
 
 		padding-bottom: var(--wrapper-padding-bottom);
+		height: 100%;
 
 		.PageHeaderBlock-container {
 			position: relative;
