@@ -14,11 +14,17 @@ import {contactFormItems as items} from './__data__/contactFormItems';
 import {getFormAction} from './__utils__/getFormAction';
 
 const StyledFormGrid = styled(FormGrid)`
+	@media screen and (min-width: 600px) {
+		padding-right: 20%;
+	}
+
 	@media screen and (min-width: 768px) {
 		.FormControl-id-name,
 		.FormControl-id-email {
-			grid-column: span 3;
+			grid-column: span 6;
 		}
+
+		padding-right: 35%;
 	}
 `;
 
