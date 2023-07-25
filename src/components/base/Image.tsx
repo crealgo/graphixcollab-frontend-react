@@ -61,7 +61,7 @@ export const Image = styled(BaseElement)(({shape}) => {
 		grid-template-columns: 1fr;
 		gap: 0.5rem;
 
-		background-color: var(--color-gray-200);
+		background-color: var(--color-brand-key-lightest);
 
 		/* FIXME: doesn't work well with caption, needs wrapper around image */
 		${shapeCss}

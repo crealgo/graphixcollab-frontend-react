@@ -18,9 +18,9 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		padding-block: 0.75rem;
 
 		border-radius: 0.25rem;
-		background-color: var(--color-gray-300);
-		border: solid 1px var(--color-gray-50);
-		outline: solid 1px var(--color-gray-400);
+		background-color: var(--color-brand-key-lighter);
+		border: solid 1px var(--color-brand-key-lightest);
+		outline: solid 1px var(--color-brand-key-lighter);
 	`}
 
 		display: grid;
@@ -28,7 +28,7 @@ const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 		gap: 0.25rem;
 
 		align-items: center;
-		color: var(--color-gray-700);
+		color: var(--color-brand-key-darker);
 
 		${isActionable
 		? css`

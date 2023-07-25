@@ -45,8 +45,8 @@ export const Page = () => {
 		<DefaultLayout>
 			<PageTitle text='About Us'/>
 			<PageHeaderBlock
-				color='secondary'
-				title='Our Services'
+				color='yellow'
+				title='About Us'
 				description='Graphix Collab was founded with a vision to provide top-quality printing solutions to businesses of all sizes. Since then, we have grown into a leading printing company, serving clients across various industries and sectors. We have invested in the latest printing technology, expanded our range of services, and built a team of experienced professionals who share our passion for printing.'
 				ImageProps={{
 					src: 'assets/juicy-girl-working-at-home-min@ogw.webp',

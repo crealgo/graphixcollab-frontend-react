@@ -3,10 +3,10 @@ import {IconButtonBase} from '../IconButtonBase';
 
 export const DrawerBoxClose = styled(IconButtonBase)`
 	border-radius: 9999px;
-	background-color: var(--color-gray-100);
+	background-color: var(--color-brand-key-lightest);
 	height: 2rem;
 
 	&:hover {
-		background-color: var(--color-gray-300);
+		background-color: var(--color-brand-key-lighter);
 	}
 `;

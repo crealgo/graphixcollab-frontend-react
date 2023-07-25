@@ -11,14 +11,14 @@ import {generateSizeValues} from '../utils/generators';
 export default {
 	image: {
 		borderRadius: '{shape.rounding.small}',
-		backgroundColor: '{color.gray.300}',
+		backgroundColor: '{color.brand.key.lighter}',
 	},
 	testimonial: {
 		container: {
 			gap: '{spacing.4}',
 			padding: '{spacing.6}',
 			borderRadius: '{shape.rounding.medium}',
-			border: '{spacing.px} solid {color.gray.300}',
+			border: '{spacing.px} solid {color.brand.key.lighter}',
 			backgroundColor: '{color.white}',
 			maxWidth: '34rem',
 			shadow: '{elevation.3}',
@@ -52,7 +52,7 @@ export default {
 		border: {
 			style: 'solid',
 			width: '0.0625rem',
-			color: '{color.brand.key.lightest}',
+			color: '{color.brand.key.lighter}',
 			composite:
 				'{input.border.style} {input.border.width} {input.border.color}',
 		},
@@ -86,9 +86,9 @@ export default {
 			text: '{color.text.primary}',
 		},
 		border: {
-			primary: '{input.border.composite}',
-			secondary: '{input.border.composite}',
-			tertiary: '{input.border.composite}',
+			primary: '{input.border.style} {input.border.width} {color.brand.primary.neutral}',
+			secondary: '{input.border.style} {input.border.width} {color.brand.secondary.neutral}',
+			tertiary: '{input.border.style} {input.border.width} {color.brand.tertiary.neutral}',
 			text: 'none',
 		},
 		backgroundColor: {

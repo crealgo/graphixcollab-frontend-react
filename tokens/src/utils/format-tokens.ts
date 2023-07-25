@@ -3,17 +3,17 @@ import {type FormattedTokenObject, type RawTokenObject} from '../types';
 export const generateColorVariants = (
 	baseHex: string,
 ): FormattedTokenObject => ({
+	main: {value: baseHex},
 	lightest: {value: baseHex},
 	lighter: {value: baseHex},
 	light: {value: baseHex},
-	main: {value: baseHex},
+	neutral: {value: baseHex},
 	dark: {value: baseHex},
 	darker: {value: baseHex},
 	darkest: {value: baseHex},
 	contrast: {value: baseHex},
 });
 
-// const variantCheck = /(?<hex>.*)(.\s)!!has-variants/g;
 const variantCheck = ' !!has-variants';
 
 export const formatTokens = (tokens: RawTokenObject): FormattedTokenObject => {

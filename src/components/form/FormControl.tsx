@@ -50,7 +50,7 @@ const Wrapper = styled.div`
 	&.is-fieldset .FormControl-label {
 		padding-bottom: 0.25rem;
 		margin-bottom: 0.5rem;
-		border-bottom: 1px solid var(--color-gray-400);
+		border-bottom: 1px solid var(--color-brand-key-lighter);
 	}
 
 	&.is-required .FormControl-label::after {

@@ -14,7 +14,7 @@ const FanServiceBlockWrapper = styled('div')(
 		grid-template-columns: 1fr;
 
 		.ImageCarousel-root {
-			background-color: var(--color-gray-200);
+			background-color: var(--color-brand-key-lightest);
 			min-height: 300px;
 		}
 
@@ -29,7 +29,7 @@ const FanServiceBlockWrapper = styled('div')(
 			}
 
 			.FanServiceBlock-cta {
-				background-color: var(--color-gray-200);
+				background-color: var(--color-brand-key-lightest);
 			}
 		}
 
@@ -37,7 +37,7 @@ const FanServiceBlockWrapper = styled('div')(
 			grid-template-columns: 1fr 1fr;
 
 			.ImageCarousel-root {
-				background-color: var(--color-gray-200);
+				background-color: var(--color-brand-key-lightest);
 			}
 
 			.FanServiceBlock-content {

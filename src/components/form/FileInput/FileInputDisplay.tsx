@@ -9,6 +9,6 @@ export const FileInputDisplay = styled('div')`
 	/* pointer-events: none; */
 
 	.accepts {
-		color: var(--color-gray-500);
+		color: var(--color-brand-key-neutral);
 	}
 `;

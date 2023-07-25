@@ -15,7 +15,7 @@ ComponentPropsWithoutRef<'div'> & {
 );
 
 export const TimeSlotGroup = styled(BaseElement)`
-	border: dashed 1px var(--color-gray-400);
+	border: dashed 1px var(--color-brand-key-lighter);
 	background-color: white;
 	padding: 1rem;
 

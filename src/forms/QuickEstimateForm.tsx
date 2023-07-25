@@ -21,20 +21,26 @@ const StyledFormGrid = styled(FormGrid)`
 	@media screen and (min-width: 768px) {
 		.FormControl-id-name,
 		.FormControl-id-email {
-			grid-column: span 3;
+			grid-column: span 6;
 		}
 
 		.FormControl-id-service,
-		.FormControl-id-material,
-		.FormControl-id-quantity,
 		.FormControl-id-deadline,
 		.FormControl-id-delivery {
+			grid-column: span 3;
+		}
+
+		.FormControl-id-material {
 			grid-column: span 2;
+		}
+
+		.FormControl-id-quantity {
+			grid-column: span 1;
 		}
 
 		.FormControl-id-artwork,
 		.FormControl-id-terms {
-			grid-column: span 5;
+			grid-column: span 12;
 		}
 	}
 `;

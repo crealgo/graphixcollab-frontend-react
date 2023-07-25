@@ -27,9 +27,6 @@ for await (const filePath of filePaths) {
 
 const tokens = formatTokens(rawTokens);
 
-// console.log(inspect(tokens.sequence, false, null, true));
-
-// clean build directory
 if (existsSync(distDir)) {
 	rmSync(distDir, {recursive: true});
 }
@@ -39,7 +36,7 @@ StyleDictionary.registerTransform({
 	type: 'value',
 	transitive: true,
 	matcher: token => {
-		const tester = /darkest|darker|dark|main|light|lighter|lightest|contrast/g;
+		const tester = /main|darkest|darker|dark|neutral|light|lighter|lightest|contrast/g;
 		return tester.test(token.name);
 	},
 	transformer: token => scaleColor(token.value as string, token.name),

@@ -12,7 +12,7 @@ export const ContentBox = styled('div')<ContentBoxProps>(
 		grid-template-columns: 1fr;
 		gap: 1rem;
 
-		${isColored ? 'background-color: var(--color-gray-100);' : ''}
-		${hasBorder ? 'border-bottom: solid 1px var(--color-gray-300);' : ''}
+		${isColored ? 'background-color: var(--color-brand-key-lightest);' : ''}
+		${hasBorder ? 'border-bottom: solid 1px var(--color-brand-key-lighter);' : ''}
 	`,
 );

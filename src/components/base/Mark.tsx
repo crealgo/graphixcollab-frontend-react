@@ -5,7 +5,7 @@ import {BrandDots} from '../atoms/BrandDots';
 
 type MarkProps = BaseComponentProps & {
 	text?: boolean; // eslint-disable-line react/boolean-prop-naming
-	color?: Colors;
+	color?: ColorVariant;
 	brand?: boolean; // eslint-disable-line react/boolean-prop-naming
 };
 
@@ -32,7 +32,7 @@ const StyledMark = styled('mark')<MarkProps>(
 
 		return css`
 			${sharedCss}
-			background: var(--color-brand-${color}-lighter);
+			background: var(--color-brand-${color}-lightest);
 		`;
 	},
 );

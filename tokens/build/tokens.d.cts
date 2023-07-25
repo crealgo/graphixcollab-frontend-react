@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jul 2023 21:23:56 GMT
+ * Generated on Tue, 25 Jul 2023 06:44:38 GMT
  */
 
 export default tokens;
@@ -25,40 +25,44 @@ declare const tokens: {
   "sequence": {
     "color": {
       "0": {
+        "main": DesignToken,
         "lightest": DesignToken,
         "lighter": DesignToken,
         "light": DesignToken,
-        "main": DesignToken,
+        "neutral": DesignToken,
         "dark": DesignToken,
         "darker": DesignToken,
         "darkest": DesignToken,
         "contrast": DesignToken
       },
       "1": {
+        "main": DesignToken,
         "lightest": DesignToken,
         "lighter": DesignToken,
         "light": DesignToken,
-        "main": DesignToken,
+        "neutral": DesignToken,
         "dark": DesignToken,
         "darker": DesignToken,
         "darkest": DesignToken,
         "contrast": DesignToken
       },
       "2": {
+        "main": DesignToken,
         "lightest": DesignToken,
         "lighter": DesignToken,
         "light": DesignToken,
-        "main": DesignToken,
+        "neutral": DesignToken,
         "dark": DesignToken,
         "darker": DesignToken,
         "darkest": DesignToken,
         "contrast": DesignToken
       },
       "3": {
+        "main": DesignToken,
         "lightest": DesignToken,
         "lighter": DesignToken,
         "light": DesignToken,
-        "main": DesignToken,
+        "neutral": DesignToken,
         "dark": DesignToken,
         "darker": DesignToken,
         "darkest": DesignToken,
@@ -69,181 +73,6 @@ declare const tokens: {
   "color": {
     "white": DesignToken,
     "black": DesignToken,
-    "test": {
-      "lightest": DesignToken,
-      "lighter": DesignToken,
-      "light": DesignToken,
-      "main": DesignToken,
-      "dark": DesignToken,
-      "darker": DesignToken,
-      "darkest": DesignToken,
-      "contrast": DesignToken
-    },
-    "brand": {
-      "cyan": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "magenta": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "yellow": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "key": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "primary": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "secondary": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "tertiary": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "text": DesignToken,
-      "yelp": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "facebook": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "twitter": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "instagram": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "square": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      }
-    },
-    "feedback": {
-      "success": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "error": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "warning": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      },
-      "info": {
-        "lightest": DesignToken,
-        "lighter": DesignToken,
-        "light": DesignToken,
-        "main": DesignToken,
-        "dark": DesignToken,
-        "darker": DesignToken,
-        "darkest": DesignToken,
-        "contrast": DesignToken
-      }
-    },
     "gray": {
       "50": DesignToken,
       "100": DesignToken,
@@ -256,6 +85,187 @@ declare const tokens: {
       "800": DesignToken,
       "900": DesignToken,
       "950": DesignToken
+    },
+    "brand": {
+      "cyan": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "magenta": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "yellow": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "key": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "primary": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "secondary": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "tertiary": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "text": DesignToken,
+      "yelp": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "facebook": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "twitter": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "instagram": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "square": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      }
+    },
+    "feedback": {
+      "success": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "error": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "warning": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      },
+      "info": {
+        "main": DesignToken,
+        "lightest": DesignToken,
+        "lighter": DesignToken,
+        "light": DesignToken,
+        "neutral": DesignToken,
+        "dark": DesignToken,
+        "darker": DesignToken,
+        "darkest": DesignToken,
+        "contrast": DesignToken
+      }
     },
     "text": {
       "primary": DesignToken,

@@ -88,7 +88,7 @@ export const estimateFormItems: FormItemBag[] = [
 		inputType: 'file',
 		multiple: true,
 		name: 'artwork',
-		label: 'Artwork File(s) Bam!',
+		label: 'Artwork File(s)',
 		displayText: '🌅 Upload your artwork',
 		accept: '.gif,.jpeg,.jpg,.png,.pdf,.svg,.webp',
 		helperText:

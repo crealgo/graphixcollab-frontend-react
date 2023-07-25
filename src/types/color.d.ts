@@ -1,7 +1,9 @@
-declare type Brands = 'yelp' | 'facebook' | 'twitter' | 'instagram' | 'square';
+declare type OtherColor = 'yelp' | 'facebook' | 'twitter' | 'instagram' | 'square';
 
-declare type ColorVariants = 'primary' | 'secondary' | 'tertiary' | 'text';
+declare type GeneralColor = 'cyan' | 'magenta' | 'yellow' | 'key';
 
-declare type Colors = Brands | 'cyan' | 'magenta' | 'yellow' | 'key';
+declare type BrandColor = 'primary' | 'secondary' | 'tertiary' | 'text';
 
-declare type ColorShades = 'lighter' | 'light' | 'main' | 'dark' | 'darker';
+declare type ColorVariant = OtherColor | GeneralColor | BrandColor;
+
+declare type ColorShades = 'main' | 'lightest' | 'lighter' | 'light' | 'neutral' | 'dark' | 'darker' | 'darkest' | 'contrast';

@@ -23,13 +23,13 @@ const ServicesPage: NextPage<PageProps> = props => (
 	<DefaultLayout FooterProps={props.FooterProps}>
 		<PageTitle text='Book Appointment'/>
 		<PageHeaderBlock
+			color='cyan'
 			title='Book Appointment'
 			description='Book an appointment to speak with our team! Open doors to a wide range of printing options, from apparel and promotional products to signage and more. Our state-of-the-art equipment and skilled professionals guarantee outstanding results that exceed your expectations.'
 			ImageProps={{
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
 				alt: 'Book an Appointment w/ Graphix Collab',
 			}}
-			// add 'contact us' actions
 		/>
 		<Spacer>
 			<AppointBookEmbed/>

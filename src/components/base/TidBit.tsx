@@ -30,8 +30,7 @@ const BaseElement: FC<TidBitProps> = ({
 
 export const TidBit = styled(BaseElement)<TidBitProps>(
 	({icon, color = 'primary'}) => css`
-		--background-color: #ffffff;
-		--border-color: #cbd5e1;
+		--background-color: var(--color-white);
 
 		display: inline-flex;
 		flex-direction: row;
@@ -45,7 +44,7 @@ export const TidBit = styled(BaseElement)<TidBitProps>(
 
 		border-radius: 9999px;
 		background-color: var(--background-color);
-		border: var(--button-border-primary);
+		border: solid 1px var(--color-brand-key-lighter);
 		box-shadow: var(--button-shadow-primary);
 
 		.Button-icon {

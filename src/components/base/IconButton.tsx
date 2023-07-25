@@ -11,7 +11,7 @@ import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
 import {type CSSObject} from '@emotion/react';
 
 export type IconButtonProps = {
-	color?: ColorVariants;
+	color?: ColorVariant;
 } & IconButtonBaseProps;
 
 const StyledIconButton = styled(

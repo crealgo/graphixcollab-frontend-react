@@ -29,7 +29,7 @@ const RadioLabel = styled.label`
 
 		.RadioInput-meta {
 			line-height: normal;
-			color: var(--color-gray-500);
+			color: var(--color-brand-key-neutral);
 		}
 	}
 `;
@@ -52,7 +52,7 @@ const Radio = styled('input', {
 		.RadioInput-icon {
 			width: inherit;
 			height: inherit;
-			color: var(--color-gray-500);
+			color: var(--color-brand-key-neutral);
 			display: none;
 		}
 	}
@@ -64,8 +64,8 @@ const Radio = styled('input', {
 	&:hover,
 	&:focus-visible {
 		+ .RadioInput-indicator .RadioInput-icon {
-			color: var(--color-gray-800);
-			background-color: var(--color-gray-100);
+			color: var(--color-brand-key-darker);
+			background-color: var(--color-brand-key-lightest);
 		}
 	}
 

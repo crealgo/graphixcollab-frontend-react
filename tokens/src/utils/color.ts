@@ -1,20 +1,32 @@
-import {colord} from 'colord';
+import {TonalPalette, argbFromHex, hexFromArgb} from '@material/material-color-utilities';
 
 const scale = {
-	lightest: (baseHex: string) => colord(baseHex).lighten(0.55).toRgbString(),
-	lighter: (baseHex: string) => colord(baseHex).lighten(0.5).toRgbString(),
-	light: (baseHex: string) => colord(baseHex).lighten(0.45).toRgbString(),
-	main: (baseHex: string) => colord(baseHex).toRgbString(),
-	dark: (baseHex: string) => colord(baseHex).darken(0.125).desaturate(0.125).toRgbString(),
-	darker: (baseHex: string) => colord(baseHex).darken(0.25).desaturate(0.125).toRgbString(),
-	darkest: (baseHex: string) => colord(baseHex).darken(0.3).desaturate(0.125).toRgbString(),
-	contrast: (baseHex: string) => colord(baseHex).isDark() ? '#ffffff' : '#000000',
+	main: undefined,
+	// lightest2x: 95,
+	lightest: 92,
+	lighter: 78,
+	light: 65,
+	neutral: 50,
+	dark: 40,
+	darker: 20,
+	darkest: 10,
+	// darkest2x: 5,
+	contrast: 100,
 };
 
-export const scaleColor = (baseHex: string, variant: string): string => {
-	if (Object.keys(scale).includes(variant)) {
-		return scale[variant as keyof typeof scale](baseHex);
+type ColorShade = keyof typeof scale;
+
+export const scaleColor = (baseHex: string, variant: ColorShade): string => {
+	if (variant === 'main') {
+		return baseHex;
 	}
 
-	return baseHex;
+	const argb = argbFromHex(baseHex);
+	const toner = TonalPalette.fromInt(argb);
+
+	const toneAmount = scale[variant];
+	const newArgb = toner.tone(toneAmount);
+	const newHex = hexFromArgb(newArgb);
+
+	return newHex;
 };

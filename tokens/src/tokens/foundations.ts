@@ -7,12 +7,12 @@ const spacing = generateScaleFromObject({..._spacing});
 const color = {
 	white: colors.white,
 	black: colors.stone[900] as string,
-	test: '#00aad2 !!has-variants',
+	gray: generateScaleFromObject(colors.stone),
 	brand: {
 		cyan: '#00aad2 !!has-variants',
 		magenta: '#d40072 !!has-variants',
 		yellow: '#edb700 !!has-variants',
-		key: `${colors.stone[950]} !!has-variants`,
+		key: `${colors.stone[900]} !!has-variants`,
 
 		// as a hierarchy
 		primary: '#00aad2 !!has-variants',
@@ -33,7 +33,6 @@ const color = {
 		warning: `${colors.amber[600] as string} !!has-variants`,
 		info: `${colors.blue[600] as string} !!has-variants`,
 	},
-	gray: generateScaleFromObject(colors.stone),
 	text: {
 		primary: colors.stone[900] as string,
 		secondary: colors.stone[400] as string,

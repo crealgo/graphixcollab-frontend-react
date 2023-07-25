@@ -1,7 +1,7 @@
 export default {
 	mark: {
 		backgroundColor: 'transparent',
-		color: '{color.brand.primary.main}',
+		color: '{color.brand.primary.neutral}',
 	},
 	section: {
 		mobile: {

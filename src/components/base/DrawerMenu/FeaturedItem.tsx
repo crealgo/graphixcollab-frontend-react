@@ -16,19 +16,19 @@ const FeaturedItemWrapper = styled('div')`
 
 	&:hover {
 		.Title-root {
-			color: var(--color-gray-800);
+			color: var(--color-brand-key-darker);
 		}
 
 		.Image-root {
-			background-color: var(--color-gray-400);
-			outline: dashed 2px var(--color-gray-400);
+			background-color: var(--color-brand-key-lighter);
+			outline: dashed 2px var(--color-brand-key-lighter);
 			outline-offset: 2px;
 		}
 	}
 `;
 
 const FeaturedItemImage = styled(Image)`
-	background-color: var(--color-gray-300);
+	background-color: var(--color-brand-key-lighter);
 	width: 100%;
 	aspect-ratio: 1;
 `;
@@ -40,7 +40,7 @@ const Title = styled('span')`
 	text-overflow: ellipsis;
 	overflow: hidden;
 
-	color: var(--color-gray-600);
+	color: var(--color-brand-key-dark);
 `;
 
 export const FeaturedItem: FC<FeaturedItemProps> = ({ImageProps, label}) => (

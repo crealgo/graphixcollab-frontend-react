@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import {colord} from 'colord';
 import {type ComponentPropsWithRef, type FC} from 'react';
 import {type ActionStackProps} from './ActionStack';
 import {Heading} from './Heading';
@@ -37,7 +36,7 @@ const CardAnchor = styled.a`
 		width: 0.25rem;
 		height: calc(100% + 1rem);
 		width: calc(100% + 1rem);
-		background-color: var(--color-gray-50);
+		background-color: var(--color-brand-key-lightest);
 		border-radius: 0.5rem;
 
 		opacity: 0;
@@ -89,28 +88,22 @@ export const HorizontalCard: FC<CardProps> = ({
 	image,
 	imageColor,
 	...props
-}) => {
-	const backgroundColor = colord(imageColor ?? 'lightgray')
-		.alpha(0.375)
-		.toHex();
-
-	return (
-		<CardAnchor
-			className={clsx('HorizontalCard-root', className)}
-			{...props}
-		>
-			<CardImageBox color={backgroundColor}>
-				<CardImage {...image}/>
-			</CardImageBox>
-			<CardContent>
-				{/* <Typography variant="caption">{subtitle}</Typography> */}
-				<Heading className='title' level={5}>
-					{title}
-				</Heading>
-				<Text spacing='small' color='secondary'>
-					{description}
-				</Text>
-			</CardContent>
-		</CardAnchor>
-	);
-};
+}) => (
+	<CardAnchor
+		className={clsx('HorizontalCard-root', className)}
+		{...props}
+	>
+		<CardImageBox>
+			<CardImage {...image}/>
+		</CardImageBox>
+		<CardContent>
+			{/* <Typography variant="caption">{subtitle}</Typography> */}
+			<Heading className='title' level={5}>
+				{title}
+			</Heading>
+			<Text spacing='small' color='secondary'>
+				{description}
+			</Text>
+		</CardContent>
+	</CardAnchor>
+);

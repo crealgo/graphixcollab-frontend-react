@@ -11,7 +11,7 @@ export type BlockProps = {
 	 * Disables the block's inline margin
 	 */
 	hasNoDefaultMargin?: boolean;
-	color?: Exclude<ColorVariants, 'text'> | 'grey';
+	color?: Exclude<ColorVariant, 'text'> | 'grey';
 	isRounded?: boolean;
 	isClipped?: boolean;
 	hasNoHorizontalPadding?: boolean;

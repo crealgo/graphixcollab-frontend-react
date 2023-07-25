@@ -1,16 +1,35 @@
 /**
  * Do not edit directly
- * Generated on Sun, 23 Jul 2023 21:23:56 GMT
+ * Generated on Tue, 25 Jul 2023 06:44:38 GMT
  */
 
 module.exports = {
   "sequence": {
     "color": {
       "0": {
+        "main": {
+          "value": "#00aad2",
+          "original": {
+            "value": "{color.brand.cyan.neutral}"
+          },
+          "name": "SequenceColor0Main",
+          "attributes": {
+            "category": "sequence",
+            "type": "color",
+            "item": "0",
+            "subitem": "main"
+          },
+          "path": [
+            "sequence",
+            "color",
+            "0",
+            "main"
+          ]
+        },
         "lightest": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Lightest",
           "attributes": {
@@ -29,7 +48,7 @@ module.exports = {
         "lighter": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Lighter",
           "attributes": {
@@ -48,7 +67,7 @@ module.exports = {
         "light": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Light",
           "attributes": {
@@ -64,29 +83,29 @@ module.exports = {
             "light"
           ]
         },
-        "main": {
+        "neutral": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
-          "name": "SequenceColor0Main",
+          "name": "SequenceColor0Neutral",
           "attributes": {
             "category": "sequence",
             "type": "color",
             "item": "0",
-            "subitem": "main"
+            "subitem": "neutral"
           },
           "path": [
             "sequence",
             "color",
             "0",
-            "main"
+            "neutral"
           ]
         },
         "dark": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Dark",
           "attributes": {
@@ -105,7 +124,7 @@ module.exports = {
         "darker": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Darker",
           "attributes": {
@@ -124,7 +143,7 @@ module.exports = {
         "darkest": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Darkest",
           "attributes": {
@@ -143,7 +162,7 @@ module.exports = {
         "contrast": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.main}"
+            "value": "{color.brand.cyan.neutral}"
           },
           "name": "SequenceColor0Contrast",
           "attributes": {
@@ -161,10 +180,29 @@ module.exports = {
         }
       },
       "1": {
+        "main": {
+          "value": "#d40072",
+          "original": {
+            "value": "{color.brand.magenta.neutral}"
+          },
+          "name": "SequenceColor1Main",
+          "attributes": {
+            "category": "sequence",
+            "type": "color",
+            "item": "1",
+            "subitem": "main"
+          },
+          "path": [
+            "sequence",
+            "color",
+            "1",
+            "main"
+          ]
+        },
         "lightest": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Lightest",
           "attributes": {
@@ -183,7 +221,7 @@ module.exports = {
         "lighter": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Lighter",
           "attributes": {
@@ -202,7 +240,7 @@ module.exports = {
         "light": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Light",
           "attributes": {
@@ -218,29 +256,29 @@ module.exports = {
             "light"
           ]
         },
-        "main": {
+        "neutral": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
-          "name": "SequenceColor1Main",
+          "name": "SequenceColor1Neutral",
           "attributes": {
             "category": "sequence",
             "type": "color",
             "item": "1",
-            "subitem": "main"
+            "subitem": "neutral"
           },
           "path": [
             "sequence",
             "color",
             "1",
-            "main"
+            "neutral"
           ]
         },
         "dark": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Dark",
           "attributes": {
@@ -259,7 +297,7 @@ module.exports = {
         "darker": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Darker",
           "attributes": {
@@ -278,7 +316,7 @@ module.exports = {
         "darkest": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Darkest",
           "attributes": {
@@ -297,7 +335,7 @@ module.exports = {
         "contrast": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.main}"
+            "value": "{color.brand.magenta.neutral}"
           },
           "name": "SequenceColor1Contrast",
           "attributes": {
@@ -315,10 +353,29 @@ module.exports = {
         }
       },
       "2": {
+        "main": {
+          "value": "#edb700",
+          "original": {
+            "value": "{color.brand.yellow.neutral}"
+          },
+          "name": "SequenceColor2Main",
+          "attributes": {
+            "category": "sequence",
+            "type": "color",
+            "item": "2",
+            "subitem": "main"
+          },
+          "path": [
+            "sequence",
+            "color",
+            "2",
+            "main"
+          ]
+        },
         "lightest": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Lightest",
           "attributes": {
@@ -337,7 +394,7 @@ module.exports = {
         "lighter": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Lighter",
           "attributes": {
@@ -356,7 +413,7 @@ module.exports = {
         "light": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Light",
           "attributes": {
@@ -372,29 +429,29 @@ module.exports = {
             "light"
           ]
         },
-        "main": {
+        "neutral": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
-          "name": "SequenceColor2Main",
+          "name": "SequenceColor2Neutral",
           "attributes": {
             "category": "sequence",
             "type": "color",
             "item": "2",
-            "subitem": "main"
+            "subitem": "neutral"
           },
           "path": [
             "sequence",
             "color",
             "2",
-            "main"
+            "neutral"
           ]
         },
         "dark": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Dark",
           "attributes": {
@@ -413,7 +470,7 @@ module.exports = {
         "darker": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Darker",
           "attributes": {
@@ -432,7 +489,7 @@ module.exports = {
         "darkest": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Darkest",
           "attributes": {
@@ -451,7 +508,7 @@ module.exports = {
         "contrast": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.main}"
+            "value": "{color.brand.yellow.neutral}"
           },
           "name": "SequenceColor2Contrast",
           "attributes": {
@@ -469,10 +526,29 @@ module.exports = {
         }
       },
       "3": {
-        "lightest": {
-          "value": "#0c0a09",
+        "main": {
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
+          },
+          "name": "SequenceColor3Main",
+          "attributes": {
+            "category": "sequence",
+            "type": "color",
+            "item": "3",
+            "subitem": "main"
+          },
+          "path": [
+            "sequence",
+            "color",
+            "3",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#1c1917",
+          "original": {
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Lightest",
           "attributes": {
@@ -489,9 +565,9 @@ module.exports = {
           ]
         },
         "lighter": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Lighter",
           "attributes": {
@@ -508,9 +584,9 @@ module.exports = {
           ]
         },
         "light": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Light",
           "attributes": {
@@ -526,29 +602,29 @@ module.exports = {
             "light"
           ]
         },
-        "main": {
-          "value": "#0c0a09",
+        "neutral": {
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
-          "name": "SequenceColor3Main",
+          "name": "SequenceColor3Neutral",
           "attributes": {
             "category": "sequence",
             "type": "color",
             "item": "3",
-            "subitem": "main"
+            "subitem": "neutral"
           },
           "path": [
             "sequence",
             "color",
             "3",
-            "main"
+            "neutral"
           ]
         },
         "dark": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Dark",
           "attributes": {
@@ -565,9 +641,9 @@ module.exports = {
           ]
         },
         "darker": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Darker",
           "attributes": {
@@ -584,9 +660,9 @@ module.exports = {
           ]
         },
         "darkest": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Darkest",
           "attributes": {
@@ -603,9 +679,9 @@ module.exports = {
           ]
         },
         "contrast": {
-          "value": "#0c0a09",
+          "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.main}"
+            "value": "{color.brand.key.neutral}"
           },
           "name": "SequenceColor3Contrast",
           "attributes": {
@@ -654,2629 +730,6 @@ module.exports = {
         "color",
         "black"
       ]
-    },
-    "test": {
-      "lightest": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestLightest",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "lightest"
-        },
-        "path": [
-          "color",
-          "test",
-          "lightest"
-        ]
-      },
-      "lighter": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestLighter",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "lighter"
-        },
-        "path": [
-          "color",
-          "test",
-          "lighter"
-        ]
-      },
-      "light": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestLight",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "light"
-        },
-        "path": [
-          "color",
-          "test",
-          "light"
-        ]
-      },
-      "main": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestMain",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "main"
-        },
-        "path": [
-          "color",
-          "test",
-          "main"
-        ]
-      },
-      "dark": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestDark",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "dark"
-        },
-        "path": [
-          "color",
-          "test",
-          "dark"
-        ]
-      },
-      "darker": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestDarker",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "darker"
-        },
-        "path": [
-          "color",
-          "test",
-          "darker"
-        ]
-      },
-      "darkest": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestDarkest",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "darkest"
-        },
-        "path": [
-          "color",
-          "test",
-          "darkest"
-        ]
-      },
-      "contrast": {
-        "value": "#00aad2",
-        "original": {
-          "value": "#00aad2"
-        },
-        "name": "ColorTestContrast",
-        "attributes": {
-          "category": "color",
-          "type": "test",
-          "item": "contrast"
-        },
-        "path": [
-          "color",
-          "test",
-          "contrast"
-        ]
-      }
-    },
-    "brand": {
-      "cyan": {
-        "lightest": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandCyanContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "cyan",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "cyan",
-            "contrast"
-          ]
-        }
-      },
-      "magenta": {
-        "lightest": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandMagentaContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "magenta",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "magenta",
-            "contrast"
-          ]
-        }
-      },
-      "yellow": {
-        "lightest": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandYellowContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yellow",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yellow",
-            "contrast"
-          ]
-        }
-      },
-      "key": {
-        "lightest": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#0c0a09",
-          "original": {
-            "value": "#0c0a09"
-          },
-          "name": "ColorBrandKeyContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "key",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "key",
-            "contrast"
-          ]
-        }
-      },
-      "primary": {
-        "lightest": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#00aad2",
-          "original": {
-            "value": "#00aad2"
-          },
-          "name": "ColorBrandPrimaryContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "primary",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "primary",
-            "contrast"
-          ]
-        }
-      },
-      "secondary": {
-        "lightest": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#d40072",
-          "original": {
-            "value": "#d40072"
-          },
-          "name": "ColorBrandSecondaryContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "secondary",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "secondary",
-            "contrast"
-          ]
-        }
-      },
-      "tertiary": {
-        "lightest": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#edb700",
-          "original": {
-            "value": "#edb700"
-          },
-          "name": "ColorBrandTertiaryContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "tertiary",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "tertiary",
-            "contrast"
-          ]
-        }
-      },
-      "text": {
-        "value": "#ffffff",
-        "original": {
-          "value": "{color.white}"
-        },
-        "name": "ColorBrandText",
-        "attributes": {
-          "category": "color",
-          "type": "brand",
-          "item": "text"
-        },
-        "path": [
-          "color",
-          "brand",
-          "text"
-        ]
-      },
-      "yelp": {
-        "lightest": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#af0606",
-          "original": {
-            "value": "#af0606"
-          },
-          "name": "ColorBrandYelpContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "yelp",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "yelp",
-            "contrast"
-          ]
-        }
-      },
-      "facebook": {
-        "lightest": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#1877f2",
-          "original": {
-            "value": "#1877f2"
-          },
-          "name": "ColorBrandFacebookContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "facebook",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "facebook",
-            "contrast"
-          ]
-        }
-      },
-      "twitter": {
-        "lightest": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#1da1f2",
-          "original": {
-            "value": "#1da1f2"
-          },
-          "name": "ColorBrandTwitterContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "twitter",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "twitter",
-            "contrast"
-          ]
-        }
-      },
-      "instagram": {
-        "lightest": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#c13584",
-          "original": {
-            "value": "#c13584"
-          },
-          "name": "ColorBrandInstagramContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "instagram",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "instagram",
-            "contrast"
-          ]
-        }
-      },
-      "square": {
-        "lightest": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareLightest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareLighter",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareLight",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareMain",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareDark",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareDarker",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#28c101",
-          "original": {
-            "value": "#28c101"
-          },
-          "name": "ColorBrandSquareContrast",
-          "attributes": {
-            "category": "color",
-            "type": "brand",
-            "item": "square",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "brand",
-            "square",
-            "contrast"
-          ]
-        }
-      }
-    },
-    "feedback": {
-      "success": {
-        "lightest": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessLightest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessLighter",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessLight",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessMain",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessDark",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessDarker",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#16a34a",
-          "original": {
-            "value": "#16a34a"
-          },
-          "name": "ColorFeedbackSuccessContrast",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "success",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "success",
-            "contrast"
-          ]
-        }
-      },
-      "error": {
-        "lightest": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorLightest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorLighter",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorLight",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorMain",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorDark",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorDarker",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#dc2626",
-          "original": {
-            "value": "#dc2626"
-          },
-          "name": "ColorFeedbackErrorContrast",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "error",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "error",
-            "contrast"
-          ]
-        }
-      },
-      "warning": {
-        "lightest": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningLightest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningLighter",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningLight",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningMain",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningDark",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningDarker",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#d97706",
-          "original": {
-            "value": "#d97706"
-          },
-          "name": "ColorFeedbackWarningContrast",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "warning",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "warning",
-            "contrast"
-          ]
-        }
-      },
-      "info": {
-        "lightest": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoLightest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "lightest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "lightest"
-          ]
-        },
-        "lighter": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoLighter",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "lighter"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "lighter"
-          ]
-        },
-        "light": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoLight",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "light"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "light"
-          ]
-        },
-        "main": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoMain",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "main"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "main"
-          ]
-        },
-        "dark": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoDark",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "dark"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "dark"
-          ]
-        },
-        "darker": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoDarker",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "darker"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "darker"
-          ]
-        },
-        "darkest": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoDarkest",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "darkest"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "darkest"
-          ]
-        },
-        "contrast": {
-          "value": "#2563eb",
-          "original": {
-            "value": "#2563eb"
-          },
-          "name": "ColorFeedbackInfoContrast",
-          "attributes": {
-            "category": "color",
-            "type": "feedback",
-            "item": "info",
-            "subitem": "contrast"
-          },
-          "path": [
-            "color",
-            "feedback",
-            "info",
-            "contrast"
-          ]
-        }
-      }
     },
     "gray": {
       "50": {
@@ -3465,6 +918,2795 @@ module.exports = {
           "gray",
           "950"
         ]
+      }
+    },
+    "brand": {
+      "cyan": {
+        "main": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandCyanContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "cyan",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "cyan",
+            "contrast"
+          ]
+        }
+      },
+      "magenta": {
+        "main": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandMagentaContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "magenta",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "magenta",
+            "contrast"
+          ]
+        }
+      },
+      "yellow": {
+        "main": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandYellowContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yellow",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yellow",
+            "contrast"
+          ]
+        }
+      },
+      "key": {
+        "main": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#1c1917",
+          "original": {
+            "value": "#1c1917"
+          },
+          "name": "ColorBrandKeyContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "key",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "key",
+            "contrast"
+          ]
+        }
+      },
+      "primary": {
+        "main": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#00aad2",
+          "original": {
+            "value": "#00aad2"
+          },
+          "name": "ColorBrandPrimaryContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "primary",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "primary",
+            "contrast"
+          ]
+        }
+      },
+      "secondary": {
+        "main": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#d40072",
+          "original": {
+            "value": "#d40072"
+          },
+          "name": "ColorBrandSecondaryContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "secondary",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "secondary",
+            "contrast"
+          ]
+        }
+      },
+      "tertiary": {
+        "main": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#edb700",
+          "original": {
+            "value": "#edb700"
+          },
+          "name": "ColorBrandTertiaryContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "tertiary",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "tertiary",
+            "contrast"
+          ]
+        }
+      },
+      "text": {
+        "value": "#ffffff",
+        "original": {
+          "value": "{color.white}"
+        },
+        "name": "ColorBrandText",
+        "attributes": {
+          "category": "color",
+          "type": "brand",
+          "item": "text"
+        },
+        "path": [
+          "color",
+          "brand",
+          "text"
+        ]
+      },
+      "yelp": {
+        "main": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#af0606",
+          "original": {
+            "value": "#af0606"
+          },
+          "name": "ColorBrandYelpContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "yelp",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "yelp",
+            "contrast"
+          ]
+        }
+      },
+      "facebook": {
+        "main": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#1877f2",
+          "original": {
+            "value": "#1877f2"
+          },
+          "name": "ColorBrandFacebookContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "facebook",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "facebook",
+            "contrast"
+          ]
+        }
+      },
+      "twitter": {
+        "main": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#1da1f2",
+          "original": {
+            "value": "#1da1f2"
+          },
+          "name": "ColorBrandTwitterContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "twitter",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "twitter",
+            "contrast"
+          ]
+        }
+      },
+      "instagram": {
+        "main": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#c13584",
+          "original": {
+            "value": "#c13584"
+          },
+          "name": "ColorBrandInstagramContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "instagram",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "instagram",
+            "contrast"
+          ]
+        }
+      },
+      "square": {
+        "main": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareMain",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareLightest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareLighter",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareLight",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareDark",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareDarker",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#28c101",
+          "original": {
+            "value": "#28c101"
+          },
+          "name": "ColorBrandSquareContrast",
+          "attributes": {
+            "category": "color",
+            "type": "brand",
+            "item": "square",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "brand",
+            "square",
+            "contrast"
+          ]
+        }
+      }
+    },
+    "feedback": {
+      "success": {
+        "main": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessMain",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessLightest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessLighter",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessLight",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessDark",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessDarker",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#16a34a",
+          "original": {
+            "value": "#16a34a"
+          },
+          "name": "ColorFeedbackSuccessContrast",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "success",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "success",
+            "contrast"
+          ]
+        }
+      },
+      "error": {
+        "main": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorMain",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorLightest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorLighter",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorLight",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorDark",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorDarker",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#dc2626",
+          "original": {
+            "value": "#dc2626"
+          },
+          "name": "ColorFeedbackErrorContrast",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "error",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "error",
+            "contrast"
+          ]
+        }
+      },
+      "warning": {
+        "main": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningMain",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningLightest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningLighter",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningLight",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningDark",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningDarker",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#d97706",
+          "original": {
+            "value": "#d97706"
+          },
+          "name": "ColorFeedbackWarningContrast",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "warning",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "warning",
+            "contrast"
+          ]
+        }
+      },
+      "info": {
+        "main": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoMain",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "main"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "main"
+          ]
+        },
+        "lightest": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoLightest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "lightest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "lightest"
+          ]
+        },
+        "lighter": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoLighter",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "lighter"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "lighter"
+          ]
+        },
+        "light": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoLight",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "light"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "light"
+          ]
+        },
+        "neutral": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoNeutral",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "neutral"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "neutral"
+          ]
+        },
+        "dark": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoDark",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "dark"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "dark"
+          ]
+        },
+        "darker": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoDarker",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "darker"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "darker"
+          ]
+        },
+        "darkest": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoDarkest",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "darkest"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "darkest"
+          ]
+        },
+        "contrast": {
+          "value": "#2563eb",
+          "original": {
+            "value": "#2563eb"
+          },
+          "name": "ColorFeedbackInfoContrast",
+          "attributes": {
+            "category": "color",
+            "type": "feedback",
+            "item": "info",
+            "subitem": "contrast"
+          },
+          "path": [
+            "color",
+            "feedback",
+            "info",
+            "contrast"
+          ]
+        }
       }
     },
     "text": {
@@ -5029,9 +5271,9 @@ module.exports = {
       ]
     },
     "backgroundColor": {
-      "value": "#d6d3d1",
+      "value": "#1c1917",
       "original": {
-        "value": "{color.gray.300}"
+        "value": "{color.brand.key.lighter}"
       },
       "name": "ImageBackgroundColor",
       "attributes": {
@@ -5098,9 +5340,9 @@ module.exports = {
         ]
       },
       "border": {
-        "value": "1px solid #d6d3d1",
+        "value": "1px solid #1c1917",
         "original": {
-          "value": "{spacing.px} solid {color.gray.300}"
+          "value": "{spacing.px} solid {color.brand.key.lighter}"
         },
         "name": "TestimonialContainerBorder",
         "attributes": {
@@ -5456,9 +5698,9 @@ module.exports = {
         ]
       },
       "color": {
-        "value": "#0c0a09",
+        "value": "#1c1917",
         "original": {
-          "value": "{color.brand.key.lightest}"
+          "value": "{color.brand.key.lighter}"
         },
         "name": "InputBorderColor",
         "attributes": {
@@ -5473,7 +5715,7 @@ module.exports = {
         ]
       },
       "composite": {
-        "value": "solid 0.0625rem #0c0a09",
+        "value": "solid 0.0625rem #1c1917",
         "original": {
           "value": "{input.border.style} {input.border.width} {input.border.color}"
         },
@@ -5983,9 +6225,9 @@ module.exports = {
     },
     "border": {
       "primary": {
-        "value": "solid 0.0625rem #0c0a09",
+        "value": "solid 0.0625rem #00aad2",
         "original": {
-          "value": "{input.border.composite}"
+          "value": "{input.border.style} {input.border.width} {color.brand.primary.neutral}"
         },
         "name": "ButtonBorderPrimary",
         "attributes": {
@@ -6000,9 +6242,9 @@ module.exports = {
         ]
       },
       "secondary": {
-        "value": "solid 0.0625rem #0c0a09",
+        "value": "solid 0.0625rem #d40072",
         "original": {
-          "value": "{input.border.composite}"
+          "value": "{input.border.style} {input.border.width} {color.brand.secondary.neutral}"
         },
         "name": "ButtonBorderSecondary",
         "attributes": {
@@ -6017,9 +6259,9 @@ module.exports = {
         ]
       },
       "tertiary": {
-        "value": "solid 0.0625rem #0c0a09",
+        "value": "solid 0.0625rem #edb700",
         "original": {
-          "value": "{input.border.composite}"
+          "value": "{input.border.style} {input.border.width} {color.brand.tertiary.neutral}"
         },
         "name": "ButtonBorderTertiary",
         "attributes": {
@@ -8109,7 +8351,7 @@ module.exports = {
     "color": {
       "value": "#00aad2",
       "original": {
-        "value": "{color.brand.primary.main}"
+        "value": "{color.brand.primary.neutral}"
       },
       "name": "MarkColor",
       "attributes": {

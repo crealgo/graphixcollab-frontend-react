@@ -14,9 +14,9 @@ export const Phone = styled('img')<PhoneProps>(
 		width: 100%;
 		border-radius: ${iphoneCornerRadius};
 		aspect-ratio: 9/19.5;
-		background-color: var(--color-gray-300);
+		background-color: var(--color-brand-key-lighter);
 
-		${hasBorder ? 'border: solid 0.5rem var(--color-gray-100);' : ''}
+		${hasBorder ? 'border: solid 0.5rem var(--color-brand-key-lightest);' : ''}
 		box-shadow: var(--elevation-${elevation});
 	`,
 );

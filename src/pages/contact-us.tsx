@@ -18,6 +18,7 @@ const Page: NextPage<PageProps> = props => (
 	<DefaultLayout>
 		<PageTitle text={props.pageTitle}/>
 		<PageHeaderBlock
+			color='key'
 			title={props.pageTitle}
 			{...props.pageHeaderProps}
 		/>

@@ -19,9 +19,9 @@ type ContactServiceProps = {
 };
 
 const StyledDialogContent = styled(DialogContent)`
-	background-color: var(--color-gray-100);
-	border-top: solid 1px var(--color-gray-300);
-	border-bottom: solid 1px var(--color-gray-300);
+	background-color: var(--color-brand-key-lightest);
+	border-top: solid 1px var(--color-brand-key-lighter);
+	border-bottom: solid 1px var(--color-brand-key-lighter);
 
 	.stepper {
 		padding-block: 1rem;

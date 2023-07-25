@@ -1,7 +1,7 @@
 export const generateBaseInputStyles = ({
 	inputSize = 'medium',
-}: BaseControlProps) => /* scss */ `
-	--input-placeholder-color: var(--color-gray-300);
+}: BaseControlProps) => /* scss */`
+	--input-placeholder-color: var(--color-brand-key-lighter);
 	--input-background-color: var(--color-white);
 	--input-opacity: 1;
 
@@ -10,43 +10,38 @@ export const generateBaseInputStyles = ({
 
 	&:hover,
 	&:focus-visible {
-		--input-border-color: var(--color-gray-600);
+		--input-border-color: var(--color-brand-key-light);
 	}
 
 	&:active {
-		--input-background-color: var(--color-gray-100);
+		--input-background-color: var(--color-brand-key-lightest);
 	}
 
-	// if has value and is invalid
-	// &.is-touched {
-		// &:invalid,
-		&.is-invalid {
-			--input-status-color-main: var(--color-feedback-error-main);
-			--input-status-color-light: var(--color-feedback-error-light);
-			--input-border-color: var(--color-feedback-error-main);
-			--input-background-color: var(--color-feedback-error-light);
-		}
+	&.is-invalid {
+		--input-status-color-main: var(--color-feedback-error-main);
+		--input-status-color-light: var(--color-feedback-error-light);
+		--input-border-color: var(--color-feedback-error-main);
+		--input-background-color: var(--color-feedback-error-light);
+	}
 
-		// &:valid,
-		&.is-valid {
-			--input-status-color-main: var(--color-feedback-success-light);
-			--input-border-color: var(--color-feedback-success-main);
-			--input-background-color: var(--color-feedback-success-lightest);
-		}
-	// }
+	&.is-valid {
+		--input-status-color-main: var(--color-feedback-success-light);
+		--input-border-color: var(--color-feedback-success-main);
+		--input-background-color: var(--color-feedback-success-lightest);
+	}
 
 	&:read-only:not(select):not([role='combobox']) {
 		--input-border-color: transparent;
-		--input-background-color: var(--color-gray-200);
-		--input-placeholder-color: var(--color-gray-400);
+		--input-background-color: var(--color-brand-key-lightest);
+		--input-placeholder-color: var(--color-brand-key-lighter);
 		--input-shadow: none;
 	}
 
 	&:disabled {
 		--input-opacity: 0.5;
 		--input-border-color: transparent;
-		--input-background-color: var(--color-gray-200);
-		--input-placeholder-color: var(--color-gray-400);
+		--input-background-color: var(--color-brand-key-lightest);
+		--input-placeholder-color: var(--color-brand-key-lighter);
 		--input-shadow: none;
 	}
 
@@ -72,8 +67,4 @@ export const generateBaseInputStyles = ({
 	&::placeholder {
 		color: var(--input-placeholder-color);
 	}
-
-	// TODO: add auto-fill styling
-	// :autofill {}
-	// ::-webkit-autofill {}
 `;

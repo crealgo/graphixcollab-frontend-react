@@ -45,7 +45,7 @@ export const BookingOption = styled(BaseElement)<BookingOptionProps>`
 	border-style: solid;
 	border-width: 1px;
 	border-left-width: 0.25rem;
-	border-color: var(--color-gray-400);
+	border-color: var(--color-brand-key-lighter);
 	border-radius: 0.25rem;
 
 	padding: 1rem;
@@ -56,11 +56,11 @@ export const BookingOption = styled(BaseElement)<BookingOptionProps>`
 	.icon {
 		transition: all 200ms;
 		font-size: 2rem;
-		color: var(--color-gray-500);
+		color: var(--color-brand-key-neutral);
 	}
 
 	&:active {
-		background-color: var(--color-gray-200) !important;
+		background-color: var(--color-brand-key-lightest) !important;
 	}
 
 	&:hover {
@@ -78,7 +78,7 @@ export const BookingOption = styled(BaseElement)<BookingOptionProps>`
 	}
 
 	&:focus-visible {
-		outline: solid 2px var(--color-gray-800);
+		outline: solid 2px var(--color-brand-key-darker);
 		outline-offset: 3px;
 	}
 `;

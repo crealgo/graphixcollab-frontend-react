@@ -28,7 +28,7 @@ export const ImageCarouselWrapper = styled(
 			width,
 			position: 'relative',
 			overflow: 'hidden',
-			backgroundColor: 'var(--color-gray-100)',
+			backgroundColor: 'var(--color-brand-key-lightest)',
 			aspectRatio: 1,
 			'.Carousel-image': {
 				position: 'absolute',

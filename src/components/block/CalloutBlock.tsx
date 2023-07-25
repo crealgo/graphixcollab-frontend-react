@@ -41,7 +41,7 @@ const InnerWrapper = styled('div')(
 				height: 100%;
 				right: 0;
 				bottom: 0;
-				background: var(--color-gray-300);
+				background: var(--color-brand-key-lighter);
 
 				img {
 					height: 100%;

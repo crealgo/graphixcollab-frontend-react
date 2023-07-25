@@ -7,7 +7,7 @@ export const BaseWrapper = styled('div')<InputProps>`
 	cursor: pointer;
 	display: inline-grid;
 	position: relative;
-	background-color: var(--color-gray-100);
+	background-color: var(--color-brand-key-lightest);
 	overflow: hidden;
 
 	min-height: 10rem;
@@ -21,16 +21,16 @@ export const BaseWrapper = styled('div')<InputProps>`
 	font-weight: normal;
 
 	&:hover {
-		background-color: var(--color-gray-200);
+		background-color: var(--color-brand-key-lightest);
 	}
 
 	&:active {
-		background-color: var(--color-gray-300);
+		background-color: var(--color-brand-key-lighter);
 	}
 
 	&.has-files {
 		border-style: solid;
-		background-color: var(--color-gray-200);
+		background-color: var(--color-brand-key-lightest);
 	}
 
 	&::before {

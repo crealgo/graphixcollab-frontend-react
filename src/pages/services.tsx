@@ -6,10 +6,7 @@ import {type CalloutBlockProps} from '../components/block/CalloutBlock';
 import {EstimatorBlock} from '../components/block/EstimatorBlock';
 import {FaqBlock, type FaqBlockProps} from '../components/block/FaqBlock';
 import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {
-	PageHeaderBlock,
-	type PageHeaderBlockProps,
-} from '../components/block/PageHeaderBlock';
+import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
 import {
 	ServicesBlock,
 	type ServicesBlockProps,
@@ -21,7 +18,6 @@ import {DefaultLayout} from '../layouts/DefaultLayout';
 import {generateFaqBlock, generateFooter} from '../utils/chance';
 
 type PageProps = {
-	PageHeaderBlockProps: PageHeaderBlockProps;
 	FooterProps: FooterBlockProps;
 	serviceBlocks: ServicesBlockProps[];
 	CalloutBlockProps: CalloutBlockProps;
@@ -59,7 +55,6 @@ const StyledContainer2 = styled(StyledContainer)`
 `;
 
 const Page: NextPage<PageProps> = ({
-	PageHeaderBlockProps,
 	FooterProps,
 	serviceBlocks,
 	FaqBlockProps,
@@ -67,8 +62,13 @@ const Page: NextPage<PageProps> = ({
 	<DefaultLayout FooterProps={FooterProps}>
 		<PageTitle text='Services'/>
 		<PageHeaderBlock
-			{...PageHeaderBlockProps}
+			color='magenta'
 			title={<Mark brand>Our Services</Mark>}
+			description="We offer a wide range of screen printing services to meet your needs. Whether you're looking for custom t-shirts, posters, stickers, or other promotional materials, we have you covered. Here are some of our most popular services. With our state-of-the-art printing technology, experienced team, and commitment to quality, we are your trusted partner for all things printing. Explore our comprehensive range of services below"
+			ImageProps={{
+				src: 'assets/juicy-team-discussing-the-project-min@512w.webp',
+				alt: 'Team Discussing the Project',
+			}}
 		/>
 		{serviceBlocks.map((props, index) => (
 			<ServicesBlock key={index} {...props}/>
@@ -94,14 +94,6 @@ const Page: NextPage<PageProps> = ({
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		FooterProps: generateFooter(),
-		PageHeaderBlockProps: {
-			description:
-				'We offer a wide range of screen printing services to meet your needs. Whether you\'re looking for custom t-shirts, posters, stickers, or other promotional materials, we have you covered. Here are some of our most popular services. With our state-of-the-art printing technology, experienced team, and commitment to quality, we are your trusted partner for all things printing. Explore our comprehensive range of services below',
-			ImageProps: {
-				src: 'assets/juicy-team-discussing-the-project-min@512w.webp',
-				alt: 'Team Discussing the Project',
-			},
-		},
 		serviceBlocks: [
 			// TODO: DEV
 			// {

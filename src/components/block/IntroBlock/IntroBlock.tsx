@@ -34,7 +34,7 @@ const images = [
 
 const Wrapper = styled('div')`
 	position: relative;
-	background-color: var(--color-gray-200);
+	background-color: var(--color-brand-key-lightest);
 	margin-top: -5rem;
 
 	.IntroBlock-root {

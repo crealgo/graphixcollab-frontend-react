@@ -1,5 +1,3 @@
-import { type Colord, type AnyColor } from 'colord';
-
 export type RawToken = string | number;
 
 export type RawTokenObject = {

@@ -14,7 +14,7 @@ export const StyledHeaderBar = styled(
 )<HeaderBarProps>(({theme, isScrolled}) => {
 	const backgroundColor = isScrolled ? 'white' : 'transparent';
 	const borderBottomColor = isScrolled
-		? 'var(--color-gray-200)'
+		? 'var(--color-brand-key-lightest)'
 		: 'transparent';
 
 	return css`

@@ -14,7 +14,7 @@ export type ButtonBaseProps = {
 	startIcon?: ReactElement;
 	href?: string;
 	size?: ButtonBaseSizes;
-	color?: ColorVariants;
+	color?: ColorVariant;
 } & Omit<ComponentPropsWithoutRef<'button'>, 'color'>;
 
 const StyledButton = styled(

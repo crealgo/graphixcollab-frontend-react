@@ -29,7 +29,7 @@ const CheckboxLabel = styled.label`
 
 		.CheckboxInput-meta {
 			line-height: normal;
-			color: var(--color-gray-500);
+			color: var(--color-brand-key-neutral);
 		}
 	}
 `;
@@ -54,7 +54,7 @@ const Checkbox = styled('input', {
 		.CheckboxInput-icon {
 			width: inherit;
 			height: inherit;
-			color: var(--color-gray-500);
+			color: var(--color-brand-key-neutral);
 			display: none;
 		}
 	}
@@ -68,8 +68,8 @@ const Checkbox = styled('input', {
 	&:hover,
 	&:focus-visible {
 		+ .CheckboxInput-indicator .CheckboxInput-icon {
-			color: var(--color-gray-800);
-			background-color: var(--color-gray-100);
+			color: var(--color-brand-key-darker);
+			background-color: var(--color-brand-key-lightest);
 		}
 	}
 

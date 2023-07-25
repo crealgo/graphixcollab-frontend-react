@@ -22,7 +22,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 
 		border-style: solid;
 		border-width: 1px;
-		border-color: var(--color-gray-400);
+		border-color: var(--color-brand-key-lighter);
 		border-radius: 0.25rem;
 
 		padding: 0.25rem 0.5rem;
@@ -34,7 +34,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 		font-size: ${theme.typography.caption.fontSize};
 
 		&:active {
-			background-color: var(--color-gray-200) !important;
+			background-color: var(--color-brand-key-lightest) !important;
 		}
 
 		&:hover {
@@ -48,7 +48,7 @@ export const TimeSlot = styled(BaseElement)<BookingOptionProps>(
 		}
 
 		&:focus-visible {
-			outline: solid 2px var(--color-gray-800);
+			outline: solid 2px var(--color-brand-key-darker);
 			outline-offset: 3px;
 		}
 	`,

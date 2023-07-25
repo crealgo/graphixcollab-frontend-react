@@ -27,9 +27,9 @@ const StyledList = styled.ul`
 	margin: unset;
 	padding: 2rem 1rem;
 	flex: 1;
-	border-top: solid 1px var(--color-gray-400);
+	border-top: solid 1px var(--color-brand-key-lighter);
 
-	background-color: var(--color-gray-200);
+	background-color: var(--color-brand-key-lightest);
 
 	&:nth-last-of-type(1) {
 		background-color: var(--color-white);

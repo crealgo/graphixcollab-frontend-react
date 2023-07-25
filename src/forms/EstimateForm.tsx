@@ -14,10 +14,14 @@ import {getFormAction} from './__utils__/getFormAction';
 import styled from '@emotion/styled';
 
 const StyledFormGrid = styled(FormGrid)`
+	@media screen and (min-width: 600px) {
+		padding-right: 20%;
+	}
+
 	@media screen and (min-width: 768px) {
 		.FormControl-id-name,
 		.FormControl-id-email {
-			grid-column: span 3;
+			grid-column: span 6;
 		}
 
 		.FormControl-id-service,
@@ -25,12 +29,14 @@ const StyledFormGrid = styled(FormGrid)`
 		.FormControl-id-quantity,
 		.FormControl-id-deadline,
 		.FormControl-id-delivery {
-			grid-column: span 2;
+			grid-column: span 4;
 		}
 
 		.FormControl-id-artwork {
-			grid-column: span 4;
+			grid-column: span 12;
 		}
+
+		padding-right: 35%;
 	}
 `;
 

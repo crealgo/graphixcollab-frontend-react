@@ -21,6 +21,7 @@ const Page: NextPage<PageProps> = props => (
 		<PageTitle text='Estimate'/>
 		<PageHeaderBlock
 			title='Estimate'
+			color='key'
 			description='Fill out the required information in the form, including details about the product or service you are interested in, and submit the form. Our team will review your request and provide you with a quote as soon as possible.'
 			ImageProps={{
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',

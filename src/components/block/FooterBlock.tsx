@@ -45,7 +45,7 @@ const Content = styled('div')(
 );
 const CopyrightBlockWrapper = styled(Block)(
 	({theme}) => css`
-		background-color: var(--color-gray-100);
+		background-color: var(--color-brand-key-lightest);
 		padding-block: 2rem !important;
 
 		.Container-root {
