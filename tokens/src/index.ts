@@ -39,7 +39,7 @@ StyleDictionary.registerTransform({
 		const tester = /main|darkest|darker|dark|neutral|light|lighter|lightest|contrast/g;
 		return tester.test(token.name);
 	},
-	transformer: token => scaleColor(token.value as string, token.name),
+	transformer: token => scaleColor(token.value as string, token.name as ColorShades),
 });
 
 const client = StyleDictionary.extend({

@@ -10,8 +10,8 @@ export type ButtonStyledFunc = (
 
 export const getButtonColors: ButtonStyledFunc = ({theme, color = 'text'}) =>
 	({
-		primary: theme.palette.primary.neutral,
-		secondary: theme.palette.secondary.neutral,
+		primary: theme.palette.primary.main,
+		secondary: theme.palette.secondary.main,
 		tertiary: alpha(theme.palette.common.white, 0.675),
 		text: 'transparent',
 	}[color]);

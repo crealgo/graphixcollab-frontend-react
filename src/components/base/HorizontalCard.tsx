@@ -86,7 +86,7 @@ export const HorizontalCard: FC<CardProps> = ({
 	description,
 	className,
 	image,
-	imageColor,
+	// imageColor,
 	...props
 }) => (
 	<CardAnchor

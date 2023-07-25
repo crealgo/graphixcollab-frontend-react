@@ -361,7 +361,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => ({
 		pageTitle: 'Terms and Conditions',
 		pageHeaderProps: {
 			description: '',
-			color: 'secondary',
+			color: 'yellow',
 			ImageProps: {
 				src: '../assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
 				alt: 'Book an Appointment w/ Graphix Collab',

@@ -28,7 +28,7 @@ const StyledDiv = styled(
 		isRounded = false,
 	}) => {
 		const resolvedColor = color ?? 'default';
-		const blockColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lightest)`;
+		// const blockColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lightest)`;
 		const borderColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lighter)`;
 
 		return css`

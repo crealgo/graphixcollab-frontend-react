@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const FileInputDisplay = styled('div')`
 	display: grid;
 	gap: 0.5rem;
