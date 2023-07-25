@@ -2,7 +2,6 @@ import {TonalPalette, argbFromHex, hexFromArgb} from '@material/material-color-u
 
 const scale = {
 	main: undefined,
-	// lightest2x: 95,
 	lightest: 92,
 	lighter: 78,
 	light: 65,
@@ -10,7 +9,6 @@ const scale = {
 	dark: 40,
 	darker: 20,
 	darkest: 10,
-	// darkest2x: 5,
 	contrast: 100,
 };
 

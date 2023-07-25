@@ -5,69 +5,19 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import {css, IconButton, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
 import {type Term} from '../../types/general';
+import Logo from '../atoms/Logo';
 import {ActionStack} from '../base/ActionStack';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
+import {Link} from '../base/Link';
 import {Text} from '../base/Text';
 import {MapEmbed} from './MapEmbed';
-import {Link} from '../base/Link';
-import Logo from '../atoms/Logo';
 
 export type FooterBlockProps = {
 	title?: string;
 	description?: string;
 	meta?: Term[];
 };
-
-const Column = styled('div')(
-	({theme}) => css`
-		display: flex;
-		flex-direction: column;
-		row-gap: 2rem;
-
-		${theme.breakpoints.up('md')} {
-			row-gap: 2rem;
-		}
-	`,
-);
-
-const Content = styled('div')(
-	({theme}) => css`
-		display: grid;
-		row-gap: 3rem;
-		column-gap: 1.5rem;
-		grid-template-columns: 1fr;
-
-		${theme.breakpoints.up('md')} {
-			grid-template-columns: 1fr 1.5fr;
-		}
-	`,
-);
-const CopyrightBlockWrapper = styled(Block)(
-	({theme}) => css`
-		background-color: var(--color-brand-key-lightest);
-		padding-block: 2rem !important;
-
-		.Container-root {
-			display: grid;
-			gap: 0.5rem;
-			grid-template-columns: 1fr;
-			align-items: center;
-
-			.leftContent {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 0.25rem;
-			}
-
-			${theme.breakpoints.up('md')} {
-				grid-template-columns: minmax(auto, 1fr) auto;
-				flex-direction: row;
-				gap: 1.5rem;
-			}
-		}
-	`,
-);
 
 const footerContent = {
 	title: 'Graphix Collab',
@@ -112,6 +62,48 @@ const footerContent = {
 	},
 };
 
+const Column = styled('div')`
+	display: grid;
+	grid-template-columns: 1fr;
+	align-content: start;
+	gap: 3rem;
+`;
+
+const Content = styled('div')(({theme}) => css`
+	display: grid;
+	row-gap: 3rem;
+	column-gap: 1.5rem;
+	grid-template-columns: 1fr;
+
+	${theme.breakpoints.up('md')} {
+		grid-template-columns: 1fr 1.5fr;
+	}
+`);
+
+const CopyrightBlockWrapper = styled(Block)(({theme}) => css`
+	background-color: var(--color-brand-key-lightest);
+	padding-block: 2rem !important;
+
+	.Container-root {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: 1fr;
+		align-items: center;
+
+		.leftContent {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 0.25rem;
+		}
+
+		${theme.breakpoints.up('md')} {
+			grid-template-columns: minmax(auto, 1fr) auto;
+			flex-direction: row;
+			gap: 1.5rem;
+		}
+	}
+`);
+
 const SocialBar: FC<unknown> = () => (
 	<Stack gap='0.25rem' direction='row'>
 		<IconButton size='small'>
@@ -129,11 +121,8 @@ const SocialBar: FC<unknown> = () => (
 const FooterContentBlock = styled('div')`
 	display: grid;
 	grid-template-columns: 1fr;
+	align-content: start;
 	gap: 0.25rem;
-
-	${({theme}) => theme.breakpoints.up('md')} {
-		padding: 1rem;
-	}
 `;
 
 const ContactInfoList = styled('ul')`
@@ -148,9 +137,13 @@ const ContactInfoList = styled('ul')`
 	}
 `;
 
+const StyledBlock = styled(Block)`
+	background-color: var(--color-gray-100);
+`;
+
 export const FooterBlock: FC<FooterBlockProps> = () => (
 	<footer>
-		<Block hasNoDefaultMargin color='grey'>
+		<StyledBlock hasNoDefaultMargin color='grey'>
 			<Container>
 				<Content>
 					<Column>
@@ -234,7 +227,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 					</Column>
 				</Content>
 			</Container>
-		</Block>
+		</StyledBlock>
 		<CopyrightBlockWrapper hasNoDefaultMargin>
 			<Container>
 				<div className='leftContent'>

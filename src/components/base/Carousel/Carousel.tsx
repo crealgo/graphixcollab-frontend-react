@@ -26,6 +26,7 @@ export const Carousel: FC<CarouselProps> = ({
 	const [containerRef, carouselApi] = useEmblaCarousel(
 		{
 			loop: true,
+			containScroll: 'keepSnaps',
 		},
 		[autoplay()],
 	);

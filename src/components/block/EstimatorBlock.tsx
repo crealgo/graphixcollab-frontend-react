@@ -26,7 +26,7 @@ const StyledBlock = styled(Block)`
 
 export const EstimatorBlock: FC = () => (
 	<Container>
-		<StyledBlock isClipped isRounded color='key' className='EstimatorBlock-root'>
+		<StyledBlock isClipped isFloating isRounded color='key' className='EstimatorBlock-root'>
 			<Block className='EstimatorBlock-formWrapper'>
 				<QuickEstimateForm/>
 			</Block>

@@ -12,6 +12,7 @@ export type BlockProps = {
 	color?: Exclude<ColorVariant, 'text'> | 'grey';
 	isRounded?: boolean;
 	isClipped?: boolean;
+	isFloating?: boolean;
 	hasNoHorizontalPadding?: boolean;
 } & ComponentPropsWithRef<'div'>;
 
@@ -20,12 +21,8 @@ const StyledDiv = styled(
 	_e('hasNoDefaultMargin', 'color', 'isRounded', 'isClipped', 'hasNoHorizontalPadding'),
 )<BlockProps>(
 	({
-		theme,
-		color,
-		hasNoDefaultMargin,
-		hasNoHorizontalPadding,
-		isClipped,
-		isRounded = false,
+		theme, color, hasNoDefaultMargin, hasNoHorizontalPadding,
+		isClipped, isRounded = false, isFloating,
 	}) => {
 		const resolvedColor = color ?? 'default';
 		// const blockColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lightest)`;
@@ -60,13 +57,15 @@ const StyledDiv = styled(
 			padding-inline: var(--section-padding-inline);
 			margin-inline: ${hasNoDefaultMargin ? 'unset' : 'var(--section-margin-inline)'};
 			border-radius: ${isRounded ? 'var(--section-border-radius)' : 'none'};
-			${isClipped ? 'overflow: hidden;' : ''};
+
+			overflow: ${isClipped ? 'hidden' : 'auto'};
 
 			${theme.breakpoints.up('md')} {
 				border-top: solid 1px ${borderColor};
 				border-right: solid 1px ${borderColor};
 				border-bottom: solid 1px ${borderColor};
 				border-left: solid 1px ${borderColor};
+				box-shadow: ${isFloating ? 'var(--elevation-4)' : 'none'};
 			}
 		`;
 	},

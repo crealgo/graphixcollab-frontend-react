@@ -10,6 +10,7 @@ import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Mark} from '../base/Mark';
 import {Testimonial} from '../base/Testimonial';
+import {generatePatternCSS} from '../../utils/generatePatternCSS';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];
@@ -38,68 +39,28 @@ const ContentWrapper = styled(Block)`
 	gap: 4rem;
 
 	padding-block: 3rem !important;
-`;
-
-const avatarCount = 16;
-
-const ReviewAvatars = styled('div')`
-	z-index: -1;
-	position: absolute;
-	opacity: 0.25;
-	top: -35%;
-	left: 50%;
-	transform: translateX(-50%);
-
-	height: 100%;
-	width: 100%;
-
-	min-width: 1400px;
-	min-height: 628.73;
-`;
-
-const ReviewAvatar = styled('div')`
-	border-radius: var(--shape-rounding-full);
-	position: absolute;
-	background: blue;
-	box-shadow: var(--elevation-3);
-	overflow: hidden;
-	border: 0.25rem solid var(--color-white);
-	outline: var(--input-border-composite);
-
-	img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-
-	${Array.from({length: avatarCount}, (_, i) => i).reduce(
-		(aggregate, i) => css`
-			${aggregate}
-			&:nth-of-type(${i + 1}) {
-				width: var(--block-testimonials-avatar-positions-${i}-width);
-				height: var(--block-testimonials-avatar-positions-${i}-height);
-				left: var(--block-testimonials-avatar-positions-${i}-left);
-				transform-origin: center;
-				transform: translateX(-10%);
-				bottom: var(--block-testimonials-avatar-positions-${i}-bottom);
-			}
-		`,
-		css``,
-	)}
+	background-image: url(${generatePatternCSS('yellow')})
 `;
 
 const StyledCarousel = styled(Carousel)`
-	max-width: 35rem;
+	max-width: 40rem;
+	width: 100%;
 `;
 
 const StyledCarouselSlide = styled(CarouselSlide)`
-	padding: 1rem;
+	margin-inline: 0.5rem;
+`;
+
+const StyledActionStack = styled(ActionStack)`
+	& > * {
+		justify-content: center;
+	}
 `;
 
 export const YelpBlock: FC<YelpBlockProps> = () => (
 	<Container>
-		<ContentWrapper isRounded color='grey'>
-			<ReviewAvatars>
+		<ContentWrapper isClipped isFloating isRounded color='grey'>
+			{/* <ReviewAvatars>
 				{Array.from({length: avatarCount}, (_, i) => {
 					const {user} = reviews[i % reviews.length];
 					return (
@@ -112,9 +73,9 @@ export const YelpBlock: FC<YelpBlockProps> = () => (
 						</ReviewAvatar>
 					);
 				})}
-			</ReviewAvatars>
+			</ReviewAvatars> */}
 			<Content>
-				<Heading level={2}>
+				<Heading isCentered level={2}>
 					{'We\'ve helped '}
 					<Mark color='magenta'>148</Mark>
 					{' happy customers!'}
@@ -127,7 +88,7 @@ export const YelpBlock: FC<YelpBlockProps> = () => (
 					))}
 				</StyledCarousel>
 			</Content>
-			<ActionStack
+			<StyledActionStack
 				actions={[
 					{
 						label: 'Read more reviews',
