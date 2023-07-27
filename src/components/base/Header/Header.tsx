@@ -18,7 +18,7 @@ export const Header: FC<HeaderProps> = ({actions, className}) => {
 	const items = useNavigationItems();
 	const scrollPosition = useScrollPosition();
 
-	const isScrolled = useMemo(() => scrollPosition > 100, [scrollPosition]);
+	const isScrolled = useMemo(() => scrollPosition > 4, [scrollPosition]);
 
 	return (
 		<HeaderBar className={className} isScrolled={isScrolled}>

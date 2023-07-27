@@ -25,7 +25,6 @@ export const formatTokens = (tokens: RawTokenObject): FormattedTokenObject => {
 			continue;
 		}
 
-		// case: #00aad2 !!has-variants
 		if (typeof value === 'string' && value.includes(variantCheck)) {
 			const tokenValue = value.replace(variantCheck, '');
 			formattedTokens[key] = generateColorVariants(tokenValue);

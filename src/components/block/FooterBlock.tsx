@@ -94,6 +94,7 @@ const CopyrightBlockWrapper = styled(Block)(({theme}) => css`
 			display: grid;
 			grid-template-columns: 1fr;
 			gap: 0.25rem;
+			justify-items: center;
 		}
 
 		${theme.breakpoints.up('md')} {

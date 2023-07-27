@@ -15,14 +15,8 @@ export type ActionStackProps = PropsWithChildren<{
 }>;
 
 export const ActionStack: FC<ActionStackProps> = ({
-	align,
-	actions,
-	text,
-	max = 2,
-	className = '',
-	children,
-	size = 'medium',
-	color = 'tertiary',
+	align, actions, text, max = 2, className = '',
+	children, size = 'medium', color = 'tertiary',
 }) => (
 	<div className={`ActionStack-root ${className}`}>
 		<Stack
@@ -33,18 +27,16 @@ export const ActionStack: FC<ActionStackProps> = ({
 			justifyContent={align}
 		>
 			{children}
-			{actions
-				?.slice(0, max)
-				.map(({label, ...actionItemsProps}, actionIndex) => (
-					<Button
-						key={actionIndex}
-						size={size}
-						color={color}
-						{...actionItemsProps}
-					>
-						{label}
-					</Button>
-				))}
+			{actions?.slice(0, max).map(({label, ...actionItemsProps}, actionIndex) => (
+				<Button
+					key={actionIndex}
+					size={size}
+					color={color}
+					{...actionItemsProps}
+				>
+					{label}
+				</Button>
+			))}
 		</Stack>
 		{text && (
 			<Typography

@@ -10,7 +10,7 @@ import galleryImages from '../content/galleryImages.json';
 import services from '../content/services.json';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
-import {chance, generateActions} from '../utils/chance';
+import {generateActions} from '../utils/chance';
 
 const Page: NextPage<PageProps> = props => (
 	<DefaultLayout showYelp>
@@ -48,13 +48,11 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 				'With years of experience in the industry, we have the expertise and equipment necessary to produce stunning prints on a wide range of materials, including fabric, paper, metal, glass, and plastic. Follow us for an inside scoop of what\'s going on behind the scenes.',
 			SocialMediaBlockProps: {
 				text: '@fashiongreekusc',
-				url: chance.url(),
+				url: 'https://instagram.com/fashiongreekusc?igshid=MzRlODBiNWFlZA==',
 				actions: [
 					{
-						label: 'Follow',
-					},
-					{
-						label: 'Share',
+						label: 'Follow Us',
+						href: 'https://instagram.com/fashiongreekusc?igshid=MzRlODBiNWFlZA==',
 					},
 				],
 			},
@@ -63,10 +61,5 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 		},
 	},
 });
-
-/**
-- brand assets
-- meagan or diana, for brand assets
-*/
 
 export default Page;

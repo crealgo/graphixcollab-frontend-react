@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 25 Jul 2023 19:59:42 GMT
+ * Generated on Wed, 26 Jul 2023 01:46:24 GMT
  */
 
 export const SequenceColor0Main = "#00aad2";

@@ -91,9 +91,11 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 						<Marquee gradient={isDesktop}>
 							{firstStack.map((imageProps, imageIndex) => (
 								<Image
-									key={imageIndex}
-									className='GalleryBlock-image'
 									{...imageProps}
+									key={imageIndex}
+									shape='square'
+									className='GalleryBlock-image'
+									fill='cover'
 								/>
 							))}
 						</Marquee>
@@ -102,9 +104,11 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 						<Marquee gradient={isDesktop} direction='right'>
 							{secondStack.map((imageProps, imageIndex) => (
 								<Image
-									key={imageIndex}
-									className='GalleryBlock-image'
 									{...imageProps}
+									key={imageIndex}
+									shape='square'
+									className='GalleryBlock-image'
+									fill='cover'
 								/>
 							))}
 						</Marquee>

@@ -77,7 +77,7 @@ const BackgroundCarouselSlide = styled(CarouselSlide)`
 			.Slide-heading {
 				text-align: center;
 
-				${({theme}) => theme.breakpoints.up('lg')} {
+				${({theme}) => theme.breakpoints.up('md')} {
 					text-align: left;
 				}
 			}
@@ -101,48 +101,22 @@ const BackgroundCarouselSlide = styled(CarouselSlide)`
 	}
 `;
 
-const Content = styled('div')(
-	({theme}) => css`
-		position: relative;
-		display: grid;
-		grid-template-columns: 1fr;
-		align-items: center;
-		justify-content: center;
+const Content = styled('div')(({theme}) => css`
+	display:grid;
+	grid-template-columns: 1fr;
+	width: 100%;
+	max-width: 40rem;
+	gap: 1.5rem;
+	justify-items: center;
+	text-align: center;
+	margin-inline: auto;
 
-		.content {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 2rem;
-			align-content: center;
-			justify-items: center;
-			border-radius: 0.5rem;
-			text-align: center;
-
-			.Text-root {
-				max-width: ${theme.breakpoints.values.sm}px;
-				background-color: lightblue;
-			}
-
-			.ActionStack-root > * {
-				display: flex;
-				justify-content: center;
-			}
-		}
-
-		.image {
-		}
-
-		${theme.breakpoints.up('lg')} {
-			grid-template-columns: 1fr 1fr;
-
-			.content {
-				padding-inline: 0;
-				justify-items: start;
-				text-align: left;
-			}
-		}
-	`,
-);
+	${theme.breakpoints.up('md')} {
+		justify-items: unset;
+		text-align: left;
+		margin-inline: 0 auto;
+	}
+`);
 
 export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
 	const router = useRouter();
@@ -163,9 +137,9 @@ export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
 					</BackgroundCarouselSlide>
 				))}
 			</BackgroundCarousel>
-			<Container className='IntroBlock-root'>
-				<Content>
-					<Block className='content'>
+			<Block className='content'>
+				<Container className='IntroBlock-root'>
+					<Content>
 						<Heading level={1}>
 							Welcome to <Logo/>
 						</Heading>
@@ -179,18 +153,11 @@ export const IntroBlock: FC<IntroBlockProps> = ({description}) => {
 									color: 'primary',
 									endIcon: <ArrowRight/>,
 								},
-								{
-									label: 'Get Started',
-									color: 'text',
-									href: `${router.basePath}/services`,
-									endIcon: <ArrowRight/>,
-								},
 							]}
 						/>
-					</Block>
-					<div className='image'/>
-				</Content>
-			</Container>
+					</Content>
+				</Container>
+			</Block>
 		</Wrapper>
 	);
 };

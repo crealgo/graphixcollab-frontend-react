@@ -58,7 +58,7 @@ const StyledDiv = styled(
 			margin-inline: ${hasNoDefaultMargin ? 'unset' : 'var(--section-margin-inline)'};
 			border-radius: ${isRounded ? 'var(--section-border-radius)' : 'none'};
 
-			overflow: ${isClipped ? 'hidden' : 'auto'};
+			overflow: ${isClipped ? 'hidden' : 'unset'};
 
 			${theme.breakpoints.up('md')} {
 				border-top: solid 1px ${borderColor};

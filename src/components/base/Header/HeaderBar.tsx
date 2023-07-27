@@ -20,7 +20,7 @@ export const StyledHeaderBar = styled(
 	return css`
 		position: sticky;
 		top: 0;
-		transition: all 100ms;
+		transition: all 300ms;
 		border-bottom-style: solid;
 		border-bottom-width: 1px;
 		background-color: ${backgroundColor};

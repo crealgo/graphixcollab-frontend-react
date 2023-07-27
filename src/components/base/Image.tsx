@@ -3,8 +3,9 @@ import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
+	fill: 'cover' | 'contain';
 	caption?: ReactNode;
-	shape?: 'square' | 'portrait' | 'landscape';
+	shape?: 'square' | 'portrait' | 'landscape' | 'auto';
 };
 
 const BaseElement: FC<ImageProps> = ({
@@ -41,13 +42,14 @@ const BaseElement: FC<ImageProps> = ({
 	);
 };
 
-export const Image = styled(BaseElement)(({shape}) => {
-	const shapeCss = {
-		square: css`
-			aspect-ratio: 1;
-		`,
-		portrait: css``,
-		landscape: css``,
+export const Image = styled(BaseElement)(({
+	shape = 'auto', fill = 'cover',
+}) => {
+	const aspectRatio = {
+		square: '1 / 1',
+		portrait: '3 / 4',
+		landscape: '4 / 3',
+		auto: 'auto',
 	}[shape ?? 'square'];
 
 	return css`
@@ -61,18 +63,15 @@ export const Image = styled(BaseElement)(({shape}) => {
 		grid-template-columns: 1fr;
 		gap: 0.5rem;
 
-		background-color: var(--color-brand-key-lightest);
-
-		/* FIXME: doesn't work well with caption, needs wrapper around image */
-		${shapeCss}
-
 		.Image-element {
 			outline: unset;
-			object-fit: cover;
+
+			display: flex;
+			object-fit: ${fill};
 			width: 100%;
 			height: 100%;
 			border-radius: 0.25rem;
-			aspect-ratio: 1;
+			aspect-ratio: ${aspectRatio};
 		}
 
 		&[loaded] {

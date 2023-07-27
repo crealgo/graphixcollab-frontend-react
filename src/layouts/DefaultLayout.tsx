@@ -49,17 +49,10 @@ const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
 	`,
 );
 
-const Main = styled('main')(
-	({theme}) => css`
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-
-		${theme.breakpoints.up('md')} {
-			padding-bottom: 1rem;
-			gap: 1rem;
-		}
-	`,
-);
+const Main = styled('main')`
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+`;
 
 export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
 	const router = useRouter();

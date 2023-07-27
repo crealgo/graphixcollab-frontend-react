@@ -122,9 +122,6 @@ export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
 							>
 								View All Services
 							</Button>
-							<Button color='text' endIcon={<Message/>}>
-								Contact Us
-							</Button>
 						</ActionStack>
 					</Container>
 				</Wrapper>
