@@ -1,19 +1,19 @@
 /**
  * Do not edit directly
- * Generated on Thu, 27 Jul 2023 05:25:40 GMT
+ * Generated on Thu, 27 Jul 2023 05:50:29 GMT
  */
 
 :root {
-  --sequence-color-0-main: #0082a1;
+  --sequence-color-0-main: #00aad2;
   --sequence-color-0-lightest: #def4ff;
-  --sequence-color-0-lighter: #6fcdee;
-  --sequence-color-0-light: #47a9ca;
+  --sequence-color-0-lighter: #4fcff9;
+  --sequence-color-0-light: #07abd3;
   --sequence-color-0-neutral: #0082a1;
   --sequence-color-0-dark: #006780;
   --sequence-color-0-darker: #003544;
   --sequence-color-0-darkest: #001f28;
   --sequence-color-0-contrast: #ffffff;
-  --sequence-color-1-main: #e21a7c;
+  --sequence-color-1-main: #d40072;
   --sequence-color-1-lightest: #ffecf0;
   --sequence-color-1-lighter: #ffa8c3;
   --sequence-color-1-light: #ff69a2;
@@ -22,18 +22,18 @@
   --sequence-color-1-darker: #650033;
   --sequence-color-1-darkest: #3e001d;
   --sequence-color-1-contrast: #ffffff;
-  --sequence-color-2-main: #957200;
+  --sequence-color-2-main: #edb700;
   --sequence-color-2-lightest: #ffefd1;
-  --sequence-color-2-lighter: #e6bc50;
-  --sequence-color-2-light: #c0992f;
+  --sequence-color-2-lighter: #efb906;
+  --sequence-color-2-light: #c59700;
   --sequence-color-2-neutral: #957200;
   --sequence-color-2-dark: #775a00;
   --sequence-color-2-darker: #3e2e00;
   --sequence-color-2-darkest: #251a00;
   --sequence-color-2-contrast: #ffffff;
-  --sequence-color-3-main: #7b7673;
+  --sequence-color-3-main: #1c1917;
   --sequence-color-3-lightest: #f7efeb;
-  --sequence-color-3-lighter: #c6c0bc;
+  --sequence-color-3-lighter: #c7c0bc;
   --sequence-color-3-light: #a39d99;
   --sequence-color-3-neutral: #7b7673;
   --sequence-color-3-dark: #625d5b;

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 27 Jul 2023 05:25:40 GMT
+ * Generated on Thu, 27 Jul 2023 05:50:29 GMT
  */
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
         "main": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Main",
           "attributes": {
@@ -29,7 +29,7 @@ module.exports = {
         "lightest": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Lightest",
           "attributes": {
@@ -48,7 +48,7 @@ module.exports = {
         "lighter": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Lighter",
           "attributes": {
@@ -67,7 +67,7 @@ module.exports = {
         "light": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Light",
           "attributes": {
@@ -86,7 +86,7 @@ module.exports = {
         "neutral": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Neutral",
           "attributes": {
@@ -105,7 +105,7 @@ module.exports = {
         "dark": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Dark",
           "attributes": {
@@ -124,7 +124,7 @@ module.exports = {
         "darker": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Darker",
           "attributes": {
@@ -143,7 +143,7 @@ module.exports = {
         "darkest": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Darkest",
           "attributes": {
@@ -162,7 +162,7 @@ module.exports = {
         "contrast": {
           "value": "#00aad2",
           "original": {
-            "value": "{color.brand.cyan.neutral}"
+            "value": "{color.brand.cyan.main}"
           },
           "name": "SequenceColor0Contrast",
           "attributes": {
@@ -183,7 +183,7 @@ module.exports = {
         "main": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Main",
           "attributes": {
@@ -202,7 +202,7 @@ module.exports = {
         "lightest": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Lightest",
           "attributes": {
@@ -221,7 +221,7 @@ module.exports = {
         "lighter": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Lighter",
           "attributes": {
@@ -240,7 +240,7 @@ module.exports = {
         "light": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Light",
           "attributes": {
@@ -259,7 +259,7 @@ module.exports = {
         "neutral": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Neutral",
           "attributes": {
@@ -278,7 +278,7 @@ module.exports = {
         "dark": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Dark",
           "attributes": {
@@ -297,7 +297,7 @@ module.exports = {
         "darker": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Darker",
           "attributes": {
@@ -316,7 +316,7 @@ module.exports = {
         "darkest": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Darkest",
           "attributes": {
@@ -335,7 +335,7 @@ module.exports = {
         "contrast": {
           "value": "#d40072",
           "original": {
-            "value": "{color.brand.magenta.neutral}"
+            "value": "{color.brand.magenta.main}"
           },
           "name": "SequenceColor1Contrast",
           "attributes": {
@@ -356,7 +356,7 @@ module.exports = {
         "main": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Main",
           "attributes": {
@@ -375,7 +375,7 @@ module.exports = {
         "lightest": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Lightest",
           "attributes": {
@@ -394,7 +394,7 @@ module.exports = {
         "lighter": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Lighter",
           "attributes": {
@@ -413,7 +413,7 @@ module.exports = {
         "light": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Light",
           "attributes": {
@@ -432,7 +432,7 @@ module.exports = {
         "neutral": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Neutral",
           "attributes": {
@@ -451,7 +451,7 @@ module.exports = {
         "dark": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Dark",
           "attributes": {
@@ -470,7 +470,7 @@ module.exports = {
         "darker": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Darker",
           "attributes": {
@@ -489,7 +489,7 @@ module.exports = {
         "darkest": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Darkest",
           "attributes": {
@@ -508,7 +508,7 @@ module.exports = {
         "contrast": {
           "value": "#edb700",
           "original": {
-            "value": "{color.brand.yellow.neutral}"
+            "value": "{color.brand.yellow.main}"
           },
           "name": "SequenceColor2Contrast",
           "attributes": {
@@ -529,7 +529,7 @@ module.exports = {
         "main": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Main",
           "attributes": {
@@ -548,7 +548,7 @@ module.exports = {
         "lightest": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Lightest",
           "attributes": {
@@ -567,7 +567,7 @@ module.exports = {
         "lighter": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Lighter",
           "attributes": {
@@ -586,7 +586,7 @@ module.exports = {
         "light": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Light",
           "attributes": {
@@ -605,7 +605,7 @@ module.exports = {
         "neutral": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Neutral",
           "attributes": {
@@ -624,7 +624,7 @@ module.exports = {
         "dark": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Dark",
           "attributes": {
@@ -643,7 +643,7 @@ module.exports = {
         "darker": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Darker",
           "attributes": {
@@ -662,7 +662,7 @@ module.exports = {
         "darkest": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Darkest",
           "attributes": {
@@ -681,7 +681,7 @@ module.exports = {
         "contrast": {
           "value": "#1c1917",
           "original": {
-            "value": "{color.brand.key.neutral}"
+            "value": "{color.brand.key.main}"
           },
           "name": "SequenceColor3Contrast",
           "attributes": {
