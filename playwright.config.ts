@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import {defineConfig, devices} from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -19,7 +19,7 @@ export default defineConfig({
 	// timeout: 30000,
 	use: {
 		baseURL: 'http://127.0.0.1:3000',
-		trace: 'on-first-retry'
+		trace: 'on-first-retry',
 		// actionTimeout: 5000
 	},
 	projects: [
@@ -29,28 +29,28 @@ export default defineConfig({
 		// },
 		{
 			name: 'desktop-chrome',
-			use: { ...devices['Desktop Chrome'] }
-		}
-		// {
-		// 	name: 'desktop-firefox',
-		// 	use: { ...devices['Desktop Firefox'] }
-		// },
-		// {
-		// 	name: 'desktop-safari',
-		// 	use: { ...devices['Desktop Safari'] }
-		// },
-		// {
-		// 	name: 'android',
-		// 	use: { ...devices['Pixel 5'] }
-		// }
-		// {
-		// 	name: 'ios',
-		// 	use: { ...devices['iPhone 12'] }
-		// }
+			use: {...devices['Desktop Chrome']},
+		},
+		{
+			name: 'desktop-firefox',
+			use: {...devices['Desktop Firefox']},
+		},
+		{
+			name: 'desktop-safari',
+			use: {...devices['Desktop Safari']},
+		},
+		{
+			name: 'android',
+			use: {...devices['Pixel 5']},
+		},
+		{
+			name: 'ios',
+			use: {...devices['iPhone 12']},
+		},
 	],
 	webServer: {
 		command: 'npm run dev',
 		url: 'http://127.0.0.1:3000',
-		reuseExistingServer: true
-	}
+		reuseExistingServer: true,
+	},
 });
