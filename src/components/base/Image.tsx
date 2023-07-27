@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
-	fill: 'cover' | 'contain';
+	fill?: 'cover' | 'contain';
 	caption?: ReactNode;
 	shape?: 'square' | 'portrait' | 'landscape' | 'auto';
 };

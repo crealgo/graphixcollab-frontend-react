@@ -10,6 +10,7 @@ import {Button} from '../base/Button';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {HorizontalCard} from '../base/HorizontalCard';
+import {Image, type ImageProps} from '../base/Image';
 import {Mark} from '../base/Mark';
 import {Text} from '../base/Text';
 
@@ -17,6 +18,8 @@ type Service = (typeof services)[number];
 
 export type ServicesBlockProps = {
 	services?: Service[];
+	imageTranslate?: string;
+	ImageProps?: ImageProps;
 } & SharedBlockProps;
 
 export const Content = styled('div')(
@@ -88,10 +91,29 @@ const Wrapper = styled('div')(
 	`,
 );
 
+const StyledImage = styled(Image)<{imageTranslate?: string}>(({
+	theme, imageTranslate = '60%',
+}) => css`
+	position: absolute;
+	max-width: 35rem;
+	bottom: 0;
+	right: 0;
+	transform: translateY(${imageTranslate ?? '60%'});
+	aspect-ratio: 1/1;
+	padding: 5rem;
+	display: none;
+
+	/* background: lightgray; */
+	/* border-radius: 50%; */
+
+
+	${theme.breakpoints.up('lg')} {
+		display: flex;
+	}
+`);
+
 export const ServicesBlock: FC<ServicesBlockProps> = ({
-	title,
-	description,
-	services,
+	title, description, services, ImageProps, imageTranslate = '60%',
 }) => (
 	<StyledBlock>
 		<Container>
@@ -119,13 +141,16 @@ export const ServicesBlock: FC<ServicesBlockProps> = ({
 					</Box>
 					<Button
 						color='text'
-						href='mailto:graphixcollab@gmail.com?subject=Inquiry%20from%20website'
+						href='/contact'
 						endIcon={<Message/>}
 					>
 						Contact Us
 					</Button>
 				</ActionStack>
 			</Wrapper>
+			{ImageProps?.src && (
+				<StyledImage {...ImageProps} imageTranslate={imageTranslate}/>
+			)}
 		</Container>
 	</StyledBlock>
 );

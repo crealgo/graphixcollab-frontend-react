@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const FormGrid = styled.form`
 	display: grid;
 	grid-template-columns: repeat(12, minmax(0, 1fr));
-	gap: 1rem;
+	gap: 1.25rem;
 
 	.FormHeader-root,
 	.FormSectionTitle-root,

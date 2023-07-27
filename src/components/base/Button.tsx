@@ -8,28 +8,28 @@ export type ButtonProps = {
 	color?: BrandColor;
 } & ButtonBaseProps;
 
-const StyledButton = styled(ButtonBase)<ButtonProps>(
-	({color = 'primary', size = 'medium'}) => css`
+const StyledButton = styled(ButtonBase)<ButtonProps>(({
+	color = 'primary', size = 'medium',
+}) => css`
 		border-radius: var(--button-bezel-${size});
 
-		font-weight: var(--button-font-weight);
-		font-size: var(--input-font-size-${size});
-		letter-spacing: var(--button-letter-spacing);
+	font-weight: var(--button-font-weight);
+	font-size: var(--input-font-size-${size});
+	letter-spacing: var(--button-letter-spacing);
 
-		background-color: var(--button-background-color-${color});
-		box-shadow: var(--button-shadow-${color});
-		color: var(--button-text-color-${color});
-		border: var(--button-border-${color});
+	background-color: var(--button-background-color-${color});
+	box-shadow: var(--button-shadow-${color});
+	color: var(--button-text-color-${color});
+	border: var(--button-border-${color});
 
-		text-decoration: var(--button-text-decoration-${color});
-		text-underline-offset: var(--button-text-offset-${color});
-		text-decoration-thickness: var(--button-text-thickness-${color});
+	text-decoration: var(--button-text-decoration-${color});
+	text-underline-offset: var(--button-text-offset-${color});
+	text-decoration-thickness: var(--button-text-thickness-${color});
 
-		padding-inline: var(--input-spacing-padding-inline-${size});
-		line-height: var(--input-height-${size});
-		height: var(--input-height-${size});
-	`,
-);
+	padding-inline: var(--input-spacing-padding-inline-${size});
+	line-height: var(--input-height-${size});
+	height: var(--input-height-${size});
+`);
 
 export const Button: FC<ButtonProps> = ({children, className, ...props}) => (
 	<StyledButton

@@ -31,7 +31,7 @@ const StyledContainer = styled(Container)`
 	gap: 1rem;
 
 	.ActionStack-root {
-		margin-top: 2.5rem;
+		margin-top: 1rem;
 	}
 `;
 

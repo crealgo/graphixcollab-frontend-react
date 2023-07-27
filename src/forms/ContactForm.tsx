@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 import {CheckCircleOutline, Refresh} from '@mui/icons-material';
 import CircularProgress from '@mui/material/CircularProgress';
 import {type FC, type PropsWithChildren} from 'react';
@@ -12,21 +12,18 @@ import {FormItemGenerator} from './FormItemGenerator';
 import {renderFormAlert} from './__utils__/renderFormAlert';
 import {contactFormItems as items} from './__data__/contactFormItems';
 import {getFormAction} from './__utils__/getFormAction';
+import {css} from '@emotion/react';
 
-const StyledFormGrid = styled(FormGrid)`
-	@media screen and (min-width: 600px) {
-		padding-right: 20%;
-	}
+const StyledFormGrid = styled(FormGrid)(({theme}) => css`
+	${theme.breakpoints.up('md')} {
+		padding-right: 20rem;
 
-	@media screen and (min-width: 768px) {
 		.FormControl-id-name,
 		.FormControl-id-email {
 			grid-column: span 6;
 		}
-
-		padding-right: 35%;
 	}
-`;
+`);
 
 export const ContactForm: FC<PropsWithChildren> = () => {
 	const formState = useForm();

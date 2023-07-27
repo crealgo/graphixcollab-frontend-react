@@ -53,7 +53,7 @@ const Wrapper = styled('div')(
 		.services {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 1rem;
+			gap: 1.25rem;
 
 			.service {
 				${colorIterator('background', '.image')}
@@ -82,10 +82,7 @@ const Wrapper = styled('div')(
 );
 
 export const ServicesPreviewBlock: FC<ServicesPreviewBlockProps> = ({
-	title,
-	subtitle,
-	description,
-	services,
+	title, subtitle, description, services,
 }) => {
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 	const router = useRouter();

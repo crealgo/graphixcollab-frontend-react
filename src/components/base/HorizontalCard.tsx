@@ -23,24 +23,7 @@ const CardAnchor = styled.a`
 	display: grid;
 	place-items: start;
 	grid-template-columns: 4.75rem 2fr;
-	gap: 1.25rem;
-
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-
-		width: 0.25rem;
-		height: calc(100% + 1rem);
-		width: calc(100% + 1rem);
-		background-color: var(--color-brand-key-lightest);
-		border-radius: 0.5rem;
-
-		opacity: 0;
-	}
+	gap: 0.75rem;
 
 	&:hover::before {
 		opacity: 0.5;
@@ -51,8 +34,7 @@ const CardImageBox = styled.figure`
 	margin: unset;
 
 	position: relative;
-	padding: 0.5rem;
-	background-color: ${({color}) => color};
+	padding: 0.25rem;
 	border-radius: 0.5rem;
 	overflow: hidden;
 	display: flex;
@@ -72,8 +54,8 @@ const CardContent = styled.div`
 	display: grid;
 	align-content: start;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto;
-	gap: 0.5rem;
+	grid-template-rows: auto;
+	gap: 0.25rem;
 
 	.ActionStack-root {
 		margin-top: 0.25rem;
@@ -82,12 +64,7 @@ const CardContent = styled.div`
 `;
 
 export const HorizontalCard: FC<CardProps> = ({
-	title,
-	description,
-	className,
-	image,
-	// imageColor,
-	...props
+	title, description, className, image, ...props
 }) => (
 	<CardAnchor
 		className={clsx('HorizontalCard-root', className)}
@@ -101,7 +78,7 @@ export const HorizontalCard: FC<CardProps> = ({
 			<Heading className='title' level={5}>
 				{title}
 			</Heading>
-			<Text spacing='small' color='secondary'>
+			<Text spacing='small' color='primary'>
 				{description}
 			</Text>
 		</CardContent>

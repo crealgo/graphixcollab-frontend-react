@@ -1,6 +1,7 @@
 import {Typography} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
+import {Image, type ImageProps} from '../base/Image';
 import {type ComponentPropsWithRef, type FC} from 'react';
 import {type ServiceOptions} from '../../types/general';
 import {chance} from '../../utils/chance';
@@ -23,6 +24,7 @@ const CardAnchor = styled('a')(() => {
 		cursor: pointer;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: 7.5rem auto;
 		gap: 1rem;
 		text-align: center;
 
@@ -55,15 +57,10 @@ const CardAnchor = styled('a')(() => {
 });
 
 export const Card: FC<CardProps> = ({
-	title,
-	subtitle,
-	description,
-	className,
-	image,
-	...props
+	title, subtitle, description, className, image, ...props
 }) => (
 	<CardAnchor className={clsx('Card-root', className)} {...props}>
-		<img {...image}/>
+		<Image {...image} fill='contain'/>
 		<div className='content'>
 			<Typography variant='caption'>{subtitle}</Typography>
 			<Typography variant='h5'>{title}</Typography>

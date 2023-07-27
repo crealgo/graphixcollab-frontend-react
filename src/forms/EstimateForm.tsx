@@ -1,5 +1,5 @@
 import {ArrowForward, CheckCircleOutline} from '@mui/icons-material';
-import {CircularProgress} from '@mui/material';
+import {CircularProgress, css, styled} from '@mui/material';
 import {type FC} from 'react';
 import {ActionStack} from '../components/base/ActionStack';
 import {Button} from '../components/base/Button';
@@ -11,14 +11,11 @@ import {FormItemGenerator} from './FormItemGenerator';
 import {renderFormAlert} from './__utils__/renderFormAlert';
 import {estimateFormItems} from './__data__/estimateFormItems';
 import {getFormAction} from './__utils__/getFormAction';
-import styled from '@emotion/styled';
 
-const StyledFormGrid = styled(FormGrid)`
-	@media screen and (min-width: 600px) {
-		padding-right: 20%;
-	}
+const StyledFormGrid = styled(FormGrid)(({theme}) => css`
+	${theme.breakpoints.up('md')} {
+		padding-right: 20rem;
 
-	@media screen and (min-width: 768px) {
 		.FormControl-id-name,
 		.FormControl-id-email {
 			grid-column: span 6;
@@ -35,10 +32,8 @@ const StyledFormGrid = styled(FormGrid)`
 		.FormControl-id-artwork {
 			grid-column: span 12;
 		}
-
-		padding-right: 35%;
 	}
-`;
+`);
 
 export const EstimateForm: FC = () => {
 	const formState = useForm();

@@ -24,9 +24,10 @@ const ServicesPage: NextPage<PageProps> = props => (
 		<PageTitle text='Book Appointment'/>
 		<PageHeaderBlock
 			color='cyan'
-			title='Book Appointment'
+			title='Book A Time'
 			description='Book an appointment to speak with our team! Open doors to a wide range of printing options, from apparel and promotional products to signage and more. Our state-of-the-art equipment and skilled professionals guarantee outstanding results that exceed your expectations.'
 			ImageProps={{
+				fill: 'contain',
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
 				alt: 'Book an Appointment w/ Graphix Collab',
 			}}

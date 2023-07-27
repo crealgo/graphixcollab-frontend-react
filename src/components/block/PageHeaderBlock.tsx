@@ -1,5 +1,5 @@
 import {css, styled} from '@mui/material/styles';
-import {type FC, type ReactNode} from 'react';
+import {Fragment, type FC, type ReactNode} from 'react';
 import {generatePatternCSS} from '../../utils/generatePatternCSS';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
@@ -24,9 +24,7 @@ const DividerPattern = styled('div')<PageHeaderBlockProps>(({color = 'magenta'})
 	width: 100%;
 `);
 
-const Wrapper = styled(Block)<PageHeaderBlockProps>(({
-	color = 'magenta', ImageProps,
-}) => css`
+const Wrapper = styled(Block)<PageHeaderBlockProps>(({color = 'magenta'}) => css`
 	--wrapper-padding-bottom: 6rem;
 
 	@media screen and (min-width: 1123px) {
@@ -34,20 +32,10 @@ const Wrapper = styled(Block)<PageHeaderBlockProps>(({
 	}
 
 	background-color: var(--color-brand-${color}-lightest);
-	margin-top: calc(5rem - 10rem);
+	margin-top: -5rem;
 	border-top: unset;
 	border-right: unset;
 	border-left: unset;
-
-	padding-bottom: ${ImageProps?.src ? '0 !important' : 'var(--wrapper-padding-bottom)'};
-	/* height: 100%; */
-
-	.PageHeaderBlock-container {
-		position: relative;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-	}
 
 	.Heading-root,
 	.Text-root {
@@ -55,36 +43,52 @@ const Wrapper = styled(Block)<PageHeaderBlockProps>(({
 	}
 `);
 
-const HeaderImage = styled(Image)`
-	width: 100%;
-	display: block;
-	transform: scale(1.125);
+const StyledContainer = styled(Container)(({theme}) => css`
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	column-gap: 2rem;
 
-	@media screen and (min-width: 425px) {
-		max-width: 25rem;
-		inset: 100% 0 auto auto;
-		max-width: 35rem;
+	.content, .image {
+		position: relative;
 	}
-`;
 
-const Content = styled('hgroup')`
-	max-width: 40rem;
-`;
+	.image {
+		margin-bottom: -7rem;
+	}
+
+	${theme.breakpoints.up('md')} {
+		grid-template-columns: 35rem 1fr;
+
+		.image {
+			margin-bottom: unset;
+		}
+	}
+`);
+
+const HeaderImage = styled(Image)(({theme}) => css`
+	width: 100%;
+	height: 100%;
+
+	${theme.breakpoints.up('md')} {
+		position: absolute;
+	}
+`);
 
 export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title, description, color, ImageProps,
 }) => (
 	<>
 		<Wrapper color={color} ImageProps={ImageProps}>
-			<Container className='PageHeaderBlock-container'>
-				<Content>
+			<StyledContainer>
+				<hgroup className='content'>
 					<Heading hasMargin level={1}>
 						<Mark brand>{title}</Mark>
 					</Heading>
 					<Text>{description}</Text>
-				</Content>
-				{ImageProps && <HeaderImage {...ImageProps} fill='contain' shape='auto'/>}
-			</Container>
+				</hgroup>
+				<div className='image'>{ImageProps && <HeaderImage {...ImageProps} fill='contain' shape='auto'/>}</div>
+			</StyledContainer>
 		</Wrapper>
 		<DividerPattern role='separator' color={color}/>
 	</>

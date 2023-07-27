@@ -2,7 +2,7 @@ import {TonalPalette, argbFromHex, hexFromArgb} from '@material/material-color-u
 
 const scale = {
 	main: undefined,
-	lightest: 92,
+	lightest: 95,
 	lighter: 78,
 	light: 65,
 	neutral: 50,

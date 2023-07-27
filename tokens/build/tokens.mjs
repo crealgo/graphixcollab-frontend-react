@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jul 2023 01:46:24 GMT
+ * Generated on Thu, 27 Jul 2023 05:25:40 GMT
  */
 
 export const SequenceColor0Main = "#00aad2";
@@ -339,7 +339,7 @@ export const ButtonTextColorTertiary = "#1c1917";
 export const ButtonTextColorText = "#1c1917";
 export const ButtonBorderPrimary = "solid 0.0625rem #00aad2";
 export const ButtonBorderSecondary = "solid 0.0625rem #d40072";
-export const ButtonBorderTertiary = "solid 0.0625rem #edb700";
+export const ButtonBorderTertiary = "solid 0.0625rem #1c1917";
 export const ButtonBorderText = "none";
 export const ButtonBackgroundColorPrimary = "#00aad2";
 export const ButtonBackgroundColorSecondary = "#d40072";

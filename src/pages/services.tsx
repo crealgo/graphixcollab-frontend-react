@@ -76,18 +76,6 @@ const Page: NextPage<PageProps> = ({
 		<TimelineBlock/>
 		<EstimatorBlock/>
 		<FaqBlock {...FaqBlockProps}/>
-		<StyledContainer>
-			<StyledImage
-				src='assets/juicy-girl-is-working-on-laptop-at-a-remote-job-min@512w.webp'
-				alt='Services 1'
-			/>
-		</StyledContainer>
-		<StyledContainer2>
-			<StyledImage
-				src='assets/juicy-web-designer-girl-making-landing-page-with-video-color-palette-and-site-blocks-min@512w.webp'
-				alt='Services 2'
-			/>
-		</StyledContainer2>
 	</DefaultLayout>
 );
 
@@ -95,16 +83,16 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
 		FooterProps: generateFooter(),
 		serviceBlocks: [
-			// TODO: DEV
-			// {
-			// 	title: 'All',
-			// 	services
-			// },
 			{
 				title: 'Printing Services',
 				description:
 					'Printing solutions in various mediums and products such as paper, vinyl, and t-shirts through processes such as offset, digital, screen, and 3D printing.',
 				services: services.filter(s => s.tags.includes('printing')),
+				imageTranslate: '50%',
+				ImageProps: {
+					src: 'assets/juicy-girl-is-working-on-laptop-at-a-remote-job-min@512w.webp',
+					alt: 'Working Remotely',
+				},
 			},
 			{
 				title: 'Graphic Design Services',
@@ -113,6 +101,11 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 				services: services.filter(s =>
 					s.tags.includes('graphic-design'),
 				),
+				imageTranslate: '70%',
+				ImageProps: {
+					src: 'assets/juicy-web-designer-girl-making-landing-page-with-video-color-palette-and-site-blocks-min@512w.webp',
+					alt: 'Designing on a laptop',
+				},
 			},
 			{
 				title: 'Small Business Services',

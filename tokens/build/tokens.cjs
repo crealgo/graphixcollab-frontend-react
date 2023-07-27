@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 26 Jul 2023 01:46:24 GMT
+ * Generated on Thu, 27 Jul 2023 05:25:40 GMT
  */
 
 module.exports = {
@@ -6227,7 +6227,7 @@ module.exports = {
       "primary": {
         "value": "solid 0.0625rem #00aad2",
         "original": {
-          "value": "{input.border.style} {input.border.width} {color.brand.primary.neutral}"
+          "value": "{input.border.style} {input.border.width} {color.brand.primary.dark}"
         },
         "name": "ButtonBorderPrimary",
         "attributes": {
@@ -6244,7 +6244,7 @@ module.exports = {
       "secondary": {
         "value": "solid 0.0625rem #d40072",
         "original": {
-          "value": "{input.border.style} {input.border.width} {color.brand.secondary.neutral}"
+          "value": "{input.border.style} {input.border.width} {color.brand.secondary.dark}"
         },
         "name": "ButtonBorderSecondary",
         "attributes": {
@@ -6259,9 +6259,9 @@ module.exports = {
         ]
       },
       "tertiary": {
-        "value": "solid 0.0625rem #edb700",
+        "value": "solid 0.0625rem #1c1917",
         "original": {
-          "value": "{input.border.style} {input.border.width} {color.brand.tertiary.neutral}"
+          "value": "{input.border.style} {input.border.width} {color.brand.key.lighter}"
         },
         "name": "ButtonBorderTertiary",
         "attributes": {
@@ -6297,7 +6297,7 @@ module.exports = {
       "primary": {
         "value": "#00aad2",
         "original": {
-          "value": "{color.brand.primary.main}"
+          "value": "{color.brand.primary.neutral}"
         },
         "name": "ButtonBackgroundColorPrimary",
         "attributes": {
@@ -6314,7 +6314,7 @@ module.exports = {
       "secondary": {
         "value": "#d40072",
         "original": {
-          "value": "{color.brand.secondary.main}"
+          "value": "{color.brand.secondary.neutral}"
         },
         "name": "ButtonBackgroundColorSecondary",
         "attributes": {
