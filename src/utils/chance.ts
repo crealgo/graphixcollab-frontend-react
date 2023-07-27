@@ -261,15 +261,15 @@ export const generateIntroBlock = (): IntroBlockProps => ({
 
 export const generatePageHeaderBlock = (): PageHeaderBlockProps => ({
 	title: 'Page Title',
-	breadcrumbs: chance.n(
-		() => ({
-			href: chance.url(),
-			label: generateWord(),
-		}),
-		3,
-	),
-	navigationItems: generateNavItems(),
-	navigationType: 'anchor-link',
+	// breadcrumbs: chance.n(
+	// 	() => ({
+	// 		href: chance.url(),
+	// 		label: generateWord(),
+	// 	}),
+	// 	3,
+	// ),
+	// navigationItems: generateNavItems(),
+	// navigationType: 'anchor-link',
 });
 
 export const generateFaqs = () => [
