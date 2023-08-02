@@ -21,10 +21,9 @@ const BaseElement: FC<BaseElementProps> = ({
 	</div>
 );
 
-export const Container = styled(
-	BaseElement,
-	_e('ref', 'size'),
-)<ContainerProps>(({theme, size = 'medium'}) => {
+export const Container = styled(BaseElement, _e('ref', 'size'))<ContainerProps>(({
+	theme, size = 'medium',
+}) => {
 	const containerSize = {
 		small: `${theme.breakpoints.values.md}`,
 		medium: `${theme.breakpoints.values.lg}`,

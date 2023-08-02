@@ -10,13 +10,6 @@ fieldset {
   margin: 0;
 }
 
-html {
-  font-family: var(--type-body-font-family);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-}
-
 *:focus-visible {
   outline: solid 2px var(--color-brand-key-main);
   outline-offset: 2px;

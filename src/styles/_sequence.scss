@@ -1,0 +1,26 @@
+$propertyTypes: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+$shades: 'main', 'lightest', 'lighter', 'light', 'neutral', 'dark', 'darker', 'darkest', 'contrast';
+
+$defaultType: 'color';
+$defaultIndex: 0;
+$defaultShade: 'main';
+
+@for $i from 0 through 3 {
+  [data-sequence-index="#{$i}"] {
+    #{$defaultType}: var(--sequence-color-#{$i}-#{$defaultShade});
+
+    @each $type in $propertyTypes {
+      &[data-sequence-property="#{$type}"] {
+        #{$type}: var(--sequence-color-#{$i}-#{$defaultShade});
+
+        @each $shade in $shades {
+          &[data-sequence-shade="#{$shade}"] {
+            #{$type}: var(--sequence-color-#{$i}-#{$shade});
+          }
+        }
+
+      }
+    }
+
+  }
+}

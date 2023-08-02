@@ -1,6 +1,8 @@
-import { UserConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import {type UserConfig} from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default {
+const config: UserConfig = {
 	plugins: [tsconfigPaths()],
-} satisfies UserConfig;
+};
+
+export default config;

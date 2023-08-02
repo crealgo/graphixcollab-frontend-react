@@ -7,10 +7,7 @@ import {type ReactNode} from 'react';
 import {type BannerProps} from '../components/base/Banner';
 import {type BreadcrumbOptions} from '../components/base/Breadcrumbs';
 import {Header, type HeaderProps} from '../components/base/Header/Header';
-import {
-	FooterBlock,
-	type FooterBlockProps,
-} from '../components/block/FooterBlock';
+import {FooterBlock, type FooterBlockProps} from '../components/block/FooterBlock';
 import {YelpBlock} from '../components/block/YelpBlock';
 
 type DefaultLayoutProps = NextPage<{
@@ -86,3 +83,8 @@ export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
 		</>
 	);
 };
+
+// design - ideation
+// prep-work - procurement
+// production - work
+// packing, delivery type

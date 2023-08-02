@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import {type FC} from 'react';
 import {BrandDots} from './BrandDots';
-import Link from 'next/link';
 
-const StyledDiv = styled(Link)`
+const BaseElement = styled('a')`
 	text-decoration: none;
 	display: inline-grid;
 
@@ -25,11 +24,11 @@ const StyledDiv = styled(Link)`
 `;
 
 const Logo: FC = () => (
-	<StyledDiv href='/' role='img' title='Graphix Collab, LLC'>
+	<BaseElement href='/' role='img' title='Graphix Collab, LLC'>
 		<span className='Graphix'>Graphix</span>
 		<span className='Logo-collab'>Collab</span>
 		<BrandDots/>
-	</StyledDiv>
+	</BaseElement>
 );
 
 export default Logo;
