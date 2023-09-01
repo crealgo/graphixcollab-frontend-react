@@ -85,7 +85,16 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 					</Heading>
 					<Text>{description}</Text>
 				</hgroup>
-				<div className='image'>{ImageProps && <HeaderImage {...ImageProps} fill='contain' shape='auto'/>}</div>
+				<div className='image'>{ImageProps && (
+					<HeaderImage
+						{...ImageProps}
+						height='auto'
+						width='100%'
+						fill='contain'
+						shape='auto'
+					/>
+				)}
+				</div>
 			</StyledContainer>
 		</Wrapper>
 		<DividerPattern role='separator' color={color}/>

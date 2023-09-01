@@ -3,17 +3,13 @@ import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
-	fill?: 'cover' | 'contain';
-	caption?: ReactNode;
-	shape?: 'square' | 'portrait' | 'landscape' | 'auto';
+	readonly fill?: 'cover' | 'contain';
+	readonly caption?: ReactNode;
+	readonly shape?: 'square' | 'portrait' | 'landscape' | 'auto';
 };
 
 const BaseElement: FC<ImageProps> = ({
-	className,
-	onLoad: userOnLoad,
-	onError: userOnError,
-	caption,
-	...props
+	className, onLoad: userOnLoad, onError: userOnError, caption, ...props
 }) => {
 	const onLoad: ImageProps['onLoad'] = event => {
 		console.log('loaded');
@@ -36,14 +32,16 @@ const BaseElement: FC<ImageProps> = ({
 				{...props}
 			/>
 			{caption && (
-				<figcaption className='Image-caption'>{caption}</figcaption>
+				<figcaption className='Image-caption'>
+					{caption}
+				</figcaption>
 			)}
 		</figure>
 	);
 };
 
 export const Image = styled(BaseElement)(({
-	shape = 'auto', fill = 'cover',
+	shape = 'auto', fill = 'cover', height, width,
 }) => {
 	const aspectRatio = {
 		square: '1 / 1',
@@ -58,23 +56,16 @@ export const Image = styled(BaseElement)(({
 		border: unset;
 		outline: unset;
 
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 0.5rem;
+		height: ${height ?? 'auto'};
+		width: ${width ?? '100%'};
 
 		.Image-element {
 			outline: unset;
 
 			display: flex;
-			object-fit: ${fill};
-			width: 100%;
-			height: 100%;
+			object-fit: ${fill ?? 'cover'};
 			border-radius: 0.25rem;
 			aspect-ratio: ${aspectRatio};
-		}
-
-		&[loaded] {
 		}
 	`;
 });

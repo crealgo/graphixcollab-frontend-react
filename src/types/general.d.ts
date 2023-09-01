@@ -124,5 +124,4 @@ export type ActionBag = {
 	label: string;
 	href?: string;
 	action?: string;
-	icon?: ReactNode;
-};
+} & Pick<ButtonProps, 'startIcon' | 'endIcon' | 'color' | 'size'>;

@@ -106,9 +106,10 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 						{titleSprings.map((style, slideIndex) => (
 							<CarouselControlTitle
 								key={slideIndex}
-								data-sequence-index={slideIndex}
-								data-sequence-property='color'
-								data-sequence-shade='dark'
+								aria-current={slideIndex === carouselIndex}
+								// data-sequence-index={slideIndex}
+								// data-sequence-property='color'
+								// data-sequence-shade='dark'
 								type='button'
 								className={clsx(
 									'carousel-control-title',
