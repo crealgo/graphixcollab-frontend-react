@@ -8,17 +8,17 @@ export type BlockProps = {
 	/**
 	 * Disables the block's inline margin
 	 */
-	hasNoDefaultMargin?: boolean;
-	color?: Exclude<ColorVariant, 'text'> | 'grey';
-	isRounded?: boolean;
-	isClipped?: boolean;
-	isFloating?: boolean;
-	hasNoHorizontalPadding?: boolean;
+	readonly hasNoDefaultMargin?: boolean;
+	readonly color?: Exclude<ColorVariant, 'text'> | 'grey';
+	readonly isRounded?: boolean;
+	readonly isClipped?: boolean;
+	readonly isFloating?: boolean;
+	readonly hasNoHorizontalPadding?: boolean;
 } & ComponentPropsWithRef<'div'>;
 
 const StyledDiv = styled(
 	'div',
-	_e('hasNoDefaultMargin', 'color', 'isRounded', 'isClipped', 'hasNoHorizontalPadding'),
+	_e('hasNoDefaultMargin', 'color', 'isRounded', 'isClipped', 'isFloating', 'hasNoHorizontalPadding'),
 )<BlockProps>(
 	({
 		theme, color, hasNoDefaultMargin, hasNoHorizontalPadding,

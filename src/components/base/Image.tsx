@@ -1,6 +1,7 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
+import {_e} from '../../utils/excludePropsFromForwarding';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
 	readonly fill?: 'cover' | 'contain';
@@ -40,7 +41,7 @@ const BaseElement: FC<ImageProps> = ({
 	);
 };
 
-export const Image = styled(BaseElement)(({
+export const Image = styled(BaseElement, _e('imageTranslate'))(({
 	shape = 'auto', fill = 'cover', height, width,
 }) => {
 	const aspectRatio = {

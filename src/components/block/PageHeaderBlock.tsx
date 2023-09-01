@@ -1,5 +1,5 @@
 import {css, styled} from '@mui/material/styles';
-import {Fragment, type FC, type ReactNode} from 'react';
+import {type FC, type ReactNode} from 'react';
 import {generatePatternCSS} from '../../utils/generatePatternCSS';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
@@ -24,7 +24,7 @@ const DividerPattern = styled('div')<PageHeaderBlockProps>(({color = 'magenta'})
 	width: 100%;
 `);
 
-const Wrapper = styled(Block)<PageHeaderBlockProps>(({color = 'magenta'}) => css`
+const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(({color = 'magenta'}) => css`
 	--wrapper-padding-bottom: 6rem;
 
 	@media screen and (min-width: 1123px) {
@@ -32,9 +32,9 @@ const Wrapper = styled(Block)<PageHeaderBlockProps>(({color = 'magenta'}) => css
 	}
 
 	background-color: var(--color-brand-${color}-lightest);
-	border-top: unset;
-	border-right: unset;
-	border-left: unset;
+	border-top: none !important;
+	border-right: none !important;
+	border-left: none !important;
 
 	.Heading-root, .Text-root {
 		color: var(--color-brand-tertiary-darker);
@@ -77,7 +77,7 @@ export const PageHeaderBlock: FC<PageHeaderBlockProps> = ({
 	title, description, color, ImageProps,
 }) => (
 	<>
-		<Wrapper color={color} ImageProps={ImageProps}>
+		<Wrapper color={color}>
 			<StyledContainer>
 				<hgroup className='content'>
 					<Heading hasMargin level={1}>
