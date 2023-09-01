@@ -1,6 +1,6 @@
 export const getFormAction = (action: string): string => {
-	const apiUrl = import.meta.env.NEXT_PUBLIC_API_URL as string;
-	const appId = import.meta.env.NEXT_PUBLIC_APP_ID as string;
+	const apiUrl = process.env.NEXT_PUBLIC_API_URL!;
+	const appId = process.env.NEXT_PUBLIC_APP_ID!;
 
 	return `${apiUrl}/${appId}/${action}`;
 };

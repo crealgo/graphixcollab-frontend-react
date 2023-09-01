@@ -1,24 +1,19 @@
-import {animated, useSprings} from '@react-spring/web';
+import {useSprings} from '@react-spring/web';
 import clsx from 'clsx';
 import {type FC, type ReactNode} from 'react';
 import {useCarouselIndex} from '../../hooks/useCarouselIndex';
 import {ActionStack} from '../base/ActionStack';
+import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Image} from '../base/Image';
 import {Text} from '../base/Text';
-import {ContentColumn, Divider, Wrapper} from './HeroBlock.styles';
+import {CarouselControlTitle, CarouselControlTitles, ContentColumn, HeroCarousel, HeroCarouselSlide, Wrapper} from './HeroBlock.styles';
+import {type ActionBag} from '../../types/general';
 
 type SlideBag = {
 	title: string;
 	src: string;
 	alt: string;
-};
-
-type ActionBag = {
-	label: string;
-	href?: string;
-	action?: string;
-	icon?: ReactNode;
 };
 
 export type HeroBlockProps = {
@@ -83,9 +78,9 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 
 	return (
 		<Wrapper className='root'>
-			<div className='carousel'>
+			<HeroCarousel>
 				{springs.map((style, slideIndex) => (
-					<animated.div
+					<HeroCarouselSlide
 						key={slideIndex}
 						data-sequence-index={slideIndex}
 						data-sequence-property='background-color'
@@ -93,16 +88,12 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 						style={{
 							transform: style.y.to(y => `translateY(${y}%)`),
 						}}
-						className={clsx(
-							'carousel-slide',
-							`carousel-slide-${slideIndex + 1}`,
-						)}
 					>
 						<Image height='100%' width='100%' fill='cover' src={props.slides[slideIndex].src}/>
-					</animated.div>
+					</HeroCarouselSlide>
 				))}
-			</div>
-			<div className='container'>
+			</HeroCarousel>
+			<Container>
 				<ContentColumn className='content'>
 					<Heading level={1} className='title'>
 						{props.title}
@@ -110,56 +101,30 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 					<Text size='large'>
 						{props.description}
 					</Text>
-					<Text>
-						{carouselIndex}
-					</Text>
-					<ActionStack className='action-stack' actions={props.actions}/>
-					<div>
-						<button
-							type='button' onClick={() => {
-								methods.previous();
-							}}
-						>Previous
-						</button>
-						<button
-							type='button' onClick={() => {
-								methods.next();
-							}}
-						>Next
-						</button>
-						<button
-							type='button' onClick={() => {
-								methods.reset();
-							}}
-						>Reset
-						</button>
-					</div>
-					<Divider/>
-					<div className='carousel-controls'>
-						<div className='carousel-controls-titles'>
-							{titleSprings.map((style, slideIndex) => (
-								<animated.button
-									key={slideIndex}
-									data-sequence-index={slideIndex}
-									data-sequence-property='color'
-									data-sequence-shade='dark'
-									type='button'
-									className={clsx(
-										'carousel-control-title',
-										`carousel-control-title-${slideIndex + 1}`,
-									)}
-									style={style}
-									onClick={() => {
-										methods.to(slideIndex);
-									}}
-								>
-									{props.slides[slideIndex].title}
-								</animated.button>
-							))}
-						</div>
-					</div>
+					<ActionStack className='action-stack' size='large' actions={props.actions}/>
+					<CarouselControlTitles>
+						{titleSprings.map((style, slideIndex) => (
+							<CarouselControlTitle
+								key={slideIndex}
+								data-sequence-index={slideIndex}
+								data-sequence-property='color'
+								data-sequence-shade='dark'
+								type='button'
+								className={clsx(
+									'carousel-control-title',
+									`carousel-control-title-${slideIndex + 1}`,
+								)}
+								style={style}
+								onClick={() => {
+									methods.to(slideIndex);
+								}}
+							>
+								{props.slides[slideIndex].title}
+							</CarouselControlTitle>
+						))}
+					</CarouselControlTitles>
 				</ContentColumn>
-			</div>
+			</Container>
 		</Wrapper>
 	);
 };

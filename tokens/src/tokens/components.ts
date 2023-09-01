@@ -9,6 +9,14 @@
 import {generateSizeValues} from '../utils/generators';
 
 export default {
+	header: {
+		bar: {
+			height: {
+				mobile: '4rem',
+				desktop: '5rem',
+			},
+		},
+	},
 	image: {
 		borderRadius: '{shape.rounding.small}',
 		backgroundColor: '{color.brand.key.lighter}',

@@ -9,10 +9,10 @@ import {Mark} from '../base/Mark';
 import {Text} from '../base/Text';
 
 export type PageHeaderBlockProps = {
-	title?: ReactNode;
-	description?: string;
-	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
-	ImageProps?: ImageProps;
+	readonly title?: ReactNode;
+	readonly description?: string;
+	readonly color?: 'cyan' | 'magenta' | 'yellow' | 'key';
+	readonly ImageProps?: ImageProps;
 };
 
 const DividerPattern = styled('div')<PageHeaderBlockProps>(({color = 'magenta'}) => css`
@@ -32,13 +32,11 @@ const Wrapper = styled(Block)<PageHeaderBlockProps>(({color = 'magenta'}) => css
 	}
 
 	background-color: var(--color-brand-${color}-lightest);
-	margin-top: -5rem;
 	border-top: unset;
 	border-right: unset;
 	border-left: unset;
 
-	.Heading-root,
-	.Text-root {
+	.Heading-root, .Text-root {
 		color: var(--color-brand-tertiary-darker);
 	}
 `);

@@ -13,8 +13,11 @@ const nextConfig = {
 
 		return config;
 	},
-	assetPrefix: import.meta.env.BASE_PATH,
-	basePath: import.meta.env.BASE_PATH,
 };
+
+if (process.env.BASE_PATH) {
+	nextConfig.assetPrefix = process.env.BASE_PATH;
+	nextConfig.basePath = process.env.BASE_PATH;
+}
 
 export default nextConfig;

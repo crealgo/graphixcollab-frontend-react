@@ -11,10 +11,7 @@ type ContainerProps = {
 };
 
 const BaseElement: FC<BaseElementProps> = ({
-	className = '',
-	children,
-	ref,
-	...props
+	className = '', children, ref, ...props
 }) => (
 	<div ref={ref} className={clsx('Container-root', className)} {...props}>
 		{children}

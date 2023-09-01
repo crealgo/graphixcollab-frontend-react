@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 30 Jul 2023 16:06:32 GMT
+ * Generated on Fri, 01 Sep 2023 17:23:26 GMT
  */
 
 :root {
@@ -270,9 +270,9 @@
   --type-heading-font-size-large-6: 1rem;
   --type-body-font-family: Inter, Arial, Helvetica, sans-serif;
   --type-body-font-weight: 400;
-  --type-body-font-leading-small: 1.375;
-  --type-body-font-leading-medium: 1.5;
-  --type-body-font-leading-large: 1.75;
+  --type-body-font-leading-small: 150%;
+  --type-body-font-leading-medium: 150%;
+  --type-body-font-leading-large: 150%;
   --type-body-font-size-small: 0.875rem;
   --type-body-font-size-medium: 1rem;
   --type-body-font-size-large: 1.125rem;
@@ -284,6 +284,8 @@
   --elevation-5: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --elevation-6: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --elevation-inset: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --header-bar-height-mobile: 4rem;
+  --header-bar-height-desktop: 5rem;
   --image-border-radius: 0.25rem;
   --image-background-color: #c7c0bc;
   --testimonial-container-gap: 1rem;

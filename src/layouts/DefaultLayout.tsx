@@ -21,34 +21,14 @@ type DefaultLayoutProps = NextPage<{
 	FooterProps?: FooterBlockProps;
 }>;
 
-const BackgroundImage = styled('div')`
-	z-index: -1;
-	position: absolute;
-	opacity: 0.125;
-
-	width: 100%;
-	overflow: hidden;
-	height: inherit;
-`;
-
-const BackgroundImageWrapper = styled('div')<{flipped?: boolean}>(
-	({theme, flipped}) => css`
-		width: 3322px;
-		height: auto;
-
-		top: 60%;
-		transform: rotate(15deg) ${flipped ? 'scaleX(-1)' : ''};
-
-		${theme.breakpoints.up('md')} {
-			top: 25%;
-			transform: rotate(30deg) ${flipped ? 'scaleX(-1)' : ''};
-		}
-	`,
-);
-
 const Main = styled('main')`
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
+	margin-top: calc(-1 * var(--header-bar-height-mobile));
+
+	${({theme}) => theme.breakpoints.up('md')} {
+		margin-top: calc(-1 * var(--header-bar-height-desktop));
+	}
 `;
 
 export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
@@ -72,9 +52,6 @@ export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
 					},
 				]}
 			/>
-			<BackgroundImage className='Motif'>
-				<BackgroundImageWrapper/>
-			</BackgroundImage>
 			<Main id='main-content'>
 				{children}
 				{props.showYelp && <YelpBlock/>}

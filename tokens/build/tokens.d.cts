@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 30 Jul 2023 16:06:32 GMT
+ * Generated on Fri, 01 Sep 2023 17:23:26 GMT
  */
 
 export default tokens;
@@ -389,6 +389,14 @@ declare const tokens: {
     "5": DesignToken,
     "6": DesignToken,
     "inset": DesignToken
+  },
+  "header": {
+    "bar": {
+      "height": {
+        "mobile": DesignToken,
+        "desktop": DesignToken
+      }
+    }
   },
   "image": {
     "borderRadius": DesignToken,

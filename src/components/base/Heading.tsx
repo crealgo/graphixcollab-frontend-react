@@ -6,10 +6,10 @@ import {type FC} from 'react';
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 export type HeadingProps = BaseComponentProps & {
-	level?: HeadingLevel;
-	isCentered?: boolean;
-	isContrast?: boolean;
-	hasMargin?: boolean;
+	readonly level?: HeadingLevel;
+	readonly isCentered?: boolean;
+	readonly isContrast?: boolean;
+	readonly hasMargin?: boolean;
 };
 
 type BaseElementProps = Pick<HeadingProps, 'level'>;
@@ -30,6 +30,7 @@ const BaseElement = styled.span<BaseElementProps>(props => css`
 	font-weight: var(--type-heading-font-weight);
 	line-height: var(--type-heading-font-leading);
 	color: var(--color-text-primary);
+	font-size: var(--type-heading-font-size);
 
 	&.is-centered {
 		text-align: center;
@@ -43,9 +44,8 @@ const BaseElement = styled.span<BaseElementProps>(props => css`
 		margin-block: var(--type-heading-font-margin-top) var(--type-heading-font-margin-bottom);
 	}
 
-	&.is-level-1 {
-		font-size: var(--type-heading-font-size-large-1);
-	}
+	/* &.is-level-1 { */
+	/* } */
 `);
 
 export const Heading: FC<HeadingProps> = props => {
@@ -55,6 +55,7 @@ export const Heading: FC<HeadingProps> = props => {
 	return (
 		<BaseElement
 			as={resolvedComponent}
+			level={resolvedLevel}
 			className={clsx(
 				props.className,
 				`is-level-${resolvedLevel}`,

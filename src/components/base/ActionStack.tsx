@@ -5,14 +5,14 @@ import {type Action} from '../../types/general';
 import {Button, type ButtonProps} from './Button';
 
 export type ActionStackProps = PropsWithChildren<{
-	prefix?: string;
-	text?: string;
-	className?: string;
-	align?: 'start' | 'center' | 'end';
-	max?: number;
-	color?: ButtonProps['color'];
-	size?: ButtonProps['size'];
-	actions?: Action[];
+	readonly prefix?: string;
+	readonly text?: string;
+	readonly className?: string;
+	readonly align?: 'start' | 'center' | 'end';
+	readonly max?: number;
+	readonly color?: ButtonProps['color'];
+	readonly size?: ButtonProps['size'];
+	readonly actions?: Action[];
 }>;
 
 const Wrapper = styled('div')<ActionStackProps>(({theme, align}) => css`

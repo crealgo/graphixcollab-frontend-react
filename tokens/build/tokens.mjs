@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 30 Jul 2023 16:06:32 GMT
+ * Generated on Fri, 01 Sep 2023 17:23:26 GMT
  */
 
 export const SequenceColor0Main = "#00aad2";
@@ -269,9 +269,9 @@ export const TypeHeadingFontSizeLarge5 = "1.333rem";
 export const TypeHeadingFontSizeLarge6 = "1rem";
 export const TypeBodyFontFamily = "Inter, Arial, Helvetica, sans-serif";
 export const TypeBodyFontWeight = 400;
-export const TypeBodyFontLeadingSmall = 1.375;
-export const TypeBodyFontLeadingMedium = 1.5;
-export const TypeBodyFontLeadingLarge = 1.75;
+export const TypeBodyFontLeadingSmall = "150%";
+export const TypeBodyFontLeadingMedium = "150%";
+export const TypeBodyFontLeadingLarge = "150%";
 export const TypeBodyFontSizeSmall = "0.875rem";
 export const TypeBodyFontSizeMedium = "1rem";
 export const TypeBodyFontSizeLarge = "1.125rem";
@@ -283,6 +283,8 @@ export const Elevation4 = "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb
 export const Elevation5 = "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)";
 export const Elevation6 = "0 25px 50px -12px rgb(0 0 0 / 0.25)";
 export const ElevationInset = "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)";
+export const HeaderBarHeightMobile = "4rem";
+export const HeaderBarHeightDesktop = "5rem";
 export const ImageBorderRadius = "0.25rem";
 export const ImageBackgroundColor = "#1c1917";
 export const TestimonialContainerGap = "1rem";

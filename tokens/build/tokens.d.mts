@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 30 Jul 2023 16:06:32 GMT
+ * Generated on Fri, 01 Sep 2023 17:23:26 GMT
  */
 
 export const SequenceColor0Main : string;
@@ -269,9 +269,9 @@ export const TypeHeadingFontSizeLarge5 : string;
 export const TypeHeadingFontSizeLarge6 : string;
 export const TypeBodyFontFamily : string;
 export const TypeBodyFontWeight : number;
-export const TypeBodyFontLeadingSmall : number;
-export const TypeBodyFontLeadingMedium : number;
-export const TypeBodyFontLeadingLarge : number;
+export const TypeBodyFontLeadingSmall : string;
+export const TypeBodyFontLeadingMedium : string;
+export const TypeBodyFontLeadingLarge : string;
 export const TypeBodyFontSizeSmall : string;
 export const TypeBodyFontSizeMedium : string;
 export const TypeBodyFontSizeLarge : string;
@@ -283,6 +283,8 @@ export const Elevation4 : string;
 export const Elevation5 : string;
 export const Elevation6 : string;
 export const ElevationInset : string;
+export const HeaderBarHeightMobile : string;
+export const HeaderBarHeightDesktop : string;
 export const ImageBorderRadius : string;
 export const ImageBackgroundColor : string;
 export const TestimonialContainerGap : string;

@@ -2,7 +2,7 @@ import {type GetStaticProps, type NextPage} from 'next';
 import {EstimatorBlock} from '../components/block/EstimatorBlock';
 import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
 import {GalleryBlock} from '../components/block/GalleryBlock';
-import {IntroBlock} from '../components/block/IntroBlock/IntroBlock';
+import {HeroBlock} from '../components/block/HeroBlock';
 import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
 import {PageTitle} from '../components/utility/PageTitle';
 import featuredCompanies from '../content/featured-companies';
@@ -11,11 +11,34 @@ import services from '../content/services.json';
 import {DefaultLayout} from '../layouts/DefaultLayout';
 import {type PageProps} from '../types/general';
 import {generateActions} from '../utils/chance';
+import Logo from '../components/atoms/Logo';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 
 const Page: NextPage<PageProps> = props => (
 	<DefaultLayout showYelp>
 		<PageTitle text='Home'/>
-		<IntroBlock {...props.IntroBlockProps}/>
+		{/* <IntroBlock {...props.IntroBlockProps}/> */}
+		<HeroBlock
+			title={(
+				<>
+					Welcome to <Logo/>
+				</>
+			)}
+			description={'We\'re your one-stop shop for all your apparel customization needs. We offer a wide range of services, from garment printing to embroidery.'}
+			actions={[
+				{
+					label: 'Book Appointment',
+					href: '/book-appointment',
+					color: 'secondary',
+					endIcon: <ArrowForward/>,
+				},
+			]}
+			slides={[
+				{title: 'Sashes', src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
+				{title: 'Embroidery', src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
+				{title: 'T-Shirts', src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts'},
+			]}
+		/>
 		<FeaturedInBlock {...props.FeaturedInBlockProps}/>
 		<ServicesPreviewBlock {...props.ServicesPreviewBlockProps}/>
 		<EstimatorBlock/>

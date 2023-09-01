@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 30 Jul 2023 16:06:32 GMT
+ * Generated on Fri, 01 Sep 2023 17:23:26 GMT
  */
 
 module.exports = {
@@ -5001,9 +5001,9 @@ module.exports = {
         },
         "leading": {
           "small": {
-            "value": 1.375,
+            "value": "150%",
             "original": {
-              "value": 1.375
+              "value": "150%"
             },
             "name": "TypeBodyFontLeadingSmall",
             "attributes": {
@@ -5022,9 +5022,9 @@ module.exports = {
             ]
           },
           "medium": {
-            "value": 1.5,
+            "value": "150%",
             "original": {
-              "value": 1.5
+              "value": "150%"
             },
             "name": "TypeBodyFontLeadingMedium",
             "attributes": {
@@ -5043,9 +5043,9 @@ module.exports = {
             ]
           },
           "large": {
-            "value": 1.75,
+            "value": "150%",
             "original": {
-              "value": 1.75
+              "value": "150%"
             },
             "name": "TypeBodyFontLeadingLarge",
             "attributes": {
@@ -5252,6 +5252,50 @@ module.exports = {
         "elevation",
         "inset"
       ]
+    }
+  },
+  "header": {
+    "bar": {
+      "height": {
+        "mobile": {
+          "value": "4rem",
+          "original": {
+            "value": "4rem"
+          },
+          "name": "HeaderBarHeightMobile",
+          "attributes": {
+            "category": "header",
+            "type": "bar",
+            "item": "height",
+            "subitem": "mobile"
+          },
+          "path": [
+            "header",
+            "bar",
+            "height",
+            "mobile"
+          ]
+        },
+        "desktop": {
+          "value": "5rem",
+          "original": {
+            "value": "5rem"
+          },
+          "name": "HeaderBarHeightDesktop",
+          "attributes": {
+            "category": "header",
+            "type": "bar",
+            "item": "height",
+            "subitem": "desktop"
+          },
+          "path": [
+            "header",
+            "bar",
+            "height",
+            "desktop"
+          ]
+        }
+      }
     }
   },
   "image": {

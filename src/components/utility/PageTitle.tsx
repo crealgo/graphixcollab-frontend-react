@@ -2,13 +2,11 @@ import Head from 'next/head';
 import {type FC} from 'react';
 
 export type PageTitleProps = {
-	text?: string;
+	readonly text?: string;
 };
 
 export const PageTitle: FC<PageTitleProps> = props => {
-	const resolvedPageTitle = props.text
-		? `${props.text} | Graphix Collab`
-		: 'Graphix Collab';
+	const resolvedPageTitle = props.text ? `${props.text} | Graphix Collab` : 'Graphix Collab';
 
 	return (
 		<Head>

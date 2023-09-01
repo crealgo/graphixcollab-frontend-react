@@ -119,3 +119,10 @@ export type PageProps = Partial<{
 	TimelineBlockProps: TimelineBlockProps;
 	YelpBlockProps: YelpBlockProps;
 }>;
+
+export type ActionBag = {
+	label: string;
+	href?: string;
+	action?: string;
+	icon?: ReactNode;
+};

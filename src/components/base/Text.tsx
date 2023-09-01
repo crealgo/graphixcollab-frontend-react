@@ -4,11 +4,11 @@ import {type FC} from 'react';
 import {_e} from '../../utils/excludePropsFromForwarding';
 
 type TextProps = BaseComponentProps & {
-	className?: string;
-	size?: Size;
-	spacing?: Size;
-	variant?: 'body' | 'caption';
-	color?: 'primary' | 'secondary' | 'contrast';
+	readonly className?: string;
+	readonly size?: Size;
+	readonly spacing?: Size;
+	readonly variant?: 'body' | 'caption';
+	readonly color?: 'primary' | 'secondary' | 'contrast';
 };
 
 const BaseElement = styled(

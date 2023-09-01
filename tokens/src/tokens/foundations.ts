@@ -99,9 +99,9 @@ const typography = {
 			family: 'Inter, Arial, Helvetica, sans-serif',
 			weight: 400,
 			leading: {
-				small: 1.375,
-				medium: 1.5,
-				large: 1.75,
+				small: '150%',
+				medium: '150%',
+				large: '150%',
 			},
 			size: {
 				small: '0.875rem',

@@ -11,7 +11,7 @@ import {HeaderContent} from './HeaderContent';
 import Logo from '../../atoms/Logo';
 
 export type HeaderProps = {
-	actions?: Action[];
+	readonly actions?: Action[];
 } & ComponentPropsWithoutRef<'header'>;
 
 export const Header: FC<HeaderProps> = ({actions, className}) => {

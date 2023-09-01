@@ -1,13 +1,13 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type SharedBlockProps} from '../../../types/general';
-import Logo from '../../atoms/Logo';
-import {ActionStack} from '../../base/ActionStack';
-import {Block} from '../../base/Block';
-import {Carousel, CarouselSlide} from '../../base/Carousel';
-import {Container} from '../../base/Container';
-import {Heading} from '../../base/Heading';
-import {Text} from '../../base/Text';
+import {type Action, type SharedBlockProps} from '../../types/general';
+import Logo from '../atoms/Logo';
+import {ActionStack} from '../base/ActionStack';
+import {Block} from '../base/Block';
+import {Carousel, CarouselSlide} from '../base/Carousel';
+import {Container} from '../base/Container';
+import {Heading} from '../base/Heading';
+import {Text} from '../base/Text';
 import {ArrowRight} from '@mui/icons-material';
 import {useRouter} from 'next/router';
 
@@ -22,8 +22,7 @@ export type IntroBlockProps = {
 	// color?: 'primary' | 'secondary' | 'grey' | 'none';
 	// slides?: Slide[];
 	// ImageProps?: ImageProps;
-} & ComponentPropsWithoutRef<'div'> &
-SharedBlockProps;
+} & ComponentPropsWithoutRef<'div'> & SharedBlockProps;
 
 const images = [
 	// { src: 'assets/embroidery-denim-min@1280w.webp', alt: 'Embroider' },
@@ -35,7 +34,7 @@ const images = [
 const Wrapper = styled('div')`
 	position: relative;
 	background-color: var(--color-brand-key-lightest);
-	margin-top: -5rem;
+	/* margin-top: -5rem; */
 
 	.IntroBlock-root {
 		padding-top: 5rem;
