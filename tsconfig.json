@@ -14,5 +14,11 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx"
-  ]
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  }
 }

@@ -15,12 +15,12 @@ import {
 } from './SocialMediaBlock';
 
 export type GalleryBlockProps = {
-	title?: string;
-	description?: string;
-	SocialMediaBlockProps?: SocialMediaBlockProps;
-	images?: ImageProps[];
-	actions?: Action[];
-	className?: string;
+	readonly title?: string;
+	readonly description?: string;
+	readonly SocialMediaBlockProps?: SocialMediaBlockProps;
+	readonly images?: ImageProps[];
+	readonly actions?: Action[];
+	readonly className?: string;
 };
 
 const Wrapper = styled(Block)(

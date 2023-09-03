@@ -7,7 +7,7 @@ const chance = new Chance();
 type Review = {
 	id: string;
 	name: string;
-	image?: string;
+	image: string | null;
 	text: string;
 };
 
@@ -26,14 +26,14 @@ for await (const url of urls) {
 	const $ = cheerio.load(html);
 
 	const rawNames = $('#reviews ul li .user-passport-info').find('a');
-	const rawReviews = $('#reviews ul li').find('p');
-	const rawImages = $('#reviews ul li').find('img');
+	const rawReviews = $('#reviews ul li').find('p[class^=comment]');
+	const rawImages = $('#reviews ul li a[href^=/user_detail]').find('img');
 
 	for (let i = 0; i < rawNames.length; i++) {
 		reviews.push({
 			id: chance.guid({version: 4}),
 			name: $(rawNames[i]).text(),
-			image: $(rawImages[i]).attr('src'),
+			image: $(rawImages[i]).attr('src') ?? null,
 			text: $(rawReviews[i]).text(),
 		});
 	}

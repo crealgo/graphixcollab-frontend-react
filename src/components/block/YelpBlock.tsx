@@ -1,4 +1,3 @@
-import {css} from '@emotion/react';
 import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
 import {styled} from '@mui/material';
 import {type FC} from 'react';
