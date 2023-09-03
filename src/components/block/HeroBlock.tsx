@@ -52,7 +52,6 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 
 	const [titleSprings] = useSprings(props.slides.length, (index, controller) => {
 		const defaultValue = {
-			opacity: 0.25,
 			marginInline: '0rem',
 			transform: 'scale(1)',
 		};
@@ -61,7 +60,6 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 
 		const currentValue = Object.keys(currentSpringValues).length ? currentSpringValues : defaultValue;
 		let futureValue = {
-			opacity: 1,
 			marginInline: '1rem',
 			transform: 'scale(1.125)',
 		};

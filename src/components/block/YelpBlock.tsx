@@ -60,20 +60,6 @@ const StyledActionStack = styled(ActionStack)`
 export const YelpBlock: FC<YelpBlockProps> = () => (
 	<Container>
 		<ContentWrapper isClipped isFloating isRounded color='grey'>
-			{/* <ReviewAvatars>
-				{Array.from({length: avatarCount}, (_, i) => {
-					const {user} = reviews[i % reviews.length];
-					return (
-						<ReviewAvatar key={i}>
-							<img
-								src={user.src}
-								srcSet={user.srcSet ?? ''}
-								alt={user.altText}
-							/>
-						</ReviewAvatar>
-					);
-				})}
-			</ReviewAvatars> */}
 			<Content>
 				<Heading isCentered level={2}>
 					{'We\'ve helped '}

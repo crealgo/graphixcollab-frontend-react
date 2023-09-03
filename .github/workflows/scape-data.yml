@@ -1,0 +1,30 @@
+name: "Scrape Yelp Data"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: npm
+
+      - name: Setup Repository
+        run: npm ci
+
+      - name: Scrape
+        run: npx tsx scripts/scrape.ts

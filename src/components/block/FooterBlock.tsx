@@ -62,6 +62,10 @@ const footerContent = {
 	},
 };
 
+const Footer = styled('footer')`
+	margin-top: 4rem;
+`;
+
 const Column = styled('div')`
 	display: grid;
 	grid-template-columns: 1fr;
@@ -143,7 +147,7 @@ const StyledBlock = styled(Block)`
 `;
 
 export const FooterBlock: FC<FooterBlockProps> = () => (
-	<footer>
+	<Footer>
 		<StyledBlock hasNoDefaultMargin color='grey'>
 			<Container>
 				<Content>
@@ -245,5 +249,5 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 				</div>
 			</Container>
 		</CopyrightBlockWrapper>
-	</footer>
+	</Footer>
 );

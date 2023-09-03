@@ -2,10 +2,10 @@ import {styled} from '@mui/material/styles';
 import {type FC} from 'react';
 
 export type EventBlockProps = {
-	stepNumber?: number;
-	title?: string;
-	description?: string;
-	image?: {
+	readonly stepNumber?: number;
+	readonly title?: string;
+	readonly description?: string;
+	readonly image?: {
 		src: string;
 		alt: string;
 	};

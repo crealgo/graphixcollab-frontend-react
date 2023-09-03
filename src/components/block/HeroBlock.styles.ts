@@ -1,4 +1,4 @@
-import {alpha, styled} from '@mui/material/styles';
+import {alpha, css, styled} from '@mui/material/styles';
 import {animated} from '@react-spring/web';
 
 export const Wrapper = styled('section')`
@@ -71,37 +71,21 @@ export const CarouselControlTitle = styled(animated.button)`
 	height: 2.75rem;
 	line-height: 2.75rem;
 
-	opacity: 0.25;
 	background: transparent;
 	cursor: pointer;
 
 	color: var(--color-white);
 
-	&:hover {
-		opacity: 0.8 !important;
-	}
-
-	&[aria-current=true] {
-		opacity: 1 !important;
-	}
-
-	&:nth-of-type(1) {
-		&:hover, &[aria-current=true] {
-			color: var(--sequence-color-0-light);
+	${[1, 2, 3].map(index => css`
+		&:nth-of-type(${index}) {
+			&:hover {
+				color: var(--sequence-color-${index - 1}-lighter);
+			}
+			&[aria-current=true] {
+				color: var(--sequence-color-${index - 1}-light);
+			}
 		}
-	}
-
-	&:nth-of-type(2) {
-		&:hover, &[aria-current=true] {
-			color: var(--sequence-color-1-light);
-		}
-	}
-
-	&:nth-of-type(3) {
-		&:hover, &[aria-current=true] {
-			color: var(--sequence-color-2-light);
-		}
-	}
+	`)}
 `;
 
 export const ContentColumn = styled('div')`

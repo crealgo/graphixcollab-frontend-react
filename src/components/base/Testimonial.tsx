@@ -44,31 +44,21 @@ const BaseElement = styled('article')`
 	} */
 `;
 
-export const Testimonial: FC<TestimonialProps> = ({
-	user,
-	comment,
-	rating,
-}) => (
+export const Testimonial: FC<TestimonialProps> = props => (
 	<BaseElement>
 		<img
 			className='image'
-			src={user.src}
-			srcSet={user.srcSet ?? ''}
-			alt={user.altText}
+			src={props.image as string}
+			alt={`${props.name as string} Profile Picture`}
 		/>
 		<div className='content'>
-			<q
-				/* eslint-disable react/no-danger */
-				dangerouslySetInnerHTML={{
-					__html: comment.text,
-				}}
-				/* eslint-enable react/no-danger */
-				className='quote'
-			/>
+			<q className='quote'>
+				{props.text}
+			</q>
 			<b>
-				<small>{user.markupDisplayName}</small>
+				<small>{props.name}</small>
 			</b>
-			<Rating readOnly className='rating' value={rating}/>
+			<Rating readOnly className='rating' value={5}/>
 		</div>
 	</BaseElement>
 );

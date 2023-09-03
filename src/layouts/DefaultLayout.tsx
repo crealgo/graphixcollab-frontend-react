@@ -60,8 +60,3 @@ export const DefaultLayout: DefaultLayoutProps = ({children, ...props}) => {
 		</>
 	);
 };
-
-// design - ideation
-// prep-work - procurement
-// production - work
-// packing, delivery type

@@ -3,6 +3,9 @@
 dist/
 out/
 
+.yalc/
+yalc.lock
+
 # dependencies
 /node_modules
 /.pnp

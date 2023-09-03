@@ -62,6 +62,8 @@ export const Image = styled(BaseElement, _e('imageTranslate'))(({
 
 		.Image-element {
 			outline: unset;
+			height: 100%;
+			width: 100%;
 
 			display: flex;
 			object-fit: ${fill ?? 'cover'};

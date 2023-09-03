@@ -1,6 +1,4 @@
-import styled from '@emotion/styled';
 import {type GetStaticProps, type NextPage} from 'next';
-import {Container} from '../components/base/Container';
 import {Mark} from '../components/base/Mark';
 import {type CalloutBlockProps} from '../components/block/CalloutBlock';
 import {EstimatorBlock} from '../components/block/EstimatorBlock';
@@ -24,36 +22,6 @@ type PageProps = {
 	FaqBlockProps: FaqBlockProps;
 };
 
-const StyledImage = styled.img`
-	display: inline-flex;
-	width: 100%;
-	max-width: 512px;
-`;
-
-const StyledContainer = styled(Container)`
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-
-	background: transparent;
-	z-index: -1;
-
-	display: none;
-	place-content: end;
-
-	top: 98rem;
-
-	@media screen and (min-width: 1200px) {
-		display: flex;
-	}
-`;
-
-const StyledContainer2 = styled(StyledContainer)`
-	top: 55rem;
-`;
-
 const Page: NextPage<PageProps> = ({
 	FooterProps,
 	serviceBlocks,
@@ -73,6 +41,17 @@ const Page: NextPage<PageProps> = ({
 		{serviceBlocks.map((props, index) => (
 			<ServicesBlock key={index} {...props}/>
 		))}
+		<br/>
+		<br/>
+		{/* <FaqBlock
+			title="What's in an estimate?"
+			faqs={[
+				{
+					question: 'What is the difference between an estimate and a quote?',
+					answer: 'An estimate is a rough calculation of the cost of a job. A quote is a firm price for a job.',
+				}
+			]}
+		/> */}
 		<TimelineBlock/>
 		<EstimatorBlock/>
 		<FaqBlock {...FaqBlockProps}/>
