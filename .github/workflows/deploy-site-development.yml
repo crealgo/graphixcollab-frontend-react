@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"
+
+  workflow_run:
+    workflows: ["Scrape Yelp Data"]
+    branches: ["main"]
+    types:
+      - completed
 
   workflow_dispatch:
 
