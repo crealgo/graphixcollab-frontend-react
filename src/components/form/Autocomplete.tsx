@@ -3,7 +3,7 @@ import {Input} from './Input';
 import {type OptionBag} from './types';
 
 export type AutocompleteProps = {
-	options?: OptionBag[];
+	readonly options?: OptionBag[];
 } & BaseControlProps &
 PropsWithChildren;
 

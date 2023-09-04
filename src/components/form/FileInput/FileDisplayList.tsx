@@ -3,7 +3,7 @@ import {type FC, type PropsWithChildren} from 'react';
 import {Text} from '../../base/Text';
 
 type Props = PropsWithChildren<{
-	listTitle?: string;
+	readonly listTitle?: string;
 }>;
 
 const BaseElement = styled('ul')`

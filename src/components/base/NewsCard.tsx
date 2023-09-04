@@ -6,7 +6,7 @@ import {type Article} from '../../types/general';
 import {Profile} from './Profile';
 
 export type NewsCardsProps = {
-	article: Article;
+	readonly article: Article;
 } & ComponentPropsWithoutRef<'div'>;
 
 const NewsCardWrapper = styled('div')`

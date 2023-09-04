@@ -3,7 +3,7 @@ import {styled} from '@mui/material';
 import {forwardRef, type ComponentPropsWithoutRef} from 'react';
 
 export type FeaturedItemsProps = {
-	items?: FeaturedItemProps[];
+	readonly items?: FeaturedItemProps[];
 } & ComponentPropsWithoutRef<'nav'>;
 
 const WrapperNav = styled('nav')`

@@ -5,8 +5,8 @@ import {useState, type FC, type ChangeEventHandler} from 'react';
 import {type OptionBag} from '../form/types';
 
 export type InteractiveSelectorProps = {
-	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
-	options?: OptionBag[];
+	readonly color?: 'cyan' | 'magenta' | 'yellow' | 'key';
+	readonly options?: OptionBag[];
 };
 
 const ClickBox = styled.button<InteractiveSelectorProps>(

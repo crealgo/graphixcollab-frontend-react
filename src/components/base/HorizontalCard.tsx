@@ -6,15 +6,15 @@ import {Heading} from './Heading';
 import {Text} from './Text';
 
 type CardProps = {
-	title?: string;
-	subtitle?: string;
-	description?: string;
-	image?: {
+	readonly title?: string;
+	readonly subtitle?: string;
+	readonly description?: string;
+	readonly image?: {
 		src: string;
 		alt: string;
 	};
-	imageColor?: string;
-	actions?: ActionStackProps['actions'];
+	readonly imageColor?: string;
+	readonly actions?: ActionStackProps['actions'];
 } & ComponentPropsWithRef<'a'>;
 
 const CardAnchor = styled.a`
@@ -78,7 +78,7 @@ export const HorizontalCard: FC<CardProps> = ({
 			<Heading className='title' level={5}>
 				{title}
 			</Heading>
-			<Text spacing='small' color='primary'>
+			<Text color='primary'>
 				{description}
 			</Text>
 		</CardContent>

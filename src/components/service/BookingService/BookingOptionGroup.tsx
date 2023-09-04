@@ -3,7 +3,7 @@ import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 const BaseElement: FC<
 ComponentPropsWithoutRef<'div'> & {
-	name?: string;
+	readonly name?: string;
 }
 > = ({name, children, ...props}) => (
 	<div {...props} role='radiogroup' aria-labelledby={name}>

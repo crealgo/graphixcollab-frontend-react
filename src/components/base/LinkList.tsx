@@ -6,7 +6,7 @@ import {LinkListItem} from './LinkListItem';
 
 export type LinkListProps = PropsWithChildren<{
 	// hasDivider?: boolean;
-	items?: NavItemOptions[];
+	readonly items?: NavItemOptions[];
 }>;
 
 const LinkListUl = styled('ul')`

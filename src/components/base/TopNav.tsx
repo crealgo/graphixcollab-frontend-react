@@ -4,8 +4,8 @@ import {type NavItemOptions} from '../../types/general';
 import {NavItem} from './NavItem';
 
 type TopNavProps = {
-	items?: NavItemOptions[];
-	align?: 'start' | 'end';
+	readonly items?: NavItemOptions[];
+	readonly align?: 'start' | 'end';
 } & ComponentPropsWithRef<'nav'>;
 
 const defaultAlignment = 'start';

@@ -7,7 +7,7 @@ import {type ServiceOptions} from '../../types/general';
 import {chance} from '../../utils/chance';
 
 type CardProps = {
-	image?: {
+	readonly image?: {
 		src: string;
 		alt: string;
 	};

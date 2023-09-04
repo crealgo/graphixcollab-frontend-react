@@ -6,8 +6,8 @@ import {Drawer, useControlled, type DrawerProps} from '@mui/material';
 import {type FC, type MouseEventHandler} from 'react';
 
 export type DrawerMenuProps = {
-	items?: NavItemOptions[];
-	actions?: Action[];
+	readonly items?: NavItemOptions[];
+	readonly actions?: Action[];
 } & Pick<DrawerProps, 'open' | 'onClose'>;
 
 export const contentBoxPadding = '1rem';

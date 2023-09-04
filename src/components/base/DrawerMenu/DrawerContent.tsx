@@ -9,9 +9,9 @@ import styled from '@emotion/styled';
 import {useRouter} from 'next/router';
 
 type DrawerContentProps = PropsWithChildren<{
-	actions?: Action[];
-	onCloseButtonClick?: MouseEventHandler<HTMLButtonElement>;
-	navigationItems?: NavItemOptions[];
+	readonly actions?: Action[];
+	readonly onCloseButtonClick?: MouseEventHandler<HTMLButtonElement>;
+	readonly navigationItems?: NavItemOptions[];
 }>;
 
 const StyledList = styled.ul`

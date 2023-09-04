@@ -7,9 +7,9 @@ import {type ComponentPropsWithoutRef, type FC} from 'react';
 import {Text} from '../base/Text';
 
 export type SocialMediaBlockProps = {
-	text?: string;
-	url?: string;
-	actions?: Action[];
+	readonly text?: string;
+	readonly url?: string;
+	readonly actions?: Action[];
 } & ComponentPropsWithoutRef<'div'>;
 
 const SocialMediaBlockWrapper = styled('div')({

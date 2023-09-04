@@ -5,9 +5,9 @@ import {type FC, type PropsWithChildren} from 'react';
 import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
 
 export type TidBitProps = PropsWithChildren<{
-	color?: 'cyan' | 'magenta' | 'yellow' | 'key';
-	className?: string;
-	icon?: ButtonBaseProps['startIcon'];
+	readonly color?: 'cyan' | 'magenta' | 'yellow' | 'key';
+	readonly className?: string;
+	readonly icon?: ButtonBaseProps['startIcon'];
 }> &
 Pick<ButtonBaseProps, 'href' | 'onClick'>;
 

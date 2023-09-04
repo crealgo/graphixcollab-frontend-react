@@ -13,7 +13,7 @@ type BlockHeaderProps = SharedBlockProps & {
 	 *
 	 * @default 2;
 	 */
-	level?: 1 | 2;
+	readonly level?: 1 | 2;
 };
 
 const StyledHGroup = styled('hgroup')`

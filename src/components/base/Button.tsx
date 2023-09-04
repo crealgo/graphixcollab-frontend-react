@@ -5,7 +5,7 @@ import {type FC} from 'react';
 import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
 
 export type ButtonProps = {
-	color?: BrandColor;
+	readonly color?: BrandColor;
 } & ButtonBaseProps;
 
 const StyledButton = styled(ButtonBase)<ButtonProps>(({

@@ -7,7 +7,7 @@ import {generateBaseInputStyles} from './generateBaseInputStyles';
 import {type OptionBag} from './types';
 
 export type SelectProps = {
-	options?: OptionBag[];
+	readonly options?: OptionBag[];
 } & BaseControlProps &
 ComponentPropsWithRef<'select'>;
 

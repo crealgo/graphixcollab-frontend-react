@@ -6,10 +6,10 @@ import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 
 export type CalloutBlockProps = {
-	title?: string;
-	description?: string;
-	meta?: string;
-	actions?: Action[];
+	readonly title?: string;
+	readonly description?: string;
+	readonly meta?: string;
+	readonly actions?: Action[];
 };
 
 const CalloutContentWrapper = styled(Block)`

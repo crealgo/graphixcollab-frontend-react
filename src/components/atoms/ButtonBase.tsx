@@ -10,11 +10,11 @@ import {_e} from '../../utils/excludePropsFromForwarding';
 export type ButtonBaseSizes = Size;
 
 export type ButtonBaseProps = {
-	endIcon?: ReactElement;
-	startIcon?: ReactElement;
-	href?: string;
-	size?: ButtonBaseSizes;
-	color?: ColorVariant;
+	readonly endIcon?: ReactElement;
+	readonly startIcon?: ReactElement;
+	readonly href?: string;
+	readonly size?: ButtonBaseSizes;
+	readonly color?: ColorVariant;
 } & Omit<ComponentPropsWithoutRef<'button'>, 'color'>;
 
 const StyledButton = styled(

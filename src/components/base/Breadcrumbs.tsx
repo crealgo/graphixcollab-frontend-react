@@ -11,7 +11,7 @@ export type BreadcrumbOptions = {
 };
 
 type BreadcrumbsProps = {
-	items?: BreadcrumbOptions[];
+	readonly items?: BreadcrumbOptions[];
 } & MuiBreadcrumbsProps;
 
 export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(

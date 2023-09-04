@@ -6,7 +6,7 @@ import {InputGroup} from './InputGroup';
 import {type OptionBag} from './types';
 
 type Props = {
-	options?: OptionBag[];
+	readonly options?: OptionBag[];
 } & Omit<FormControlProps, 'isRequired'> &
 Pick<CheckboxInputProps, 'required' | 'name' | 'defaultValue'>;
 

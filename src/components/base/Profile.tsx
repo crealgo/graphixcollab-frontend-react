@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 export type ProfileProps = {
-	profile?: Person;
+	readonly profile?: Person;
 } & ComponentPropsWithoutRef<'div'>;
 
 const ProfileWrapper = styled('div')`

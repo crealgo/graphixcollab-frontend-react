@@ -3,8 +3,8 @@ import Collapse from '@mui/material/Collapse';
 import {type FC, type PropsWithChildren} from 'react';
 
 type BannerServiceProps = PropsWithChildren<{
-	open?: boolean;
-	BannerProps?: BannerProps;
+	readonly open?: boolean;
+	readonly BannerProps?: BannerProps;
 }>;
 
 export const BannerService: FC<BannerServiceProps> = ({

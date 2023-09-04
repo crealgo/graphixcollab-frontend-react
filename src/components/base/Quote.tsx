@@ -9,13 +9,13 @@ import clsx from 'clsx';
 import {type FC, type HTMLAttributes} from 'react';
 
 type QuoteWrapperProps = {
-	height?: number;
-	width?: number;
+	readonly height?: number;
+	readonly width?: number;
 } & HTMLAttributes<HTMLDivElement>;
 
 export type QuoteProps = {
-	text?: string;
-	RatingProps?: MuiRatingProps;
+	readonly text?: string;
+	readonly RatingProps?: MuiRatingProps;
 } & QuoteWrapperProps;
 
 const QuoteWrapper = styled('div')<QuoteWrapperProps>`

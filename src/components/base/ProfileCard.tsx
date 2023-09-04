@@ -7,7 +7,7 @@ import {Image} from './Image';
 import {StatusMessage} from './StatusMessage';
 
 export type ProfileCardProps = {
-	profile?: Employee;
+	readonly profile?: Employee;
 };
 
 const ProfileCardWrapper = styled('div')`

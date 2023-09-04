@@ -62,8 +62,8 @@ const getFormItem = (itemType: string, inputType?: string) => {
 };
 
 type Props = {
-	items: FormItemBag[];
-	formState: ReturnType<typeof useForm>;
+	readonly items: FormItemBag[];
+	readonly formState: ReturnType<typeof useForm>;
 };
 
 export const FormItemGenerator: FC<Props> = ({items, formState}) => (

@@ -4,7 +4,7 @@ import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 
 export type PlaceholderBlockProps = {
-	name?: string;
+	readonly name?: string;
 };
 
 export const PlaceholderBlock: FC<PlaceholderBlockProps> = ({name}) => (

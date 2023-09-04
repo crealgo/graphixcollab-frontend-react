@@ -11,7 +11,7 @@ import {Button} from '../base/Button';
 
 type DialogServiceProps = {
 	// FIXME: open?: boolean;
-	onCloseClick?: (event: MouseEvent<unknown>) => void;
+	readonly onCloseClick?: (event: MouseEvent<unknown>) => void;
 	// FIXME: activeStep?: number;
 };
 

@@ -10,8 +10,8 @@ const BaseElement = styled.div`
 `;
 
 export const FormSectionTitle: FC<{
-	title: string;
-	hasTopGutter?: boolean;
+	readonly title: string;
+	readonly hasTopGutter?: boolean;
 }> = props => (
 	<BaseElement
 		className={clsx('FormSectionTitle-root', {

@@ -16,7 +16,7 @@ const NavItemsWrapper = styled('nav')(
 );
 
 type NavItemsProps = PropsWithChildren<{
-	items?: NavItemOptions[];
+	readonly items?: NavItemOptions[];
 }>;
 
 export const NavItems: FC<NavItemsProps> = ({items, children}) => (

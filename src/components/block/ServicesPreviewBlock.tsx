@@ -15,7 +15,7 @@ import {Heading} from '../base/Heading';
 import {HorizontalCard} from '../base/HorizontalCard';
 
 export type ServicesPreviewBlockProps = {
-	services?: typeof serviceJSON;
+	readonly services?: typeof serviceJSON;
 	// BlockProps?: BlockProps;
 } & SharedBlockProps;
 

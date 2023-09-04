@@ -6,7 +6,7 @@ import {RadioInput, type RadioInputProps} from './RadioInput';
 import {type OptionBag} from './types';
 
 type Props = {
-	options?: OptionBag[];
+	readonly options?: OptionBag[];
 } & Omit<FormControlProps, 'isRequired'> &
 Pick<RadioInputProps, 'required' | 'name' | 'defaultValue'>;
 

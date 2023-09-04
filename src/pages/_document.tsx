@@ -19,7 +19,7 @@ const Document = () => (
 			/>
 			<link rel='preconnect' href='https://fonts.googleapis.com'/>
 			<link
-				crossOrigin='true'
+				crossOrigin='anonymous'
 				rel='preconnect'
 				href='https://fonts.gstatic.com'
 			/>

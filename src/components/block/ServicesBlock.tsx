@@ -17,9 +17,9 @@ import {Text} from '../base/Text';
 type Service = (typeof services)[number];
 
 export type ServicesBlockProps = {
-	services?: Service[];
-	imageTranslate?: string;
-	ImageProps?: ImageProps;
+	readonly services?: Service[];
+	readonly imageTranslate?: string;
+	readonly ImageProps?: ImageProps;
 } & SharedBlockProps;
 
 export const Content = styled('div')(

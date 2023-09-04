@@ -24,8 +24,8 @@ import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
 import {SelectServiceStep} from './steps/SelectServiceStep';
 
 type BookingServiceProps = {
-	isOpen?: boolean;
-	onCloseClick?: (event: MouseEvent<unknown>) => void;
+	readonly isOpen?: boolean;
+	readonly onCloseClick?: (event: MouseEvent<unknown>) => void;
 	// activeStep?: number;
 };
 

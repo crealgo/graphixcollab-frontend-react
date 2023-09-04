@@ -5,7 +5,7 @@ import {ActionStack} from '../base/ActionStack';
 import {ImageCarousel} from '../base/ImageCarousel';
 
 export type FanServiceBlockProps = {
-	images?: string[];
+	readonly images?: string[];
 } & SharedBlockProps;
 
 const FanServiceBlockWrapper = styled('div')(

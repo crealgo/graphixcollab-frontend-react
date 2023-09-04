@@ -4,8 +4,8 @@ import {Heading} from '../components/base/Heading';
 import {Mark} from '../components/base/Mark';
 
 type FormHeaderProps = PropsWithChildren<{
-	title: ReactNode;
-	instructions: ReactNode;
+	readonly title: ReactNode;
+	readonly instructions: ReactNode;
 }>;
 
 const HeaderElement = styled.header`

@@ -10,7 +10,7 @@ import {BaseWrapper} from './BaseWrapper';
 import {BaseInput} from './BaseInput';
 
 export type FileInputProps = Omit<InputProps, 'isInvalid' | 'isValid' | 'isTouched'> & {
-	displayText?: ReactNode;
+	readonly displayText?: ReactNode;
 };
 
 export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({

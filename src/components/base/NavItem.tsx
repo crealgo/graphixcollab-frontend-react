@@ -4,8 +4,8 @@ import {type ComponentPropsWithoutRef, type FC, type ReactNode} from 'react';
 import {type NavItemOptions} from '../../types/general';
 
 export type NavItemProps = {
-	icon?: ReactNode;
-	hasSubmenu?: boolean;
+	readonly icon?: ReactNode;
+	readonly hasSubmenu?: boolean;
 } & ComponentPropsWithoutRef<'nav'> &
 NavItemOptions;
 

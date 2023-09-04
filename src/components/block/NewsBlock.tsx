@@ -7,10 +7,10 @@ import {NewsCard} from '../base/NewsCard';
 /** START PLAYGROUND */
 
 export type NewsBlockProps = {
-	meta?: string;
-	title?: string;
-	actions: Action[];
-	articles: Article[];
+	readonly meta?: string;
+	readonly title?: string;
+	readonly actions: Action[];
+	readonly articles: Article[];
 } & ComponentPropsWithoutRef<'div'>;
 
 export const NewsBlockWrapper = styled('div')(

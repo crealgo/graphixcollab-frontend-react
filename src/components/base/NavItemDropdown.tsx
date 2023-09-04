@@ -10,8 +10,8 @@ import {type ButtonProps} from './Button';
 import {NavItem} from './NavItem';
 
 export type NavItemDropdownProps = {
-	items?: NavItemOptions[];
-	FlyoutComponent?: ComponentType<unknown>;
+	readonly items?: NavItemOptions[];
+	readonly FlyoutComponent?: ComponentType<unknown>;
 } & ButtonProps;
 
 export const NavItemDropdown: FC<NavItemDropdownProps> = ({

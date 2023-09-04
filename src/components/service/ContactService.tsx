@@ -13,8 +13,8 @@ import {TextAreaField} from '../form/TextAreaField';
 import {TextField} from '../form/TextField';
 
 type ContactServiceProps = {
-	isOpen?: boolean;
-	onCloseClick?: (event: MouseEvent<unknown>) => void;
+	readonly isOpen?: boolean;
+	readonly onCloseClick?: (event: MouseEvent<unknown>) => void;
 	// activeStep?: number;
 };
 

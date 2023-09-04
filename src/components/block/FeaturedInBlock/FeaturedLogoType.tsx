@@ -28,9 +28,9 @@ export const FeaturedLogoType: FC<FeaturedCompanyInfo> = props => {
 			<Head>
 				<link rel='preconnect' href='https://fonts.googleapis.com'/>
 				<link
+					crossOrigin='anonymous'
 					rel='preconnect'
 					href='https://fonts.gstatic.com'
-					crossOrigin='true'
 				/>
 				<link
 					href={`https://fonts.googleapis.com/css2?family=${resolvedFont}&display=swap`}

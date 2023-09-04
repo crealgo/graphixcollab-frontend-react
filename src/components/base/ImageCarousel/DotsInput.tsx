@@ -3,9 +3,9 @@ import {IconButton, styled, useControlled} from '@mui/material';
 import {useId, type FC} from 'react';
 
 type DotsInputProps = {
-	currentIndex?: number;
-	onIndexChange?: (index: number) => void;
-	count: number;
+	readonly currentIndex?: number;
+	readonly onIndexChange?: (index: number) => void;
+	readonly count: number;
 	// className?: string;
 };
 

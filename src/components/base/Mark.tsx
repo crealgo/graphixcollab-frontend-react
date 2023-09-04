@@ -4,9 +4,9 @@ import {type FC} from 'react';
 import {BrandDots} from '../atoms/BrandDots';
 
 type MarkProps = BaseComponentProps & {
-	text?: boolean; // eslint-disable-line react/boolean-prop-naming
-	color?: ColorVariant;
-	brand?: boolean; // eslint-disable-line react/boolean-prop-naming
+	readonly text?: boolean; // eslint-disable-line react/boolean-prop-naming
+	readonly color?: ColorVariant;
+	readonly brand?: boolean; // eslint-disable-line react/boolean-prop-naming
 };
 
 const StyledMark = styled('mark')<MarkProps>(

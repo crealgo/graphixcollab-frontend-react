@@ -56,7 +56,7 @@ export const Testimonial: FC<TestimonialProps> = props => (
 		<Content>
 			<img
 				className='image'
-				src={props.image || ''}
+				src={props.image ?? ''}
 				alt={`${props.name} Profile Picture`}
 			/>
 			<Meta>

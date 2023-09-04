@@ -9,9 +9,9 @@ import {IconButton} from './IconButton';
 import {type IconButtonBaseProps} from './IconButtonBase';
 
 export type BannerProps = PropsWithChildren<{
-	text?: string;
-	actions?: Action[];
-	onCloseClick?: IconButtonBaseProps['onClick'];
+	readonly text?: string;
+	readonly actions?: Action[];
+	readonly onCloseClick?: IconButtonBaseProps['onClick'];
 	// ImageProps?: ImageProps;
 }>;
 

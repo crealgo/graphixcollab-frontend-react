@@ -5,10 +5,10 @@ import {type ComponentPropsWithoutRef} from 'react';
 import {type ComponentType, type FC} from 'react';
 
 type StatusMessageProps = {
-	IconComponent?: ComponentType<SvgIconProps>;
-	text?: string;
-	isContained?: boolean;
-	isActionable?: boolean;
+	readonly IconComponent?: ComponentType<SvgIconProps>;
+	readonly text?: string;
+	readonly isContained?: boolean;
+	readonly isActionable?: boolean;
 } & ComponentPropsWithoutRef<'div'>;
 const StatusMessageWrapper = styled('div')<StatusMessageProps>(
 	({isContained, isActionable}) => css`

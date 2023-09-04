@@ -1,5 +1,5 @@
 {
-  "extends": "@hotcakes/core/lib/tsconfig.json",
+  "extends": "./node_modules/@hotcakes/core/lib/tsconfig.json",
   "exclude": [
     "node_modules",
     "out",

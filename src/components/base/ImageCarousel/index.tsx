@@ -6,17 +6,17 @@ import {DotsInput} from './DotsInput';
 import {ImageCarouselWrapper} from './ImageCarouselWrapper';
 
 export type SharedCarouseProps = {
-	height?: number;
-	width?: number;
+	readonly height?: number;
+	readonly width?: number;
 };
 
 export type CarouselCardProps = {
-	tilt?: 'left' | 'right';
+	readonly tilt?: 'left' | 'right';
 	// interactive?: boolean;
-	images: string[];
+	readonly images: string[];
 	// autoplay?: boolean;
-	currentIndex?: number;
-	className?: string;
+	readonly currentIndex?: number;
+	readonly className?: string;
 } & SharedCarouseProps;
 
 export const ImageCarousel: FC<CarouselCardProps> = ({

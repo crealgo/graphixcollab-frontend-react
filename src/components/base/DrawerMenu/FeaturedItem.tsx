@@ -3,8 +3,8 @@ import {type FC} from 'react';
 import {Image, type ImageProps} from '../Image';
 
 export type FeaturedItemProps = {
-	label?: string;
-	ImageProps?: ImageProps;
+	readonly label?: string;
+	readonly ImageProps?: ImageProps;
 };
 
 const FeaturedItemWrapper = styled('div')`

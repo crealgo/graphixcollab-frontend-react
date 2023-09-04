@@ -5,19 +5,19 @@ import {InputHelperText} from './InputHelperText';
 import {handleFormControlTouch} from './utils/handleFormControlTouch';
 
 export type FormControlProps = {
-	label?: ReactNode;
-	labelFor?: string;
+	readonly label?: ReactNode;
+	readonly labelFor?: string;
 	// labelInfo?: string; // SEE blueprint js
-	helperText?: ReactNode;
-	helperTextId?: string;
-	isRequired?: boolean;
+	readonly helperText?: ReactNode;
+	readonly helperTextId?: string;
+	readonly isRequired?: boolean;
 	/**
 	 * This prop is primarily used for when the FormControl wraps a group of
 	 * radio buttons or checkboxes.
 	 *
 	 * @default false
 	 */
-	isFieldset?: boolean;
+	readonly isFieldset?: boolean;
 } & Pick<BaseComponentProps, 'className' | 'children'> &
 Pick<BaseControlProps, 'isTouched' | 'isInvalid' | 'isValid'>;
 

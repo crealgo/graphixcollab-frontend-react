@@ -2,7 +2,7 @@ import {type BannerProps} from '../components/base/Banner';
 import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
 import {type HeaderProps} from '../components/base/Header/Header';
 import {type GalleryBlockProps} from '../components/block/GalleryBlock';
-import {type IntroBlockProps} from '../components/block/IntroBlock/IntroBlock';
+import {type IntroBlockProps} from '../components/block/IntroBlock';
 import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
 import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";

@@ -12,7 +12,7 @@ import {Text} from '../base/Text';
 export type ProfilesBlockProps = {
 	// title?: string;
 	// description?: string;
-	profileGroups: EmployeeGroup[];
+	readonly profileGroups: EmployeeGroup[];
 } & ComponentPropsWithoutRef<'div'>;
 
 const Content = styled('div')(

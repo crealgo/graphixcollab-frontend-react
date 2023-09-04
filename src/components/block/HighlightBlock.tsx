@@ -2,8 +2,8 @@ import {styled, Typography} from '@mui/material';
 import {type FC} from 'react';
 
 export type HighlightBlockProps = {
-	quote?: string;
-	quoter?: string;
+	readonly quote?: string;
+	readonly quoter?: string;
 };
 
 const HighlightBlockWrapper = styled('div')`

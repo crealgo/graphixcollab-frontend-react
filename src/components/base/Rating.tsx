@@ -4,7 +4,7 @@ import MuiRating, {
 import {type FC} from 'react';
 
 export type RatingProps = {
-	max?: number;
+	readonly max?: number;
 } & MuiRatingProps;
 
 export const Rating: FC<RatingProps> = props => <MuiRating {...props}/>;

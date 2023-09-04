@@ -9,9 +9,9 @@ import {_e} from '../../utils/excludePropsFromForwarding';
 import {type ButtonBaseSizes} from '../atoms/ButtonBase';
 
 export type IconButtonBaseProps = {
-	href?: string;
-	Icon?: ElementType;
-	size?: ButtonBaseSizes;
+	readonly href?: string;
+	readonly Icon?: ElementType;
+	readonly size?: ButtonBaseSizes;
 } & ComponentPropsWithRef<'button'>;
 
 const StyledButton = styled(

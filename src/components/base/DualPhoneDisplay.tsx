@@ -3,8 +3,8 @@ import {type ComponentPropsWithoutRef, type FC} from 'react';
 import {Phone, type PhoneProps} from './Phone';
 
 export type DualPhoneDisplayProps = {
-	phone1Props?: PhoneProps;
-	phone2Props?: PhoneProps;
+	readonly phone1Props?: PhoneProps;
+	readonly phone2Props?: PhoneProps;
 } & ComponentPropsWithoutRef<'div'>;
 
 const Wrapper = styled('div')`

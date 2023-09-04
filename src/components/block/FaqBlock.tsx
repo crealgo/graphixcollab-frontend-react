@@ -19,7 +19,7 @@ export type FaqOptions = {
 };
 
 export type FaqBlockProps = {
-	faqs: FaqOptions[];
+	readonly faqs: FaqOptions[];
 } & SharedBlockProps &
 ComponentPropsWithoutRef<'div'>;
 

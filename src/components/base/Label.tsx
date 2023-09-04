@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 
 export type LabelProps = {
-	variant?: 'primary' | 'secondary' | 'grey';
+	readonly variant?: 'primary' | 'secondary' | 'grey';
 } & ComponentPropsWithoutRef<'span'>;
 
 type LabelFuncParams = {
