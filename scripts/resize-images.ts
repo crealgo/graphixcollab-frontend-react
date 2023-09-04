@@ -4,6 +4,13 @@ import path from 'path';
 import sharp, {type SharpOptions, type WebpOptions} from 'sharp';
 import chalk from 'chalk';
 
+type ImageToResize = {
+	sourceImage: string;
+	targetDir: string;
+	targetFile: string;
+	width: string;
+};
+
 const sharpOptions: SharpOptions = {
 	animated: true,
 };
@@ -14,85 +21,54 @@ const webpOptions: WebpOptions = {
 	effort: 6,
 };
 
-const filesWithImageStrings = await glob('src/**/*.{json,ts,tsx,js,jsx,md,mdx,css,scss,html}');
-const sourceImages = await glob('src/**/*.{png,jpg,jpeg,avif,webp,gif,svg}');
+const filesToSearch = await glob('src/**/*.{json,ts,tsx}');
+// const sourceImages = await glob('src/**/*.{png,jpg,jpeg,avif,webp,gif,svg}');b
 
 const imageStringMatcher = /assets\/(?<imagePath>.*)-min@(?<imageWidth>.*)w.webp/gim;
 
 // loop through files with image strings
 // create array of images to resize
+// const imagesToResize: ImageToResize[] = [];
 
-type ImageToResize = {
-	sourceImage: string;
-	targetDir: string;
-	targetFile: string;
-	width: string;
-};
+for await (const file of filesToSearch) {
+	const matches = imageStringMatcher.exec(await fs.promises.readFile(file, 'utf8'));
 
-const imagesToResize: ImageToResize[] = [];
+	if (!matches?.groups) {
+		continue;
+	}
 
-for await (const file of filesWithImageStrings) {
-	const fileContents = fs.readFileSync(file, 'utf8');
+	const {imagePath, imageWidth} = matches.groups;
 
-	const matches = fileContents.matchAll(imageStringMatcher);
+	// check if image has been resized already
+	if (fs.existsSync(`public/assets/${imagePath}-min@${imageWidth}w.webp`)) {
+		// console.log(chalk.yellow(`${chalk.white(fileName)} has already been resized!`));
+		continue;
+	}
 
-	const images = [...matches].map(match => {
-		const {
-			imagePath,
-			imageWidth,
-		} = match.groups ?? {};
+	// find source file
+	const sourceFileSearch = await glob(`src/assets/${imagePath}.*`);
 
-		// find source image
-		const sourceImage = sourceImages.find(imageName => imageName.includes(imagePath));
+	// check if source file exists
+	if (!sourceFileSearch.length) {
+		console.log(chalk.red(`${chalk.white(imagePath)} does not exist!`));
+		continue;
+	}
 
-		console.log({sourceImage});
+	const sourceFile = sourceFileSearch[0];
 
-		if (sourceImage) {
-			// construct target dir
-			const {dir, base} = path.parse(imagePath);
-			const targetDir = path.join('public/assets', dir);
-			const resizedImageName = `${base}-min@${imageWidth}w.webp`;
+	let resizedImage = null;
 
-			return {
-				sourceImage,
-				targetDir: targetDir,
-				targetFile: path.join(targetDir, resizedImageName),
-				width: imageWidth,
-			};
-		}
+	if (imageWidth === 'og') {
+		resizedImage = await sharp(sourceFile, sharpOptions).webp(webpOptions).toBuffer();
+	} else {
+		resizedImage = await sharp(sourceFile, sharpOptions).resize(parseInt(imageWidth, 10)).webp(webpOptions).toBuffer();
+	}
 
-		return undefined;
+	const newFile = `public/assets/${imagePath}-min@${imageWidth}w.webp`;
+
+	await fs.promises.mkdir(path.dirname(newFile), {
+		recursive: true,
 	});
 
-	if (images) {
-		imagesToResize.push(...(images as ImageToResize[]));
-	}
+	await fs.promises.writeFile(newFile, resizedImage);
 }
-
-imagesToResize.forEach(async props => {
-	if (fs.existsSync(props.targetFile)) {
-		return;
-	}
-
-	console.log(
-		chalk.red(`Resizing ${props.sourceImage} to ${props.targetFile}`),
-	);
-
-	const resizedImage
-		= props.width === 'og'
-			? await sharp(props.sourceImage, sharpOptions)
-				.webp(webpOptions)
-				.toBuffer()
-			: await sharp(props.sourceImage, sharpOptions)
-				.resize(parseInt(props.width, 10))
-				.webp(webpOptions)
-				.toBuffer();
-
-	if (!fs.existsSync(props.targetDir)) {
-		fs.mkdirSync(props.targetDir, {recursive: true});
-	}
-
-	fs.writeFileSync(props.targetFile, resizedImage);
-
-	console.log(chalk.greenBright(`Resized ${props.sourceImage} to ${props.targetFile}`));
-});

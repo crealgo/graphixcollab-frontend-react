@@ -13,9 +13,9 @@ const Container = styled.div`
 `;
 
 type CarouselProps = {
-	onSlideChange?: () => void;
-	className?: string;
-	children?: ReactNode;
+	readonly onSlideChange?: () => void;
+	readonly className?: string;
+	readonly children?: ReactNode;
 };
 
 export const Carousel: FC<CarouselProps> = ({

@@ -47,7 +47,10 @@ const StyledCarousel = styled(Carousel)`
 `;
 
 const StyledCarouselSlide = styled(CarouselSlide)`
-	margin-inline: 0.5rem;
+	padding-inline: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const StyledActionStack = styled(ActionStack)`
