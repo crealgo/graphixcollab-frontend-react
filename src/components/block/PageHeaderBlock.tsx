@@ -17,6 +17,8 @@ export type PageHeaderBlockProps = {
 
 const DividerPattern = styled('div')<PageHeaderBlockProps>(({color = 'magenta'}) => css`
 	content: '';
+	position: relative;
+	z-index: -1;
 	background-image: ${generatePatternBackground(color, '0.5')};
 	display: flex;
 	height: 5rem;
@@ -31,9 +33,7 @@ const Wrapper = styled(Block)<Pick<PageHeaderBlockProps, 'color'>>(({color = 'ma
 	}
 
 	background-color: var(--color-brand-${color}-lightest);
-	border-top: none !important;
-	border-right: none !important;
-	border-left: none !important;
+	border: none !important;
 
 	.Heading-root, .Text-root {
 		color: var(--color-brand-tertiary-darker);
