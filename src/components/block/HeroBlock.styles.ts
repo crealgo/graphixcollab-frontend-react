@@ -33,9 +33,9 @@ export const HeroCarousel = styled('div')`
 		top: 0;
 		left: 0;
 		background-image: radial-gradient(
-			circle at 0% 0%,
-			${alpha('#ffecf0', 0.9)} 0%,
-			${alpha('#def4ff', 0.1)} 100%
+			circle at 10% 0%,
+			${alpha('#ffa8c3', 0.75)} 0%,
+			${alpha('#4fcff9', 0.1)} 100%
 		);
 	}
 

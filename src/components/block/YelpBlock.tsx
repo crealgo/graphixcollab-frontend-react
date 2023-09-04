@@ -9,7 +9,7 @@ import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
 import {Mark} from '../base/Mark';
 import {Testimonial} from '../base/Testimonial';
-import {generatePatternCSS} from '../../utils/generatePatternCSS';
+import {generatePatternBackground} from '../../utils/generatePatternBackground';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];
@@ -38,7 +38,7 @@ const ContentWrapper = styled(Block)`
 	gap: 4rem;
 
 	padding-block: 3rem !important;
-	background-image: url(${generatePatternCSS('yellow')})
+	background-image: ${generatePatternBackground('yellow')};
 `;
 
 const StyledCarousel = styled(Carousel)`

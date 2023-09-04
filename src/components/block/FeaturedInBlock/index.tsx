@@ -20,10 +20,10 @@ import {FeaturedMarquee} from './FeaturedMarquee';
 import {FeaturedText} from './FeaturedText';
 
 export type FeaturedInBlockProps = {
-	title?: string;
-	description?: string;
-	companies?: FeaturedCompanyInfo[];
-	actions?: Action[];
+	readonly title?: string;
+	readonly description?: string;
+	readonly companies?: FeaturedCompanyInfo[];
+	readonly actions?: Action[];
 } & ComponentPropsWithoutRef<'div'>;
 
 const StyledContainer = styled(Container)`

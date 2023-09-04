@@ -1,6 +1,6 @@
 import {css, styled} from '@mui/material/styles';
 import {type FC, type ReactNode} from 'react';
-import {generatePatternCSS} from '../../utils/generatePatternCSS';
+import {generatePatternBackground} from '../../utils/generatePatternBackground';
 import {Block} from '../base/Block';
 import {Container} from '../base/Container';
 import {Heading} from '../base/Heading';
@@ -17,8 +17,7 @@ export type PageHeaderBlockProps = {
 
 const DividerPattern = styled('div')<PageHeaderBlockProps>(({color = 'magenta'}) => css`
 	content: '';
-	background-color: blue;
-	background-image: url(${generatePatternCSS(color)});
+	background-image: ${generatePatternBackground(color, '0.5')};
 	display: flex;
 	height: 5rem;
 	width: 100%;
