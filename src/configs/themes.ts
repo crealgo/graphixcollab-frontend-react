@@ -1,5 +1,6 @@
 import colors from 'tailwindcss/colors';
 import {createTheme} from '@mui/material/styles';
+import tokens from '@hotcakes/tokens/lib/tokens.json';
 
 const defaultFontStack
 	= 'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -150,21 +151,26 @@ const utils = {
 	},
 };
 
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 declare module '@mui/material/styles' {
-	type Theme = {
+	interface Theme {
+		tokens: typeof tokens;
 		utils: typeof utils;
-	};
+	}
 
-	type ThemeOptions = {
+	interface ThemeOptions {
+		tokens?: Partial<typeof tokens>;
 		utils?: Partial<typeof utils>;
-	};
+	}
 }
+/* eslint-enable @typescript-eslint/consistent-type-definitions */
 
 // Default theme
 export const defaultTheme = createTheme({
 	breakpoints,
 	palette,
 	typography,
+	tokens: tokens,
 	components: {
 		MuiButton: {
 			defaultProps: {

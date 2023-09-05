@@ -3,7 +3,7 @@ import {SeoService} from '../components/service/SeoService';
 import {AppStateContextProvider} from '../providers/AppStateContextProvider';
 import {ThemeProvider} from '../providers/ThemeProvider';
 import 'normalize.css';
-import '../../tokens/build/tokens.css';
+import '@hotcakes/tokens/lib/tokens.css';
 import '../styles/index.scss';
 
 const App = ({Component, pageProps}: AppProps) => (

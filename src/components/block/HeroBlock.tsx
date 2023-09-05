@@ -23,12 +23,12 @@ export type HeroBlockProps = {
 	readonly actions: ActionBag[];
 };
 
-export const HeroBlock: FC<HeroBlockProps> = props => {
-	const [carouselIndex, methods] = useCarouselIndex(props.slides.length, 0, {
+export const HeroBlock: FC<HeroBlockProps> = ({slides = [], ...props}) => {
+	const [carouselIndex, methods] = useCarouselIndex(slides.length, 0, {
 		startImmediately: false,
 	});
 
-	const [springs] = useSprings(props.slides.length, (index, controller) => {
+	const [springs] = useSprings(slides.length, (index, controller) => {
 		const defaultValue = 0;
 
 		const currentSpringValues = controller.get();
@@ -50,9 +50,9 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 		};
 	}, [carouselIndex]);
 
-	const [titleSprings] = useSprings(props.slides.length, (index, controller) => {
+	const [titleSprings] = useSprings(slides.length, (index, controller) => {
 		const defaultValue = {
-			marginInline: '0rem',
+			marginRight: '0rem',
 			transform: 'scale(1)',
 		};
 
@@ -60,7 +60,7 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 
 		const currentValue = Object.keys(currentSpringValues).length ? currentSpringValues : defaultValue;
 		let futureValue = {
-			marginInline: '1rem',
+			marginRight: '2rem',
 			transform: 'scale(1.125)',
 		};
 
@@ -87,7 +87,7 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 							transform: style.y.to(y => `translateY(${y}%)`),
 						}}
 					>
-						<Image height='100%' width='100%' fill='cover' src={props.slides[slideIndex].src}/>
+						<Image height='100%' width='100%' fill='cover' src={slides[slideIndex].src}/>
 					</HeroCarouselSlide>
 				))}
 			</HeroCarousel>
@@ -118,7 +118,7 @@ export const HeroBlock: FC<HeroBlockProps> = props => {
 									methods.to(slideIndex);
 								}}
 							>
-								{props.slides[slideIndex].title}
+								{slides[slideIndex].title}
 							</CarouselControlTitle>
 						))}
 					</CarouselControlTitles>

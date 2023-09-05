@@ -19,7 +19,7 @@ export const Wrapper = styled('section')`
 	overflow: hidden;
 `;
 
-export const HeroCarousel = styled('div')`
+export const HeroCarousel = styled('div')(({theme}) => css`
 	position: absolute;
 	inset: 0;
 	z-index: 0;
@@ -33,14 +33,13 @@ export const HeroCarousel = styled('div')`
 		top: 0;
 		left: 0;
 		background-image: radial-gradient(
-			circle at 10% 0%,
-			${alpha('#ffa8c3', 0.75)} 0%,
-			${alpha('#4fcff9', 0.1)} 100%
+			circle at 0% 20%,
+			${alpha(theme.tokens.color.brand.magenta.lightest, 1)} 0%,
+			${alpha(theme.tokens.color.brand.magenta.lighter, 0.375)} 70%,
+			${alpha(theme.tokens.color.brand.cyan.lighter, 0.1)} 100%
 		);
 	}
-
-	/* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
-`;
+`);
 
 export const HeroCarouselSlide = styled(animated.div)`
 	position: absolute;
@@ -55,8 +54,13 @@ export const CarouselControlTitles = styled('div')`
 	display: flex;
 	margin-top: 2rem;
 	gap: 1rem;
-	align-items: center;
+	align-items: left;
 	flex-wrap: wrap;
+	flex-direction: column;
+
+	${({theme}) => theme.breakpoints.up('md')} {
+		flex-direction: row;
+	}
 `;
 
 export const CarouselControlTitle = styled(animated.button)`
@@ -75,6 +79,7 @@ export const CarouselControlTitle = styled(animated.button)`
 	cursor: pointer;
 
 	color: var(--color-white);
+	transform-origin: left center;
 
 	${[1, 2, 3].map(index => css`
 		&:nth-of-type(${index}) {

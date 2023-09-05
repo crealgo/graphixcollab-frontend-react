@@ -12,7 +12,7 @@
     "@fontsource/inter": "^4.5.15",
     "@fontsource/inter-tight": "^5.0.2",
     "@hookform/resolvers": "^3.1.1",
-    "@hotcakes/tokens": "^1.0.1",
+    "@hotcakes/tokens": "file:.yalc/@hotcakes/tokens",
     "@material/material-color-utilities": "^0.2.7",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.10.11",
@@ -40,7 +40,7 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "dev": "concurrently npm:site:dev npm:tokens:dev npm:script:resize-images-watch",
+    "dev": "concurrently npm:site:dev npm:script:resize-images-watch",
     "verify": "npm run lint:ts && npm run lint:es",
     "lint:ts": "tsc --noEmit",
     "lint:es": "eslint --fix --ext .ts,.tsx src/",
@@ -64,8 +64,6 @@
     "script:dev": "npm-watch script:rename",
     "script:clean": "rm -rf lib .next dist storybook-static",
     "script:entry-file": "node scripts/generateEntryFile",
-    "tokens:dev": "nodemon --watch tokens/src --ext ts --exec \"npm run tokens:build\"",
-    "tokens:build": "tsx tokens/src",
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "browserslist": {

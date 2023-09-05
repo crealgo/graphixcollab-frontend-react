@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import {SiYelp} from '@icons-pack/react-simple-icons';
 import {MessageOutlined} from '@mui/icons-material';
+import {Block} from '../../base/Block';
 import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
@@ -13,7 +14,6 @@ import {Heading} from '../../base/Heading';
 import {Mark} from '../../base/Mark';
 import {TidBit} from '../../base/TidBit';
 import {CompanyFeatureLink} from './CompanyFeatureLink';
-import {CustomBlock} from './CustomBlock';
 import {FeaturedLogo} from './FeaturedLogo';
 import {FeaturedLogoType} from './FeaturedLogoType';
 import {FeaturedMarquee} from './FeaturedMarquee';
@@ -25,6 +25,15 @@ export type FeaturedInBlockProps = {
 	readonly companies?: FeaturedCompanyInfo[];
 	readonly actions?: Action[];
 } & ComponentPropsWithoutRef<'div'>;
+
+const CustomBlock = styled(Block)`
+	padding-top: 4rem !important;
+	padding-bottom: 4rem !important;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+`;
 
 const StyledContainer = styled(Container)`
 	display: grid;
@@ -71,10 +80,16 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 		theme.breakpoints.down('sm'),
 	);
 
-	const FeaturedComponent = isMobile ? FeaturedGrid : FeaturedMarquee;
+	let FeaturedComponent: any = FeaturedMarquee;
+	let componentProps: any = {gradient: true};
+
+	if (isMobile) {
+		FeaturedComponent = FeaturedGrid;
+		componentProps = {};
+	}
 
 	return (
-		<CustomBlock className={clsx(className, 'FeaturedInBlock-root')}>
+		<CustomBlock isClipped className={clsx(className, 'FeaturedInBlock-root')}>
 			<StyledContainer>
 				<ContentGrid
 					size='small'
@@ -91,11 +106,13 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 						</Typography>
 					) : null}
 				</ContentGrid>
-				{companies?.length && (
-					<FeaturedComponent>
-						{companies.map(renderCompany)}
-					</FeaturedComponent>
-				)}
+			</StyledContainer>
+			{companies?.length && (
+				<FeaturedComponent {...componentProps}>
+					{companies.map(renderCompany)}
+				</FeaturedComponent>
+			)}
+			<StyledContainer>
 				<ActionStack
 					align='center'
 					size='large'

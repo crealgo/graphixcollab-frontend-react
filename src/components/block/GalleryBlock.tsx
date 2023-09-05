@@ -77,7 +77,7 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 
 	return (
-		<Wrapper className={clsx(className, 'GalleryBlock-root')}>
+		<Wrapper isClipped className={clsx(className, 'GalleryBlock-root')}>
 			<Container className='GalleryBlock-container'>
 				<div className='content'>
 					<Heading level={2}>{title}</Heading>
