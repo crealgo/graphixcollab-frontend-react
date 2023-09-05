@@ -24,4 +24,4 @@ jobs:
         run: npm ci
 
       - name: Scrape
-        run: npx tsx scripts/scrape.ts
+        run: npx tsx scripts/scrape-yelp-reviews.ts
