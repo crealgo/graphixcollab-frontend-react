@@ -37,13 +37,13 @@ const milestones = [
 	{
 		stepNumber: 3,
 		title: 'Product',
-		image: 'assets/process/screen-printing/prepared-screen-min@512w.webp',
+		image: 'assets/process/screen-printing/print-machine-min@512w.webp',
 		description: 'Here we actually print the materials. We load the designs, set up the materials, and produce the printed products.',
 	},
 	{
 		stepNumber: 4,
 		title: 'Packing',
-		image: 'assets/process/screen-printing/prepared-screen-min@512w.webp',
+		image: 'assets/process/screen-printing/screen-preparation-min@512w.webp',
 		description: 'Once the printing is done, we might trim, fold, or bind them based on client requirements. And then, finally package the finished prints, ensuring they are protected during transit or for delivery to clients. It\'s like preparing the printed materials for safe and attractive presentation to the clients or for shipping to their destinations.',
 	},
 ];
