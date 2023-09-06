@@ -65,7 +65,7 @@ export const YelpBlock: FC<YelpBlockProps> = () => (
 			<Content>
 				<Heading isCentered level={2}>
 					{'We\'ve helped '}
-					<Mark color='magenta'>148</Mark>
+					<Mark color='magenta'>161</Mark>
 					{' happy customers!'}
 				</Heading>
 				<StyledCarousel>

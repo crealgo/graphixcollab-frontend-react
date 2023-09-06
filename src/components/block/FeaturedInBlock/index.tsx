@@ -124,7 +124,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 						},
 					]}
 				>
-					<TidBit href='#yelp-test' color='magenta' icon={<SiYelp/>}>
+					<TidBit href='https://www.yelp.com/biz/fashion-greek-usc-los-angeles' color='magenta' icon={<SiYelp/>}>
 						Trusted by <Mark color='magenta'>150+</Mark> on{' '}
 						<Mark color='magenta'>Yelp</Mark>
 					</TidBit>
