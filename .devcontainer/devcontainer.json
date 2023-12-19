@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Graphix Collab | Next JS",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "onCreateCommand": "sh .devcontainer/setup.sh",
+  "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "christian-kohler.path-intellisense",
+                "formulahendry.auto-close-tag",
+                "EditorConfig.EditorConfig",
+                "wmaurer.change-case",
+                "naumovs.color-highlight",
+                "ms-vsliveshare.vsliveshare-pack",
+                "ms-playwright.playwright",
+                "deerawan.vscode-faker",
+                "Orta.vscode-jest",
+                "mikestead.dotenv"
+            ]
+        }
+    }
+}

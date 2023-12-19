@@ -13,6 +13,7 @@ import {HorizontalCard} from '../base/HorizontalCard';
 import {Image, type ImageProps} from '../base/Image';
 import {Mark} from '../base/Mark';
 import {Text} from '../base/Text';
+import {useRouter} from 'next/router';
 
 type Service = (typeof services)[number];
 
@@ -114,45 +115,49 @@ const StyledImage = styled(Image)<{imageTranslate?: string}>(({
 
 export const ServicesBlock: FC<ServicesBlockProps> = ({
 	title, description, services, ImageProps, imageTranslate = '60%',
-}) => (
-	<StyledBlock>
-		<Container>
-			<Wrapper>
-				<hgroup>
-					<Heading hasMargin level={2}>
-						<Mark brand>{title}</Mark>
-					</Heading>
-					<Text>{description}</Text>
-				</hgroup>
-				<div className='services'>
-					{services?.map((service, serviceIndex) => (
-						<HorizontalCard
-							key={serviceIndex}
-							title={service.name}
-							description={service.summary}
-							image={service.image}
-							imageColor={service.color}
-						/>
-					))}
-				</div>
-				<ActionStack color='secondary'>
-					<Box mr={-1} zIndex={1}>
-						Looking for something else?
-					</Box>
-					<Button
-						color='text'
-						href='/contact'
-						endIcon={<Message/>}
-					>
-						Contact Us
-					</Button>
-				</ActionStack>
-			</Wrapper>
-			{ImageProps?.src && (
-				<StyledImage {...ImageProps} imageTranslate={imageTranslate}/>
-			)}
-		</Container>
-	</StyledBlock>
-);
+}) => {
+	const router = useRouter();
+
+	return (
+		<StyledBlock>
+			<Container>
+				<Wrapper>
+					<hgroup>
+						<Heading hasMargin level={2}>
+							<Mark brand>{title}</Mark>
+						</Heading>
+						<Text>{description}</Text>
+					</hgroup>
+					<div className='services'>
+						{services?.map((service, serviceIndex) => (
+							<HorizontalCard
+								key={serviceIndex}
+								title={service.name}
+								description={service.summary}
+								image={service.image}
+								imageColor={service.color}
+							/>
+						))}
+					</div>
+					<ActionStack color='secondary'>
+						<Box mr={-1} zIndex={1}>
+							Looking for something else?
+						</Box>
+						<Button
+							color='text'
+							href={`${router.basePath}/contact-us`}
+							endIcon={<Message/>}
+						>
+							Contact Us
+						</Button>
+					</ActionStack>
+				</Wrapper>
+				{ImageProps?.src && (
+					<StyledImage {...ImageProps} imageTranslate={imageTranslate}/>
+				)}
+			</Container>
+		</StyledBlock>
+	);
+};
 
 ServicesBlock.displayName = 'ServicesBlock';

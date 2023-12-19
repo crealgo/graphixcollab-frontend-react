@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {SiYelp} from '@icons-pack/react-simple-icons';
-import {MessageOutlined} from '@mui/icons-material';
+import SecondaryIcon from '@mui/icons-material/ArrowForward';
 import {Block} from '../../base/Block';
 import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import clsx from 'clsx';
@@ -18,6 +18,7 @@ import {FeaturedLogo} from './FeaturedLogo';
 import {FeaturedLogoType} from './FeaturedLogoType';
 import {FeaturedMarquee} from './FeaturedMarquee';
 import {FeaturedText} from './FeaturedText';
+import {useRouter} from 'next/router';
 
 export type FeaturedInBlockProps = {
 	readonly title?: string;
@@ -72,13 +73,13 @@ const FeaturedGrid = styled('div')`
 `;
 
 export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
-	className,
-	companies,
-	...props
+	className, companies, ...props
 }) => {
 	const isMobile = useMediaQuery((theme: Theme) =>
 		theme.breakpoints.down('sm'),
 	);
+
+	const router = useRouter();
 
 	let FeaturedComponent: any = FeaturedMarquee;
 	let componentProps: any = {gradient: true};
@@ -118,9 +119,10 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					size='large'
 					actions={[
 						{
-							label: 'Leave a Review',
+							label: 'Book a time',
 							color: 'text',
-							endIcon: <MessageOutlined/>,
+							href: `${router.basePath}/book-appointment`,
+							endIcon: <SecondaryIcon/>,
 						},
 					]}
 				>
