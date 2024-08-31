@@ -1,24 +1,35 @@
 {
-  "extends": "./node_modules/@hotcakes/core/lib/tsconfig.json",
-  "exclude": [
-    "node_modules",
-    "out",
-    "dist",
-    ".next",
-    "build",
-    "test-results"
-  ],
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"checkJs": true,
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"incremental": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"lib": [
+			"esnext",
+			"dom",
+			"dom.iterable"
+		],
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"strict": true,
+		"target": "ES6",
+		"module": "Preserve",
+		"moduleResolution": "Bundler"
+	},
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx"
+    "src",
+    "scripts",
+    "__tests__"
   ],
-  "compilerOptions": {
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
-  }
+	"exclude": ["**/node_modules", "**/dist"]
 }
