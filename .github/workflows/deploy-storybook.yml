@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Setup Repository
@@ -40,7 +40,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: Crealgo Bot 🤖
+          user_name:  🤖 Crealgo Bot
           user_email: hello.crealgo@gmail.com
           external_repository: crealgo/crealgo-static-projects
           publish_dir: storybook-static

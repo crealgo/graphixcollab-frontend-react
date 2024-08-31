@@ -7,6 +7,9 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Setup Repository
@@ -25,3 +28,10 @@ jobs:
 
       - name: Scrape
         run: npx tsx scripts/scrape-yelp-reviews.ts
+
+      - name: Commit and Push Yelp Data
+        run: |
+          git config --local user.email "hello.crealgo@gmail.com"
+          git config --local user.name "🤖 Crealgo Bot"
+          git add .
+          git commit -m "perf(Yelp): update latest Yelp reviews"
