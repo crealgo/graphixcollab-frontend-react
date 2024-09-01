@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import {type GetStaticProps, type NextPage} from 'next';
-import {BlogBlock} from '../../components/base/BlogBlock';
-import {Container} from '../../components/base/Container';
+import {BlogBlock} from '@graphixcollab/components/BlogBlock.tsx';
+import {Container} from '@graphixcollab/components/Container.tsx';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps,
-} from '../../components/block/PageHeaderBlock';
-import {PageTitle} from '../../components/utility/PageTitle';
-import {DefaultLayout} from '../../../packages/components/src/layouts/DefaultLayout';
+} from '@graphixcollab/components/PageHeaderBlock.tsx';
+import {PageTitle} from '@graphixcollab/components/PageTitle.tsx';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout.tsx';
 
 type PageProps = {
 	pageTitle: string;
