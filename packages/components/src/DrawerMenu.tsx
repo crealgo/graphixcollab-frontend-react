@@ -1,6 +1,6 @@
 import {DrawerContent} from './DrawerContent';
 import {MenuTrigger} from './MenuTrigger';
-import {type Action, type NavItemOptions} from '../../../types/general';
+import {type Action, type NavItemOptions} from '@graphixcollab/types/general';
 import {Close, Menu} from '@mui/icons-material';
 import {Drawer, useControlled, type DrawerProps} from '@mui/material';
 import {type FC, type MouseEventHandler} from 'react';

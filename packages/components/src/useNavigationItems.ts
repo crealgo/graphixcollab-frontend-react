@@ -1,4 +1,4 @@
-import {type NavItemOptions} from '../types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general';
 import {useRouter} from 'next/router';
 
 export const useNavigationItems = (): NavItemOptions[] => {

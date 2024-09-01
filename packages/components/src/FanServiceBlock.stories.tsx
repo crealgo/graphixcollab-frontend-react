@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {generateFanServiceBlock} from '../../utils/chance';
+import {generateFanServiceBlock} from '@graphixcollab/utils/chance.ts';
 import {FanServiceBlock, type FanServiceBlockProps} from './FanServiceBlock';
 
 export default {

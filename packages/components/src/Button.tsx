@@ -2,7 +2,7 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import {type FC} from 'react';
-import {ButtonBase, type ButtonBaseProps} from '../atoms/ButtonBase';
+import {ButtonBase, type ButtonBaseProps} from './ButtonBase';
 
 export type ButtonProps = {
 	readonly color?: BrandColor;

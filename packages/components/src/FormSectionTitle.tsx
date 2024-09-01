@@ -1,5 +1,5 @@
 import {type FC} from 'react';
-import {Heading} from '../src/base/Heading';
+import {Heading} from './Heading';
 import clsx from 'clsx';
 import styled from '@emotion/styled';
 

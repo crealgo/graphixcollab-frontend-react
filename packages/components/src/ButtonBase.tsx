@@ -5,7 +5,7 @@ import {
 	type FC,
 	type ReactElement,
 } from 'react';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 
 export type ButtonBaseSizes = Size;
 

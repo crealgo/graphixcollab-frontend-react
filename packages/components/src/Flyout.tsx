@@ -1,6 +1,6 @@
 import {styled} from '@mui/material/styles';
-import {generateFeaturedItems} from '../../utils/chance';
-import {FeaturedItems} from './DrawerMenu/FeaturedItems';
+import {generateFeaturedItems} from '@graphixcollab/utils/chance.ts';
+import {FeaturedItems} from './FeaturedItems';
 import {Heading} from './Heading';
 import {Text} from './Text';
 

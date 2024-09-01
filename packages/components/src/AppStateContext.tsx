@@ -1,4 +1,4 @@
-import {type BannerProps} from './src/base/Banner';
+import {type BannerProps} from './Banner';
 import {createContext, type Dispatch, type SetStateAction} from 'react';
 
 export type AppStateContextOptions = {

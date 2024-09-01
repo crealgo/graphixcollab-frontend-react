@@ -1,9 +1,9 @@
 import {type StoryObj, type Meta} from '@storybook/react';
 import {useState} from 'react';
-import {generateBanner} from '../../utils/chance';
+import {generateBanner} from '@graphixcollab/utils/chance.ts';
 import {BannerService} from './BannerService';
-import {Banner, type BannerProps} from '../base/Banner';
-import {Button} from '../base/Button';
+import {Banner, type BannerProps} from './Banner';
+import {Button} from './Button';
 
 export default {
 	component: BannerService,

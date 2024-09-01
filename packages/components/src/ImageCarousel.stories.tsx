@@ -1,5 +1,5 @@
 import {type Meta} from '@storybook/react';
-import {chance} from '../../utils/chance';
+import {chance} from '@graphixcollab/utils/chance.ts';
 import {ImageCarousel} from './ImageCarousel';
 
 export default {

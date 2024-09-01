@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {type FC} from 'react';
-import type reviews from '../../content/yelp-reviews.json';
+import type reviews from '@graphixcollab/content/yelp-reviews.json';
 
 export type TestimonialProps = (typeof reviews)[0];
 

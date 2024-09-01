@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import {type FC, type MouseEvent} from 'react';
-import {Button} from '../base/Button';
+import {Button} from './Button';
 
 type DialogServiceProps = {
 	// FIXME: open?: boolean;

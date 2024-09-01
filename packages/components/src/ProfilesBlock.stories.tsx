@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {chance, generateEmployeeGroups} from '../../utils/chance';
+import {chance, generateEmployeeGroups} from '@graphixcollab/utils/chance.ts';
 import {ProfilesBlock, type ProfilesBlockProps} from './ProfilesBlock';
 
 export default {

@@ -3,14 +3,14 @@ import {
 	type FC,
 	type HTMLInputTypeAttribute,
 } from 'react';
-import {CheckboxField} from '../src/form/CheckboxField';
-import {FileInputField} from '../src/form/FileInputField';
-import {RadioField} from '../src/form/RadioField';
-import {SelectField} from '../src/form/SelectField';
-import {TextAreaField} from '../src/form/TextAreaField';
-import {TextField} from '../src/form/TextField';
-import {type OptionBag} from '../src/form/types';
-import {type useForm} from '../src/hooks/useForm';
+import {CheckboxField} from './CheckboxField';
+import {FileInputField} from './FileInputField';
+import {RadioField} from './RadioField';
+import {SelectField} from './SelectField';
+import {TextAreaField} from './TextAreaField';
+import {TextField} from './TextField';
+import {type OptionBag} from './types';
+import {type useForm} from './useForm';
 import {FormSectionTitle} from './FormSectionTitle';
 
 export type FormItemBag = {

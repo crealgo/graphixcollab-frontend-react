@@ -1,16 +1,16 @@
 import {ArrowForward, CheckCircleOutline} from '@mui/icons-material';
 import {CircularProgress, css, styled} from '@mui/material';
 import {type FC} from 'react';
-import {ActionStack} from '../components/base/ActionStack';
-import {Button} from '../components/base/Button';
-import {Mark} from '../components/base/Mark';
-import {useForm} from '../hooks/useForm';
+import {ActionStack} from './ActionStack';
+import {Button} from './Button';
+import {Mark} from './Mark';
+import {useForm} from './useForm';
 import {FormGrid} from './FormGrid';
 import {FormHeader} from './FormHeader';
 import {FormItemGenerator} from './FormItemGenerator';
-import {renderFormAlert} from '../../utils/renderFormAlert';
-import {estimateFormItems} from './__data__/estimateFormItems';
-import {getFormAction} from '../../utils/getFormAction';
+import {renderFormAlert} from '@graphixcollab/utils/renderFormAlert.tsx';
+import {estimateFormItems} from '@graphixcollab/components/__data__/estimateFormItems.tsx';
+import {getFormAction} from '@graphixcollab/utils/getFormAction.tsx';
 
 const StyledFormGrid = styled(FormGrid)(({theme}) => css`
 	${theme.breakpoints.up('md')} {

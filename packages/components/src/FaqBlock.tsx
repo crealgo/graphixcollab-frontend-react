@@ -4,12 +4,12 @@ import {
 	type Action,
 	type SharedBlockProps,
 	type SimpleLink,
-} from '../../types/general';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {ContentGrid} from '../base/ContentGrid';
-import {FaqAccordion} from '../base/FaqAccordion';
-import {Heading} from '../base/Heading';
+} from '@graphixcollab/types/general';
+import {Block} from './Block';
+import {Container} from './Container';
+import {ContentGrid} from './ContentGrid';
+import {FaqAccordion} from './FaqAccordion';
+import {Heading} from './Heading';
 
 export type FaqOptions = {
 	question: string;

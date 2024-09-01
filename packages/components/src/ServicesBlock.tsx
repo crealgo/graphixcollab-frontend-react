@@ -3,16 +3,16 @@ import {Box} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC} from 'react';
 import type services from '../../content/services.json';
-import {type SharedBlockProps} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Button} from '../base/Button';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {HorizontalCard} from '../base/HorizontalCard';
-import {Image, type ImageProps} from '../base/Image';
-import {Mark} from '../base/Mark';
-import {Text} from '../base/Text';
+import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Button} from './Button';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {HorizontalCard} from './HorizontalCard';
+import {Image, type ImageProps} from './Image';
+import {Mark} from './Mark';
+import {Text} from './Text';
 
 type Service = (typeof services)[number];
 

@@ -102,7 +102,6 @@
     "vite-tsconfig-paths": "^4.0.7"
   },
   "workspaces": [
-    "packages/graphixcollab-components",
-    "packages/graphixcollab-utils"
+    "packages/*"
   ]
 }

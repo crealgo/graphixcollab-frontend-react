@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {chance} from '../../utils/chance';
+import {chance} from '@graphixcollab/utils/chance.ts';
 import {HighlightBlock, type HighlightBlockProps} from './HighlightBlock';
 
 export default {

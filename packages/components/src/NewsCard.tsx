@@ -2,7 +2,7 @@ import {ArrowForward} from '@mui/icons-material';
 import {Button, Divider, Stack, styled, Typography} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Article} from '../../types/general';
+import {type Article} from '@graphixcollab/types/general';
 import {Profile} from './Profile';
 
 export type NewsCardsProps = {

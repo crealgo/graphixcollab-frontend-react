@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {chance} from '../../utils/chance';
+import {chance} from '@graphixcollab/utils/chance.ts';
 import {Label, type LabelProps} from './Label';
 
 export default {

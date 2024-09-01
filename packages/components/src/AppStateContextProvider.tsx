@@ -5,11 +5,11 @@ import {
 	type FC,
 	type PropsWithChildren,
 } from 'react';
-import {ContactService} from '../components/service/ContactService';
+import {ContactService} from '@graphixcollab/components/ContactService.tsx';
 import {
 	AppStateContext,
 	type AppStateContextOptions as Context,
-} from '../contexts/AppStateContext';
+} from '@graphixcollab/components/AppStateContext.tsx';
 
 type AppStateContextProviderProps = PropsWithChildren;
 

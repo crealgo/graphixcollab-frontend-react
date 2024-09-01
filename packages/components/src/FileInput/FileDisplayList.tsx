@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {type FC, type PropsWithChildren} from 'react';
-import {Text} from '../../base/Text';
+import {Text} from '../Text';
 
 type Props = PropsWithChildren<{
 	readonly listTitle?: string;

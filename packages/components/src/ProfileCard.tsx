@@ -2,7 +2,7 @@ import {Business} from '@mui/icons-material';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import {type FC} from 'react';
-import {type Employee} from '../../types/general';
+import {type Employee} from '@graphixcollab/types/general';
 import {Image} from './Image';
 import {StatusMessage} from './StatusMessage';
 

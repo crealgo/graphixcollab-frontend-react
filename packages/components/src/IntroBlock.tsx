@@ -1,13 +1,13 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type SharedBlockProps} from '../../types/general';
-import Logo from './atoms/Logo';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Carousel, CarouselSlide} from '../base/Carousel';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Text} from '../base/Text';
+import {type Action, type SharedBlockProps} from '@graphixcollab/types/general';
+import Logo from './Logo';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Carousel, CarouselSlide} from './Carousel';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Text} from './Text';
 import {ArrowRight} from '@mui/icons-material';
 import {useRouter} from 'next/router';
 

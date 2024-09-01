@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {chance, generateActions, generateArticles} from '../../utils/chance';
+import {chance, generateActions, generateArticles} from '@graphixcollab/utils/chance.ts';
 import {NewsBlock, type NewsBlockProps} from './NewsBlock';
 
 export default {

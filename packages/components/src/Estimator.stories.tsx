@@ -1,6 +1,6 @@
 import {type StoryObj} from '@storybook/react';
 import {userEvent, within} from '@storybook/testing-library';
-import {QuickEstimateForm} from '../forms/QuickEstimateForm';
+import {QuickEstimateForm} from './QuickEstimateForm';
 
 export default {
 	component: QuickEstimateForm,

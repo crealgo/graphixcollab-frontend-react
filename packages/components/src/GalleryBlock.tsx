@@ -3,12 +3,12 @@ import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {type FC} from 'react';
 import Marquee from 'react-fast-marquee';
-import {type Action} from '../../types/general';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Image, type ImageProps} from '../base/Image';
-import {Text} from '../base/Text';
+import {type Action} from '@graphixcollab/types/general';
+import {Block} from './Block';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Image, type ImageProps} from './Image';
+import {Text} from './Text';
 import {
 	SocialMediaBlock,
 	type SocialMediaBlockProps,

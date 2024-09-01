@@ -1,7 +1,7 @@
 import {Close} from '@mui/icons-material';
 import {type FC, type MouseEventHandler, type PropsWithChildren} from 'react';
-import {type Action, type NavItemOptions} from '../../../types/general';
-import {Heading} from '../Heading';
+import {type Action, type NavItemOptions} from '@graphixcollab/types';
+import {Heading} from './Heading';
 import {DrawerBoxClose} from './DrawerBoxClose';
 import {TitleBox} from './TitleBox';
 import {Wrapper} from './Wrapper';

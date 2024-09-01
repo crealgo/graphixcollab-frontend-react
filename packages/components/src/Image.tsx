@@ -1,7 +1,7 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC, type ReactNode} from 'react';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 
 export type ImageProps = ComponentPropsWithRef<'img'> & {
 	readonly fill?: 'cover' | 'contain';

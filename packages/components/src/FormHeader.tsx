@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import {type FC, type PropsWithChildren, type ReactNode} from 'react';
-import {Heading} from '../src/base/Heading';
-import {Mark} from '../src/base/Mark';
+import {Heading} from './Heading';
+import {Mark} from './Mark';
 
 type FormHeaderProps = PropsWithChildren<{
 	readonly title: ReactNode;

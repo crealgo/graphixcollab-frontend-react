@@ -2,7 +2,7 @@ import {styled} from '@mui/material';
 import {css} from 'code-tag';
 import clsx from 'clsx';
 import {type ComponentPropsWithRef, type FC} from 'react';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 
 export type BlockProps = {
 	/**

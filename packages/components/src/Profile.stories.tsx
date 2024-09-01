@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {generatePerson} from '../../utils/chance';
+import {generatePerson} from '@graphixcollab/utils/chance.ts';
 import {Profile, type ProfileProps} from './Profile';
 
 export default {

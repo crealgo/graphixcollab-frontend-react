@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generateTimelineBlock} from '../../utils/chance';
+import {generateTimelineBlock} from '@graphixcollab/utils/chance.ts';
 import {TimelineBlock} from './TimelineBlock';
 
 export default {

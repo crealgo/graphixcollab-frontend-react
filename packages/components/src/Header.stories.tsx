@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generateHeader} from '../../utils/src/chance';
+import {generateHeader} from '@graphixcollab/utils/chance.ts';
 import {Header, type HeaderProps} from './Header';
 
 export default {

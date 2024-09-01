@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import {type FC} from 'react';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
+import {Block} from './Block';
+import {Container} from './Container';
 
 export type PlaceholderBlockProps = {
 	readonly name?: string;

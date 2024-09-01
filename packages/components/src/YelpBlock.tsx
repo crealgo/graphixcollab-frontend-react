@@ -1,15 +1,15 @@
 import {MessageOutlined, SearchOutlined} from '@mui/icons-material';
 import {styled} from '@mui/material';
 import {type FC} from 'react';
-import reviews from '../../content/yelp-reviews.json';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Carousel, CarouselSlide} from '../base/Carousel';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Mark} from '../base/Mark';
-import {Testimonial} from '../base/Testimonial';
-import {generatePatternBackground} from '../../utils/src/generatePatternBackground';
+import reviews from '@graphixcollab/content/yelp-reviews.json';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Carousel, CarouselSlide} from './Carousel';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Mark} from './Mark';
+import {Testimonial} from './Testimonial';
+import {generatePatternBackground} from '@graphixcollab/utils/generatePatternBackground.tsx';
 
 export type YelpBlockProps = {
 	quote?: (typeof reviews)[number];

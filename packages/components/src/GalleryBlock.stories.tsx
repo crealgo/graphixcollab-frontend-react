@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {generateGalleryBlock} from '../../utils/chance';
+import {generateGalleryBlock} from '@graphixcollab/utils/chance.ts';
 import {GalleryBlock, type GalleryBlockProps} from './GalleryBlock';
 
 export default {

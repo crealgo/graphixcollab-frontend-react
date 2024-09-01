@@ -1,7 +1,7 @@
 import {type AppProps} from 'next/app';
-import {SeoService} from '../components/service/SeoService';
-import {AppStateContextProvider} from '../src/providers/AppStateContextProvider';
-import {ThemeProvider} from '../providers/ThemeProvider';
+import {SeoService} from '@graphixcollab/components/SeoService.tsx';
+import {AppStateContextProvider} from '@graphixcollab/components/AppStateContextProvider.tsx';
+import {ThemeProvider} from '@graphixcollab/components/ThemeProvider.tsx';
 import 'normalize.css';
 import '@hotcakes/tokens/lib/tokens.css';
 import '../styles/index.scss';

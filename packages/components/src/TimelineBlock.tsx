@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import {type FC} from 'react';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Mark} from '../base/Mark';
-import {Milestone} from '../base/Milestone';
-import {Timeline} from '../base/Timeline';
-import {type EventBlockProps} from '../base/TimelineEvent';
+import {Block} from './Block';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Mark} from './Mark';
+import {Milestone} from './Milestone';
+import {Timeline} from './Timeline';
+import {type EventBlockProps} from './TimelineEvent';
 
 export type TimelineBlockProps = {
 	events?: EventBlockProps[];

@@ -5,7 +5,7 @@ import {
 	type FC,
 	type MouseEventHandler,
 } from 'react';
-import {type NavItemOptions} from '../../types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general';
 import {type ButtonProps} from './Button';
 import {NavItem} from './NavItem';
 

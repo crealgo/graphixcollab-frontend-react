@@ -1,7 +1,7 @@
 import {styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {colorIterator} from '../../../utils/colorIterator';
-import {Heading} from '../../base/Heading';
+import {colorIterator} from './colorIterator';
+import {Heading} from './Heading';
 import {type ServiceInformation} from './steps/data';
 
 export type BookingOptionProps = Record<string, unknown> &

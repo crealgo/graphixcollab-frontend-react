@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generateFooter} from '../../utils/chance';
+import {generateFooter} from '@graphixcollab/utils/chance.ts';
 import {FooterBlock, type FooterBlockProps} from './FooterBlock';
 
 export default {

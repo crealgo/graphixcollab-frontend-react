@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generatePageHeaderBlock} from '../../utils/chance';
+import {generatePageHeaderBlock} from '@graphixcollab/utils/chance.ts';
 import {PageHeaderBlock, type PageHeaderBlockProps} from './PageHeaderBlock';
 
 export default {

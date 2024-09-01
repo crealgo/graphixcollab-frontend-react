@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import {useEffect, useRef, type FC, type ReactNode} from 'react';
 import {InputHelperText} from './InputHelperText';
-import {handleFormControlTouch} from '../__utils__/handleFormControlTouch';
+import {handleFormControlTouch} from '@graphixcollab/utils/handleFormControlTouch.ts';
 
 export type FormControlProps = {
 	readonly label?: ReactNode;

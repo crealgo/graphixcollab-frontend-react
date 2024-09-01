@@ -1,4 +1,4 @@
-import {Link} from '../../src/base/Link';
+import {Link} from '../Link';
 import {type FormItemBag} from '../FormItemGenerator';
 import {deliveryMethods, materials, services} from './serviceOptions';
 

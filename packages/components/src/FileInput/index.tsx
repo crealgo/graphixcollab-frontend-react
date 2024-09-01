@@ -1,7 +1,7 @@
 import {AttachFileTwoTone} from '@mui/icons-material';
 import clsx from 'clsx';
 import {forwardRef, useState, type ChangeEvent, type ReactNode} from 'react';
-import {Text} from '../../base/Text';
+import {Text} from '../Text';
 import {type InputProps} from '../Input';
 import {FileDisplayList} from './FileDisplayList';
 import {FileInputDisplay} from './FileInputDisplay';

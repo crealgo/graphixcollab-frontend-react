@@ -4,9 +4,9 @@ import {css, styled} from '@mui/material/styles';
 import {type NextPage} from 'next';
 import {useRouter} from 'next/router';
 import {type ReactNode} from 'react';
-import {type BannerProps} from './base/Banner';
-import {type BreadcrumbOptions} from './base/Breadcrumbs';
-import {Header, type HeaderProps} from './base/Header/Header';
+import {type BannerProps} from './Banner';
+import {type BreadcrumbOptions} from './Breadcrumbs';
+import {Header, type HeaderProps} from './Header';
 import {FooterBlock, type FooterBlockProps} from './FooterBlock';
 import {YelpBlock} from './YelpBlock';
 

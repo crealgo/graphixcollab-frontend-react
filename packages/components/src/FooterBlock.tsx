@@ -4,13 +4,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {css, IconButton, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type Term} from '../../types/general';
-import Logo from './atoms/Logo';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Link} from '../base/Link';
-import {Text} from '../base/Text';
+import {type Term} from '@graphixcollab/types/general';
+import Logo from './Logo';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Container} from './Container';
+import {Link} from './Link';
+import {Text} from './Text';
 import {MapEmbed} from './MapEmbed';
 
 export type FooterBlockProps = {

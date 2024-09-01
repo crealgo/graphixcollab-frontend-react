@@ -1,13 +1,13 @@
-import {Block} from '../base/Block';
-import {ProfileCard} from '../base/ProfileCard';
-import {type EmployeeGroup} from '../../types/general';
+import {Block} from './Block';
+import {ProfileCard} from './ProfileCard';
+import {type EmployeeGroup} from '@graphixcollab/types/general';
 import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {Container} from '../base/Container';
-import {ContentGrid} from '../base/ContentGrid';
-import {Heading} from '../base/Heading';
-import {Text} from '../base/Text';
+import {Container} from './Container';
+import {ContentGrid} from './ContentGrid';
+import {Heading} from './Heading';
+import {Text} from './Text';
 
 export type ProfilesBlockProps = {
 	// title?: string;

@@ -1,9 +1,9 @@
 import {css, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type Action} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
+import {type Action} from '@graphixcollab/types/general';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Container} from './Container';
 
 export type CalloutBlockProps = {
 	readonly title?: string;

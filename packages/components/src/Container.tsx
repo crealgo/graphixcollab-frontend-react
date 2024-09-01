@@ -1,6 +1,6 @@
 import {styled} from '@mui/material';
 import {css} from 'code-tag';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 import {type ComponentPropsWithRef, type FC} from 'react';
 import clsx from 'clsx';
 

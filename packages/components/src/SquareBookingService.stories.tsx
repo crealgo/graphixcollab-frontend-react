@@ -1,6 +1,6 @@
 import {type StoryObj} from '@storybook/react';
 import {useState} from 'react';
-import {Button} from '../base/Button';
+import {Button} from './Button';
 import {SquareBookingService} from './SquareBookingService';
 
 export default {

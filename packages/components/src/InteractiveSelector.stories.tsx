@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {generateOptions} from '../../utils/chance';
+import {generateOptions} from '@graphixcollab/utils/chance.ts';
 import {
 	InteractiveSelector,
 	type InteractiveSelectorProps,

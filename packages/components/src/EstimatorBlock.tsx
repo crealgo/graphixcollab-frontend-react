@@ -1,8 +1,8 @@
 import {styled} from '@mui/material';
 import {type FC} from 'react';
-import {QuickEstimateForm} from '../forms/QuickEstimateForm';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
+import {QuickEstimateForm} from './QuickEstimateForm';
+import {Block} from './Block';
+import {Container} from './Container';
 
 const StyledBlock = styled(Block)`
 	padding: 0 !important;

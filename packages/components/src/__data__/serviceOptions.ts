@@ -1,4 +1,4 @@
-import {generateValuesFromStringArray} from '../../../../../src/utils/generateValuesFromStringArray';
+import {generateValuesFromStringArray} from '@graphixcollab/utils/generateValuesFromStringArray.ts';
 
 export const materials = generateValuesFromStringArray(
 	'T-shirt',

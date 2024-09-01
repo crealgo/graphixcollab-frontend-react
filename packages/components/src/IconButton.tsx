@@ -1,12 +1,12 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {forwardRef} from 'react';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 import {
 	getButtonColors,
 	getButtonHoverColors,
 	getButtonSizes,
-} from '../../utils/src/getButtonStyles';
+} from '@graphixcollab/utils/getButtonStyles.tsx';
 import {IconButtonBase, type IconButtonBaseProps} from './IconButtonBase';
 import {type CSSObject} from '@emotion/react';
 

@@ -1,14 +1,14 @@
 import {useSprings} from '@react-spring/web';
 import clsx from 'clsx';
 import {type FC, type ReactNode} from 'react';
-import {useCarouselIndex} from '../../hooks/useCarouselIndex';
-import {ActionStack} from '../base/ActionStack';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Image} from '../base/Image';
-import {Text} from '../base/Text';
+import {useCarouselIndex} from './useCarouselIndex';
+import {ActionStack} from './ActionStack';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Image} from './Image';
+import {Text} from './Text';
 import {CarouselControlTitle, CarouselControlTitles, ContentColumn, HeroCarousel, HeroCarouselSlide, Wrapper} from './HeroBlock.styles';
-import {type ActionBag} from '../../types/general';
+import {type ActionBag} from '@graphixcollab/types/general';
 
 type SlideBag = {
 	title: string;

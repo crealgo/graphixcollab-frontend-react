@@ -1,12 +1,12 @@
 import {css, styled} from '@mui/material/styles';
 import {type FC, type ReactNode} from 'react';
-import {generatePatternBackground} from '../../utils/generatePatternBackground';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {Image, type ImageProps} from '../base/Image';
-import {Mark} from '../base/Mark';
-import {Text} from '../base/Text';
+import {generatePatternBackground} from '@graphixcollab/utils/generatePatternBackground.tsx';
+import {Block} from './Block';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {Image, type ImageProps} from './Image';
+import {Mark} from './Mark';
+import {Text} from './Text';
 
 export type PageHeaderBlockProps = {
 	readonly title?: ReactNode;

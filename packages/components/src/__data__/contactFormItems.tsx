@@ -1,4 +1,4 @@
-import {Link} from '../base/Link';
+import {Link} from '../Link';
 import {type FormItemBag} from '../FormItemGenerator';
 
 export const contactFormItems: FormItemBag[] = [

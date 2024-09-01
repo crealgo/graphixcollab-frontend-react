@@ -1,4 +1,4 @@
-import {Banner, type BannerProps} from '../base/Banner';
+import {Banner, type BannerProps} from './Banner';
 import Collapse from '@mui/material/Collapse';
 import {type FC, type PropsWithChildren} from 'react';
 

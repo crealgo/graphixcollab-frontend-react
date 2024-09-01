@@ -1,13 +1,13 @@
 import {CheckCircleOutline, PaletteOutlined} from '@mui/icons-material';
 import {styled} from '@mui/material';
 import {type FC} from 'react';
-import {type Action} from '../../types/general';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {InteractiveSelector} from '../base/InteractiveSelector';
-import {Mark} from '../base/Mark';
+import {type Action} from '@graphixcollab/types/general';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {InteractiveSelector} from './InteractiveSelector';
+import {Mark} from './Mark';
 // import styled from '@emotion/styled'
 
 export type InteractiveEstimatorProps = {

@@ -1,6 +1,6 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 import {Container} from './Container';
 
 type HeaderBarProps = ComponentPropsWithoutRef<'header'> & {

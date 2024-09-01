@@ -7,10 +7,10 @@ import {
 	styled,
 } from '@mui/material';
 import {type FC, type MouseEvent} from 'react';
-import {Button} from '../base/Button';
-import {DialogTitle} from '../base/DialogTitle';
-import {TextAreaField} from './form/TextAreaField';
-import {TextField} from './form/TextField';
+import {Button} from './Button';
+import {DialogTitle} from './DialogTitle';
+import {TextAreaField} from './TextAreaField';
+import {TextField} from './TextField';
 
 type ContactServiceProps = {
 	readonly isOpen?: boolean;

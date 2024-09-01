@@ -1,7 +1,7 @@
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import {type FC} from 'react';
-import {_e} from '../../utils/excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
 
 type TextProps = BaseComponentProps & {
 	readonly className?: string;

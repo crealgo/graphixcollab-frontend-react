@@ -1,10 +1,10 @@
 import {Typography} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
-import {Image, type ImageProps} from '../base/Image';
+import {Image, type ImageProps} from './Image';
 import {type ComponentPropsWithRef, type FC} from 'react';
-import {type ServiceOptions} from '../../types/general';
-import {chance} from '../../utils/chance';
+import {type ServiceOptions} from '@graphixcollab/types/general';
+import {chance} from '@graphixcollab/utils/chance.ts';
 
 type CardProps = {
 	readonly image?: {

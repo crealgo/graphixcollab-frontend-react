@@ -1,17 +1,17 @@
 import {ArrowForward, CheckCircleOutline} from '@mui/icons-material';
 import {CircularProgress} from '@mui/material';
 import {type FC} from 'react';
-import {ActionStack} from '../components/base/ActionStack';
-import {Button} from '../components/base/Button';
-import {Mark} from '../components/base/Mark';
-import {useForm} from '../hooks/useForm';
+import {ActionStack} from './ActionStack';
+import {Button} from './Button';
+import {Mark} from './Mark';
+import {useForm} from './useForm';
 import {FormGrid} from './FormGrid';
 import {FormHeader} from './FormHeader';
 import {FormItemGenerator} from './FormItemGenerator';
-import {renderFormAlert} from '../../utils/renderFormAlert';
+import {renderFormAlert} from '@graphixcollab/utils/renderFormAlert.tsx';
 import {estimateFormItems} from './__data__/estimateFormItems';
 import styled from '@emotion/styled';
-import {getFormAction} from '../../utils/getFormAction';
+import {getFormAction} from '@graphixcollab/utils/getFormAction.tsx';
 
 const filteredItems = estimateFormItems.filter(
 	item => item.itemType !== 'title',

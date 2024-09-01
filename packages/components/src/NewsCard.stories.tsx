@@ -1,6 +1,6 @@
 import {NewsCard, type NewsCardsProps} from './NewsCard';
 import {type StoryObj} from '@storybook/react';
-import {generateArticle} from '../../utils/chance';
+import {generateArticle} from '@graphixcollab/utils/chance.ts';
 
 export default {
 	component: NewsCard,

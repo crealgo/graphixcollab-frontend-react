@@ -1,6 +1,6 @@
 import {NavItem} from './NavItem';
 import {NavItemDropdown} from './NavItemDropdown';
-import {type NavItemOptions} from '../../types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general';
 import {css, styled} from '@mui/material';
 import {type FC, type PropsWithChildren} from 'react';
 

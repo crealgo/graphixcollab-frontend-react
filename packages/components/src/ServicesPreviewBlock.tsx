@@ -3,16 +3,16 @@ import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {useRouter} from 'next/router';
 import {type FC} from 'react';
-import type serviceJSON from '../../content/services.json';
-import {type SharedBlockProps} from '../../types/general';
-import {colorIterator} from '../../utils/colorIterator';
-import {ActionStack} from '../base/ActionStack';
-import {Block} from '../base/Block';
-import {Button} from '../base/Button';
-import {Card} from '../base/Card';
-import {Container} from '../base/Container';
-import {Heading} from '../base/Heading';
-import {HorizontalCard} from '../base/HorizontalCard';
+import type serviceJSON from '@graphixcollab/content/services.json';
+import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {colorIterator} from '@graphixcollab/utils/colorIterator.ts';
+import {ActionStack} from './ActionStack';
+import {Block} from './Block';
+import {Button} from './Button';
+import {Card} from './Card';
+import {Container} from './Container';
+import {Heading} from './Heading';
+import {HorizontalCard} from './HorizontalCard';
 
 export type ServicesPreviewBlockProps = {
 	readonly services?: typeof serviceJSON;

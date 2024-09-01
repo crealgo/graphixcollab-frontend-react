@@ -1,7 +1,7 @@
 import {ArrowDownward} from '@mui/icons-material';
 import {styled} from '@mui/material/styles';
 import {type ComponentPropsWithoutRef, type FC, type ReactNode} from 'react';
-import {type NavItemOptions} from '../../types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general';
 
 export type NavItemProps = {
 	readonly icon?: ReactNode;

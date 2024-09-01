@@ -1,6 +1,6 @@
 import {type Meta, type StoryObj} from '@storybook/react';
 import {HeroBlock, type HeroBlockProps} from './HeroBlock';
-import Logo from './atoms/Logo';
+import Logo from './Logo';
 
 export default {
 	component: HeroBlock,

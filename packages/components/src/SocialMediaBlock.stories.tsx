@@ -1,5 +1,5 @@
 import {type StoryObj} from '@storybook/react';
-import {chance, generateActions} from '../../utils/chance';
+import {chance, generateActions} from '@graphixcollab/utils/chance.ts';
 import {
 	SocialMediaBlock,
 	type SocialMediaBlockProps,

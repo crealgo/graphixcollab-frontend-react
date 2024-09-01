@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generateBanner} from '../../utils/src/chance';
+import {generateBanner} from './src/chance';
 import {BannerService} from '../service/BannerService';
 import {Banner, type BannerProps} from './Banner';
 

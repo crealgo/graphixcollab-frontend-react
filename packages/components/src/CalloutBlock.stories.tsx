@@ -1,5 +1,5 @@
 import {type Meta, type StoryObj} from '@storybook/react';
-import {generateCalloutBlock} from '../../utils/chance';
+import {generateCalloutBlock} from '@graphixcollab/utils/chance.ts';
 import {CalloutBlock, type CalloutBlockProps} from './CalloutBlock';
 
 export default {

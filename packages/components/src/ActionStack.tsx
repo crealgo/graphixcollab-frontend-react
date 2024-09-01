@@ -1,7 +1,7 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {type FC, type PropsWithChildren} from 'react';
-import {type Action} from '../../types/general';
+import {type Action} from '@graphixcollab/types/general';
 import {Button, type ButtonProps} from './Button';
 
 export type ActionStackProps = PropsWithChildren<{

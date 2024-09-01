@@ -1,5 +1,5 @@
 import {type StoryObj, type Meta} from '@storybook/react';
-import {generateEmployee} from '../../utils/chance';
+import {generateEmployee} from '@graphixcollab/utils/chance.ts';
 import {ProfileCard, type ProfileCardProps} from './ProfileCard';
 
 export default {

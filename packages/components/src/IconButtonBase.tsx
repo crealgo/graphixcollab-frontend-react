@@ -5,8 +5,8 @@ import {
 	type ComponentPropsWithRef,
 	type ElementType,
 } from 'react';
-import {_e} from '../../utils/src/excludePropsFromForwarding';
-import {type ButtonBaseSizes} from '../atoms/ButtonBase';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding.tsx';
+import {type ButtonBaseSizes} from './ButtonBase';
 
 export type IconButtonBaseProps = {
 	readonly href?: string;
