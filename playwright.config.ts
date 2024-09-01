@@ -11,6 +11,7 @@ import {defineConfig, devices} from '@playwright/test';
  */
 export default defineConfig({
 	testDir: '__tests__',
+	snapshotDir: '__tests__/__snapshots__',
 	fullyParallel: true,
 	forbidOnly: Boolean(process.env.CI),
 	retries: process.env.CI ? 2 : 0,

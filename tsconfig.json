@@ -28,8 +28,8 @@
   "include": [
     "next-env.d.ts",
     "src",
-    "scripts",
+    "packages/scripts",
     "__tests__"
-  ],
+, "packages/components/src/layouts", "packages/components/src/hooks", "packages/components/src/contexts", "packages/components/src/forms", "packages/utils/src/chance.ts", "packages/utils/src/colorIterator.ts", "packages/utils/src/excludePropsFromForwarding.tsx", "packages/utils/src/generateBlocks.tsx", "packages/utils/src/generatePatternBackground.tsx", "packages/utils/src/generateValuesFromStringArray.ts", "packages/utils/src/getButtonStyles.tsx", "packages/utils/src/getInputGroupStyles.ts", "packages/types", "pages", "packages/components/src/themes.ts"  ],
 	"exclude": ["**/node_modules", "**/dist"]
 }

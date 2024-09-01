@@ -3,7 +3,7 @@ import {
 	deliveryMethods,
 	materials,
 	services,
-} from '../../src/forms/__data__/serviceOptions';
+} from '../../packages/components/src/forms/__data__/serviceOptions';
 import {chance} from '../utils/chance';
 import testFiles from '../__data__/test-files.json';
 

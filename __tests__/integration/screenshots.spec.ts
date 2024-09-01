@@ -25,7 +25,7 @@ pages.forEach(path => {
 
 		await page.screenshot({
 			fullPage: true,
-			path: `screenshots/20230725/${pageName}/${projectName}.png`,
+			path: `__tests__/__snapshots__/20230725/${pageName}/${projectName}.png`,
 		});
 	});
 });
