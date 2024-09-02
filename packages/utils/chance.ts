@@ -204,7 +204,7 @@ export const generateService = (): ServiceOptions => ({
 
 export const generateServices = (): ServiceOptions[] => [
 	{
-		title: 'T-Shi',
+		title: 'T-Shirt',
 		imageSrc: 'assets/screen-printing/silk-screen@ogw.webp',
 		description:
 			'Add screen printing, embroidery, or tags to create something unique.',
