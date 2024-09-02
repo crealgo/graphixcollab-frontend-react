@@ -1,8 +1,0 @@
-{
-  "name": "@graphixcollab/utils",
-  "version": "1.0.0",
-  "exports": {
-    ".": "./src/index.js",
-    "./*": "./src/*"
-  }
-}

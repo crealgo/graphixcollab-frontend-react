@@ -1,9 +1,0 @@
-{
-  "name": "@graphixcollab/types",
-  "version": "1.0.0",
-  "types": "src/index.d.ts",
-  "exports": {
-    ".": "./src/index.js",
-    "./*": "./src/*"
-  }
-}
