@@ -71,22 +71,27 @@ export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(({
 				className='FileInput-input'
 				type='file'
 				onChange={handleChange}
-				onDragStart={() => {
+				onDragStart={(event) => {
 					setIsActive(true);
+					props.onDragStart?.(event)
 				}}
-				onDragEnter={() => {
+				onDragEnter={(event) => {
 					setIsActive(true);
+					props.onDragEnter?.(event)
 				}}
-				onDragLeave={() => {
+				onDragLeave={(event) => {
 					setIsActive(false);
+					props.onDragLeave?.(event)
 				}}
 				onDragEnd={event => {
 					event.preventDefault();
 					setIsActive(false);
+					props.onDragEnd?.(event)
 				}}
 				onDrop={event => {
 					setIsActive(false);
 					setFiles(event.dataTransfer.files);
+					props.onDrop?.(event)
 				}}
 			/>
 		</BaseWrapper>

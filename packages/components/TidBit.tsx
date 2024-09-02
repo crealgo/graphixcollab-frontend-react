@@ -19,10 +19,10 @@ const BaseElement: FC<TidBitProps> = ({
 	...props
 }) => (
 	<ButtonBase
-		{...props}
 		type='button'
 		className={clsx('TidBit-root', className)}
 		startIcon={icon}
+		{...props}
 	>
 		{children}
 	</ButtonBase>

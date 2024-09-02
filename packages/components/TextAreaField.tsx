@@ -21,10 +21,10 @@ export const TextAreaField = forwardRef<HTMLTextAreaElement, Props>(
 				isTouched={props.isTouched}
 			>
 				<TextArea
-					{...props}
 					ref={ref}
 					id={generatedName}
 					name={generatedName}
+					{...props}
 				/>
 			</FormControl>
 		);

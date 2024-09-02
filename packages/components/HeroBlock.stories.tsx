@@ -23,7 +23,7 @@ export const Default: StoryObj<HeroBlockProps> = {
 		slides: [
 			{title: 'Sashes', src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
 			{title: 'Embroidery', src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
-			{title: 'T-Shi', src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shi'},
+			{title: 'T-Shirt', src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirt'},
 		],
 	},
 };

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {type FC} from 'react';
-import {BrandDots} from './Bran';
+import {BrandDots} from './BrandDots';
 
 const BaseElement = styled('a')`
 	text-decoration: none;

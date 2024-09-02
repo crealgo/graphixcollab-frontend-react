@@ -21,7 +21,6 @@ export const BaseElement = styled('textarea', {
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 	({className, inputSize = 'medium', ...props}, ref) => (
 		<BaseElement
-			{...props}
 			ref={ref}
 			inputSize={inputSize}
 			className={clsx(
@@ -33,6 +32,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 				},
 				className,
 			)}
+			{...props}
 		/>
 	),
 );

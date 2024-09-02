@@ -21,10 +21,10 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
 				isTouched={props.isTouched}
 			>
 				<Input
-					{...props}
 					ref={ref}
 					id={generatedName}
 					name={generatedName}
+					{...props}
 				/>
 			</FormControl>
 		);

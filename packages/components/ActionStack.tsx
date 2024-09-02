@@ -47,10 +47,10 @@ export const ActionStack: FC<ActionStackProps> = ({
 		{children}
 		{actions?.slice(0, max).map(({label, ...actionItemsProps}, actionIndex) => (
 			<Button
-				{...actionItemsProps}
 				key={actionIndex}
 				size={size}
 				color={color}
+				{...actionItemsProps}
 			>
 				{label}
 			</Button>

@@ -1,23 +1,22 @@
 import styled from '@emotion/styled';
-import {SiYelp} from '@icons-pack/react-simple-icons';
-import {MessageOutlined} from '@mui/icons-material';
-import {Block} from '../Block';
-import {SvgIcon, Typography, useMediaQuery, type Theme} from '@mui/material';
+import { type FeaturedCompanyInfo } from '@graphixcollab/content/featured-companies';
+import { type Action } from '@graphixcollab/types/general';
+import { MessageOutlined } from '@mui/icons-material';
+import { Typography, useMediaQuery, type Theme } from '@mui/material';
 import clsx from 'clsx';
-import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type FeaturedCompanyInfo} from '@graphixcollab/content/featured-companies';
-import {type Action} from '@graphixcollab/types/general';
-import {ActionStack} from '../ActionStack';
-import {Container} from '../Container';
-import {ContentGrid} from '../ContentGrid';
-import {Heading} from '../Heading';
-import {Mark} from '../Mark';
-import {TidBit} from '../TidBit';
-import {CompanyFeatureLink} from './CompanyFeatureLink';
-import {FeaturedLogo} from './FeaturedLogo';
-import {FeaturedLogoType} from './FeaturedLogoType';
-import {FeaturedMarquee} from './FeaturedMarquee';
-import {FeaturedText} from './FeaturedText';
+import { type ComponentPropsWithoutRef, type FC } from 'react';
+import { ActionStack } from '../ActionStack';
+import { Block } from '../Block';
+import { Container } from '../Container';
+import { ContentGrid } from '../ContentGrid';
+import { Heading } from '../Heading';
+import { Mark } from '../Mark';
+import { TidBit } from '../TidBit';
+import { CompanyFeatureLink } from './CompanyFeatureLink';
+import { FeaturedLogo } from './FeaturedLogo';
+import { FeaturedLogoType } from './FeaturedLogoType';
+import { FeaturedMarquee } from './FeaturedMarquee';
+import { FeaturedText } from './FeaturedText';
 
 export type FeaturedInBlockProps = {
 	readonly title?: string;
@@ -127,7 +126,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					<TidBit
 						href='https://www.yelp.com/biz/fashion-greek-usc-los-angeles'
 						color='magenta'
-						icon={'Hello'}
+						icon={<i className='bx bxl-yelp'></i>}
 					>
 						Trusted by <Mark color='magenta'>150+</Mark> on{' '}
 						<Mark color='magenta'>Yelp</Mark>

@@ -19,12 +19,12 @@ const BaseElement: FC<BookingOptionProps> = ({
 	...props
 }) => (
 	<div
-		{...props}
 		role='radio'
 		aria-checked={checked ? 'true' : 'false'}
 		tabIndex={0}
 		aria-labelledby={name}
 		className={className}
+		{...props}
 	>
 		{Icon && <Icon className='icon'/>}
 		<Heading id={name} className='label' level={5}>
