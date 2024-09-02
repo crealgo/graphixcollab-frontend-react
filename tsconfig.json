@@ -15,10 +15,6 @@
       "dom",
       "dom.iterable"
     ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "packages/types"
-    ],
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
