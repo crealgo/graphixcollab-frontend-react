@@ -1,15 +1,15 @@
 import {styled, useMediaQuery, type Theme} from '@mui/material';
-import {Block} from '../components/base/Block';
-import {BlockHeader} from '../components/base/BlockHeader';
-import {Card} from '../components/base/Card';
-import {Container} from '../components/base/Container';
-import {HorizontalCard} from '../components/base/HorizontalCard';
-import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
-import {PageTitle} from '../components/utility/PageTitle';
-import featuredCompanies from '../content/featured-companies';
-import reasonsToChooseUs from '../content/why-us.json';
-import {DefaultLayout} from '../layouts/DefaultLayout';
+import {Block} from '@graphixcollab/components/Block';
+import {BlockHeader} from '@graphixcollab/components/BlockHeader';
+import {Card} from '@graphixcollab/components/Card';
+import {Container} from '@graphixcollab/components/Container';
+import {HorizontalCard} from '@graphixcollab/components/HorizontalCard';
+import {FeaturedInBlock} from '@graphixcollab/components/FeaturedInBlock/index';
+import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import featuredCompanies from '@graphixcollab/content/featured-companies';
+import reasonsToChooseUs from '@graphixcollab/content/why-us.json';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
 
 const DetailList = styled('dl')`
 	display: grid;

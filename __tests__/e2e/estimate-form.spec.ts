@@ -3,8 +3,8 @@ import {
 	deliveryMethods,
 	materials,
 	services,
-} from '../../src/forms/__data__/serviceOptions';
-import {chance} from '../utils/chance';
+} from '@graphixcollab/components/__data__/serviceOptions';
+import {chance} from '@graphixcollab/utils/chance';
 import testFiles from '../__data__/test-files.json';
 
 const setup = async (page: Page) => {

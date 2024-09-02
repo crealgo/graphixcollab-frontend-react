@@ -1,13 +1,13 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {Block} from '../components/base/Block';
-import {Container} from '../components/base/Container';
+import {Block} from '@graphixcollab/components/Block';
+import {Container} from '@graphixcollab/components/Container';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps,
-} from '../components/block/PageHeaderBlock';
-import {PageTitle} from '../components/utility/PageTitle';
-import {ContactForm} from '../forms/ContactForm';
-import {DefaultLayout} from '../layouts/DefaultLayout';
+} from '@graphixcollab/components/PageHeaderBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import {ContactForm} from '@graphixcollab/components/ContactForm';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
 
 type PageProps = {
 	pageTitle: string;

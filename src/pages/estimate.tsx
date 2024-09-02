@@ -1,15 +1,15 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {Block} from '../components/base/Block';
-import {Container} from '../components/base/Container';
-import {EstimateForm} from '../forms/EstimateForm';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
+import {Block} from '@graphixcollab/components/Block';
+import {Container} from '@graphixcollab/components/Container';
+import {EstimateForm} from '@graphixcollab/components/EstimateForm';
+import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps,
-} from '../components/block/PageHeaderBlock';
-import {PageTitle} from '../components/utility/PageTitle';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
+} from '@graphixcollab/components/PageHeaderBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+import {generateFooter, generatePageHeaderBlock} from '@graphixcollab/utils/chance';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;
@@ -27,7 +27,7 @@ const Page: NextPage<PageProps> = props => (
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
 				alt: 'Book an Appointment w/ Graphix Collab',
 			}}
-			// add 'contact us' actions
+			// Add 'contact us' actions
 		/>
 		<Block>
 			<Container>

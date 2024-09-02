@@ -1,18 +1,20 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {EstimatorBlock} from '../components/block/EstimatorBlock';
-import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
-import {GalleryBlock} from '../components/block/GalleryBlock';
-import {HeroBlock} from '../components/block/HeroBlock';
-import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
-import {PageTitle} from '../components/utility/PageTitle';
-import featuredCompanies from '../content/featured-companies';
-import galleryImages from '../content/galleryImages.json';
-import services from '../content/services.json';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {type PageProps} from '../types/general';
-import {generateActions} from '../utils/chance';
-import Logo from '../components/atoms/Logo';
+import {EstimatorBlock} from '@graphixcollab/components/EstimatorBlock';
+import {FeaturedInBlock} from '@graphixcollab/components/FeaturedInBlock/index';
+import {GalleryBlock} from '@graphixcollab/components/GalleryBlock';
+import {HeroBlock} from '@graphixcollab/components/HeroBlock';
+import {ServicesPreviewBlock} from '@graphixcollab/components/ServicesPreviewBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import featuredCompanies from '@graphixcollab/content/featured-companies';
+import galleryImages from '@graphixcollab/content/galleryImages.json';
+import services from '@graphixcollab/content/services.json';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+// Import {type PageProps} from '@graphixcollab/types/general'
+import {generateActions} from '@graphixcollab/utils/chance';
+import Logo from '@graphixcollab/components/Logo';
 import ArrowForward from '@mui/icons-material/ArrowForward';
+
+type PageProps = any;
 
 const Page: NextPage<PageProps> = props => (
 	<DefaultLayout showYelp>
@@ -36,7 +38,7 @@ const Page: NextPage<PageProps> = props => (
 			slides={[
 				{title: 'Sashes', src: 'assets/sash-hs-min@1280w.webp', alt: 'Sashes'},
 				{title: 'Embroidery', src: 'assets/embroidery-shirts-min@1280w.webp', alt: 'Embroidery'},
-				{title: 'T-Shirts', src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirts'},
+				{title: 'T-Shirt', src: 'assets/laughing-group-min@1280w.webp', alt: 'T-Shirt'},
 			]}
 		/>
 		<FeaturedInBlock {...props.FeaturedInBlockProps}/>

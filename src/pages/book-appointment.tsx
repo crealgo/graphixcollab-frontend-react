@@ -2,12 +2,12 @@ import {type GetStaticProps, type NextPage} from 'next';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps,
-} from '../components/block/PageHeaderBlock';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {generateFooter, generatePageHeaderBlock} from '../utils/chance';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {AppointBookEmbed} from '../components/embed/AppointBookEmbed';
-import {PageTitle} from '../components/utility/PageTitle';
+} from '@graphixcollab/components/PageHeaderBlock';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+import {generateFooter, generatePageHeaderBlock} from '@graphixcollab/utils/chance';
+import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock';
+import {AppointBookEmbed} from '@graphixcollab/components/AppointBookEmbed';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
 import styled from '@emotion/styled';
 
 type PageProps = {

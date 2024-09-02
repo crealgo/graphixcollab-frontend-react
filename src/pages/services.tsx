@@ -1,19 +1,19 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {Mark} from '../components/base/Mark';
-import {type CalloutBlockProps} from '../components/block/CalloutBlock';
-import {EstimatorBlock} from '../components/block/EstimatorBlock';
-import {FaqBlock, type FaqBlockProps} from '../components/block/FaqBlock';
-import {type FooterBlockProps} from '../components/block/FooterBlock';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
+import {Mark} from '@graphixcollab/components/Mark';
+import {type CalloutBlockProps} from '@graphixcollab/components/CalloutBlock';
+import {EstimatorBlock} from '@graphixcollab/components/EstimatorBlock';
+import {FaqBlock, type FaqBlockProps} from '@graphixcollab/components/FaqBlock';
+import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock';
+import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock';
 import {
 	ServicesBlock,
 	type ServicesBlockProps,
-} from '../components/block/ServicesBlock';
-import {TimelineBlock} from '../components/block/TimelineBlock';
-import {PageTitle} from '../components/utility/PageTitle';
-import services from '../content/services.json';
-import {DefaultLayout} from '../layouts/DefaultLayout';
-import {generateFaqBlock, generateFooter} from '../utils/chance';
+} from '@graphixcollab/components/ServicesBlock';
+import {TimelineBlock} from '@graphixcollab/components/TimelineBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import services from '@graphixcollab/content/services.json';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+import {generateFaqBlock, generateFooter} from '@graphixcollab/utils/chance';
 
 type PageProps = {
 	FooterProps: FooterBlockProps;
@@ -77,8 +77,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 				title: 'Graphic Design Services',
 				description:
 					'Creation of visual content, such as logos, branding, layouts, illustrations, and digital images',
-				services: services.filter(s =>
-					s.tags.includes('graphic-design'),
+				services: services.filter(s => s.tags.includes('graphic-design'),
 				),
 				imageTranslate: '70%',
 				ImageProps: {
@@ -88,8 +87,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			},
 			{
 				title: 'Small Business Services',
-				services: services.filter(s =>
-					s.tags.includes('small-business'),
+				services: services.filter(s => s.tags.includes('small-business'),
 				),
 			},
 		],

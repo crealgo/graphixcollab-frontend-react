@@ -1,35 +1,40 @@
 {
-	"compilerOptions": {
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"checkJs": true,
-		"composite": true,
-		"declaration": true,
-		"declarationMap": true,
-		"esModuleInterop": true,
-		"incremental": true,
-		"isolatedModules": true,
-		"jsx": "react-jsx",
-		"lib": [
-			"esnext",
-			"dom",
-			"dom.iterable"
-		],
-		"noEmit": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"strictNullChecks": true,
-		"strict": true,
-		"target": "ESNext",
-		"module": "Preserve",
-		"moduleResolution": "Bundler"
-	},
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@graphixcollab/*": ["./packages/*"],
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleResolution": "Bundler"
+  },
   "include": [
     "next-env.d.ts",
     "src",
-    "scripts",
+    "packages",
     "__tests__"
   ],
-	"exclude": ["**/node_modules", "**/dist"]
+  "exclude": [
+    "node_modules"
+  ]
 }
