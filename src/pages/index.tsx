@@ -9,7 +9,7 @@ import featuredCompanies from '@graphixcollab/content/featured-companies';
 import galleryImages from '@graphixcollab/content/galleryImages.json';
 import services from '@graphixcollab/content/services.json';
 import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
-// import {type PageProps} from '@graphixcollab/types/general'
+// Import {type PageProps} from '@graphixcollab/types/general'
 import {generateActions} from '@graphixcollab/utils/chance';
 import Logo from '@graphixcollab/components/Logo';
 import ArrowForward from '@mui/icons-material/ArrowForward';

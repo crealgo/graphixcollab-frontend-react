@@ -27,7 +27,7 @@ const Page: NextPage<PageProps> = props => (
 				src: 'assets/juicy-woman-and-a-man-drink-coffee-min@ogw.webp',
 				alt: 'Book an Appointment w/ Graphix Collab',
 			}}
-			// add 'contact us' actions
+			// Add 'contact us' actions
 		/>
 		<Block>
 			<Container>

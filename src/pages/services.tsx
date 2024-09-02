@@ -77,8 +77,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 				title: 'Graphic Design Services',
 				description:
 					'Creation of visual content, such as logos, branding, layouts, illustrations, and digital images',
-				services: services.filter(s =>
-					s.tags.includes('graphic-design'),
+				services: services.filter(s => s.tags.includes('graphic-design'),
 				),
 				imageTranslate: '70%',
 				ImageProps: {
@@ -88,8 +87,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			},
 			{
 				title: 'Small Business Services',
-				services: services.filter(s =>
-					s.tags.includes('small-business'),
+				services: services.filter(s => s.tags.includes('small-business'),
 				),
 			},
 		],
