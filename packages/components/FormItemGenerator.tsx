@@ -75,14 +75,11 @@ export const FormItemGenerator: FC<Props> = ({items, formState}) => (
 
 			return (
 				<FormItem
-					{...props}
 					key={itemIndex}
 					type={inputType}
 					isInvalid={Boolean(formState.errors[itemProps.name!])}
-					helperText={
-						formState.errors[itemProps.name!]
-						?? itemProps.helperText
-					}
+					helperText={formState.errors[itemProps.name!] ?? itemProps.helperText}
+					{...props}
 				/>
 			);
 		})}
