@@ -3,7 +3,7 @@ import {Box} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC} from 'react';
 import type services from '../../content/services.json';
-import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {type SharedBlockProps} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';
 import {Button} from './Button';

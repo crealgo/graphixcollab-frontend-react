@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import {styled} from '@mui/material';
 import {type FC, type PropsWithChildren} from 'react';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';
 import {Container} from './Container';

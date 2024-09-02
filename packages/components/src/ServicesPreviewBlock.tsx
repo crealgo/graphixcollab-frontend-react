@@ -4,7 +4,7 @@ import {css, styled} from '@mui/material/styles';
 import {useRouter} from 'next/router';
 import {type FC} from 'react';
 import type serviceJSON from '@graphixcollab/content/services.json';
-import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {type SharedBlockProps} from '@graphixcollab/types/general.d.ts';
 import {colorIterator} from '@graphixcollab/utils/colorIterator.ts';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';

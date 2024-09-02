@@ -1,6 +1,6 @@
 import {css, styled} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type SharedBlockProps} from '@graphixcollab/types/general';
+import {type Action, type SharedBlockProps} from '@graphixcollab/types/general.d.ts';
 import Logo from './Logo';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';

@@ -1,6 +1,6 @@
 import {styled} from '@mui/material/styles';
 import {type FC, type PropsWithChildren} from 'react';
-import {type NavItemOptions} from '@graphixcollab/types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general.d.ts';
 import {Link} from './Link';
 import {LinkListItem} from './LinkListItem';
 

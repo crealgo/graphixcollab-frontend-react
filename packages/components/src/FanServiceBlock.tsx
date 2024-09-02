@@ -1,6 +1,6 @@
 import {css, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {type SharedBlockProps} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from './ActionStack';
 import {ImageCarousel} from './ImageCarousel';
 

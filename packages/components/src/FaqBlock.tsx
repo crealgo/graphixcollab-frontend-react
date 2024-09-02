@@ -4,7 +4,7 @@ import {
 	type Action,
 	type SharedBlockProps,
 	type SimpleLink,
-} from '@graphixcollab/types/general';
+} from '@graphixcollab/types/general.d.ts';
 import {Block} from './Block';
 import {Container} from './Container';
 import {ContentGrid} from './ContentGrid';

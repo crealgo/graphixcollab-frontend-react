@@ -17,7 +17,7 @@ import {
 	type Person,
 	type PersonGroup,
 	type ServiceOptions,
-} from '@graphixcollab/types/general';
+} from '@graphixcollab/types/general.d.ts';
 
 export const chance = new Chance();
 

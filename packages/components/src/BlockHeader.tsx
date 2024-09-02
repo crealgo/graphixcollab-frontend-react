@@ -1,6 +1,6 @@
 import {ActionStack} from './ActionStack';
 import {Heading} from './Heading';
-import {type SharedBlockProps} from '@graphixcollab/types/general';
+import {type SharedBlockProps} from '@graphixcollab/types/general.d.ts';
 import Typography from '@mui/material/Typography';
 import {type FC} from 'react';
 import {Container} from './Container';

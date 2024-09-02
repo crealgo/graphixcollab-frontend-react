@@ -1,5 +1,5 @@
 import {ActionStack} from './ActionStack';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {Link} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import clsx from 'clsx';

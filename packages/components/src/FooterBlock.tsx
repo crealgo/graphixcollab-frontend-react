@@ -4,7 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {css, IconButton, Stack, styled, Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type Term} from '@graphixcollab/types/general';
+import {type Term} from '@graphixcollab/types/general.d.ts';
 import Logo from './Logo';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';

@@ -1,6 +1,6 @@
 import {styled, Typography} from '@mui/material';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
-import {type Action, type Article} from '@graphixcollab/types/general';
+import {type Action, type Article} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from './ActionStack';
 import {NewsCard} from './NewsCard';
 

@@ -5,13 +5,13 @@ import {type FC, type PropsWithChildren} from 'react';
 import {ActionStack} from './ActionStack';
 import {Button} from './Button';
 import {Mark} from './Mark';
-import {useForm} from '../hooks/useForm';
+import {useForm} from '@graphixcollab/components/useForm.tsx';
 import {FormGrid} from './FormGrid';
 import {FormHeader} from './FormHeader';
 import {FormItemGenerator} from './FormItemGenerator';
-import {renderFormAlert} from './__utils__/renderFormAlert';
+import {renderFormAlert} from '@graphixcollab/utils/renderFormAlert.tsx';
 import {contactFormItems as items} from './__data__/contactFormItems';
-import {getFormAction} from './__utils__/getFormAction';
+import {getFormAction} from '@graphixcollab/utils/getFormAction.tsx';
 import {css} from '@emotion/react';
 
 const StyledFormGrid = styled(FormGrid)(({theme}) => css`

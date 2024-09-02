@@ -6,7 +6,7 @@ import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';
 import {type FeaturedCompanyInfo} from '@graphixcollab/content/featured-companies.ts';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from '../ActionStack';
 import {Container} from '../Container';
 import {ContentGrid} from '../ContentGrid';

@@ -1,7 +1,7 @@
 import {useMemo, type ComponentPropsWithoutRef, type FC} from 'react';
 import {useNavigationItems} from './useNavigationItems';
 import useScrollPosition from './useScrollPosition';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {ActionStack} from './ActionStack';
 import { DrawerMenu } from './DrawerMenu';
 import {FlexSpacer} from './FlexSpacer';

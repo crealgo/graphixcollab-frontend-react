@@ -8,7 +8,7 @@ import {Heading} from './Heading';
 import {Image} from './Image';
 import {Text} from './Text';
 import {CarouselControlTitle, CarouselControlTitles, ContentColumn, HeroCarousel, HeroCarouselSlide, Wrapper} from './HeroBlock.styles';
-import {type ActionBag} from '@graphixcollab/types/general';
+import {type ActionBag} from '@graphixcollab/types/general.d.ts';
 
 type SlideBag = {
 	title: string;

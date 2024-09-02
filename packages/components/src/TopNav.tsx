@@ -1,6 +1,6 @@
 import {css, styled} from '@mui/material/styles';
 import {forwardRef, type ComponentPropsWithRef} from 'react';
-import {type NavItemOptions} from '@graphixcollab/types/general';
+import {type NavItemOptions} from '@graphixcollab/types/general.d.ts';
 import {NavItem} from './NavItem';
 
 type TopNavProps = {

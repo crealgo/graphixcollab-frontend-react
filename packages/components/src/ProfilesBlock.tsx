@@ -1,6 +1,6 @@
 import {Block} from './Block';
 import {ProfileCard} from './ProfileCard';
-import {type EmployeeGroup} from '@graphixcollab/types/general';
+import {type EmployeeGroup} from '@graphixcollab/types/general.d.ts';
 import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {type ComponentPropsWithoutRef, type FC} from 'react';

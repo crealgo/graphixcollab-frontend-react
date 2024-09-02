@@ -11,7 +11,7 @@ export type ButtonProps = {
 const StyledButton = styled(ButtonBase)<ButtonProps>(({
 	color = 'primary', size = 'medium',
 }) => css`
-		border-radius: var(--button-bezel-${size});
+	border-radius: var(--button-bezel-${size});
 
 	font-weight: var(--button-font-weight);
 	font-size: var(--input-font-size-${size});

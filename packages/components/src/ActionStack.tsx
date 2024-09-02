@@ -1,7 +1,7 @@
 import {css, styled} from '@mui/material';
 import clsx from 'clsx';
 import {type FC, type PropsWithChildren} from 'react';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {Button, type ButtonProps} from './Button';
 
 export type ActionStackProps = PropsWithChildren<{
@@ -47,10 +47,10 @@ export const ActionStack: FC<ActionStackProps> = ({
 		{children}
 		{actions?.slice(0, max).map(({label, ...actionItemsProps}, actionIndex) => (
 			<Button
+				{...actionItemsProps}
 				key={actionIndex}
 				size={size}
 				color={color}
-				{...actionItemsProps}
 			>
 				{label}
 			</Button>

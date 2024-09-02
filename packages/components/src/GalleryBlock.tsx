@@ -3,7 +3,7 @@ import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {type FC} from 'react';
 import Marquee from 'react-fast-marquee';
-import {type Action} from '@graphixcollab/types/general';
+import {type Action} from '@graphixcollab/types/general.d.ts';
 import {Block} from './Block';
 import {Container} from './Container';
 import {Heading} from './Heading';

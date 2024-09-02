@@ -3,7 +3,7 @@ import {css, styled} from '@mui/material/styles';
 import clsx from 'clsx';
 import {Image, type ImageProps} from './Image';
 import {type ComponentPropsWithRef, type FC} from 'react';
-import {type ServiceOptions} from '@graphixcollab/types/general';
+import {type ServiceOptions} from '@graphixcollab/types/general.d.ts';
 import {chance} from '@graphixcollab/utils/chance.ts';
 
 type CardProps = {
