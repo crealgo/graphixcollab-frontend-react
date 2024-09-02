@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
-import { type FeaturedCompanyInfo } from '@graphixcollab/content/featured-companies';
-import { type Action } from '@graphixcollab/types/general';
-import { MessageOutlined } from '@mui/icons-material';
-import { Typography, useMediaQuery, type Theme } from '@mui/material';
+import {type FeaturedCompanyInfo} from '@graphixcollab/content/featured-companies';
+import {type Action} from '@graphixcollab/types/general';
+import {MessageOutlined} from '@mui/icons-material';
+import {Typography, useMediaQuery, type Theme} from '@mui/material';
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, type FC } from 'react';
-import { ActionStack } from '../ActionStack';
-import { Block } from '../Block';
-import { Container } from '../Container';
-import { ContentGrid } from '../ContentGrid';
-import { Heading } from '../Heading';
-import { Mark } from '../Mark';
-import { TidBit } from '../TidBit';
-import { CompanyFeatureLink } from './CompanyFeatureLink';
-import { FeaturedLogo } from './FeaturedLogo';
-import { FeaturedLogoType } from './FeaturedLogoType';
-import { FeaturedMarquee } from './FeaturedMarquee';
-import { FeaturedText } from './FeaturedText';
+import {type ComponentPropsWithoutRef, type FC} from 'react';
+import {ActionStack} from '../ActionStack';
+import {Block} from '../Block';
+import {Container} from '../Container';
+import {ContentGrid} from '../ContentGrid';
+import {Heading} from '../Heading';
+import {Mark} from '../Mark';
+import {TidBit} from '../TidBit';
+import {CompanyFeatureLink} from './CompanyFeatureLink';
+import {FeaturedLogo} from './FeaturedLogo';
+import {FeaturedLogoType} from './FeaturedLogoType';
+import {FeaturedMarquee} from './FeaturedMarquee';
+import {FeaturedText} from './FeaturedText';
 
 export type FeaturedInBlockProps = {
 	readonly title?: string;
@@ -75,8 +75,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 	companies,
 	...props
 }) => {
-	const isMobile = useMediaQuery((theme: Theme) =>
-		theme.breakpoints.down('sm'),
+	const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'),
 	);
 
 	let FeaturedComponent: any = FeaturedMarquee;
@@ -120,13 +119,14 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 							label: 'Leave a Review',
 							color: 'text',
 							endIcon: <MessageOutlined/>,
+							href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
 						},
 					]}
 				>
 					<TidBit
 						href='https://www.yelp.com/biz/fashion-greek-usc-los-angeles'
 						color='magenta'
-						icon={<i className='bx bxl-yelp'></i>}
+						icon={<i className='bx bxl-yelp'/>}
 					>
 						Trusted by <Mark color='magenta'>150+</Mark> on{' '}
 						<Mark color='magenta'>Yelp</Mark>

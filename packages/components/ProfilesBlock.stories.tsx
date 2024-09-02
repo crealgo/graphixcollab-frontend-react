@@ -9,7 +9,7 @@ export default {
 export const Default: StoryObj<ProfilesBlockProps> = {
 	args: {
 		title: chance.sentence({words: 3}),
-		// description: chance.sentence(),
+		// Description: chance.sentence(),
 		profileGroups: generateEmployeeGroups(),
 	},
 };

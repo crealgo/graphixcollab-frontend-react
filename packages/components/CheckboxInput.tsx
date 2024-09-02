@@ -35,10 +35,9 @@ const CheckboxLabel = styled.label`
 `;
 
 const Checkbox = styled('input', {
-	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid', 'label'].includes(
-			prop,
-		),
+	shouldForwardProp: prop => !['inputSize', 'isTouched', 'isInvalid', 'isValid', 'label'].includes(
+		prop,
+	),
 })/* scss */`
 	opacity: 0;
 	position: absolute;

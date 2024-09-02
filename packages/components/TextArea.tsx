@@ -8,8 +8,7 @@ export type TextAreaProps = ComponentPropsWithRef<'textarea'> &
 BaseControlProps;
 
 export const BaseElement = styled('textarea', {
-	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
+	shouldForwardProp: prop => !['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<TextAreaProps>(
 	props => css`
 		${generateBaseInputStyles(props)};

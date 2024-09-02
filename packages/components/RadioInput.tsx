@@ -35,8 +35,7 @@ const RadioLabel = styled.label`
 `;
 
 const Radio = styled('input', {
-	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
+	shouldForwardProp: prop => !['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })/* scss */`
 	opacity: 0;
 	position: absolute;

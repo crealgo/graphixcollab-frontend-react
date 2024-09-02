@@ -5,7 +5,7 @@ import {Link} from './Link';
 import {LinkListItem} from './LinkListItem';
 
 export type LinkListProps = PropsWithChildren<{
-	// hasDivider?: boolean;
+	// HasDivider?: boolean;
 	readonly items?: NavItemOptions[];
 }>;
 

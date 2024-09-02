@@ -1,10 +1,10 @@
-import { _e } from '@graphixcollab/utils/excludePropsFromForwarding';
-import { css, styled } from '@mui/material';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding';
+import {css, styled} from '@mui/material';
 import MuiButtonBase from '@mui/material/ButtonBase';
 import {
-	ReactNode,
+	type ReactNode,
 	type ComponentPropsWithoutRef,
-	type FC
+	type FC,
 } from 'react';
 
 export type ButtonBaseSizes = Size;

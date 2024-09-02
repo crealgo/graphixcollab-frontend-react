@@ -7,7 +7,7 @@ export default {
 
 export const Default: StoryObj = {};
 
-// busines promotion cat ->
+// Busines promotion cat ->
 // garment decoration
 // business devlopment
 // drop "USC" in fashiongreek, usc

@@ -21,20 +21,19 @@ type NavItemsProps = PropsWithChildren<{
 
 export const NavItems: FC<NavItemsProps> = ({items, children}) => (
 	<NavItemsWrapper className='NavItems-root'>
-		{items?.map(({label, subItems, ...itemProps}, itemIndex) =>
-			subItems ? (
-				<NavItemDropdown
-					{...itemProps}
-					key={itemIndex}
-					items={subItems}
-				>
-					{label}
-				</NavItemDropdown>
-			) : (
-				<NavItem {...itemProps} key={itemIndex}>
-					{label}
-				</NavItem>
-			),
+		{items?.map(({label, subItems, ...itemProps}, itemIndex) => subItems ? (
+			<NavItemDropdown
+				key={itemIndex}
+				items={subItems}
+				{...itemProps}
+			>
+				{label}
+			</NavItemDropdown>
+		) : (
+			<NavItem key={itemIndex} {...itemProps}>
+				{label}
+			</NavItem>
+		),
 		)}
 		{children}
 	</NavItemsWrapper>

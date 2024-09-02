@@ -8,7 +8,7 @@ import {Container} from './Container';
 import {Heading} from './Heading';
 import {InteractiveSelector} from './InteractiveSelector';
 import {Mark} from './Mark';
-// import styled from '@emotion/styled'
+// Import styled from '@emotion/styled'
 
 export type InteractiveEstimatorProps = {
 	actions?: Action[];

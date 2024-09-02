@@ -3,7 +3,7 @@ import {useNavigationItems} from './useNavigationItems';
 import useScrollPosition from './useScrollPosition';
 import {type Action} from '@graphixcollab/types/general';
 import {ActionStack} from './ActionStack';
-import { DrawerMenu } from './DrawerMenu';
+import {DrawerMenu} from './DrawerMenu';
 import {FlexSpacer} from './FlexSpacer';
 import {NavItems} from './NavItems';
 import {HeaderBar} from './HeaderBar';

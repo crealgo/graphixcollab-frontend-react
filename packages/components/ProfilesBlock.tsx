@@ -10,7 +10,7 @@ import {Heading} from './Heading';
 import {Text} from './Text';
 
 export type ProfilesBlockProps = {
-	// title?: string;
+	// Title?: string;
 	// description?: string;
 	readonly profileGroups: EmployeeGroup[];
 } & ComponentPropsWithoutRef<'div'>;

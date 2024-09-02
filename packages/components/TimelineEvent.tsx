@@ -9,7 +9,7 @@ export type EventBlockProps = {
 		src: string;
 		alt: string;
 	};
-	// imgUrl?: string;
+	// ImgUrl?: string;
 	// imgAlt?: string;
 } & BaseComponentProps;
 const connectorThickness = '0.25rem';

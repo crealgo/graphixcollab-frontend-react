@@ -69,7 +69,7 @@ export const Banner: FC<BannerProps> = ({
 	text,
 	children,
 }) => {
-	// const textRef = useRef<HTMLParagraphElement>(null);
+	// Const textRef = useRef<HTMLParagraphElement>(null);
 	// const containerRef = useRef<HTMLDivElement>(null);
 
 	// const playMarquee = useMemo(() => {

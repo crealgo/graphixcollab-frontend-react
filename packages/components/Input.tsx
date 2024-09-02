@@ -7,8 +7,7 @@ import {generateBaseInputStyles} from './generateBaseInputStyles';
 export type InputProps = ComponentPropsWithRef<'input'> & BaseControlProps;
 
 export const BaseInputElement = styled('input', {
-	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
+	shouldForwardProp: prop => !['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<InputProps>(
 	props => css`
 		${generateBaseInputStyles(props)};

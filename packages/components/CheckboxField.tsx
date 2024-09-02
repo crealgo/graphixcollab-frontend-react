@@ -29,9 +29,9 @@ export const CheckboxField = forwardRef<HTMLInputElement, Props>(
 				<InputGroup>
 					{options?.map((option, optionIndex) => (
 						<CheckboxInput
+							key={optionIndex}
 							{...props}
 							{...option}
-							key={optionIndex}
 							ref={ref}
 							name={option.value}
 							defaultChecked={option.value === defaultValue}

@@ -105,7 +105,7 @@ export const HeroBlock: FC<HeroBlockProps> = ({slides = [], ...props}) => {
 							<CarouselControlTitle
 								key={slideIndex}
 								aria-current={slideIndex === carouselIndex}
-								// data-sequence-index={slideIndex}
+								// Data-sequence-index={slideIndex}
 								// data-sequence-property='color'
 								// data-sequence-shade='dark'
 								type='button'

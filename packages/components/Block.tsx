@@ -23,7 +23,7 @@ const StyledDiv = styled(
 	theme, color, hasNoDefaultMargin, hasNoHorizontalPadding, isClipped, isRounded = false, isFloating,
 }) => {
 	const resolvedColor = color ?? 'default';
-	// const blockColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lightest)`;
+	// Const blockColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lightest)`;
 	const borderColor = resolvedColor === 'default' ? 'transparent' : `var(--color-brand-${resolvedColor}-lighter)`;
 
 	return css`

@@ -31,8 +31,7 @@ const SelectWrapper = styled('div')<SelectProps>(
 );
 
 const StyledSelect = styled('select', {
-	shouldForwardProp: prop =>
-		!['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
+	shouldForwardProp: prop => !['inputSize', 'isTouched', 'isInvalid', 'isValid'].includes(prop),
 })<SelectProps>(
 	props => css`
 		${generateBaseInputStyles({

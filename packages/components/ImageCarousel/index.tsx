@@ -12,18 +12,18 @@ export type SharedCarouseProps = {
 
 export type CarouselCardProps = {
 	readonly tilt?: 'left' | 'right';
-	// interactive?: boolean;
+	// Interactive?: boolean;
 	readonly images: string[];
-	// autoplay?: boolean;
+	// Autoplay?: boolean;
 	readonly currentIndex?: number;
 	readonly className?: string;
 } & SharedCarouseProps;
 
 export const ImageCarousel: FC<CarouselCardProps> = ({
 	images,
-	// autoplay,
+	// Autoplay,
 	currentIndex,
-	// interactive,
+	// Interactive,
 	className,
 	...props
 }) => {

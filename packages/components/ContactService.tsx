@@ -15,7 +15,7 @@ import {TextField} from './TextField';
 type ContactServiceProps = {
 	readonly isOpen?: boolean;
 	readonly onCloseClick?: (event: MouseEvent<unknown>) => void;
-	// activeStep?: number;
+	// ActiveStep?: number;
 };
 
 const StyledDialogContent = styled(DialogContent)`

@@ -1,6 +1,6 @@
 import {useState, type FormEventHandler} from 'react';
 
-// type FormStatus = 'idle' | 'submitting' | 'submitted' | 'successful';
+// Type FormStatus = 'idle' | 'submitting' | 'submitted' | 'successful';
 
 export const useForm = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);

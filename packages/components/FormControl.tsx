@@ -7,7 +7,7 @@ import {handleFormControlTouch} from '@graphixcollab/utils/handleFormControlTouc
 export type FormControlProps = {
 	readonly label?: ReactNode;
 	readonly labelFor?: string;
-	// labelInfo?: string; // SEE blueprint js
+	// LabelInfo?: string; // SEE blueprint js
 	readonly helperText?: ReactNode;
 	readonly helperTextId?: string;
 	readonly isRequired?: boolean;

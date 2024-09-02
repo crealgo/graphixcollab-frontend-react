@@ -3,7 +3,7 @@ declare type BaseControlProps = {
 	inputSize?: Size;
 	required?: boolean;
 
-	// validation
+	// Validation
 	isInvalid?: boolean;
 	isValid?: boolean;
 	isTouched?: boolean;

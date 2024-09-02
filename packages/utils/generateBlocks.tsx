@@ -37,9 +37,8 @@ export type BlockOptions = {
 	props?: any;
 };
 
-export const generateBlocks = (blockArray: BlockOptions[]): ReactNode[] =>
-	blockArray.map(block => {
-		const Component = blockMap[block.type];
+export const generateBlocks = (blockArray: BlockOptions[]): ReactNode[] => blockArray.map(block => {
+	const Component = blockMap[block.type];
 
-		return Component ? <Component key={useId()} {...block.props}/> : null;
-	});
+	return Component ? <Component key={useId()} {...block.props}/> : null;
+});

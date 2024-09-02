@@ -26,7 +26,7 @@ import {SelectServiceStep} from './steps/SelectServiceStep';
 type BookingServiceProps = {
 	readonly isOpen?: boolean;
 	readonly onCloseClick?: (event: MouseEvent<unknown>) => void;
-	// activeStep?: number;
+	// ActiveStep?: number;
 };
 
 const steps = [

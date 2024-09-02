@@ -2,7 +2,7 @@ type SequencePropertyType = 'color' | 'background-color' | 'border-color' | 'fil
 type SequenceIndex = number;
 type SequenceShade = Exclude<ColorShades, 'main'>;
 
-// declare namespace React {
+// Declare namespace React {
 // 	type DOMAttributes<T> = {
 // 		'data-sequence-index'?: SequenceIndex;
 // 		'data-sequence-property'?: SequencePropertyType;

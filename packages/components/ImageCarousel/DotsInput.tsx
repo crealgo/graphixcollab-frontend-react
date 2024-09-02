@@ -6,7 +6,7 @@ type DotsInputProps = {
 	readonly currentIndex?: number;
 	readonly onIndexChange?: (index: number) => void;
 	readonly count: number;
-	// className?: string;
+	// ClassName?: string;
 };
 
 const dotWidth = '0.5rem';

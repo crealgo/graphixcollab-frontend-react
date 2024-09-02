@@ -8,7 +8,7 @@ export default {
 
 export const Default: StoryObj<AutocompleteProps> = {
 	args: {
-		// placeholder: 'Start Typing...',
+		// Placeholder: 'Start Typing...',
 		inputSize: 'medium',
 		children: (
 			<Select>

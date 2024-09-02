@@ -19,7 +19,7 @@ export type Slide = {
 };
 
 export type IntroBlockProps = {
-	// color?: 'primary' | 'secondary' | 'grey' | 'none';
+	// Color?: 'primary' | 'secondary' | 'grey' | 'none';
 	// slides?: Slide[];
 	// ImageProps?: ImageProps;
 } & ComponentPropsWithoutRef<'div'> & SharedBlockProps;

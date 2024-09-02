@@ -6,8 +6,7 @@ export default {
 	component: ImageCarousel,
 } as Meta;
 
-const imageList = Array.from({length: 5}, () =>
-	chance.url({extensions: ['png', 'jpeg']}),
+const imageList = Array.from({length: 5}, () => chance.url({extensions: ['png', 'jpeg']}),
 );
 
 export const Default = {
