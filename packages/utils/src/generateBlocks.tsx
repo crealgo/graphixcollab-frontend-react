@@ -1,17 +1,17 @@
 import {type ReactNode, useId} from 'react';
-import {CalloutBlock} from '../components/block/CalloutBlock';
-import {FanServiceBlock} from '../components/block/FanServiceBlock';
-import {FaqBlock} from '../components/block/FaqBlock';
-import {FeaturedInBlock} from '../components/block/FeaturedInBlock';
-import {GalleryBlock} from '../components/block/GalleryBlock';
-import {InteractiveEstimator} from '../components/block/InteractiveEstimator';
-import {IntroBlock} from '../components/block/IntroBlock';
-import {PageHeaderBlock} from '../components/block/PageHeaderBlock';
-import {PlaceholderBlock} from '../components/block/PlaceholderBlock';
-import {ProfilesBlock} from '../components/block/ProfilesBlock';
-import {ServicesBlock} from '../components/block/ServicesBlock';
-import {ServicesPreviewBlock} from '../components/block/ServicesPreviewBlock';
-import {TimelineBlock} from '../components/block/TimelineBlock';
+import {CalloutBlock} from '@graphixcollab/components/CalloutBlock.tsx';
+import {FanServiceBlock} from '@graphixcollab/components/FanServiceBlock.tsx';
+import {FaqBlock} from '@graphixcollab/components/FaqBlock.tsx';
+import {FeaturedInBlock} from '@graphixcollab/components/FeaturedInBlock/index.tsx';
+import {GalleryBlock} from '@graphixcollab/components/GalleryBlock.tsx';
+import {InteractiveEstimator} from '@graphixcollab/components/InteractiveEstimator.tsx';
+import {IntroBlock} from '@graphixcollab/components/IntroBlock.tsx';
+import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock.tsx';
+import {PlaceholderBlock} from '@graphixcollab/components/PlaceholderBlock.tsx';
+import {ProfilesBlock} from '@graphixcollab/components/ProfilesBlock.tsx';
+import {ServicesBlock} from '@graphixcollab/components/ServicesBlock.tsx';
+import {ServicesPreviewBlock} from '@graphixcollab/components/ServicesPreviewBlock.tsx';
+import {TimelineBlock} from '@graphixcollab/components/TimelineBlock.tsx';
 
 const blockMap = {
 	callout: CalloutBlock,

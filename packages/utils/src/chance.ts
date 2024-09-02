@@ -1,13 +1,13 @@
-import {type BannerProps} from '../components/base/Banner';
-import {type FeaturedItemProps} from '../components/base/DrawerMenu/FeaturedItem';
-import {type HeaderProps} from '../components/base/Header/Header';
-import {type GalleryBlockProps} from '../components/block/GalleryBlock';
-import {type IntroBlockProps} from '../components/block/IntroBlock';
-import {type PageHeaderBlockProps} from '../components/block/PageHeaderBlock';
-import {type ProfilesBlockProps} from '../components/block/ProfilesBlock';
+import {type BannerProps} from '@graphixcollab/components/Banner.tsx';
+import {type FeaturedItemProps} from '@graphixcollab/components/FeaturedItem.tsx';
+import {type HeaderProps} from '@graphixcollab/components/Header.tsx';
+import {type GalleryBlockProps} from '@graphixcollab/components/GalleryBlock.tsx';
+import {type IntroBlockProps} from '@graphixcollab/components/IntroBlock.tsx';
+import {type PageHeaderBlockProps} from '@graphixcollab/components/PageHeaderBlock.tsx';
+import {type ProfilesBlockProps} from '@graphixcollab/components/ProfilesBlock.tsx';
 // import { type MileStoneValue } from "../components/elements/Timeline/Milestone";
 import Chance from 'chance';
-import {type OptionBag} from '../components/form/types';
+import {type OptionBag} from '@graphixcollab/components/types.tsx';
 import {
 	type Action,
 	type Article,
