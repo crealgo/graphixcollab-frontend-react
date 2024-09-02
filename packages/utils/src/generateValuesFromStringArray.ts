@@ -1,5 +1,5 @@
 import {paramCase} from 'change-case';
-import {type OptionBag} from '../components/form/types';
+import {type OptionBag} from '@graphixcollab/components/types.ts';
 
 export const generateValuesFromStringArray = (
 	...items: string[]
