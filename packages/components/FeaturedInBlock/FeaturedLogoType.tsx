@@ -1,7 +1,7 @@
 import {styled} from '@mui/material/styles';
 import Head from 'next/head';
 import {type FC} from 'react';
-import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
+import {type FeaturedCompanyInfo} from '@graphixcollab/content/featured-companies';
 
 type SpanProps = Pick<
 FeaturedCompanyInfo,

@@ -1,19 +1,19 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {Mark} from '@graphixcollab/components/Mark.tsx';
-import {type CalloutBlockProps} from '@graphixcollab/components/CalloutBlock.tsx';
-import {EstimatorBlock} from '@graphixcollab/components/EstimatorBlock.tsx';
-import {FaqBlock, type FaqBlockProps} from '@graphixcollab/components/FaqBlock.tsx';
-import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock.tsx';
-import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock.tsx';
+import {Mark} from '@graphixcollab/components/Mark';
+import {type CalloutBlockProps} from '@graphixcollab/components/CalloutBlock';
+import {EstimatorBlock} from '@graphixcollab/components/EstimatorBlock';
+import {FaqBlock, type FaqBlockProps} from '@graphixcollab/components/FaqBlock';
+import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock';
+import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock';
 import {
 	ServicesBlock,
 	type ServicesBlockProps,
-} from '@graphixcollab/components/ServicesBlock.tsx';
-import {TimelineBlock} from '@graphixcollab/components/TimelineBlock.tsx';
-import {PageTitle} from '@graphixcollab/components/PageTitle.tsx';
+} from '@graphixcollab/components/ServicesBlock';
+import {TimelineBlock} from '@graphixcollab/components/TimelineBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
 import services from '@graphixcollab/content/services.json';
-import {DefaultLayout} from '@graphixcollab/components/DefaultLayout.tsx';
-import {generateFaqBlock, generateFooter} from '@graphixcollab/utils/chance.ts';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+import {generateFaqBlock, generateFooter} from '@graphixcollab/utils/chance';
 
 type PageProps = {
 	FooterProps: FooterBlockProps;

@@ -16,9 +16,9 @@ import {
 	styled,
 } from '@mui/material';
 import {useState, type FC, type MouseEvent} from 'react';
-import {ActionStack} from './ActionStack';
-import {Button} from './Button';
-import {DialogTitle} from './DialogTitle';
+import {ActionStack} from '../ActionStack';
+import {Button} from '../Button';
+import {DialogTitle} from '../DialogTitle';
 import {CustomerInfoStep} from './steps/CustomerInfoStep';
 import {ReserveTimeSlotStep} from './steps/ReserveTimeSlotStep';
 import {SelectServiceStep} from './steps/SelectServiceStep';

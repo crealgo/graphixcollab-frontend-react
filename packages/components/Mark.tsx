@@ -1,7 +1,7 @@
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import {type FC} from 'react';
-import {BrandDots} from './Bran';
+import {BrandDots} from './BrandDots';
 
 type MarkProps = BaseComponentProps & {
 	readonly text?: boolean; // eslint-disable-line react/boolean-prop-naming

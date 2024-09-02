@@ -1,15 +1,15 @@
 import {styled, useMediaQuery, type Theme} from '@mui/material';
-import {Block} from '@graphixcollab/components/Block.tsx';
-import {BlockHeader} from '@graphixcollab/components/BlockHeader.tsx';
-import {Card} from '@graphixcollab/components/Card.tsx';
-import {Container} from '@graphixcollab/components/Container.tsx';
-import {HorizontalCard} from '@graphixcollab/components/HorizontalCard.tsx';
-import {FeaturedInBlock} from '@graphixcollab/components/FeaturedInBlock/index.tsx';
-import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock.tsx';
-import {PageTitle} from '@graphixcollab/components/PageTitle.tsx';
-import featuredCompanies from '@graphixcollab/content/featured-companies.ts';
+import {Block} from '@graphixcollab/components/Block';
+import {BlockHeader} from '@graphixcollab/components/BlockHeader';
+import {Card} from '@graphixcollab/components/Card';
+import {Container} from '@graphixcollab/components/Container';
+import {HorizontalCard} from '@graphixcollab/components/HorizontalCard';
+import {FeaturedInBlock} from '@graphixcollab/components/FeaturedInBlock/index';
+import {PageHeaderBlock} from '@graphixcollab/components/PageHeaderBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import featuredCompanies from '@graphixcollab/content/featured-companies';
 import reasonsToChooseUs from '@graphixcollab/content/why-us.json';
-import {DefaultLayout} from '@graphixcollab/components/DefaultLayout.tsx';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
 
 const DetailList = styled('dl')`
 	display: grid;

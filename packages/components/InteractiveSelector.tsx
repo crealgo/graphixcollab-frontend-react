@@ -2,7 +2,7 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import {KeyboardArrowDown} from '@mui/icons-material';
 import {useState, type FC, type ChangeEventHandler} from 'react';
-import {type OptionBag} from '@graphixcollab/types';
+import {type OptionBag} from '@graphixcollab/components/types';
 
 export type InteractiveSelectorProps = {
 	readonly color?: 'cyan' | 'magenta' | 'yellow' | 'key';

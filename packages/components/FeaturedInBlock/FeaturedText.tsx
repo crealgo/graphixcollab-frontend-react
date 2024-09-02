@@ -1,6 +1,6 @@
 import {Typography} from '@mui/material';
 import {type FC} from 'react';
-import {type FeaturedCompanyInfo} from '../../../content/featured-companies';
+import {type FeaturedCompanyInfo} from '@graphixcollab/content/featured-companies';
 
 export const FeaturedText: FC<FeaturedCompanyInfo> = props => (
 	<Typography

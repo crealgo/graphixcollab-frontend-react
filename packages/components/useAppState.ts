@@ -1,5 +1,5 @@
-import {AppStateContext} from '../contexts/AppStateContext';
-import {type AppStateContextOptions} from '../contexts/AppStateContext';
+import {AppStateContext} from '@graphixcollab/components/AppStateContext';
+import {type AppStateContextOptions} from '@graphixcollab/components/AppStateContext';
 import {useContext} from 'react';
 
 type UseAppState = () => AppStateContextOptions;

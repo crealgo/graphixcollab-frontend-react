@@ -2,7 +2,7 @@ import {Message} from '@mui/icons-material';
 import {Box} from '@mui/material';
 import {css, styled} from '@mui/material/styles';
 import {type FC} from 'react';
-import type services from '../../content/services.json';
+import type services from '@graphixcollab/content/services.json';
 import {type SharedBlockProps} from '@graphixcollab/types/general';
 import {ActionStack} from './ActionStack';
 import {Block} from './Block';

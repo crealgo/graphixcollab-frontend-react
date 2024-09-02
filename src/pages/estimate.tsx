@@ -1,15 +1,15 @@
 import {type GetStaticProps, type NextPage} from 'next';
-import {Block} from '@graphixcollab/components/Block.tsx';
-import {Container} from '@graphixcollab/components/Container.tsx';
-import {EstimateForm} from '@graphixcollab/components/EstimateForm.tsx';
-import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock.tsx';
+import {Block} from '@graphixcollab/components/Block';
+import {Container} from '@graphixcollab/components/Container';
+import {EstimateForm} from '@graphixcollab/components/EstimateForm';
+import {type FooterBlockProps} from '@graphixcollab/components/FooterBlock';
 import {
 	PageHeaderBlock,
 	type PageHeaderBlockProps,
-} from '@graphixcollab/components/PageHeaderBlock.tsx';
-import {PageTitle} from '@graphixcollab/components/PageTitle.tsx';
-import {DefaultLayout} from '@graphixcollab/components/DefaultLayout.tsx';
-import {generateFooter, generatePageHeaderBlock} from '@graphixcollab/utils/chance.ts';
+} from '@graphixcollab/components/PageHeaderBlock';
+import {PageTitle} from '@graphixcollab/components/PageTitle';
+import {DefaultLayout} from '@graphixcollab/components/DefaultLayout';
+import {generateFooter, generatePageHeaderBlock} from '@graphixcollab/utils/chance';
 
 type PageProps = {
 	PageHeaderBlockProps: PageHeaderBlockProps;

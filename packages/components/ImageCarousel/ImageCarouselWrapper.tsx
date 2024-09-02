@@ -1,5 +1,5 @@
 import {colors, styled} from '@mui/material';
-import {_e} from './excludePropsFromForwarding';
+import {_e} from '@graphixcollab/utils/excludePropsFromForwarding';
 import {type SharedCarouseProps} from '.';
 
 type CarouseWrapperProps = {
