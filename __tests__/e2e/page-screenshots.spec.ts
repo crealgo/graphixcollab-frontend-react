@@ -19,7 +19,7 @@ pages.forEach(path => {
 
 	test(`${pageName} page`, async ({page}, {project}) => {
 		await page.goto(`${devUrl}${path}`);
-		await page.waitForTimeout(3000);
+		await page.waitForLoadState('networkidle');
 
 		const projectName = paramCase(project.name);
 
