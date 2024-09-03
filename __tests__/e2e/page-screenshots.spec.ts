@@ -1,5 +1,6 @@
-import {test} from '@playwright/test';
-import {paramCase} from 'change-case';
+import {expect, test} from '@playwright/test';
+
+const {describe, beforeEach} = test;
 
 const devUrl = 'https://graphixcollab.com';
 
@@ -14,18 +15,24 @@ const pages = [
 	'/terms/terms-and-conditions',
 ];
 
-pages.forEach(path => {
-	const pageName = path === '/' ? 'home' : path.replace('/', '');
+describe('Page screenshots', () => {
+	pages.forEach(path => {
+		const pageName = path === '/' ? 'home' : path.replace('/', '');
 
-	test(`${pageName} page`, async ({page}, {project}) => {
-		await page.goto(`${devUrl}${path}`);
-		await page.waitForTimeout(2000);
+		// test(`${pageName} should be accessible`, async ({page}, {project}) => {
+		// 	const accessibilityScanResults = await new AxeBuilder({page}).analyze();
 
-		const projectName = paramCase(project.name);
+		// 	expect(accessibilityScanResults.violations).toEqual([]);
+		// });
 
-		await page.screenshot({
-			fullPage: true,
-			path: `__tests__/__snapshots__/${pageName}/${projectName}.png`,
+		test(`${pageName} page`, async ({page}) => {
+			await page.goto(`${devUrl}${path}`);
+			await page.waitForLoadState('networkidle');
+
+			await expect(page).toHaveScreenshot({
+				fullPage: true,
+				animations: 'disabled',
+			});
 		});
 	});
 });

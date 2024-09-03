@@ -1,0 +1,19 @@
+services:
+  test:
+    volumes:
+      - node_modules:/app/node_modules
+      - .:/app
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:lts
+        COPY package.json package-lock.json ./
+        RUN npm install
+        COPY . .
+        RUN npx playwright install --with-deps
+
+        CMD npx playwright test
+    stdin_open: true
+
+volumes:
+  node_modules:

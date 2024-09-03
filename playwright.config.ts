@@ -14,8 +14,7 @@ export default defineConfig({
 	snapshotDir: '__tests__/__snapshots__',
 	fullyParallel: true,
 	forbidOnly: Boolean(process.env.CI),
-	retries: process.env.CI ? 2 : 0,
-	workers: process.env.CI ? 1 : undefined,
+	workers: 10,
 	reporter: 'list',
 	// timeout: 30000,
 	use: {
@@ -24,25 +23,9 @@ export default defineConfig({
 		// actionTimeout: 5000
 	},
 	projects: [
-		// {
-		// 	name: 'desktop-edge',
-		// 	use: { ...devices['Desktop Edge'] }
-		// },
-		{
-			name: 'desktop-chrome',
-			use: {...devices['Desktop Chrome']},
-		},
-		{
-			name: 'desktop-firefox',
-			use: {...devices['Desktop Firefox']},
-		},
 		{
 			name: 'desktop-safari',
 			use: {...devices['Desktop Safari']},
-		},
-		{
-			name: 'android',
-			use: {...devices['Pixel 5']},
 		},
 		{
 			name: 'ios',
