@@ -5,7 +5,7 @@ import {
 	services,
 } from '@graphixcollab/components/__data__/serviceOptions';
 import {chance} from '@graphixcollab/utils/chance';
-import testFiles from '../__data__/test-files.json';
+import testFiles from '../__data__/test-files.json' assert {type: 'json'};
 
 const setup = async (page: Page) => {
 	await page.goto('http://localhost:3000/estimate');
