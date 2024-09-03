@@ -24,25 +24,9 @@ export default defineConfig({
 		// actionTimeout: 5000
 	},
 	projects: [
-		// {
-		// 	name: 'desktop-edge',
-		// 	use: { ...devices['Desktop Edge'] }
-		// },
-		{
-			name: 'desktop-chrome',
-			use: {...devices['Desktop Chrome']},
-		},
-		{
-			name: 'desktop-firefox',
-			use: {...devices['Desktop Firefox']},
-		},
 		{
 			name: 'desktop-safari',
 			use: {...devices['Desktop Safari']},
-		},
-		{
-			name: 'android',
-			use: {...devices['Pixel 5']},
 		},
 		{
 			name: 'ios',
