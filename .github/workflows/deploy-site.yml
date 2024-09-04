@@ -8,6 +8,18 @@ on:
         required: true
         default: staging
         type: string
+      url:
+        description: 'The URL of the deployment'
+        required: true
+        type: string
+      repository:
+        description: 'The repository to deploy to'
+        required: true
+        type: string
+      cname:
+        description: 'The custom domain to use'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -49,7 +61,7 @@ jobs:
     needs: build
     environment:
       name: ${{ github.event.inputs.environment }}
-      url: ${{ vars.DEPLOYMENT_URL }}
+      url: ${{ github.event.inputs.url }}
 
     runs-on: ubuntu-latest
     steps:
@@ -65,6 +77,6 @@ jobs:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           user_name: 🤖 Crealgo Bot
           user_email: bot.crealgo@gmail.com
-          external_repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
-          cname: ${{ vars.CNAME }}
+          external_repository: ${{ github.event.inputs.repository }}
+          cname: ${{ github.event.inputs.cname }}
           publish_dir: upload
