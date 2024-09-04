@@ -27,9 +27,10 @@ permissions:
 
 jobs:
   build:
-    # environment:
-    #   name: ${{ inputs.environment }}
-    #   url: ${{ inputs.url }}
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.url }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Echo Inputs

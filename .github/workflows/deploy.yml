@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Echo Inputs
         run: |
-          echo "Environment: ${{ inputs.environment }}"
+          echo "Environment: ${{ inputs.environment || 'staging' }}"
           echo "URL: ${{ vars.DEPLOYMENT_URL }}"
           echo "Repository: ${{ vars.DEPLOYMENT_REPOSITORY }}"
           echo "CNAME: ${{ vars.CNAME }}"
