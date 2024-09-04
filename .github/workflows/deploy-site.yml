@@ -61,4 +61,4 @@ jobs:
           user_email: bot.crealgo@gmail.com
           external_repository: ${{ inputs.repository }}
           cname: ${{ inputs.cname }}
-          publish_dir: ${{ github.workspace }}
+          publish_dir: ./out
