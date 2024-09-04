@@ -23,7 +23,7 @@ const Page: NextPage<PageProps> = props => (
 		<HeroBlock
 			title={(
 				<>
-					Welcome to <Logo/>
+					Welcome to <Logo/> (Development)
 				</>
 			)}
 			description={'We\'re your one-stop shop for all your apparel customization needs. We offer a wide range of services, from garment printing to embroidery.'}
