@@ -25,9 +25,9 @@ jobs:
     secrets: inherit
     with:
       environment: staging
-      url: ${{ vars.DEPLOYMENT_URL }}
-      repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
-      cname: ${{ vars.CNAME }}
+      url: https://graphixcollab.crealgo.dev/
+      repository: crealgo/graphixcollab-static-staging
+      cname: graphixcollab.crealgo.dev
 
   use-dynamic:
     if: github.event_name == 'workflow_dispatch'
