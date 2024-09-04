@@ -39,7 +39,7 @@ jobs:
       environment: staging
       url: ${{ vars.DEPLOYMENT_URL }}
       repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
-      cname: ${{ vars.CNAME }}
+      cname: hello
 
   use-dynamic:
     if: github.event_name == 'workflow_dispatch'
