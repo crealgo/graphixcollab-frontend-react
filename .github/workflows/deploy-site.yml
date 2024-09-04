@@ -36,9 +36,9 @@ jobs:
       - name: Echo Inputs
         run: |
           echo "Environment: ${{ inputs.environment }}"
-          echo "URL: ${{ inputs.url }}"
-          echo "Repository: ${{ inputs.repository }}"
-          echo "CNAME: ${{ inputs.cname }}"
+          echo "URL: ${{ vars.DEPLOYMENT_URL }}"
+          echo "Repository: ${{ vars.DEPLOYMENT_URL }}"
+          echo "CNAME: ${{ vars.CNAME }}"
     #   - name: Checkout
     #     uses: actions/checkout@v4
 
