@@ -21,12 +21,12 @@ on:
 jobs:
   use-staging:
     if: github.event_name == 'push' || github.event_name == 'workflow_run'
-    uses: .github/workflows/deploy-site.yml@main
+    uses: ./deploy-site.yml
     with:
       environment: staging
 
   use-dynamic:
     if: github.event_name == 'workflow_dispatch'
-    uses: .github/workflows/deploy-site.yml@main
+    uses: ./deploy-site.yml
     with:
       environment: ${{ github.event.inputs.environment }}
