@@ -19,6 +19,16 @@ on:
         type: environment
 
 jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Inputs
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "URL: ${{ vars.DEPLOYMENT_URL }}"
+          echo "Repository: ${{ vars.DEPLOYMENT_REPOSITORY }}"
+          echo "CNAME: ${{ vars.CNAME }}"
+
   use-staging:
     if: github.event_name == 'push' || github.event_name == 'workflow_run'
     uses: crealgo/graphixcollab-frontend-react/.github/workflows/deploy-site.yml@main

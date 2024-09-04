@@ -27,38 +27,44 @@ permissions:
 
 jobs:
   build:
-    environment:
-      name: ${{ inputs.environment }}
-      url: ${{ inputs.url }}
+    # environment:
+    #   name: ${{ inputs.environment }}
+    #   url: ${{ inputs.url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Echo Inputs
+        run: |
+          echo "Environment: ${{ inputs.environment }}"
+          echo "URL: ${{ inputs.url }}"
+          echo "Repository: ${{ inputs.repository }}"
+          echo "CNAME: ${{ inputs.cname }}"
+    #   - name: Checkout
+    #     uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
+    #   - name: Setup Node
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       node-version-file: .nvmrc
+    #       cache: npm
 
-      - name: Install Dependencies
-        run: npm clean-install
+    #   - name: Install Dependencies
+    #     run: npm clean-install
 
-      - name: Verify
-        run: npm run verify
+    #   - name: Verify
+    #     run: npm run verify
 
-      - name: Build App
-        env:
-          NEXT_PUBLIC_API_URL: https://test.crealgo.com/v1
-          NEXT_PUBLIC_APP_ID: graphixcollab
-        run: npm run site:build
+    #   - name: Build App
+    #     env:
+    #       NEXT_PUBLIC_API_URL: https://test.crealgo.com/v1
+    #       NEXT_PUBLIC_APP_ID: graphixcollab
+    #     run: npm run site:build
 
-      - name: Deploy Site
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-          user_name: 🤖 Crealgo Bot
-          user_email: bot.crealgo@gmail.com
-          external_repository: ${{ inputs.repository }}
-          cname: ${{ inputs.cname }}
-          publish_dir: ./out
+    #   - name: Deploy Site
+    #     uses: peaceiris/actions-gh-pages@v3
+    #     with:
+    #       personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+    #       user_name: 🤖 Crealgo Bot
+    #       user_email: bot.crealgo@gmail.com
+    #       external_repository: ${{ inputs.repository }}
+    #       cname: ${{ inputs.cname }}
+    #       publish_dir: ./out
