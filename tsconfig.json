@@ -12,6 +12,8 @@
     "jsx": "preserve",
     "paths": {
       "@graphixcollab/*": ["./packages/*"],
+      "@slices/*": ["./slices/*"],
+      "@prismicio": ["./prismicio"],
     },
     "lib": [
       "esnext",
