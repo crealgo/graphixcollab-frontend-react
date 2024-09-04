@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Echo Inputs
         run: |
-          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Environment: ${{ inputs.environment }}"
           echo "URL: ${{ vars.DEPLOYMENT_URL }}"
           echo "Repository: ${{ vars.DEPLOYMENT_REPOSITORY }}"
           echo "CNAME: ${{ vars.CNAME }}"
