@@ -32,7 +32,8 @@
     "next-env.d.ts",
     "src",
     "packages",
-    "__tests__"
+    "__tests__",
+    "next.config.mjs"
   ],
   "exclude": [
     "node_modules"

@@ -1,4 +1,4 @@
-name: Build and Deploy Development Site
+name: Build and Deploy Staging Site
 
 on:
   push:
@@ -41,16 +41,14 @@ jobs:
         env:
           NEXT_PUBLIC_API_URL: https://api.crealgo.com/v1
           NEXT_PUBLIC_APP_ID: graphixcollab
-        run: |
-          npx next build --no-lint
-          npx next export
+        run: npm run build
 
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           user_name: 🤖 Crealgo Bot
-          user_email:  bot.crealgo@gmail.com
+          user_email: bot.crealgo@gmail.com
           external_repository: crealgo/graphixcollab-static-staging
           cname: graphixcollab.crealgo.dev
           publish_dir: out
