@@ -15,11 +15,13 @@ on:
       environment:
         description: "The environment to deploy to"
         required: true
-        default: "staging"
+        default: staging
         type: environment
 
 jobs:
   echo:
+    environment: ${{ inputs.environment || 'staging' }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Echo Inputs
@@ -35,16 +37,16 @@ jobs:
     secrets: inherit
     with:
       environment: staging
-      url: https://graphixcollab.crealgo.dev/
-      repository: crealgo/graphixcollab-static-staging
-      cname: graphixcollab.crealgo.dev
+      url: ${{ vars.DEPLOYMENT_URL }}
+      repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
+      cname: ${{ vars.CNAME }}
 
   use-dynamic:
     if: github.event_name == 'workflow_dispatch'
     uses: crealgo/graphixcollab-frontend-react/.github/workflows/deploy-site.yml@main
     secrets: inherit
     with:
-      environment: ${{ github.event.inputs.environment }}
+      environment: ${{ inputs.environment }}
       url: ${{ vars.DEPLOYMENT_URL }}
       repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
       cname: ${{ vars.CNAME }}
