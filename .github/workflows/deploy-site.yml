@@ -1,22 +1,13 @@
 name: Build and Deploy Site
 
 on:
-  push:
-    branches: ["main"]
-
-  workflow_run:
-    workflows: ["Scrape Yelp Data"]
-    branches: ["main"]
-    types:
-      - completed
-
-  workflow_dispatch:
+  workflow_call:
     inputs:
       environment:
         description: 'The environment to deploy to'
         required: true
-        default: 'staging'
-        type: environment
+        default: staging
+        type: string
 
 permissions:
   contents: write

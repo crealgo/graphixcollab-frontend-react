@@ -1,0 +1,32 @@
+name: 🚀 Trigger Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_run:
+    workflows: ["Scrape Yelp Data"]
+    branches: ["main"]
+    types:
+      - completed
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'The environment to deploy to'
+        required: true
+        default: 'staging'
+        type: environment
+
+jobs:
+  use-staging:
+    if: github.event_name == 'push' || github.event_name == 'workflow_run'
+    uses: .github/workflows/deploy-site.yml@main
+    with:
+      environment: staging
+
+  use-dynamic:
+    if: github.event_name == 'workflow_dispatch'
+    uses: .github/workflows/deploy-site.yml@main
+    with:
+      environment: ${{ github.event.inputs.environment }}
