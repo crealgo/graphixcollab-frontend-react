@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     environment:
       name: ${{ inputs.environment }}
       url: ${{ vars.DEPLOYMENT_URL }}
@@ -50,4 +50,4 @@ jobs:
           user_email: bot.crealgo@gmail.com
           external_repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
           cname: ${{ vars.CNAME }}
-          publish_dir: ./out
+          publish_dir: out
