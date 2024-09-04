@@ -19,27 +19,12 @@ on:
         type: environment
 
 jobs:
-  echo:
-    environment: ${{ inputs.environment || 'staging' }}
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo Inputs
-        run: |
-          echo "Environment: ${{ inputs.environment || 'staging' }}"
-          echo "URL: ${{ vars.DEPLOYMENT_URL }}"
-          echo "Repository: ${{ vars.DEPLOYMENT_REPOSITORY }}"
-          echo "CNAME: ${{ vars.CNAME }}"
-
   use-staging:
     if: github.event_name == 'push' || github.event_name == 'workflow_run'
     uses: crealgo/graphixcollab-frontend-react/.github/workflows/deploy-site.yml@main
     secrets: inherit
     with:
       environment: staging
-      url: ${{ vars.DEPLOYMENT_URL }}
-      repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
-      cname: ${{ vars.CNAME }}
 
   use-dynamic:
     if: github.event_name == 'workflow_dispatch'
@@ -47,6 +32,3 @@ jobs:
     secrets: inherit
     with:
       environment: ${{ inputs.environment }}
-      url: ${{ vars.DEPLOYMENT_URL }}
-      repository: ${{ vars.DEPLOYMENT_REPOSITORY }}
-      cname: ${{ vars.CNAME }}
