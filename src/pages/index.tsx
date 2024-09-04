@@ -19,11 +19,10 @@ type PageProps = any;
 const Page: NextPage<PageProps> = props => (
 	<DefaultLayout showYelp>
 		<PageTitle text='Home'/>
-		{/* <IntroBlock {...props.IntroBlockProps}/> */}
 		<HeroBlock
 			title={(
 				<>
-					Welcome to <Logo/>
+					Welcome to <Logo/> (Test)
 				</>
 			)}
 			description={'We\'re your one-stop shop for all your apparel customization needs. We offer a wide range of services, from garment printing to embroidery.'}
@@ -50,12 +49,6 @@ const Page: NextPage<PageProps> = props => (
 
 export const getStaticProps: GetStaticProps<PageProps> = () => ({
 	props: {
-		IntroBlockProps: {
-			color: 'none',
-			title: 'Weclome to Graphix Collab',
-			description:
-				'We\'re your one-stop shop for all your apparel customization needs. We offer a wide range of services, from garment printing to embroidery.',
-		},
 		FeaturedInBlockProps: {
 			title: 'Featured In',
 			companies: featuredCompanies,
