@@ -13,9 +13,9 @@ async function main() {
 	};
 
 	const urls = [
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?rr=5',
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?start=10&rr=5',
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?start=20&rr=5',
+		'https://www.yelp.com/biz/graphix-collab-los-angeles?rr=5',
+		'https://www.yelp.com/biz/graphix-collab-los-angeles?start=10&rr=5',
+		'https://www.yelp.com/biz/graphix-collab-los-angeles?start=20&rr=5',
 	];
 
 	const reviews: Review[] = [];

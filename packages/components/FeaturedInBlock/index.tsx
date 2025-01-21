@@ -124,7 +124,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 					]}
 				>
 					<TidBit
-						href='https://www.yelp.com/biz/fashion-greek-usc-los-angeles'
+						href='https://www.yelp.com/biz/graphix-collab-los-angeles'
 						color='magenta'
 						icon={<i className='bx bxl-yelp'/>}
 					>

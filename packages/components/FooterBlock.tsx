@@ -36,13 +36,13 @@ const footerContent = {
 			links: [
 				{
 					label: 'Phone',
-					displayName: '+1 (323) 379-3728',
-					href: 'tel:323-379-3728',
+					displayName: '(323) 379-3436',
+					href: 'tel:323-379-3436',
 				},
 				{
 					label: 'Email',
-					displayName: 'graphixcollab@gmail.com',
-					href: 'mailto:graphixcollab@gmail.com',
+					displayName: 'letscollab@graphixcollab.us',
+					href: 'mailto:letscollab@graphixcollab.us',
 				},
 				{
 					label: 'Address',
@@ -54,8 +54,7 @@ const footerContent = {
 		copyright: {
 			showSocial: true,
 			phrases: [
-				'©Copyright 2015-2020, FashionGreek, USC.',
-				// TODO: make this a web component
+				'©Copyright 2015-2020, GraphixCollab, USC.',
 				'Made with ❤️ by Crealgo, LLC. All rights reserved.',
 			],
 		},
