@@ -2,20 +2,18 @@ import * as cheerio from 'cheerio';
 import fs from 'fs/promises';
 import Chance from 'chance';
 
+type Review = {
+	id: string;
+	name: string;
+	image: string | null;
+	text: string;
+};
+
 async function main() {
 	const chance = new Chance();
 
-	type Review = {
-		id: string;
-		name: string;
-		image: string | null;
-		text: string;
-	};
-
 	const urls = [
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?rr=5',
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?start=10&rr=5',
-		'https://www.yelp.com/biz/fashion-greek-usc-los-angeles?start=20&rr=5',
+		'https://www.yelp.com/biz/graphix-collab-los-angeles',
 	];
 
 	const reviews: Review[] = [];
@@ -40,7 +38,10 @@ async function main() {
 		}
 	}
 
-	await fs.writeFile('src/content/yelp-reviews.json', JSON.stringify(reviews, null, 2));
+	const cleanedReviews = reviews.filter(review => Object.values(review).every(value => !/greek/ig.test(value!)));
+
+	// console.log(cleanedReviews);
+	await fs.writeFile('packages/content/yelp-reviews.json', JSON.stringify(cleanedReviews, null, 2));
 }
 
 void main();

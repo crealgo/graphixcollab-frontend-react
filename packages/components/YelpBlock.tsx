@@ -80,14 +80,14 @@ export const YelpBlock: FC<YelpBlockProps> = () => (
 				actions={[
 					{
 						label: 'Read more reviews',
-						href: 'https://www.yelp.com/biz/fashion-greek-usc-los-angeles',
+						href: 'https://www.yelp.com/biz/graphix-collab-los-angeles',
 						size: 'large',
 						color: 'secondary',
 						endIcon: <SearchOutlined/>,
 					},
 					{
 						label: 'Leave a review',
-						href: 'https://www.yelp.com/writeareview/biz/-e4TSbHSikunICO8i8wr4Q?return_url=%2Fbiz%2F-e4TSbHSikunICO8i8wr4Q&review_origin=biz-details-war-button',
+						href: 'https://www.yelp.com/writeareview/biz/jwwmdpxLoyxhqT2NrQ36eA?return_url=%2Fbiz%2FjwwmdpxLoyxhqT2NrQ36eA&review_origin=biz-details-war-button',
 						size: 'large',
 						color: 'text',
 						endIcon: <MessageOutlined/>,

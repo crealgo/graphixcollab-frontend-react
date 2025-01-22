@@ -9,7 +9,7 @@ export const Default: StoryObj<TidBitProps> = {
 	args: {
 		children: (
 			<>
-				Trusted by <strong>150+</strong> on <strong>Yelp</strong>
+				Trusted on <strong>Yelp</strong>
 			</>
 		),
 		icon: <i className='bx bxl-yelp'/>,
