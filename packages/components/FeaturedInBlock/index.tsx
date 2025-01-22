@@ -128,8 +128,7 @@ export const FeaturedInBlock: FC<FeaturedInBlockProps> = ({
 						color='magenta'
 						icon={<i className='bx bxl-yelp'/>}
 					>
-						Trusted by <Mark color='magenta'>150+</Mark> on{' '}
-						<Mark color='magenta'>Yelp</Mark>
+						Trusted  on <Mark color='magenta'>Yelp</Mark>
 					</TidBit>
 				</ActionStack>
 			</StyledContainer>

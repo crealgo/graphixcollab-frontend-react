@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => ({
 			description:
 				'With years of experience in the industry, we have the expertise and equipment necessary to produce stunning prints on a wide range of materials, including fabric, paper, metal, glass, and plastic. Follow us for an inside scoop of what\'s going on behind the scenes.',
 			SocialMediaBlockProps: {
-				text: '@graphixcollabusc',
+				text: '@graphixcollab',
 				url: 'https://instagram.com/graphixcollab',
 				actions: [
 					{
