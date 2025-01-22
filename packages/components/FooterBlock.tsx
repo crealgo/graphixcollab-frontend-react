@@ -164,7 +164,7 @@ export const FooterBlock: FC<FooterBlockProps> = () => (
 								{footerContent.sections.getAQuote.title}
 							</Typography>
 							<Text size='medium'>
-								{footerContent.description}
+								{footerContent.sections.getAQuote.description}
 							</Text>
 							<br/>
 							<ActionStack
