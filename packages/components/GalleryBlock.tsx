@@ -55,7 +55,7 @@ const Wrapper = styled(Block)(
 				margin-inline: 0;
 
 				.GalleryBlock-image {
-					width: 13rem;
+					width: 18rem;
 				}
 			}
 		}
@@ -69,11 +69,6 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 	SocialMediaBlockProps,
 	images = [],
 }) => {
-	const count = 7;
-
-	const firstStack = images.slice(0, count);
-	const secondStack = images.slice(count, count * 2);
-
 	const isDesktop = useMediaQuery<Theme>(theme => theme.breakpoints.up('md'));
 
 	return (
@@ -87,22 +82,9 @@ export const GalleryBlock: FC<GalleryBlockProps> = ({
 					<SocialMediaBlock {...SocialMediaBlockProps}/>
 				</div>
 				<div className='gallery'>
-					{firstStack?.length && (
+					{images?.length && (
 						<Marquee gradient={isDesktop}>
-							{firstStack.map((imageProps, imageIndex) => (
-								<Image
-									key={imageIndex}
-									shape='square'
-									className='GalleryBlock-image'
-									fill='cover'
-									{...imageProps}
-								/>
-							))}
-						</Marquee>
-					)}
-					{secondStack?.length && (
-						<Marquee gradient={isDesktop} direction='right'>
-							{secondStack.map((imageProps, imageIndex) => (
+							{images.map((imageProps, imageIndex) => (
 								<Image
 									key={imageIndex}
 									shape='square'
