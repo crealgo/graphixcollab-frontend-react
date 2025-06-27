@@ -1,19 +1,14 @@
 services:
-  test:
+  frontend:
     volumes:
-      - node_modules:/app/node_modules
-      - .:/app
+      - ./app/node_modules
+      - ./app
     build:
-      context: .
-      dockerfile_inline: |
-        FROM node:lts
-        COPY package.json package-lock.json ./
-        RUN npm install
-        COPY . .
-        RUN npx playwright install --with-deps
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    command: npm run site:dev
 
-        CMD npx playwright test
-    stdin_open: true
-
-volumes:
-  node_modules:
+  # email-service:
+  #   image: python:latest
+  #   volumes:
+  #     - /app/.venv

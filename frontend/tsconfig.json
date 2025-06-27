@@ -35,8 +35,8 @@
     "src",
     "pages",
     "__tests__",
-    "next.config.mjs"
-, "pages"  ],
+    "next.config.mjs",
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -20,7 +20,9 @@ import {
 export const QuickEstimateForm: FC = () => {
     const formState = useForm();
 
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+        event
+    ) => {
         event.preventDefault();
         // alert("Form submitted! This is a placeholder action.");
     };
