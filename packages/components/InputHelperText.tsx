@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const InputHelperText = styled.span`
-	font-weight: 500;
-	font-size: 0.75rem;
-	line-height: 1rem;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1rem;
 
-	color: var(--color-text-secondary);
+    color: var(--color-text-secondary);
 `;

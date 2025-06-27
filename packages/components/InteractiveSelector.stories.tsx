@@ -1,16 +1,16 @@
-import {type StoryObj} from '@storybook/react';
-import {generateOptions} from '@graphixcollab/utils/chance';
+import { type StoryObj } from "@storybook/react";
+import { generateOptions } from "@graphixcollab/utils/chance";
 import {
-	InteractiveSelector,
-	type InteractiveSelectorProps,
-} from './InteractiveSelector';
+    InteractiveSelector,
+    type InteractiveSelectorProps,
+} from "./InteractiveSelector";
 
 export default {
-	component: InteractiveSelector,
+    component: InteractiveSelector,
 };
 
 export const Default: StoryObj<InteractiveSelectorProps> = {
-	args: {
-		options: generateOptions(),
-	},
+    args: {
+        options: generateOptions(),
+    },
 };

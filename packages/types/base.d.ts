@@ -1,7 +1,7 @@
-declare type Size = 'small' | 'medium' | 'large';
+declare type Size = "small" | "medium" | "large";
 
-declare type BaseElement<T extends keyof JSX.IntrinsicElements = 'div'> =
-	JSX.IntrinsicElements[T];
+declare type BaseElement<T extends keyof JSX.IntrinsicElements = "div"> =
+    JSX.IntrinsicElements[T];
 
-declare type BaseComponentProps<T extends keyof JSX.IntrinsicElements = 'div'> =
-	Pick<BaseElement<T>, 'className' | 'id' | 'children'>;
+declare type BaseComponentProps<T extends keyof JSX.IntrinsicElements = "div"> =
+    Pick<BaseElement<T>, "className" | "id" | "children">;

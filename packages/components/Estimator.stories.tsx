@@ -1,19 +1,19 @@
-import {type StoryObj} from '@storybook/react';
-import {userEvent, within} from '@storybook/testing-library';
-import {QuickEstimateForm} from './QuickEstimateForm';
+import { type StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
+import { QuickEstimateForm } from "./QuickEstimateForm";
 
 export default {
-	component: QuickEstimateForm,
+    component: QuickEstimateForm,
 };
 
 export const Default: StoryObj = {
-	play: async ({canvasElement}) => {
-		const canvas = within(canvasElement);
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
 
-		await userEvent.type(canvas.getByLabelText('Name'), 'John Doe');
+        await userEvent.type(canvas.getByLabelText("Name"), "John Doe");
 
-		const submit = canvas.getByText('Get Estimate');
+        const submit = canvas.getByText("Get Estimate");
 
-		await userEvent.click(submit);
-	},
+        await userEvent.click(submit);
+    },
 };

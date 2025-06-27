@@ -1,19 +1,20 @@
-import {styled} from '@mui/material/styles';
-import {type FC} from 'react';
-import {Image} from './Image';
+import { styled } from "@mui/material/styles";
+import { type FC } from "react";
+import { Image } from "./Image";
 
 export type EventBlockProps = {
-	readonly stepNumber?: number;
-	readonly title?: string;
-	readonly description?: string;
-	readonly image?: string;
+    readonly stepNumber?: number;
+    readonly title?: string;
+    readonly description?: string;
+    readonly image?: string;
 } & BaseComponentProps;
 
-const connectorThickness = '0.25rem';
-const markerSize = '1.75rem';
-const markerSpacing = '2rem';
+const connectorThickness = "0.25rem";
+const markerSize = "1.75rem";
+const markerSpacing = "2rem";
 
-const Marker = styled('div')(({theme}) => `
+const Marker = styled("div")(
+    ({ theme }) => `
 	height: ${markerSize};
 	width: ${markerSize};
 	border-radius: 0.5rem 0 0.5rem 0;
@@ -37,12 +38,14 @@ const Marker = styled('div')(({theme}) => `
 
 	left: 0;
 
-	${theme.breakpoints.up('md')} {
+	${theme.breakpoints.up("md")} {
 		left: calc(10rem + ${markerSpacing} / 2);
 	}
-`);
+`,
+);
 
-const EventConnector = styled('div')(({theme}) => `
+const EventConnector = styled("div")(
+    ({ theme }) => `
 	z-index: -1;
 	box-sizing: border-box;
 	position: absolute;
@@ -55,25 +58,27 @@ const EventConnector = styled('div')(({theme}) => `
 
 	left: calc(${markerSize} / 2);
 
-	${theme.breakpoints.up('md')} {
+	${theme.breakpoints.up("md")} {
 		left: calc(10rem + (${markerSpacing} + ${markerSize}) / 2);
 	}
-`);
-
-const BaseElement: FC<EventBlockProps> = props => (
-	<li id={props.id} className={props.className}>
-		<Image height='10rem' width='10rem' src={props.image}/>
-		<Marker className='marker'>{props.stepNumber ?? 1}</Marker>
-		<div className='content'>
-			<div className='title'>{props.title}</div>
-			<div className='description'>{props.description}</div>
-			{props.children}
-		</div>
-		<EventConnector className='connector'/>
-	</li>
+`,
 );
 
-export const Milestone = styled(BaseElement)<EventBlockProps>(({theme}) => `
+const BaseElement: FC<EventBlockProps> = (props) => (
+    <li id={props.id} className={props.className}>
+        <Image height="10rem" width="10rem" src={props.image} />
+        <Marker className="marker">{props.stepNumber ?? 1}</Marker>
+        <div className="content">
+            <div className="title">{props.title}</div>
+            <div className="description">{props.description}</div>
+            {props.children}
+        </div>
+        <EventConnector className="connector" />
+    </li>
+);
+
+export const Milestone = styled(BaseElement)<EventBlockProps>(
+    ({ theme }) => `
 	--image-border-radius: 0.5rem;
 
 	list-style: none;
@@ -119,7 +124,7 @@ export const Milestone = styled(BaseElement)<EventBlockProps>(({theme}) => `
 	}
 
 
-	${theme.breakpoints.up('md')} {
+	${theme.breakpoints.up("md")} {
 		grid-template-columns: 10rem 1fr;
 		gap: calc(${markerSpacing} + ${markerSize});
 
@@ -160,4 +165,5 @@ export const Milestone = styled(BaseElement)<EventBlockProps>(({theme}) => `
 			color: var(--color-brand-key-contrast);
 		}
 	}
-`);
+`,
+);

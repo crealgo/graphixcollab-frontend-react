@@ -1,19 +1,19 @@
-import {type BannerProps} from './Banner';
-import {createContext, type Dispatch, type SetStateAction} from 'react';
+import { type BannerProps } from "./Banner";
+import { createContext, type Dispatch, type SetStateAction } from "react";
 
 export type AppStateContextOptions = {
-	bannerOpen: boolean;
-	bookingOpen: boolean;
-	contactOpen: boolean;
+    bannerOpen: boolean;
+    bookingOpen: boolean;
+    contactOpen: boolean;
 
-	BannerProps: BannerProps;
-	setBannerProps: Dispatch<SetStateAction<BannerProps>>;
+    BannerProps: BannerProps;
+    setBannerProps: Dispatch<SetStateAction<BannerProps>>;
 
-	toggleBanner: (state?: boolean) => void;
-	toggleContact: (state?: boolean) => void;
-	toggleBooking: (state?: boolean) => void;
+    toggleBanner: (state?: boolean) => void;
+    toggleContact: (state?: boolean) => void;
+    toggleBooking: (state?: boolean) => void;
 };
 
 export const AppStateContext = createContext<
-AppStateContextOptions | undefined
+    AppStateContextOptions | undefined
 >(undefined);

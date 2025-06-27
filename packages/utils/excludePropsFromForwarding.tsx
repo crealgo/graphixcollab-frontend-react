@@ -1,15 +1,15 @@
-import {type StyledOptions} from '@emotion/styled';
+import { type StyledOptions } from "@emotion/styled";
 
 type ExcludePropsFromForwardingProps = (
-	...propNames: string[]
+    ...propNames: string[]
 ) => StyledOptions;
 
 export const excludePropsFromForwarding: ExcludePropsFromForwardingProps = (
-	...propNames
+    ...propNames
 ) => ({
-	shouldForwardProp(propName) {
-		return !propNames.includes(propName);
-	},
+    shouldForwardProp(propName) {
+        return !propNames.includes(propName);
+    },
 });
 
 /**

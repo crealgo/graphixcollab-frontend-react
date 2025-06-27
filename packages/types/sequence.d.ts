@@ -1,6 +1,11 @@
-type SequencePropertyType = 'color' | 'background-color' | 'border-color' | 'fill' | 'stroke';
+type SequencePropertyType =
+    | "color"
+    | "background-color"
+    | "border-color"
+    | "fill"
+    | "stroke";
 type SequenceIndex = number;
-type SequenceShade = Exclude<ColorShades, 'main'>;
+type SequenceShade = Exclude<ColorShades, "main">;
 
 // Declare namespace React {
 // 	type DOMAttributes<T> = {
@@ -11,8 +16,8 @@ type SequenceShade = Exclude<ColorShades, 'main'>;
 // }
 
 declare global {
-	// eslint-disable-next-line
-	interface Element {
-		testThangs?: number;
-	}
+    // eslint-disable-next-line
+    interface Element {
+        testThangs?: number;
+    }
 }

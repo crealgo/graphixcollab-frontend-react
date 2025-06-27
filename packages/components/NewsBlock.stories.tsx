@@ -1,16 +1,20 @@
-import {type StoryObj} from '@storybook/react';
-import {chance, generateActions, generateArticles} from '@graphixcollab/utils/chance';
-import {NewsBlock, type NewsBlockProps} from './NewsBlock';
+import { type StoryObj } from "@storybook/react";
+import {
+    chance,
+    generateActions,
+    generateArticles,
+} from "@graphixcollab/utils/chance";
+import { NewsBlock, type NewsBlockProps } from "./NewsBlock";
 
 export default {
-	component: NewsBlock,
+    component: NewsBlock,
 };
 
 export const Default: StoryObj<NewsBlockProps> = {
-	args: {
-		title: chance.sentence(),
-		meta: chance.sentence({words: 3}),
-		actions: generateActions(),
-		articles: generateArticles(),
-	},
+    args: {
+        title: chance.sentence(),
+        meta: chance.sentence({ words: 3 }),
+        actions: generateActions(),
+        articles: generateArticles(),
+    },
 };

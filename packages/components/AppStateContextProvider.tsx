@@ -1,75 +1,75 @@
 import {
-	useEffect,
-	useMemo,
-	useState,
-	type FC,
-	type PropsWithChildren,
-} from 'react';
-import {ContactService} from '@graphixcollab/components/ContactService';
+    useEffect,
+    useMemo,
+    useState,
+    type FC,
+    type PropsWithChildren,
+} from "react";
+import { ContactService } from "@graphixcollab/components/ContactService";
 import {
-	AppStateContext,
-	type AppStateContextOptions as Context,
-} from '@graphixcollab/components/AppStateContext';
+    AppStateContext,
+    type AppStateContextOptions as Context,
+} from "@graphixcollab/components/AppStateContext";
 
 type AppStateContextProviderProps = PropsWithChildren;
 
 export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
-	children,
+    children,
 }) => {
-	const [bannerOpen, setBannerOpen] = useState<Context['bannerOpen']>(false);
-	const [bookingOpen, setBookingOpen]
-		= useState<Context['bookingOpen']>(false);
-	const [contactOpen, setContactOpen]
-		= useState<Context['contactOpen']>(false);
-	const [bannerProps, setBannerProps] = useState<Context['BannerProps']>({});
+    const [bannerOpen, setBannerOpen] = useState<Context["bannerOpen"]>(false);
+    const [bookingOpen, setBookingOpen] =
+        useState<Context["bookingOpen"]>(false);
+    const [contactOpen, setContactOpen] =
+        useState<Context["contactOpen"]>(false);
+    const [bannerProps, setBannerProps] = useState<Context["BannerProps"]>({});
 
-	const toggleBanner = (state?: boolean) => {
-		if (typeof state === 'boolean') {
-			setBannerOpen(state);
-		}
+    const toggleBanner = (state?: boolean) => {
+        if (typeof state === "boolean") {
+            setBannerOpen(state);
+        }
 
-		setBannerOpen(curr => !curr);
-	};
+        setBannerOpen((curr) => !curr);
+    };
 
-	const toggleBooking = (state?: boolean) => {
-		if (typeof state === 'boolean') {
-			setBookingOpen(state);
-		}
+    const toggleBooking = (state?: boolean) => {
+        if (typeof state === "boolean") {
+            setBookingOpen(state);
+        }
 
-		setBookingOpen(curr => !curr);
-	};
+        setBookingOpen((curr) => !curr);
+    };
 
-	const toggleContact = (state?: boolean) => {
-		if (typeof state === 'boolean') {
-			setContactOpen(state);
-		}
+    const toggleContact = (state?: boolean) => {
+        if (typeof state === "boolean") {
+            setContactOpen(state);
+        }
 
-		setContactOpen(curr => !curr);
-	};
+        setContactOpen((curr) => !curr);
+    };
 
-	const defaultContext = useMemo<Context>(
-		() => ({
-			BannerProps: bannerProps,
-			bannerOpen,
-			bookingOpen,
-			contactOpen,
-			setBannerProps,
-			toggleBanner,
-			toggleContact,
-			toggleBooking,
-		}),
-		[bannerOpen, bannerProps, bookingOpen, contactOpen],
-	);
+    const defaultContext = useMemo<Context>(
+        () => ({
+            BannerProps: bannerProps,
+            bannerOpen,
+            bookingOpen,
+            contactOpen,
+            setBannerProps,
+            toggleBanner,
+            toggleContact,
+            toggleBooking,
+        }),
+        [bannerOpen, bannerProps, bookingOpen, contactOpen],
+    );
 
-	useEffect(() => {
-		if (bannerProps.text) {
-			setBannerOpen(true);
-		}
-	}, [bannerProps.text]);
+    useEffect(() => {
+        if (bannerProps.text) {
+            setBannerOpen(true);
+        }
+    }, [bannerProps.text]);
 
-	return (
-		<AppStateContext.Provider value={defaultContext}>
-			{/* <BannerService
+    return (
+        <AppStateContext.Provider value={defaultContext}>
+            {/* <BannerService
 				{...bannerProps}
 				open={bannerOpen}
 				BannerProps={{
@@ -79,19 +79,19 @@ export const AppStateContextProvider: FC<AppStateContextProviderProps> = ({
 					}
 				}}
 			/> */}
-			<ContactService
-				isOpen={contactOpen}
-				onCloseClick={() => {
-					toggleContact();
-				}}
-			/>
-			{/* <SquareBookingService
+            <ContactService
+                isOpen={contactOpen}
+                onCloseClick={() => {
+                    toggleContact();
+                }}
+            />
+            {/* <SquareBookingService
 				open={bookingOpen}
 				onCloseClick={() => {
 					toggleBooking();
 				}}
 			/> */}
-			{children}
-		</AppStateContext.Provider>
-	);
+            {children}
+        </AppStateContext.Provider>
+    );
 };

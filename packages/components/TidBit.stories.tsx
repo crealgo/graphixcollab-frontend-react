@@ -1,17 +1,17 @@
-import {type Meta, type StoryObj} from '@storybook/react';
-import {TidBit, type TidBitProps} from './TidBit';
+import { type Meta, type StoryObj } from "@storybook/react";
+import { TidBit, type TidBitProps } from "./TidBit";
 
 export default {
-	component: TidBit,
+    component: TidBit,
 } satisfies Meta;
 
 export const Default: StoryObj<TidBitProps> = {
-	args: {
-		children: (
-			<>
-				Trusted on <strong>Yelp</strong>
-			</>
-		),
-		icon: <i className='bx bxl-yelp'/>,
-	},
+    args: {
+        children: (
+            <>
+                Trusted on <strong>Yelp</strong>
+            </>
+        ),
+        icon: <i className="bx bxl-yelp" />,
+    },
 };

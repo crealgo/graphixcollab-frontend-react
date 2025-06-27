@@ -1,7 +1,7 @@
-import {type ReactNode} from 'react';
+import { type ReactNode } from "react";
 
 export type OptionBag = {
-	value: string;
-	label: ReactNode;
-	meta?: ReactNode;
+    value: string;
+    label: ReactNode;
+    meta?: ReactNode;
 };
