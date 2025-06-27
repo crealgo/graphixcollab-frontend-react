@@ -4,7 +4,7 @@ import { AppStateContextProvider } from "@graphixcollab/components/AppStateConte
 import { ThemeProvider } from "@graphixcollab/components/ThemeProvider";
 import "normalize.css";
 import "@hotcakes/tokens/lib/tokens.css";
-import "../styles/index.scss";
+import "@graphixcollab/styles/index.scss";
 
 const App = ({ Component, pageProps }: AppProps) => (
     <>
