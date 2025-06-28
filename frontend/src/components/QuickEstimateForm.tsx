@@ -24,7 +24,16 @@ export const QuickEstimateForm: FC = () => {
         event
     ) => {
         event.preventDefault();
-        // alert("Form submitted! This is a placeholder action.");
+        const formData = new FormData(event.currentTarget);
+
+        const response = await fetch("http://localhost:5001/send-message", {
+            body: formData,
+            method: event.currentTarget.method,
+        });
+
+        const data = await response.json();
+
+        console.log(data);
     };
 
     return (
@@ -32,7 +41,6 @@ export const QuickEstimateForm: FC = () => {
             name="quick-estimate-form"
             noValidate
             method="post"
-            action={getFormAction("send-message/estimate-request")}
             encType="multipart/form-data"
             id="estimator-form"
             onSubmit={handleSubmit}
@@ -57,6 +65,7 @@ export const QuickEstimateForm: FC = () => {
                     id="name"
                     type="text"
                     name="name"
+                    defaultValue="John Snow"
                     placeholder="John Snow"
                 />
             </label>
@@ -67,6 +76,7 @@ export const QuickEstimateForm: FC = () => {
                     id="email"
                     type="text"
                     name="email"
+                    defaultValue="johnsmith@testemail.com"
                     placeholder="johnsnow@gmail.com"
                 />
             </label>
