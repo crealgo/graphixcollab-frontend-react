@@ -12,17 +12,8 @@ export type ImageProps = ComponentPropsWithRef<'img'> & {
 const BaseElement: FC<ImageProps> = ({
 	className, onLoad: userOnLoad, onError: userOnError, caption, ...props
 }) => {
-	const onLoad: ImageProps['onLoad'] = event => {
-		console.log('loaded');
-
-		userOnLoad?.(event);
-	};
-
-	const onError: ImageProps['onError'] = event => {
-		console.log('loaded');
-
-		userOnError?.(event);
-	};
+	const onLoad: ImageProps['onLoad'] = event => userOnLoad?.(event);
+	const onError: ImageProps['onError'] = event => userOnError?.(event);
 
 	return (
 		<figure className={clsx('Image-root', className)}>

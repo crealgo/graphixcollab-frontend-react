@@ -23,44 +23,42 @@ export type GalleryBlockProps = {
 	readonly className?: string;
 };
 
-const Wrapper = styled(Block)(
-	({theme}) => css`
-		/* padding-inline: 0rem; */
+const Wrapper = styled(Block)(({theme}) => css`
+	/* padding-inline: 0rem; */
 
-		.Container-root {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 1rem;
+	.Container-root {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.content {
+		text-align: center;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.gallery {
+		overflow: hidden;
+		margin-top: 2.5rem;
+		margin-inline: -1.5rem;
+		display: grid;
+		gap: 0.5rem;
+
+		.GalleryBlock-image {
+			margin-inline: 0.25rem;
+			width: 10rem;
 		}
-
-		.content {
-			text-align: center;
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
-
-		.gallery {
-			overflow: hidden;
-			margin-top: 2.5rem;
-			margin-inline: -1.5rem;
-			display: grid;
-			gap: 0.5rem;
+		${theme.breakpoints.up('md')} {
+			margin-inline: 0;
 
 			.GalleryBlock-image {
-				margin-inline: 0.25rem;
-				width: 10rem;
-			}
-			${theme.breakpoints.up('md')} {
-				margin-inline: 0;
-
-				.GalleryBlock-image {
-					width: 18rem;
-				}
+				width: 18rem;
 			}
 		}
-	`,
-);
+	}
+`);
 
 export const GalleryBlock: FC<GalleryBlockProps> = ({
 	className,

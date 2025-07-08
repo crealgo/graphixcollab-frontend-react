@@ -76,8 +76,6 @@ export const DrawerContent: FC<DrawerContentProps> = ({
 }) => {
 	const router = useRouter();
 
-	console.log({actions});
-
 	return (
 		<Wrapper>
 			<TitleBox>

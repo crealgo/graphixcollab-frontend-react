@@ -21,8 +21,7 @@ import {
 
 export const chance = new Chance();
 
-export const generateWord = (): string =>
-	chance.word({capitalize: true, syllables: 3});
+export const generateWord = (): string => chance.word({capitalize: true, syllables: 3});
 
 export const generatePerson = (): Person => ({
 	avatar: chance.avatar(),
@@ -40,8 +39,7 @@ export const generateEmployee = (): Employee => ({
 
 export const generatePersons = (n = 3): Person[] => chance.n(generatePerson, n);
 
-export const generateEmployees = (n = 3): Employee[] =>
-	chance.n(generateEmployee, n);
+export const generateEmployees = (n = 3): Employee[] => chance.n(generateEmployee, n);
 
 export const generatePersonGroup = (): PersonGroup => ({
 	title: chance.sentence({words: 4}),
@@ -49,8 +47,7 @@ export const generatePersonGroup = (): PersonGroup => ({
 	profiles: generatePersons(10),
 });
 
-export const generatePersonGroups = (n = 2): PersonGroup[] =>
-	chance.n(generatePersonGroup, n);
+export const generatePersonGroups = (n = 2): PersonGroup[] => chance.n(generatePersonGroup, n);
 
 export const generateEmployeeGroup = (): EmployeeGroup => ({
 	title: 'Employee Group',
@@ -58,8 +55,7 @@ export const generateEmployeeGroup = (): EmployeeGroup => ({
 	profiles: generateEmployees(chance.d10()),
 });
 
-export const generateEmployeeGroups = (n = 2): EmployeeGroup[] =>
-	chance.n(generateEmployeeGroup, n);
+export const generateEmployeeGroups = (n = 2): EmployeeGroup[] => chance.n(generateEmployeeGroup, n);
 
 export const generateArticle = (): Article => ({
 	author: generatePerson(),
@@ -70,8 +66,7 @@ export const generateArticle = (): Article => ({
 	url: chance.url(),
 });
 
-export const generateArticles = (n = 5): Article[] =>
-	chance.n(generateArticle, n);
+export const generateArticles = (n = 5): Article[] => chance.n(generateArticle, n);
 
 export const generateAction = (): Action => ({
 	href: chance.url(),
@@ -83,11 +78,9 @@ export const generateAction = (): Action => ({
 
 export const generateActions = (n = 3): Action[] => chance.n(generateAction, n);
 
-export const generateImage = (width = 300): string =>
-	`https://picsum.photos/${width}?random=${chance.natural()}`;
+export const generateImage = (width = 300): string => `https://picsum.photos/${width}?random=${chance.natural()}`;
 
-export const generateImages = (n = 5): string[] =>
-	chance.n(() => generateImage(), n);
+export const generateImages = (n = 5): string[] => chance.n(() => generateImage(), n);
 
 export const generateFeaturedItem = (): FeaturedItemProps => ({
 	label: generateWord(),
@@ -99,18 +92,16 @@ export const generateFeaturedItem = (): FeaturedItemProps => ({
 	},
 });
 
-export const generateFeaturedItems = (n = 4): FeaturedItemProps[] =>
-	chance.n(() => generateFeaturedItem(), n);
+export const generateFeaturedItems = (n = 4): FeaturedItemProps[] => chance.n(() => generateFeaturedItem(), n);
 
-export const generateOptions = (n = 5): OptionBag[] =>
-	chance.n(() => {
-		const word = generateWord();
+export const generateOptions = (n = 5): OptionBag[] => chance.n(() => {
+	const word = generateWord();
 
-		return {
-			label: word,
-			value: word,
-		};
-	}, n);
+	return {
+		label: word,
+		value: word,
+	};
+}, n);
 
 export const generateBanner = (): BannerProps => ({
 	children:
@@ -129,8 +120,7 @@ export const generateNavItem = (sub?: boolean): NavItemOptions => {
 	};
 };
 
-export const generateNavItems = (n = 3): NavItemOptions[] =>
-	chance.n(() => generateNavItem(true), n);
+export const generateNavItems = (n = 3): NavItemOptions[] => chance.n(() => generateNavItem(true), n);
 
 export const generateHeader = (): HeaderProps => ({});
 

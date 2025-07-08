@@ -17,37 +17,36 @@ export const useForm = () => {
 		setResponse(null);
 	};
 
-	let formData: FormData;
-	let form: HTMLFormElement;
+	const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
+		event.preventDefault();
 
-	const processFileInputs = async () => {
+		handleReset();
+		setIsSubmitting(true);
+
+		// set up
+		const form = event.currentTarget;
 		const fileInputs = form.querySelectorAll<HTMLInputElement>('input[type="file"]');
+		const formData = new FormData(event.currentTarget);
 
-		if (fileInputs.length === 0) {
-			return;
-		}
+		// process files
+		if (fileInputs.length) {
+			const fileInputKeys = [...fileInputs].map(input => input.name);
 
-		const fileInputKeys = [...fileInputs].map(input => input.name);
+			for await (const key of fileInputKeys) {
+				if (formData.has(key)) {
+					let fileIndex = 0;
 
-		for await (const key of fileInputKeys) {
-			if (formData.has(key)) {
-				let fileIndex = 0;
+					for await (const file of formData.getAll(key)) {
+						formData.append(`${key}[${fileIndex}]`, file);
+						fileIndex++;
+					}
 
-				for await (const file of formData.getAll(key)) {
-					formData.append(`${key}[${fileIndex}]`, file);
-					fileIndex++;
+					formData.delete(key);
 				}
-
-				formData.delete(key);
 			}
 		}
-	};
 
-	const submitForm = async () => {
-		await processFileInputs();
-
-		console.log(Object.fromEntries(formData.entries()));
-
+		// send request
 		const response = await fetch(form.action, {
 			method: form.method,
 			body: formData,
@@ -63,18 +62,6 @@ export const useForm = () => {
 
 		setIsSubmitting(false);
 		setIsSubmitted(true);
-	};
-
-	const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
-		event.preventDefault();
-		handleReset();
-
-		form = event.currentTarget;
-		formData = new FormData(form);
-
-		setIsSubmitting(true);
-
-		void submitForm();
 	};
 
 	return {

@@ -71,8 +71,6 @@ export const DotsInput: FC<DotsInputProps> = ({
 	});
 
 	const goPrevious = () => {
-		console.log('clicked');
-
 		let newIndex = index - 1;
 
 		if (index === 0) {

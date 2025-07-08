@@ -69,19 +69,6 @@ export const Banner: FC<BannerProps> = ({
 	text,
 	children,
 }) => {
-	// Const textRef = useRef<HTMLParagraphElement>(null);
-	// const containerRef = useRef<HTMLDivElement>(null);
-
-	// const playMarquee = useMemo(() => {
-	// 	if (textRef.current && containerRef.current) {
-	// 		console.log(textRef.current, containerRef.current);
-
-	// 		return textRef.current.offsetWidth > containerRef.current.offsetWidth;
-	// 	}
-
-	// 	return false;
-	// }, [textRef, containerRef]);
-
 	const resolvedTitle = typeof children === 'string' ? children : '';
 
 	return (
