@@ -38,8 +38,7 @@ jobs:
 
       - name: Build App
         env:
-          NEXT_PUBLIC_API_URL: https://api.crealgo.com/v1
-          NEXT_PUBLIC_APP_ID: graphixcollab
+          NEXT_PUBLIC_API_URL: https://graphixcollab-api-zmivi.ondigitalocean.app
         run: npm run site:build
 
       - name: Deploy Site
