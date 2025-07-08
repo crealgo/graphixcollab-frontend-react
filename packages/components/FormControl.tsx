@@ -76,6 +76,8 @@ const Wrapper = styled.div`
 export const FormControl: FC<FormControlProps> = props => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 
+	const LabelComponent = props.isFieldset ? 'legend' : 'label';
+
 	useEffect(() => {
 		if (wrapperRef.current) {
 			const el = wrapperRef.current;
@@ -93,6 +95,7 @@ export const FormControl: FC<FormControlProps> = props => {
 	return (
 		<Wrapper
 			ref={wrapperRef}
+			as={props.isFieldset ? 'fieldset' : 'div'}
 			className={clsx(
 				props.className,
 				'FormControl-root',
@@ -106,12 +109,12 @@ export const FormControl: FC<FormControlProps> = props => {
 				},
 			)}
 		>
-			<label
+			<LabelComponent
 				className='FormControl-label'
 				htmlFor={props.labelFor}
 			>
 				{props.label}
-			</label>
+			</LabelComponent>
 			{props.children}
 			{props.helperText && (
 				<InputHelperText

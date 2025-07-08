@@ -52,7 +52,7 @@ export const QuickEstimateForm: FC = () => {
 		<StyledFormGrid
 			noValidate
 			method='post'
-			action={getFormAction('send-message/estimate-request')}
+			action={getFormAction('estimate/submit-request')}
 			encType='multipart/form-data'
 			id='estimator-form'
 			onReset={formState.handleReset}

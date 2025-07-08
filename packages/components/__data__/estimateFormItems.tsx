@@ -1,7 +1,6 @@
-import {Link} from '../Link';
 import {type FormItemBag} from '../FormItemGenerator';
-import {deliveryMethods, materials, services} from './serviceOptions';
-
+import {Link} from '../Link';
+import {generateValuesFromStringArray} from '@graphixcollab/utils/generateValuesFromStringArray';
 const todayDate = new Date();
 const defaultDeadline = Date.now() + (1000 * 60 * 60 * 24 * 30); // 30 days from now
 const defaultDeadlineDate = new Date(defaultDeadline);
@@ -37,14 +36,20 @@ export const estimateFormItems: FormItemBag[] = [
 		itemType: 'select',
 		name: 'service',
 		label: 'Service Type',
-		options: services,
+		options: generateValuesFromStringArray('Embroidery', 'Print'),
 		span: 4,
 	},
 	{
 		itemType: 'select',
 		name: 'material',
 		label: 'Material Type',
-		options: materials,
+		options: generateValuesFromStringArray(
+			'T-shirt',
+			'Hoodie',
+			'Sash',
+			'Poster',
+			'Sticker',
+		),
 		span: 4,
 	},
 	{
@@ -74,7 +79,18 @@ export const estimateFormItems: FormItemBag[] = [
 		name: 'delivery',
 		required: true,
 		label: 'Delivery Method',
-		options: deliveryMethods,
+		options: [
+			{
+				value: 'pickup',
+				label: 'Pick-Up 📍',
+				meta: 'Pick up your order at our store',
+			},
+			{
+				value: 'ship',
+				label: 'Ship 📦',
+				meta: 'We\'ll ship it to ya!',
+			}
+		],
 		span: 3,
 	},
 	{

@@ -30,13 +30,13 @@ export const RadioField = forwardRef<HTMLInputElement, Props>(
 					{options?.map((option, optionIndex) => (
 						<RadioInput
 							key={optionIndex}
+							{...props}
+							{...option}
 							ref={ref}
 							type='radio'
 							id={option.value}
-							name={generatedName}
 							defaultChecked={option.value === defaultValue}
-							{...props}
-							{...option}
+							name={generatedName}
 						/>
 					))}
 				</InputGroup>

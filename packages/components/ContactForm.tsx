@@ -32,7 +32,7 @@ export const ContactForm: FC<PropsWithChildren> = () => {
 		<StyledFormGrid
 			noValidate
 			method='post'
-			action={getFormAction('send-message/contact')}
+			action={getFormAction('contact/send-inquiry')}
 			name='contact-form'
 			onSubmit={formState.handleSubmit}
 		>
