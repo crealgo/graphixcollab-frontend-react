@@ -1,0 +1,28 @@
+# Graphix Collab
+
+> Graphix Collab is a one-stop shop for apparel customization and printing services, offering garment printing, embroidery, graphic design, and promotional materials for individuals, businesses, and organizations.
+
+Graphix Collab was founded to provide top-quality printing solutions to businesses of all sizes. We use state-of-the-art printing technology and an experienced team to serve clients across various industries.
+
+## Pages
+
+- [Home](https://www.graphixcollab.com/): Welcome page with featured services, gallery, and quick estimate tool.
+- [Services](https://www.graphixcollab.com/services): Full list of printing and design services offered.
+- [About Us](https://www.graphixcollab.com/about): Company background, mission, and reasons to choose Graphix Collab.
+- [Contact Us](https://www.graphixcollab.com/contact-us): Contact form and support information.
+- [Book Appointment](https://www.graphixcollab.com/book-appointment): Schedule a consultation or appointment.
+- [Get an Estimate](https://www.graphixcollab.com/estimate): Request a price estimate for a project.
+
+## Services
+
+- [Embroidery](https://www.graphixcollab.com/services): High-quality stitching to personalize garments and accessories.
+- [Screen Printing](https://www.graphixcollab.com/services): Vibrant, durable custom prints for apparel and promotional items.
+- [Direct to Garment (DTG)](https://www.graphixcollab.com/services): High-quality digital printing directly onto fabric with no design limitations.
+- [T-Shirt Printing](https://www.graphixcollab.com/services): Custom t-shirts for events, merch, and promotions.
+- [Vinyl Cutting](https://www.graphixcollab.com/services): Precise vinyl cuts for decals, stickers, signage, and branding.
+- [Poster Printing](https://www.graphixcollab.com/services): Vibrant, eye-catching posters for events and advertising.
+- [Business Cards](https://www.graphixcollab.com/services): Premium custom business cards for networking and professional use.
+- [Flyers](https://www.graphixcollab.com/services): Eye-catching flyers for marketing campaigns and promotions.
+- [Brand Strategy](https://www.graphixcollab.com/services): Comprehensive branding and visual identity strategy.
+- [Photography](https://www.graphixcollab.com/services): Professional photography services for products and events.
+- [UPS Drop-Off](https://www.graphixcollab.com/services): Authorized UPS drop-off location for convenient package shipping.
