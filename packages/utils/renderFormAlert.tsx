@@ -16,7 +16,7 @@ export const renderFormAlert = (isSuccessful: boolean) => {
 	let title = 'Request Failed';
 	let message = (
 		<>
-			There was an error sending your message. Please try again. Or contact directly at{' '}
+			There was an error sending your message. Please try again. Or contact us directly at{' '}
 			<Link href={mailToLink}>graphixcollab@gmail.com</Link>
 		</>
 	);
