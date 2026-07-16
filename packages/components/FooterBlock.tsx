@@ -46,7 +46,7 @@ const footerContent = {
 				},
 				{
 					label: 'Address',
-					displayName: '2626 S Figueroa St A, Los Angeles, CA 90007',
+					displayName: '1377 S Santa Fe Ave, Unit F, Los Angeles CA 90021',
 					href: 'https://goo.gl/maps/g3bKdJBYSRZvvmpaA',
 				},
 			],
